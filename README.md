@@ -1,4 +1,4 @@
-web_broswer
+Web Broswer
 ===========
 
 Protection Profile for Web Browsers
