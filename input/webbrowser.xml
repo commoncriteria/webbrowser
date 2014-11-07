@@ -3,7 +3,7 @@
 <PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Web Browsers">
     <PPReference title="PP Reference" id="ID003">
         <ReferenceTable>
-            <PPTitle>Extended Package for Web Browsers</PPTitle>
+            <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.1</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
             <PPPubDate>2014-11-06</PPPubDate>
@@ -25,15 +25,187 @@
         <entry>
             <version>v 2.0</version>
             <date>TBD</date>
-            <subject>Draft - Extended Package for Web Browsers</subject>
+            <subject>Draft - Application Software Extended Package for Web Browsers</subject>
         </entry>
     </RevisionHistory>
-    <chapter title="Introduction" id="intro"> This document provides an extended set of Security
+    <chapter title="Introduction" id="int">
+      <section title="Overview" id="ppoverview">The scope of this Protection Profile (PP) is to
+        describe the security functionality of web browsers in terms of <cite linkend="bibCC"
+        />. 
+      </section>
+      <section title="Terms" id="glossary">The following sections provide both Common Criteria and
+        technology terms used in this Protection Profile. 
+        <subsection title="Common Criteria Terms" id="ccterms">
+        <glossary>
+          <entry>
+            <term><abbr title="Common Criteria">CC</abbr></term> 
+            <description>Common Criteria for Information Technology Security
+              Evaluation.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Common Evaluation Methodology">CEM</abbr></term>
+            <description>Common Evaluation Methodology for Information Technology Security
+              Evaluation.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Protection Profile">PP</abbr></term>
+            <description>An implementation-independent set of security requirements for a category
+              of products.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Target">ST</abbr></term>
+            <description>A set of implementation-dependent security requirements for a specific
+              product.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Target of Evaluation">TOE</abbr></term>
+            <description>The product under evaluation. In this case, application
+              software and its supporting documentation.</description>
+          </entry>
+          <entry>
+            <term><abbr title="TOE Security Functionality">TSF</abbr></term>
+            <description>The security functionality of the product under evaluation.</description>
+          </entry>
+          <entry>
+            <term><abbr title="TOE Summary Specification">TSS</abbr></term>
+            <description>A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a 
+            <abbr linkend="ST"/>.
+            </description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Functional Requirement">SFR</abbr></term>
+            <description>A requirement for security enforcement by the <abbr linkend="TOE"/>.
+            </description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
+            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.
+            </description>
+          </entry>
+        </glossary>
+      </subsection>
+
+      <subsection id="techterms" title="Technology Terms">
+            <glossary>
+                <entry>
+                    <term>Active Content</term>
+                    <description>code that runs in a browser, either natively or via a plug-in, without user
+                        interaction</description>
+                </entry>
+                <entry>
+                    <term>Administrator</term>
+                    <description>The Administrator is responsible for management activities, including
+                        setting the policy that is applied by the enterprise on the Browser. This
+                        administrator is likely to be acting remotely. If the device is unattached
+                        to an enterprise, the user is the administrator.</description>
+                </entry>
+                <entry>
+                    <term>Application</term>
+                    <description>software that runs on an operating system and performs tasks on behalf of
+                        the user or owner of the platform</description>
+                </entry>
+                <entry>
+                    <term>CSRF</term>
+                    <description>Cross Site Request Forgery - Vulnerability where an attacker gets a target
+                        user to execute a script with that user‘s privileges</description>
+                </entry>
+                <entry>
+                    <term>DTLS</term>
+                    <description>Datagram Transport Layer Security</description>
+                </entry>
+                <entry>
+                    <term>Extension</term>
+                    <description>bundle of code that are added to the browser to add specific functionality
+                        that the browser does not provide by default</description>
+                </entry>
+                <entry>
+                    <term>GPU</term>
+                    <description>Graphics Processing Unit</description>
+                </entry>
+                <entry>
+                    <term>HTML</term>
+                    <description>HyperText Markup Language - Language used by web servers to present content
+                        to browsers</description>
+                </entry>
+                <entry>
+                    <term>HTML5</term>
+                    <description>HyperText Markup Language version 5, a new version of HTML that incorporates
+                        many new features that enrich the browsing experience</description>
+                </entry>
+                <entry>
+                    <term>HTTP</term>
+                    <description>HyperText Transfer Protocol - Protocol for communicating on the web</description>
+                </entry>
+                <entry>
+                    <term>HTTPS</term>
+                    <description>HyperText Transfer Protocol Secure; secure version of HTTP that runs over an
+                        encrypted channel (SSL/TLS)</description>
+                </entry>
+                <entry>
+                    <term>JavaScript</term>
+                    <description>programming language commonly used as part of a web browser to enable
+                        programmatic access to computational objects</description>
+                </entry>
+                <entry>
+                    <term>Plug-in</term>
+                    <description>browser add-on to handle specific types of web content</description>
+                </entry>
+                <entry>
+                    <term>Pop-up</term>
+                    <description>piece of web code that causes a browser window to open outside of the
+                        browser instance that is currently in focus</description>
+                </entry>
+                <entry>
+                    <term>Sandbox</term>
+                    <description>Security mechanism for separating running programs, most often used to test
+                        or run unverified programs that may contain malicious code without allowing
+                        the programs to harm the host system</description>
+                </entry>
+                <entry>
+                    <term>Tabs</term>
+                    <description>allow the browsers to display content from multiple web sites without
+                        starting another instance of the browser</description>
+                </entry>
+                <entry>
+                    <term>Web Browser User</term>
+                    <description>A user operating the TOE in unprivileged mode</description>
+                </entry>
+                <entry>
+                    <term>Web Application</term>
+                    <description>software application utilizing web technologies (e.g., Flash, Java, HTML)
+                        that runs in a web browser or other client application</description>
+                </entry>
+                <entry>
+                    <term>Web Browser</term>
+                    <description>application that retrieves and renders content provided by a web server</description>
+                </entry>
+                <entry>
+                    <term>Whitelist</term>
+                    <description>mechanism for specifying a list of domains that are allowed to do
+                        something</description>
+                </entry>
+                <entry>
+                    <term>XSS</term>
+                    <description>Cross Site Scripting - Vulnerability resulting from insufficient filtering
+                        of special characters that allows an attacker to inject a script into a web
+                        page, which is later displayed by a browser; allows the attack to deface web
+                        sites or steal session information</description>
+                </entry>
+            </glossary>
+        </subsection>
+      </section>
+
+      <section title="Compliant Targets of Evaluation" id="TOEdescription"> 
+        This document provides an extended set of Security
         Functional Requirements (SFRs) for web browsers, which is the Target of Evaluation
-        (TOE).<BR/> The Protection Profile for Application Software defines the baseline SFRs for
+        (TOE).
+        <br/>
+        The Protection Profile for Application Software defines the baseline SFRs for
         application software which runs on mobile devices ("apps") as well as on desktop and server
         platforms. This Extended Package (EP) for web browsers is not complete in itself, but rather
-        extends the baseline of Protection Profile for Application Software.<BR/> Web browsers are
+        extends the Protection Profile for Application Software.
+        <br/>
+        Web browsers are
         client applications that retrieve and render content provided by web servers, primarily
         using the hypertext transfer protocol (HTTP) or HTTP Secure (HTTPS). Browsers have grown in
         complexity over the years, starting as tools used to display simple, unchanging web pages
@@ -44,40 +216,41 @@
         for accessing the Internet, and due to their complexity and the information that they
         process, browsers are a natural target for attackers. As a result, it is paramount that the
         security of web browsers be improved to reduce the risk to client machines and enterprise
-        networks.<BR/> This document is intended to improve the security of browsers by encouraging
+        networks.
+        <BR/>
+        This document is intended to improve the security of browsers by encouraging
         the use of operating system security services and requiring the use of sandboxing
         technologies and environmental mitigations provided by the underlying platform.
-        Additionally, these requirements define security functionality that browsers must
-        provide.<BR/> The requirements in this document apply to all web browsers that run on any
-        operating system, regardless of the composition of the underlying platform. <section
-            title="Overview of the TOE" id="toeOverview"> The Target of Evaluation (TOE) in this
-            document is any web browser client capable of running on any operating system or
-            platform and used primarily to render web content using HTTP and HTTPS. </section>
-        <section title="Usage of the TOE" id="toeUsage"> Web browsers are used to perform many tasks
-            that can be categorized into three primary use cases.<BR/>
-            
-                <subsection title ="[Use Case 1] Surfing the Web">
+        Additionally, these requirements define security functionality that browsers themselves
+        must provide.
+        </section>
+
+        <section title="Use Cases" id="usecases"> Web browsers are used to perform many tasks
+            that can be categorized into three primary use cases.
+             <usecases> 
+                <usecase title ="Surfing the Web">
                     <description> Browsers are used to retrieve and display content on the web, such as
                     web pages, streaming media, images and specialized formats (e.g., Java, Flash,
                     Word, PDF). They can also be used to write content to web sites (web 2.0 – e.g.,
                     Facebook). Web surfing can be done over the Internet or Intranet.
                 </description>
-            </subsection>
-            <subsection title="[Use Case 2] Remote Administration Client"> 
+                </usecase>
+            <usecase title="Remote Administration Client"> 
                 <description> Browsers are used to provide remote administration interfaces for
                 systems such as servers, network devices and embedded systems, such as SCADA,
                 smart TVs and thermostats. As opposed to surfing the web, where the browser is
                 interacting with unknown servers, the browser, acting as a Remote Administration
                 Client, is connecting to a server that the user trusts. 
                 </description>
-            </subsection>
-            <subsection title="[Use Case 3] Content Creation">  
+            </usecase>
+            <usecase title="Content Creation">  
                 <description> Browsers are used to
                 create content via an increasing number of Software as a Service (SaaS)
                 offerings, including Microsoft Office 365, Google Drive, and Adobe Creative
                 Cloud, where user data and records are stored online. 
                 </description>
-            </subsection>
+            </usecase>
+          </usecases>
         </section>
     </chapter>
     
@@ -85,19 +258,21 @@
         This EP is conformant to Parts 2 (extended) of Common Criteria Version 3.1, Revision 4.
     </chapter>
     
-    <chapter title="Security Problem Description" id="spd">The following describes the problems that
-        compliant TOEs will address. <section title="Threats" id="threats">
-            <subsection title="Malicious or Flawed Updates" id="malupdates"> Since the most common
-                attack vector used involves attacking unpatched versions of software containing
-                well-known flaws, updating the browser is necessary to ensure that changes to threat
-                environment are addressed. Timely application of patches ensures that the client is
-                a ―hard target‖, thus increasing the likelihood that product will be able to
-                maintain and enforce its security policy. However, the updates to be applied to the
-                product must be trustable in some manner; otherwise, an attacker can write their own
-                ―update‖ that instead contains malicious code of their choosing, such as a rootkit,
-                bot, or other malware. Once this ―update‖ is installed, the attacker then has
-                control of the system and all of its data.<br/> [T.UNAUTHORIZED_UPDATE] </subsection>
-            <subsection title="Malicious or Flawed Add-on" id="maladdon"> Web browser functionality
+    <chapter title="Security Problem Description" id="spd">
+      The security problem is described in terms of the threats that the TOE is
+      expected to address, assumptions about the operational environment, and any
+      organizational security policies that the TOE is expected to enforce.
+        <section title="Threats" id="threattable"> The following threats should be integrated into
+            the threats that are specific to the technology by the EP authors when including the
+            requirements described in this document. Modifications, omissions, and additions to the
+            requirements may impact this list, so the EP author should modify or delete these
+            threats as appropriate. 
+            <threats>
+                <threat id="T.UNAUTHORIZED_ADDON">
+                    <description>Malicious or exploitable extensions or plug-ins could be used knowingly or
+                        unknowingly by a developer, possibly resulting in the capability of attacks
+                        against the platform‘s system software.
+                Web browser functionality
                 can be extended with integration of third-party utilities and tools. This expanded
                 set of capabilities is made possible via the use of browser plug-ins and extensions.
                 The tight integration between the basic browser code and the new capabilities that
@@ -107,14 +282,42 @@
                 but not limited to, allowing unauthorized access to sensitive information in the
                 browser, unauthorized access to the device‘s file system, or even privilege
                 escalation that enables unauthorized access to other applications or the operating
-                system.<br/> [T.UNAUTHORIZED_ADD-ON] </subsection>
-            <subsection title="Network Eavesdropping" id="neteaves"> Network eavesdropping involves
+                system.
+                   </description>
+                </threat>
+                <threat id="T.UNAUTHORIZED_UPDATE">
+                    <description>Malicious or exploitable software could be used knowingly or unknowingly by
+                        a developer, possibly resulting in the capability of attacks against the
+                        platform‘s system software.
+                Since the most common
+                attack vector used involves attacking unpatched versions of software containing
+                well-known flaws, updating the browser is necessary to ensure that changes to threat
+                environment are addressed. Timely application of patches ensures that the client is
+                a ―hard target‖, thus increasing the likelihood that product will be able to
+                maintain and enforce its security policy. However, the updates to be applied to the
+                product must be trustable in some manner; otherwise, an attacker can write their own
+                ―update‖ that instead contains malicious code of their choosing, such as a rootkit,
+                bot, or other malware. Once this ―update‖ is installed, the attacker then has
+                control of the system and all of its data.
+
+</description>
+                </threat>
+                <threat id="T.NETWORK_EAVESDROP">
+                    <description>If positioned on a wireless communications channel or elsewhere on the
+                        network, attackers may monitor and gain access to data exchanged between the
+                        browser and other endpoints
+                Network eavesdropping involves
                 an attacker positioning himself on the network in order to monitor transmissions
                 between the system and the intended destination of some potentially sensitive data.
                 With respect to web browsers, this entails monitoring the transactions between the
                 browser and one or more web servers, such as transmissions between a user attempting
-                to pay a utility bill and the utility‘s website.<br/> [T.NETWORK_EAVESDROP] </subsection>
-            <subsection title="Network Attack" id="netatt"> Network attack is similar to network
+                to pay a utility bill and the utility‘s website.
+                </description>
+                </threat>
+                <threat id="T.NETWORK_ATTACK">
+                    <description>An attacker may initiate communications with the browser or alter
+                        communications between the browser and other endpoints.
+            Network attack is similar to network
                 eavesdropping in that it entails an attacker positioning herself on the network. It
                 differs from network eavesdropping in that it involves the attacker initiating
                 communications with the target system, or modifying data between the target system
@@ -128,7 +331,8 @@
                 sites in the course of web browsing. The site then presents malicious content to the
                 user‘s browser to exploit it and perform installation of malware, often with no
                 indication to the user. These attacks depend on vulnerabilities in the browser or
-                browser extensions.<br/> Some examples of network attacks are: <ul>
+                browser extensions.<br/> Some examples of network attacks are:
+                <ul>
                     <li>Insufficient protection of session tokens can lead to session hijacking,
                         where a token is captured and reused in order to gain the privileges of the
                         user who initiated the session.</li>
@@ -143,14 +347,56 @@
                         different tab/window. This is an exploit of the ability of browsers to
                         display content from multiple domains simultaneously and can be carried out
                         via scripts.</li>
-                </ul> [T.NETWORK_ATTACK] </subsection>
-            <subsection title="Data Access" id="dataaccess"> Access to a web browser while it is in
+                </ul>
+                </description>
+                </threat>
+                <threat id="T.DATA_ACCESS">
+                    <description>Loss of confidentiality of user data and credentials may be a result of an
+                        attacker gaining access to a browser while it is in operation.
+                Access to a web browser while it is in
                 operation may give rise to loss of confidentiality and/or integrity of user data
                 stored by the web browser. Browser data such as cookie cache, history, web form
-                data, etc. could be accessed by these attacks.<br/> [T.DATA_ACCESS] </subsection>
+                data, etc. could be accessed by these attacks.
+                </description>
+                </threat>
+            </threats>
         </section>
-        <section title="Assumptions" id="assumptions"> The assumptions for the TOE are defined in
-            Annex A.1.1. </section>
+        <section title="Assumptions" id="assumptions"> The specific
+            conditions listed in the following subsections are assumed to exist in the TOE's
+            Operational Environment. These assumptions include both practical realities in the
+            development of the TOE security requirements and the essential environmental conditions
+            on the use of the TOE.<br/> ST authors should ensure that the assumptions still hold for
+            their particular technology; the table should be modified as appropriate. 
+            <table>
+                <TR class="header">
+                    <TH colspan="2">Table 1: TOE Assumptions</TH>
+                </TR>
+                <TR>
+                    <TH>Assumption Name</TH>
+                    <TH>Assumption Definition</TH>
+                </TR>
+                <TR>
+                    <TD>A.PLATFORMS</TD>
+                    <TD>The web browsers described in this document will run on any operating
+                        system, regardless of the underlying platform.</TD>
+                </TR>
+                <TR>
+                    <TD>A.TRUSTED_ADMIN</TD>
+                    <TD>TOE Administrators are trusted to follow and apply all administrator
+                        guidance in a trusted manner.</TD>
+                </TR>
+                <TR>
+                    <TD>A.TRUSTED_USER</TD>
+                    <TD>The Web Browser User is not malicious, and exercises appropriate
+                        precautions.</TD>
+                </TR>
+                <TR>
+                    <TD>A.PLATFORM_FUNCTIONS</TD>
+                    <TD>The platform supporting the client shall offer cryptography, file system and
+                        other operating system capabilities.</TD>
+                </TR>
+            </table>
+        </section>
     </chapter>
     <chapter title="Security Objectives" id="objectives">
         <section title="Security Objectives of the TOE" id="toeobjectives">Compliant TOEs will
@@ -201,7 +447,77 @@
                 FCS_COP.1(1), FCS_CKM_EXT.1, FCS_CKM_EXT.4, FCS_COP.1(4), FDP_COO_EXT.1,
                 FDP_DEL_EXT.1, FDP_DEL_EXT.2, FDP_DEL_EXT.3, FDP_PBR_EXT.1, FDP_PST_EXT.1
             </subsection>
+           </section>
+          <section title="Security Objectives for the TOE" id="objtable">
+            <table>
+                <tr class="header">
+                    <TH colspan="2">Table 3: Security Objectives for the TOE</TH>
+                </tr>
+                <TR>
+                    <TH>TOE Security Objective</TH>
+                    <TH>TOE Objective Definition</TH>
+                </TR>
+                <TR>
+                    <TD>O.COMMS</TD>
+                    <TD>The TOE will provide the capability to communicate using one (or more)
+                        standard protocols as a means to maintain the confidentiality of data that
+                        are transmitted outside of the TOE.</TD>
+                </TR>
+                <TR>
+                    <TD>O.CONFIG</TD>
+                    <TD>The TOE will provide the capability to configure and apply security
+                        policies. This ensures the browser can protect user and enterprise data that
+                        it may store or process.</TD>
+                </TR>
+                <TR>
+                    <TD>O.INTEGRITY</TD>
+                    <TD>The TOE will provide the capability to perform self-tests to ensure the
+                        integrity of critical functionality, software/firmware and data has been
+                        maintained. The TOE will also provide a means to verify the integrity of
+                        downloaded updates and control the download and launch of
+                    executables.</TD></TR>
+                <TR>
+                    <TD>O.ISOLATION</TD>
+                    <TD>The TOE will provide the capability to isolate content from different
+                        domains to prevent any unauthorized access.</TD>
+                </TR>
+                <TR>
+                    <TD>O.STORAGE</TD>
+                    <TD>The TOE will provide the capability to encrypt all user and enterprise data
+                        and authentication keys to ensure the confidentiality of data that it
+                        stores.</TD></TR>
+            </table>
         </section>
+        <section title="Security Threats to Security Objectives" id="threattoobjtable">The following
+            table contains a mapping of Security Threats to Objectives for the TOE. <table>
+                <TR class="header">
+                    <TH colspan="2">Table 3: Security Threats to Objectives Mapping</TH>
+                </TR>
+                <TR>
+                    <TH>Threat</TH>
+                    <TH>Objective</TH>
+                </TR>
+                <TR>
+                    <TD>T.UNAUTHORIZED_ADD-ON</TD>
+                    <TD>O.INTEGRITY</TD>
+                </TR>
+                <TR>
+                    <TD>T.UNAUTHORIZED_UPDATE</TD>
+                    <TD>O.INTEGRITY</TD>
+                </TR>
+                <TR>
+                    <TD>T.NETWORK_EAVESDROP</TD>
+                    <TD>O.COMMS</TD>
+                </TR>
+                <TR>
+                    <TD>T.NETWORK_ATTACK</TD>
+                    <TD>O.COMMS; O.ISOLATION</TD>
+                </TR>
+                <TR>
+                    <TD>T.DATA_ACCESS</TD>
+                    <TD>O.STORAGE; O.CONFIG</TD>
+                </TR>
+            </table></section>
     </chapter>
 
     <chapter title="Security Requirements" id="req">This chapter describes the security requirements
@@ -1151,161 +1467,6 @@
         Section 4.<br/> The TOE security assurance requirements identify the management and
         evaluative activities required to address the threats identified in Section 4 of this EP. </chapter>
         -->
-    <chapter title="Rationale" id="rationale"> The rationale tracing the threats to the objectives
-        and the objectives to the requirements is contained in the prose in Sections 2.0 and 3.0.
-        The only outstanding mappings are those for the Assumptions and Organizational Security
-        Policies; those are contained in Annex A below. </chapter>
-    <appendix id="suptables" title="Supporting Tables">In this Extended Package, the focus in the
-        initial sections of the document is to use a narrative presentation in an attempt to
-        increase the overall understandability of the threats to network devices; the methods used
-        to mitigate those threats; and the extent of the mitigation achieved by compliant TOEs. This
-        presentation style does not readily lend itself to a formalized evaluation activity, so this
-        Annex contains the tabular artifacts that can be used for the evaluation activities
-        associated with this document. <section title="Assumptions" id="assumptable"> The specific
-            conditions listed in the following subsections are assumed to exist in the TOE‟s
-            Operational Environment. These assumptions include both practical realities in the
-            development of the TOE security requirements and the essential environmental conditions
-            on the use of the TOE.<br/> ST authors should ensure that the assumptions still hold for
-            their particular technology; the table should be modified as appropriate. <table>
-                <TR class="header">
-                    <TH colspan="2">Table 1: TOE Assumptions</TH>
-                </TR>
-                <TR>
-                    <TH>Assumption Name</TH>
-                    <TH>Assumption Definition</TH>
-                </TR>
-                <TR>
-                    <TD>A.PLATFORMS</TD>
-                    <TD>The web browsers described in this document will run on any operating
-                        system, regardless of the underlying platform.</TD>
-                </TR>
-                <TR>
-                    <TD>A.TRUSTED_ADMIN</TD>
-                    <TD>TOE Administrators are trusted to follow and apply all administrator
-                        guidance in a trusted manner.</TD>
-                </TR>
-                <TR>
-                    <TD>A.TRUSTED_USER</TD>
-                    <TD>The Web Browser User is not malicious, and exercises appropriate
-                        precautions.</TD>
-                </TR>
-                <TR>
-                    <TD>A.PLATFORM_FUNCTIONS</TD>
-                    <TD>The platform supporting the client shall offer cryptography, file system and
-                        other operating system capabilities.</TD>
-                </TR>
-            </table>
-        </section>
-        <section title="Threats" id="threattable"> The following threats should be integrated into
-            the threats that are specific to the technology by the EP authors when including the
-            requirements described in this document. Modifications, omissions, and additions to the
-            requirements may impact this list, so the EP author should modify or delete these
-            threats as appropriate. <table>
-                <TR class="header">
-                    <TH colspan="2">Table 2: Threats</TH>
-                </TR>
-                <TR>
-                    <TH>Threat Name</TH>
-                    <TH>Threat Definition</TH>
-                </TR>
-                <TR>
-                    <TD>T.UNAUTHORIZED_ADDON</TD>
-                    <TD>Malicious or exploitable extensions or plug-ins could be used knowingly or
-                        unknowingly by a developer, possibly resulting in the capability of attacks
-                        against the platform‘s system software.</TD>
-                </TR>
-                <TR>
-                    <TD>T.UNAUTHORIZED_UPDATE</TD>
-                    <TD>Malicious or exploitable software could be used knowingly or unknowingly by
-                        a developer, possibly resulting in the capability of attacks against the
-                        platform‘s system software.</TD></TR>
-                <TR>
-                    <TD>T.NETWORK_EAVESDROP</TD>
-                    <TD>If positioned on a wireless communications channel or elsewhere on the
-                        network, attackers may monitor and gain access to data exchanged between the
-                        browser and other endpoints</TD></TR>
-                <TR>
-                    <TD>T.NETWORK_ATTACK</TD>
-                    <TD>An attacker may initiate communications with the browser or alter
-                        communications between the browser and other endpoints.</TD></TR>
-                <TR>
-                    <TD>T.DATA_ACCESS</TD>
-                    <TD>Loss of confidentiality of user data and credentials may be a result of an
-                        attacker gaining access to a browser while it is in operation.</TD>
-                </TR>
-            </table>
-        </section>
-        <section title="Security Objectives for the TOE" id="objtable">
-            <table>
-                <tr class="header">
-                    <TH colspan="2">Table 3: Security Objectives for the TOE</TH>
-                </tr>
-                <TR>
-                    <TH>TOE Security Objective</TH>
-                    <TH>TOE Objective Definition</TH>
-                </TR>
-                <TR>
-                    <TD>O.COMMS</TD>
-                    <TD>The TOE will provide the capability to communicate using one (or more)
-                        standard protocols as a means to maintain the confidentiality of data that
-                        are transmitted outside of the TOE.</TD>
-                </TR>
-                <TR>
-                    <TD>O.CONFIG</TD>
-                    <TD>The TOE will provide the capability to configure and apply security
-                        policies. This ensures the browser can protect user and enterprise data that
-                        it may store or process.</TD>
-                </TR>
-                <TR>
-                    <TD>O.INTEGRITY</TD>
-                    <TD>The TOE will provide the capability to perform self-tests to ensure the
-                        integrity of critical functionality, software/firmware and data has been
-                        maintained. The TOE will also provide a means to verify the integrity of
-                        downloaded updates and control the download and launch of
-                    executables.</TD></TR>
-                <TR>
-                    <TD>O.ISOLATION</TD>
-                    <TD>The TOE will provide the capability to isolate content from different
-                        domains to prevent any unauthorized access.</TD>
-                </TR>
-                <TR>
-                    <TD>O.STORAGE</TD>
-                    <TD>The TOE will provide the capability to encrypt all user and enterprise data
-                        and authentication keys to ensure the confidentiality of data that it
-                        stores.</TD></TR>
-            </table>
-        </section>
-        <section title="Security Threats to Security Objectives" id="threattoobjtable">The following
-            table contains a mapping of Security Threats to Objectives for the TOE. <table>
-                <TR class="header">
-                    <TH colspan="2">Table 3: Security Threats to Objectives Mapping</TH>
-                </TR>
-                <TR>
-                    <TH>Threat</TH>
-                    <TH>Objective</TH>
-                </TR>
-                <TR>
-                    <TD>T.UNAUTHORIZED_ADD-ON</TD>
-                    <TD>O.INTEGRITY</TD>
-                </TR>
-                <TR>
-                    <TD>T.UNAUTHORIZED_UPDATE</TD>
-                    <TD>O.INTEGRITY</TD>
-                </TR>
-                <TR>
-                    <TD>T.NETWORK_EAVESDROP</TD>
-                    <TD>O.COMMS</TD>
-                </TR>
-                <TR>
-                    <TD>T.NETWORK_ATTACK</TD>
-                    <TD>O.COMMS; O.ISOLATION</TD>
-                </TR>
-                <TR>
-                    <TD>T.DATA_ACCESS</TD>
-                    <TD>O.STORAGE; O.CONFIG</TD>
-                </TR>
-            </table></section>
-    </appendix>
     <appendix id="opreq" title="Optional Requirements"> As indicated in the introduction to this EP,
         the baseline requirements (those that must be performed by the TOE or its underlying
         platform) are contained in the body of this EP. Additionally, there are three other types of
@@ -1872,321 +2033,165 @@
             </section>
         </appendix>
 
-    <appendix id="glossary" title="Glossary and Acronyms">
-        <section id="techDefinitions" title="Technical Definitions">
-            <table>
+    <appendix title="Acronyms" id="acronyms">
+            <acronyms>
+                <entry>
+                    <term>AES</term>
+                    <description>Advanced Encryption Standard</description>
+                </entry>
+                <entry>
+                    <term>CBC</term>
+                    <description>Cipher Block Chaining</description>
+                </entry>
+                <entry>
+                    <term>CRL</term>
+                    <description>Certificate Revocation List</description>
+                </entry>
+                <entry>
+                    <term>CSP</term>
+                    <description>Cryptographic Service Provider</description>
+                </entry>
+                <entry>
+                    <term>CSRF</term>
+                    <description>Cross Site Request Forgery</description>
+                </entry>
+                <entry>
+                    <term>DHE</term>
+                    <description>Diffie-Hellman Key Exchange</description>
+                </entry>
+                <entry>
+                    <term>DN</term>
+                    <description>Distinguished Name</description>
+                </entry>
+                <entry>
+                    <term>DSA</term>
+                    <description>Digital Signature Algorithm</description>
+                </entry>
+                <entry>
+                    <term>DTLS</term>
+                    <description>Datagram Transport Layer Security</description>
+                </entry>
+                <entry>
+                    <term>ECC</term>
+                    <description>Elliptic Curve Cryptography</description>
+                </entry>
+                <entry>
+                    <term>ECDSA</term>
+                    <description>Elliptic Curve Digital Signature Algorithm</description>
+                </entry>
+                <entry>
+                    <term>EP</term>
+                    <description>Extended Package</description>
+                </entry>
+                <entry>
+                    <term>FFC</term>
+                    <description>Finite-Field Cryptography</description>
+                </entry>
+                <entry>
+                    <term>FIPS</term>
+                    <description>Federal Information Processing Standards</description>
+                </entry>
+                <entry>
+                    <term>GCM</term>
+                    <description>Galois/Counter Mode</description>
+                </entry>
                 <TR>
-                    <TD>Active Content</TD>
-                    <TD>code that runs in a browser, either natively or via a plug-in, without user
-                        interaction</TD>
+                    <term>GPU</term>
+                    <description>Graphics Processing Unit</description>
                 </TR>
-                <TR>
-                    <TD>Administrator</TD>
-                    <TD>The Administrator is responsible for management activities, including
-                        setting the policy that is applied by the enterprise on the Browser. This
-                        administrator is likely to be acting remotely. If the device is unattached
-                        to an enterprise, the user is the administrator.</TD>
-                </TR>
-                <TR>
-                    <TD>Application</TD>
-                    <TD>software that runs on an operating system and performs tasks on behalf of
-                        the user or owner of the platform</TD>
-                </TR>
-                <TR>
-                    <TD>CSRF</TD>
-                    <TD>Cross Site Request Forgery - Vulnerability where an attacker gets a target
-                        user to execute a script with that user‘s privileges</TD>
-                </TR>
-                <TR>
-                    <TD>DTLS</TD>
-                    <TD>Datagram Transport Layer Security</TD>
-                </TR>
-                <TR>
-                    <TD>Extension</TD>
-                    <TD>bundle of code that are added to the browser to add specific functionality
-                        that the browser does not provide by default</TD>
-                </TR>
-                <TR>
-                    <TD>GPU</TD>
-                    <TD>Graphics Processing Unit</TD>
-                </TR>
-                <TR>
-                    <TD>HTML</TD>
-                    <TD>HyperText Markup Language - Language used by web servers to present content
-                        to browsers</TD>
-                </TR>
-                <TR>
-                    <TD>HTML5</TD>
-                    <TD>HyperText Markup Language version 5, a new version of HTML that incorporates
-                        many new features that enrich the browsing experience</TD>
-                </TR>
-                <TR>
-                    <TD>HTTP</TD>
-                    <TD>HyperText Transfer Protocol - Protocol for communicating on the web</TD>
-                </TR>
-                <TR>
-                    <TD>HTTPS</TD>
-                    <TD>HyperText Transfer Protocol Secure; secure version of HTTP that runs over an
-                        encrypted channel (SSL/TLS)</TD>
-                </TR>
-                <TR>
-                    <TD>JavaScript</TD>
-                    <TD>programming language commonly used as part of a web browser to enable
-                        programmatic access to computational objects</TD>
-                </TR>
-                <TR>
-                    <TD>Plug-in</TD>
-                    <TD>browser add-on to handle specific types of web content</TD>
-                </TR>
-                <TR>
-                    <TD>Pop-up</TD>
-                    <TD>piece of web code that causes a browser window to open outside of the
-                        browser instance that is currently in focus</TD>
-                </TR>
-                <TR>
-                    <TD>Sandbox</TD>
-                    <TD>Security mechanism for separating running programs, most often used to test
-                        or run unverified programs that may contain malicious code without allowing
-                        the programs to harm the host system</TD>
-                </TR>
-                <TR>
-                    <TD>Tabs</TD>
-                    <TD>allow the browsers to display content from multiple web sites without
-                        starting another instance of the browser</TD>
-                </TR>
-                <TR>
-                    <TD>Web Browser User</TD>
-                    <TD>A user operating the TOE in unprivileged mode</TD>
-                </TR>
-                <TR>
-                    <TD>Web Application</TD>
-                    <TD>software application utilizing web technologies (e.g., Flash, Java, HTML)
-                        that runs in a web browser or other client application</TD>
-                </TR>
-                <TR>
-                    <TD>Web Browser</TD>
-                    <TD>application that retrieves and renders content provided by a web server</TD>
-                </TR>
-                <TR>
-                    <TD>Whitelist</TD>
-                    <TD>mechanism for specifying a list of domains that are allowed to do
-                        something</TD>
-                </TR>
-                <TR>
-                    <TD>XSS</TD>
-                    <TD>Cross Site Scripting - Vulnerability resulting from insufficient filtering
-                        of special characters that allows an attacker to inject a script into a web
-                        page, which is later displayed by a browser; allows the attack to deface web
-                        sites or steal session information</TD>
-                </TR>
-            </table>
-        </section>
-        <section id="ccdefinitions" title="Common Criteria Definitions">
-            <table>
-                <tr>
-                    <TD>Assurance</TD>
-                    <TD>Grounds for confidence that a TOE meets the SFRs [CC1].</TD>
-                </tr>
-                <tr>
-                    <TD>
-                        <abbr id="CC">CC</abbr>
-                    </TD>
-                    <TD>Common Criteria</TD>
-                </tr>
-                <tr>
-                    <TD>PP</TD>
-                    <TD>Protection Profile</TD>
-                </tr>
-                <tr>
-                    <TD>SAR</TD>
-                    <TD>Security Assurance Requirement</TD>
-                </tr>
-                <tr>
-                    <TD>SFR</TD>
-                    <TD>Security Functional Requirement</TD>
-                </tr>
-                <tr>
-                    <TD>Security Target (ST)</TD>
-                    <TD>Implementation dependent statement of security needs for a specific
-                        identified TOE.</TD>
-                </tr>
-                <tr>
-                    <TD>Target of Evaluation (TOE)</TD>
-                    <TD>Set of software, firmware and hardware under evaluation, possibly
-                        accompanied by guidance.</TD>
-                </tr>
-                <tr>
-                    <TD>TOE Security Functionality (TSF)</TD>
-                    <TD>Combined functionality of all hardware, software, and firmware of a TOE that
-                        must be relied upon for the correct enforcement of the SFR</TD>
-                </tr>
-                <tr>
-                    <TD>TOE Summary Specification (TSS)</TD>
-                    <TD>Documentation which provides evaluators with a description of the
-                        implementation of SFRs in the TOE.</TD>
-                </tr>
-            </table>
-        </section>
-        <section id="acronyms" title="Acronyms">
-            <table>
-                <tr>
-                    <TD>AES</TD>
-                    <TD>Advanced Encryption Standard</TD>
-                </tr>
-                <tr>
-                    <TD>CBC</TD>
-                    <TD>Cipher Block Chaining</TD>
-                </tr>
-                <tr>
-                    <TD>CRL</TD>
-                    <TD>Certificate Revocation List</TD>
-                </tr>
-                <tr>
-                    <TD>CSP</TD>
-                    <TD>Cryptographic Service Provider</TD>
-                </tr>
-                <TR>
-                    <TD>CSRF</TD>
-                    <TD>Cross Site Request Forgery</TD>
-                </TR>
-                <tr>
-                    <TD>DHE</TD>
-                    <TD>Diffie-Hellman Key Exchange</TD>
-                </tr>
-                <tr>
-                    <TD>DN</TD>
-                    <TD>Distinguished Name</TD>
-                </tr>
-                <tr>
-                    <TD>DSA</TD>
-                    <TD>Digital Signature Algorithm</TD>
-                </tr>
-                <TR>
-                    <TD>DTLS</TD>
-                    <TD>Datagram Transport Layer Security</TD>
-                </TR>
-                <tr>
-                    <TD>ECC</TD>
-                    <TD>Elliptic Curve Cryptography</TD>
-                </tr>
-                <tr>
-                    <TD>ECDSA</TD>
-                    <TD>Elliptic Curve Digital Signature Algorithm</TD>
-                </tr>
-                <tr>
-                    <TD>EP</TD>
-                    <TD>Extended Package</TD>
-                </tr>
-                <tr>
-                    <TD>FFC</TD>
-                    <TD>Finite-Field Cryptography</TD>
-                </tr>
-                <tr>
-                    <TD>FIPS</TD>
-                    <TD>Federal Information Processing Standards</TD>
-                </tr>
-                <tr>
-                    <TD>GCM</TD>
-                    <TD>Galois/Counter Mode</TD>
-                </tr>
-                <TR>
-                    <TD>GPU</TD>
-                    <TD>Graphics Processing Unit</TD>
-                </TR>
-                <tr>
-                    <TD>HMAC</TD>
-                    <TD>Keyed Hash Message Authentication Code</TD>
-                </tr>
-                <tr>
-                    <TD>HTML</TD>
-                    <TD>HyperText Markup Language</TD>
-                </tr>
-                <tr>
-                    <TD>HTML5</TD>
-                    <TD>HyperText Markup Language version 5</TD>
-                </tr>
-                <tr>
-                    <TD>HTTP</TD>
-                    <TD>HyperText Transfer Protocol</TD>
-                </tr>
-                <tr>
-                    <TD>HTTPS</TD>
-                    <TD>HyperText Transfer Protocol Secure</TD>
-                </tr>
-                <tr>
-                    <TD>IETF</TD>
-                    <TD>Internet Engineering Task Force</TD>
-                </tr>
-                <tr>
-                    <TD>IV</TD>
-                    <TD>Initialization Vector</TD>
-                </tr>
-                <tr>
-                    <TD>KAT</TD>
-                    <TD>Known Answer Test</TD>
-                </tr>
-                <tr>
-                    <TD>KDF</TD>
-                    <TD>Key Derivation Function</TD>
-                </tr>
-                <tr>
-                    <TD>NIST</TD>
-                    <TD>National Institute of Standards and Technology</TD>
-                </tr>
-                <tr>
-                    <TD>OCSP</TD>
-                    <TD>Online Certificate Status Protocol</TD>
-                </tr>
-                <tr>
-                    <TD>OID</TD>
-                    <TD>Object Identifier</TD>
-                </tr>
-                <tr>
-                    <TD>PDF</TD>
-                    <TD>Portable Document Format</TD>
-                </tr>
-                <tr>
-                    <TD>rDSA</TD>
-                    <TD>RSA Digital Signature Algorithm</TD>
-                </tr>
-                <tr>
-                    <TD>RFC</TD>
-                    <TD>Request for Comment (IETF)</TD>
-                </tr>
-                <TR>
-                    <TD>RGB</TD>
-                    <TD>Random Bit Generator</TD>
-                </TR>
-                <tr>
-                    <TD>RSA</TD>
-                    <TD>Rivest Shamir Adelman</TD>
-                </tr>
-                <TR>
-                    <TD>SaaS</TD>
-                    <TD>Software as a Service</TD>
-                </TR>
-                <tr>
-                    <TD>SHA</TD>
-                    <TD>Secure Hash Algorithm</TD>
-                </tr>
-                <TR>
-                    <TD>SSL</TD>
-                    <TD>Secure Sockets Layer</TD>
-                </TR>
-                <tr>
-                    <TD>TLS</TD>
-                    <TD>Transport Layer Security</TD>
-                </tr>
-                <TR>
-                    <TD>W3C</TD>
-                    <TD>World Wide Web Consortium</TD>
-                </TR>
-                <TR>
-                    <TD>XSS</TD>
-                    <TD>Cross Site Scripting</TD>
-                </TR>
-            </table>
-        </section>
+                <entry>
+                    <term>HMAC</term>
+                    <description>Keyed Hash Message Authentication Code</description>
+                </entry>
+                <entry>
+                    <term>HTML</term>
+                    <description>HyperText Markup Language</description>
+                </entry>
+                <entry>
+                    <term>HTML5</term>
+                    <description>HyperText Markup Language version 5</description>
+                </entry>
+                <entry>
+                    <term>HTTP</term>
+                    <description>HyperText Transfer Protocol</description>
+                </entry>
+                <entry>
+                    <term>HTTPS</term>
+                    <description>HyperText Transfer Protocol Secure</description>
+                </entry>
+                <entry>
+                    <term>IETF</term>
+                    <description>Internet Engineering Task Force</description>
+                </entry>
+                <entry>
+                    <term>IV</term>
+                    <description>Initialization Vector</description>
+                </entry>
+                <entry>
+                    <term>KAT</term>
+                    <description>Known Answer Test</description>
+                </entry>
+                <entry>
+                    <term>KDF</term>
+                    <description>Key Derivation Function</description>
+                </entry>
+                <entry>
+                    <term>NIST</term>
+                    <description>National Institute of Standards and Technology</description>
+                </entry>
+                <entry>
+                    <term>OCSP</term>
+                    <description>Online Certificate Status Protocol</description>
+                </entry>
+                <entry>
+                    <term>OID</term>
+                    <description>Object Identifier</description>
+                </entry>
+                <entry>
+                    <term>PDF</term>
+                    <description>Portable Document Format</description>
+                </entry>
+                <entry>
+                    <term>rDSA</term>
+                    <description>RSA Digital Signature Algorithm</description>
+                </entry>
+                <entry>
+                    <term>RFC</term>
+                    <description>Request for Comment (IETF)</description>
+                </entry>
+                <entry>
+                    <term>RGB</term>
+                    <description>Random Bit Generator</description>
+                </entry>
+                <entry>
+                    <term>RSA</term>
+                    <description>Rivest Shamir Adelman</description>
+                </entry>
+                <entry>
+                    <term>SaaS</term>
+                    <description>Software as a Service</description>
+                </entry>
+                <entry>
+                    <term>SHA</term>
+                    <description>Secure Hash Algorithm</description>
+                </entry>
+                <entry>
+                    <term>SSL</term>
+                    <description>Secure Sockets Layer</description>
+                </entry>
+                <entry>
+                    <term>TLS</term>
+                    <description>Transport Layer Security</description>
+                </entry>
+                <entry>
+                    <term>W3C</term>
+                    <description>World Wide Web Consortium</description>
+                </entry>
+                <entry>
+                    <term>XSS</term>
+                    <description>Cross Site Scripting</description>
+                </entry>
+        </acronyms>
     </appendix>
     
     <!-- 
