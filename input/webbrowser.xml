@@ -401,7 +401,9 @@
     <chapter title="Security Objectives" id="objectives">
         <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
             <SOs>
-                <SO id="O.PROTECTED_COMMS"> To address
+                <SO id="O.PROTECTED_COMMS"> 
+                <description>
+                To address
                 the network attack and network eavesdropping threats, the TOE must provide for
                 protected communications between the browser and a given web server in instances
                 where such protected communications are desirable. The data between these two
@@ -412,14 +414,19 @@
                 FCS_CKM.1(*),FCS_CKM_EXT.4, FCS_COP.1(*), FCS_DTLS_EXT.1, FCS_HTTPS_EXT.1,
                 FCS_TLSC_EXT.1, FCS_STS_EXT.1, FDP_STR_EXT.1, FIA_X509_EXT.1, FIA_X509_EXT.2,
                 FPT_INT_EXT.3, FTP_ITC.1 
+                </description>
             </SO>
-            <SO id="O.ISOLATION"> To address the
+            <SO id="O.ISOLATION">
+                <description>
+                To address the
                 network attack associated with content leakage between different web domains
                 rendered by the browser, the TOE must ensure that content originating from different
                 domains (e.g., in a tab or iFrame) is properly isolated to disallow access.<br/>
                 FDP_ACF_EXT.1, FDP_SBX_EXT.1, FDP_SOP_EXT.1 
+                </description>
             </SO>
             <SO id="O.CONFIG"> 
+                <description>
                 In order to
                 protect sensitive data stored (either temporarily or permanently) or processed by
                 the browser, conformant TOEs will provide the capability to define, configure, and
@@ -427,8 +434,11 @@
                 configured by the administrator for the TOE, these must take precedence over any
                 user-defined settings.<br/> FDP_ACC_EXT.1, FDP_TRK_EXT.1, FMT_MOF.1, FMT_SMF.1,
                 FMT_SMR.1 
+                </description>
             </SO>
-            <SO id="O.INTEGRITY"> To ensure the
+            <SO id="O.INTEGRITY">
+                <description>
+                To ensure the
                 integrity of the browser is maintained, conformant TOEs will perform self-tests to
                 insure the integrity of software and data has been maintained.<br/> To address
                 issues associated with malicious or flawed browser software, plug-ins or extensions,
@@ -440,8 +450,10 @@
                 also control the downloading and launching of executables.<br/> FAU_GEN.1,
                 FAU_SEL.1, FCS_COP.1(2), FCS_COP.1(3), FPT_DNL_EXT.1, FPT_DNL_EXT.2, FPT_INT_EXT.1,
                 FPT_INT_EXT.2, FPT_MCD_EXT.1, FPT_TUD_EXT.1, FPT_TUD_EXT.2, FPT_TUD_EXT.3 
+                </description>
             </SO>
             <SO id="O.STORAGE"> 
+                <description>
                 Browsers handle many types of potentially sensitive user information (e.g.,
                 passwords, web form data, cryptographic keys). It is critical that browsers protect
                 this information when it is stored. The browser shall make use of platform
@@ -449,6 +461,7 @@
                 rather than mechanisms and libraries that are part of the browser itself.<br/>
                 FCS_COP.1(1), FCS_CKM_EXT.1, FCS_CKM_EXT.4, FCS_COP.1(4), FDP_COO_EXT.1,
                 FDP_DEL_EXT.1, FDP_DEL_EXT.2, FDP_DEL_EXT.3, FDP_PBR_EXT.1, FDP_PST_EXT.1
+                </description>
             </SO>
             </SOs>
            </section>
