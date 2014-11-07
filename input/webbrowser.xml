@@ -557,7 +557,6 @@
         <section title="Security Functional Requirements" id="SFR">This section addresses those
             Security Functional Requirements that may be met by the TOE. <subsection
                 title="Class: User Data Protection (FDP)" id="FDP">
-                <h4>Access Control Functions</h4>
                 <f-component id="FDP_ACF_EXT.1"
                     name="Extended: Local and Session Storage Separation">
                     <f-element id="FDP_ACF_EXT.1">
@@ -624,7 +623,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Cookie Handling</h4>
                 <f-component id="FDP_COO_EXT.1" name="Extended: Cookie Blocking">
                     <f-element id="FDP_COO_EXT.1.1">
                         <title>The TOE shall provide the capability to block the storage of third
@@ -652,7 +650,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Information Deletion</h4>
                 <f-component id="FDP_DEL_EXT.1" name="Extended: Deletion of Browser Data">
                     <f-element id="FDP_DEL_EXT.1.1">
                         <title>The TOE shall provide the capability to delete <selectables>
@@ -704,7 +701,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Sandboxing</h4>
                 <f-component id="FDP_SBX_EXT.1" name="Extended: Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The TOE shall ensure that web page rendering is performed in a
@@ -797,7 +793,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Same Origin Policy</h4>
                 <f-component id="FDP_SOP_EXT.1" name="Extended: Same Origin Policy">
                     <f-element id="FDP_SOP_EXT.1.1">
                         <title>The TOE shall ensure that content retrieved from one origin cannot
@@ -842,7 +837,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Secure Data Transmission</h4>
                 <f-component id="FDP_STR_EXT.1" name="Extended: Secure Transmission of Cookie Data">
                     <f-element id="FDP_STR_EXT.1.1">
                         <title>The TOE shall ensure that cookies containing the ―secure‖ attribute
@@ -867,7 +861,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>User Tracking Information</h4>
                 <f-component id="FDP_TRK_EXT.1" name="Extended: Tracking Information Collection">
                     <f-element id="FDP_TRK_EXT.1.1">
                         <title>The TOE shall support the ability of websites to collect <selectables>
@@ -904,7 +897,6 @@
                 </f-component>
             </subsection>
             <subsection title="Class: Protection of the TSF (FPT)" id="fpt">
-                <h4>Downloads to the TOE</h4>
                 <f-component id="FPT_DNL_EXT.1" name="Extended: Launch of Downloaded Executables">
                     <f-element id="FPT_DNL_EXT.1.1">
                         <title>The TOE shall prevent downloaded executables from launching
@@ -962,7 +954,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>External Interactions</h4>
                 <f-component id="FPT_INT_EXT.1"
                     name="Extended: Interactions with Background Processes">
                     <f-element id="FPT_INT_EXT.1.1">
@@ -986,7 +977,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Mobile Code</h4>
                 <f-component id="FPT_MCD_EXT.1" name="Extended: Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
                         <title>The TOE shall support the capability to execute signed <selectables>
@@ -1061,7 +1051,6 @@
             section addresses Security Functional Requirements that may be met by either the TOE
             itself, by the TOE platform, or by a combination of the TOE and the TOE platform.
                 <subsection title="Class: Cryptographic Support (FCS)" id="FCS">
-                <h4>Cryptographic Key Management</h4>
                 <!--need to check to see is Zeriozation is addressed in App on OS. If yes, removed from this EP-->
                 <f-component id="FCS_CKM_EXT.4" name="Extended: Cryptographic Key Zeroization">
                     <f-element id="FCS_CKM_EXT.4.1">
@@ -1153,7 +1142,6 @@
                 </f-component>
             </subsection>
             <subsection title="Class: Identification and Authentication (FIA)" id="fia">
-                <h4/>
                 <f-component id="FIA_X509_EXT.2" name="Extended: X509 Authentication">
                     <f-element id="FIA_X509_EXT.2.3">
                         <title>The <selectables>
@@ -1212,7 +1200,6 @@
                 </f-component>
             </subsection>
             <subsection title="Class: Security Management (FMT)" id="fmt">
-                <h4>Management of Functions in TSF</h4>
                 <f-component id="FMT_MOF.1" name="Management of Functions Behavior">
                     <f-element id="FMT_MOF.1.1">
                         <title>The <selectables>
@@ -1326,7 +1313,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Specification of Management Functions</h4>
                 <f-component id="FMT_SMR.1" name="Security Management Roles">
                     <f-element id="FMT_SMR.1.1">
                         <title>The <selectables>
@@ -1358,7 +1344,6 @@
                 </f-component>
             </subsection>
             <subsection title="Class: Protection of the TSF (FPT)" id="tsffpt">
-                <h4>TSF Self-Test</h4>
                 <f-component id="FPT_TST_EXT.1" name="Extended: TSF Self-Test">
                     <f-element id="FPT_TST_EXT.1.1">
                         <title>The <selectables>
@@ -1394,10 +1379,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <h4>Trusted Update</h4>
             </subsection>
             <subsection title="Class: Trusted Path/Channel (FTP)" id="trustedPath">
-                <h4>Trusted Channel</h4>
                 <f-component id="FTP_ITC.1" name="Inter-TSF Trusted Channel">
                     <f-element id="FTP_ITC.1">
                         <title><b>Refinement:</b> The <!--                             
@@ -1498,7 +1481,6 @@
         and/or Appendix D but are not listed (e.g., FMT-type requirements) are also included in the
         ST.<br/> At any time these may be included in the ST such that the TOE is still conformant
         to this EP. <section id="userdataprotection" title="Class: User Data Protection (FDP)">
-            <h4>Private Browsing Sessions</h4>
             <f-component id="FDP_PBR_EXT.1" name="Extended: Private Browsing Sessions">
                 <f-element id="FDP_PBR_EXT.1.1">
                     <title>The TOE shall provide the capability to support private browsing
@@ -1533,7 +1515,6 @@
     <appendix id="selecationReqs" title="Selection-based Requirements">
         <!--Is text missing here?-->
         <section id="userData" title="Class: User Data Protection (FDP)">
-            <h4>Information Deletion</h4>
             <f-component id="FDP_DEL_EXT.2" name="Extended: Deletion of Extension Information">
                 <f-element id="FDP_DEL_EXT.2.1">
                     <title>The TOE shall provide the capability to delete extensions so that all
@@ -1579,7 +1560,6 @@
             </f-component>
         </section>
         <section id="tsfProtection" title="Class: Protection of the TSF (FPT)">
-            <h4>Trusted Update</h4>
             <f-component id="FPT_TUD_EXT.2" name="Extended: Trusted Extension Update">
                 <f-element id="FPT_TUD_EXT.2.1">
                     <title>The TOE shall provide the capability to query the current version of the
@@ -1681,9 +1661,8 @@
         platform) are contained in the body of this EP. There are additional requirements that
         specify security functionality that is desirable and these requirements are contained in
         this Annex. It is expected that these requirements will transition from objective
-        requirements to baseline requirements in future versions of this EP. <section id="audit"
-            title="Class: Security Audit (FAU)">
-            <h4>Security Audit Data Generation</h4>
+        requirements to baseline requirements in future versions of this EP. 
+        <section id="audit" title="Class: Security Audit (FAU)">
             <f-component id="FAU_GEN.1" name="Audit Data Generation">
                 <f-element id="FAU_GEN.1.1">
                     <title>The <selectables>
@@ -1821,7 +1800,6 @@
                     </aactivity>
                 </f-element>
             </f-component>
-            <h4>Security Audit Event Selection</h4>
             <f-component id="FAU_SEL.1" name="Selective Audit">
                 <f-element id="FAU_SEL.1.1">
                     <title>The <selectables>
@@ -1852,7 +1830,6 @@
             </f-component>
         </section>
         <section id="cryptoSupportClass" title="Class: Cryptographic Support (FCS)">
-            <h4>Strict Transport Security</h4>
             <f-component id="FCS_STS_EXT.1" name="Extended: Strict Transport Security">
                 <f-element id="FCS_STS_EXT.1.1">
                     <title>The <selectables>
@@ -1902,7 +1879,6 @@
             </f-component>
         </section>
         <section id="objuserDataProtection" title="Class: User Data Protection (FDP)">
-            <h4>Access Control Policy</h4>
             <f-component id="FDP_ACC_EXT.1" name="Extended: Access Control on Domains">
                 <f-element id="FDP_ACC_EXT.1.1">
                     <title>The TOE shall provide the capability to group domains and apply access
@@ -1926,7 +1902,6 @@
                     </aactivity>
                 </f-element>
             </f-component>
-            <h4>Storage of Persistent Information</h4>
             <f-component id="FDP_PST_EXT.1" name="Extended: Storage of Persistent Information">
                 <f-element id="FDP_PST_EXT.1.1">
                     <title>The TOE shall provide the capability to operate without storing
@@ -1949,7 +1924,6 @@
             </f-component>
         </section>
         <section id="objTsfProtection" title="Class: Protection of the TSF (FPT)">
-            <h4>TOE Interaction with External Entities</h4>
             <f-component id="FPT_INT_EXT.2"
                 name="Extended: Interactions with Application Reputation Services">
                 <f-element id="FPT_INT_EXT.2.1">
