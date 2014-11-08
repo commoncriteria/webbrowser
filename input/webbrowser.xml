@@ -29,12 +29,12 @@
         </entry>
     </RevisionHistory>
     <chapter title="Introduction" id="int">
-      <section title="Overview" id="ppoverview">The scope of this Protection Profile (PP) is to
+      <section title="Overview" id="ppoverview">The scope of this Extended Package (EP) is to
         describe the security functionality of web browsers in terms of <cite linkend="bibCC"
         />. 
       </section>
       <section title="Terms" id="glossary">The following sections provide both Common Criteria and
-        technology terms used in this Protection Profile. 
+        technology terms used in this Extended Package. 
         <subsection title="Common Criteria Terms" id="ccterms">
         <glossary>
           <entry>
@@ -46,6 +46,11 @@
             <term><abbr title="Common Evaluation Methodology">CEM</abbr></term>
             <description>Common Evaluation Methodology for Information Technology Security
               Evaluation.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Extended Package">EP</abbr></term>
+            <description>An implementation-independent set of security requirements for a category
+              of products, which extends those in a Protection Profile.</description>
           </entry>
           <entry>
             <term><abbr title="Protection Profile">PP</abbr></term>
@@ -157,9 +162,9 @@
                 </entry>
                 <entry>
                     <term>Sandbox</term>
-                    <description>Security mechanism for separating running programs, most often used to test
-                        or run unverified programs that may contain malicious code without allowing
-                        the programs to harm the host system</description>
+                    <description>Security mechanism for separating running processes, most often used to
+                        run untrusted or vulnerable processes by reducing their privileges to such an
+                        extent that they should not be able to harm the host system</description>
                 </entry>
                 <entry>
                     <term>Tabs</term>
@@ -259,16 +264,29 @@
     </chapter>
     
     <chapter title="Security Problem Description" id="spd">
-      The security problem is described in terms of the threats that the TOE is
+      The security problem is described in terms of the threats that the web browser is
       expected to address, assumptions about the operational environment, and any
-      organizational security policies that the TOE is expected to enforce.
+      organizational security policies that it is expected to enforce.
+      <p/>
+      Note that this EP does not repeat the threats identified in the
+      <i>Protection Profile for Application Software</i> (App PP), though they all apply given the
+      conformance and hence dependence of this EP on it.  Together the threats of the
+      App PP and those defined in this EP describe the set of security
+      threats addressed by a web browser as the Target of Evaluation.
+      Notably, browsers are particularly at risk from the Network Attack 
+      threat identified in the App PP.
+      Attackers can use phishing or another social engineering technique to persuade a user to visit a
+      malicious site. Users may also unintentionally or intentionally visit malicious
+      sites in the course of web browsing. Such sites then present malicious content to the
+      user‘s browser to exploit it and perform installation of malware, often with no
+      indication to the user. 
         <section title="Threats" id="threattable"> The following threats should be integrated into
             the threats that are specific to the technology by the EP authors when including the
             requirements described in this document. Modifications, omissions, and additions to the
             requirements may impact this list, so the EP author should modify or delete these
             threats as appropriate. 
             <threats>
-                <threat id="T.UNAUTHORIZED_ADDON">
+                <threat id="T.FLAWED_ADDON">
                     <description>Malicious or exploitable extensions or plug-ins could be used knowingly or
                         unknowingly by a developer, possibly resulting in the capability of attacks
                         against the platform‘s system software.
@@ -285,78 +303,28 @@
                 system.
                    </description>
                 </threat>
-                <threat id="T.UNAUTHORIZED_UPDATE">
-                    <description>Malicious or exploitable software could be used knowingly or unknowingly by
-                        a developer, possibly resulting in the capability of attacks against the
-                        platform‘s system software.
-                Since the most common
-                attack vector used involves attacking unpatched versions of software containing
-                well-known flaws, updating the browser is necessary to ensure that changes to threat
-                environment are addressed. Timely application of patches ensures that the client is
-                a ―hard target‖, thus increasing the likelihood that product will be able to
-                maintain and enforce its security policy. However, the updates to be applied to the
-                product must be trustable in some manner; otherwise, an attacker can write their own
-                ―update‖ that instead contains malicious code of their choosing, such as a rootkit,
-                bot, or other malware. Once this ―update‖ is installed, the attacker then has
-                control of the system and all of its data.
-
-</description>
-                </threat>
-                <threat id="T.NETWORK_EAVESDROP">
-                    <description>If positioned on a wireless communications channel or elsewhere on the
-                        network, attackers may monitor and gain access to data exchanged between the
-                        browser and other endpoints
-                Network eavesdropping involves
-                an attacker positioning himself on the network in order to monitor transmissions
-                between the system and the intended destination of some potentially sensitive data.
-                With respect to web browsers, this entails monitoring the transactions between the
-                browser and one or more web servers, such as transmissions between a user attempting
-                to pay a utility bill and the utility‘s website.
-                </description>
-                </threat>
-                <threat id="T.NETWORK_ATTACK">
-                    <description>An attacker may initiate communications with the browser or alter
-                        communications between the browser and other endpoints.
-            Network attack is similar to network
-                eavesdropping in that it entails an attacker positioning herself on the network. It
-                differs from network eavesdropping in that it involves the attacker initiating
-                communications with the target system, or modifying data between the target system
-                and the data‘s legitimate destination. With respect to browsers, network attack
-                might involve sending malicious data to the browser in order to exploit
-                vulnerabilities that may influence its behavior, or modifying account information en
-                route to a web server.<br/> Browser attacks generally occur on Internet connected
-                browsers, but are not unknown to occur within closed networks. Attackers can use
-                phishing or another social engineering technique to persuade a user to visit a
-                malicious site. Users may also unintentionally or intentionally visit malicious
-                sites in the course of web browsing. The site then presents malicious content to the
-                user‘s browser to exploit it and perform installation of malware, often with no
-                indication to the user. These attacks depend on vulnerabilities in the browser or
-                browser extensions.<br/> Some examples of network attacks are:
+                <threat id="T.SAMEORIGIN_VIOLATION">
+                    <description>
+                Violating the same-origin policy is a specialized type of network attack which involves
+                web content violating access control policies that a browser uses to separate different web domains.
+                It is worth specifically identifying as a threat to web browsers, since they implement the
+                access control policies that are violated in these attacks.
+                <br/> Some examples of attacks which involve same origin violations are:
                 <ul>
                     <li>Insufficient protection of session tokens can lead to session hijacking,
                         where a token is captured and reused in order to gain the privileges of the
                         user who initiated the session.</li>
                     <li>Cross-site scripting (XSS) and cross-site request forgery (CSRF) attacks are
-                        methods used to compromise user credentials (usually by stealing the user‘s
+                        methods used to compromise user credentials (usually by stealing the user's
                         session token) to a web site. These attacks are more likely a result of
                         server security problems, but some browsers incorporate technologies that
                         try to detect the attacks.</li>
                     <li>Inadequate sandboxing of browser tabs/windows or a faulty cross domain
-                        communications model can lead to leakage of content from one domain (e.g.,
-                        cnn.com) in one tab/window to a different domain (e.g., google.com) in a
-                        different tab/window. This is an exploit of the ability of browsers to
-                        display content from multiple domains simultaneously and can be carried out
-                        via scripts.</li>
+                        communications model can lead to leakage of content from one domain
+                        in one tab/window to a different domain in a different tab/window. 
+                        Such attacks leverage the ability of browsers to
+                        display content from multiple domains simultaneously.</li>
                 </ul>
-                </description>
-                </threat>
-                <threat id="T.DATA_ACCESS">
-                    <description>Loss of confidentiality of user data and credentials may be a result of an
-                        attacker gaining access to a browser while it is in operation.
-                Access to a web browser while it is in
-                operation may give rise to loss of confidentiality and/or integrity of user data
-                stored by the web browser. Browser data such as cookie cache, history, web form
-                data, etc. could be accessed by these attacks.
                 </description>
                 </threat>
             </threats>
@@ -555,12 +523,12 @@
                 "(1)")</li>
         </ul>
         <section title="Security Functional Requirements" id="SFR">This section addresses those
-            Security Functional Requirements that may be met by the TOE. <subsection
-                title="Class: User Data Protection (FDP)" id="FDP">
+            Security Functional Requirements that may be met by the TOE. 
+            <subsection title="User Data Protection (FDP)" id="FDP">
                 <f-component id="FDP_ACF_EXT.1"
-                    name="Extended: Local and Session Storage Separation">
+                    name="Local and Session Storage Separation">
                     <f-element id="FDP_ACF_EXT.1">
-                        <title>The TOE shall separate local (permanent) and session (ephemeral)
+                        <title>The browser shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol and port:<br/>
                             <ul>
                                 <li>Session storage shall be accessible only from the originating
@@ -623,9 +591,9 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_COO_EXT.1" name="Extended: Cookie Blocking">
+                <f-component id="FDP_COO_EXT.1" name="Cookie Blocking">
                     <f-element id="FDP_COO_EXT.1.1">
-                        <title>The TOE shall provide the capability to block the storage of third
+                        <title>The browser shall provide the capability to block the storage of third
                             party cookies by websites.</title>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
@@ -650,9 +618,9 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_DEL_EXT.1" name="Extended: Deletion of Browser Data">
+                <f-component id="FDP_DEL_EXT.1" name="Deletion of Browser Data">
                     <f-element id="FDP_DEL_EXT.1.1">
-                        <title>The TOE shall provide the capability to delete <selectables>
+                        <title>The browser shall provide the capability to delete <selectables>
                                 <selectable>browser cache</selectable>
                                 <selectable>history</selectable>
                                 <selectable>passwords</selectable>
@@ -663,7 +631,7 @@
                             </selectables> from the TOE when invoked by the user.</title>
                     </f-element>
                     <f-element id="FDP_DEL_EXT.1.2">
-                        <title>The TOE shall provide the capability to delete <selectables>
+                        <title>The browser shall provide the capability to delete <selectables>
                                 <selectable>browser cache</selectable>
                                 <selectable>history</selectable>
                                 <selectable>passwords</selectable>
@@ -701,7 +669,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_SBX_EXT.1" name="Extended: Sandboxing of Rendering Processes">
+                <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The TOE shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
@@ -793,7 +761,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_SOP_EXT.1" name="Extended: Same Origin Policy">
+                <f-component id="FDP_SOP_EXT.1" name="Same Origin Policy">
                     <f-element id="FDP_SOP_EXT.1.1">
                         <title>The TOE shall ensure that content retrieved from one origin cannot
                             interact with content retrieved from another origin without consent from
@@ -837,7 +805,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_STR_EXT.1" name="Extended: Secure Transmission of Cookie Data">
+                <f-component id="FDP_STR_EXT.1" name="Secure Transmission of Cookie Data">
                     <f-element id="FDP_STR_EXT.1.1">
                         <title>The TOE shall ensure that cookies containing the ―secure‖ attribute
                             in the set-cookie header are sent over HTTPS.</title>
@@ -861,7 +829,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_TRK_EXT.1" name="Extended: Tracking Information Collection">
+                <f-component id="FDP_TRK_EXT.1" name="Tracking Information Collection">
                     <f-element id="FDP_TRK_EXT.1.1">
                         <title>The TOE shall support the ability of websites to collect <selectables>
                                 <selectable>web sites accessed</selectable>
@@ -896,253 +864,8 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="Class: Protection of the TSF (FPT)" id="fpt">
-                <f-component id="FPT_DNL_EXT.1" name="Extended: Launch of Downloaded Executables">
-                    <f-element id="FPT_DNL_EXT.1.1">
-                        <title>The TOE shall prevent downloaded executables from launching
-                            automatically.</title>
-                    </f-element>
-                    <f-element id="FPT_DNL_EXT.1.2">
-                        <title>The TOE shall present the user with the option to either download or
-                            discard the executable.</title>
-                        <note role="application"> In this context, an executable is a file
-                            containing compiled code for a software program that, when launched,
-                            initiates the installation of the program. It is invoked independent of
-                            and outside the context of the TOE. It does not include mobile code,
-                            scripts, or plug-ins.<br/> This requirement does not include the
-                            invocation of any program that is already installed on the TOE
-                            platform.<br/> This requirement ensures that if the user intentionally
-                            (via clicking on a link) or unintentionally initiates the download of an
-                            executable, the TSF will intervene by, for example, opening a dialog box
-                            that presents the user with the option to either save the executable to
-                            the file system or not download the executable. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
-                            describes the behavior of the TSF when a user initiates the download of
-                            an executable. <h4>Guidance</h4> The evaluator shall examine the
-                            operational guidance to ensure it describes the dialog box that appears
-                            when a download is initiated and the implications of the options
-                            presented by the dialog box. <h4>Tests</h4>The evaluator shall perform
-                            the following tests: <testlist>
-                                <test>The evaluator shall navigate to a website that hosts
-                                    executables and shall attempt to download and launch several
-                                    executables. The evaluator shall verify that the TOE always
-                                    presents a dialog box with the option to either download the
-                                    executable to the file system or discard the executable.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FPT_DNL_EXT.2" name="Extended: Download Location">
-                    <f-element id="FPT_DNL_EXT.2.1">
-                        <title>The TOE shall have the capability to specify where downloads are
-                            saved.</title>
-                        <aactivity>
-                            <h4>TSS</h4> N/A <h4>Guidance</h4> The evaluator shall examine the
-                            operational guidance to ensure it describes the default location for
-                            downloads and instructions for modifying the location. <h4>Tests</h4>The
-                            evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall navigate to a website that serves files
-                                    and shall to download a file. The evaluator shall inspect the
-                                    default location specified in the operational guidance and shall
-                                    verify that the download is present.</test>
-                                <test>The evaluator shall modify the location where downloaded files
-                                    are saved. The evaluator shall attempt to download a file from a
-                                    website that serves files and shall verify that the file is
-                                    saved to the configured location.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FPT_INT_EXT.1"
-                    name="Extended: Interactions with Background Processes">
-                    <f-element id="FPT_INT_EXT.1.1">
-                        <title>The TOE shall shut down any TOE-spawned background processes when the
-                            TOE exits.</title>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
-                            all TOE-spawned processes that run while the TOE is running and
-                            describes the ability to terminate these processes when the TOE exits.
-                            The TSS should also describe the nature of the background processes, the
-                            circumstances under which they are spawned, the process/image names
-                            associated with them (if any) and their expected lifetimes.
-                                <h4>Guidance</h4> N/A <h4>Tests</h4>The evaluator shall perform the
-                            following tests: <testlist>
-                                <test>The evaluator shall start an instance of the TOE. The
-                                    evaluator shall inspect the TOE platform‘s running processes and
-                                    identify which are associated with the TOE instance. The
-                                    evaluator shall shut down the TOE instance and verify that the
-                                    TOE background processes have been terminated.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FPT_MCD_EXT.1" name="Extended: Mobile Code">
-                    <f-element id="FPT_MCD_EXT.1.1">
-                        <title>The TOE shall support the capability to execute signed <selectables>
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    TOE]</selectable>
-                            </selectables>mobile code.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.2">
-                        <title>The TOE shall support the capability to execute unsigned <selectables>
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    TOE]</selectable>
-                            </selectables> mobile code.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.3">
-                        <title>The TOE shall support the capability to execute <selectables>
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    TOE]</selectable>
-                            </selectables> mobile code from an untrusted or unverified
-                            source.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.3">
-                        <title>The TOE shall notify the user when unsigned, untrusted or unverified
-                            mobile code is encountered.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.4">
-                        <title>The TOE shall provide the user with the option to discard unsigned,
-                            untrusted or unverified mobile code without executing it.</title>
-                        <note role="application"> The ST writer must specify all mobile code types
-                            that are supported by the browser. If they are not listed, the ST writer
-                            must fill in the assignment with the mobile code types that are
-                            missing.<br/> An authorized signer may directly sign the code itself, or
-                            the code may be delivered over an authenticated HTTPS connection with an
-                            authorized entity.<br/> The execution of signed mobile code is specified
-                            by FIA_X509_EXT.2. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
-                            types of signed mobile code that the TSF supports. The TSS shall
-                            describe how the TSF handles unsigned mobile code, mobile code from an
-                            untrusted source, and mobile code from an unverified source.
-                                <h4>Guidance</h4> The evaluator shall examine the operational
-                            guidance to verify it provides configuration instructions for each of
-                            the supported mobile code types. The operational guidance shall also
-                            describe the alert that the TOE displays to the user when unsigned,
-                            untrusted, or unverified mobile code is encountered and the actions the
-                            user can take. <h4>Tests</h4>The evaluator shall perform the following
-                            tests for each mobile code type specified in the TSS: <testlist>
-                                <test>The evaluator shall construct web pages containing unsigned,
-                                    correctly authenticated, and incorrectly authenticated mobile
-                                    code and ensure that the TOE alerts the user when it encounters
-                                    mobile code that fails to authenticate and provides the user
-                                    with the option to discard the mobile code without executing it,
-                                    but does execute mobile code that properly authenticates.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-            </subsection>
-        </section>
-        <section title="TOE or TOE Platform Security Functional requirements" id="TOESFR">This
-            section addresses Security Functional Requirements that may be met by either the TOE
-            itself, by the TOE platform, or by a combination of the TOE and the TOE platform.
-                <subsection title="Class: Cryptographic Support (FCS)" id="FCS">
-                <!--need to check to see is Zeriozation is addressed in App on OS. If yes, removed from this EP-->
-                <f-component id="FCS_CKM_EXT.4" name="Extended: Cryptographic Key Zeroization">
-                    <f-element id="FCS_CKM_EXT.4.1">
-                        <title>The <selectables>
-                                <selectable>TOE</selectable>
-                                <selectable>TOE platform</selectable>
-                            </selectables> shall zeroize all plaintext secret and private
-                            cryptographic keys and CSPs when no longer required.</title>
-                        <note role="application"> The ST author should select the platform if the
-                            Web Browser performs no operations using plaintext secret, private
-                            cryptographic keys, and CSPs.<br/> Any security related information
-                            (such as keys, authentication data, and passwords) must be zeroized when
-                            no longer in use to prevent the disclosure or modification of security
-                            critical data.<br/> The zeroization indicated above applies to each
-                            intermediate storage area for plaintext key and Cryptographic Service
-                            Provider (CSP) (i.e., any storage, such as memory buffers, that is
-                            included in the path of such data) upon the transfer of the key/CSP to
-                            another location.<br/>
-                        </note>
-                        <aactivity>
-                            <h4>TSS</h4>
-                            <u>Requirement met by TOE platform:</u> The evaluator shall check to
-                            ensure the TSS describes each of the secret keys (keys used for
-                            symmetric encryption), private keys, and CSPs used to generate key that
-                            are not otherwise covered by the FCS_CKM_EXT.4 requirement levied on the
-                            TOE. For each platform listed in the ST, the evaluator shall examine the
-                            TSS of the ST of the platform to ensure that each of the secret keys,
-                            private keys, and CSPs used to generate key listed above are covered.<br/>
-                            <u>Requirement met by TOE:</u> The evaluator shall check to ensure the
-                            TSS describes each of the secret keys (keys used for symmetric
-                            encryption) and private keys, as well as the CSPs used to generate key;
-                            when the keys are zeroized (for example, immediately after use, on
-                            system shutdown, etc.); and the type of zeroization procedure that is
-                            performed (overwrite with zeros, overwrite three times with random
-                            pattern, etc.). If different types of memory are used to store the
-                            materials to be protected, the evaluator shall check to ensure that the
-                            TSS describes the zeroization procedure in terms of the memory in which
-                            the data are stored (for example, "secret keys stored in volatile memory
-                            are zeroized by overwriting once with zeros, while secret keys stored on
-                            the internal hard drive are zeroized by overwriting three times with a
-                            random pattern that is changed before each write"). If a read-back is
-                            done to verify the zeroization, this shall be described as well.<br/>
-                            <h4>Guidance</h4> N/A <h4>Tests</h4>
-                            <i><b>Assurance Activity Note:</b> The following tests require the
-                                developer to provide access to a test platform that provides the
-                                evaluator with tools that are typically not found on consumer
-                                platforms.</i><br/>
-                            <u>Requirement met by TOE:</u> For each key clearing situation described
-                            in the TSS the evaluator shall repeat the following test.<br/>
-                            <testlist>
-                                <test>The evaluator shall utilize appropriate combinations of
-                                    specialized operational environment and development tools
-                                    (debuggers, simulators, etc.) for the TOE and instrumented TOE
-                                    builds to test that keys are cleared correctly, including all
-                                    intermediate copies of the key that may have been created
-                                    internally by the TOE during normal cryptographic processing
-                                    with that key.<br/> Cryptographic TOE implementations in
-                                    software shall be loaded and exercised under a debugger to
-                                    perform such tests. The evaluator shall perform the following
-                                    test for each key subject to clearing, including intermediate
-                                    copies of keys that are persisted encrypted by the TOE:<br/>
-                                    <ul>
-                                        <li>Load the instrumented TOE build in a debugger.</li>
-                                        <li>Record the value of the key in the TOE subject to
-                                            clearing.</li>
-                                        <li>Cause the TOE to perform a normal cryptographic
-                                            processing with the key from #1.</li>
-                                        <li>Cause the TOE to clear the key.</li>
-                                        <li>Cause the TOE to stop the execution but not exit.</li>
-                                        <li>Cause the TOE to dump the entire memory footprint of the
-                                            TOE into a binary file.</li>
-                                        <li>Search the content of the binary file created in #4 for
-                                            instances of the known key value from #1.</li>
-                                    </ul> The test succeeds if no copies of the key from #1 are
-                                    found in step #7 above and fails otherwise.<br/> The evaluator
-                                    shall perform this test on all keys, including those that
-                                    persist in encrypted form, to ensure intermediate copies are
-                                    cleared.</test>
-                                <test>In cases where the TOE is implemented in firmware and operates
-                                    in a limited operating environment that does not allow the use
-                                    of debuggers, the evaluator shall utilize a simulator for the
-                                    TOE on a general purpose operating system. The evaluator shall
-                                    provide a rationale explaining the instrumentation of the
-                                    simulated test environment and justifying the obtained test
-                                    results.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-            </subsection>
-            <subsection title="Class: Identification and Authentication (FIA)" id="fia">
-                <f-component id="FIA_X509_EXT.2" name="Extended: X509 Authentication">
+            <subsection title="Identification and Authentication (FIA)" id="fia">
+                <f-component id="FIA_X509_EXT.2" name="X509 Authentication">
                     <f-element id="FIA_X509_EXT.2.3">
                         <title>The <selectables>
                                 <selectable>TOE</selectable>
@@ -1199,14 +922,164 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="Class: Security Management (FMT)" id="fmt">
-                <f-component id="FMT_MOF.1" name="Management of Functions Behavior">
-                    <f-element id="FMT_MOF.1.1">
-                        <title>The <selectables>
-                                <selectable>TOE</selectable>
-                                <selectable>TOE platform</selectable>
-                            </selectables> shall restrict the ability to perform the functions: <ol>
-                                <li>enable/disable storage of sensitive web form information;</li>
+            <subsection title="Protection of the TSF (FPT)" id="fpt">
+                <f-component id="FPT_DNL_EXT.1" name="Launch of Downloaded Executables">
+                    <f-element id="FPT_DNL_EXT.1.1">
+                        <title>The browser shall prevent downloaded executables from launching
+                            automatically.</title>
+                    </f-element>
+                    <f-element id="FPT_DNL_EXT.1.2">
+                        <title>The TOE shall present the user with the option to either download or
+                            discard the executable.</title>
+                        <note role="application"> In this context, an executable is a file
+                            containing compiled code for a software program that, when launched,
+                            initiates the installation of the program. It is invoked independent of
+                            and outside the context of the TOE. It does not include mobile code,
+                            scripts, or plug-ins.<br/> This requirement does not include the
+                            invocation of any program that is already installed on the TOE
+                            platform.<br/> This requirement ensures that if the user intentionally
+                            (via clicking on a link) or unintentionally initiates the download of an
+                            executable, the TSF will intervene by, for example, opening a dialog box
+                            that presents the user with the option to either save the executable to
+                            the file system or not download the executable. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
+                            describes the behavior of the TSF when a user initiates the download of
+                            an executable. <h4>Guidance</h4> The evaluator shall examine the
+                            operational guidance to ensure it describes the dialog box that appears
+                            when a download is initiated and the implications of the options
+                            presented by the dialog box. <h4>Tests</h4>The evaluator shall perform
+                            the following tests: <testlist>
+                                <test>The evaluator shall navigate to a website that hosts
+                                    executables and shall attempt to download and launch several
+                                    executables. The evaluator shall verify that the TOE always
+                                    presents a dialog box with the option to either download the
+                                    executable to the file system or discard the executable.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+                <f-component id="FPT_DNL_EXT.2" name="Download Location">
+                    <f-element id="FPT_DNL_EXT.2.1">
+                        <title>The TOE shall have the capability to specify where downloads are
+                            saved.</title>
+                        <aactivity>
+                            <h4>TSS</h4> N/A <h4>Guidance</h4> The evaluator shall examine the
+                            operational guidance to ensure it describes the default location for
+                            downloads and instructions for modifying the location. <h4>Tests</h4>The
+                            evaluator shall perform the following tests: <testlist>
+                                <test>The evaluator shall navigate to a website that serves files
+                                    and shall to download a file. The evaluator shall inspect the
+                                    default location specified in the operational guidance and shall
+                                    verify that the download is present.</test>
+                                <test>The evaluator shall modify the location where downloaded files
+                                    are saved. The evaluator shall attempt to download a file from a
+                                    website that serves files and shall verify that the file is
+                                    saved to the configured location.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+                <f-component id="FPT_INT_EXT.1"
+                    name="Interactions with Background Processes">
+                    <f-element id="FPT_INT_EXT.1.1">
+                        <title>The TOE shall shut down any TOE-spawned background processes when the
+                            TOE exits.</title>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            all TOE-spawned processes that run while the TOE is running and
+                            describes the ability to terminate these processes when the TOE exits.
+                            The TSS should also describe the nature of the background processes, the
+                            circumstances under which they are spawned, the process/image names
+                            associated with them (if any) and their expected lifetimes.
+                                <h4>Guidance</h4> N/A <h4>Tests</h4>The evaluator shall perform the
+                            following tests: <testlist>
+                                <test>The evaluator shall start an instance of the TOE. The
+                                    evaluator shall inspect the TOE platform‘s running processes and
+                                    identify which are associated with the TOE instance. The
+                                    evaluator shall shut down the TOE instance and verify that the
+                                    TOE background processes have been terminated.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+                <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
+                    <f-element id="FPT_MCD_EXT.1.1">
+                        <title>The browser shall support the capability to execute signed <selectables>
+                                <selectable>ActiveX</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the
+                                    TOE]</selectable>
+                            </selectables>mobile code.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.2">
+                        <title>The TOE shall support the capability to execute unsigned <selectables>
+                                <selectable>ActiveX</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the
+                                    TOE]</selectable>
+                            </selectables> mobile code.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.3">
+                        <title>The TOE shall support the capability to execute <selectables>
+                                <selectable>ActiveX</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the
+                                    TOE]</selectable>
+                            </selectables> mobile code from an untrusted or unverified
+                            source.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.3">
+                        <title>The browser shall notify the user when unsigned, untrusted or unverified
+                            mobile code is encountered.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.4">
+                        <title>The browser shall provide the user with the option to discard unsigned,
+                            untrusted or unverified mobile code without executing it.</title>
+                        <note role="application"> The ST writer must specify all mobile code types
+                            that are supported by the browser. If they are not listed, the ST writer
+                            must fill in the assignment with the mobile code types that are
+                            missing.<br/> An authorized signer may directly sign the code itself, or
+                            the code may be delivered over an authenticated HTTPS connection with an
+                            authorized entity.<br/> The execution of signed mobile code is specified
+                            by FIA_X509_EXT.2. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
+                            types of signed mobile code that the TSF supports. The TSS shall
+                            describe how the TSF handles unsigned mobile code, mobile code from an
+                            untrusted source, and mobile code from an unverified source.
+                                <h4>Guidance</h4> The evaluator shall examine the operational
+                            guidance to verify it provides configuration instructions for each of
+                            the supported mobile code types. The operational guidance shall also
+                            describe the alert that the TOE displays to the user when unsigned,
+                            untrusted, or unverified mobile code is encountered and the actions the
+                            user can take. <h4>Tests</h4>The evaluator shall perform the following
+                            tests for each mobile code type specified in the TSS: <testlist>
+                                <test>The evaluator shall construct web pages containing unsigned,
+                                    correctly authenticated, and incorrectly authenticated mobile
+                                    code and ensure that the TOE alerts the user when it encounters
+                                    mobile code that fails to authenticate and provides the user
+                                    with the option to discard the mobile code without executing it,
+                                    but does execute mobile code that properly authenticates.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+            </subsection>
+
+
+            <subsection title="Security Management (FMT)" id="fmt">
+                <f-component id="fmt_mof.1" name="Management of Functions Behavior">
+                    <f-element id="fmt_mof.1.1">
+                        <title>The browser shall restrict to an administator the ability to perform the functions: 
+                                <selectables>
+                                <selectable>enable/disable storage of sensitive web form information</selectable>
                                 <li>configuration of mobile code:</li>
                                 <ol>
                                     <li>ability to install mobile code;</li>
@@ -1216,78 +1089,79 @@
                                     <li>ability to execute mobile code from an untrusted or
                                         unverified publisher</li>
                                 </ol>
+                                </selectables>
                                 <selectables linebreak="yes">
-                                    <selectable><li>enable/disable storage of third party
-                                            cookies;</li></selectable>
-                                    <selectable><li>configuration of extensions:</li></selectable>
+                                    <selectable>enable/disable storage of third party
+                                            cookies</selectable>
+                                    <selectable>configuration of extensions</selectable>
                                     <ol>
-                                        <selectable><li>ability to install
-                                            extensions;</li></selectable>
-                                        <selectable><li>ability to uninstall
-                                            extensions;</li></selectable>
-                                        <selectable><li>ability to update
-                                            extensions;</li></selectable>
-                                        <selectable><li>ability to disable
-                                            extensions</li></selectable>
+                                        <selectable>ability to install
+                                            extensions></selectable>
+                                        <selectable>ability to uninstall
+                                            extensions</selectable>
+                                        <selectable>ability to update
+                                            extensions</selectable>
+                                        <selectable>ability to disable
+                                            extensions</selectable>
                                     </ol>
-                                    <selectable><li>configuration of plug-ins:</li></selectable>
+                                    <selectable>configuration of plug-ins</selectable>
                                     <ol>
-                                        <selectable><li>ability to install
-                                            plug-ins;</li></selectable>
-                                        <selectable><li>ability to uninstall
-                                            plug-ins;</li></selectable>
-                                        <selectable><li>ability to update
-                                            plug-ins;</li></selectable>
-                                        <selectable><li>ability to disable
-                                            plug-ins</li></selectable>
+                                        <selectable>ability to install
+                                            plug-ins</selectable>
+                                        <selectable>ability to uninstall
+                                            plug-ins</selectable>
+                                        <selectable>ability to update
+                                            plug-ins</selectable>
+                                        <selectable>ability to disable
+                                            plug-ins</selectable>
                                     </ol>
-                                    <selectable><li>enable/disable use of OCSP for obtaining the
+                                    <selectable>enable/disable use of OCSP for obtaining the
                                             revocation status of an X.509
-                                        certificate;</li></selectable>
-                                    <selectable><li>configure inclusion of user-agent information in
-                                            HTTP headers;</li></selectable>
-                                    <selectable><li>enable/disable ability for websites to collect
-                                            tracking information about the user</li></selectable>
-                                    <selectable><li>deletion of stored browsing data (cache, web
-                                            form information):</li></selectable>
+                                        certificate</selectable>
+                                    <selectable>configure inclusion of user-agent information in
+                                            HTTP headers</selectable>
+                                    <selectable>enable/disable ability for websites to collect
+                                            tracking information about the user</selectable>
+                                    <selectable>deletion of stored browsing data (cache, web
+                                            form information)</selectable>
                                     <ol>
-                                        <selectable><li>ability to specify which content should be
-                                                deleted;</li></selectable>
-                                        <selectable><li>ability to delete all stored
-                                            content;</li></selectable>
-                                        <selectable><li>automatically delete content upon
+                                        <selectable>ability to specify which content should be
+                                                deleted</selectable>
+                                        <selectable>ability to delete all stored
+                                            content</selectable>
+                                        <selectable>automatically delete content upon
                                                 termination of the browser
-                                            session;</li></selectable>
+                                            session</selectable>
                                     </ol>
-                                    <selectable><li>enable/disable storage of sensitive information
-                                            in persistent storage;</li></selectable>
-                                    <selectable><li>ability to specify location where downloaded
-                                            files are saved to disk;</li></selectable>
-                                    <selectable><li>configure size of cookie
-                                        cache;</li></selectable>
-                                    <selectable><li>enable/disable interaction with Graphic
-                                            Processing Units (GPUs)</li></selectable>
-                                    <selectable><li>configure the ability to advance to a web site
+                                    <selectable>enable/disable storage of sensitive information
+                                            in persistent storage</selectable>
+                                    <selectable>ability to specify location where downloaded
+                                            files are saved to disk</selectable>
+                                    <selectable>configure size of cookie
+                                        cache</selectable>
+                                    <selectable>enable/disable interaction with Graphic
+                                            Processing Units (GPUs)</selectable>
+                                    <selectable>configure the ability to advance to a web site
                                             with an invalid or unvalidated X.509
-                                        certificate;</li></selectable>
-                                    <selectable><li>enable/disable use of private browsing
-                                            sessions;</li></selectable>
-                                    <selectable><li>configure the use of an application reputation
+                                        certificate</selectable>
+                                    <selectable>enable/disable use of private browsing
+                                            sessions</selectable>
+                                    <selectable>configure the use of an application reputation
                                             service to detect malicious applications prior to
-                                            downloading them;</li></selectable>
-                                    <selectable><li>configure the use of a URL reputation service to
+                                            downloading them</selectable>
+                                    <selectable>configure the use of a URL reputation service to
                                             detect sites that contain malware or phishing
-                                            content;</li></selectable>
-                                    <selectable><li>enable/disable automatic installation of
-                                            software updates and patches;</li></selectable>
-                                    <selectable><li>enable/disable establishment of a trusted
+                                            content</selectable>
+                                    <selectable>enable/disable automatic installation of
+                                            software updates and patches</selectable>
+                                    <selectable>enable/disable establishment of a trusted
                                             channel if the TSF cannot establish a connection to
                                             determine the validity of a
-                                        certificate;</li></selectable>
-                                    <selectable><li>enable/disable ability for websites to register
-                                            protocol handlers.</li></selectable>
+                                        certificate</selectable>
+                                    <selectable>enable/disable ability for websites to register
+                                            protocol handlers.</selectable>
                                 </selectables>
-                            </ol> to an administrator according to the administrator policy. </title>
+                        </title>
                         <note role="application"> The intent of this requirement is to allow the
                             administrator of the TOE platform to configure the TOE with a policy
                             that may not be over-ridden by the user. If the administrator has not
@@ -1343,44 +1217,7 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="Class: Protection of the TSF (FPT)" id="tsffpt">
-                <f-component id="FPT_TST_EXT.1" name="Extended: TSF Self-Test">
-                    <f-element id="FPT_TST_EXT.1.1">
-                        <title>The <selectables>
-                                <selectable>TOE</selectable>
-                                <selectable>TOE platform</selectable>
-                            </selectables> shall run a suite of self-tests during initial start-up
-                            (on power on) to ensure the integrity of its executable and
-                            data.</title>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
-                            specifies the self-tests that are performed at start-up; this
-                            description should include an outline of what the tests are actually
-                            doing (e.g., verifying the integrity of the TOE executable). The TSS
-                            must include any error states that the TSF or TOE platform may enter
-                            when self-tests fail, and the conditions and actions necessary to exit
-                            the error states and resume normal operation. The evaluator shall verify
-                            that the TSS indicates these self-tests are run at start-up
-                            automatically, and do not involve any inputs from or actions by the user
-                            or operator. <h4>Guidance</h4> N/A <h4>Tests</h4>The evaluator shall
-                            perform the following tests: <testlist>
-                                <test>The evaluator shall perform the integrity check on a known
-                                    good TSF executable and verify that the check is
-                                    successful.</test>
-                                <test>The evaluator shall modify the TOE executable, performs the
-                                    integrity check on the modified TSF executable and verify that
-                                    the check fails.</test>
-                                <test>The evaluator shall perform the integrity check on known good
-                                    TOE data and verify that the check is successful.</test>
-                                <test>the evaluator shall modify the TOE configuration data, perform
-                                    the integrity check on the modified TOE data, and verify that
-                                    the check fails.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-            </subsection>
-            <subsection title="Class: Trusted Path/Channel (FTP)" id="trustedPath">
+            <subsection title="Trusted Path/Channel (FTP)" id="trustedPath">
                 <f-component id="FTP_ITC.1" name="Inter-TSF Trusted Channel">
                     <f-element id="FTP_ITC.1">
                         <title><b>Refinement:</b> The <!--                             
@@ -1480,10 +1317,11 @@
         for ensuring that requirements that may be associated with those in Appendix B, Appendix C,
         and/or Appendix D but are not listed (e.g., FMT-type requirements) are also included in the
         ST.<br/> At any time these may be included in the ST such that the TOE is still conformant
-        to this EP. <section id="userdataprotection" title="Class: User Data Protection (FDP)">
-            <f-component id="FDP_PBR_EXT.1" name="Extended: Private Browsing Sessions">
+        to this EP. 
+        <section id="userdataprotection" title="User Data Protection (FDP)">
+            <f-component id="FDP_PBR_EXT.1" name="Private Browsing Sessions">
                 <f-element id="FDP_PBR_EXT.1.1">
-                    <title>The TOE shall provide the capability to support private browsing
+                    <title>The browser shall provide the capability to support private browsing
                         sessions.</title>
                     <note role="application"> Private browsing is a mode that allows a user to
                         browse the web without storing data such as browsing history, images, and
@@ -1514,10 +1352,10 @@
     </appendix>
     <appendix id="selecationReqs" title="Selection-based Requirements">
         <!--Is text missing here?-->
-        <section id="userData" title="Class: User Data Protection (FDP)">
-            <f-component id="FDP_DEL_EXT.2" name="Extended: Deletion of Extension Information">
+        <section id="userData" title="User Data Protection (FDP)">
+            <f-component id="FDP_DEL_EXT.2" name="Deletion of Extension Information">
                 <f-element id="FDP_DEL_EXT.2.1">
-                    <title>The TOE shall provide the capability to delete extensions so that all
+                    <title>The browser shall provide the capability to delete extensions so that all
                         information is removed, including extensions, configuration elements, and
                         stored information.</title>
                     <aactivity>
@@ -1536,9 +1374,9 @@
                     </aactivity>
                 </f-element>
             </f-component>
-            <f-component id="FDP_DEL_EXT.3" name="Extended: Deletion of Plug-in Information">
+            <f-component id="FDP_DEL_EXT.3" name="Deletion of Plug-in Information">
                 <f-element id="FDP_DEL_EXT.3.1">
-                    <title>The TOE shall provide the capability to delete plug-ins so that all
+                    <title>The browser shall provide the capability to delete plug-ins so that all
                         information is removed, including plug-ins, configuration elements, and
                         stored information.</title>
                     <aactivity>
@@ -1559,23 +1397,23 @@
                 </f-element>
             </f-component>
         </section>
-        <section id="tsfProtection" title="Class: Protection of the TSF (FPT)">
-            <f-component id="FPT_TUD_EXT.2" name="Extended: Trusted Extension Update">
+        <section id="tsfProtection" title="Protection of the TSF (FPT)">
+            <f-component id="FPT_TUD_EXT.2" name="Trusted Extension Update">
                 <f-element id="FPT_TUD_EXT.2.1">
-                    <title>The TOE shall provide the capability to query the current version of the
+                    <title>The browser shall provide the capability to query the current version of the
                         extension.</title>
                 </f-element>
                 <f-element id="FPT_TUD_EXT.2.2">
-                    <title>The TOE shall provide the capability to initiate extension
+                    <title>The browser shall provide the capability to initiate extension
                         updates.</title>
                 </f-element>
                 <f-element id="FTP_TUD_EXT.2.3">
-                    <title>The TOE shall provide a means to verify extensions and extension updates
+                    <title>The browser shall provide a means to verify extensions and extension updates
                         using a digital signature mechanism prior to installing the extension or
                         extension updates.</title>
                 </f-element>
                 <f-element id="FTP_TUD_EXT.2.4">
-                    <title>The TOE shall prevent websites from automatically installing
+                    <title>The browser shall prevent websites from automatically installing
                         extensions.</title>
                     <note role="application"> Extensions are bundles of code that are added to the
                         browser to add specific functionality that the browser does not provide by
@@ -1611,24 +1449,24 @@
                     </aactivity>
                 </f-element>
             </f-component>
-            <f-component id="FPT_TUD_EXT.3" name="Extended: Trusted Plug-in Update">
+            <f-component id="FPT_TUD_EXT.3" name="Trusted Plug-in Update">
                 <f-element id="FPT_TUD_EXT.3.1">
-                    <title>The TOE shall provide the ability to query the current version of the
+                    <title>The browser shall provide the ability to query the current version of the
                         plug-in.</title>
                 </f-element>
                 <f-element id="FPT_TUD_EXT.3.2">
-                    <title>The TOE shall provide the ability to initiate the downloading of plug-ins
+                    <title>The browser shall provide the ability to initiate the downloading of plug-ins
                         and plug-in updates.</title>
                 </f-element>
                 <f-element id="FTP_TUD_EXT.3.3">
-                    <title>The TOE shall provide a means to verify plug-ins using a digital
+                    <title>The browser shall provide a means to verify plug-ins using a digital
                         signature mechanism and <selectables>
                             <selectable>published hash</selectable>
                             <selectable>no other functions</selectable>
                         </selectables> prior to installing the plug-in.</title>
                 </f-element>
                 <f-element id="FTP_TUD_EXT.3.4">
-                    <title>The TOE shall prevent websites from automatically installing
+                    <title>The browser shall prevent websites from automatically installing
                         plug-ins.</title>
                     <aactivity>
                         <h4>TSS</h4> The evaluator shall examine the TSS to verify that it states
@@ -1662,7 +1500,7 @@
         specify security functionality that is desirable and these requirements are contained in
         this Annex. It is expected that these requirements will transition from objective
         requirements to baseline requirements in future versions of this EP. 
-        <section id="audit" title="Class: Security Audit (FAU)">
+        <section id="audit" title="Security Audit (FAU)">
             <f-component id="FAU_GEN.1" name="Audit Data Generation">
                 <f-element id="FAU_GEN.1.1">
                     <title>The <selectables>
@@ -1829,27 +1667,18 @@
                 </f-element>
             </f-component>
         </section>
-        <section id="cryptoSupportClass" title="Class: Cryptographic Support (FCS)">
-            <f-component id="FCS_STS_EXT.1" name="Extended: Strict Transport Security">
+        <section id="cryptoSupportClass" title="Cryptographic Support (FCS)">
+            <f-component id="FCS_STS_EXT.1" name="Strict Transport Security">
                 <f-element id="FCS_STS_EXT.1.1">
-                    <title>The <selectables>
-                            <selectable>TOE</selectable>
-                            <selectable>TOE platform</selectable>
-                        </selectables> shall implement HTTP Strict-Transport-Security according to
-                        RFC 6797</title>
+                    <title>The browser shall implement HTTP Strict-Transport-Security according to
+                        RFC 6797.</title>
                 </f-element>
                 <f-element id="FCS_STS_EXT.1.2">
-                    <title>The <selectables>
-                            <selectable>TOE</selectable>
-                            <selectable>TOE platform</selectable>
-                        </selectables> shall retain persistent data signaling HSTS enablement for
+                    <title>The browser shall retain persistent data signaling HSTS enablement for
                         the time span declared by the website in a max-age directive.</title>
                 </f-element>
                 <f-element id="FCS_STS_EXT.1.3">
-                    <title>The <selectables>
-                            <selectable>TOE</selectable>
-                            <selectable>TOE platform</selectable>
-                        </selectables> shall cache the freshest Strict Security policy
+                    <title>The browser shall cache the freshest Strict Security policy
                         information.</title>
                     <note role="application"> If a browser receives the HSTS header from a website,
                         all future HTTP sessions between the TOE and the domain or superdomain of
@@ -1878,10 +1707,10 @@
                 </f-element>
             </f-component>
         </section>
-        <section id="objuserDataProtection" title="Class: User Data Protection (FDP)">
-            <f-component id="FDP_ACC_EXT.1" name="Extended: Access Control on Domains">
+        <section id="objuserDataProtection" title="User Data Protection (FDP)">
+            <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
                 <f-element id="FDP_ACC_EXT.1.1">
-                    <title>The TOE shall provide the capability to group domains and apply access
+                    <title>The browser shall provide the capability to group domains and apply access
                         restrictions to specific sets of domains.</title>
                     <note role="application"> An example of this functionality is the concept of
                         zones in Internet Explorer. </note>
@@ -1902,9 +1731,9 @@
                     </aactivity>
                 </f-element>
             </f-component>
-            <f-component id="FDP_PST_EXT.1" name="Extended: Storage of Persistent Information">
+            <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                 <f-element id="FDP_PST_EXT.1.1">
-                    <title>The TOE shall provide the capability to operate without storing
+                    <title>The browser shall provide the capability to operate without storing
                         persistent data to the file system.</title>
                     <note role="application"> Exceptions from this requirement are credentials and
                         configuration information. </note>
@@ -1923,11 +1752,11 @@
                 </f-element>
             </f-component>
         </section>
-        <section id="objTsfProtection" title="Class: Protection of the TSF (FPT)">
+        <section id="objTsfProtection" title="Protection of the TSF (FPT)">
             <f-component id="FPT_INT_EXT.2"
-                name="Extended: Interactions with Application Reputation Services">
+                name="Interactions with Application Reputation Services">
                 <f-element id="FPT_INT_EXT.2.1">
-                    <title>The TOE shall utilize an application reputation service to prevent
+                    <title>The browser shall utilize an application reputation service to prevent
                         downloading of malicious applications.</title>
                     <note role="application"> An application reputation service is an online service
                         that identifies malicious applications; it is used to detect such
@@ -1954,9 +1783,9 @@
                 </f-element>
             </f-component>
             <f-component id="FPT_INT_EXT.3"
-                name="Extended: Interactions with URL Reputation Services">
+                name="Interactions with URL Reputation Services">
                 <f-element id="FPT_INT_EXT.3.1">
-                    <title>The TOE shall utilize a URL reputation service to prevent connections
+                    <title>The browser shall utilize a URL reputation service to prevent connections
                         with malicious websites.</title>
                     <note role="application"> A URL reputation service is an online service that
                         identifies websites with malicious or phishing content applications; it is
@@ -2007,21 +1836,27 @@
    
 
         <appendix id="biblio" title="References">
-            <section id="ref">
-                <description xmlns="http://common-criteria.rhcloud.com/ns/cc">Common Criteria
-                    for Information Technology Security Evaluation <ul>
-                        <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf"
-                            >Part 1: Introduction and General Model</a>, CCMB-2012-09-001,
-                            Version 3.1 Revision 4, September 2012.</li>
-                        <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf"
-                            >Part 2: Security Functional Components</a>, CCMB-2012-09-002,
-                            Version 3.1 Revision 4, September 2012.</li>
-                        <li><a href="http://common-criteria.rhcloud.com/application/output/application.html">
-                            Protection Profile for Application Software</a>, Version 1.1,
-                                    2014-11-05. </li>
-                </ul>
-                </description>      
-            </section>
+            <bibliography>
+            <entry id="bibCC">
+                 <tag>CC</tag>
+                 <description>Common Criteria for Information Technology Security Evaluation - <ul>
+                     <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part
+                         1: Introduction and General Model</a>, CCMB-2012-09-001, Version 3.1 Revision 4,
+                       September 2012.</li>
+                     <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part
+                         2: Security Functional Components</a>, CCMB-2012-09-002, Version 3.1 Revision 4,
+                       September 2012.</li>
+                     <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part
+                         3: Security Assurance Components</a>, CCMB-2012-09-003, Version 3.1 Revision 4,
+                       September 2012.</li>
+                   </ul></description>
+            </entry>
+            <entry id="bibCC">
+                 <tag>AppPP</tag>
+                 <description><a href="https://www.niap-ccevs.org/pp">Protection Profile for Application Software</a>
+                </description>
+            </entry>
+            </bibliography>
         </appendix>
 
     <appendix title="Acronyms" id="acronyms">
