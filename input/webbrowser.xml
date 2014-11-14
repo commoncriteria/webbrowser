@@ -620,7 +620,8 @@
                 </f-component>
                 <f-component id="FDP_DEL_EXT.1" name="Deletion of Browser Data">
                     <f-element id="FDP_DEL_EXT.1.1">
-                        <title>The browser shall provide the capability to delete <selectables>
+                        <title>The browser shall provide the capability to delete
+                            <selectables linebreak="yes">
                                 <selectable>browser cache</selectable>
                                 <selectable>history</selectable>
                                 <selectable>passwords</selectable>
@@ -631,7 +632,8 @@
                             </selectables> from the TOE when invoked by the user.</title>
                     </f-element>
                     <f-element id="FDP_DEL_EXT.1.2">
-                        <title>The browser shall provide the capability to delete <selectables>
+                        <title>The browser shall provide the capability to delete
+                            <selectables linebreak="yes">
                                 <selectable>browser cache</selectable>
                                 <selectable>history</selectable>
                                 <selectable>passwords</selectable>
@@ -671,7 +673,7 @@
                 </f-component>
                 <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
-                        <title>The TOE shall ensure that web page rendering is performed in a
+                        <title>The browser shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process cannot directly access the TOE platform's
                                     file system;</li>
@@ -763,12 +765,12 @@
                 </f-component>
                 <f-component id="FDP_SOP_EXT.1" name="Same Origin Policy">
                     <f-element id="FDP_SOP_EXT.1.1">
-                        <title>The TOE shall ensure that content retrieved from one origin cannot
+                        <title>The browser shall ensure that content retrieved from one origin cannot
                             interact with content retrieved from another origin without consent from
                             the origin whose content is being retrieved.</title>
                     </f-element>
-                    <f-element id="FDP_SOP_EXT.1.2 The TOE">
-                        <title>shall not allow same origin policy exceptions for different
+                    <f-element id="FDP_SOP_EXT.1.2">
+                        <title>The browser shall not allow same origin policy exceptions for different
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
                             6454, “The Web Origin Concept.”<br/> Origin is defined as the
@@ -807,7 +809,7 @@
                 </f-component>
                 <f-component id="FDP_STR_EXT.1" name="Secure Transmission of Cookie Data">
                     <f-element id="FDP_STR_EXT.1.1">
-                        <title>The TOE shall ensure that cookies containing the ―secure‖ attribute
+                        <title>The browser shall ensure that cookies containing the ―secure‖ attribute
                             in the set-cookie header are sent over HTTPS.</title>
                         <note role="application"> The set-cookie header functionality is described
                             in RFC 6265, “HTTP State Management Mechanism.” </note>
@@ -831,7 +833,8 @@
                 </f-component>
                 <f-component id="FDP_TRK_EXT.1" name="Tracking Information Collection">
                     <f-element id="FDP_TRK_EXT.1.1">
-                        <title>The TOE shall support the ability of websites to collect <selectables>
+                        <title>The browser shall support the ability of websites to collect
+                            <selectables linebreak="yes">
                                 <selectable>web sites accessed</selectable>
                                 <selectable>geo-location information</selectable>
                                 <selectable>system configuration</selectable>
@@ -842,7 +845,7 @@
                             </selectables> pertaining to the TOE user.</title>
                     </f-element>
                     <f-element id="FDP_TRK_EXT.1.2">
-                        <title>The TOE shall provide notification to the user when tracking
+                        <title>The browser shall provide notification to the user when tracking
                             information is requested by a website.</title>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
@@ -929,7 +932,7 @@
                             automatically.</title>
                     </f-element>
                     <f-element id="FPT_DNL_EXT.1.2">
-                        <title>The TOE shall present the user with the option to either download or
+                        <title>The browser shall present the user with the option to either download or
                             discard the executable.</title>
                         <note role="application"> In this context, an executable is a file
                             containing compiled code for a software program that, when launched,
@@ -961,7 +964,7 @@
                 </f-component>
                 <f-component id="FPT_DNL_EXT.2" name="Download Location">
                     <f-element id="FPT_DNL_EXT.2.1">
-                        <title>The TOE shall have the capability to specify where downloads are
+                        <title>The browser shall have the capability to specify where downloads are
                             saved.</title>
                         <aactivity>
                             <h4>TSS</h4> N/A <h4>Guidance</h4> The evaluator shall examine the
@@ -983,11 +986,11 @@
                 <f-component id="FPT_INT_EXT.1"
                     name="Interactions with Background Processes">
                     <f-element id="FPT_INT_EXT.1.1">
-                        <title>The TOE shall shut down any TOE-spawned background processes when the
-                            TOE exits.</title>
+                        <title>The browser shall shut down any browser-spawned background processes
+                            when the browser exits.</title>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
-                            all TOE-spawned processes that run while the TOE is running and
+                            all browser-spawned processes that run while the TOE is running and
                             describes the ability to terminate these processes when the TOE exits.
                             The TSS should also describe the nature of the background processes, the
                             circumstances under which they are spawned, the process/image names
@@ -1005,7 +1008,8 @@
                 </f-component>
                 <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
-                        <title>The browser shall support the capability to execute signed <selectables>
+                        <title>The browser shall support the capability to execute signed
+                            <selectables>
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -1015,7 +1019,8 @@
                             </selectables>mobile code.</title>
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.2">
-                        <title>The TOE shall support the capability to execute unsigned <selectables>
+                        <title>The browser shall support the capability to execute unsigned
+                            <selectables>
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -1025,7 +1030,8 @@
                             </selectables> mobile code.</title>
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.3">
-                        <title>The TOE shall support the capability to execute <selectables>
+                        <title>The browser shall support the capability to execute
+                            <selectables>
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -1852,8 +1858,9 @@
                    </ul></description>
             </entry>
             <entry id="bibCC">
-                 <tag>AppPP</tag>
-                 <description><a href="https://www.niap-ccevs.org/pp">Protection Profile for Application Software</a>
+                <tag>AppPP</tag>
+                <description><a href="https://www.niap-ccevs.org/pp/PP_APP_v1.1/">Protection Profile for
+                    Application Software</a>
                 </description>
             </entry>
             </bibliography>
