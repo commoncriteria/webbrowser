@@ -1018,7 +1018,10 @@
                                     TOE]</selectable>
                             </selectables>mobile code.</title>
                     </f-element>
-                    <f-element id="FPT_MCD_EXT.1.2">
+<!--                    
+Commented out because this is functionality, not security functionality
+
+<f-element id="FPT_MCD_EXT.1.2">
                         <title>The browser shall support the capability to execute unsigned
                             <selectables>
                                 <selectable>ActiveX</selectable>
@@ -1041,6 +1044,7 @@
                             </selectables> mobile code from an untrusted or unverified
                             source.</title>
                     </f-element>
+					-->
                     <f-element id="FPT_MCD_EXT.1.3">
                         <title>The browser shall notify the user when unsigned, untrusted or unverified
                             mobile code is encountered.</title>
@@ -1193,7 +1197,11 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FMT_SMR.1" name="Security Management Roles">
+<!--
+This seems like an OS requirement; the TOE should instead accept management from the roles
+via FMT_SMF and FMT_MOF.
+
+<f-component id="FMT_SMR.1" name="Security Management Roles">
                     <f-element id="FMT_SMR.1.1">
                         <title>The <selectables>
                                 <selectable>TOE</selectable>
@@ -1223,14 +1231,17 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="Trusted Path/Channel (FTP)" id="trustedPath">
+-->
+
+ <!--
+ This may be covered in the App PP via FTP_DIT_EXT.1
+
+ <subsection title="Trusted Path/Channel (FTP)" id="trustedPath">
                 <f-component id="FTP_ITC.1" name="Inter-TSF Trusted Channel">
                     <f-element id="FTP_ITC.1">
-                        <title><b>Refinement:</b> The <!--                             
-                                <selectables>
-                                <selectable></selectable>
-                                <selectable></selectable>
-                            </selectables> --><selectables>
+                        <title><b>Refinement:</b> 
+						The
+                            <selectables>
                                 <selectable>TOE</selectable>
                                 <selectable>TOE platform</selectable>
                             </selectables> shall use <selectables>
@@ -1284,6 +1295,7 @@
                     </f-element>
                 </f-component>
             </subsection>
+			-->
         </section>
     </chapter>
 
@@ -1358,7 +1370,9 @@
     </appendix>
     <appendix id="selecationReqs" title="Selection-based Requirements">
         <!--Is text missing here?-->
-        <section id="userData" title="User Data Protection (FDP)">
+
+<!-- Deleted because these don't seem that important
+<section id="userData" title="User Data Protection (FDP)">
             <f-component id="FDP_DEL_EXT.2" name="Deletion of Extension Information">
                 <f-element id="FDP_DEL_EXT.2.1">
                     <title>The browser shall provide the capability to delete extensions so that all
@@ -1403,6 +1417,8 @@
                 </f-element>
             </f-component>
         </section>
+-->
+
         <section id="tsfProtection" title="Protection of the TSF (FPT)">
             <f-component id="FPT_TUD_EXT.2" name="Trusted Extension Update">
                 <f-element id="FPT_TUD_EXT.2.1">
