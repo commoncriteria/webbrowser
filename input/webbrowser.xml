@@ -831,8 +831,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_TRK_EXT.1" name="Tracking Information Collection">
-                    <f-element id="FDP_TRK_EXT.1.1">
+                <f-component id="fdp_trk_ext.1" name="Tracking Information Collection">
+      <!--              <f-element id="fdp_trk.ext.1.1">
                         <title>The browser shall support the ability of websites to collect
                             <selectables linebreak="yes">
                                 <selectable>web sites accessed</selectable>
@@ -843,8 +843,8 @@
                                 <selectable>crash conditions</selectable>
                                 <selectable>[assignment: other tracking information]</selectable>
                             </selectables> pertaining to the TOE user.</title>
-                    </f-element>
-                    <f-element id="FDP_TRK_EXT.1.2">
+                    </f-element> -->
+                    <f-element id="fdp_trk_ext.1.1">
                         <title>The browser shall provide notification to the user when tracking
                             information is requested by a website.</title>
                         <aactivity>
