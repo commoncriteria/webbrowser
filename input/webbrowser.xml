@@ -868,15 +868,10 @@
                 </f-component>
             </subsection>
             <subsection title="Identification and Authentication (FIA)" id="fia">
-                <f-component id="FIA_X509_EXT.2" name="X509 Authentication">
-                    <f-element id="FIA_X509_EXT.2.4">
-                        <title>The <selectables>
-                                <selectable>TOE</selectable>
-                                <selectable>TOE platform</selectable>
-                            </selectables> shall not install code if the code signing certificate is
+                <f-component id="FIA_X509_EXT.1" name="X509 Authentication">
+                    <f-element id="FIA_X509_EXT.1.2">
+                        <title>The browser shall not install code if the code signing certificate is
                             deemed invalid.</title>
-                        <note role="application"> Certificates may optionally be used for trusted
-                            updates of system software (FPT_TUD_EXT.1.3). </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
                             describes how the TOE chooses which certificates to use.<br/> The
@@ -947,27 +942,6 @@
                                     executables. The evaluator shall verify that the TOE always
                                     presents a dialog box with the option to either download the
                                     executable to the file system or discard the executable.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FPT_DNL_EXT.2" name="Download Location">
-                    <f-element id="FPT_DNL_EXT.2.1">
-                        <title>The browser shall have the capability to specify where downloads are
-                            saved.</title>
-                        <aactivity>
-                            <h4>TSS</h4> N/A <h4>Guidance</h4> The evaluator shall examine the
-                            operational guidance to ensure it describes the default location for
-                            downloads and instructions for modifying the location. <h4>Tests</h4>The
-                            evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall navigate to a website that serves files
-                                    and shall to download a file. The evaluator shall inspect the
-                                    default location specified in the operational guidance and shall
-                                    verify that the download is present.</test>
-                                <test>The evaluator shall modify the location where downloaded files
-                                    are saved. The evaluator shall attempt to download a file from a
-                                    website that serves files and shall verify that the file is
-                                    saved to the configured location.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
