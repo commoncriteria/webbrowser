@@ -809,10 +809,10 @@
                 </f-component>
                 <f-component id="FDP_STR_EXT.1" name="Secure Transmission of Cookie Data">
                     <f-element id="FDP_STR_EXT.1.1">
-                        <title>The browser shall ensure that cookies containing the ―secure‖ attribute
+                        <title>The browser shall ensure that cookies containing the <i>secure</i> attribute
                             in the set-cookie header are sent over HTTPS.</title>
-                        <note role="application"> The set-cookie header functionality is described
-                            in RFC 6265, “HTTP State Management Mechanism.” </note>
+                        <note role="application">The set-cookie header functionality is described
+                            in RFC 6265 <i>HTTP State Management Mechanism</i>.</note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
                             the TOE‘s support for the ―secure‖ attribute of the set-cookie header in
@@ -869,17 +869,6 @@
             </subsection>
             <subsection title="Identification and Authentication (FIA)" id="fia">
                 <f-component id="FIA_X509_EXT.2" name="X509 Authentication">
-                    <f-element id="FIA_X509_EXT.2.3">
-                        <title>The <selectables>
-                                <selectable>TOE</selectable>
-                                <selectable>TOE platform</selectable>
-                            </selectables> shall notify the user if the peer certificate is deemed
-                            invalid during trusted communication channel establishment.</title>
-                        <note role="application"> Trusted communication channels include any of TLS,
-                            HTTPS, or DTLS performed by the TSF or TOE platform. Validity is
-                            determined by the certificate path, the expiration date, and the
-                            revocation status in accordance with RFC 5280. </note>
-                    </f-element>
                     <f-element id="FIA_X509_EXT.2.4">
                         <title>The <selectables>
                                 <selectable>TOE</selectable>
