@@ -618,7 +618,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_DEL_EXT.1" name="Deletion of Browser Data">
+<!--                <f-component id="FDP_DEL_EXT.1" name="Deletion of Browser Data">
                     <f-element id="FDP_DEL_EXT.1.1">
                         <title>The browser shall provide the capability to delete
                             <selectables linebreak="yes">
@@ -671,6 +671,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+				-->
                 <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
@@ -869,7 +870,7 @@
             </subsection>
             <subsection title="Identification and Authentication (FIA)" id="fia">
                 <f-component id="FIA_X509_EXT.1" name="X509 Authentication">
-                    <f-element id="FIA_X509_EXT.1.2">
+                    <f-element id="FIA_X509_EXT.1.1">
                         <title>The browser shall not install code if the code signing certificate is
                             deemed invalid.</title>
                         <aactivity>
