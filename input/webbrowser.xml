@@ -1486,7 +1486,7 @@ via FMT_SMF and FMT_MOF.
         specify security functionality that is desirable and these requirements are contained in
         this Annex. It is expected that these requirements will transition from objective
         requirements to baseline requirements in future versions of this EP. 
-        <section id="audit" title="Security Audit (FAU)">
+<!--        <section id="audit" title="Security Audit (FAU)">
             <f-component id="FAU_GEN.1" name="Audit Data Generation">
                 <f-element id="FAU_GEN.1.1">
                     <title>The <selectables>
@@ -1630,7 +1630,7 @@ via FMT_SMF and FMT_MOF.
                             <selectable>TOE</selectable>
                             <selectable>TOE platform</selectable>
                         </selectables> shall be able to select the set of events to be audited from
-                        the set of all auditable events based on the following attributes: <ol><!-- HERE these have letters in the published version -->
+                        the set of all auditable events based on the following attributes: <ol>
                             <li>event type;</li>
                             <li>success of auditable security events;</li>
                             <li>failure of auditable security events; and</li>
@@ -1653,6 +1653,7 @@ via FMT_SMF and FMT_MOF.
                 </f-element>
             </f-component>
         </section>
+		-->
         <section id="cryptoSupportClass" title="Cryptographic Support (FCS)">
             <f-component id="FCS_STS_EXT.1" name="Strict Transport Security">
                 <f-element id="FCS_STS_EXT.1.1">
