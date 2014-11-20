@@ -202,7 +202,7 @@
 
       <section title="Compliant Targets of Evaluation" id="TOEdescription"> 
         This document provides an extended set of Security
-        Functional Requirements (SFRs) for web browsers, which is the Target of Evaluation
+        Functional Requirements (SFRs) for a web browser, which is the Target of Evaluation
         (TOE).
         <br/>
         The Protection Profile for Application Software defines the baseline SFRs for
@@ -220,14 +220,7 @@
         browser functionality, but also introduced new security concerns. Being the principal method
         for accessing the Internet, and due to their complexity and the information that they
         process, browsers are a natural target for attackers. As a result, it is paramount that the
-        security of web browsers be improved to reduce the risk to client machines and enterprise
-        networks.
-        <BR/>
-        This document is intended to improve the security of browsers by encouraging
-        the use of operating system security services and requiring the use of sandboxing
-        technologies and environmental mitigations provided by the underlying platform.
-        Additionally, these requirements define security functionality that browsers themselves
-        must provide.
+        security of web browsers be assured to reduce the risk to networks.
         </section>
 
         <section title="Use Cases" id="usecases"> Web browsers are used to perform many tasks
@@ -237,7 +230,7 @@
                     <description> Browsers are used to retrieve and display content on the web, such as
                     web pages, streaming media, images and specialized formats (e.g., Java, Flash,
                     Word, PDF). They can also be used to write content to web sites (web 2.0 – e.g.,
-                    Facebook). Web surfing can be done over the Internet or Intranet.
+                    Facebook). Web surfing can be done over the Internet or within an Intranet.
                 </description>
                 </usecase>
             <usecase title="Remote Administration Client"> 
@@ -267,24 +260,22 @@
       The security problem is described in terms of the threats that the web browser is
       expected to address, assumptions about the operational environment, and any
       organizational security policies that it is expected to enforce.
-      <p/>
-      Note that this EP does not repeat the threats identified in the
+      <br/>
+      This Extended Package does not repeat the threats identified in the
       <i>Protection Profile for Application Software</i> (App PP), though they all apply given the
       conformance and hence dependence of this EP on it.  Together the threats of the
       App PP and those defined in this EP describe the set of security
       threats addressed by a web browser as the Target of Evaluation.
+	  <br/>
       Notably, browsers are particularly at risk from the Network Attack 
       threat identified in the App PP.
       Attackers can use phishing or another social engineering technique to persuade a user to visit a
       malicious site. Users may also unintentionally or intentionally visit malicious
       sites in the course of web browsing. Such sites then present malicious content to the
-      user‘s browser to exploit it and perform installation of malware, often with no
+      user's browser to exploit it and perform installation of malware, often with no
       indication to the user. 
-        <section title="Threats" id="threattable"> The following threats should be integrated into
-            the threats that are specific to the technology by the EP authors when including the
-            requirements described in this document. Modifications, omissions, and additions to the
-            requirements may impact this list, so the EP author should modify or delete these
-            threats as appropriate. 
+        <section title="Threats" id="threattable">The following threats are specific to web browsers, and 
+		    represent an addition to those identified in the App PP.
             <threats>
                 <threat id="T.FLAWED_ADDON">
                     <description>Malicious or exploitable extensions or plug-ins could be used knowingly or
@@ -306,8 +297,9 @@
                 <threat id="T.SAMEORIGIN_VIOLATION">
                     <description>
                 Violating the same-origin policy is a specialized type of network attack which involves
-                web content violating access control policies that a browser uses to separate different web domains.
-                It is worth specifically identifying as a threat to web browsers, since they implement the
+                web content violating access control policies that a browser uses to separate the content of
+				different web domains.
+                It is specifically identified as a threat to web browsers, since they implement the
                 access control policies that are violated in these attacks.
                 <br/> Some examples of attacks which involve same origin violations are:
                 <ul>
