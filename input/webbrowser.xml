@@ -841,7 +841,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_INT_EXT.1" name="Interactions with Background Processes">
+<!--                <f-component id="FPT_INT_EXT.1" name="Interactions with Background Processes">
                     <f-element id="FPT_INT_EXT.1.1">
                         <title>The browser shall shut down any browser-spawned background processes
                             when the browser exits.</title>
@@ -862,7 +862,7 @@
                             </testlist>
                         </aactivity>
                     </f-element>
-                </f-component>
+                </f-component> -->
                 <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
                         <title>The browser shall support the capability to execute signed <selectables>
