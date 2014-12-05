@@ -23,9 +23,21 @@
             <subject>Release - Protection Profile for Web Browsers</subject>
         </entry>
         <entry>
+            <version>v 1.9</version>
+            <date>2014-12-04</date>
+            <subject>Interim Draft - Update as Extended Package of the Protection Profile for Application Software</subject>
+        </entry>
+    </RevisionHistory>
+    <RevisionHistory role="release">
+        <entry>
+            <version>v 1.0</version>
+            <date>2014-03-31</date>
+            <subject>Initial release as Protection Profile for Web Browsers</subject>
+        </entry>
+        <entry>
             <version>v 2.0</version>
-            <date>TBD</date>
-            <subject>Draft - Application Software Extended Package for Web Browsers</subject>
+            <date>2014-12-12</date>
+            <subject>Update as Extended Package of the Protection Profile for Application Software</subject>
         </entry>
     </RevisionHistory>
     <chapter title="Introduction" id="int">
@@ -220,26 +232,31 @@
             environments for web content. The use of browsers to administer accounts, servers or
             embedded systems remotely requires them to handle sensitive information securely.
             Innovations such as tabs, extensions and HTML5 have not only increased browser
-            functionality, but also introduced new security concerns. Being the principal method for
+            functionality, but also introduced new security concerns. As users' principal method for
             accessing the Internet, and due to their complexity and the information that they
             process, browsers are a natural target for attackers. As a result, it is paramount that
             the security of web browsers be assured to reduce the risk to networks. </section>
 
-        <section title="Use Cases" id="usecases"> Web browsers are used to perform many tasks that
-            can be categorized into three primary use cases. <usecases>
+        <section title="Use Cases" id="usecases"> Web browsers are used to perform many tasks, and
+		    these can be categorized into three primary use cases. <usecases>
                 <usecase title="Surfing the Web">
-                    <description> Browsers are used to retrieve and display content on the web, such
-                        as web pages, streaming media, images and specialized formats (e.g., Java,
-                        Flash, Word, PDF). They can also be used to write content to web sites (web
-                        2.0 – e.g., Facebook). Web surfing can be done over the Internet or within
-                        an Intranet. </description>
+					<description> Browsers are used to retrieve and display and
+					execute content from the web, such as web pages, streaming
+					media, images and specialized formats (e.g., Java, Flash,
+					PDF). They can also be used to write content to web
+					sites (web 2.0 – e.g., Facebook). Web surfing can be done
+					over the Internet or within an Intranet.
+					</description>
                 </usecase>
                 <usecase title="Remote Administration Client">
                     <description> Browsers are used to provide remote administration interfaces for
-                        systems such as servers, network devices and embedded systems, such as
-                        SCADA, smart TVs and thermostats. As opposed to surfing the web, where the
-                        browser is interacting with unknown servers, the browser, acting as a Remote
-                        Administration Client, is connecting to a server that the user trusts.
+						systems such as servers, network devices and embedded
+						systems, to include supervisory control and data
+						acquisition (SCADA) sytems, smart TVs and thermostats.
+						As opposed to surfing the web, where the browser may be
+						interacting with untrusted servers, the browser, acting
+						as a Remote Administration Client, is connecting to a
+						server that the user trusts.
                     </description>
                 </usecase>
                 <usecase title="Content Creation">
@@ -258,10 +275,12 @@
     <chapter title="Security Problem Description" id="spd"> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
         operational environment, and any organizational security policies that it is expected to
-        enforce. <br/> This Extended Package does not repeat the threats identified in the
-            <i>Protection Profile for Application Software</i> (App PP), though they all apply given
-        the conformance and hence dependence of this EP on it. Together the threats of the App PP
-        and those defined in this EP describe the set of security threats addressed by a web browser
+        enforce. <br/> This Extended Package does not repeat the threats, assumptions, and
+		organizational security policies identified in the
+        <i>Protection Profile for Application Software</i> (App PP), though they all apply given
+        the conformance and hence dependence of this EP on it. Together the threats, assumptions and
+		organzational security policites of the App PP
+        and those defined in this EP describe those addressed by a web browser
         as the Target of Evaluation. <br/> Notably, browsers are particularly at risk from the
         Network Attack threat identified in the App PP. Attackers can use phishing or another social
         engineering technique to persuade a user to visit a malicious site. Users may also
@@ -271,28 +290,23 @@
             id="threattable">The following threats are specific to web browsers, and represent an
             addition to those identified in the App PP. <threats>
                 <threat id="T.FLAWED_ADDON">
-                    <description>Malicious or exploitable extensions or plug-ins could be used
-                        knowingly or unknowingly by a developer, possibly resulting in the
-                        capability of attacks against the platform‘s system software. Web browser
-                        functionality can be extended with integration of third-party utilities and
-                        tools. This expanded set of capabilities is made possible via the use of
-                        browser plug-ins and extensions. The tight integration between the basic
-                        browser code and the new capabilities that plug-ins and extensions provide
-                        increases the risk that they could inject serious flaws into the browser
-                        application, either maliciously by an attacker, or accidentally by a
-                        developer. These flaws enable undesirable behaviors, including, but not
-                        limited to, allowing unauthorized access to sensitive information in the
+                    <description>
+						Web browser functionality can be extended through the
+						integration of third-party utilities and tools.
+						Malicious or vulnerable extensions or plug-ins could
+						result attacks against the system. 
+						Such attacks allowing unauthorized access to sensitive information in the
                         browser, unauthorized access to the device‘s file system, or even privilege
                         escalation that enables unauthorized access to other applications or the
                         operating system. </description>
                 </threat>
                 <threat id="T.SAMEORIGIN_VIOLATION">
                     <description> Violating the same-origin policy is a specialized type of network
-                        attack which involves web content violating access control policies that a
-                        browser uses to separate the content of different web domains. It is
+                        attack (covered generally in the App PP) which involves web content violating 
+						access control policies enforced by a web browser to separate the content of different web domains. It is
                         specifically identified as a threat to web browsers, since they implement
-                        the access control policies that are violated in these attacks. <br/> Some
-                        examples of attacks which involve same origin violations are: <ul>
+                        the access control policies that are violated in these attacks. 
+						<br/> Attacks which involve same origin violations are: <ul>
                             <li>Insufficient protection of session tokens can lead to session
                                 hijacking, where a token is captured and reused in order to gain the
                                 privileges of the user who initiated the session.</li>
@@ -310,41 +324,6 @@
                     </description>
                 </threat>
             </threats>
-        </section>
-        <section title="Assumptions" id="assumptions"> The specific conditions listed in the
-            following subsections are assumed to exist in the TOE's Operational Environment. These
-            assumptions include both practical realities in the development of the TOE security
-            requirements and the essential environmental conditions on the use of the TOE.<br/> ST
-            authors should ensure that the assumptions still hold for their particular technology;
-            the table should be modified as appropriate. <table>
-                <TR class="header">
-                    <TH colspan="2">Table 1: TOE Assumptions</TH>
-                </TR>
-                <TR>
-                    <TH>Assumption Name</TH>
-                    <TH>Assumption Definition</TH>
-                </TR>
-                <TR>
-                    <TD>A.PLATFORMS</TD>
-                    <TD>The web browsers described in this document will run on any operating
-                        system, regardless of the underlying platform.</TD>
-                </TR>
-                <TR>
-                    <TD>A.TRUSTED_ADMIN</TD>
-                    <TD>TOE Administrators are trusted to follow and apply all administrator
-                        guidance in a trusted manner.</TD>
-                </TR>
-                <TR>
-                    <TD>A.TRUSTED_USER</TD>
-                    <TD>The Web Browser User is not malicious, and exercises appropriate
-                        precautions.</TD>
-                </TR>
-                <TR>
-                    <TD>A.PLATFORM_FUNCTIONS</TD>
-                    <TD>The platform supporting the client shall offer cryptography, file system and
-                        other operating system capabilities.</TD>
-                </TR>
-            </table>
         </section>
     </chapter>
     <chapter title="Security Objectives" id="objectives">
