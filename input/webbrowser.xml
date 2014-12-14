@@ -339,17 +339,12 @@
                         is properly isolated to disallow access. </description>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
-                    <description> To ensure the integrity of the browser is maintained, conformant
-                        TOEs will perform self-tests to insure the integrity of software and data
-                        has been maintained.<br/> To address issues associated with malicious or
-                        flawed browser software, plug-ins or extensions, conformant TOEs must
-                        implement mechanisms to ensure the integrity of browser software, plug-ins
-                        and extensions, and to ensure that they come from legitimate sources. The
-                        TOE must provide mechanisms and enforce policies that enable any browser
-                        software, plug-ins and extensions, as well as any subsequent updates to
-                        them, to be verified upon installation and execution. In addition, the TOE
-                        shall also control the downloading and launching of executables.<br/>
-                    </description>
+                    <description>
+                        To address issues associated with malicious or
+                        flawed plug-ins or extensions, conformant browsers 
+                        implement mechanisms to ensure their integrity.
+                        This includes verification at installation time and update.
+					</description>
                 </SO>
             </SOs>
         </section>
