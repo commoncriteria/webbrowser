@@ -416,9 +416,32 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="User Data Protection (FDP)" id="fdp">
+            <subsection title="User Data Protection (FDP)" id="fdp">                
+                <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
+                    <f-element id="FDP_ACC_EXT.1.1" status="objective">
+                        <title>The browser shall provide the capability to group domains and apply
+                            access restrictions to specific sets of domains.</title>
+                        <note role="application"> An example of this functionality is the concept of
+                            zones in Internet Explorer. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            how the TSF supports the grouping of domains and applying access
+                            restrictions to them. <h4>Guidance</h4> The evaluator shall examine the
+                            operational guidance to ensure it documents the steps for configuring
+                            the ability to group domains and apply access restrictions.
+                            <h4>Tests</h4> The evaluator shall perform the following tests: <ul>
+                                <li>The evaluator shall create a group of domains and apply a
+                                    specific restriction to the group. The evaluator shall navigate
+                                    to websites within the domains in the restricted group and shall
+                                    verify that the restriction is functional. The evaluator shall
+                                    navigate to websites within domains not in the restricted group
+                                    and shall verify that the restriction does not apply.</li>
+                            </ul>
+                        </aactivity>
+                    </f-element>
+                </f-component>                
                 <f-component id="FDP_ACF_EXT.1" name="Local and Session Storage Separation">
-                    <f-element id="FDP_ACF_EXT.1">
+                    <f-element id="FDP_ACF_EXT.1.1">
                         <title>The browser shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol and port:<br/>
                             <ul>
@@ -509,6 +532,57 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                <f-component id="FDP_PBR_EXT.1" name="Private Browsing Sessions">
+                    <f-element id="FDP_PBR_EXT.1.1" status="optional">
+                        <title>The browser shall provide the capability to support private browsing
+                            sessions.</title>
+                        <note role="application"> Private browsing is a mode that allows a user to
+                            browse the web without storing data such as browsing history, images,
+                            and cookies. Browsers that support this capability should include this
+                            requirement. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
+                            describes how the TOE supports private browsing. The TSS shall specify
+                            the data that is not stored locally when in private browsing mode and
+                            describe the difference in interactions that the TOE has with websites
+                            when operating and not operating in this mode. <h4>Guidance</h4> The
+                            evaluator shall examine the operational guidance to ensure it includes
+                            the steps for allowing or disallowing private browsing <h4>Tests</h4>The
+                            evaluator shall perform the following test: <testlist>
+                                <test>The evaluator shall clear the browsing history and cookie
+                                    cache, and shall and enable private browsing. The evaluator
+                                    shall navigate to test and/or actual websites and shall verify
+                                    that the browsing history and cookie cache remain
+                                    unchanged</test>
+                                <test>The evaluator shall disable private browsing and shall revisit
+                                    the same websites. The evaluator shall verify that the browsing
+                                    history and the cookie cache have been updated and reflect the
+                                    evaluator‘s browsing activities.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>                
+                <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
+                    <f-element id="FDP_PST_EXT.1.1" status="objective">
+                        <title>The browser shall provide the capability to operate without storing
+                            persistent data to the file system.</title>
+                        <note role="application"> Exceptions from this requirement are credentials
+                            and configuration information. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
+                            how the TOE operates without storing persistent user data to the file
+                            systems. <h4>Guidance</h4> N/A <h4>Tests</h4> The evaluator shall
+                            perform the following test: <testlist>
+                                <test>The evaluator shall operate the TOE for a period of time,
+                                    ensuring that a wide variety of TOE functionality has been
+                                    exercised. The evaluator shall then examine the TOE and the
+                                    underlying platform to ensure that no files have been written to
+                                    the file system other than credentials or configuration
+                                    information.</test>
+                            </testlist>
+                        </aactivity>
+                    </f-element>
+                </f-component>  
                 <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
@@ -692,80 +766,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
-                    <f-element id="FDP_ACC_EXT.1.1" status="objective">
-                        <title>The browser shall provide the capability to group domains and apply
-                            access restrictions to specific sets of domains.</title>
-                        <note role="application"> An example of this functionality is the concept of
-                            zones in Internet Explorer. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
-                            how the TSF supports the grouping of domains and applying access
-                            restrictions to them. <h4>Guidance</h4> The evaluator shall examine the
-                            operational guidance to ensure it documents the steps for configuring
-                            the ability to group domains and apply access restrictions.
-                                <h4>Tests</h4> The evaluator shall perform the following tests: <ul>
-                                <li>The evaluator shall create a group of domains and apply a
-                                    specific restriction to the group. The evaluator shall navigate
-                                    to websites within the domains in the restricted group and shall
-                                    verify that the restriction is functional. The evaluator shall
-                                    navigate to websites within domains not in the restricted group
-                                    and shall verify that the restriction does not apply.</li>
-                            </ul>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
-                    <f-element id="FDP_PST_EXT.1.1" status="objective">
-                        <title>The browser shall provide the capability to operate without storing
-                            persistent data to the file system.</title>
-                        <note role="application"> Exceptions from this requirement are credentials
-                            and configuration information. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
-                            how the TOE operates without storing persistent user data to the file
-                            systems. <h4>Guidance</h4> N/A <h4>Tests</h4> The evaluator shall
-                            perform the following test: <testlist>
-                                <test>The evaluator shall operate the TOE for a period of time,
-                                    ensuring that a wide variety of TOE functionality has been
-                                    exercised. The evaluator shall then examine the TOE and the
-                                    underlying platform to ensure that no files have been written to
-                                    the file system other than credentials or configuration
-                                    information.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FDP_PBR_EXT.1" name="Private Browsing Sessions">
-                    <f-element id="FDP_PBR_EXT.1.1" status="optional">
-                        <title>The browser shall provide the capability to support private browsing
-                            sessions.</title>
-                        <note role="application"> Private browsing is a mode that allows a user to
-                            browse the web without storing data such as browsing history, images,
-                            and cookies. Browsers that support this capability should include this
-                            requirement. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
-                            describes how the TOE supports private browsing. The TSS shall specify
-                            the data that is not stored locally when in private browsing mode and
-                            describe the difference in interactions that the TOE has with websites
-                            when operating and not operating in this mode. <h4>Guidance</h4> The
-                            evaluator shall examine the operational guidance to ensure it includes
-                            the steps for allowing or disallowing private browsing <h4>Tests</h4>The
-                            evaluator shall perform the following test: <testlist>
-                                <test>The evaluator shall clear the browsing history and cookie
-                                    cache, and shall and enable private browsing. The evaluator
-                                    shall navigate to test and/or actual websites and shall verify
-                                    that the browsing history and cookie cache remain
-                                    unchanged</test>
-                                <test>The evaluator shall disable private browsing and shall revisit
-                                    the same websites. The evaluator shall verify that the browsing
-                                    history and the cookie cache have been updated and reflect the
-                                    evaluator‘s browsing activities.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
             </subsection>
             <subsection title="Identification and Authentication (FIA)" id="fia">
                 <f-component id="FIA_X509_EXT.1" name="X509 Authentication">
@@ -846,8 +846,17 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <!--                <f-component id="FPT_INT_EXT.1" name="Interactions with Background Processes">
-                    <f-element id="FPT_INT_EXT.1.1">
+                
+                <f-component id="FPT_ETUD_EXT.1" name="Trusted Installation of Add-ons">
+                    <f-element id="FPT_ETUD_EXT.1.1">
+                        <title>The browser shall include the capability to load <selectables>
+                            <selectable>none</selectable>
+                            <selectable>browser add-ons</selectable>
+                        </selectables>. </title>
+                    </f-element>
+                </f-component>                                             
+                <!--                <f-component id="FPT_INT_EXT.X" name="Interactions with Background Processes">
+                    <f-element id="FPT_INT_EXT.X.1">
                         <title>The browser shall shut down any browser-spawned background processes
                             when the browser exits.</title>
                         <aactivity>
@@ -868,57 +877,9 @@
                         </aactivity>
                     </f-element>
                 </f-component> -->
-                <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
-                    <f-element id="FPT_MCD_EXT.1.1">
-                        <title>The browser shall support the capability to execute signed <selectables>
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    TOE]</selectable>
-                            </selectables>mobile code.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.3">
-                        <title>The browser shall notify the user when unsigned, untrusted or
-                            unverified mobile code is encountered.</title>
-                    </f-element>
-                    <f-element id="FPT_MCD_EXT.1.4">
-                        <title>The browser shall provide the user with the option to discard
-                            unsigned, untrusted or unverified mobile code without executing
-                            it.</title>
-                        <note role="application"> The ST writer must specify all mobile code types
-                            that are supported by the browser. If they are not listed, the ST writer
-                            must fill in the assignment with the mobile code types that are
-                            missing.<br/> An authorized signer may directly sign the code itself, or
-                            the code may be delivered over an authenticated HTTPS connection with an
-                            authorized entity.<br/> The execution of signed mobile code is specified
-                            by FIA_X509_EXT.2. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
-                            types of signed mobile code that the TSF supports. The TSS shall
-                            describe how the TSF handles unsigned mobile code, mobile code from an
-                            untrusted source, and mobile code from an unverified source.
-                                <h4>Guidance</h4> The evaluator shall examine the operational
-                            guidance to verify it provides configuration instructions for each of
-                            the supported mobile code types. The operational guidance shall also
-                            describe the alert that the TOE displays to the user when unsigned,
-                            untrusted, or unverified mobile code is encountered and the actions the
-                            user can take. <h4>Tests</h4>The evaluator shall perform the following
-                            tests for each mobile code type specified in the TSS: <testlist>
-                                <test>The evaluator shall construct web pages containing unsigned,
-                                    correctly authenticated, and incorrectly authenticated mobile
-                                    code and ensure that the TOE alerts the user when it encounters
-                                    mobile code that fails to authenticate and provides the user
-                                    with the option to discard the mobile code without executing it,
-                                    but does execute mobile code that properly authenticates.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                <f-component id="FPT_INT_EXT.2"
+                <f-component id="FPT_INT_EXT.1"
                     name="Interactions with Application Reputation Services">
-                    <f-element id="FPT_INT_EXT.2.1" status="objective">
+                    <f-element id="FPT_INT_EXT.1.1" status="objective">
                         <title>The browser shall utilize an application reputation service to
                             prevent downloading of malicious applications.</title>
                         <note role="application"> An application reputation service is an online
@@ -947,8 +908,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_INT_EXT.3" name="Interactions with URL Reputation Services">
-                    <f-element id="FPT_INT_EXT.3.1" status="objective">
+                <f-component id="FPT_INT_EXT.2" name="Interactions with URL Reputation Services">
+                    <f-element id="FPT_INT_EXT.2.1" status="objective">
                         <title>The browser shall utilize a URL reputation service to prevent
                             connections with malicious websites.</title>
                         <note role="application"> A URL reputation service is an online service that
@@ -997,33 +958,73 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_TUD_EXT.1" name="Integrity for Installation and Update">
-                    <f-element id="FPT_TUD_EXT.1.7" name="Add-on Installation">
-                        <title>The browser shall include the capability to load <selectables>
-                                <selectable>none</selectable>
-                                <selectable>browser add-ons</selectable>
-                                </selectables>. </title>
+                <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
+                    <f-element id="FPT_MCD_EXT.1.1">
+                        <title>The browser shall support the capability to execute signed <selectables>
+                            <selectable>ActiveX</selectable>
+                            <selectable>Flash</selectable>
+                            <selectable>Java</selectable>
+                            <selectable>JavaScript</selectable>
+                            <selectable>[assignment: other mobile code types supported by the
+                                TOE]</selectable>
+                        </selectables>mobile code.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.3">
+                        <title>The browser shall notify the user when unsigned, untrusted or
+                            unverified mobile code is encountered.</title>
+                    </f-element>
+                    <f-element id="FPT_MCD_EXT.1.4">
+                        <title>The browser shall provide the user with the option to discard
+                            unsigned, untrusted or unverified mobile code without executing
+                            it.</title>
+                        <note role="application"> The ST writer must specify all mobile code types
+                            that are supported by the browser. If they are not listed, the ST writer
+                            must fill in the assignment with the mobile code types that are
+                            missing.<br/> An authorized signer may directly sign the code itself, or
+                            the code may be delivered over an authenticated HTTPS connection with an
+                            authorized entity.<br/> The execution of signed mobile code is specified
+                            by FIA_X509_EXT.2. </note>
+                        <aactivity>
+                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
+                            types of signed mobile code that the TSF supports. The TSS shall
+                            describe how the TSF handles unsigned mobile code, mobile code from an
+                            untrusted source, and mobile code from an unverified source.
+                            <h4>Guidance</h4> The evaluator shall examine the operational
+                            guidance to verify it provides configuration instructions for each of
+                            the supported mobile code types. The operational guidance shall also
+                            describe the alert that the TOE displays to the user when unsigned,
+                            untrusted, or unverified mobile code is encountered and the actions the
+                            user can take. <h4>Tests</h4>The evaluator shall perform the following
+                            tests for each mobile code type specified in the TSS: <testlist>
+                                <test>The evaluator shall construct web pages containing unsigned,
+                                    correctly authenticated, and incorrectly authenticated mobile
+                                    code and ensure that the TOE alerts the user when it encounters
+                                    mobile code that fails to authenticate and provides the user
+                                    with the option to discard the mobile code without executing it,
+                                    but does execute mobile code that properly authenticates.</test>
+                            </testlist>
+                        </aactivity>
                     </f-element>
                 </f-component>
-                <!-- <f-component id="FPT_TUD_EXT.2" name="Trusted Extension Update">
-                    <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                <!-- <f-component id="FPT_TUD_EXT.X" name="Trusted Extension Update">
+                    <f-element id="FPT_TUD_EXT.X.1" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the capability to query the current version
                             of the extension.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.X.2" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the capability to initiate extension
                             updates.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.X.3" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide a means to verify extensions and extension
                             updates using a digital signature mechanism prior to installing the
                             extension or extension updates.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.X.4" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall prevent websites from automatically installing
                             extensions.</title>
                         <note role="application"> Extensions are bundles of code that are added to
@@ -1060,27 +1061,27 @@
                         </aactivity>
                     </f-element>
                 </f-component> -->
-                <f-component id="FPT_TUD_EXT.3" name="Trusted Add-on Update">
-                    <f-element id="FPT_TUD_EXT.3.1" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                <f-component id="FPT_TUD_EXT.2" name="Trusted Updates for Add-ons">
+                    <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to query the current version of
                             the add-on.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.3.2" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to initiate the downloading of
-                            add-ons and add-on updates.</title>
+                             add-ons and add-on updates.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.3.3" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide a means to verify add-ons using a digital
                             signature mechanism and <selectables>
                                 <selectable>published hash</selectable>
                                 <selectable>no other functions</selectable>
                             </selectables> prior to installing the add-on.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.3.4" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
+                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall prevent websites from automatically installing
                             add-ons.</title>
                         <aactivity>
@@ -1319,10 +1320,10 @@ via FMT_SMF and FMT_MOF.
         FMT-type requirements) are also included in the ST. </appendix>
 
     <appendix title="Selection-Based Requirements" id="sel-based">As indicated in the introduction
-        to this EP, the baseline requirements (those that must be performed by the TOE or its
-        underlying platform) are contained in the Protection Profile for Application Software and in
+        to this EP, the baseline requirements (those that must be performed by the browser or its
+        underlying platform) are contained in the App PP and in
         the body of this EP. There are additional requirements based on selections from the
-        Protection Profile for Application Software and/or in the body of the EP: if certain
+        App PP and/or in the body of the EP: if certain
         selections are made, then additional requirements below will need to be included. </appendix>
 
     <appendix title="Objective Requirements" id="objective"> This Annex includes requirements that
