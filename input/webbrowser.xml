@@ -847,7 +847,7 @@
                     </f-element>
                 </f-component>
                 
-                <f-component id="FPT_ETUD_EXT.1" name="Trusted Installation of Add-ons">
+                <f-component id="FPT_ETUD_EXT.1" name="Allowance for Add-ons">
                     <f-element id="FPT_ETUD_EXT.1.1">
                         <title>The browser shall include the capability to load <selectables>
                             <selectable>none</selectable>
@@ -1061,7 +1061,7 @@
                         </aactivity>
                     </f-element>
                 </f-component> -->
-                <f-component id="FPT_TUD_EXT.2" name="Trusted Updates for Add-ons">
+                <f-component id="FPT_TUD_EXT.2" name="Trusted Installation and Updates for Add-ons">
                     <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
                         <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to query the current version of
