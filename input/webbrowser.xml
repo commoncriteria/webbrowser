@@ -1424,10 +1424,10 @@ via FMT_SMF and FMT_MOF.
                 <term>GCM</term>
                 <description>Galois/Counter Mode</description>
             </entry>
-            <TR>
+            <entry>
                 <term>GPU</term>
                 <description>Graphics Processing Unit</description>
-            </TR>
+            </entry>
             <entry>
                 <term>HMAC</term>
                 <description>Keyed Hash Message Authentication Code</description>
