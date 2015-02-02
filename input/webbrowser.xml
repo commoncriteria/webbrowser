@@ -44,7 +44,10 @@
     </RevisionHistory>
     <chapter title="Introduction" id="int">
         <section title="Overview" id="ppoverview">The scope of this Extended Package (EP) is to
-            describe the security functionality of web browsers in terms of <cite linkend="bibCC"/>. </section>
+            describe the security functionality of web browsers in terms of <cite linkend="bibCC"/>.
+			This EP is not complete in itself, but rather extends the security requirements of the
+			Protection Profile for Application Software (<cite linkend="bibAppPP"/>).
+			</section>
         <section title="Terms" id="glossary">The following sections provide both Common Criteria and
             technology terms used in this Extended Package. <subsection
                 title="Common Criteria Terms" id="ccterms">
@@ -288,9 +291,10 @@
         Target of Evaluation. <br/> Notably, browsers are particularly at risk from the Network
         Attack threat identified in the App PP. Attackers can use phishing or another social
         engineering technique to persuade a user to visit a malicious site. Users may also
-        unintentionally or intentionally visit malicious sites in the course of web browsing. Such
+        unintentionally visit malicious sites in the course of web browsing. Such
         sites then present malicious content to the user's browser to exploit it and perform
-        installation of malware, often with no indication to the user. <section title="Threats"
+        installation of malware, often with no indication to the user. 
+		<section title="Threats"
             id="threattable">The following threats are specific to web browsers, and represent an
             addition to those identified in the App PP. <threats>
                 <threat id="T.FLAWED_ADDON">
@@ -304,7 +308,7 @@
                 </threat>
                 <threat id="T.SAMEORIGIN_VIOLATION">
                     <description> Violating the same-origin policy is a specialized type of network
-                        attack (covered generally in the App PP) which involves web content
+                        attack (covered generally as T.NETWORK_ATTACK in the App PP) which involves web content
                         violating access control policies enforced by a web browser to separate the
                         content of different web domains. It is specifically identified as a threat
                         to web browsers, since they implement the access control policies that are
@@ -329,14 +333,16 @@
             </threats>
         </section>
     </chapter>
-    <chapter title="Security Objectives" id="objectives">
+    <chapter title="Security Objectives" id="sobj">
+     This Extended Package adds security objectives to those identified in the Protection Profile for
+     Application Software (App PP).
         <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
             <SOs>
                 <SO id="O.DOMAIN_ISOLATION">
                     <description> To address the network attack associated with content leakage
-                        between different web domains rendered by the browser, the TOE must ensure
+                        between different web domains, the browser must ensure
                         that content originating from different domains (e.g., in a tab or iFrame)
-                        is properly isolated to disallow access. </description>
+                        is properly isolated. </description>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
                     <description>
@@ -1305,9 +1311,9 @@ via FMT_SMF and FMT_MOF.
         </section>
     </chapter>
 
-    <appendix title="Optional Requirements" id="optional"> As indicated in <secref linkend="ccl"/>,
-        the baseline requirements (those that must be performed by the <abbr linkend="TOE"/>) are
-        contained in the body of this EP. Additionally, there are three other types of requirements
+    <appendix title="Optional Requirements" id="optional">
+	    The baseline requirements (those that must be performed by the <abbr linkend="TOE"/>) are
+        contained in the main body of this EP. Additionally, there are three other types of requirements
         specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
             linkend="objective"/>. The first type (in this Appendix) are requirements that can be
         included in the <abbr linkend="ST"/>, but are not required in order for a TOE to claim
@@ -1354,7 +1360,7 @@ via FMT_SMF and FMT_MOF.
                             Version 3.1 Revision 4, September 2012.</li>
                     </ul></description>
             </entry>
-            <entry id="bibCC">
+           <entry id="bibAppPP">
                 <tag>AppPP</tag>
                 <description>
                     <a href="https://www.niap-ccevs.org/pp/PP_APP_v1.1/">Protection Profile for
