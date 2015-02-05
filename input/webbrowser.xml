@@ -45,9 +45,8 @@
     <chapter title="Introduction" id="int">
         <section title="Overview" id="ppoverview">The scope of this Extended Package (EP) is to
             describe the security functionality of web browsers in terms of <cite linkend="bibCC"/>.
-			This EP is not complete in itself, but rather extends the security requirements of the
-			Protection Profile for Application Software (<cite linkend="bibAppPP"/>).
-			</section>
+            This EP is not complete in itself, but rather extends the security requirements of the
+            Protection Profile for Application Software (<cite linkend="bibAppPP"/>). </section>
         <section title="Terms" id="glossary">The following sections provide both Common Criteria and
             technology terms used in this Extended Package. <subsection
                 title="Common Criteria Terms" id="ccterms">
@@ -109,7 +108,7 @@
                 <glossary>
                     <entry>
                         <term>Active Content</term>
-                        <description>code that runs in a browser, either natively or via a plug-in,
+                        <description>Code that runs in a browser, either natively or via a plug-in,
                             without user interaction</description>
                     </entry>
                     <entry>
@@ -127,7 +126,7 @@
                     </entry>
                     <entry>
                         <term>Application</term>
-                        <description>software that runs on an operating system and performs tasks on
+                        <description>Software that runs on an operating system and performs tasks on
                             behalf of the user or owner of the platform</description>
                     </entry>
                     <entry>
@@ -142,7 +141,7 @@
                     </entry>
                     <entry>
                         <term>Extension</term>
-                        <description>bundle of code that are added to the browser to add specific
+                        <description>Bundle of code that are added to the browser to add specific
                             functionality that the browser does not provide by default</description>
                     </entry>
                     <entry>
@@ -172,17 +171,23 @@
                     </entry>
                     <entry>
                         <term>JavaScript</term>
-                        <description>programming language commonly used as part of a web browser to
+                        <description>Programming language commonly used as part of a web browser to
                             enable programmatic access to computational objects</description>
                     </entry>
                     <entry>
+                        <term>Mobile Code</term>
+                        <description>Software obtained from remote systems, transmitted across a
+                            network, and executed on a local system without explicit installation or
+                            execution by the recipient.</description>
+                    </entry>
+                    <entry>
                         <term>Plug-in</term>
-                        <description>browser add-on to handle specific types of web
+                        <description>Browser add-on to handle specific types of web
                             content</description>
                     </entry>
                     <entry>
                         <term>Pop-up</term>
-                        <description>piece of web code that causes a browser window to open outside
+                        <description>Piece of web code that causes a browser window to open outside
                             of the browser instance that is currently in focus</description>
                     </entry>
                     <entry>
@@ -194,7 +199,7 @@
                     </entry>
                     <entry>
                         <term>Tabs</term>
-                        <description>allow the browsers to display content from multiple web sites
+                        <description>Allow the browsers to display content from multiple web sites
                             without starting another instance of the browser</description>
                     </entry>
                     <entry>
@@ -203,18 +208,18 @@
                     </entry>
                     <entry>
                         <term>Web Application</term>
-                        <description>software application utilizing web technologies (e.g., Flash,
+                        <description>Software application utilizing web technologies (e.g., Flash,
                             Java, HTML) that runs in a web browser or other client
                             application</description>
                     </entry>
                     <entry>
                         <term>Web Browser</term>
-                        <description>application that retrieves and renders content provided by a
+                        <description>Application that retrieves and renders content provided by a
                             web server</description>
                     </entry>
                     <entry>
                         <term>Whitelist</term>
-                        <description>mechanism for specifying a list of domains that are allowed to
+                        <description>Mechanism for specifying a list of domains that are allowed to
                             do something</description>
                     </entry>
                     <entry>
@@ -228,7 +233,6 @@
                 </glossary>
             </subsection>
         </section>
-
         <section title="Compliant Targets of Evaluation" id="TOEdescription"> This document provides
             an extended set of Security Functional Requirements (SFRs) for a web browser, which is
             the Target of Evaluation (TOE). <br/> The Protection Profile for Application Software
@@ -296,29 +300,27 @@
         Target of Evaluation. <br/> Notably, browsers are particularly at risk from the Network
         Attack threat identified in the App PP. Attackers can use phishing or another social
         engineering technique to persuade a user to visit a malicious site. Users may also
-        unintentionally visit malicious sites in the course of web browsing. Such
-        sites then present malicious content to the user's browser to exploit it and perform
-        installation of malware, often with no indication to the user. 
-		<section title="Threats"
-            id="threattable">The following threats are specific to web browsers, and represent an
-            addition to those identified in the App PP. <threats>
+        unintentionally visit malicious sites in the course of web browsing. Such sites then present
+        malicious content to the user's browser to exploit it and perform installation of malware,
+        often with no indication to the user. <section title="Threats" id="threattable">The
+            following threats are specific to web browsers, and represent an addition to those
+            identified in the App PP. <threats>
                 <threat id="T.FLAWED_ADDON">
                     <description> Web browser functionality can be extended through the integration
-                        of third-party utilities and tools. Malicious or vulnerable add-ons
-                        could result attacks against the system. Such attacks allowing
-                        unauthorized access to sensitive information in the browser, unauthorized
-                        access to the device‘s file system, or even privilege escalation that
-                        enables unauthorized access to other applications or the operating system.
-                    </description>
+                        of third-party utilities and tools. Malicious or vulnerable add-ons could
+                        result attacks against the system. Such attacks allowing unauthorized access
+                        to sensitive information in the browser, unauthorized access to the device‘s
+                        file system, or even privilege escalation that enables unauthorized access
+                        to other applications or the operating system. </description>
                 </threat>
                 <threat id="T.SAMEORIGIN_VIOLATION">
                     <description> Violating the same-origin policy is a specialized type of network
-                        attack (covered generally as T.NETWORK_ATTACK in the App PP) which involves web content
-                        violating access control policies enforced by a web browser to separate the
-                        content of different web domains. It is specifically identified as a threat
-                        to web browsers, since they implement the access control policies that are
-                        violated in these attacks. <br/> Attacks which involve same origin
-                        violations are: <ul>
+                        attack (covered generally as T.NETWORK_ATTACK in the App PP) which involves
+                        web content violating access control policies enforced by a web browser to
+                        separate the content of different web domains. It is specifically identified
+                        as a threat to web browsers, since they implement the access control
+                        policies that are violated in these attacks. <br/> Attacks which involve
+                        same origin violations are: <ul>
                             <li>Insufficient protection of session tokens can lead to session
                                 hijacking, where a token is captured and reused in order to gain the
                                 privileges of the user who initiated the session.</li>
@@ -338,22 +340,20 @@
             </threats>
         </section>
     </chapter>
-    <chapter title="Security Objectives" id="sobj">
-     This Extended Package adds security objectives to those identified in the Protection Profile for
-     Application Software (App PP).
-        <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
+    <chapter title="Security Objectives" id="sobj"> This Extended Package adds security objectives
+        to those identified in the Protection Profile for Application Software (App PP). <section
+            title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
             <SOs>
                 <SO id="O.DOMAIN_ISOLATION">
                     <description> To address the network attack associated with content leakage
-                        between different web domains, the browser must ensure
-                        that content originating from different domains (e.g., in a tab or iFrame)
-                        is properly isolated. </description>
+                        between different web domains, the browser must ensure that content
+                        originating from different domains (e.g., in a tab or iFrame) is properly
+                        isolated. </description>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
-                    <description> To address issues associated with malicious or flawed add-ons, 
-                        conformant browsers implement mechanisms to ensure their
-                        integrity. This includes verification at installation time and update.
-                    </description>
+                    <description> To address issues associated with malicious or flawed add-ons,
+                        conformant browsers implement mechanisms to ensure their integrity. This
+                        includes verification at installation time and update. </description>
                 </SO>
             </SOs>
         </section>
@@ -422,7 +422,7 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <subsection title="User Data Protection (FDP)" id="fdp">                
+            <subsection title="User Data Protection (FDP)" id="fdp">
                 <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
                     <f-element id="FDP_ACC_EXT.1.1" status="objective">
                         <title>The browser shall provide the capability to group domains and apply
@@ -435,7 +435,7 @@
                             restrictions to them. <h4>Guidance</h4> The evaluator shall examine the
                             operational guidance to ensure it documents the steps for configuring
                             the ability to group domains and apply access restrictions.
-                            <h4>Tests</h4> The evaluator shall perform the following tests: <ul>
+                                <h4>Tests</h4> The evaluator shall perform the following tests: <ul>
                                 <li>The evaluator shall create a group of domains and apply a
                                     specific restriction to the group. The evaluator shall navigate
                                     to websites within the domains in the restricted group and shall
@@ -445,7 +445,7 @@
                             </ul>
                         </aactivity>
                     </f-element>
-                </f-component>                
+                </f-component>
                 <f-component id="FDP_ACF_EXT.1" name="Local and Session Storage Separation">
                     <f-element id="FDP_ACF_EXT.1.1">
                         <title>The browser shall separate local (permanent) and session (ephemeral)
@@ -567,7 +567,7 @@
                             </testlist>
                         </aactivity>
                     </f-element>
-                </f-component>                
+                </f-component>
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                     <f-element id="FDP_PST_EXT.1.1" status="objective">
                         <title>The browser shall provide the capability to operate without storing
@@ -588,7 +588,7 @@
                             </testlist>
                         </aactivity>
                     </f-element>
-                </f-component>  
+                </f-component>
                 <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
@@ -752,7 +752,13 @@
                 <f-component id="fdp_trk_ext.1" name="Tracking Information Collection">
                     <f-element id="fdp_trk_ext.1.1">
                         <title>The browser shall provide notification to the user when tracking
-                            information is requested by a website.</title>
+                            information for
+                                    <selectables><selectable>geolocation</selectable><selectable>browser
+                                    history</selectable><selectable>browser
+                                    preferences</selectable><selectable>browser
+                                    statistics</selectable></selectables> is requested
+                            by a website.</title>
+                        <note role="application">Selections must be captured in the ST.</note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             the TSF‘s support for tracking information and specifies the tracking
@@ -852,15 +858,14 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                
                 <f-component id="FPT_ETUD_EXT.1" name="Allowance for Add-ons">
                     <f-element id="FPT_ETUD_EXT.1.1">
                         <title>The browser shall include the capability to load <selectables>
-                            <selectable>none</selectable>
-                            <selectable>browser add-ons</selectable>
-                        </selectables>. </title>
+                                <selectable>none</selectable>
+                                <selectable>browser add-ons</selectable>
+                            </selectables>. </title>
                     </f-element>
-                </f-component>                                             
+                </f-component>
                 <!--                <f-component id="FPT_INT_EXT.X" name="Interactions with Background Processes">
                     <f-element id="FPT_INT_EXT.X.1">
                         <title>The browser shall shut down any browser-spawned background processes
@@ -967,13 +972,13 @@
                 <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
                         <title>The browser shall support the capability to execute signed <selectables>
-                            <selectable>ActiveX</selectable>
-                            <selectable>Flash</selectable>
-                            <selectable>Java</selectable>
-                            <selectable>JavaScript</selectable>
-                            <selectable>[assignment: other mobile code types supported by the
-                                TOE]</selectable>
-                        </selectables>mobile code.</title>
+                                <selectable>ActiveX</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the
+                                    TOE]</selectable>
+                            </selectables>mobile code.</title>
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.3">
                         <title>The browser shall notify the user when unsigned, untrusted or
@@ -995,7 +1000,7 @@
                             types of signed mobile code that the TSF supports. The TSS shall
                             describe how the TSF handles unsigned mobile code, mobile code from an
                             untrusted source, and mobile code from an unverified source.
-                            <h4>Guidance</h4> The evaluator shall examine the operational
+                                <h4>Guidance</h4> The evaluator shall examine the operational
                             guidance to verify it provides configuration instructions for each of
                             the supported mobile code types. The operational guidance shall also
                             describe the alert that the TOE displays to the user when unsigned,
@@ -1076,7 +1081,7 @@
                     <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
                         <selection-depends req="FPT_ETUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to initiate the downloading of
-                             add-ons and add-on updates.</title>
+                            add-ons and add-on updates.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
                         <selection-depends req="FPT_ETUD_EXT.1.1"/>
@@ -1097,7 +1102,7 @@
                             guidance to verify that it includes instructions on how to configure the
                             TOE with trusted add-on sources. <h4>Tests</h4> The evaluator shall
                             perform the following tests: <testlist>
-                                <test>The evaluator shall configure the TOE with trusted add-on 
+                                <test>The evaluator shall configure the TOE with trusted add-on
                                     sources. The evaluator shall create or obtain an add-on signed
                                     by a trusted source and attempt to install it. The evaluator
                                     shall verify that the signature on the add-on is valid.</test>
@@ -1119,8 +1124,50 @@
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof.1.1">
-                        <title>The browser shall restrict to an administator the ability to perform
-                            the functions: <selectables>
+                        <title>The browser shall restrict the ability to manage/perform functions as
+                            follows:</title>
+                        <ul>
+                            <li>X = Mandatory</li>
+                            <li>O = Optional</li></ul>
+                        <table><tr class="header"><td>Management
+                                    Function</td><td>Administrator</td><td>User</td></tr>
+                            <tr><td>Enable/disable storage of third party
+                                    cookies</td><td>X</td><td>X</td></tr>
+                            <tr><td>Enable/disable add-ons</td><td>X</td><td>O</td></tr>
+                            <tr><td>Enable/disable use of OCSP for obtaining the revocation status
+                                    of an X.509 certificate</td><td>X</td><td>O</td></tr>
+                            <tr><td>Configure inclusion of user-agent information in HTTP
+                                    headers</td><td>X</td><td>X</td></tr>
+                            <tr><td>Enable/disable ability for websites to collect tracking
+                                    information about the user</td><td>X</td><td>X</td></tr>
+                            <tr><td>Deletion of stored browsing data (cache, web form
+                                    information)</td><td>X</td><td>X</td></tr>
+                            <tr><td>Enable/disable storage of sensitive information in persistent
+                                    storage</td><td>X</td><td>X</td></tr>
+                            <tr><td>Ability to specify location where downloaded files are saved to
+                                    disk</td><td>X</td><td>O</td></tr>
+                            <tr><td>Configure size of cookie cache </td><td>O</td><td>O</td></tr>
+                            <tr><td>Enable/disable interaction with Graphic Processing Units
+                                    (GPUs)</td><td>X</td><td>O</td></tr>
+                            <tr><td>Configure the ability to advance to a web site with an invalid
+                                    or unvalidated X.509 certificate</td><td>X</td><td>O</td></tr>
+                            <tr><td>Enable/disable use of private browsing
+                                    sessions</td><td>X</td><td>O</td></tr>
+                            <tr><td>Configure the use of an application reputation service to detect
+                                    malicious applications prior to downloading
+                                    them</td><td>X</td><td>O</td></tr>
+                            <tr><td>Configure the use of a URL reputation service to detect sites
+                                    that contain malware or phishing
+                                    content</td><td>X</td><td>O</td></tr>
+                            <tr><td>Enable/disable automatic installation of software updates and
+                                    patches</td><td>X</td><td>O</td></tr>
+                            <tr><td>Enable/disable establishment of a trusted channel if the TSF
+                                    cannot establish a connection to determine the validity of a
+                                    certificate </td><td>X</td><td>X</td></tr>
+                            <tr><td>Enable/disable ability for websites to register protocol
+                                    handlers </td><td>X</td><td>O</td></tr>
+                        </table>
+                        <!-- <selectables>
                                 <selectable>enable/disable storage of sensitive web form
                                     information</selectable>
                                 <li>configuration of mobile code:</li>
@@ -1181,8 +1228,7 @@
                                     certificate</selectable>
                                 <selectable>enable/disable ability for websites to register protocol
                                     handlers.</selectable>
-                            </selectables>
-                        </title>
+                            </selectables></title> -->
                         <note role="application"> The intent of this requirement is to allow the
                             administrator of the TOE platform to configure the TOE with a policy
                             that may not be over-ridden by the user. If the administrator has not
@@ -1309,28 +1355,27 @@ via FMT_SMF and FMT_MOF.
         </section>
     </chapter>
 
-    <appendix title="Optional Requirements" id="optional">
-	    The baseline requirements (those that must be performed by the <abbr linkend="TOE"/>) are
-        contained in the main body of this EP. Additionally, there are three other types of requirements
-        specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
-            linkend="objective"/>. The first type (in this Appendix) are requirements that can be
-        included in the <abbr linkend="ST"/>, but are not required in order for a TOE to claim
-        conformance to this PP. The second type (in <appref linkend="sel-based"/>) are requirements
-        based on selections in the body of the EP: if certain selections are made, then additional
-        requirements in that appendix must be included. The third type (in <appref
-            linkend="objective"/> are components that are not required in order to conform to this
-        EP, but will be included in the baseline requirements in future versions of this EP, so
-        adoption by vendors is encouraged. Note that the ST author is responsible for ensuring that
-        requirements that may be associated with those in <appref linkend="optional"/>, <appref
-            linkend="sel-based"/>, and <appref linkend="objective"/> but are not listed (e.g.,
-        FMT-type requirements) are also included in the ST. </appendix>
+    <appendix title="Optional Requirements" id="optional"> The baseline requirements (those that
+        must be performed by the <abbr linkend="TOE"/>) are contained in the main body of this EP.
+        Additionally, there are three other types of requirements specified in <appref
+            linkend="optional"/>, <appref linkend="sel-based"/>, and <appref linkend="objective"/>.
+        The first type (in this Appendix) are requirements that can be included in the <abbr
+            linkend="ST"/>, but are not required in order for a TOE to claim conformance to this PP.
+        The second type (in <appref linkend="sel-based"/>) are requirements based on selections in
+        the body of the EP: if certain selections are made, then additional requirements in that
+        appendix must be included. The third type (in <appref linkend="objective"/> are components
+        that are not required in order to conform to this EP, but will be included in the baseline
+        requirements in future versions of this EP, so adoption by vendors is encouraged. Note that
+        the ST author is responsible for ensuring that requirements that may be associated with
+        those in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
+            linkend="objective"/> but are not listed (e.g., FMT-type requirements) are also included
+        in the ST. </appendix>
 
     <appendix title="Selection-Based Requirements" id="sel-based">As indicated in the introduction
         to this EP, the baseline requirements (those that must be performed by the browser or its
-        underlying platform) are contained in the App PP and in
-        the body of this EP. There are additional requirements based on selections from the
-        App PP and/or in the body of the EP: if certain
-        selections are made, then additional requirements below will need to be included. </appendix>
+        underlying platform) are contained in the App PP and in the body of this EP. There are
+        additional requirements based on selections from the App PP and/or in the body of the EP: if
+        certain selections are made, then additional requirements below will need to be included. </appendix>
 
     <appendix title="Objective Requirements" id="objective"> This Annex includes requirements that
         specify security functionality which also addresses threats. The requirements are not
@@ -1358,7 +1403,7 @@ via FMT_SMF and FMT_MOF.
                             Version 3.1 Revision 4, September 2012.</li>
                     </ul></description>
             </entry>
-           <entry id="bibAppPP">
+            <entry id="bibAppPP">
                 <tag>AppPP</tag>
                 <description>
                     <a href="https://www.niap-ccevs.org/pp/PP_APP_v1.1/">Protection Profile for
