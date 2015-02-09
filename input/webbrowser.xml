@@ -279,7 +279,7 @@
         </section>
     </chapter>
     <chapter title="Conformance Claims" id="conf">
-        <h3>CC Conformance Claims</h3>
+        <!--
         <description>This <abbr linkend="EP"/> is conformant to Part 2 (extended) of Common Criteria
                 <cite linkend="bibCC"/> Version 3.1, Revision 4.</description>
         <h3>PP Claim</h3>
@@ -288,6 +288,29 @@
         <h3>Package Claim</h3>
         <description>This <abbr linkend="EP"/> does not claim conformance to any
             packages.</description>
+            -->
+            <cclaims>
+            <cclaim id="Conformance Statement">
+                <description>
+                    The <i>Protection Profile for Application Software</i> (App PP) defines the baseline
+                    Security Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for
+                    application software products. This EP serves to extend the App PP baseline with
+                    additional SFRs and associated Assurance Activities specific to a web
+                    browser. Assurance Activities are the actions that the evaluator performs in order to
+                    determine a TOE’s compliance to the SFRs.<br />
+                This EP conforms to Common Criteria <cite linkend="bibCC"/> for
+                    Information Technology Security Evaluation, Version 3.1, Revision 4. It is CC Part 2
+                    extended and CC Part 3 conformant. In order to be conformant to this EP, the ST must
+                    include all components in this EP and the associated App PP that are:
+                <ul><li>unconditional (which are always required)</li>
+                    <li>selection-based (which are required when certain selections are chosen in the
+                        unconditional requirements)</li>
+                </ul>
+                and may include components that are:
+                <ul><li>optional or</li>
+                    <li>objective.</li></ul></description>
+             </cclaim>
+            </cclaims>  
     </chapter>
     <chapter title="Security Problem Description" id="spd"> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
@@ -419,11 +442,11 @@
                                     information is updated by the TOE.</test>
                             </testlist>
                         </aactivity>
-                    </f-element>
+                   </f-element>
                 </f-component>
             </subsection>
             <subsection title="User Data Protection (FDP)" id="fdp">
-                <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
+                <!-- <f-component id="FDP_ACC_EXT.1" name="Access Control on Domains">
                     <f-element id="FDP_ACC_EXT.1.1" status="objective">
                         <title>The browser shall provide the capability to group domains and apply
                             access restrictions to specific sets of domains.</title>
@@ -445,7 +468,7 @@
                             </ul>
                         </aactivity>
                     </f-element>
-                </f-component>
+                </f-component> -->
                 <f-component id="FDP_ACF_EXT.1" name="Local and Session Storage Separation">
                     <f-element id="FDP_ACF_EXT.1.1">
                         <title>The browser shall separate local (permanent) and session (ephemeral)
@@ -538,6 +561,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                <!--
                 <f-component id="FDP_PBR_EXT.1" name="Private Browsing Sessions">
                     <f-element id="FDP_PBR_EXT.1.1" status="optional">
                         <title>The browser shall provide the capability to support private browsing
@@ -567,7 +591,7 @@
                             </testlist>
                         </aactivity>
                     </f-element>
-                </f-component>
+                </f-component> -->
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                     <f-element id="FDP_PST_EXT.1.1" status="objective">
                         <title>The browser shall provide the capability to operate without storing
@@ -756,8 +780,8 @@
                                     <selectables><selectable>geolocation</selectable><selectable>browser
                                     history</selectable><selectable>browser
                                     preferences</selectable><selectable>browser
-                                    statistics</selectable></selectables> is requested
-                            by a website.</title>
+                                    statistics</selectable></selectables> is requested by a
+                            website.</title>
                         <note role="application">Selections must be captured in the ST.</note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
@@ -986,8 +1010,13 @@
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.4">
                         <title>The browser shall provide the user with the option to discard
-                            unsigned, untrusted or unverified mobile code without executing
-                            it.</title>
+                            unsigned, untrusted or unverified <selectables>
+                                <selectable>Active X</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
+                            </selectables> mobile code without executing it.</title>
                         <note role="application"> The ST writer must specify all mobile code types
                             that are supported by the browser. If they are not listed, the ST writer
                             must fill in the assignment with the mobile code types that are
