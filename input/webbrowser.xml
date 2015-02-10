@@ -1202,14 +1202,8 @@
                                     certificate </td><td>X</td><td>X</td></tr>
                             <tr><td>Enable/disable ability for websites to register protocol
                                     handlers </td><td>X</td><td>O</td></tr>
-                            <tr><td>Display notification when unsigned, untrusted or
-                                    unverified <selectables>
-                                        <selectable>Active X</selectable>
-                                        <selectable>Flash</selectable>
-                                        <selectable>Java</selectable>
-                                        <selectable>JavaScript</selectable>
-                                        <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
-                                    </selectables>mobile code is encountered.</td><td>X</td><td>O</td></tr>
+                            <tr><td>Enable/disable display notification when unsigned, untrusted or
+                                    unverified mobile code is encountered.</td><td>X</td><td>O</td></tr>
                         </table>
                         <!-- <selectables>
                                 <selectable>enable/disable storage of sensitive web form
