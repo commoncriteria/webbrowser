@@ -1004,10 +1004,17 @@
                                     TOE]</selectable>
                             </selectables>mobile code.</title>
                     </f-element>
-                    <f-element id="FPT_MCD_EXT.1.3">
+                    <!-- moved to FPT_MOF 
+                        <f-element id="FPT_MCD_EXT.1.3">
                         <title>The browser shall notify the user when unsigned, untrusted or
-                            unverified mobile code is encountered.</title>
-                    </f-element>
+                            unverified <selectables>
+                                <selectable>Active X</selectable>
+                                <selectable>Flash</selectable>
+                                <selectable>Java</selectable>
+                                <selectable>JavaScript</selectable>
+                                <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
+                            </selectables>mobile code is encountered.</title>
+                    </f-element> -->
                     <f-element id="FPT_MCD_EXT.1.4">
                         <title>The browser shall provide the user with the option to discard
                             unsigned, untrusted or unverified <selectables>
@@ -1195,6 +1202,14 @@
                                     certificate </td><td>X</td><td>X</td></tr>
                             <tr><td>Enable/disable ability for websites to register protocol
                                     handlers </td><td>X</td><td>O</td></tr>
+                            <tr><td>Display notification when unsigned, untrusted or
+                                    unverified <selectables>
+                                        <selectable>Active X</selectable>
+                                        <selectable>Flash</selectable>
+                                        <selectable>Java</selectable>
+                                        <selectable>JavaScript</selectable>
+                                        <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
+                                    </selectables>mobile code is encountered.</td><td>X</td><td>O</td></tr>
                         </table>
                         <!-- <selectables>
                                 <selectable>enable/disable storage of sensitive web form
