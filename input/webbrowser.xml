@@ -388,27 +388,34 @@
                             superdomain of that website must occur over TLS 1.2 (RFC 5246) or
                             greater by utilizing HTTPS (RFC 2818). </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
-                            documents how the TOE supports HSTS. <h4>Guidance</h4> The evaluator
+                            <tss>
+                                The evaluator shall examine the TSS to ensure that it
+                                documents how the TOE supports HSTS.
+                            </tss>
+                            <guidance> The evaluator
                             shall examine the operational guidance to ensure it contains
-                            instructions on how to use HSTS. <h4>Tests</h4> The evaluator shall
-                            perform the following tests: <testlist>
-                                <test>The evaluator shall connect to a HSTS-compliant website while
-                                    running a network protocol analyzer to monitor the traffic. The
-                                    evaluator shall examine the captured network traffic and verify
-                                    that a Strict Transport Security header is received and that
-                                    there is a directive for the max-age of the HSTS
-                                    relationship.</test>
-                                <test>The evaluator shall reconnect to the HSTS website again over
-                                    HTTP and shall verify that the session is redirected to
-                                    HTTPS.</test>
-                                <test>The evaluator shall reconnect to the HSTS website after the
-                                    max-age has expired, and verify that the website and TOE
-                                    reestablish an HSTS relationship.</test>
-                                <test>The evaluator shall update the website HSTS information, and
-                                    verify that when the TOE reconnects to the website, that
-                                    information is updated by the TOE.</test>
-                            </testlist>
+                            instructions on how to use HSTS.
+                            </guidance>
+                            <tests>
+                                The evaluator shall perform the following tests: 
+                                <testlist>
+                                    <test>The evaluator shall connect to a HSTS-compliant website while
+                                        running a network protocol analyzer to monitor the traffic. The
+                                        evaluator shall examine the captured network traffic and verify
+                                        that a Strict Transport Security header is received and that
+                                        there is a directive for the max-age of the HSTS
+                                        relationship.</test>
+                                    <test>The evaluator shall reconnect to the HSTS website again over
+                                        HTTP and shall verify that the session is redirected to
+                                        HTTPS.</test>
+                                    <test>The evaluator shall reconnect to the HSTS website after the
+                                        max-age has expired, and verify that the website and TOE
+                                        reestablish an HSTS relationship.</test>
+                                    <test>The evaluator shall update the website HSTS information, and
+                                        verify that when the TOE reconnects to the website, that
+                                        information is updated by the TOE.</test>
+                                </testlist>
+                            </tests>
                         </aactivity>
                    </f-element>
                 </f-component>
