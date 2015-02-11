@@ -57,11 +57,6 @@
                             Evaluation.</description>
                     </entry>
                     <entry>
-                        <term><abbr title="Common Evaluation Methodology">CEM</abbr></term>
-                        <description>Common Evaluation Methodology for Information Technology
-                            Security Evaluation.</description>
-                    </entry>
-                    <entry>
                         <term><abbr title="Extended Package">EP</abbr></term>
                         <description>An implementation-independent set of security requirements for
                             a category of products, which extends those in a Protection
@@ -107,27 +102,25 @@
             <subsection id="techterms" title="Technology Terms">
                 <glossary>
                     <entry>
-                        <term>Active Content</term>
-                        <description>Code that runs in a browser, either natively or via a plug-in,
-                            without user interaction</description>
-                    </entry>
-                    <entry>
                         <term>Add-on</term>
-                        <description>Capabilities or functionality added to an application including
-                            plug-ins, extensions, or other controls.</description>
+                        <description>Capabilities or functionality added to an application.  This term includes
+                            plug-ins, extensions, and other controls.</description>
                     </entry>
                     <entry>
                         <term>Administrator</term>
                         <description>The Administrator is responsible for management activities,
                             including setting the policy that is applied by the enterprise on the
                             Browser. This administrator is likely to be acting remotely. If the
-                            device is unattached to an enterprise, the user is the
+                            platform is unmanaged by an enterprise, the user can act as the
                             administrator.</description>
                     </entry>
                     <entry>
                         <term>Application</term>
-                        <description>Software that runs on an operating system and performs tasks on
-                            behalf of the user or owner of the platform</description>
+						<description>Software that runs on a platform and
+							performs tasks on behalf of the user or owner of the platform, as well as its
+							supporting documentation. The terms TOE, application, and browser are interchangeable in
+							this document.
+           				</description>
                     </entry>
                     <entry>
                         <term>CSRF</term>
@@ -136,17 +129,9 @@
                             privileges</description>
                     </entry>
                     <entry>
-                        <term>DTLS</term>
-                        <description>Datagram Transport Layer Security</description>
-                    </entry>
-                    <entry>
                         <term>Extension</term>
                         <description>Bundle of code that are added to the browser to add specific
                             functionality that the browser does not provide by default</description>
-                    </entry>
-                    <entry>
-                        <term>GPU</term>
-                        <description>Graphics Processing Unit</description>
                     </entry>
                     <entry>
                         <term>HTML</term>
@@ -203,24 +188,10 @@
                             without starting another instance of the browser</description>
                     </entry>
                     <entry>
-                        <term>Web Browser User</term>
-                        <description>A user operating the TOE in unprivileged mode</description>
-                    </entry>
-                    <entry>
-                        <term>Web Application</term>
-                        <description>Software application utilizing web technologies (e.g., Flash,
-                            Java, HTML) that runs in a web browser or other client
-                            application</description>
-                    </entry>
-                    <entry>
                         <term>Web Browser</term>
                         <description>Application that retrieves and renders content provided by a
-                            web server</description>
-                    </entry>
-                    <entry>
-                        <term>Whitelist</term>
-                        <description>Mechanism for specifying a list of domains that are allowed to
-                            do something</description>
+                            web server.  The term web browser and TOE are interchangeable in
+							this document.</description>
                     </entry>
                     <entry>
                         <term>XSS</term>
@@ -617,12 +588,12 @@
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
-                                <li>The rendering process cannot directly access the TOE platform's
+                                <li>The rendering process cannot directly access the platform's
                                     file system;</li>
                                 <li>The rendering process cannot directly invoke inter-process
-                                    communication mechanisms with non-TOE processes;</li>
+                                    communication mechanisms with non-browser processes;</li>
                                 <li>The rendering process has reduced privilege with respect to
-                                    other TOE processes <selectables>
+                                    other browser processes <selectables>
                                         <selectable>[assignment: methods by which the principle of
                                             least privilege is implement for rendering
                                             processes]</selectable>
@@ -637,15 +608,15 @@
                             processing. This component requires the TSF to lower the privileges of
                             rendering processes by ensuring that it cannot directly access the file
                             system of the host, and that it cannot use IPC mechanisms provided by
-                            the host to communicate with non-TOE processes on the host. Typically,
+                            the host to communicate with non-browser processes on the host. Typically,
                             if a rendering process needs to access a file or communicate with a
-                            non-TOE process, it must request such access through the TSF (which is
+                            non-browser process, it must request such access through the TSF (which is
                             allowed by the requirement).<br/> In addition to the two required
-                            measures, other measures can be implemented depending on the TOE and the
+                            measures, other measures can be implemented depending on the browser and the
                             host platform. These may involve such actions as changing the owner of
                             the rendering process to a low-privileged account or dropping
                             platform-defined privileges in the rendering process. The ST author
-                            fills in the additional measures implemented by the TOE. </note>
+                            fills in the additional measures implemented by the browser. </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             how the rendering of HTML and interpretation of JavaScript is performed
