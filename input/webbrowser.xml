@@ -303,7 +303,7 @@
                     <description> Web browser functionality can be extended through the integration
                         of third-party utilities and tools. Malicious or vulnerable add-ons could
                         result attacks against the system. Such attacks allowing unauthorized access
-                        to sensitive information in the browser, unauthorized access to the device‘s
+                        to sensitive information in the browser, unauthorized access to the platform's
                         file system, or even privilege escalation that enables unauthorized access
                         to other applications or the operating system. </description>
                 </threat>
@@ -357,9 +357,6 @@
         which have to be fulfilled by the TOE. Those requirements comprise functional components
         from Part 2 of <cite linkend="bibCC"/>. The following notations are used: <ul>
             <li>
-                <b>Refinement</b> operation (denoted by <b>bold text</b>): is used to add details to
-                a requirement, and thus further restricts a requirement.</li>
-            <li>
                 <b>Selection</b> (denoted by <i>italicized text</i>): is used to select one or more
                 options provided by the [CC] in stating a requirement.</li>
             <li>
@@ -387,7 +384,7 @@
                         <title>The browser shall cache the freshest Strict Security policy
                             information.</title>
                         <note role="application"> If a browser receives the HSTS header from a
-                            website, all future HTTP sessions between the TOE and the domain or
+                            website, all future HTTP sessions between the browser and the domain or
                             superdomain of that website must occur over TLS 1.2 (RFC 5246) or
                             greater by utilizing HTTPS (RFC 2818). </note>
                         <aactivity>
@@ -452,7 +449,7 @@
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
-                            “Web Storage.”<br/> In this context, a domain is a realm of
+                            "Web Storage."<br/> In this context, a domain is a realm of
                             administrative autonomy, authority or control on the Internet (e.g.,
                             cnn.com, ietf.org). A sub-domain is denoted by a prefix before the
                             top-level domain name (e.g., news.cnn.com). A protocol is a system of
@@ -686,7 +683,7 @@
                         <title>The browser shall not allow same origin policy exceptions for
                             different domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
-                            6454, “The Web Origin Concept.”<br/> Origin is defined as the
+                            6454, "The Web Origin Concept."<br/> Origin is defined as the
                             combination of domain, protocol and port. Two URIs sharing the same
                             domain, protocol and port are considered to have the same origin. </note>
                         <aactivity>
@@ -970,9 +967,8 @@
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
                                 <selectable>[assignment: other mobile code types supported by the
-                                    TOE]</selectable>
+                                    browser]</selectable>
                             </selectables>mobile code.</title>
                     </f-element>
                     <!-- moved to FPT_MOF 
@@ -992,16 +988,14 @@
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
-                                <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
+                                <selectable>[assignment: other mobile code types supported by the browser]</selectable>
                             </selectables> mobile code without executing it.</title>
-                        <note role="application"> The ST writer must specify all mobile code types
-                            that are supported by the browser. If they are not listed, the ST writer
-                            must fill in the assignment with the mobile code types that are
-                            missing.<br/> An authorized signer may directly sign the code itself, or
+                        <note role="application"> The ST author must specify all mobile code types
+                            for which the browser provides this support.
+                            <br/>An authorized signer may directly sign the code itself, or
                             the code may be delivered over an authenticated HTTPS connection with an
-                            authorized entity.<br/> The execution of signed mobile code is specified
-                            by FIA_X509_EXT.2. </note>
+                            authorized entity.
+                            </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
                             types of signed mobile code that the TSF supports. The TSS shall
@@ -1139,42 +1133,39 @@
                         <table><tr class="header"><td>Management
                                     Function</td><td>Administrator</td><td>User</td></tr>
                             <tr><td>Enable/disable storage of third party
-                                    cookies</td><td>X</td><td>X</td></tr>
-                            <tr><td>Enable/disable add-ons</td><td>X</td><td>O</td></tr>
+                                    cookies</td><td>O</td><td>X</td></tr>
+                            <tr><td>Enable/disable add-ons</td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable use of OCSP for obtaining the revocation status
-                                    of an X.509 certificate</td><td>X</td><td>O</td></tr>
+                                    of an X.509 certificate</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure inclusion of user-agent information in HTTP
-                                    headers</td><td>X</td><td>X</td></tr>
+                                    headers</td><td>O</td><td>X</td></tr>
                             <tr><td>Enable/disable ability for websites to collect tracking
-                                    information about the user</td><td>X</td><td>X</td></tr>
+                                    information about the user</td><td>O</td><td>X</td></tr>
                             <tr><td>Deletion of stored browsing data (cache, web form
-                                    information)</td><td>X</td><td>X</td></tr>
+                                    information)</td><td>O</td><td>X</td></tr>
                             <tr><td>Enable/disable storage of sensitive information in persistent
-                                    storage</td><td>X</td><td>X</td></tr>
-                            <tr><td>Ability to specify location where downloaded files are saved to
-                                    disk</td><td>X</td><td>O</td></tr>
+                                    storage</td><td>O</td><td>X</td></tr>
                             <tr><td>Configure size of cookie cache </td><td>O</td><td>O</td></tr>
+                            <tr><td>Configure size of cache </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable interaction with Graphic Processing Units
                                     (GPUs)</td><td>X</td><td>O</td></tr>
                             <tr><td>Configure the ability to advance to a web site with an invalid
-                                    or unvalidated X.509 certificate</td><td>X</td><td>O</td></tr>
-                            <tr><td>Enable/disable use of private browsing
-                                    sessions</td><td>X</td><td>O</td></tr>
+                                    or unvalidated X.509 certificate</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the use of an application reputation service to detect
-                                    malicious applications prior to downloading
-                                    them</td><td>X</td><td>O</td></tr>
+                                    malicious applications prior to download
+                                    </td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the use of a URL reputation service to detect sites
                                     that contain malware or phishing
-                                    content</td><td>X</td><td>O</td></tr>
+                                    content</td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable automatic installation of software updates and
-                                    patches</td><td>X</td><td>O</td></tr>
+                                    patches</td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable establishment of a trusted channel if the TSF
                                     cannot establish a connection to determine the validity of a
-                                    certificate </td><td>X</td><td>X</td></tr>
+                                    certificate </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable ability for websites to register protocol
-                                    handlers </td><td>X</td><td>O</td></tr>
+                                    handlers </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable display notification when unsigned, untrusted or
-                                    unverified mobile code is encountered.</td><td>X</td><td>O</td></tr>
+                                    unverified mobile code is encountered.</td><td>O</td><td>O</td></tr>
                         </table>
                         <!-- <selectables>
                                 <selectable>enable/disable storage of sensitive web form
@@ -1239,11 +1230,12 @@
                                     handlers.</selectable>
                             </selectables></title> -->
                         <note role="application"> The intent of this requirement is to allow the
-                            administrator of the TOE platform to configure the TOE with a policy
-                            that may not be over-ridden by the user. If the administrator has not
+                            user and administrator of the platform to configure the browser with 
+							configuration policies.
+                            If the administrator has not
                             set a policy for a particular function, the user may still perform that
-                            function. Enforcement of the policy is done by the TOE itself, or the
-                            TOE and the TOE platform in coordination with each other </note>
+                            function. Enforcement of the policy is done by the browser itself, or the
+                            browser and its platform in coordination with each other </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall verify that the TSS describes those
                             management functions which may only be configured by the TOE platform
