@@ -343,11 +343,15 @@
                         between different web domains, the browser must ensure that content
                         originating from different domains (e.g., in a tab or iFrame) is properly
                         isolated. </description>
+                        <component-refer ref="fdp_sop_ext.1"/>
+                        <component-refer ref="fdp_acf_ext.1.1"/>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification at installation time and update. </description>
+                        <component-refer ref="fia_x509_ext.1.1"/>
+                        <component-refer ref="fpt_tud_ext.2"/>
                 </SO>
             </SOs>
         </section>
