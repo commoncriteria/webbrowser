@@ -974,7 +974,7 @@
                 </f-component>
                 <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
-                        <title>The browser shall support the capability to execute signed <selectables>
+                        <title>The browser shall support the capability to execute signed <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -993,9 +993,9 @@
                                 <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
                             </selectables>mobile code is encountered.</title>
                     </f-element> -->
-                    <f-element id="FPT_MCD_EXT.1.4">
+                    <f-element id="FPT_MCD_EXT.1.2">
                         <title>The browser shall provide the user with the option to discard
-                            unsigned, untrusted or unverified <selectables>
+                            unsigned, untrusted or unverified <selectables linebreak="yes">
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
