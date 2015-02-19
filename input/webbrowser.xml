@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2014-12-11</PPPubDate>
+            <PPPubDate>2015-02-19</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -103,8 +103,8 @@
                 <glossary>
                     <entry>
                         <term>Add-on</term>
-                        <description>Capabilities or functionality added to an application.  This term includes
-                            plug-ins, extensions, and other controls.</description>
+                        <description>Capabilities or functionality added to an application. This
+                            term includes plug-ins, extensions, and other controls.</description>
                     </entry>
                     <entry>
                         <term>Administrator</term>
@@ -115,91 +115,88 @@
                             administrator.</description>
                     </entry>
                     <entry>
-                        <term>Application</term>
-						<description>Software that runs on a platform and
-							performs tasks on behalf of the user or owner of the platform, as well as its
-							supporting documentation. The terms TOE, application, and browser are interchangeable in
-							this document.
-           				</description>
-                    </entry>
-                    <entry>
                         <term>CSRF</term>
                         <description>Cross Site Request Forgery - Vulnerability where an attacker
-                            gets a target user to execute a script with that user‘s
-                            privileges</description>
+                            gets a target user to execute a script with that user's
+                            privileges.</description>
                     </entry>
                     <entry>
                         <term>Extension</term>
                         <description>Bundle of code that are added to the browser to add specific
-                            functionality that the browser does not provide by default</description>
+                            functionality that the browser does not provide by
+                            default.</description>
                     </entry>
                     <entry>
                         <term>HTML</term>
                         <description>HyperText Markup Language - Language used by web servers to
-                            present content to browsers</description>
+                            present content to browsers.</description>
                     </entry>
                     <entry>
                         <term>HTML5</term>
                         <description>HyperText Markup Language version 5, a new version of HTML that
                             incorporates many new features that enrich the browsing
-                            experience</description>
+                            experience.</description>
                     </entry>
                     <entry>
                         <term>HTTP</term>
                         <description>HyperText Transfer Protocol - Protocol for communicating on the
-                            web</description>
+                            web.</description>
                     </entry>
                     <entry>
                         <term>HTTPS</term>
                         <description>HyperText Transfer Protocol Secure; secure version of HTTP that
-                            runs over an encrypted channel (SSL/TLS)</description>
+                            runs over an encrypted channel (SSL/TLS).</description>
                     </entry>
                     <entry>
                         <term>JavaScript</term>
-                        <description>Programming language commonly used as part of a web browser to
-                            enable programmatic access to computational objects</description>
+                        <description>Scripting language commonly integrated into web pages to
+                            generate dynamic, interactive content.</description>
                     </entry>
                     <entry>
                         <term>Mobile Code</term>
-                        <description>Software obtained from remote systems, transmitted across a
-                            network, and executed on a local system without explicit installation or
-                            execution by the recipient.</description>
+                        <description>As defined in the <cite linkend="bibAppPP"/>; however,
+                            JavaScript is not included in references to mobile code in this browser
+                            EP.</description>
                     </entry>
                     <entry>
                         <term>Plug-in</term>
                         <description>Browser add-on to handle specific types of web
-                            content</description>
+                            content.</description>
                     </entry>
                     <entry>
                         <term>Pop-up</term>
                         <description>Piece of web code that causes a browser window to open outside
-                            of the browser instance that is currently in focus</description>
+                            of the browser instance that is currently in focus.</description>
                     </entry>
                     <entry>
                         <term>Sandbox</term>
                         <description>Security mechanism for separating running processes, most often
                             used to run untrusted or vulnerable processes by reducing their
                             privileges to such an extent that they should not be able to harm the
-                            host system</description>
+                            host system.</description>
                     </entry>
                     <entry>
                         <term>Tabs</term>
                         <description>Allow the browsers to display content from multiple web sites
-                            without starting another instance of the browser</description>
+                            without starting another instance of the browser.</description>
                     </entry>
                     <entry>
                         <term>Web Browser</term>
                         <description>Application that retrieves and renders content provided by a
-                            web server.  The term web browser and TOE are interchangeable in
-							this document.</description>
+                            web server. The term web browser and TOE are interchangeable in this
+                            document.</description>
                     </entry>
                     <entry>
                         <term>XSS</term>
-                        <description>Cross Site Scripting - Vulnerability resulting from
+                        <!-- <description>Cross Site Scripting - Vulnerability resulting from
                             insufficient filtering of special characters that allows an attacker to
                             inject a script into a web page, which is later displayed by a browser;
                             allows the attack to deface web sites or steal session
-                            information</description>
+                            information.</description> -->
+                        <description>Cross Site Scripting - Client-side injection of a script into a
+                            dynamic web page to target other users with attacks that can range in
+                            severity (e.g., spoofed content, session hijacking, execution of
+                            malicious code on a user’s browser, etc.).</description>
                     </entry>
                 </glossary>
             </subsection>
@@ -260,52 +257,49 @@
         <description>This <abbr linkend="EP"/> does not claim conformance to any
             packages.</description>
             -->
-            <cclaims>
+        <cclaims>
             <cclaim id="Conformance Statement">
-                <description>
-                    The <i>Protection Profile for Application Software</i> (App PP) defines the baseline
-                    Security Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for
-                    application software products. This EP serves to extend the App PP baseline with
-                    additional SFRs and associated Assurance Activities specific to a web
-                    browser. Assurance Activities are the actions that the evaluator performs in order to
-                    determine a TOE’s compliance to the SFRs.<br />
-                This EP conforms to Common Criteria <cite linkend="bibCC"/> for
-                    Information Technology Security Evaluation, Version 3.1, Revision 4. It is CC Part 2
-                    extended and CC Part 3 conformant. In order to be conformant to this EP, the ST must
-                    include all components in this EP and the associated App PP that are:
-                <ul><li>unconditional (which are always required)</li>
-                    <li>selection-based (which are required when certain selections are chosen in the
-                        unconditional requirements)</li>
-                </ul>
-                and may include components that are:
-                <ul><li>optional or</li>
-                    <li>objective.</li></ul></description>
-             </cclaim>
-            </cclaims>  
+                <description> The Protection Profile for Application Software (App PP) defines the
+                    baseline Security Functional Requirements (SFRs) and Security Assurance
+                    Requirements (SARs) for application software products. This EP serves to extend
+                    the App PP baseline with additional SFRs and associated Assurance Activities
+                    specific to a web browser. Assurance Activities are the actions that the
+                    evaluator performs in order to determine a TOE’s compliance to the SFRs.<br/>
+                    This EP conforms to Common Criteria <cite linkend="bibCC"/> for Information
+                    Technology Security Evaluation, Version 3.1, Revision 4. It is CC Part 2
+                    extended and CC Part 3 conformant. In order to be conformant to this EP, the ST
+                    must include all components in this EP and the associated App PP that are:
+                            <ul><li>unconditional (which are always required)</li>
+                        <li>selection-based (which are required when certain selections are chosen
+                            in the unconditional requirements)</li>
+                    </ul> and may include components that are: <ul><li>optional or</li>
+                        <li>objective.</li></ul></description>
+            </cclaim>
+        </cclaims>
     </chapter>
     <chapter title="Security Problem Description" id="spd"> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
         operational environment, and any organizational security policies that it is expected to
         enforce. <br/> This Extended Package does not repeat the threats, assumptions, and
-        organizational security policies identified in the <i>Protection Profile for Application
-            Software</i> (App PP), though they all apply given the conformance and hence dependence
-        of this EP on it. Together the threats, assumptions and organizational security policies of
-        the App PP and those defined in this EP describe those addressed by a web browser as the
-        Target of Evaluation. <br/> Notably, browsers are particularly at risk from the Network
-        Attack threat identified in the App PP. Attackers can use phishing or another social
-        engineering technique to persuade a user to visit a malicious site. Users may also
-        unintentionally visit malicious sites in the course of web browsing. Such sites then present
-        malicious content to the user's browser to exploit it and perform installation of malware,
-        often with no indication to the user. <section title="Threats" id="threattable">The
-            following threats are specific to web browsers, and represent an addition to those
-            identified in the App PP. <threats>
+        organizational security policies identified in the App PP, though they all apply given the
+        conformance and hence dependence of this EP on it. Together the threats, assumptions and
+        organizational security policies of the App PP and those defined in this EP describe those
+        addressed by a web browser as the Target of Evaluation. <br/> Notably, browsers are
+        particularly at risk from the Network Attack threat identified in the App PP. Attackers can
+        use phishing or another social engineering technique to persuade a user to visit a malicious
+        site. Users may also unintentionally visit malicious sites in the course of web browsing.
+        Such sites then present malicious content to the user's browser to exploit it and perform
+        installation of malware, often with no indication to the user. <section title="Threats"
+            id="threattable">The following threats are specific to web browsers, and represent an
+            addition to those identified in the App PP. <threats>
                 <threat id="T.FLAWED_ADDON">
                     <description> Web browser functionality can be extended through the integration
                         of third-party utilities and tools. Malicious or vulnerable add-ons could
                         result attacks against the system. Such attacks allowing unauthorized access
-                        to sensitive information in the browser, unauthorized access to the platform's
-                        file system, or even privilege escalation that enables unauthorized access
-                        to other applications or the operating system. </description>
+                        to sensitive information in the browser, unauthorized access to the
+                        platform's file system, or even privilege escalation that enables
+                        unauthorized access to other applications or the operating system.
+                    </description>
                 </threat>
                 <threat id="T.SAMEORIGIN_VIOLATION">
                     <description> Violating the same-origin policy is a specialized type of network
@@ -343,15 +337,15 @@
                         between different web domains, the browser must ensure that content
                         originating from different domains (e.g., in a tab or iFrame) is properly
                         isolated. </description>
-                        <component-refer ref="fdp_sop_ext.1"/>
-                        <component-refer ref="fdp_acf_ext.1.1"/>
+                    <component-refer ref="fdp_sop_ext.1"/>
+                    <component-refer ref="fdp_acf_ext.1.1"/>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification at installation time and update. </description>
-                        <component-refer ref="fia_x509_ext.1.1"/>
-                        <component-refer ref="fpt_tud_ext.2"/>
+                    <component-refer ref="fia_x509_ext.1.1"/>
+                    <component-refer ref="fpt_tud_ext.2"/>
                 </SO>
             </SOs>
         </section>
@@ -392,36 +386,30 @@
                             superdomain of that website must occur over TLS 1.2 (RFC 5246) or
                             greater by utilizing HTTPS (RFC 2818). </note>
                         <aactivity>
-                            <tss>
-                                The evaluator shall examine the TSS to ensure that it
-                                documents how the TOE supports HSTS.
-                            </tss>
-                            <guidance> The evaluator
-                            shall examine the operational guidance to ensure it contains
-                            instructions on how to use HSTS.
-                            </guidance>
-                            <tests>
-                                The evaluator shall perform the following tests: 
-                                <testlist>
-                                    <test>The evaluator shall connect to a HSTS-compliant website while
-                                        running a network protocol analyzer to monitor the traffic. The
-                                        evaluator shall examine the captured network traffic and verify
-                                        that a Strict Transport Security header is received and that
-                                        there is a directive for the max-age of the HSTS
-                                        relationship.</test>
-                                    <test>The evaluator shall reconnect to the HSTS website again over
-                                        HTTP and shall verify that the session is redirected to
+                            <tss> The evaluator shall examine the TSS to ensure that it documents
+                                how the TOE supports HSTS. </tss>
+                            <guidance> The evaluator shall examine the operational guidance to
+                                ensure it contains instructions on how to use HSTS. </guidance>
+                            <tests> The evaluator shall perform the following tests: <testlist>
+                                    <test>The evaluator shall connect to a HSTS-compliant website
+                                        while running a network protocol analyzer to monitor the
+                                        traffic. The evaluator shall examine the captured network
+                                        traffic and verify that a Strict Transport Security header
+                                        is received and that there is a directive for the max-age of
+                                        the HSTS relationship.</test>
+                                    <test>The evaluator shall reconnect to the HSTS website again
+                                        over HTTP and shall verify that the session is redirected to
                                         HTTPS.</test>
-                                    <test>The evaluator shall reconnect to the HSTS website after the
-                                        max-age has expired, and verify that the website and TOE
+                                    <test>The evaluator shall reconnect to the HSTS website after
+                                        the max-age has expired, and verify that the website and TOE
                                         reestablish an HSTS relationship.</test>
-                                    <test>The evaluator shall update the website HSTS information, and
-                                        verify that when the TOE reconnects to the website, that
+                                    <test>The evaluator shall update the website HSTS information,
+                                        and verify that when the TOE reconnects to the website, that
                                         information is updated by the TOE.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
-                   </f-element>
+                    </f-element>
                 </f-component>
             </subsection>
             <subsection title="User Data Protection (FDP)" id="fdp">
@@ -596,8 +584,8 @@
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
-                                <li>The rendering process cannot directly access the platform's
-                                    file system;</li>
+                                <li>The rendering process cannot directly access the platform's file
+                                    system;</li>
                                 <li>The rendering process cannot directly invoke inter-process
                                     communication mechanisms with non-browser processes;</li>
                                 <li>The rendering process has reduced privilege with respect to
@@ -616,15 +604,15 @@
                             processing. This component requires the TSF to lower the privileges of
                             rendering processes by ensuring that it cannot directly access the file
                             system of the host, and that it cannot use IPC mechanisms provided by
-                            the host to communicate with non-browser processes on the host. Typically,
-                            if a rendering process needs to access a file or communicate with a
-                            non-browser process, it must request such access through the TSF (which is
-                            allowed by the requirement).<br/> In addition to the two required
-                            measures, other measures can be implemented depending on the browser and the
-                            host platform. These may involve such actions as changing the owner of
-                            the rendering process to a low-privileged account or dropping
-                            platform-defined privileges in the rendering process. The ST author
-                            fills in the additional measures implemented by the browser. </note>
+                            the host to communicate with non-browser processes on the host.
+                            Typically, if a rendering process needs to access a file or communicate
+                            with a non-browser process, it must request such access through the TSF
+                            (which is allowed by the requirement).<br/> In addition to the two
+                            required measures, other measures can be implemented depending on the
+                            browser and the host platform. These may involve such actions as
+                            changing the owner of the rendering process to a low-privileged account
+                            or dropping platform-defined privileges in the rendering process. The ST
+                            author fills in the additional measures implemented by the browser. </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             how the rendering of HTML and interpretation of JavaScript is performed
@@ -974,7 +962,8 @@
                 </f-component>
                 <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
                     <f-element id="FPT_MCD_EXT.1.1">
-                        <title>The browser shall support the capability to execute signed <selectables linebreak="yes">
+                        <title>The browser shall support the capability to execute signed
+                                <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -989,7 +978,6 @@
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>JavaScript</selectable>
                                 <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
                             </selectables>mobile code is encountered.</title>
                     </f-element> -->
@@ -999,14 +987,13 @@
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>[assignment: other mobile code types supported by the browser]</selectable>
+                                <selectable>[assignment: other mobile code types supported by the
+                                    browser]</selectable>
                             </selectables> mobile code without executing it.</title>
                         <note role="application"> The ST author must specify all mobile code types
-                            for which the browser provides this support.
-                            <br/>An authorized signer may directly sign the code itself, or
-                            the code may be delivered over an authenticated HTTPS connection with an
-                            authorized entity.
-                            </note>
+                            for which the browser provides this support. <br/>An authorized signer
+                            may directly sign the code itself, or the code may be delivered over an
+                            authenticated HTTPS connection with an authorized entity. </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
                             types of signed mobile code that the TSF supports. The TSS shall
@@ -1176,7 +1163,8 @@
                             <tr><td>Enable/disable ability for websites to register protocol
                                     handlers </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable display notification when unsigned, untrusted or
-                                    unverified mobile code is encountered.</td><td>O</td><td>O</td></tr>
+                                    unverified mobile code is
+                                encountered.</td><td>O</td><td>O</td></tr>
                         </table>
                         <!-- <selectables>
                                 <selectable>enable/disable storage of sensitive web form
@@ -1241,12 +1229,11 @@
                                     handlers.</selectable>
                             </selectables></title> -->
                         <note role="application"> The intent of this requirement is to allow the
-                            user and administrator of the platform to configure the browser with 
-							configuration policies.
-                            If the administrator has not
-                            set a policy for a particular function, the user may still perform that
-                            function. Enforcement of the policy is done by the browser itself, or the
-                            browser and its platform in coordination with each other </note>
+                            user and administrator of the platform to configure the browser with
+                            configuration policies. If the administrator has not set a policy for a
+                            particular function, the user may still perform that function.
+                            Enforcement of the policy is done by the browser itself, or the browser
+                            and its platform in coordination with each other.</note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall verify that the TSS describes those
                             management functions which may only be configured by the TOE platform
