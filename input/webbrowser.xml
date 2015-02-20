@@ -193,10 +193,9 @@
                             inject a script into a web page, which is later displayed by a browser;
                             allows the attack to deface web sites or steal session
                             information.</description> -->
-                        <description>Cross Site Scripting - Client-side injection of a script into a
-                            dynamic web page to target other users with attacks that can range in
-                            severity (e.g., spoofed content, session hijacking, execution of
-                            malicious code on a user’s browser, etc.).</description>
+                        <description>Cross Site Scripting - Injection of untrusted content into a
+                            vulnerable web application to render or execute that content on a
+                            victim’s system.</description>
                     </entry>
                 </glossary>
             </subsection>
