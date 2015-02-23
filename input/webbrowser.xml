@@ -154,8 +154,12 @@
                     </entry>
                     <entry>
                         <term>Mobile Code</term>
-                        <description>As defined in the <cite linkend="bibAppPP"/>; however,
-                            JavaScript is not included in references to mobile code in this browser
+                        <description>Software transmitted from a remote system for execution within
+                            a limited execution environment on the local system. Typically, there is
+                            no persistent installation and execution begins without the user's
+                            consent or even notification. Examples of mobile code technologies
+                            include Java applets, Adobe Flash, and Microsoft Silverlight. JavaScript
+                            is not included in references to mobile code in this browser
                             EP.</description>
                     </entry>
                     <entry>
