@@ -368,9 +368,11 @@
                 <b>Iteration</b> operation: are identified with a number inside parentheses (e.g.
                 "(1)")</li>
         </ul>
-        <section title="Security Functional Requirements" id="SFR">This section addresses those
-            Security Functional Requirements that may be met by the TOE. <subsection
-                title="Cryptographic Support (FCS)" id="fcs">
+        <section title="Security Functional Requirements" id="SFR">The Security Functional Requirements
+		included in this section are derived from Part 2 of the Common Criteria for Information
+      	Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
+      	components. 
+				<subsection title="Cryptographic Support (FCS)" id="fcs">
                 <f-component id="FCS_STS_EXT.1" name="Strict Transport Security">
                     <f-element id="FCS_STS_EXT.1.1" status="objective">
                         <title>The browser shall implement HTTP Strict-Transport-Security according
@@ -776,7 +778,7 @@
             <subsection title="Identification and Authentication (FIA)" id="fia">
                 <f-component id="FIA_X509_EXT.1" name="X509 Authentication">
                     <f-element id="FIA_X509_EXT.1.1">
-                        <title>The browser shall not install code if the code signing certificate is
+                        <title>The browser shall prevent installation of add-on code if the code signing certificate is
                             deemed invalid.</title>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
@@ -825,12 +827,10 @@
                         <title>The browser shall present the user with the option to either download
                             or discard the executable.</title>
                         <note role="application"> In this context, an executable is a file
-                            containing compiled code for a software program that, when launched,
-                            initiates the installation of the program. It is invoked independent of
-                            and outside the context of the TOE. It does not include mobile code,
-                            scripts, or plug-ins.<br/> This requirement does not include the
-                            invocation of any program that is already installed on the TOE
-                            platform.<br/> This requirement ensures that if the user intentionally
+                            containing compiled code for a software program that is invoked independent of
+                            and outside the context of the browser. It does not include mobile code,
+                            scripts, or add-ons.<br/> 
+							This requirement ensures that if the user intentionally
                             (via clicking on a link) or unintentionally initiates the download of an
                             executable, the TSF will intervene by, for example, opening a dialog box
                             that presents the user with the option to either save the executable to
@@ -852,36 +852,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_ETUD_EXT.1" name="Allowance for Add-ons">
-                    <f-element id="FPT_ETUD_EXT.1.1">
-                        <title>The browser shall include the capability to load <selectables>
-                                <selectable>none</selectable>
-                                <selectable>browser add-ons</selectable>
-                            </selectables>. </title>
-                    </f-element>
-                </f-component>
-                <!--                <f-component id="FPT_INT_EXT.X" name="Interactions with Background Processes">
-                    <f-element id="FPT_INT_EXT.X.1">
-                        <title>The browser shall shut down any browser-spawned background processes
-                            when the browser exits.</title>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
-                            all browser-spawned processes that run while the TOE is running and
-                            describes the ability to terminate these processes when the TOE exits.
-                            The TSS should also describe the nature of the background processes, the
-                            circumstances under which they are spawned, the process/image names
-                            associated with them (if any) and their expected lifetimes.
-                                <h4>Guidance</h4> N/A <h4>Tests</h4>The evaluator shall perform the
-                            following tests: <testlist>
-                                <test>The evaluator shall start an instance of the TOE. The
-                                    evaluator shall inspect the TOE platform‘s running processes and
-                                    identify which are associated with the TOE instance. The
-                                    evaluator shall shut down the TOE instance and verify that the
-                                    TOE background processes have been terminated.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component> -->
                 <f-component id="FPT_INT_EXT.1"
                     name="Interactions with Application Reputation Services">
                     <f-element id="FPT_INT_EXT.1.1" status="objective">
@@ -1019,74 +989,27 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <!-- <f-component id="FPT_TUD_EXT.X" name="Trusted Extension Update">
-                    <f-element id="FPT_TUD_EXT.X.1" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
-                        <title>The browser shall provide the capability to query the current version
-                            of the extension.</title>
+                <f-component id="FPT_TUD_EXT.1" name="Support for Trusted Add-ons">
+                    <f-element id="FPT_TUD_EXT.1.1">
+                        <title>The browser shall include the capability to load <selectables>
+                                <selectable>no add-ons</selectable>
+                                <selectable>trusted add-ons</selectable>
+                            </selectables>. </title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.X.2" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
-                        <title>The browser shall provide the capability to initiate extension
-                            updates.</title>
-                    </f-element>
-                    <f-element id="FPT_TUD_EXT.X.3" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
-                        <title>The browser shall provide a means to verify extensions and extension
-                            updates using a digital signature mechanism prior to installing the
-                            extension or extension updates.</title>
-                    </f-element>
-                    <f-element id="FPT_TUD_EXT.X.4" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
-                        <title>The browser shall prevent websites from automatically installing
-                            extensions.</title>
-                        <note role="application"> Extensions are bundles of code that are added to
-                            the browser to add specific functionality that the browser does not
-                            provide by default. Extensions could be developed by the browser vendor
-                            or by third parties and are allowed full access to view and interact
-                            with the web content that the browser sees. Extensions are common on
-                            non-mobile platforms, but may not be supported on mobile platforms,
-                            where HTML5 tends to be used for websites that serve rich content. </note>
-                        <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to verify that it
-                            describes the ability of the TSF to verify that extensions and extension
-                            updates come from a trusted source. The evaluator shall examine the TSS
-                            to verify that it states that the TSF will reject extensions from
-                            unapproved sources. <h4>Guidance</h4> The evaluator shall examine the
-                            operational guidance to verify that it includes instructions on how to
-                            configure the TOE with trusted extension sources. <h4>Tests</h4> The
-                            evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall configure the TOE with trusted sources.
-                                    The evaluator shall create or obtain an extension signed by a
-                                    trusted source and attempt to install it. The evaluator shall
-                                    verify that the signature on the extension is valid.</test>
-                                <test>The evaluator shall create or obtain an extension signed by an
-                                    untrusted source and attempt to install it. The evaluator shall
-                                    verify that the signed extension is rejected.</test>
-                                <test>The evaluator shall create or obtain an extension signed with
-                                    an invalid certificate and attempt to install it. The evaluator
-                                    shall verify that the signed extension is rejected.</test>
-                                <test>The evaluator shall create or obtain an extension signed by a
-                                    trusted source, modify the extension without re-signing it, and
-                                    attempt to install it. The evaluator shall verify that the
-                                    signed extension is rejected.</test>
-                            </testlist>
-                        </aactivity>
-                    </f-element>
-                </f-component> -->
+                </f-component>
                 <f-component id="FPT_TUD_EXT.2" name="Trusted Installation and Updates for Add-ons">
                     <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to query the current version of
                             the add-on.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.1"/>
                         <title>The browser shall provide the ability to initiate the downloading of
-                            add-ons and add-on updates.</title>
+                            add-on updates.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.1"/>
                         <title>The browser shall provide a means to verify add-ons using a digital
                             signature mechanism and <selectables>
                                 <selectable>published hash</selectable>
@@ -1094,7 +1017,7 @@
                             </selectables> prior to installing the add-on.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
-                        <selection-depends req="FPT_ETUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.1"/>
                         <title>The browser shall prevent websites from automatically installing
                             add-ons.</title>
                         <aactivity>
