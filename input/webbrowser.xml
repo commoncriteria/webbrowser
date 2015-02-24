@@ -1139,17 +1139,17 @@
                             <tr><td>Enable/disable use of OCSP for obtaining the revocation status
                                     of an X.509 certificate</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure inclusion of user-agent information in HTTP
-                                    headers</td><td>O</td><td>X</td></tr>
+                                    headers</td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable ability for websites to collect tracking
                                     information about the user</td><td>O</td><td>X</td></tr>
                             <tr><td>Deletion of stored browsing data (cache, web form
                                     information)</td><td>O</td><td>X</td></tr>
                             <tr><td>Enable/disable storage of sensitive information in persistent
-                                    storage</td><td>O</td><td>X</td></tr>
+                                    storage</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure size of cookie cache </td><td>O</td><td>O</td></tr>
                             <tr><td>Configure size of cache </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable interaction with Graphic Processing Units
-                                    (GPUs)</td><td>X</td><td>O</td></tr>
+                                    (GPUs)</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the ability to advance to a web site with an invalid
                                     or unvalidated X.509 certificate</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the use of an application reputation service to detect
