@@ -158,8 +158,9 @@
                             a limited execution environment on the local system. Typically, there is
                             no persistent installation and execution begins without the user's
                             consent or even notification. Examples of mobile code technologies
-                            include Java applets, Adobe Flash, and Microsoft Silverlight. JavaScript
-                            is not included in references to mobile code in this browser
+                            include Java applets, Adobe Flash, and Microsoft Silverlight.
+							<br/> 
+							<b>Note:</b> JavaScript is not included in references to mobile code in this browser
                             EP.</description>
                     </entry>
                     <entry>
@@ -944,16 +945,6 @@
                                     browser]</selectable>
                             </selectables>mobile code.</title>
                     </f-element>
-                    <!-- moved to FPT_MOF 
-                        <f-element id="FPT_MCD_EXT.1.3">
-                        <title>The browser shall notify the user when unsigned, untrusted or
-                            unverified <selectables>
-                                <selectable>Active X</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>[assignment: other mobile code types supported by the TOE]</selectable>
-                            </selectables>mobile code is encountered.</title>
-                    </f-element> -->
                     <f-element id="FPT_MCD_EXT.1.2">
                         <title>The browser shall provide the user with the option to discard
                             unsigned, untrusted or unverified <selectables linebreak="yes">
@@ -1047,8 +1038,8 @@
                 </f-component>
             </subsection>
             <subsection title="Security Management (FMT)" id="fmt">
-                <f-component id="fmt_mof.1" name="Management of Functions Behavior">
-                    <f-element id="fmt_mof.1.1">
+                <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
+                    <f-element id="fmt_mof_ext.1.1">
                         <title>The browser shall restrict the ability to manage/perform functions as
                             follows:</title>
                         <ul>
@@ -1075,6 +1066,9 @@
                                     (GPUs)</td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the ability to advance to a web site with an invalid
                                     or unvalidated X.509 certificate</td><td>O</td><td>O</td></tr>
+                            <tr><td>Enable/disable establishment of a trusted channel if the browser
+                                    cannot establish a connection to determine the validity of a
+                                    certificate </td><td>O</td><td>O</td></tr>
                             <tr><td>Configure the use of an application reputation service to detect
                                     malicious applications prior to download
                                     </td><td>O</td><td>O</td></tr>
@@ -1083,9 +1077,6 @@
                                     content</td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable automatic installation of software updates and
                                     patches</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable establishment of a trusted channel if the TSF
-                                    cannot establish a connection to determine the validity of a
-                                    certificate </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable ability for websites to register protocol
                                     handlers </td><td>O</td><td>O</td></tr>
                             <tr><td>Enable/disable display notification when unsigned, untrusted or
