@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-02-20</PPPubDate>
+            <PPPubDate>2015-03-10</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -121,6 +121,11 @@
                             privileges.</description>
                     </entry>
                     <entry>
+                        <term>Domain</term>
+                        <description>a realm of administrative autonomy, authority or control on the
+                            Internet (e.g., cnn.com, ietf.org)</description>
+                    </entry>
+                    <entry>
                         <term>Extension</term>
                         <description>Bundle of code that are added to the browser to add specific
                             functionality that the browser does not provide by
@@ -173,11 +178,30 @@
                             of the browser instance that is currently in focus.</description>
                     </entry>
                     <entry>
+                        <term>Port</term>
+                        <description>an application-specific construct that functions as a
+                            communications endpoint in a computer’s host OS; in a web environment,
+                            port 80 is the default port for HTTP communications, although other
+                            ports can be used. In a web address, the port follows the domain or
+                            sub-domain name (e.g., http://www.cnn.com:80</description>
+                    </entry>
+                    <entry>
+                        <term>Protocol</term>
+                        <description>a system of digital rules for data exchange within or between
+                            computers; in a web environment, the typical protocols are HTTP and
+                            HTTPS</description>
+                    </entry>
+                    <entry>
                         <term>Sandbox</term>
                         <description>Security mechanism for separating running processes, most often
                             used to run untrusted or vulnerable processes by reducing their
                             privileges to such an extent that they should not be able to harm the
                             host system.</description>
+                    </entry>
+                    <entry>
+                        <term>Sub-domain</term>
+                        <description>denoted by a prefix before the top-level domain name (e.g.,
+                            news.cnn.com)</description>
                     </entry>
                     <entry>
                         <term>Tabs</term>
@@ -331,7 +355,7 @@
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification at installation time and update. </description>
-                    <component-refer ref="fia_x509_ext.1.1"/>
+                    <component-refer ref="fia_x509_ext.2.3"/>
                     <component-refer ref="fpt_tud_ext.2"/>
                 </SO>
             </SOs>
@@ -412,7 +436,9 @@
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
-                            "Web Storage."<br/> In this context, a domain is a realm of
+                            "Web Storage."<br/>
+                            <!-- TERMS BELOW MOVED TO DEFINITIONS SECTION
+                            In this context, a domain is a realm of
                             administrative autonomy, authority or control on the Internet (e.g.,
                             cnn.com, ietf.org). A sub-domain is denoted by a prefix before the
                             top-level domain name (e.g., news.cnn.com). A protocol is a system of
@@ -422,45 +448,43 @@
                             endpoint in a computer’s host OS; in a web environment, port 80 is the
                             default port for HTTP communications, although other ports can be used.
                             In a web address, the port follows the domain or sub-domain name (e.g.,
-                            http://www.cnn.com:80).</note>
+                            http://www.cnn.com:80). -->
+                        </note>
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             how the TSF separates local and session storage. <h4>Guidance</h4> The
                             evaluator shall examine the operational guidance to verify that it
                             documents the location on the file system that will be used for local
                             storage and the location used for session storage. <h4>Tests</h4> The
-                            evaluator shall perform the following tests:<br/>
+                            evaluator shall obtain or create JavaScript-based scripts that store and
+                            retrieve information from local and session storage and shall set up a
+                            web server with two or more web pages using different protocols and/or
+                            ports. The evaluator shall incorporate the scripts into the web pages
+                            and shall perform the following tests:<br/>
                             <testlist>
-                                <test>The evaluator shall obtain or create JavaScript-based scripts
-                                    that store and retrieve information from local and session
-                                    storage and shall set up a web server with two or more web pages
-                                    using different protocols and/or ports. The evaluator shall
-                                    incorporate the scripts into the web pages. The evaluator shall
-                                    open two or more browser windows and navigate to the same web
-                                    page. The evaluator shall verify that the script for accessing
-                                    session storage that is running in one window cannot access
-                                    session storage associated with a different window.</test>
-                                <test>Using the same web server, the evaluator shall open two or
-                                    more browser tabs and navigate to the same web page. The
-                                    evaluator shall verify that the script for accessing session
-                                    storage that is running in one tab cannot access session storage
-                                    associated with a different tab.</test>
-                                <test>Using the same web server, the evaluator shall open two or
-                                    more browser windows and navigate to the same web page. The
-                                    evaluator shall verify that the script for accessing local
-                                    storage that is running in one window can access local storage
-                                    associated with a different window.</test>
-                                <test>Using the same web server, the evaluator shall open two or
-                                    more browser tabs and navigate to the same web page. The
-                                    evaluator shall verify that the script for accessing local
-                                    storage that is running in one tab can access local storage
-                                    associated with a different tab.</test>
-                                <test>Using the same web server, the evaluator shall open windows
-                                    and tabs and navigate to different web pages. The evaluator
-                                    shall verify that a script running in the context of one
-                                    domain/protocol/port in a window or tab cannot access
-                                    information associated with a different domain/protocol/port in
-                                    a different window or tab.</test>
+                                <test>The evaluator shall open two or more browser windows and
+                                    navigate to the same web page. The evaluator shall verify that
+                                    the script for accessing session storage that is running in one
+                                    window cannot access session storage associated with a different
+                                    window.</test>
+                                <test>The evaluator shall open two or more browser tabs and navigate
+                                    to the same web page. The evaluator shall verify that the script
+                                    for accessing session storage that is running in one tab cannot
+                                    access session storage associated with a different tab.</test>
+                                <test>The evaluator shall open two or more browser windows and
+                                    navigate to the same web page. The evaluator shall verify that
+                                    the script for accessing local storage that is running in one
+                                    window can access local storage associated with a different
+                                    window.</test>
+                                <test>The evaluator shall open two or more browser tabs and navigate
+                                    to the same web page. The evaluator shall verify that the script
+                                    for accessing local storage that is running in one tab can
+                                    access local storage associated with a different tab.</test>
+                                <test>The evaluator shall open windows and tabs and navigate to
+                                    different web pages. The evaluator shall verify that a script
+                                    running in the context of one domain/protocol/port in a window
+                                    or tab cannot access information associated with a different
+                                    domain/protocol/port in a different window or tab.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
@@ -564,7 +588,7 @@
                             descriptions are present for all platforms claimed in the ST.<br/> For
                             each additional mechanism listed in the third bullet of this component
                             by the ST author, the evaluator shall examine the TSS to ensure 1) the
-                            mechanisms is described; 2) the description of the mechanism is
+                            mechanisms are described; 2) the description of the mechanisms are
                             sufficiently detailed to determine that it contributes to the principle
                             of least privilege being implemented in the rendering process; and 3)
                             appropriate supporting information is provided in the TSS (or pointers
@@ -624,27 +648,27 @@
                             with RFC 6454. If the TSF allows the relaxation of the same origin
                             policy for subdomains in different tabs or windows, the TSS shall
                             describe how these exceptions are implemented. <h4>Guidance</h4> N/A
-                                <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall obtain or create scripts that can retrieve
-                                    content from designated locations and shall set up a web server
-                                    with two or more web pages representing different domains. The
-                                    evaluator shall incorporate the scripts into the web pages. The
-                                    evaluator shall associate each page with a different protocol
-                                    and/or port. The evaluator shall open two or more browser
-                                    windows and navigate to a different page on the website in each
-                                    window. The evaluator shall run the scripts and shall verify
-                                    that the script that is running in one window cannot access
-                                    content that was retrieved in a different window.</test>
-                                <test>Using the same web server, the evaluator shall open two or
-                                    more browser tabs and navigate to a different page on the
-                                    website in each tab. The evaluator shall run the scripts and
-                                    shall verify that the script that is running in one tab cannot
-                                    access content that was retrieved in a different tab.</test>
-                                <test>If the TSF supports relaxation of the same origin policy for
-                                    subdomains, the evaluator shall configure the web server with
-                                    subdomains and shall repeat tests 1 and 2. The evaluator shall
-                                    verify that the scripts can retrieve content from another
-                                    window/tab at a different subdomain.</test>
+                                <h4>Tests</h4> The evaluator shall obtain or create scripts that can
+                            retrieve content from designated locations and shall set up a web server
+                            with two or more web pages representing different domains. The evaluator
+                            shall incorporate the scripts into the web pages. The evaluator shall
+                            associate each page with a different protocol and/or port and shall
+                            perform tests 1 and 2.<br/> If the TSF supports relaxation of the same
+                            origin policy for subdomains, the evaluator shall configure the web
+                            server with subdomains and shall perform test 3 and repeat tests 1 and 2.<br/>
+                            <testlist>
+                                <test>The evaluator shall open two or more browser windows and
+                                    navigate to a different page on the website in each window. The
+                                    evaluator shall run the scripts and shall verify that the script
+                                    that is running in one window cannot access content that was
+                                    retrieved in a different window.</test>
+                                <test>The evaluator shall open two or more browser tabs and navigate
+                                    to a different page on the website in each tab. The evaluator
+                                    shall run the scripts and shall verify that the script that is
+                                    running in one tab cannot access content that was retrieved in a
+                                    different tab.</test>
+                                <test>The evaluator shall verify that the scripts can retrieve
+                                    content from another window/tab at a different subdomain.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
@@ -704,8 +728,8 @@
                 </f-component>
             </subsection>
             <subsection title="Identification and Authentication (FIA)" id="fia">
-                <f-component id="FIA_X509_EXT.1" name="X509 Authentication">
-                    <f-element id="FIA_X509_EXT.1.1">
+                <f-component id="FIA_X509_EXT.2" name="X509 Certificate Authentication">
+                    <f-element id="FIA_X509_EXT.2.3">
                         <title>The browser shall prevent installation of add-on code if the code
                             signing certificate is deemed invalid.</title>
                         <aactivity>
@@ -977,41 +1001,42 @@
                             <li>O = Optional</li></ul>
                         <table><tr class="header"><td>Management
                                     Function</td><td>Administrator</td><td>User</td></tr>
-                            <tr><td>Enable/disable storage of third party
+                            <tr><td>1. Enable/disable storage of third party
                                     cookies</td><td>O</td><td>X</td></tr>
-                            <tr><td>Enable/disable add-ons</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable use of OCSP for obtaining the revocation status
-                                    of an X.509 certificate</td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure inclusion of user-agent information in HTTP
+                            <tr><td>2. Enable/disable add-ons</td><td>O</td><td>O</td></tr>
+                            <tr><td>3. Enable/disable use of OCSP for obtaining the revocation
+                                    status of an X.509 certificate</td><td>O</td><td>O</td></tr>
+                            <tr><td>4. Configure inclusion of user-agent information in HTTP
                                     headers</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable ability for websites to collect tracking
+                            <tr><td>5. Enable/disable ability for websites to collect tracking
                                     information about the user</td><td>O</td><td>X</td></tr>
-                            <tr><td>Deletion of stored browsing data (cache, web form
+                            <tr><td>6. Deletion of stored browsing data (cache, web form
                                     information)</td><td>O</td><td>X</td></tr>
-                            <tr><td>Enable/disable storage of sensitive information in persistent
+                            <tr><td>7. Enable/disable storage of sensitive information in persistent
                                     storage</td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure size of cookie cache </td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure size of cache </td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable interaction with Graphic Processing Units
+                            <tr><td>8. Configure size of cookie cache </td><td>O</td><td>O</td></tr>
+                            <tr><td>9. Configure size of cache </td><td>O</td><td>O</td></tr>
+                            <tr><td>10. Enable/disable interaction with Graphic Processing Units
                                     (GPUs)</td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure the ability to advance to a web site with an invalid
-                                    or unvalidated X.509 certificate</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable establishment of a trusted channel if the browser
-                                    cannot establish a connection to determine the validity of a
-                                    certificate </td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure the use of an application reputation service to detect
-                                    malicious applications prior to download
+                            <tr><td>11. Configure the ability to advance to a web site with an
+                                    invalid or unvalidated X.509
+                                    certificate</td><td>O</td><td>O</td></tr>
+                            <tr><td>12. Enable/disable establishment of a trusted channel if the
+                                    browser cannot establish a connection to determine the validity
+                                    of a certificate </td><td>O</td><td>O</td></tr>
+                            <tr><td>13. Configure the use of an application reputation service to
+                                    detect malicious applications prior to download
                                     </td><td>O</td><td>O</td></tr>
-                            <tr><td>Configure the use of a URL reputation service to detect sites
-                                    that contain malware or phishing
+                            <tr><td>14. Configure the use of a URL reputation service to detect
+                                    sites that contain malware or phishing
                                     content</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable automatic installation of software updates and
-                                    patches</td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable ability for websites to register protocol
+                            <tr><td>15. Enable/disable automatic installation of software updates
+                                    and patches</td><td>O</td><td>O</td></tr>
+                            <tr><td>16. Enable/disable ability for websites to register protocol
                                     handlers </td><td>O</td><td>O</td></tr>
-                            <tr><td>Enable/disable display notification when unsigned, untrusted or
-                                    unverified mobile code is
-                                encountered.</td><td>O</td><td>O</td></tr>
+                            <tr><td>17. Enable/disable display notification when unsigned, untrusted
+                                    or unverified mobile code is
+                                    encountered.</td><td>O</td><td>O</td></tr>
                         </table>
                         <note role="application"> The intent of this requirement is to allow the
                             user and administrator of the platform to configure the browser with
