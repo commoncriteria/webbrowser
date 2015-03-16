@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-03-10</PPPubDate>
+            <PPPubDate>2015-03-16</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -123,7 +123,7 @@
                     <entry>
                         <term>Domain</term>
                         <description>a realm of administrative autonomy, authority or control on the
-                            Internet (e.g., cnn.com, ietf.org)</description>
+                            Internet (e.g., cnn.com, ietf.org).</description>
                     </entry>
                     <entry>
                         <term>Extension</term>
@@ -183,13 +183,13 @@
                             communications endpoint in a computer’s host OS; in a web environment,
                             port 80 is the default port for HTTP communications, although other
                             ports can be used. In a web address, the port follows the domain or
-                            sub-domain name (e.g., http://www.cnn.com:80</description>
+                            sub-domain name (e.g., http://www.cnn.com:80.</description>
                     </entry>
                     <entry>
                         <term>Protocol</term>
                         <description>a system of digital rules for data exchange within or between
                             computers; in a web environment, the typical protocols are HTTP and
-                            HTTPS</description>
+                            HTTPS.</description>
                     </entry>
                     <entry>
                         <term>Sandbox</term>
@@ -201,7 +201,7 @@
                     <entry>
                         <term>Sub-domain</term>
                         <description>denoted by a prefix before the top-level domain name (e.g.,
-                            news.cnn.com)</description>
+                            news.cnn.com).</description>
                     </entry>
                     <entry>
                         <term>Tabs</term>
@@ -225,7 +225,8 @@
         </section>
         <section title="Compliant Targets of Evaluation" id="TOEdescription"> This document provides
             an extended set of Security Functional Requirements (SFRs) for a web browser, which is
-            the Target of Evaluation (TOE). <br/> The Protection Profile for Application Software
+            the Target of Evaluation (TOE). The terms web browser, browser, and TOE are
+            interchangeable in this document.<br/> The Protection Profile for Application Software
             defines the baseline SFRs for application software which runs on mobile devices ("apps")
             as well as on desktop and server platforms. This Extended Package (EP) for web browsers
             is not complete in itself, but rather extends the Protection Profile for Application
@@ -306,8 +307,8 @@
                 <threat id="T.FLAWED_ADDON">
                     <description> Web browser functionality can be extended through the integration
                         of third-party utilities and tools. Malicious or vulnerable add-ons could
-                        result attacks against the system. Such attacks allowing unauthorized access
-                        to sensitive information in the browser, unauthorized access to the
+                        result in attacks against the system. Such attacks can allow unauthorized
+                        access to sensitive information in the browser, unauthorized access to the
                         platform's file system, or even privilege escalation that enables
                         unauthorized access to other applications or the operating
                         system.</description>
@@ -319,7 +320,7 @@
                         separate the content of different web domains. It is specifically identified
                         as a threat to web browsers, since they implement the access control
                         policies that are violated in these attacks. <br/> Attacks which involve
-                        same origin violations are: <ul>
+                        same origin violations include: <ul>
                             <li>Insufficient protection of session tokens can lead to session
                                 hijacking, where a token is captured and reused in order to gain the
                                 privileges of the user who initiated the session.</li>
@@ -547,8 +548,8 @@
                                     communication mechanisms with non-browser processes;</li>
                                 <li>The rendering process has reduced privilege with respect to
                                     other browser processes <selectables>
-                                        <selectable>[assignment: methods by which the principle of
-                                            least privilege is implement for rendering
+                                        <selectable>[assignment: through methods by which the principle of
+                                            least privilege is implemented for rendering
                                             processes]</selectable>
                                         <selectable>in no other ways</selectable>
                                     </selectables></li>
@@ -935,7 +936,7 @@
                     </f-element>
                 </f-component>
                 <f-component id="FPT_TUD_EXT.1" name="Support for Trusted Add-ons">
-                    <f-element id="FPT_TUD_EXT.1.1">
+                    <f-element id="FPT_TUD_EXT.1.7">
                         <title>The browser shall include the capability to load <selectables>
                                 <selectable>no add-ons</selectable>
                                 <selectable>trusted add-ons</selectable>
@@ -944,17 +945,17 @@
                 </f-component>
                 <f-component id="FPT_TUD_EXT.2" name="Trusted Installation and Updates for Add-ons">
                     <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.7"/>
                         <title>The browser shall provide the ability to query the current version of
                             the add-on.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.7"/>
                         <title>The browser shall provide the ability to initiate the downloading of
                             add-on updates.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.7"/>
                         <title>The browser shall provide a means to verify add-ons using a digital
                             signature mechanism and <selectables>
                                 <selectable>published hash</selectable>
@@ -962,7 +963,7 @@
                             </selectables> prior to installing the add-on.</title>
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.1"/>
+                        <selection-depends req="FPT_TUD_EXT.1.7"/>
                         <title>The browser shall prevent websites from automatically installing
                             add-ons.</title>
                         <aactivity>
