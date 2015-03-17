@@ -261,7 +261,7 @@
                 <usecase title="Remote Administration Client">
                     <description> Browsers are used to provide remote administration interfaces for
                         systems such as servers, network devices and embedded systems, to include
-                        supervisory control and data acquisition (SCADA) sytems, smart TVs and
+                        supervisory control and data acquisition (SCADA) systems, smart TVs and
                         thermostats. As opposed to surfing the web, where the browser may be
                         interacting with untrusted servers, the browser, acting as a Remote
                         Administration Client, is connecting to a server that the user
@@ -1059,7 +1059,7 @@
                                     file)</td><td>O</td><td>O</td></tr>
                             <tr><td>19. Block/unblock launching of downloaded files outside the
                                     browser</td><td>O</td><td>O</td></tr>
-                            <tr><td>20. Enable/disable Javascript</td><td>O</td><td>O</td></tr>
+                            <tr><td>20. Enable/disable JavaScript</td><td>O</td><td>O</td></tr>
                             <tr><td>21. Enable/disable <selectables><selectable>ActiveX</selectable>
                                         <selectable>Flash</selectable>
                                         <selectable>Java</selectable>
