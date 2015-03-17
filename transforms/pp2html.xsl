@@ -20,7 +20,7 @@
 
   <!-- Put all common templates into ppcommons.xsl -->
   <!-- They can be redefined/overridden  -->
-  <xsl:include href="ppcommons.xsl"/>
+  <xsl:include href="..\transforms\ppcommons.xsl"/>
   
   <xsl:template match="/cc:PP">
     <html xmlns="http://www.w3.org/1999/xhtml">
