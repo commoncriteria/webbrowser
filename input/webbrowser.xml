@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-03-16</PPPubDate>
+            <PPPubDate>2015-03-17</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -197,6 +197,14 @@
                             used to run untrusted or vulnerable processes by reducing their
                             privileges to such an extent that they should not be able to harm the
                             host system.</description>
+                    </entry>
+                    <entry>
+                        <term>Sensitive Data</term>
+                        <description>Sensitive data may include all user or enterprise data or may
+                            be specific application data such as emails, messaging, documents,
+                            calendar items, and contacts. Sensitive data must minimally include PII,
+                            credentials, and keys. Sensitive data shall be identified in the
+                            application’s TSS by the ST author.</description>
                     </entry>
                     <entry>
                         <term>Sub-domain</term>
@@ -548,9 +556,9 @@
                                     communication mechanisms with non-browser processes;</li>
                                 <li>The rendering process has reduced privilege with respect to
                                     other browser processes <selectables>
-                                        <selectable>[assignment: through methods by which the principle of
-                                            least privilege is implemented for rendering
-                                            processes]</selectable>
+                                        <selectable>[assignment: through methods by which the
+                                            principle of least privilege is implemented for
+                                            rendering processes]</selectable>
                                         <selectable>in no other ways</selectable>
                                     </selectables></li>
                             </ul>
@@ -1004,16 +1012,24 @@
                                     Function</td><td>Administrator</td><td>User</td></tr>
                             <tr><td>1. Enable/disable storage of third party
                                     cookies</td><td>O</td><td>X</td></tr>
-                            <tr><td>2. Enable/disable add-ons</td><td>O</td><td>O</td></tr>
+                            <tr><td>2. Enable/disable individual
+                                add-ons</td><td>O</td><td>O</td></tr>
                             <tr><td>3. Enable/disable use of OCSP for obtaining the revocation
                                     status of an X.509 certificate</td><td>O</td><td>O</td></tr>
                             <tr><td>4. Configure inclusion of user-agent information in HTTP
                                     headers</td><td>O</td><td>O</td></tr>
                             <tr><td>5. Enable/disable ability for websites to collect tracking
-                                    information about the user</td><td>O</td><td>X</td></tr>
+                                    information about the user through <selectables>
+                                        <selectable>zombie cookies</selectable>
+                                        <selectable>add-on based tracking (e.g. Flash
+                                            cookies)</selectable>
+                                        <selectable>browsing history</selectable>
+                                        <selectable>[assignment: other tracking
+                                            mechanisms]</selectable></selectables></td><td>O</td><td>X</td></tr>
                             <tr><td>6. Deletion of stored browsing data (cache, web form
                                     information)</td><td>O</td><td>X</td></tr>
-                            <tr><td>7. Enable/disable storage of sensitive information in persistent
+                            <tr><td>7. Enable/disable storage of sensitive information (e.g.,
+                                    auto-fill, auto-complete) in persistent
                                     storage</td><td>O</td><td>O</td></tr>
                             <tr><td>8. Configure size of cookie cache </td><td>O</td><td>O</td></tr>
                             <tr><td>9. Configure size of cache </td><td>O</td><td>O</td></tr>
@@ -1037,7 +1053,19 @@
                                     handlers </td><td>O</td><td>O</td></tr>
                             <tr><td>17. Enable/disable display notification when unsigned, untrusted
                                     or unverified mobile code is
-                                    encountered.</td><td>O</td><td>O</td></tr>
+                                    encountered</td><td>O</td><td>O</td></tr>
+                            <tr><td>18. Enable/disable user's ability to select default actions
+                                    (e.g., always open, or always save, a
+                                    file)</td><td>O</td><td>O</td></tr>
+                            <tr><td>19. Block/unblock launching of downloaded files outside the
+                                    browser</td><td>O</td><td>O</td></tr>
+                            <tr><td>20. Enable/disable Javascript</td><td>O</td><td>O</td></tr>
+                            <tr><td>21. Enable/disable <selectables><selectable>ActiveX</selectable>
+                                        <selectable>Flash</selectable>
+                                        <selectable>Java</selectable>
+                                        <selectable>[assignment: other mobile code types supported
+                                            by the browser]</selectable> mobile code</selectables>
+                                </td><td>O</td><td>O</td></tr>
                         </table>
                         <note role="application"> The intent of this requirement is to allow the
                             user and administrator of the platform to configure the browser with
