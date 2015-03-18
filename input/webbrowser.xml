@@ -1055,9 +1055,9 @@
                                     or unverified mobile code is
                                     encountered</td><td>O</td><td>O</td></tr>
                             <tr><td>18. Enable/disable user's ability to select default actions
-                                    (e.g., always open, or always save, a
+                                    (e.g., always open, or always save, a downloaded
                                     file)</td><td>O</td><td>O</td></tr>
-                            <tr><td>19. Block/unblock launching of downloaded files outside the
+                            <tr><td>19. Enable/disable launching of downloaded files outside the
                                     browser</td><td>O</td><td>O</td></tr>
                             <tr><td>20. Enable/disable JavaScript</td><td>O</td><td>O</td></tr>
                             <tr><td>21. Enable/disable <selectables><selectable>ActiveX</selectable>
