@@ -121,7 +121,7 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
 		<h1 class="title">
 			Requirements from the 
 			<br/><i>Protection Profile for Application Software</i>
-			<br/>for Vetting Mobile Apps outside Common Criteria
+			<br/>for Web Browsers
 		</h1>
 		<div class="center">
 			<img src="images/niaplogo.png" />
