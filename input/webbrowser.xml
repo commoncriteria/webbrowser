@@ -284,12 +284,12 @@
                     Requirements (SARs) for application software products. This EP serves to extend
                     the App PP baseline with additional SFRs and associated Assurance Activities
                     specific to a web browser. Assurance Activities are the actions that the
-                    evaluator performs in order to determine a TOE’s compliance to the SFRs.<br/>
-                    This EP conforms to Common Criteria <cite linkend="bibCC"/> for Information
-                    Technology Security Evaluation, Version 3.1, Revision 4. It is CC Part 2
-                    extended and CC Part 3 conformant. In order to be conformant to this EP, the ST
-                    must include all components in this EP and the associated App PP that are:
-                            <ul><li>unconditional (which are always required)</li>
+                    evaluator performs in order to determine a web browser’s compliance to the
+                    SFRs.<br/> This EP conforms to Common Criteria <cite linkend="bibCC"/> for
+                    Information Technology Security Evaluation, Version 3.1, Revision 4. It is CC
+                    Part 2 extended and CC Part 3 conformant. In order to be conformant to this EP,
+                    the ST must include all components in this EP and the associated App PP that
+                    are: <ul><li>unconditional (which are always required)</li>
                         <li>selection-based (which are required when certain selections are chosen
                             in the unconditional requirements)</li>
                     </ul> and may include components that are: <ul><li>optional or</li>
