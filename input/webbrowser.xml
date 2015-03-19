@@ -183,7 +183,7 @@
                             communications endpoint in a computer’s host OS; in a web environment,
                             port 80 is the default port for HTTP communications, although other
                             ports can be used. In a web address, the port follows the domain or
-                            sub-domain name (e.g., http://www.cnn.com:80.</description>
+                            sub-domain name (e.g., http://www.cnn.com:80).</description>
                     </entry>
                     <entry>
                         <term>Protocol</term>
