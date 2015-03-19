@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="..\transforms\pp2html.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 <PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Web Browsers">
     <PPReference title="PP Reference" id="ID003">
         <ReferenceTable>
