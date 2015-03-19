@@ -122,7 +122,7 @@
                     </entry>
                     <entry>
                         <term>Domain</term>
-                        <description>a realm of administrative autonomy, authority or control on the
+                        <description>A realm of administrative autonomy, authority or control on the
                             Internet (e.g., cnn.com, ietf.org).</description>
                     </entry>
                     <entry>
@@ -179,7 +179,7 @@
                     </entry>
                     <entry>
                         <term>Port</term>
-                        <description>an application-specific construct that functions as a
+                        <description>An application-specific construct that functions as a
                             communications endpoint in a computer’s host OS; in a web environment,
                             port 80 is the default port for HTTP communications, although other
                             ports can be used. In a web address, the port follows the domain or
@@ -187,7 +187,7 @@
                     </entry>
                     <entry>
                         <term>Protocol</term>
-                        <description>a system of digital rules for data exchange within or between
+                        <description>A system of digital rules for data exchange within or between
                             computers; in a web environment, the typical protocols are HTTP and
                             HTTPS.</description>
                     </entry>
@@ -208,7 +208,7 @@
                     </entry>
                     <entry>
                         <term>Sub-domain</term>
-                        <description>denoted by a prefix before the top-level domain name (e.g.,
+                        <description>An Internet domain which is part of a primary domain, donated by a prefix before the primary domain (e.g.,
                             news.cnn.com).</description>
                     </entry>
                     <entry>
