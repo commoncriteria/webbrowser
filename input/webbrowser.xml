@@ -526,7 +526,7 @@
                     </f-element>
                 </f-component>
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
-                    <f-element id="FDP_PST_EXT.1.1" status="objective">
+                    <f-element id="FDP_PST_EXT.1.1" status="optional">
                         <title>The browser shall provide the capability to operate without storing
                             persistent data to the file system.</title>
                         <note role="application"> Exceptions from this requirement are credentials
