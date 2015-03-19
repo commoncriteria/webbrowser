@@ -239,10 +239,10 @@
             as well as on desktop and server platforms. This Extended Package (EP) for web browsers
             is not complete in itself, but rather extends the Protection Profile for Application
             Software. <br/> Web browsers are client applications that retrieve and render content
-            provided by web servers, primarily using the hypertext transfer protocol (HTTP) or HTTP
+            provided by web servers, primarily using the HyperText Transfer Protocol (HTTP) or HTTP
             Secure (HTTPS). Browsers have grown in complexity over the years, starting as tools used
-            to display simple, unchanging web pages and becoming sophisticated execution
-            environments for web content. The use of browsers to administer accounts, servers or
+            to display simple, static web pages and becoming sophisticated execution
+            environments for rich web content. The use of browsers to administer accounts, servers or
             embedded systems remotely requires them to handle sensitive information securely.
             Innovations such as tabs, extensions and HTML5 have not only increased browser
             functionality, but also introduced new security concerns. As users' principal method for
@@ -321,7 +321,7 @@
                         unauthorized access to other applications or the operating
                         system.</description>
                 </threat>
-                <threat id="T.SAMEORIGIN_VIOLATION">
+                <threat id="T.SAME-ORIGIN_VIOLATION">
                     <description> Violating the same-origin policy is a specialized type of network
                         attack (covered generally as T.NETWORK_ATTACK in the App PP) which involves
                         web content violating access control policies enforced by a web browser to
@@ -332,7 +332,7 @@
                             <li>Insufficient protection of session tokens can lead to session
                                 hijacking, where a token is captured and reused in order to gain the
                                 privileges of the user who initiated the session.</li>
-                            <li>Cross-site scripting (XSS) and cross-site request forgery (CSRF)
+                            <li>Cross-site scripting (XSS) and Cross-Site Request Forgery (CSRF)
                                 attacks are methods used to compromise user credentials (usually by
                                 stealing the user's session token) to a web site. These attacks are
                                 more likely a result of server security problems, but some browsers
