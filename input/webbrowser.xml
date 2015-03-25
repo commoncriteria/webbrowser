@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-03-20</PPPubDate>
+            <PPPubDate>2015-03-25</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -947,12 +947,20 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_TUD_EXT.1" name="Support for Trusted Add-ons">
+                <f-component id="FPT_TUD_EXT.1" name="Support for Whitelisted Add-ons">
                     <f-element id="FPT_TUD_EXT.1.7">
                         <title>The browser shall include the capability to load <selectables>
                                 <selectable>no add-ons</selectable>
-                                <selectable>trusted add-ons</selectable>
+                                <selectable>whitelisted add-ons</selectable>
                             </selectables>.</title>
+                        <note role="application">The browser should support a mechanism that allows
+                            individual add-ons to be added to a whitelist of trusted add-ons which can be
+                            installed into the browser. Add-ons should be uniquely identifiable down
+                            to specific versions so as to allow the list to only allow specific
+                            versions of specific add-ons to be installed. This list should be
+                            immutable to a user if it has been configured by an administrator.
+                            Add-ons which are not present in the whitelist must not be loaded into
+                            the browser.</note>
                     </f-element>
                 </f-component>
                 <f-component id="FPT_TUD_EXT.2" name="Trusted Installation and Updates for Add-ons">
@@ -1073,6 +1081,7 @@
                             <!-- Address security aspect of Issue 22 by having the capability to prevent users from clicking through and ignoring error messages such as invalid cert-->
                             <tr><td>22. Enable/disable user's ability to acknowledge/accept risks
                                     associated with security warnings</td></tr>
+                            <tr><td>23. Configure whitelist of trusted add-ons</td><td>O</td><td>O</td></tr>
                         </table>
                         <note role="application"> The intent of this requirement is to allow the
                             user and administrator of the platform to configure the browser with
