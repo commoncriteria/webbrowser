@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-04-02</PPPubDate>
+            <PPPubDate>2015-04-03</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -127,7 +127,7 @@
                     </entry>
                     <entry>
                         <term>Extension</term>
-                        <description>Bundle of code that are added to the browser to add specific
+                        <description>Bundle of code added to the browser to add specific
                             functionality that the browser does not provide by
                             default.</description>
                     </entry>
@@ -174,13 +174,14 @@
                     </entry>
                     <entry>
                         <term>Pop-up</term>
-                        <description>Piece of web code that causes a browser window to open outside
-                            of the browser instance that is currently in focus.</description>
+                        <description>Piece of web code that causes a browser <!-- window -->
+                            instance to open outside of the browser instance that is currently in
+                            focus.</description>
                     </entry>
                     <entry>
                         <term>Port</term>
                         <description>An application-specific construct that functions as a
-                            communications endpoint in a computer’s host OS; in a web environment,
+                            communications endpoint in a computer's host OS; in a web environment,
                             port 80 is the default port for HTTP communications, although other
                             ports can be used. In a web address, the port follows the domain or
                             sub-domain name (e.g., http://www.cnn.com:80).</description>
@@ -204,7 +205,7 @@
                             be specific application data such as emails, messaging, documents,
                             calendar items, and contacts. Sensitive data must minimally include PII,
                             credentials, and keys. Sensitive data shall be identified in the
-                            application’s TSS by the ST author.</description>
+                            application's TSS by the ST author.</description>
                     </entry>
                     <entry>
                         <term>Sub-domain</term>
@@ -227,7 +228,7 @@
                         <term>XSS</term>
                         <description>Cross Site Scripting - Injection of untrusted content into a
                             vulnerable web application to render or execute that content on a
-                            victim’s system.</description>
+                            victim's system.</description>
                     </entry>
                 </glossary>
             </subsection>
@@ -285,7 +286,7 @@
                     Requirements (SARs) for application software products. This EP serves to extend
                     the App PP baseline with additional SFRs and associated Assurance Activities
                     specific to a web browser. Assurance Activities are the actions that the
-                    evaluator performs in order to determine a web browser’s compliance to the
+                    evaluator performs in order to determine a web browser's compliance to the
                     SFRs.<br/> This EP conforms to Common Criteria <cite linkend="bibCC"/> for
                     Information Technology Security Evaluation, Version 3.1, Revision 4. It is CC
                     Part 2 extended and CC Part 3 conformant. In order to be conformant to this EP,
@@ -338,11 +339,14 @@
                                 stealing the user's session token) to a web site. These attacks are
                                 more likely a result of server security problems, but some browsers
                                 incorporate technologies that try to detect the attacks.</li>
-                            <li>Inadequate sandboxing of browser tabs/windows or a faulty cross
-                                domain communications model can lead to leakage of content from one
-                                domain in one tab/window to a different domain in a different
-                                tab/window. Such attacks leverage the ability of browsers to display
-                                content from multiple domains simultaneously.</li>
+                            <li>Inadequate sandboxing of browser tabs/instances
+                                <!-- changed windows to instances --> or a faulty cross domain
+                                communications model can lead to leakage of content from one domain
+                                in one tab/instance <!-- changed window to instance --> to a
+                                different domain in a different tab/instance
+                                <!-- changed window to instance --> . Such attacks leverage the
+                                ability of browsers to display content from multiple domains
+                                simultaneously.</li>
                         </ul>
                     </description>
                 </threat>
@@ -444,9 +448,10 @@
                             storage based on domain, protocol and port:<br/>
                             <ul>
                                 <li>Session storage shall be accessible only from the originating
-                                    tab or window;</li>
-                                <li>Local storage shall only be accessible from windows and tabs
-                                    running the same web application.</li>
+                                    tab or <!-- changed window to instance --> instance;</li>
+                                <li>Local storage shall only be accessible from
+                                    <!-- changed windows to instances --> instances and tabs running
+                                    the same web application.</li>
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
@@ -459,7 +464,7 @@
                             digital rules for data exchange within or between computers; in a web
                             environment, the typical protocols are HTTP and HTTPS. A port is an
                             application-specific construct that functions as a communications
-                            endpoint in a computer’s host OS; in a web environment, port 80 is the
+                            endpoint in a computer's host OS; in a web environment, port 80 is the
                             default port for HTTP communications, although other ports can be used.
                             In a web address, the port follows the domain or sub-domain name (e.g.,
                             http://www.cnn.com:80). -->
@@ -469,36 +474,47 @@
                             how the TSF separates local and session storage. <h4>Guidance</h4> The
                             evaluator shall examine the operational guidance to verify that it
                             documents the location on the file system that will be used for local
-                            storage and the location used for session storage. <h4>Tests</h4> The
-                            evaluator shall obtain or create JavaScript-based scripts that store and
-                            retrieve information from local and session storage and shall set up a
-                            web server with two or more web pages using different protocols and/or
-                            ports. The evaluator shall incorporate the scripts into the web pages
-                            and shall perform the following tests:<br/>
+                            storage and the location used for session storage. <br/>
+                            <!-- Added clarification regarding separate browser instances on a mobile device -->
+                            Tests 1, 3, and part of Test 5 requiring separate browser instances are
+                            not applicable to mobile devices that are not capable of running those
+                            separate instances. <h4>Tests</h4> The evaluator shall obtain or create
+                            JavaScript-based scripts that store and retrieve information from local
+                            and session storage and shall set up a web server with two or more web
+                            pages from different domains <!-- clarified different domains --> using
+                            different protocols and/or ports. The evaluator shall incorporate the
+                            scripts into the web pages and shall perform the following tests:<br/>
                             <testlist>
-                                <test>The evaluator shall open two or more browser windows and
+                                <test>The evaluator shall open two or more
+                                    <!-- changed windows to instances --> browser instances and
                                     navigate to the same web page. The evaluator shall verify that
                                     the script for accessing session storage that is running in one
-                                    window cannot access session storage associated with a different
-                                    window.</test>
+                                    <!-- changed window to instance -->instance cannot access
+                                    session storage associated with a different
+                                    <!-- changed window to instance -->instance.</test>
                                 <test>The evaluator shall open two or more browser tabs and navigate
                                     to the same web page. The evaluator shall verify that the script
                                     for accessing session storage that is running in one tab cannot
                                     access session storage associated with a different tab.</test>
-                                <test>The evaluator shall open two or more browser windows and
+                                <test>The evaluator shall open two or more
+                                    <!-- changed windows to instances --> browser instances and
                                     navigate to the same web page. The evaluator shall verify that
                                     the script for accessing local storage that is running in one
-                                    window can access local storage associated with a different
-                                    window.</test>
+                                    <!-- changed window to instance -->instance can access local
+                                    storage associated with a different
+                                    <!-- changed window to instance -->instance.</test>
                                 <test>The evaluator shall open two or more browser tabs and navigate
                                     to the same web page. The evaluator shall verify that the script
                                     for accessing local storage that is running in one tab can
                                     access local storage associated with a different tab.</test>
-                                <test>The evaluator shall open windows and tabs and navigate to
-                                    different web pages. The evaluator shall verify that a script
-                                    running in the context of one domain/protocol/port in a window
-                                    or tab cannot access information associated with a different
-                                    domain/protocol/port in a different window or tab.</test>
+                                <test>The evaluator shall open
+                                    <!-- changed windows to instances -->instances and tabs and
+                                    navigate to different web pages. The evaluator shall verify that
+                                    a script running in the context of one domain/protocol/port in
+                                    <!-- changed window to instance --> a browser instance or tab
+                                    cannot access information associated with a different
+                                    domain/protocol/port in a different
+                                    <!-- changed window to instance --> instance or tab.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
@@ -513,8 +529,11 @@
                             (e.g., automatically, when blocking is enabled). <h4>Guidance</h4> The
                             evaluator shall examine the operational guidance to verify that it
                             provides a description of the configuration option for blocking of third
-                            party cookies. <h4>Tests</h4> The evaluator shall perform the following
-                            tests: <testlist>
+                            party cookies. <br/>
+                            <!--Note added --> Note: The following tests require the developer to
+                            provide access to a test platform that provides the evaluator with tools
+                            that are typically not found on factory products. <br/>
+                            <h4>Tests</h4> The evaluator shall perform the following tests: <testlist>
                                 <test>The evaluator shall clear all cookies and then configure the
                                     browser so that storage of third party cookies is allowed. The
                                     evaluator shall load a web page that stores a third party
@@ -541,8 +560,11 @@
                         <aactivity>
                             <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
                             how the browser operates without storing persistent user data to the
-                            file systems. <h4>Guidance</h4> N/A <h4>Tests</h4> The evaluator shall
-                            perform the following test: <testlist>
+                            file systems. <h4>Guidance</h4>
+                            <!--Note added --> Note: The following tests require the developer to
+                            provide access to a test platform that provides the evaluator with tools
+                            that are typically not found on factory products. <br/>
+                            <h4>Tests</h4> The evaluator shall perform the following test: <testlist>
                                 <test>The evaluator shall operate the browser for a period of time,
                                     ensuring that a wide variety of browser functionality has been
                                     exercised. The evaluator shall then examine the browser and the
@@ -662,9 +684,13 @@
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             its implementation of a same origin policy and explains how it complies
                             with RFC 6454. If the TSF allows the relaxation of the same origin
-                            policy for subdomains in different tabs or windows, the TSS shall
-                            describe how these exceptions are implemented. <h4>Guidance</h4> N/A
-                                <h4>Tests</h4> The evaluator shall obtain or create scripts that can
+                            policy for subdomains in different tabs or
+                            <!-- changed windows to instances -->instances, the TSS shall describe
+                            how these exceptions are implemented. <h4>Guidance</h4>
+                            <!-- Added Note --> Note: Test 1 and part of Test 3 requiring separate
+                            browser instances are not applicable to mobile devices that are not
+                            capable of running those separate instances.<br/>
+                            <h4>Tests</h4> The evaluator shall obtain or create scripts that can
                             retrieve content from designated locations and shall set up a web server
                             with two or more web pages representing different domains. The evaluator
                             shall incorporate the scripts into the web pages. The evaluator shall
@@ -673,18 +699,22 @@
                             origin policy for subdomains, the evaluator shall configure the web
                             server with subdomains and shall perform test 3 and repeat tests 1 and 2.<br/>
                             <testlist>
-                                <test>The evaluator shall open two or more browser windows and
-                                    navigate to a different page on the website in each window. The
-                                    evaluator shall run the scripts and shall verify that the script
-                                    that is running in one window cannot access content that was
-                                    retrieved in a different window.</test>
+                                <test>The evaluator shall open two or more
+                                    <!-- changed windows to instances --> browser instances and
+                                    navigate to a different page on the website in each
+                                    <!-- changed window to instance -->instance. The evaluator shall
+                                    run the scripts and shall verify that the script that is running
+                                    in one <!-- changed window to instane --> instance cannot access
+                                    content that was retrieved in a different
+                                    <!-- changed window to instance --> instance.</test>
                                 <test>The evaluator shall open two or more browser tabs and navigate
                                     to a different page on the website in each tab. The evaluator
                                     shall run the scripts and shall verify that the script that is
                                     running in one tab cannot access content that was retrieved in a
                                     different tab.</test>
                                 <test>The evaluator shall verify that the scripts can retrieve
-                                    content from another window/tab at a different subdomain.</test>
+                                    content from another <!-- changed window to instance -->
+                                    instance/tab at a different subdomain.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
@@ -699,8 +729,11 @@
                             <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
                             the browser‘s support for the "secure" attribute of the set-cookie
                             header in accordance with RFC 6265, including the required sending of
-                            cookies containing this attribute over HTTPS. <h4>Guidance</h4> N/A
-                                <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
+                            cookies containing this attribute over HTTPS. <h4>Guidance</h4>
+                            <!-- Added Note --> Note: The following tests require the developer to
+                            provide access to a test platform that provides the evaluator with tools
+                            that are typically not found on factory products.<br/>
+                            <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
                                 <test>The evaluator shall connect the browser to a cookie-enabled
                                     test website implementing HTTPS and have the website present the
                                     browser with a "secure" cookie. The evaluator shall examine the
@@ -1022,6 +1055,8 @@
                                 <selectable>Java</selectable>
                                 <selectable>[assignment: other mobile code types supported by the
                                     browser]</selectable>
+                                <!-- Added no (mobile code) selectable -->
+                                <selectable>no</selectable>
                             </selectables>mobile code.</title>
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.2">
