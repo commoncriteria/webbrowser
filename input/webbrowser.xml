@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-04-03</PPPubDate>
+            <PPPubDate>2015-04-07</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -163,7 +163,7 @@
                             a limited execution environment on the local system. Typically, there is
                             no persistent installation and execution begins without the user's
                             consent or even notification. Examples of mobile code technologies
-                            include Java applets, Adobe Flash and PDF, and Microsoft Silverlight. <br/>
+                            include Java applets, Adobe ActionScript, and Microsoft Silverlight. <br/>
                             <b>Note:</b> JavaScript is not included in references to mobile code in
                             this browser EP.</description>
                     </entry>
@@ -376,9 +376,9 @@
         </section>
     </chapter>
     <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-        which have to be fulfilled by the browser. The browser must not rely on add-ons to
-        accomplish these requirements. Security requirements comprise functional components from
-        Part 2 of <cite linkend="bibCC"/>. The following notations are used: <ul>
+        which have to be fulfilled by the browser. The browser must not rely on any third party
+        add-ons to accomplish these requirements. Security requirements comprise functional
+        components from Part 2 of <cite linkend="bibCC"/>. The following notations are used: <ul>
             <li>
                 <b>Selection</b> (denoted by <i>italicized text</i>): is used to select one or more
                 options provided by the [CC] in stating a requirement. Selections must be captured
@@ -407,13 +407,16 @@
                             directive.</title>
                     </f-element>
                     <f-element id="FCS_STS_EXT.1.3" status="objective">
-                        <title>The browser shall cache the latest Strict Security policy
+                        <title>The browser shall cache the "freshest" Strict Security policy
                             information.</title>
-                        <note role="application"> If a browser receives the HSTS header from a
-                            website, all future HTTP sessions between the browser and the domain or
-                            superdomain of that website must occur over TLS 1.2 (RFC 5246) or
-                            greater by utilizing HTTPS (RFC 2818) negotiating the strongest cipher
-                            possible. </note>
+                        <note role="application"> Freshness refers to the length of time between
+                            generation by the origin server and the expiration time when the origin
+                            server specifies that a stored response can no longer be used by a cache
+                            without further validation (RFCs 6797 and 7234). If a browser receives
+                            the HSTS header from a website, all future HTTP sessions between the
+                            browser and the domain or superdomain of that website must occur over
+                            TLS 1.2 (RFC 5246) or greater by utilizing HTTPS (RFC 2818) negotiating
+                            the strongest cipher possible. </note>
                         <aactivity>
                             <tss> The evaluator shall examine the TSS to ensure that it documents
                                 how the browser supports HSTS. </tss>
@@ -795,12 +798,11 @@
                             verify that any necessary instructions are contained in the operational
                             guidance for configuring the operating environment so that the browser
                             can use the certificates.<br/> If the requirement is that the
-                            administrator is able to specify the default action (FMT_MOF_EXT.1.1
-                            Function 18), then the evaluator shall ensure that the operational
-                            guidance contains instructions on how this configuration action is
-                            performed. <h4>Tests</h4> The evaluator shall perform Test 1 for each
-                            function listed in FIA_X509_EXT.2.1 that requires the use of
-                            certificates: <testlist>
+                            administrator is able to specify the default action, then the evaluator
+                            shall ensure that the operational guidance contains instructions on how
+                            this configuration action is performed. <h4>Tests</h4> The evaluator
+                            shall perform Test 1 for each function listed in FIA_X509_EXT.2.1 that
+                            requires the use of certificates: <testlist>
                                 <test>The evaluator shall demonstrate that using a certificate
                                     without a valid certification path results in the function
                                     failing or in the receipt of a user notification (as required by
@@ -879,9 +881,9 @@
                             <tr><td>17. Enable/disable display notification when unsigned, untrusted
                                     or unverified mobile code is
                                     encountered</td><td>O</td><td>O</td></tr>
-                            <tr><td>18. Enable/disable user's ability to select default actions
-                                    (e.g., always open, or always save, a downloaded
-                                    file)</td><td>O</td><td>O</td></tr>
+                            <tr><td>18. Enable/disable user's ability to select default actions upon
+                                    download of a file (e.g., always open, or always save, a
+                                    downloaded file)</td><td>O</td><td>O</td></tr>
                             <tr><td>19. Enable/disable launching of downloaded files outside the
                                     browser</td><td>O</td><td>O</td></tr>
                             <tr><td>20. Enable/disable JavaScript</td><td>O</td><td>O</td></tr>
