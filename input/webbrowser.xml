@@ -716,6 +716,10 @@
                             the browser‘s support for the "secure" attribute of the set-cookie
                             header in accordance with RFC 6265, including the required sending of
                             cookies containing this attribute over HTTPS. <h4>Guidance</h4>
+                            <!--Note added --> Note: For browsers on mobile devices, the following
+                            tests require the developer to provide access to a test platform that
+                            provides the evaluator with tools that are typically not found on
+                            factory products. <br/>
                             <br/>
                             <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
                                 <test>The evaluator shall connect the browser to a cookie-enabled
