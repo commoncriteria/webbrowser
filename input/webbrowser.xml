@@ -175,7 +175,7 @@
                     <entry>
                         <term>Pop-up</term>
                         <description>Piece of web code that causes a browser <!-- window -->
-                            instance to open outside of the browser instance that is currently in
+                            to open a window outside the window that is currently in
                             focus.</description>
                     </entry>
                     <entry>
@@ -216,7 +216,7 @@
                     <entry>
                         <term>Tabs</term>
                         <description>Allow the browsers to display content from multiple web sites
-                            without starting another instance of the browser.</description>
+                            in the same window.</description>
                     </entry>
                     <entry>
                         <term>Web Browser</term>
@@ -339,12 +339,12 @@
                                 stealing the user's session token) to a web site. These attacks are
                                 more likely a result of server security problems, but some browsers
                                 incorporate technologies that try to detect the attacks.</li>
-                            <li>Inadequate sandboxing of browser tabs/instances
-                                <!-- changed windows to instances --> or a faulty cross domain
+                            <li>Inadequate sandboxing of browser windows/tabs
+                                or a faulty cross domain
                                 communications model can lead to leakage of content from one domain
-                                in one tab/instance <!-- changed window to instance --> to a
-                                different domain in a different tab/instance
-                                <!-- changed window to instance --> . Such attacks leverage the
+                                in one window/tab to a
+                                different domain in a different window/tab.
+                                 Such attacks leverage the
                                 ability of browsers to display content from multiple domains
                                 simultaneously.</li>
                         </ul>
@@ -451,10 +451,9 @@
                             storage based on domain, protocol and port:<br/>
                             <ul>
                                 <li>Session storage shall be accessible only from the originating
-                                    tab or <!-- changed window to instance --> instance;</li>
+                                    window/tab;</li>
                                 <li>Local storage shall only be accessible from
-                                    <!-- changed windows to instances --> instances and tabs running
-                                    the same web application.</li>
+                                    windows/tabs running the same web application.</li>
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
@@ -478,10 +477,7 @@
                             evaluator shall examine the operational guidance to verify that it
                             documents the location on the file system that will be used for local
                             storage and the location used for session storage. <br/>
-                            <!-- Added clarification regarding separate browser instances on a mobile device -->
-                            Tests 1, 3, and part of Test 5 requiring separate browser instances are
-                            not applicable to mobile devices that are not capable of running those
-                            separate instances. <h4>Tests</h4> The evaluator shall obtain or create
+                            <h4>Tests</h4> The evaluator shall obtain or create
                             JavaScript-based scripts that store and retrieve information from local
                             and session storage and shall set up a web server with two or more web
                             pages from different domains <!-- clarified different domains --> using
@@ -692,9 +688,7 @@
                             policy for subdomains in different tabs or
                             <!-- changed windows to instances -->instances, the TSS shall describe
                             how these exceptions are implemented. <h4>Guidance</h4>
-                            <!-- Added Note --> Note: Test 1 and part of Test 3 requiring separate
-                            browser instances are not applicable to mobile devices that are not
-                            capable of running those separate instances.<br/>
+                            <br/>
                             <h4>Tests</h4> The evaluator shall obtain or create scripts that can
                             retrieve content from designated locations and shall set up a web server
                             with two or more web pages representing different domains. The evaluator
@@ -735,10 +729,7 @@
                             the browser‘s support for the "secure" attribute of the set-cookie
                             header in accordance with RFC 6265, including the required sending of
                             cookies containing this attribute over HTTPS. <h4>Guidance</h4>
-                            <!-- Added Note --> Note: For browsers on mobile devices, the following
-                            tests require the developer to provide access to a test platform that
-                            provides the evaluator with tools that are typically not found on
-                            factory products.<br/>
+                            <br/>
                             <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
                                 <test>The evaluator shall connect the browser to a cookie-enabled
                                     test website implementing HTTPS and have the website present the
