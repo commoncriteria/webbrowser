@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-04-07</PPPubDate>
+            <PPPubDate>2015-04-08</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -174,9 +174,8 @@
                     </entry>
                     <entry>
                         <term>Pop-up</term>
-                        <description>Piece of web code that causes a browser <!-- window -->
-                            to open a window outside the window that is currently in
-                            focus.</description>
+                        <description>Piece of web code that causes a browser to open
+                            a window outside the window that is currently in focus.</description>
                     </entry>
                     <entry>
                         <term>Port</term>
@@ -339,14 +338,11 @@
                                 stealing the user's session token) to a web site. These attacks are
                                 more likely a result of server security problems, but some browsers
                                 incorporate technologies that try to detect the attacks.</li>
-                            <li>Inadequate sandboxing of browser windows/tabs
-                                or a faulty cross domain
-                                communications model can lead to leakage of content from one domain
-                                in one window/tab to a
-                                different domain in a different window/tab.
-                                 Such attacks leverage the
-                                ability of browsers to display content from multiple domains
-                                simultaneously.</li>
+                            <li>Inadequate sandboxing of browser windows/tabs or a faulty cross
+                                domain communications model can lead to leakage of content from one
+                                domain in one window/tab to a different domain in a different
+                                window/tab. Such attacks leverage the ability of browsers to display
+                                content from multiple domains simultaneously.</li>
                         </ul>
                     </description>
                 </threat>
@@ -452,8 +448,8 @@
                             <ul>
                                 <li>Session storage shall be accessible only from the originating
                                     window/tab;</li>
-                                <li>Local storage shall only be accessible from
-                                    windows/tabs running the same web application.</li>
+                                <li>Local storage shall only be accessible from windows/tabs running
+                                    the same web application.</li>
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
@@ -477,43 +473,38 @@
                             evaluator shall examine the operational guidance to verify that it
                             documents the location on the file system that will be used for local
                             storage and the location used for session storage. <br/>
-                            <h4>Tests</h4> The evaluator shall obtain or create
-                            JavaScript-based scripts that store and retrieve information from local
-                            and session storage and shall set up a web server with two or more web
-                            pages from different domains <!-- clarified different domains --> using
-                            different protocols and/or ports. The evaluator shall incorporate the
-                            scripts into the web pages and shall perform the following tests:<br/>
+                            <h4>Tests</h4> The evaluator shall obtain or create JavaScript-based
+                            scripts that store and retrieve information from local and session
+                            storage and shall set up a web server with two or more web pages from
+                            different domains <!-- clarified different domains --> using different
+                            protocols and/or ports. The evaluator shall incorporate the scripts into
+                            the web pages and shall perform the following tests:<br/>
                             <testlist>
-                                <test>The evaluator shall open two or more
-                                    <!-- changed windows to instances --> browser instances and
+                                <test>The evaluator shall open two or more browser windows/tabs and
                                     navigate to the same web page. The evaluator shall verify that
                                     the script for accessing session storage that is running in one
-                                    <!-- changed window to instance -->instance cannot access
-                                    session storage associated with a different
-                                    <!-- changed window to instance -->instance.</test>
-                                <test>The evaluator shall open two or more browser tabs and navigate
+                                    window/tab cannot access session storage associated with a
+                                    different window/tab.</test>
+                               <!-- Merged windows/tabs into test 1 
+                                   <test>The evaluator shall open two or more browser tabs and navigate
                                     to the same web page. The evaluator shall verify that the script
                                     for accessing session storage that is running in one tab cannot
-                                    access session storage associated with a different tab.</test>
-                                <test>The evaluator shall open two or more
-                                    <!-- changed windows to instances --> browser instances and
+                                    access session storage associated with a different tab.</test> -->
+                               <!-- Removed tests 3 and 4 because they appear more functionality rather than security related
+                                   <test>The evaluator shall open two or more browser windows and
                                     navigate to the same web page. The evaluator shall verify that
                                     the script for accessing local storage that is running in one
-                                    <!-- changed window to instance -->instance can access local
-                                    storage associated with a different
-                                    <!-- changed window to instance -->instance.</test>
-                                <test>The evaluator shall open two or more browser tabs and navigate
+                                    window can access local storage associated with a different
+                                    window.</test>
+                               <test>The evaluator shall open two or more browser tabs and navigate
                                     to the same web page. The evaluator shall verify that the script
                                     for accessing local storage that is running in one tab can
-                                    access local storage associated with a different tab.</test>
-                                <test>The evaluator shall open
-                                    <!-- changed windows to instances -->instances and tabs and
-                                    navigate to different web pages. The evaluator shall verify that
-                                    a script running in the context of one domain/protocol/port in
-                                    <!-- changed window to instance --> a browser instance or tab
-                                    cannot access information associated with a different
-                                    domain/protocol/port in a different
-                                    <!-- changed window to instance --> instance or tab.</test>
+                                    access local storage associated with a different tab.</test> -->
+                                <test>The evaluator shall open windows/tabs and navigate to
+                                    different web pages. The evaluator shall verify that a script
+                                    running in the context of one domain/protocol/port in a browser
+                                    window/tab cannot access information associated with a different
+                                    domain/protocol/port in a different window/tab.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
@@ -685,8 +676,7 @@
                             <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
                             its implementation of a same origin policy and explains how it complies
                             with RFC 6454. If the TSF allows the relaxation of the same origin
-                            policy for subdomains in different tabs or
-                            <!-- changed windows to instances -->instances, the TSS shall describe
+                            policy for subdomains in different windows/tabs, the TSS shall describe
                             how these exceptions are implemented. <h4>Guidance</h4>
                             <br/>
                             <h4>Tests</h4> The evaluator shall obtain or create scripts that can
@@ -698,22 +688,19 @@
                             origin policy for subdomains, the evaluator shall configure the web
                             server with subdomains and shall perform test 3 and repeat tests 1 and 2.<br/>
                             <testlist>
-                                <test>The evaluator shall open two or more
-                                    <!-- changed windows to instances --> browser instances and
-                                    navigate to a different page on the website in each
-                                    <!-- changed window to instance -->instance. The evaluator shall
-                                    run the scripts and shall verify that the script that is running
-                                    in one <!-- changed window to instane --> instance cannot access
-                                    content that was retrieved in a different
-                                    <!-- changed window to instance --> instance.</test>
-                                <test>The evaluator shall open two or more browser tabs and navigate
+                                <test>The evaluator shall open two or more browser windows/tabs and
+                                    navigate to a different page on the website in each window/tab. The
+                                    evaluator shall run the scripts and shall verify that the script
+                                    that is running in one window/tab cannot access content that was
+                                    retrieved in a different window/tab.</test>
+                                <!-- Merged windows and tabs 
+                                    <test>The evaluator shall open two or more browser tabs and navigate
                                     to a different page on the website in each tab. The evaluator
                                     shall run the scripts and shall verify that the script that is
                                     running in one tab cannot access content that was retrieved in a
-                                    different tab.</test>
+                                    different tab.</test> -->
                                 <test>The evaluator shall verify that the scripts can retrieve
-                                    content from another <!-- changed window to instance -->
-                                    instance/tab at a different subdomain.</test>
+                                    content from another window/tab at a different subdomain.</test>
                             </testlist>
                         </aactivity>
                     </f-element>
