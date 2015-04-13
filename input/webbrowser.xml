@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-04-08</PPPubDate>
+            <PPPubDate>2015-04-13</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -468,12 +468,14 @@
                             http://www.cnn.com:80). -->
                         </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
-                            how the TSF separates local and session storage. <h4>Guidance</h4> The
-                            evaluator shall examine the operational guidance to verify that it
-                            documents the location on the file system that will be used for local
-                            storage and the location used for session storage. <br/>
-                            <h4>Tests</h4> The evaluator shall obtain or create JavaScript-based
+                            <tss>The evaluator shall examine the TSS to ensure it describes
+                            how the TSF separates local and session storage.
+                            </tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify
+                            that it documents the location on the file system that will be used for local
+                            storage and the location used for session storage.
+                            </guidance>
+                            <tests>The evaluator shall obtain or create JavaScript-based
                             scripts that store and retrieve information from local and session
                             storage and shall set up a web server with two or more web pages from
                             different domains <!-- clarified different domains --> using different
@@ -506,6 +508,7 @@
                                     window/tab cannot access information associated with a different
                                     domain/protocol/port in a different window/tab.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -514,17 +517,20 @@
                         <title>The browser shall provide the capability to block the storage of
                             third party cookies by websites.</title>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             how the TSF blocks third party cookies and when the blocking occurs
-                            (e.g., automatically, when blocking is enabled). <h4>Guidance</h4> The
-                            evaluator shall examine the operational guidance to verify that it
+                            (e.g., automatically, when blocking is enabled).
+                            </tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify that it
                             provides a description of the configuration option for blocking of third
-                            party cookies. <br/>
-                            <!--Note added --> Note: For browsers on mobile devices, the following
+                            party cookies. 
+                            <br/>
+                            Note: For browsers on mobile devices, the following
                             tests require the developer to provide access to a test platform that
                             provides the evaluator with tools that are typically not found on
-                            factory products. <br/>
-                            <h4>Tests</h4> The evaluator shall perform the following tests: <testlist>
+                            factory products.
+                            </guidance>
+                            <test>The evaluator shall perform the following tests: <testlist>
                                 <test>The evaluator shall clear all cookies and then configure the
                                     browser so that storage of third party cookies is allowed. The
                                     evaluator shall load a web page that stores a third party
@@ -537,6 +543,7 @@
                                     to store a third party cookie and shall verify that the cookie
                                     was not stored.</test>
                             </testlist>
+                            </test>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -549,14 +556,13 @@
                             Exceptions from this requirement are credentials and configuration
                             information. </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
+                            <tss>The evaluator shall examine the TSS to verify it describes
                             how the browser operates without storing persistent user data to the
-                            file systems. <h4>Guidance</h4>
-                            <!--Note added --> Note: For browsers on mobile devices, the following
-                            tests require the developer to provide access to a test platform that
-                            provides the evaluator with tools that are typically not found on
-                            factory products. <br/>
-                            <h4>Tests</h4> The evaluator shall perform the following test: <testlist>
+                            file systems.
+                            </tss>
+                            <tests>
+                                The evaluator shall perform the following test: 
+                            <testlist>
                                 <test>The evaluator shall operate the browser for a period of time,
                                     ensuring that a wide variety of browser functionality has been
                                     exercised. The evaluator shall then examine the browser and the
@@ -564,6 +570,11 @@
                                     the file system other than credentials or configuration
                                     information.</test>
                             </testlist>
+                                Note: For browsers on mobile devices, the following
+                                tests require the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products.
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -601,7 +612,7 @@
                             or dropping platform-defined privileges in the rendering process. The ST
                             author fills in the additional measures implemented by the browser. </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             how the rendering of HTML and interpretation of JavaScript is performed
                             by the browser in terms of the platform processes that are involved
                             (with "process" being an active entity that executes code). For the
@@ -623,7 +634,9 @@
                             of least privilege being implemented in the rendering process; and 3)
                             appropriate supporting information is provided in the TSS (or pointers
                             to such information are provided) that provides context for
-                            understanding the claimed least privilege mechanisms. <h4>Guidance</h4>
+                            understanding the claimed least privilege mechanisms.
+                            </tss>
+                            <guidance>
                             The evaluator shall examine the operational guidance to determine that
                             it provides a description of the restrictions available on rendering
                             processes. Additionally, if such mechanisms are configurable (for
@@ -631,34 +644,7 @@
                             evaluator shall examine the operational guidance to ensure that the
                             method for enabling and disabling the mechanisms are provided, and the
                             consequences of such actions are described.
-                            <!-- Sophisticated debugging necessary, remove the 
-                                testing portion, and rely instead on the TSS to describe the approach.
-                                <h4>Tests</h4>Note: The
-                            following tests require the developer to provide access to a test
-                            platform that provides the evaluator with debugging and test tools that
-                            are typically not found on consumer platforms.<br/> The evaluator shall
-                            perform the following tests on each platform claimed in the ST: <testlist>
-                                <test>The evaluator shall use debugging or test facilities to
-                                    introduce code into a rendering process that attempts to
-                                    directly access the platform's file system, and then direct
-                                    execution to it. The evaluator shall ensure that execution of
-                                    this code fails to access the browser file system.</test>
-                                <test>For each IPC mechanism described in the TSS, the evaluator
-                                    shall use debugging or test facilities to introduce code into a
-                                    rendering process that attempts to directly communicate with
-                                    another non-browser process on the platform, and then direct
-                                    execution to it. The evaluator shall ensure that this attempt
-                                    fails.</test>
-                                <test>For each additional mechanism claimed in the ST, the evaluator
-                                    shall devise a test to show that the mechanism functions as
-                                    described in the TSS. If no such test can be crafted, the
-                                    evaluator shall provide a justification in the test report for
-                                    why the mechanism cannot be tested.</test>
-                                <test>For each mechanism that can be configured or turned on or off,
-                                    the evaluator shall perform tests to ensure that the
-                                    configuration of the mechanism behaves as specified in the
-                                    operational guidance.</test>
-                            </testlist> -->
+                            </guidance>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -676,13 +662,13 @@
                             combination of domain, protocol and port. Two URIs sharing the same
                             domain, protocol and port are considered to have the same origin. </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             its implementation of a same origin policy and explains how it complies
                             with RFC 6454. If the TSF allows the relaxation of the same origin
                             policy for subdomains in different windows/tabs, the TSS shall describe
-                            how these exceptions are implemented. <h4>Guidance</h4>
-                            <br/>
-                            <h4>Tests</h4> The evaluator shall obtain or create scripts that can
+                            how these exceptions are implemented.
+                            </tss>
+                            <tests>The evaluator shall obtain or create scripts that can
                             retrieve content from designated locations and shall set up a web server
                             with two or more web pages representing different domains. The evaluator
                             shall incorporate the scripts into the web pages. The evaluator shall
@@ -696,15 +682,10 @@
                                     The evaluator shall run the scripts and shall verify that the
                                     script that is running in one window/tab cannot access content
                                     that was retrieved in a different window/tab.</test>
-                                <!-- Merged windows and tabs 
-                                    <test>The evaluator shall open two or more browser tabs and navigate
-                                    to a different page on the website in each tab. The evaluator
-                                    shall run the scripts and shall verify that the script that is
-                                    running in one tab cannot access content that was retrieved in a
-                                    different tab.</test> -->
                                 <test>The evaluator shall verify that the scripts can retrieve
                                     content from another window/tab at a different subdomain.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -715,15 +696,19 @@
                         <note role="application">The set-cookie header functionality is described in
                             RFC 6265 <i>HTTP State Management Mechanism</i>.</note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to verify it describes
+                            <tss>The evaluator shall examine the TSS to verify it describes
                             the browser‘s support for the "secure" attribute of the set-cookie
                             header in accordance with RFC 6265, including the required sending of
-                            cookies containing this attribute over HTTPS. <h4>Guidance</h4>
-                            <!--Note added --> Note: For browsers on mobile devices, the following
+                            cookies containing this attribute over HTTPS.
+                            </tss>
+                            <guidance>
+                            Note: For browsers on mobile devices, the following
                             tests require the developer to provide access to a test platform that
                             provides the evaluator with tools that are typically not found on
                             factory products. <br/>
-                            <h4>Tests</h4>The evaluator shall perform the following tests: <testlist>
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests:
+                             <testlist>
                                 <test>The evaluator shall connect the browser to a cookie-enabled
                                     test website implementing HTTPS and have the website present the
                                     browser with a "secure" cookie. The evaluator shall examine the
@@ -732,7 +717,8 @@
                                 <test>The evaluator shall reconnect to the cookie-enabled website
                                     over an insecure channel and verify that no "secure" cookie is
                                     sent.</test>
-                            </testlist>
+                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -740,23 +726,26 @@
                     <f-element id="fdp_trk_ext.1.1">
                         <title>The browser shall provide notification to the user when tracking
                             information for
-                                    <selectables><selectable>geolocation</selectable><selectable>browser
-                                    history</selectable><selectable>browser
-                                    preferences</selectable><selectable>browser
-                                    statistics</selectable></selectables> is requested by a
-                            website.</title>
-                        <!-- Made this a global comment. 
-                            <note role="application">Selections must be captured in the ST.</note> -->
+                                    <selectables linebreak="yes">
+                                        <selectable>geolocation</selectable>
+                                        <selectable>browser history</selectable>
+                                        <selectable>browser preferences</selectable>
+                                        <selectable>browser statistics</selectable>
+                                    </selectables> is requested by a website.</title>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             the TSF‘s support for tracking information and specifies the tracking
                             information that the browser allows websites to collect about the
-                            browser user. <h4>Guidance</h4> The evaluator shall examine the
+                            browser user.
+                            </tss>
+                            <guidance>The evaluator shall examine the
                             operational guidance to ensure it describes any notifications that the
                             user will receive when tracking information is requested by a website
                             and the options that the user has upon receiving the notification.
-                                <h4>Tests</h4>The evaluator shall perform the following tests for
-                            each type of tracking information listed in the TSS: <testlist>
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests for
+                            each type of tracking information listed in the TSS:
+                                <testlist>
                                 <test>The evaluator shall configure a website that requests the
                                     tracking information about the user and shall navigate to that
                                     website. The evaluator shall verify that the user is notified
@@ -767,6 +756,7 @@
                                     request for tracking information and that, when rejected, the
                                     browser does not provide the tracking information.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -924,8 +914,7 @@
                     </f-element>
                     <f-element id="FPT_DNL_EXT.1.2">
                         <title>The browser shall present the user with the option to either
-                            <!-- download
-                            or discard the executable -->
+                            <!-- download or discard the executable -->
                             save or discard downloaded files.</title>
                         <note role="application"> This requirement ensures that if the user
                             intentionally (via clicking on a link) or unintentionally initiates the
@@ -937,20 +926,25 @@
                             not include mobile code, scripts, or add-ons.<br/>
                         </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
+                            <tss>The evaluator shall examine the TSS to ensure that it
                             describes the behavior of the TSF when a user initiates the download of
-                            a file. <h4>Guidance</h4> The evaluator shall examine the operational
+                            a file.
+                            </tss>
+                            <guidance>The evaluator shall examine the operational
                             guidance to ensure it describes the dialog box that appears when a
                             download is initiated and the implications of the options presented by
-                            the dialog box. <h4>Tests</h4>The evaluator shall perform the following
-                            tests: <testlist>
+                            the dialog box.
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests:
+                              <testlist>
                                 <test>The evaluator shall navigate to a website that hosts files for
                                     download including executables and shall attempt to download and
                                     open several of these files. The evaluator shall verify that the
                                     browser always presents a dialog box with the option to either
                                     download the file to the file system or to discard the
                                     file.</test>
-                            </testlist>
+                              </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -961,22 +955,24 @@
                             prevent downloading of malicious applications.</title>
                         <note role="application"> An application reputation service is an online
                             service that identifies malicious applications; it is used to detect
-                            such applications prior to downloading them.
-                            <!-- 
-                            Added to App Note. --> Using a
+                            such applications prior to downloading them. Using a
                             reputation service would require configuration of the trusted service to
                             be used. The quality of the reputation service may fall outside of the
                             scope of the evaluation.</note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             the browser‘s use of application reputation services in detecting
-                            malicious applications. <h4>Guidance</h4> The evaluator shall examine
+                            malicious applications.
+                            </tss>
+                            <guidance>The evaluator shall examine
                             the operational guidance to ensure it describes the browser‘s support
                             for use of an application reputation service, including which services
                             the browser supports by default (if any) and whether additional services
                             can be configured. The operational guidance shall include steps for how
-                            to configure the application reputation service. <h4>Tests</h4> The
-                            evaluator shall perform the following tests: <testlist>
+                            to configure the application reputation service.
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests:
+                                <testlist>
                                 <test>The evaluator shall configure the browser to enable the use of
                                     one or more application reputation services per the operational
                                     guidance. The evaluator shall initiate a connection with a
@@ -987,6 +983,7 @@
                                     to the configured application reputation service(s) before
                                     initiating the download.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -1009,15 +1006,19 @@
                             Ultimately, the result should be that the browser blocks the connection
                             to the bad URL. </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it describes
+                            <tss>The evaluator shall examine the TSS to ensure it describes
                             the TSF‘s use of a URL reputation service in detecting malicious
-                            websites. <h4>Guidance</h4> The evaluator shall examine the operational
+                            websites.
+                            </tss>
+                            <guidance>The evaluator shall examine the operational
                             guidance to ensure it describes the browser‘s support for use of URL
                             reputation services, including which services the browser supports by
                             default (if any) and whether additional services can be configured. The
                             operational guidance shall include steps for how to configure the URL
-                            reputation service. <h4>Tests</h4> The evaluator shall perform the
-                            following tests: <testlist>
+                            reputation service.
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests:
+                              <testlist>
                                 <test>The evaluator shall configure the browser to enable the use of
                                     one or more URL reputation services per the operational
                                     guidance. The evaluator shall initiate a connection with a known
@@ -1037,7 +1038,8 @@
                                     verify that the browser initiates a connection to the configured
                                     URL reputation service(s) and retrieved an updated list of
                                     malicious URLs with the tested website being on the list.</test>
-                            </testlist>
+                              </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -1048,11 +1050,11 @@
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    browser]</selectable>
-                                <!-- Added no (mobile code) selectable -->
+                                <selectable><assignable>other mobile code types supported by the
+                                    browser</assignable></selectable>
                                 <selectable>no</selectable>
-                            </selectables>mobile code.</title>
+                            </selectables>mobile code.
+                        </title>
                     </f-element>
                     <f-element id="FPT_MCD_EXT.1.2">
                         <title>The browser shall provide the user with the option to discard
@@ -1068,16 +1070,19 @@
                             may directly sign the code itself, or the code may be delivered over an
                             authenticated HTTPS connection with an authorized entity. </note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure it lists the
+                            <tss>The evaluator shall examine the TSS to ensure it lists the
                             types of signed mobile code that the TSF supports. The TSS shall
                             describe how the TSF handles unsigned mobile code, mobile code from an
                             untrusted source, and mobile code from an unverified source.
-                                <h4>Guidance</h4> The evaluator shall examine the operational
+                            </tss>
+                            <guidance>The evaluator shall examine the operational
                             guidance to verify it provides configuration instructions for each of
                             the supported mobile code types. The operational guidance shall also
                             describe the alert that the browser displays to the user when unsigned,
                             untrusted, or unverified mobile code is encountered and the actions the
-                            user can take. <h4>Tests</h4>The evaluator shall perform the following
+                            user can take.
+                            </guidance>
+                            <tests>The evaluator shall perform the following
                             tests for each mobile code type specified in the TSS: <testlist>
                                 <test>The evaluator shall construct web pages containing unsigned,
                                     correctly authenticated, and incorrectly authenticated mobile
@@ -1087,6 +1092,7 @@
                                     executing it, but does execute mobile code that properly
                                     authenticates.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -1127,17 +1133,18 @@
                     </f-element>
                     <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
                         <selection-depends req="FPT_TUD_EXT.1.7"/>
-                        <!-- <title>The browser shall prevent websites from automatically installing
-                            add-ons.</title> -->
                         <title>The browser shall prevent websites from installing untrusted
                             add-ons.</title>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to verify that it
+                            <tss>The evaluator shall examine the TSS to verify that it
                             states that the TSF will reject add-ons from unapproved sources.
-                                <h4>Guidance</h4> The evaluator shall examine the operational
+                            </tss>
+                            <guidance>The evaluator shall examine the operational
                             guidance to verify that it includes instructions on how to configure the
-                            browser with trusted add-on sources. <h4>Tests</h4> The evaluator shall
-                            perform the following tests: <testlist>
+                            browser with trusted add-on sources.
+                            </guidance>
+                            <tests>The evaluator shall perform the following tests: 
+                             <testlist>
                                 <test>The evaluator shall configure the browser with trusted add-on
                                     sources. The evaluator shall create or obtain an add-on signed
                                     by a trusted source and attempt to install it. The evaluator
@@ -1153,6 +1160,7 @@
                                     attempt to install it. The evaluator shall verify that the
                                     signed add-on is rejected.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
