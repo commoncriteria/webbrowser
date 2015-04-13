@@ -524,13 +524,10 @@
                             <guidance>The evaluator shall examine the operational guidance to verify that it
                             provides a description of the configuration option for blocking of third
                             party cookies. 
-                            <br/>
-                            Note: For browsers on mobile devices, the following
-                            tests require the developer to provide access to a test platform that
-                            provides the evaluator with tools that are typically not found on
-                            factory products.
                             </guidance>
-                            <test>The evaluator shall perform the following tests: <testlist>
+                            <tests>
+                              The evaluator shall perform the following tests: 
+                              <testlist>
                                 <test>The evaluator shall clear all cookies and then configure the
                                     browser so that storage of third party cookies is allowed. The
                                     evaluator shall load a web page that stores a third party
@@ -543,7 +540,11 @@
                                     to store a third party cookie and shall verify that the cookie
                                     was not stored.</test>
                             </testlist>
-                            </test>
+                                Note: For browsers on mobile devices, the above tests may require
+                                the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products.
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -570,8 +571,8 @@
                                     the file system other than credentials or configuration
                                     information.</test>
                             </testlist>
-                                Note: For browsers on mobile devices, the following
-                                tests require the developer to provide access to a test platform that
+                                Note: For browsers on mobile devices, the above tests may require
+                                the developer to provide access to a test platform that
                                 provides the evaluator with tools that are typically not found on
                                 factory products.
                             </tests>
@@ -701,12 +702,6 @@
                             header in accordance with RFC 6265, including the required sending of
                             cookies containing this attribute over HTTPS.
                             </tss>
-                            <guidance>
-                            Note: For browsers on mobile devices, the following
-                            tests require the developer to provide access to a test platform that
-                            provides the evaluator with tools that are typically not found on
-                            factory products. <br/>
-                            </guidance>
                             <tests>The evaluator shall perform the following tests:
                              <testlist>
                                 <test>The evaluator shall connect the browser to a cookie-enabled
@@ -718,6 +713,10 @@
                                     over an insecure channel and verify that no "secure" cookie is
                                     sent.</test>
                              </testlist>
+                                Note: For browsers on mobile devices, the above tests may require
+                                the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products.
                             </tests>
                         </aactivity>
                     </f-element>
@@ -804,7 +803,6 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <!-- Moved FMT to before FPT to match email client -->
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
@@ -886,13 +884,18 @@
                             Enforcement of the policy is done by the browser itself, or the browser
                             and its platform in coordination with each other.</note>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall verify that the TSS describes those
+                            <tss>The evaluator shall verify that the TSS describes those
                             management functions which may only be configured by the browser
                             platform administrator and cannot be over-ridden by the user when set
-                            according to policy. <h4>Guidance</h4> The evaluator shall examine the
+                            according to policy.
+                            </tss>
+                            <guidance>The evaluator shall examine the
                             operational guidance to verify that it includes instructions for a
                             browser platform administrator to configure the functions listed in
-                            FMT_MOF.1.1. <h4>Tests</h4>The evaluator shall perform the following test:<br/>
+                            FMT_MOF.1.1.
+                            </guidance>
+                            <tests>
+                            The evaluator shall perform the following test:
                             <testlist>
                                 <test>The evaluator shall create policies that collectively include
                                     all management functions controlled by the browser platform
@@ -901,6 +904,7 @@
                                     browser, attempt to override each setting as the user, and
                                     verify that the TSF does not permit it.</test>
                             </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -1062,8 +1066,8 @@
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
-                                <selectable>[assignment: other mobile code types supported by the
-                                    browser]</selectable>
+                                <selectable><assignable>other mobile code types supported by the
+                                    browser</assignable></selectable>
                             </selectables> mobile code without executing it.</title>
                         <note role="application"> The ST author must specify all mobile code types
                             for which the browser provides this support. <br/>An authorized signer
