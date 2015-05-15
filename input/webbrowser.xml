@@ -391,15 +391,20 @@
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification and validation at installation time and update. </description>
                     <component-refer ref="fia_x509_ext.2.3"/>
-                    <component-refer ref="fpt_tud_ext.2"/>
+                    <!-- Move TUD TO AON <component-refer ref="fpt_tud_ext.2"/> -->
+                    <component-refer ref="FPT_AON_EXT.1"/>
+                    <component-refer ref="FPT_AON_EXT.2"/>
                 </SO>
             </SOs>
         </section>
     </chapter>
     <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-        which have to be fulfilled by the browser. The browser must not rely on any third party
-        add-ons to accomplish these requirements. Security requirements comprise functional
-        components from Part 2 of <cite linkend="bibCC"/>. The following notations are used: <ul>
+        which have to be fulfilled by the browser.
+        <!-- Updated - The browser must not rely on any third party
+        add-ons to accomplish these requirements. --> The browser must not rely on any third party add-ons, or
+        vendor supplied add-ons which do not adhere to the browser’s sandbox, to accomplish these
+        requirements. Security requirements comprise functional components from Part 2 of <cite
+            linkend="bibCC"/>. The following notations are used: <ul>
             <li>
                 <b>Selection</b> (denoted by <i>italicized text</i>): is used to select one or more
                 options provided by the [CC] in stating a requirement. Selections must be captured
@@ -885,12 +890,14 @@
                             <!-- Added for HSTS privacy (FCS_STS_EXT.1.3) -->
                             <tr><td>24. Enable/disable HSTS mode</td><td>O</td><td>O</td></tr>
                         </table>
-                        <note role="application"> The intent of this requirement is to allow the
-                            user and administrator of the platform to configure the browser with
-                            configuration policies. If the administrator has not set a policy for a
-                            particular function, the user may still perform that function.
-                            Enforcement of the policy is done by the browser itself, or the browser
-                            and its platform in coordination with each other.</note>
+                        <note role="application"> For these management functions, the term
+                            "Administrator" refers to the administrator of a non-mobile device or
+                            the device owner of a mobile device. The intent of this requirement is
+                            to allow the user and administrator of the platform to configure the
+                            browser with configuration policies. If the administrator has not set a
+                            policy for a particular function, the user may still perform that
+                            function. Enforcement of the policy is done by the browser itself, or
+                            the browser and its platform in coordination with each other.</note>
                         <aactivity>
                             <tss>The evaluator shall verify that the TSS describes those management
                                 functions which may only be configured by the browser platform
@@ -907,6 +914,10 @@
                                         policies to the browser, attempt to override each setting as
                                         the user, and verify that the <!-- TSF --> browser does not
                                         permit it.</test>
+                                    <!-- Add new test -->
+                                    <test>The evaluator shall verify that functions perform as
+                                        intended by enabling, disabling, and configuring the
+                                        functions.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
@@ -1096,8 +1107,10 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_TUD_EXT.1" name="Support for Whitelisted Add-ons">
-                    <f-element id="FPT_TUD_EXT.1.7">
+                <!-- TUD to AON -->
+                <f-component id="FPT_AON_EXT.1" name="Support for Whitelisted Add-ons">
+                    <!-- TUD 1.7 to AON 1.1 -->
+                    <f-element id="FPT_AON_EXT.1.1">
                         <title>The browser shall include the capability to load <selectables>
                                 <selectable>no add-ons</selectable>
                                 <selectable>whitelisted add-ons</selectable>
@@ -1112,27 +1125,28 @@
                             be loaded into the browser.</note>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_TUD_EXT.2" name="Trusted Installation and Updates for Add-ons">
-                    <f-element id="FPT_TUD_EXT.2.1" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                <!-- TUD TO AON -->
+                <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Updates for Add-ons">
+                    <f-element id="FPT_AON_EXT.2.1" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall provide the ability to query the current version of
                             the add-on.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.2" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_AON_EXT.2.2" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall provide the ability to initiate the downloading of
                             add-on updates.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.3" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_AON_EXT.2.3" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall provide a means to verify add-ons using a digital
                             signature mechanism and <selectables>
                                 <selectable>published hash</selectable>
                                 <selectable>no other functions</selectable>
                             </selectables> prior to installing the add-on.</title>
                     </f-element>
-                    <f-element id="FPT_TUD_EXT.2.4" status="sel-based">
-                        <selection-depends req="FPT_TUD_EXT.1.7"/>
+                    <f-element id="FPT_AON_EXT.2.4" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall prevent websites from installing untrusted
                             add-ons.</title>
                         <aactivity>
@@ -1149,18 +1163,17 @@
                                         add-on sources. The evaluator shall create or obtain an
                                         add-on signed by a trusted source and attempt to install it.
                                         The evaluator shall verify that the signature on the add-on
-                                        is valid.</test>
+                                        is valid <!-- added -->and successfully installs.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by
                                         an untrusted source and attempt to install it. The evaluator
-                                        shall verify that the signed add-on is rejected.</test>
+                                        shall verify that the signed add-on is rejected <!-- added --> and cannot be installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed with
                                         an invalid certificate and attempt to install it. The
-                                        evaluator shall verify that the signed add-on is
-                                        valid.</test>
+                                        evaluator shall verify that <!-- correction the signed add-on is valid. --> it cannot be installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by a
                                         trusted source, modify the add-on without re-signing it, and
                                         attempt to install it. The evaluator shall verify that the
-                                        signed add-on is rejected.</test>
+                                        signed add-on is rejected <!-- add --> and cannot be installed.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
