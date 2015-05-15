@@ -401,10 +401,11 @@
     <chapter title="Security Requirements" id="req">This chapter describes the security requirements
         which have to be fulfilled by the browser.
         <!-- Updated - The browser must not rely on any third party
-        add-ons to accomplish these requirements. --> The browser must not rely on any third party add-ons, or
-        vendor supplied add-ons which do not adhere to the browser’s sandbox, to accomplish these
-        requirements. Security requirements comprise functional components from Part 2 of <cite
-            linkend="bibCC"/>. The following notations are used: <ul>
+        add-ons to accomplish these requirements. -->
+        The browser must not rely on any third party add-ons, or vendor supplied add-ons which do
+        not adhere to the browser's sandbox, to accomplish these requirements. Security requirements
+        comprise functional components from Part 2 of <cite linkend="bibCC"/>. The following
+        notations are used: <ul>
             <li>
                 <b>Selection</b> (denoted by <i>italicized text</i>): is used to select one or more
                 options provided by the [CC] in stating a requirement. Selections must be captured
@@ -1166,14 +1167,18 @@
                                         is valid <!-- added -->and successfully installs.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by
                                         an untrusted source and attempt to install it. The evaluator
-                                        shall verify that the signed add-on is rejected <!-- added --> and cannot be installed.</test>
+                                        shall verify that the signed add-on is rejected
+                                        <!-- added --> and cannot be installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed with
                                         an invalid certificate and attempt to install it. The
-                                        evaluator shall verify that <!-- correction the signed add-on is valid. --> it cannot be installed.</test>
+                                        evaluator shall verify that
+                                        <!-- correction the signed add-on is valid. --> it cannot be
+                                        installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by a
                                         trusted source, modify the add-on without re-signing it, and
                                         attempt to install it. The evaluator shall verify that the
-                                        signed add-on is rejected <!-- add --> and cannot be installed.</test>
+                                        signed add-on is rejected <!-- add --> and cannot be
+                                        installed.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
