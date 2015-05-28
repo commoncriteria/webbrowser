@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-05-26</PPPubDate>
+            <PPPubDate>2015-05-28</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -379,7 +379,7 @@
                     <component-refer ref="FPT_INT_EXT.1"/>
                     <component-refer ref="FPT_INT_EXT.2"/>
                     <component-refer ref="FPT_MCD_EXT.1 "/></SO>
-                <SO id="O.MANAGEMENT"><component-refer ref="FMT.MOF_EXT.1"/>
+                <SO id="O.MANAGEMENT"><component-refer ref="FMT_MOF_EXT.1"/>
                     <component-refer ref="FDP_COO_EXT.1"/>
                 </SO>
                 <SO id="O.PROTECTED_COMMS"><component-refer ref="FCS_STS_EXT.1"/>
@@ -592,17 +592,18 @@
                             <tss>The evaluator shall examine the TSS to verify it describes how the
                                 browser operates without storing persistent user data to the file
                                 systems. </tss>
-                            <tests> The evaluator shall perform the following test: <testlist>
+                            <tests> The evaluator shall perform the following test which may require the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products: 
+                                <testlist>
                                     <test>The evaluator shall operate the browser for a period of
                                         time, ensuring that a wide variety of browser functionality
                                         has been exercised. The evaluator shall then examine the
                                         browser and the underlying platform to ensure that no files
                                         have been written to the file system other than credentials
                                         or administrator provided configuration information.</test>
-                                </testlist> Note: For browsers on mobile devices, the above tests
-                                may require the developer to provide access to a test platform that
-                                provides the evaluator with tools that are typically not found on
-                                factory products. </tests>
+                                </testlist> 
+                                </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -738,7 +739,10 @@
                                 browser's support for the "secure" attribute of the set-cookie
                                 header in accordance with RFC 6265, including the required sending
                                 of cookies containing this attribute over HTTPS. </tss>
-                            <tests>The evaluator shall perform the following tests: <testlist>
+                            <tests>The evaluator shall perform the following tests which 
+                                may require the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products: <testlist>
                                     <test>The evaluator shall connect the browser to a
                                         cookie-enabled test website implementing HTTPS and have the
                                         website present the browser with a "secure" cookie. The
@@ -747,10 +751,7 @@
                                     <test>The evaluator shall reconnect to the cookie-enabled
                                         website over an insecure channel and verify that no "secure"
                                         cookie is sent.</test>
-                                </testlist> Note: For browsers on mobile devices, the above tests
-                                may require the developer to provide access to a test platform that
-                                provides the evaluator with tools that are typically not found on
-                                factory products. </tests>
+                                </testlist> </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -837,122 +838,118 @@
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
-                        <title>The browser shall restrict the ability to manage/perform functions as
-                            follows:</title>
+                        <title>The browser shall be capable of performing the following management functions, controlled by the user or administrator as shown:</title> 
                         <ul>
                             <li>X = Mandatory</li>
-                            <li>O = Optional</li>
-                            <li>A = Administratively controlled</li></ul>
-                        <table><tr class="header"><td>Management
-                                    Function</td><td>Administrator</td><td>User</td></tr>
-                            <tr><td>1. Enable/disable storage of third party
-                                    cookies</td><td>O</td><td>X</td></tr>
-                            <tr><td>2. Enable/disable individual
-                                add-ons</td><td>O</td><td>O</td></tr>
-                            <tr><td>3. Enable/disable use of OCSP for obtaining the revocation
-                                    status of an X.509 certificate</td><td>O</td><td>O</td></tr>
-                            <tr><td>4. Configure inclusion of user-agent information in HTTP
-                                    headers</td><td>O</td><td>O</td></tr>
-                            <tr><td>5. Enable/disable ability for websites to collect tracking
-                                    information about the user through <selectables>
-                                        <selectable>zombie cookies</selectable>
-                                        <selectable>add-on based tracking (e.g. Flash
-                                            cookies)</selectable>
-                                        <selectable>browsing history</selectable>
-                                        <selectable>[assignment: other tracking
-                                            mechanisms]</selectable></selectables></td><td>O</td><td>X</td></tr>
-                            <tr><td>6. Deletion of stored browsing data (cache, web form
-                                    information)</td><td>O</td><td>X</td></tr>
-                            <tr><td>7. Enable/disable storage of sensitive information (e.g.,
-                                    auto-fill, auto-complete) in persistent
-                                    storage</td><td>O</td><td>O</td></tr>
-                            <tr><td>8. Configure size of cookie cache </td><td>O</td><td>O</td></tr>
-                            <tr><td>9. Configure size of cache </td><td>O</td><td>O</td></tr>
-                            <tr><td>10. Enable/disable interaction with Graphic Processing Units
-                                    (GPUs)</td><td>O</td><td>O</td></tr>
-                            <tr><td>11. Configure the ability to advance to a web site with an
-                                    invalid or unvalidated X.509
-                                    certificate</td><td>O</td><td>O</td></tr>
-                            <tr><td>12. Enable/disable establishment of a trusted channel if the
-                                    browser cannot establish a connection to determine the validity
-                                    of a certificate </td><td>O</td><td>O</td></tr>
-                            <tr><td>13. Configure the use of an application reputation service to
-                                    detect malicious applications prior to download
-                                    </td><td>O</td><td>O</td></tr>
-                            <tr><td>14. Configure the use of a URL reputation service to detect
-                                    sites that contain malware or phishing
-                                    content</td><td>O</td><td>O</td></tr>
-                            <tr><td>15. Enable/disable automatic installation of software updates
-                                    and patches</td><td>O</td><td>O</td></tr>
-                            <tr><td>16. Enable/disable ability for websites to register protocol
-                                    handlers </td><td>O</td><td>O</td></tr>
-                            <tr><td>17. Enable/disable display notification when unsigned, untrusted
-                                    or unverified mobile code is
-                                    encountered</td><td>O</td><td>O</td></tr>
-                            <tr><td>18. Enable/disable user's ability to select default actions upon
-                                    download of a file (e.g., always open, or always save, a
-                                    downloaded file)</td><td>O</td><td>O</td></tr>
-                            <tr><td>19. Enable/disable launching of downloaded files outside the
-                                    browser</td><td>O</td><td>O</td></tr>
-                            <tr><td>20. Enable/disable JavaScript</td><td>O</td><td>O</td></tr>
-                            <tr><td>21. Enable/disable <selectables><selectable>ActiveX</selectable>
-                                        <selectable>Flash</selectable>
-                                        <selectable>Java</selectable>
-                                        <selectable>[assignment: other mobile code types supported
-                                            by the browser]</selectable> mobile code</selectables>
-                                </td><td>O</td><td>O</td></tr>
-                            <!-- Address security aspect of Issue 22 by having the capability to prevent users from clicking through and ignoring error messages such as invalid cert-->
-                            <tr><td>22. Enable/disable user's ability to acknowledge/accept risks
-                                    associated with security warnings</td><td>O</td><td>O</td></tr>
-                            <tr><td>23. Configure whitelist of trusted
-                                    add-ons</td><td>O</td><td>O</td></tr>
-                            <!-- Added for HSTS privacy (FCS_STS_EXT.1.3) -->
-                            <tr><td>24. Enable/disable HSTS mode</td><td>O</td><td>O</td></tr>
-                        </table>
+                            <li>O = Optional</li></ul>
+                        <management-function-set>
+                            <manager>Administrator</manager>
+                            <manager>User</manager>
+                            <management-function user="X">Enable/disable storage of third party
+                                cookies</management-function>
+                            <management-function admin="O">Enable/disable individual
+                                add-ons</management-function>
+                            <management-function admin="O">Enable/disable use of OCSP for obtaining
+                                the revocation status of an X.509 certificate</management-function>
+                            <management-function admin="O">Configure inclusion of user-agent
+                                information in HTTP headers</management-function>
+                            <management-function user="X">Enable/disable ability for websites to
+                                collect tracking information about the user through <selectables>
+                                    <selectable>zombie cookies</selectable>
+                                    <selectable>add-on based tracking (e.g. Flash
+                                        cookies)</selectable>
+                                    <selectable>browsing history</selectable>
+                                    <selectable>[assignment: other tracking
+                                    mechanisms]</selectable></selectables></management-function>
+                            <management-function user="X">Deletion of stored browsing data (cache,
+                                web form information)</management-function>
+                            <management-function admin="O">Enable/disable storage of sensitive
+                                information (e.g., auto-fill, auto-complete) in persistent
+                                storage</management-function>
+                            <management-function admin="O">Configure size of cookie
+                                cache</management-function>
+                            <management-function admin="O">Configure size of
+                                cache</management-function>
+                            <management-function admin="O">Enable/disable interaction with Graphic
+                                Processing Units (GPUs)</management-function>
+                            <management-function admin="O">Configure the ability to advance to a web
+                                site with an invalid or unvalidated X.509
+                                certificate</management-function>
+                            <management-function admin="O">Enable/disable establishment of a trusted
+                                channel if the browser cannot establish a connection to determine
+                                the validity of a certificate</management-function>
+                            <management-function admin="O">Configure the use of an application
+                                reputation service to detect malicious applications prior to
+                                download</management-function>
+                            <management-function admin="O">Configure the use of a URL reputation
+                                service to detect sites that contain malware or phishing
+                                content</management-function>
+                            <management-function admin="O">Enable/disable automatic installation of
+                                software updates and patches</management-function>
+                            <management-function admin="O">Enable/disable ability for websites to
+                                register protocol handlers</management-function>
+                            <management-function admin="O">Enable/disable display notification when
+                                unsigned, untrusted or unverified mobile code is
+                                encountered</management-function>
+                            <management-function admin="O">Enable/disable user's ability to select
+                                default actions upon download of a file (e.g., always open, or
+                                always save, a downloaded file)</management-function>
+                            <management-function admin="O">Enable/disable launching of downloaded
+                                files outside the browser</management-function>
+                            <management-function admin="O">Enable/disable
+                                JavaScript</management-function>
+                            <management-function admin="O">Enable/disable
+                                        <selectables><selectable>ActiveX</selectable>
+                                    <selectable>Flash</selectable>
+                                    <selectable>Java</selectable>
+                                    <selectable>[assignment: other mobile code types supported by
+                                        the browser]</selectable> mobile
+                                code</selectables></management-function>
+                            <management-function admin="O">Enable/disable user's ability to
+                                acknowledge/accept risks associated with security
+                                warnings</management-function>
+                            <management-function admin="O">Configure whitelist of trusted
+                                add-ons</management-function>
+                            <management-function admin="O">Enable/disable HSTS
+                                mode</management-function>
+                        </management-function-set>
                     </f-element>
-                    <!-- Added 1.2 -->
-                    <f-element id="FMT_MOF_EXT.1.2">
-                        <title>Functions administratively configured in <linkref
-                                linkend="FMT_MOF_EXT.1.1"/> shall not be modified by a
-                            non-administrative user.</title>
-                        <note role="application"> For these management functions, the term
-                            "Administrator" refers to the administrator of a non-mobile device or
-                            the device owner of a mobile device. The intent of this requirement is
-                            to allow the user and administrator of the platform to configure the
-                            browser with configuration policies. If the administrator has not set a
-                            policy for a particular function, the user may still perform that
-                            function. Enforcement of the policy is done by the browser itself, or
-                            the browser and its platform in coordination with each other.</note>
-                        <aactivity>
-                            <tss>The evaluator shall verify that the TSS describes those management
-                                functions which may only be configured by the browser platform
-                                administrator and cannot be over-ridden by the user when set
-                                according to policy. </tss>
-                            <guidance>The evaluator shall examine the operational guidance to verify
-                                that it includes instructions for a browser platform administrator
-                                to configure the functions listed in FMT_MOF.1.1. </guidance>
-                            <tests> The evaluator shall perform the following test: <testlist>
-                                <test>The evaluator shall verify that functions perform as
-                                    intended by enabling, disabling, and configuring the
-                                    functions.</test>
-                                <test>The evaluator shall create policies that collectively
-                                        include all management functions controlled by the browser
-                                        platform administrator and cannot be over-ridden by the user
-                                        as defined in FMT_MOF.1.1. The evaluator shall apply these
-                                        policies to the browser, attempt to override each setting as
-                                        the user, and verify that the <!-- TSF --> browser does not
-                                        permit it.</test>                        
-                                </testlist>
-                            </tests>
-                        </aactivity>
-                    </f-element>
+                    <note role="application"> For these management functions, the term
+                        "Administrator" refers to the administrator of a non-mobile device or the
+                        device owner of a mobile device. The intent of this requirement is to allow
+                        the user and administrator of the platform to configure the browser with
+                        configuration policies. If the administrator has not set a policy for a
+                        particular function, the user may still perform that function. Enforcement
+                        of the policy is done by the browser itself, or the browser and its platform
+                        in coordination with each other.</note>
+                    <aactivity>
+                        <tss>The evaluator shall verify that the TSS describes those management
+                            functions which may only be configured by the browser platform
+                            administrator and cannot be over-ridden by the user when set according
+                            to policy. </tss>
+                        <guidance>The evaluator shall examine the operational guidance to verify
+                            that it includes instructions for a browser platform administrator to
+                            configure the functions listed in FMT_MOF.1.1. </guidance>
+                        <tests> The evaluator shall perform the following tests: <testlist>
+                                <test>The evaluator shall verify that functions perform as intended
+                                    by enabling, disabling, and configuring the functions.</test>
+                                <test>The evaluator shall create policies that collectively include
+                                    all management functions controlled by the browser platform
+                                    administrator and cannot be over-ridden by the user as defined
+                                    in FMT_MOF.1.1. The evaluator shall apply these policies to the
+                                    browser, attempt to override each setting as the user, and
+                                    verify that the <!-- TSF --> browser does not permit it.</test>
+                            </testlist>
+                        </tests>
+                    </aactivity>
                 </f-component>
             </subsection>
             <subsection title="Protection of the TSF (FPT)" id="fpt">
                 <f-component id="FPT_DNL_EXT.1" name="File Downloads">
                     <!--renamed from "Launch of Downloaded Executables" -->
                     <f-element id="FPT_DNL_EXT.1.1">
-                        <title>The browser shall prevent downloaded <!-- Replace executables with content --> content from launching
+                        <title>The browser shall prevent downloaded
+                            <!-- Replace executables with content --> content from launching
                             automatically.</title>
                     </f-element>
                     <f-element id="FPT_DNL_EXT.1.2">
@@ -976,7 +973,7 @@
                                 it describes the dialog box that appears when a download is
                                 initiated and the implications of the options presented by the
                                 dialog box. </guidance>
-                            <tests>The evaluator shall perform the following tests: <testlist>
+                            <tests>The evaluator shall perform the following test: <testlist>
                                     <test>The evaluator shall navigate to a website that hosts files
                                         for download including executables and shall attempt to
                                         download and open several of these files. The evaluator
@@ -1009,7 +1006,7 @@
                                 default (if any) and whether additional services can be configured.
                                 The operational guidance shall include steps for how to configure
                                 the application reputation service. </guidance>
-                            <tests>The evaluator shall perform the following tests: <testlist>
+                            <tests>The evaluator shall perform the following test: <testlist>
                                     <test>The evaluator shall configure the browser to enable the
                                         use of one or more application reputation services per the
                                         operational guidance. The evaluator shall initiate a
@@ -1117,7 +1114,7 @@
                                 alert that the browser displays to the user when unsigned,
                                 untrusted, or unverified mobile code is encountered and the actions
                                 the user can take. </guidance>
-                            <tests>The evaluator shall perform the following tests for each mobile
+                            <tests>The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <testlist>
                                     <test>The evaluator shall construct web pages containing
                                         unsigned, correctly authenticated, and incorrectly
@@ -1180,9 +1177,9 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it includes instructions on how to configure the browser with
                                 trusted add-on sources. </guidance>
-                            <tests>The following tests require the developer to provide tools not
-                                typically found on consumer products. <br/> The evaluator shall
-                                perform the following tests: <testlist>
+                            <tests>The evaluator shall
+                                perform the following tests which may require the developer to provide tools not
+                                typically found on consumer products: <testlist>
                                     <test>The evaluator shall configure the browser with trusted
                                         add-on sources. The evaluator shall create or obtain an
                                         add-on signed by a trusted source and attempt to install it.

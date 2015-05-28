@@ -76,4 +76,46 @@
 
   <xsl:template match="processing-instruction('xml-stylesheet')"/>
 
+  <xsl:template match="cc:management-function-set">
+    <table style="width: 100%;" xmlns="http://common-criteria.rhcloud.com/ns/cc">
+      <tr class="header">
+	<td>Management Function</td>
+	<xsl:apply-templates select="./cc:manager"/>
+      </tr>
+      <xsl:apply-templates select="./cc:management-function"/>
+    </table>
+  </xsl:template>
+
+  <xsl:template match="cc:manager">
+    <td><xsl:apply-templates/></td>
+  </xsl:template>
+
+  <xsl:template match="cc:management-function">
+    <tr><td><xsl:apply-templates/></td>
+    <td>
+    <xsl:choose>
+     <xsl:when test="@admin">
+       <xsl:value-of select="@admin"/>
+     </xsl:when>
+     <xsl:otherwise>O</xsl:otherwise>
+    </xsl:choose>
+    </td>
+
+    <td>
+    <xsl:choose>
+     <xsl:when test="@user">
+       <xsl:value-of select="@user"/>
+     </xsl:when>
+     <xsl:otherwise>O</xsl:otherwise>
+    </xsl:choose>
+    </td>
+
+    </tr>
+  </xsl:template>
+
+</xsl:stylesheet>
+
+
+
+
 </xsl:stylesheet>
