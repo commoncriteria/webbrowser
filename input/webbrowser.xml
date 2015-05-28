@@ -561,7 +561,8 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it provides a description of the configuration option for
                                 blocking of third party cookies. </guidance>
-                            <tests> The evaluator shall perform the following tests which may require the developer to provide access to a test platform that
+                            <tests> The evaluator shall perform the following tests which may
+                                require the developer to provide access to a test platform that
                                 provides the evaluator with tools that are typically not found on
                                 factory products: <testlist>
                                     <test>The evaluator shall clear all cookies and then configure
@@ -575,8 +576,8 @@
                                         blocked (i.e. not allowed). The evaluator shall load a web
                                         page that attempts to store a third party cookie and shall
                                         verify that the cookie was not stored.</test>
-                                </testlist> 
-                                 </tests>
+                                </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
