@@ -561,7 +561,9 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it provides a description of the configuration option for
                                 blocking of third party cookies. </guidance>
-                            <tests> The evaluator shall perform the following tests: <testlist>
+                            <tests> The evaluator shall perform the following tests which may require the developer to provide access to a test platform that
+                                provides the evaluator with tools that are typically not found on
+                                factory products: <testlist>
                                     <test>The evaluator shall clear all cookies and then configure
                                         the browser so that storage of third party cookies is
                                         allowed. The evaluator shall load a web page that stores a
@@ -573,17 +575,19 @@
                                         blocked (i.e. not allowed). The evaluator shall load a web
                                         page that attempts to store a third party cookie and shall
                                         verify that the cookie was not stored.</test>
-                                </testlist> Note: For browsers on mobile devices, the above tests
-                                may require the developer to provide access to a test platform that
-                                provides the evaluator with tools that are typically not found on
-                                factory products. </tests>
+                                </testlist> 
+                                 </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                     <f-element id="FDP_PST_EXT.1.1" status="optional">
                         <title>The browser shall provide the capability to operate without storing
-                            persistent data to the file system.</title>
+                            persistent data to the file system with the following exceptions:
+                                    <selectables><selectable>credentials</selectable><selectable>configuration
+                                    information</selectable><selectable>certificate
+                                    revocation</selectable><selectable>no
+                                exceptions</selectable></selectables>.</title>
                         <note role="application"> Any data that persists after the browser closes,
                             including temporary files, is considered to be persistent data.
                             Exceptions from this requirement are credentials and configuration
@@ -592,18 +596,18 @@
                             <tss>The evaluator shall examine the TSS to verify it describes how the
                                 browser operates without storing persistent user data to the file
                                 systems. </tss>
-                            <tests> The evaluator shall perform the following test which may require the developer to provide access to a test platform that
-                                provides the evaluator with tools that are typically not found on
-                                factory products: 
-                                <testlist>
+                            <tests> The evaluator shall perform the following test which may require
+                                the developer to provide access to a test platform that provides the
+                                evaluator with tools that are typically not found on factory
+                                products: <testlist>
                                     <test>The evaluator shall operate the browser for a period of
                                         time, ensuring that a wide variety of browser functionality
                                         has been exercised. The evaluator shall then examine the
                                         browser and the underlying platform to ensure that no files
                                         have been written to the file system other than credentials
                                         or administrator provided configuration information.</test>
-                                </testlist> 
-                                </tests>
+                                </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -739,10 +743,10 @@
                                 browser's support for the "secure" attribute of the set-cookie
                                 header in accordance with RFC 6265, including the required sending
                                 of cookies containing this attribute over HTTPS. </tss>
-                            <tests>The evaluator shall perform the following tests which 
-                                may require the developer to provide access to a test platform that
-                                provides the evaluator with tools that are typically not found on
-                                factory products: <testlist>
+                            <tests>The evaluator shall perform the following tests which may require
+                                the developer to provide access to a test platform that provides the
+                                evaluator with tools that are typically not found on factory
+                                products: <testlist>
                                     <test>The evaluator shall connect the browser to a
                                         cookie-enabled test website implementing HTTPS and have the
                                         website present the browser with a "secure" cookie. The
@@ -751,7 +755,8 @@
                                     <test>The evaluator shall reconnect to the cookie-enabled
                                         website over an insecure channel and verify that no "secure"
                                         cookie is sent.</test>
-                                </testlist> </tests>
+                                </testlist>
+                            </tests>
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -838,7 +843,8 @@
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
-                        <title>The browser shall be capable of performing the following management functions, controlled by the user or administrator as shown:</title> 
+                        <title>The browser shall be capable of performing the following management
+                            functions, controlled by the user or administrator as shown:</title>
                         <ul>
                             <li>X = Mandatory</li>
                             <li>O = Optional</li></ul>
@@ -1177,9 +1183,9 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it includes instructions on how to configure the browser with
                                 trusted add-on sources. </guidance>
-                            <tests>The evaluator shall
-                                perform the following tests which may require the developer to provide tools not
-                                typically found on consumer products: <testlist>
+                            <tests>The evaluator shall perform the following tests which may require
+                                the developer to provide tools not typically found on consumer
+                                products: <testlist>
                                     <test>The evaluator shall configure the browser with trusted
                                         add-on sources. The evaluator shall create or obtain an
                                         add-on signed by a trusted source and attempt to install it.
