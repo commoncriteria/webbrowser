@@ -682,6 +682,34 @@
                                 operational guidance to ensure that the method for enabling and
                                 disabling the mechanisms are provided, and the consequences of such
                                 actions are described. </guidance>
+                            <testlist>The following tests require the developer to provide access to
+                                a test platform that provides the evaluator with debugging and test
+                                tools that are typically not found on consumer platforms. <br/>The
+                                evaluator shall perform the following tests on each platform claimed
+                                in the ST: <tests>
+                                    <test>The evaluator shall use debugging or test
+                                        facilities to introduce code into a rendering process that
+                                        attempts to directly access the platform's file system, and
+                                        then direct execution to it. The evaluator shall ensure that
+                                        execution of this code fails to access the TOE file
+                                        system.</test>
+                                    <test>For each IPC mechanism described in the TSS, the evaluator
+                                        shall use debugging or test facilities to introduce code
+                                        into a rendering process that attempts to directly
+                                        communicate with another non-TOE process on the platform,
+                                        and then direct execution to it. The evaluator shall ensure
+                                        that this attempt fails.</test>
+                                    <test>For each additional
+                                        mechanism claimed in the ST, the evaluator shall devise a
+                                        test to show that the mechanism functions as described in
+                                        the TSS. If no such test can be crafted, the evaluator shall
+                                        provide a justification in the test report for why the
+                                        mechanism cannot be tested.</test>
+                                    <test>For each mechanism that can be configured or turned on or
+                                        off, the evaluator shall perform tests to ensure that the
+                                        configuration of the mechanism behaves as specified in the
+                                        operational guidance.</test></tests>
+                            </testlist>
                         </aactivity>
                     </f-element>
                 </f-component>
