@@ -313,8 +313,10 @@
                     are: <ul><li>unconditional (which are always required)</li>
                         <li>selection-based (which are required when certain selections are chosen
                             in the unconditional requirements)</li></ul> and may include optional
-                    and/or objective components that are desirable but not required for conformance.
-                </description>
+                    and/or objective components that are desirable but not required for
+                    conformance.<br/> In accordance with CC Part 1, dependencies are not included
+                    when they are addressed by other SFRs. The assurance activities provide adequate
+                    proof that any dependencies are also satisfied. </description>
             </cclaim>
         </cclaims>
     </chapter>
@@ -382,8 +384,17 @@
                 <SO id="O.MANAGEMENT"><component-refer ref="FMT_MOF_EXT.1"/>
                     <component-refer ref="FDP_COO_EXT.1"/>
                 </SO>
+                <SO id="O.PROTECTED_STORAGE">
+                    <component-refer ref="FCS_COP.1" />
+                </SO>
                 <SO id="O.PROTECTED_COMMS"><component-refer ref="FCS_STS_EXT.1"/>
                     <component-refer ref="FDP_STR_EXT.1"/>
+                    <component-refer ref="FCS_CKM.1"/>
+                    <component-refer ref="FCS_DTLS_EXT.1"/>
+                    <component-refer ref="FCS_HTTPS_EXT.1"/>
+                    <component-refer ref="FCS_TLSC_EXT.1"/>
+                    <component-refer ref="FIA_X509_EXT.1"/>
+                    <component-refer ref="FIA_X509_EXT.2"/>
                 </SO>
                 <SO id="O.DOMAIN_ISOLATION">
                     <description> To address the network attack associated with content leakage
@@ -687,24 +698,22 @@
                                 tools that are typically not found on consumer platforms. <br/>The
                                 evaluator shall perform the following tests on each platform claimed
                                 in the ST: <tests>
-                                    <test>The evaluator shall use debugging or test
-                                        facilities to introduce code into a rendering process that
-                                        attempts to directly access the platform's file system, and
-                                        then direct execution to it. The evaluator shall ensure that
-                                        execution of this code fails to access the TOE file
-                                        system.</test>
+                                    <test>The evaluator shall use debugging or test facilities to
+                                        introduce code into a rendering process that attempts to
+                                        directly access the platform's file system, and then direct
+                                        execution to it. The evaluator shall ensure that execution
+                                        of this code fails to access the TOE file system.</test>
                                     <test>For each IPC mechanism described in the TSS, the evaluator
                                         shall use debugging or test facilities to introduce code
                                         into a rendering process that attempts to directly
                                         communicate with another non-TOE process on the platform,
                                         and then direct execution to it. The evaluator shall ensure
                                         that this attempt fails.</test>
-                                    <test>For each additional
-                                        mechanism claimed in the ST, the evaluator shall devise a
-                                        test to show that the mechanism functions as described in
-                                        the TSS. If no such test can be crafted, the evaluator shall
-                                        provide a justification in the test report for why the
-                                        mechanism cannot be tested.</test>
+                                    <test>For each additional mechanism claimed in the ST, the
+                                        evaluator shall devise a test to show that the mechanism
+                                        functions as described in the TSS. If no such test can be
+                                        crafted, the evaluator shall provide a justification in the
+                                        test report for why the mechanism cannot be tested.</test>
                                     <test>For each mechanism that can be configured or turned on or
                                         off, the evaluator shall perform tests to ensure that the
                                         configuration of the mechanism behaves as specified in the
