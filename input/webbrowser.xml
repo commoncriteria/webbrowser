@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-05-28</PPPubDate>
+            <PPPubDate>2015-06-04</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -43,7 +43,27 @@
         </entry>
     </RevisionHistory>
     <chapter title="Introduction" id="int">
-        <section title="Overview" id="ppoverview"> The Application Software Extended Package (EP)
+        <section title="Overview" id="ppoverview">Web browsers are client applications that retrieve
+            and render content provided by web servers, primarily using the hypertext transfer
+            protocol (HTTP) or HTTP Secure (HTTPS). Browsers have grown in complexity over the
+            years, starting as tools used to display simple, unchanging web pages and becoming
+            sophisticated execution environments for web content. The use of browsers to administer
+            accounts, servers or embedded systems remotely requires them to handle sensitive
+            information securely. Innovations such as tabs, extensions and HTML5 have not only
+            increased browser functionality, but also introduced new security concerns. Being the
+            principal method for accessing the Internet, and due to their complexity and the
+            information that they process, browsers are a natural target for attackers. As a result,
+            it is paramount that the security of web browsers be improved to reduce the risk to
+            client machines and enterprise networks.<br/> This Extended Package (EP) along with the
+            Protection Profile for Application Software (App PP) provide a baseline set of Security
+            Functional Requirements (SFRs) for web browsers running on any operating system
+            regardless of the composition of the underlying platform. The requirements are intended
+            to improve the security of browsers by encouraging the use of operating system security
+            services and requiring the use of sandboxing technologies and environmental mitigations
+            provided by the underlying platform. Additionally, these requirements define security
+            functionality that browsers must provide.<br/>The terms web browser, browser, and TOE
+            are interchangeable in this document.
+            <!-- REPLACED - The Application Software Extended Package (EP)
             for Web Browsers describes the extended security functionality of web browsers in terms
             of <cite linkend="bibCC"/>. As an extension of the Protection Profile for Application
             Software (<cite linkend="bibAppPP"/>), this EP specifies additional security functional
@@ -53,10 +73,10 @@
             the overarching <cite linkend="bibAppPP"/>. Required components include unconditional
             requirements, selection-based requirements in accordance with the selections and/or
             assignments expressed, and may also include optional and/or objective components if
-            desired.<!-- Add --><br/> The Target of Evaluation (TOE) in this document is any web
+            desired.  <br/> The Target of Evaluation (TOE) in this document is any web
             browser client capable of running on any operating system or platform and used primarily
             to render web content using HTTP and HTTPS.
-            <!-- Revise - The scope of this Extended Package (EP) is to
+            The scope of this Extended Package (EP) is to
             describe the security functionality of web browsers in terms of <cite linkend="bibCC"/>.
             This EP is not complete in itself, but rather extends the security requirements of the
             Protection Profile for Application Software (<cite linkend="bibAppPP"/>). -->
@@ -246,7 +266,16 @@
                 </glossary>
             </subsection>
         </section>
-        <section title="Compliant Targets of Evaluation" id="TOEdescription"> This document provides
+        <section title="Compliant Targets of Evaluation" id="TOEdescription"> The Target of
+            Evaluation (TOE) in this EP is any web browser client capable of running on any
+            operating system or platform and rendering web content using HTTP and HTTPS. <br />This EP
+            describes the extended security functionality of web browsers in terms of <cite linkend="bibCC"/>. As an
+            extension of the App PP, it is expected that the content of this EP will be
+            appropriately combined with the App PP to include selection-based requirements in
+            accordance with the selections and/or assignments made, and any optional and/or
+            objective components. <br />An ST must identify the applicable version of the App PP
+            and this EP in its conformance claims. 
+            <!-- REPLACE This document provides
             an extended set of Security Functional Requirements (SFRs) for a web browser, which is
             the Target of Evaluation (TOE). The terms web browser, browser, and TOE are
             interchangeable in this document.<br/> The Protection Profile for Application Software
@@ -263,9 +292,10 @@
             also introduced new security concerns. As users' principal method for accessing the
             Internet, and due to their complexity and the information that they process, browsers
             are a natural target for attackers. As a result, it is paramount that the security of
-            web browsers be assured to reduce the risk to networks.<!--Added -->
+            web browsers be assured to reduce the risk to networks. 
             <br/> The requirements in this document apply to all web browsers that run on any
-            operating system, regardless of the composition of the underlying platform. </section>
+            operating system, regardless of the composition of the underlying platform. -->
+        </section>
         <section title="Use Cases" id="usecases">
             <!-- Revised - Web browsers are used to perform many tasks, and
             these can be categorized into three primary use cases.-->Requirements
@@ -385,7 +415,7 @@
                     <component-refer ref="FDP_COO_EXT.1"/>
                 </SO>
                 <SO id="O.PROTECTED_STORAGE">
-                    <component-refer ref="FCS_COP.1" />
+                    <component-refer ref="FCS_COP.1"/>
                 </SO>
                 <SO id="O.PROTECTED_COMMS"><component-refer ref="FCS_STS_EXT.1"/>
                     <component-refer ref="FDP_STR_EXT.1"/>
