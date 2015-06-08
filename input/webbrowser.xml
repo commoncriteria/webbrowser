@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-06-04</PPPubDate>
+            <PPPubDate>2015-06-08</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -55,14 +55,14 @@
             information that they process, browsers are a natural target for attackers. As a result,
             it is paramount that the security of web browsers be improved to reduce the risk to
             client machines and enterprise networks.<br/> This Extended Package (EP) along with the
-            Protection Profile for Application Software (App PP) provide a baseline set of Security
-            Functional Requirements (SFRs) for web browsers running on any operating system
-            regardless of the composition of the underlying platform. The requirements are intended
-            to improve the security of browsers by encouraging the use of operating system security
-            services and requiring the use of sandboxing technologies and environmental mitigations
-            provided by the underlying platform. Additionally, these requirements define security
-            functionality that browsers must provide.<br/>The terms web browser, browser, and TOE
-            are interchangeable in this document.
+            Protection Profile for Application Software (<cite linkend="bibAppPP"/>) provide a
+            baseline set of Security Functional Requirements (SFRs) for web browsers running on any
+            operating system regardless of the composition of the underlying platform. The
+            requirements are intended to improve the security of browsers by encouraging the use of
+            operating system security services and requiring the use of sandboxing technologies and
+            environmental mitigations provided by the underlying platform. Additionally, these
+            requirements define security functionality that browsers must provide.<br/>The terms web
+            browser, browser, and TOE are interchangeable in this document.
             <!-- REPLACED - The Application Software Extended Package (EP)
             for Web Browsers describes the extended security functionality of web browsers in terms
             of <cite linkend="bibCC"/>. As an extension of the Protection Profile for Application
@@ -268,13 +268,18 @@
         </section>
         <section title="Compliant Targets of Evaluation" id="TOEdescription"> The Target of
             Evaluation (TOE) in this EP is any web browser client capable of running on any
-            operating system or platform and rendering web content using HTTP and HTTPS. <br />This EP
-            describes the extended security functionality of web browsers in terms of <cite linkend="bibCC"/>. As an
-            extension of the App PP, it is expected that the content of this EP will be
-            appropriately combined with the App PP to include selection-based requirements in
-            accordance with the selections and/or assignments made, and any optional and/or
-            objective components. <br />An ST must identify the applicable version of the App PP
-            and this EP in its conformance claims. 
+            operating system or platform and rendering web content using HTTP and HTTPS. <br/>This
+            EP describes the extended security functionality of web browsers in terms of <cite
+                linkend="bibCC"/>. As an extension of the App PP, it is expected that the content of
+            this EP will be appropriately combined with the App PP to include selection-based
+            requirements in accordance with the selections and/or assignments made, and any optional
+            and/or objective components to include: FCS_TLSC_EXT.1.4, FCS_RBG_EXT.2.1,
+            FCS_RBG_EXT.2.2, FCS_CKM.1.1, FCS_CKM.2.1, FCS_COP.1.1(1), FCS_COP.1.1(2),
+            FCS_COP.1.1(3), FCS_COP.1.1(4), FCS_TLSC_EXT.1.1, FCS_TLSC_EXT.1.2, FCS_TLSC_EXT.1.3,
+            FCS_TLSC_EXT.1.5, FCS_DTLS_EXT.1.1, FCS_DTLS_EXT.1.2, FCS_DTLS_EXT.1.3,
+            FCS_HTTPS_EXT.1.1, FCS_HTTPS_EXT.1.2, FCS_HTTPS_EXT.1.3, FIA_X509_EXT.1.1,
+            FIA_X509_EXT.1.2, FIA_X509_EXT.2.1, FIA_X509_EXT.2. <br/>An ST must identify the
+            applicable version of the App PP and this EP in its conformance claims.
             <!-- REPLACE This document provides
             an extended set of Security Functional Requirements (SFRs) for a web browser, which is
             the Target of Evaluation (TOE). The terms web browser, browser, and TOE are
@@ -330,17 +335,18 @@
     <chapter title="Conformance Claims" id="conf">
         <cclaims>
             <cclaim id="Conformance Statement">
-                <description> The Protection Profile for Application Software (App PP) defines the
-                    baseline Security Functional Requirements (SFRs) and Security Assurance
-                    Requirements (SARs) for application software products. This EP serves to extend
-                    the App PP baseline with additional SFRs and associated Assurance Activities
-                    specific to a web browser. Assurance Activities are the actions that the
-                    evaluator performs in order to determine a web browser's compliance to the
-                    SFRs.<br/> This EP conforms to Common Criteria <cite linkend="bibCC"/> for
-                    Information Technology Security Evaluation, Version 3.1, Revision 4. It is CC
-                    Part 2 extended and CC Part 3 conformant. In order to be conformant to this EP,
-                    the ST must include all components in this EP and the associated App PP that
-                    are: <ul><li>unconditional (which are always required)</li>
+                <description> The Protection Profile for Application Software (<cite
+                        linkend="bibAppPP"/>) defines the baseline Security Functional Requirements
+                    (SFRs) and Security Assurance Requirements (SARs) for application software
+                    products. This EP serves to extend the App PP baseline with additional SFRs and
+                    associated Assurance Activities specific to a web browser. Assurance Activities
+                    are the actions that the evaluator performs in order to determine a web
+                    browser's compliance to the SFRs.<br/> This EP conforms to Common Criteria <cite
+                        linkend="bibCC"/> for Information Technology Security Evaluation, Version
+                    3.1, Revision 4. It is CC Part 2 extended and CC Part 3 conformant. In order to
+                    be conformant to this EP, the ST must include all components in this EP and the
+                    associated App PP that are: <ul><li>unconditional (which are always
+                            required)</li>
                         <li>selection-based (which are required when certain selections are chosen
                             in the unconditional requirements)</li></ul> and may include optional
                     and/or objective components that are desirable but not required for
@@ -405,35 +411,33 @@
         to those identified in the Protection Profile for Application Software (App PP). <section
             title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
             <SOs>
-                <SO id="O.QUALITY"><component-refer ref="FDP_PST_EXT.1"/>
-                    <component-refer ref="FDP_TRK_EXT.1"/>
+                <SO id="O.INTEGRITY">
                     <component-refer ref="FPT_DNL_EXT.1"/>
-                    <component-refer ref="FPT_INT_EXT.1"/>
-                    <component-refer ref="FPT_INT_EXT.2"/>
-                    <component-refer ref="FPT_MCD_EXT.1 "/></SO>
-                <SO id="O.MANAGEMENT"><component-refer ref="FMT_MOF_EXT.1"/>
-                    <component-refer ref="FDP_COO_EXT.1"/>
+                    <component-refer ref="FPT_MCD_EXT.1 "/>
+                </SO>
+                <SO id="O.MANAGEMENT">
+                    <component-refer ref="FDP_TRK_EXT.1"/>
+                    <component-refer ref="FMT_MOF_EXT.1"/>
                 </SO>
                 <SO id="O.PROTECTED_STORAGE">
-                    <component-refer ref="FCS_COP.1"/>
+                    <component-refer ref="FDP_COO_EXT.1"/>
+                    <component-refer ref="FDP_PST_EXT.1"/>
                 </SO>
-                <SO id="O.PROTECTED_COMMS"><component-refer ref="FCS_STS_EXT.1"/>
-                    <component-refer ref="FDP_STR_EXT.1"/>
+                <SO id="O.PROTECTED_COMMS">
                     <component-refer ref="FCS_CKM.1"/>
-                    <component-refer ref="FCS_DTLS_EXT.1"/>
-                    <component-refer ref="FCS_HTTPS_EXT.1"/>
-                    <component-refer ref="FCS_TLSC_EXT.1"/>
-                    <component-refer ref="FIA_X509_EXT.1"/>
-                    <component-refer ref="FIA_X509_EXT.2"/>
+                    <component-refer ref="FCS_STS_EXT.1"/>
+                    <component-refer ref="FDP_STR_EXT.1"/>
+                    <component-refer ref="FPT_INT_EXT.1"/>
+                    <component-refer ref="FPT_INT_EXT.2"/>
                 </SO>
                 <SO id="O.DOMAIN_ISOLATION">
                     <description> To address the network attack associated with content leakage
                         between different web domains, the browser must ensure that content
                         originating from different domains (e.g., in a tab or iFrame) is properly
                         isolated. </description>
-                    <component-refer ref="fdp_sop_ext.1"/>
                     <component-refer ref="fdp_acf_ext.1.1"/>
                     <component-refer ref="FDP_SBX_EXT.1"/>
+                    <component-refer ref="fdp_sop_ext.1"/>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
                     <description> To address issues associated with malicious or flawed add-ons,
@@ -921,13 +925,11 @@
                             <manager>User</manager>
                             <management-function user="X">Enable/disable storage of third party
                                 cookies</management-function>
-                            <management-function admin="O">Enable/disable individual
-                                add-ons</management-function>
                             <management-function admin="O">Enable/disable use of OCSP for obtaining
                                 the revocation status of an X.509 certificate</management-function>
                             <management-function admin="O">Configure inclusion of user-agent
                                 information in HTTP headers</management-function>
-                            <management-function user="X">Enable/disable ability for websites to
+                            <management-function admin="O">Enable/disable ability for websites to
                                 collect tracking information about the user through <selectables>
                                     <selectable>zombie cookies</selectable>
                                     <selectable>add-on based tracking (e.g. Flash
@@ -935,7 +937,7 @@
                                     <selectable>browsing history</selectable>
                                     <selectable>[assignment: other tracking
                                     mechanisms]</selectable></selectables></management-function>
-                            <management-function user="X">Deletion of stored browsing data (cache,
+                            <management-function user="X">Enable/disable deletion of stored browsing data (cache,
                                 web form information)</management-function>
                             <management-function admin="O">Enable/disable storage of sensitive
                                 information (e.g., auto-fill, auto-complete) in persistent
@@ -979,10 +981,12 @@
                                     <selectable>[assignment: other mobile code types supported by
                                         the browser]</selectable> mobile
                                 code</selectables></management-function>
-                            <management-function admin="O">Enable/disable user's ability to
+                            <!-- This seems redundant <management-function admin="O">Enable/disable user's ability to
                                 acknowledge/accept risks associated with security
-                                warnings</management-function>
-                            <management-function admin="O">Configure whitelist of trusted
+                                warnings</management-function> -->
+                            <management-function admin="O">Enable/disable support for
+                                add-ons</management-function>
+                            <management-function admin="O">Enable/disable individual
                                 add-ons</management-function>
                             <management-function admin="O">Enable/disable HSTS
                                 mode</management-function>
@@ -1203,35 +1207,103 @@
                     </f-element>
                 </f-component>
                 <!-- TUD to AON -->
-                <f-component id="FPT_AON_EXT.1" name="Support for Whitelisted Add-ons">
+                <f-component id="FPT_AON_EXT.1" name="Support for Only Trusted Add-ons">
                     <!-- TUD 1.7 to AON 1.1 -->
                     <f-element id="FPT_AON_EXT.1.1">
                         <title>The browser shall include the capability to load <selectables>
+                                <selectable>trusted add-ons</selectable>
                                 <selectable>no add-ons</selectable>
-                                <selectable>whitelisted add-ons</selectable>
                             </selectables>.</title>
-                        <note role="application">The browser should support a mechanism that allows
+                        <note role="application"><linkref linkend="FPT_AON_EXT.2"/> depends upon the
+                            selection made here. If the browser does not include support for
+                            installing only trusted add-ons, this requirement can be met by
+                            demonstrating the ability to disable all support for add-ons as
+                            specified in <linkref linkend="FMT_MOF_EXT.1"/>. Cryptographic
+                            verification (i.e., trust) of add-ons is tested in <linkref
+                                linkend="FPT_AON_EXT.2.1"
+                            /><!-- The browser should support a mechanism that allows
                             individual add-ons to be added to a whitelist of trusted add-ons which
                             can be installed into the browser. Add-ons should be uniquely
                             identifiable down to specific versions so as to allow the list to only
                             allow specific versions of specific add-ons to be installed. This list
                             should be immutable to a user if it has been configured by an
                             administrator. Add-ons which are not present in the whitelist must not
-                            be loaded into the browser.</note>
+                            be loaded into the browser. --></note>
+                        <aactivity>
+                            <tss>The evaluator shall verify that the <abbr linkend="TSS"/> describes
+                                whether the browser is capable of loading trusted add-ons.</tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify
+                                that it includes instructions on loading trusted add-on
+                                sources.</guidance>
+                            <tests>The evaluator shall perform the following tests:
+                                        <testlist><test>The evaluator shall create or obtain an
+                                        untrusted add-on and attempt to load it. The evaluator shall
+                                        verify that the unsigned add-on is rejected and cannot be
+                                        loaded.</test></testlist>
+                            </tests>
+                        </aactivity>
                     </f-element>
                 </f-component>
                 <!-- TUD TO AON -->
-                <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Updates for Add-ons">
+                <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Update for Add-ons">
+                    <f-element id="FPT_AON_EXT.2.1" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.1"/>
+                        <title>The browser shall <selectables>
+                                <selectable>provide the ability</selectable>
+                                <selectable>leverage the platform</selectable>
+                            </selectables> to provide a means to cryptographically verify add-ons
+                            using a digital signature mechanism and <selectables>
+                                <selectable>published hash</selectable>
+                                <selectable>no other functions</selectable>
+                            </selectables>prior to installation and update. </title>
+                    </f-element>
+                    <f-element id="FPT_AON_EXT.2.2" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.1"/>
+                        <title>The browser shall <selectables><selectable>provide the
+                                    ability</selectable><selectable>leverage the
+                                    platform</selectable></selectables> to query the current version
+                            of the add-on.</title>
+                    </f-element>
+                    <f-element id="FPT_AON_EXT.2.3" status="sel-based">
+                        <selection-depends req="FPT_AON_EXT.1.1"/>
+                        <title>The browser shall prevent the automatic installation of
+                            add-ons.</title>
+                        <aactivity>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify
+                                that it states that the email client will reject add-ons from
+                                untrusted sources. </tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify
+                                that it includes instructions on how to configure the email client
+                                with trusted add-on sources. </guidance>
+                            <tests>The evaluator shall perform the following tests: <testlist>
+                                    <test>The evaluator shall create or obtain an add-on signed by a
+                                        trusted source and attempt to install it. The evaluator
+                                        shall verify that the signature on the add-on is valid and
+                                        that the add-on can be installed.</test>
+                                    <test>The evaluator shall create or obtain an add-on signed with
+                                        an invalid certificate and attempt to install it. The
+                                        evaluator shall verify that the signed add-on is rejected
+                                        and cannot be installed.</test>
+                                    <test>The evaluator shall create or obtain an add-on signed by a
+                                        trusted source, modify the add-on without re-signing it, and
+                                        attempt to install it. The evaluator shall verify that the
+                                        signed add-on is rejected and cannot be installed.</test>
+                                </testlist>
+                            </tests>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+                <!--  <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Updates for Add-ons">
                     <f-element id="FPT_AON_EXT.2.1" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.7"/>
-                        <title>The browser shall provide the ability to query the current version of
-                            the add-on.</title>
+                      <title>The browser shall provide the ability to query the current version of
+                            the add-on.</title> 
                     </f-element>
                     <f-element id="FPT_AON_EXT.2.2" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall provide the ability to initiate the downloading of
                             add-on updates.</title>
-                    </f-element>
+                    </f-element> 
                     <f-element id="FPT_AON_EXT.2.3" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.7"/>
                         <title>The browser shall provide a means to verify add-ons using a digital
@@ -1239,18 +1311,32 @@
                                 <selectable>published hash</selectable>
                                 <selectable>no other functions</selectable>
                             </selectables> prior to installing the add-on.</title>
-                    </f-element>
-                    <f-element id="FPT_AON_EXT.2.4" status="sel-based">
-                        <selection-depends req="FPT_AON_EXT.1.7"/>
-                        <title>The browser shall prevent websites from installing untrusted
-                            add-ons.</title>
+                    </f-element> 
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to verify that it states that
-                                the <!-- TSF --> browser will reject add-ons from unapproved
-                                sources. </tss>
-                            <guidance>The evaluator shall examine the operational guidance to verify
-                                that it includes instructions on how to configure the browser with
-                                trusted add-on sources. </guidance>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it states
+                                that the browser will reject add-ons from untrusted sources. </tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify that it
+                                includes instructions on how to configure the browser with trusted add-on
+                                sources. </guidance>
+                            <tests>The evaluator shall perform the following tests: <testlist>
+                                <test>The evaluator shall create or obtain an add-on signed by a trusted source
+                                    and attempt to install it. The evaluator shall verify that the signature on the
+                                    add-on is valid and that the add-on can be installed.</test>
+                                <test>The evaluator shall create or obtain an add-on signed with an invalid
+                                    certificate and attempt to install it. The evaluator shall verify that the
+                                    signed add-on is rejected and cannot be installed.</test>
+                                <test>The evaluator shall create or obtain an add-on signed by a trusted source,
+                                    modify the add-on without re-signing it, and attempt to install it. The
+                                    evaluator shall verify that the signed add-on is rejected and cannot be
+                                    installed.</test>
+                            </testlist>
+                            </tests>
+                        </aactivity>
+                    
+
+                        <aactivity>
+                            
+                            
                             <tests>The evaluator shall perform the following tests which may require
                                 the developer to provide tools not typically found on consumer
                                 products: <testlist>
@@ -1258,26 +1344,25 @@
                                         add-on sources. The evaluator shall create or obtain an
                                         add-on signed by a trusted source and attempt to install it.
                                         The evaluator shall verify that the signature on the add-on
-                                        is valid <!-- added -->and successfully installs.</test>
+                                        is valid and successfully installs.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by
                                         an untrusted source and attempt to install it. The evaluator
                                         shall verify that the signed add-on is rejected
-                                        <!-- added --> and cannot be installed.</test>
+                                        and cannot be installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed with
                                         an invalid certificate and attempt to install it. The
                                         evaluator shall verify that
-                                        <!-- correction the signed add-on is valid. --> it cannot be
+                                        it cannot be
                                         installed.</test>
                                     <test>The evaluator shall create or obtain an add-on signed by a
                                         trusted source, modify the add-on without re-signing it, and
                                         attempt to install it. The evaluator shall verify that the
-                                        signed add-on is rejected <!-- add --> and cannot be
+                                        signed add-on is rejected and cannot be
                                         installed.</test>
                                 </testlist>
                             </tests>
-                        </aactivity>
-                    </f-element>
-                </f-component>
+                        </aactivity> 
+                </f-component> -->
             </subsection>
         </section>
     </chapter>
