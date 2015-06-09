@@ -727,7 +727,7 @@
                                 operational guidance to ensure that the method for enabling and
                                 disabling the mechanisms are provided, and the consequences of such
                                 actions are described. </guidance>
-                            <testlist>The following tests require the developer to provide access to
+                          <!-- Issue 25 Remove tests for FDP_SBX, too hard for labs to do  <testlist>The following tests require the developer to provide access to
                                 a test platform that provides the evaluator with debugging and test
                                 tools that are typically not found on consumer platforms. <br/>The
                                 evaluator shall perform the following tests on each platform claimed
@@ -752,7 +752,7 @@
                                         off, the evaluator shall perform tests to ensure that the
                                         configuration of the mechanism behaves as specified in the
                                         operational guidance.</test></tests>
-                            </testlist>
+                            </testlist> -->
                         </aactivity>
                     </f-element>
                 </f-component>
@@ -875,18 +875,18 @@
                         <title>The browser shall prevent installation of add-on code if the code
                             signing certificate is deemed invalid.</title>
                         <aactivity>
-                            <h4>TSS</h4> The evaluator shall examine the TSS to ensure that it
-                            describes how the browser chooses which certificates to use.<br/> The
-                            evaluator shall examine the TSS to ensure that it describes the behavior
-                            of the browser or browser platform when a connection cannot be
-                            established during the validity check of a certificate used in
-                            establishing a trusted channel. <h4>Guidance</h4> The evaluator shall
-                            verify that any necessary instructions are contained in the operational
-                            guidance for configuring the operating environment so that the browser
-                            can use the certificates.<br/> If the requirement is that the
-                            administrator is able to specify the default action, then the evaluator
-                            shall ensure that the operational guidance contains instructions on how
-                            this configuration action is performed. <h4>Tests</h4> The evaluator
+                            <tss>The evaluator shall examine the TSS to ensure that it
+                                describes how the browser chooses which certificates to use.<br/> The
+                                evaluator shall examine the TSS to ensure that it describes the behavior
+                                of the browser or browser platform when a connection cannot be
+                                established during the validity check of a certificate used in
+                                establishing a trusted channel. </tss> <guidance>The evaluator shall
+                                    verify that any necessary instructions are contained in the operational
+                                    guidance for configuring the operating environment so that the browser
+                                    can use the certificates.<br/> If the requirement is that the
+                                    administrator is able to specify the default action, then the evaluator
+                                    shall ensure that the operational guidance contains instructions on how
+                                    this configuration action is performed. </guidance><tests>The evaluator
                             shall perform Test 1 for each function listed in FIA_X509_EXT.2.1 (App
                             PP) that requires the use of certificates: <testlist>
                                 <test>The evaluator shall demonstrate that using a certificate
@@ -907,7 +907,7 @@
                                     the operational guidance to determine that all supported
                                     administrator-configurable options behave in their documented
                                     manner.</test>
-                            </testlist>
+                            </testlist></tests>
                         </aactivity>
                     </f-element>
                 </f-component>
