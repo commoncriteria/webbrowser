@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-06-08</PPPubDate>
+            <PPPubDate>2015-06-09</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -629,15 +629,15 @@
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                     <f-element id="FDP_PST_EXT.1.1" status="optional">
                         <title>The browser shall provide the capability to operate without storing
-                            persistent data to the file system with the following exceptions:
-                                    <selectables><selectable>credentials</selectable><selectable>configuration
-                                    information</selectable><selectable>certificate
-                                    revocation</selectable><selectable>no
-                                exceptions</selectable></selectables>.</title>
+                            persistent data to the file system with the following exceptions: 
+                            <selectables><selectable>credential
+                                information</selectable><selectable>administrator provided configuration
+                                    information</selectable><selectable>certificate revocation
+                                        information</selectable><selectable>no
+                                           exceptions</selectable></selectables>.</title>
                         <note role="application"> Any data that persists after the browser closes,
                             including temporary files, is considered to be persistent data.
-                            Exceptions from this requirement are credentials and configuration
-                            information. </note>
+                            </note>
                         <aactivity>
                             <tss>The evaluator shall examine the TSS to verify it describes how the
                                 browser operates without storing persistent user data to the file
@@ -650,8 +650,8 @@
                                         time, ensuring that a wide variety of browser functionality
                                         has been exercised. The evaluator shall then examine the
                                         browser and the underlying platform to ensure that no files
-                                        have been written to the file system other than credentials
-                                        or administrator provided configuration information.</test>
+                                        have been written to the file system other than <!-- credentials
+                                        or administrator provided configuration information -->the exceptions identified in FDP_PST_EXT.1.1.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
@@ -937,8 +937,8 @@
                                     <selectable>browsing history</selectable>
                                     <selectable>[assignment: other tracking
                                     mechanisms]</selectable></selectables></management-function>
-                            <management-function user="X">Enable/disable deletion of stored browsing data (cache,
-                                web form information)</management-function>
+                            <management-function user="X">Enable/disable deletion of stored browsing
+                                data (cache, web form information)</management-function>
                             <management-function admin="O">Enable/disable storage of sensitive
                                 information (e.g., auto-fill, auto-complete) in persistent
                                 storage</management-function>
@@ -1162,6 +1162,7 @@
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
+                                <selectable>ActionScript</selectable>
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
                                 <selectable>no</selectable>
@@ -1173,6 +1174,7 @@
                                 <selectable>Active X</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
+                                <selectable>ActionScript</selectable>
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
                             </selectables> mobile code without executing it.</title>
@@ -1235,7 +1237,7 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it includes instructions on loading trusted add-on
                                 sources.</guidance>
-                            <tests>The evaluator shall perform the following tests:
+                            <tests>The evaluator shall perform the following test:
                                         <testlist><test>The evaluator shall create or obtain an
                                         untrusted add-on and attempt to load it. The evaluator shall
                                         verify that the unsigned add-on is rejected and cannot be
