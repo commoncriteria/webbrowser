@@ -6,7 +6,7 @@
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
             <PPVersion>Draft 1.9</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-06-09</PPPubDate>
+            <PPPubDate>2015-06-10</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
             <CCVersion>Version 3.1</CCVersion>
             <Keywords>web browser; browser</Keywords>
@@ -868,9 +868,12 @@
                     </f-element>
                 </f-component>
             </subsection>
+            <!-- REMOVED FIA_X509_EXT.3.1 SINCE CRYPTO VERIFICATION of add-ons is covered by 
+                FPT_AON_EXT.2.1 and verification for updates is covered in the App PP 
+                by FPT_TUD_EXT.1.6.
             <subsection title="Identification and Authentication (FIA)" id="fia">
                 <f-component id="FIA_X509_EXT.3" name="X509 Certificate Authentication">
-                    <!-- Renumbered from .2 and .2.3 to .3 and 3.1 -->
+                 
                     <f-element id="FIA_X509_EXT.3.1">
                         <title>The browser shall prevent installation of add-on code if the code
                             signing certificate is deemed invalid.</title>
@@ -911,7 +914,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-            </subsection>
+            </subsection> -->
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
