@@ -4,7 +4,7 @@
     <PPReference title="PP Reference" id="ID003">
         <ReferenceTable>
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
-            <PPVersion>Draft 1.9</PPVersion>
+            <PPVersion>Draft 1.95</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
             <PPPubDate>2015-06-10</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
@@ -62,25 +62,7 @@
             operating system security services and requiring the use of sandboxing technologies and
             environmental mitigations provided by the underlying platform. Additionally, these
             requirements define security functionality that browsers must provide.<br/>The terms web
-            browser, browser, and TOE are interchangeable in this document.
-            <!-- REPLACED - The Application Software Extended Package (EP)
-            for Web Browsers describes the extended security functionality of web browsers in terms
-            of <cite linkend="bibCC"/>. As an extension of the Protection Profile for Application
-            Software (<cite linkend="bibAppPP"/>), this EP specifies additional security functional
-            requirements for a web browser. In order to determine conformance with the comprehensive
-            set of security requirements, the security target (ST) for a web browser must include
-            all required components in this EP in conjunction with all the required components from
-            the overarching <cite linkend="bibAppPP"/>. Required components include unconditional
-            requirements, selection-based requirements in accordance with the selections and/or
-            assignments expressed, and may also include optional and/or objective components if
-            desired.  <br/> The Target of Evaluation (TOE) in this document is any web
-            browser client capable of running on any operating system or platform and used primarily
-            to render web content using HTTP and HTTPS.
-            The scope of this Extended Package (EP) is to
-            describe the security functionality of web browsers in terms of <cite linkend="bibCC"/>.
-            This EP is not complete in itself, but rather extends the security requirements of the
-            Protection Profile for Application Software (<cite linkend="bibAppPP"/>). -->
-        </section>
+            browser, browser, and TOE are interchangeable in this document. </section>
         <section title="Terms" id="glossary">The following sections provide both Common Criteria and
             technology terms used in this Extended Package. <subsection
                 title="Common Criteria Terms" id="ccterms">
@@ -238,7 +220,8 @@
                             be specific application data such as emails, messaging, documents,
                             calendar items, and contacts. Sensitive data must minimally include PII,
                             credentials, and keys. Sensitive data shall be identified in the
-                            application's TSS by the ST author.</description>
+                            application's <abbr linkend="TSS"/> by the <abbr linkend="ST"/>
+                            author.</description>
                     </entry>
                     <entry>
                         <term>Sub-domain</term>
@@ -267,46 +250,20 @@
             </subsection>
         </section>
         <section title="Compliant Targets of Evaluation" id="TOEdescription"> The Target of
-            Evaluation (TOE) in this EP is any web browser client capable of running on any
-            operating system or platform and rendering web content using HTTP and HTTPS. <br/>This
-            EP describes the extended security functionality of web browsers in terms of <cite
-                linkend="bibCC"/>. As an extension of the App PP, it is expected that the content of
-            this EP will be appropriately combined with the App PP to include selection-based
-            requirements in accordance with the selections and/or assignments made, and any optional
-            and/or objective components to include: FCS_TLSC_EXT.1.4, FCS_RBG_EXT.2.1,
-            FCS_RBG_EXT.2.2, FCS_CKM.1.1, FCS_CKM.2.1, FCS_COP.1.1(1), FCS_COP.1.1(2),
-            FCS_COP.1.1(3), FCS_COP.1.1(4), FCS_TLSC_EXT.1.1, FCS_TLSC_EXT.1.2, FCS_TLSC_EXT.1.3,
-            FCS_TLSC_EXT.1.5, FCS_DTLS_EXT.1.1, FCS_DTLS_EXT.1.2, FCS_DTLS_EXT.1.3,
-            FCS_HTTPS_EXT.1.1, FCS_HTTPS_EXT.1.2, FCS_HTTPS_EXT.1.3, FIA_X509_EXT.1.1,
-            FIA_X509_EXT.1.2, FIA_X509_EXT.2.1, FIA_X509_EXT.2. <br/>An ST must identify the
-            applicable version of the App PP and this EP in its conformance claims.
-            <!-- REPLACE This document provides
-            an extended set of Security Functional Requirements (SFRs) for a web browser, which is
-            the Target of Evaluation (TOE). The terms web browser, browser, and TOE are
-            interchangeable in this document.<br/> The Protection Profile for Application Software
-            defines the baseline SFRs for application software which runs on mobile devices ("apps")
-            as well as on desktop and server platforms. This Extended Package (EP) for web browsers
-            is not complete in itself, but rather extends the Protection Profile for Application
-            Software. <br/> Web browsers are client applications that retrieve and render content
-            provided by web servers, primarily using the HyperText Transfer Protocol (HTTP) or HTTP
-            Secure (HTTPS). Browsers have grown in complexity over the years, starting as tools used
-            to display simple, static web pages and becoming sophisticated execution environments
-            for rich web content. The use of browsers to administer accounts, servers or embedded
-            systems remotely requires them to handle sensitive information securely. Innovations
-            such as tabs, extensions and HTML5 have not only increased browser functionality, but
-            also introduced new security concerns. As users' principal method for accessing the
-            Internet, and due to their complexity and the information that they process, browsers
-            are a natural target for attackers. As a result, it is paramount that the security of
-            web browsers be assured to reduce the risk to networks. 
-            <br/> The requirements in this document apply to all web browsers that run on any
-            operating system, regardless of the composition of the underlying platform. -->
-        </section>
-        <section title="Use Cases" id="usecases">
-            <!-- Revised - Web browsers are used to perform many tasks, and
-            these can be categorized into three primary use cases.-->Requirements
-            in this extended package are designed to address the security problems in the use cases
-            below. These use cases are intentionally very broad, as web browsers can be used to
-            perform many tasks. <usecases>
+            Evaluation (TOE) in this <abbr linkend="EP"/> is any web browser client capable of
+            running on any operating system or platform and rendering web content using HTTP and
+            HTTPS. <br/>This <abbr linkend="EP"/> describes the extended security functionality of
+            web browsers in terms of <cite linkend="bibCC"/>. As an extension of the App PP, it is
+            expected that the content of this <abbr linkend="EP"/> will be appropriately combined
+            with the App PP to include selection-based requirements in accordance with the
+            selections and/or assignments made, and any optional and/or objective components to
+            include: FCS_CKM.1.1, FCS_CKM.2.1, FCS_COP.1.1(*), FCS_DTLS_EXT.1.*, FCS_HTTPS_EXT.1.*,
+            FCS_RBG_EXT.2.*, FCS_TLSC_EXT.1.*, FIA_X509_EXT.1.*, FIA_X509_EXT.2.*. <br/>An <abbr
+                linkend="ST"/> must identify the applicable version of the App PP and this <abbr
+                linkend="EP"/> in its conformance claims. </section>
+        <section title="Use Cases" id="usecases"> Requirements in this extended package are designed
+            to address the security problems in the use cases below. These use cases are
+            intentionally very broad, as web browsers can be used to perform many tasks. <usecases>
                 <usecase title="Surfing the Web">
                     <description> Browsers are used to retrieve, display and render content from the
                         web, such as web pages, streaming media, images and specialized formats
@@ -338,15 +295,15 @@
                 <description> The Protection Profile for Application Software (<cite
                         linkend="bibAppPP"/>) defines the baseline Security Functional Requirements
                     (SFRs) and Security Assurance Requirements (SARs) for application software
-                    products. This EP serves to extend the App PP baseline with additional SFRs and
-                    associated Assurance Activities specific to a web browser. Assurance Activities
-                    are the actions that the evaluator performs in order to determine a web
-                    browser's compliance to the SFRs.<br/> This EP conforms to Common Criteria <cite
-                        linkend="bibCC"/> for Information Technology Security Evaluation, Version
-                    3.1, Revision 4. It is CC Part 2 extended and CC Part 3 conformant. In order to
-                    be conformant to this EP, the ST must include all components in this EP and the
-                    associated App PP that are: <ul><li>unconditional (which are always
-                            required)</li>
+                    products. This <abbr linkend="EP"/> serves to extend the App PP baseline with
+                    additional SFRs and associated Assurance Activities specific to a web browser.
+                    Assurance Activities are the actions that the evaluator performs in order to
+                    determine a web browser's compliance to the SFRs.<br/> This <abbr linkend="EP"/>
+                    conforms to Common Criteria <cite linkend="bibCC"/> for Information Technology
+                    Security Evaluation, Version 3.1, Revision 4. It is CC Part 2 extended and CC
+                    Part 3 conformant. In order to be conformant to this EP, the <abbr linkend="ST"
+                    /> must include all components in this <abbr linkend="EP"/> and the associated
+                    App PP that are: <ul><li>unconditional (which are always required)</li>
                         <li>selection-based (which are required when certain selections are chosen
                             in the unconditional requirements)</li></ul> and may include optional
                     and/or objective components that are desirable but not required for
@@ -361,16 +318,16 @@
         operational environment, and any organizational security policies that it is expected to
         enforce. <br/> This Extended Package does not repeat the threats, assumptions, and
         organizational security policies identified in the App PP, though they all apply given the
-        conformance and hence dependence of this EP on it. Together the threats, assumptions and
-        organizational security policies of the App PP and those defined in this EP describe those
-        addressed by a web browser as the Target of Evaluation. <br/> Notably, browsers are
-        particularly at risk from the Network Attack threat identified in the App PP. Attackers can
-        use phishing or another social engineering technique to persuade a user to visit a malicious
-        site. Users may also unintentionally visit malicious sites in the course of web browsing.
-        Such sites then present malicious content to the user's browser to exploit it and perform
-        installation of malware, often with no indication to the user. <section title="Threats"
-            id="threattable">The following threats are specific to web browsers, and represent an
-            addition to those identified in the App PP.<threats>
+        conformance and hence dependence of this <abbr linkend="EP"/> on it. Together the threats,
+        assumptions and organizational security policies of the App PP and those defined in this
+            <abbr linkend="EP"/> describe those addressed by a web browser as the Target of
+        Evaluation. <br/> Notably, browsers are particularly at risk from the Network Attack threat
+        identified in the App PP. Attackers can use phishing or another social engineering technique
+        to persuade a user to visit a malicious site. Users may also unintentionally visit malicious
+        sites in the course of web browsing. Such sites then present malicious content to the user's
+        browser to exploit it and perform installation of malware, often with no indication to the
+        user. <section title="Threats" id="threattable">The following threats are specific to web
+            browsers, and represent an addition to those identified in the App PP.<threats>
                 <threat id="T.FLAWED_ADDON">
                     <description> Web browser functionality can be extended through the integration
                         of third-party utilities and tools. Malicious or vulnerable add-ons could
@@ -443,7 +400,6 @@
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification and validation at installation time and update. </description>
-                    <!-- Move TUD TO AON <component-refer ref="fpt_tud_ext.2"/> -->
                     <component-refer ref="FPT_AON_EXT.1"/>
                     <component-refer ref="FPT_AON_EXT.2"/>
                 </SO>
@@ -451,18 +407,14 @@
         </section>
     </chapter>
     <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-        which have to be fulfilled by the browser.
-        <!-- Updated - The browser must not rely on any third party
-        add-ons to accomplish these requirements. -->
-        The browser must not rely on any third party add-ons, or vendor supplied add-ons which do
-        not adhere to the browser's sandbox, to accomplish these requirements. Security requirements
-        comprise functional components from Part 2 of <cite linkend="bibCC"/>. The following
-        notations are used: <ul>
+        which have to be fulfilled by the browser. The browser must not rely on any third party
+        add-ons, or vendor supplied add-ons which do not adhere to the browser's sandbox, to
+        accomplish these requirements. Security requirements comprise functional components from
+        Part 2 of <cite linkend="bibCC"/>. The following notations are used: <ul>
             <li>
                 <b>Selection</b> (denoted by <i>italicized text</i>): is used to select one or more
                 options provided by the [CC] in stating a requirement. Selections must be captured
-                in the ST.<!-- Moved here from FDP_TRK as a global comment -->
-            </li>
+                in the ST. </li>
             <li>
                 <b>Assignment</b> operation (denoted by <i>italicized text</i>): is used to assign a
                 specific value to an unspecified parameter, such as the length of a password.
@@ -497,8 +449,8 @@
                             TLS 1.2 (RFC 5246) or greater by utilizing HTTPS (RFC 2818) negotiating
                             the strongest cipher possible. </note>
                         <aactivity>
-                            <tss> The evaluator shall examine the TSS to ensure that it documents
-                                how the browser supports HSTS. </tss>
+                            <tss> The evaluator shall examine the <abbr linkend="TSS"/> to ensure
+                                that it documents how the browser supports HSTS. </tss>
                             <guidance> The evaluator shall examine the operational guidance to
                                 ensure it contains instructions on how to use HSTS. </guidance>
                             <tests> The evaluator shall perform the following tests: <testlist>
@@ -537,52 +489,25 @@
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
                             "Web Storage."<br/>
-                            <!-- TERMS BELOW MOVED TO DEFINITIONS SECTION
-                            In this context, a domain is a realm of
-                            administrative autonomy, authority or control on the Internet (e.g.,
-                            cnn.com, ietf.org). A sub-domain is denoted by a prefix before the
-                            top-level domain name (e.g., news.cnn.com). A protocol is a system of
-                            digital rules for data exchange within or between computers; in a web
-                            environment, the typical protocols are HTTP and HTTPS. A port is an
-                            application-specific construct that functions as a communications
-                            endpoint in a computer's host OS; in a web environment, port 80 is the
-                            default port for HTTP communications, although other ports can be used.
-                            In a web address, the port follows the domain or sub-domain name (e.g.,
-                            http://www.cnn.com:80). -->
                         </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes how the
-                                <!-- TSF --> browser separates local and session storage. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes how the browser separates local and session storage. </tss>
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it documents the location on the file system that will be used
                                 for local storage and the location used for session storage. </guidance>
                             <tests>The evaluator shall obtain or create JavaScript-based scripts
                                 that store and retrieve information from local and session storage
                                 and shall set up a web server with two or more web pages from
-                                different domains <!-- clarified different domains --> using
-                                different protocols and/or ports. The evaluator shall incorporate
-                                the scripts into the web pages and shall perform the following tests:<br/>
+                                different domains using different protocols and/or ports. The
+                                evaluator shall incorporate the scripts into the web pages and shall
+                                perform the following tests:<br/>
                                 <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to the same web page. The evaluator shall
                                         verify that the script for accessing session storage that is
                                         running in one window/tab cannot access session storage
                                         associated with a different window/tab.</test>
-                                    <!-- Merged windows/tabs into test 1 
-                                   <test>The evaluator shall open two or more browser tabs and navigate
-                                    to the same web page. The evaluator shall verify that the script
-                                    for accessing session storage that is running in one tab cannot
-                                    access session storage associated with a different tab.</test> -->
-                                    <!-- Removed tests 3 and 4 because they appear more functionality rather than security related
-                                   <test>The evaluator shall open two or more browser windows and
-                                    navigate to the same web page. The evaluator shall verify that
-                                    the script for accessing local storage that is running in one
-                                    window can access local storage associated with a different
-                                    window.</test>
-                               <test>The evaluator shall open two or more browser tabs and navigate
-                                    to the same web page. The evaluator shall verify that the script
-                                    for accessing local storage that is running in one tab can
-                                    access local storage associated with a different tab.</test> -->
                                     <test>The evaluator shall open windows/tabs and navigate to
                                         different web pages. The evaluator shall verify that a
                                         script running in the context of one domain/protocol/port in
@@ -599,8 +524,8 @@
                         <title>The browser shall provide the capability to block the storage of
                             third party cookies by websites.</title>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes how the
-                                <!-- TSF --> browser blocks third party cookies and when the
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes how the browser blocks third party cookies and when the
                                 blocking occurs (e.g., automatically, when blocking is enabled). </tss>
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it provides a description of the configuration option for
@@ -628,19 +553,18 @@
                 <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
                     <f-element id="FDP_PST_EXT.1.1" status="optional">
                         <title>The browser shall provide the capability to operate without storing
-                            persistent data to the file system with the following exceptions: 
-                            <selectables><selectable>credential
-                                information</selectable><selectable>administrator provided configuration
-                                    information</selectable><selectable>certificate revocation
-                                        information</selectable><selectable>no
-                                           exceptions</selectable></selectables>.</title>
+                            persistent data to the file system with the following exceptions:
+                                    <selectables><selectable>credential
+                                    information</selectable><selectable>administrator provided
+                                    configuration information</selectable><selectable>certificate
+                                    revocation information</selectable><selectable>no
+                                    exceptions</selectable></selectables>.</title>
                         <note role="application"> Any data that persists after the browser closes,
-                            including temporary files, is considered to be persistent data.
-                            </note>
+                            including temporary files, is considered to be persistent data. </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to verify it describes how the
-                                browser operates without storing persistent user data to the file
-                                systems. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify it
+                                describes how the browser operates without storing persistent user
+                                data to the file systems. </tss>
                             <tests> The evaluator shall perform the following test which may require
                                 the developer to provide access to a test platform that provides the
                                 evaluator with tools that are typically not found on factory
@@ -649,8 +573,8 @@
                                         time, ensuring that a wide variety of browser functionality
                                         has been exercised. The evaluator shall then examine the
                                         browser and the underlying platform to ensure that no files
-                                        have been written to the file system other than <!-- credentials
-                                        or administrator provided configuration information -->the exceptions identified in FDP_PST_EXT.1.1.</test>
+                                        have been written to the file system other than the
+                                        exceptions identified in FDP_PST_EXT.1.1.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
@@ -660,10 +584,6 @@
                     <f-element id="FDP_SBX_EXT.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
-                                <!-- Revised below <li>The rendering process cannot directly access the platform's file
-                                    system;</li>
-                                <li>The rendering process cannot directly invoke inter-process
-                                    communication mechanisms with non-browser processes;</li> -->
                                 <li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</li>
                                 <li>The rendering process can only directly invoke inter-process
@@ -680,44 +600,46 @@
                             ensure that the process that renders HTML and interprets JavaScript
                             operates in a constrained environment in order to reduce the risk that
                             the rendering process can be corrupted by the HTML or JavaScript it is
-                            processing. This component requires the <!-- TSF --> browser to lower
-                            the privileges of rendering processes by ensuring that it cannot
-                            directly access the file system of the host, and that it cannot use IPC
-                            mechanisms provided by the host to communicate with non-browser
-                            processes on the host. Typically, if a rendering process needs to access
-                            a file or communicate with a non-browser process, it must request such
-                            access through the <!-- TSF --> browser (which is allowed by the
-                            requirement).<br/> In addition to the two required measures, other
-                            measures can be implemented depending on the browser and the host
-                            platform. These may involve such actions as changing the owner of the
-                            rendering process to a low-privileged account or dropping
-                            platform-defined privileges in the rendering process. The ST author
-                            fills in the additional measures implemented by the browser. </note>
+                            processing. This component requires the browser to lower the privileges
+                            of rendering processes by ensuring that it cannot directly access the
+                            file system of the host, and that it cannot use IPC mechanisms provided
+                            by the host to communicate with non-browser processes on the host.
+                            Typically, if a rendering process needs to access a file or communicate
+                            with a non-browser process, it must request such access through the
+                            browser (which is allowed by the requirement).<br/> In addition to the
+                            two required measures, other measures can be implemented depending on
+                            the browser and the host platform. These may involve such actions as
+                            changing the owner of the rendering process to a low-privileged account
+                            or dropping platform-defined privileges in the rendering process. The ST
+                            author fills in the additional measures implemented by the browser. </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes how the
-                                rendering of HTML and interpretation of JavaScript is performed by
-                                the browser in terms of the platform processes that are involved
-                                (with "process" being an active entity that executes code). For the
-                                processes that render HTML or interpret JavaScript, the evaluator
-                                shall examine the TSS to check that it describes how these processes
-                                are prevented from accessing the platform file system. The evaluator
-                                shall check the TSS to ensure it describes each platform-provided
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes how the rendering of HTML and interpretation of JavaScript
+                                is performed by the browser in terms of the platform processes that
+                                are involved (with "process" being an active entity that executes
+                                code). For the processes that render HTML or interpret JavaScript,
+                                the evaluator shall examine the <abbr linkend="TSS"/> to check that
+                                it describes how these processes are prevented from accessing the
+                                platform file system. The evaluator shall check the <abbr
+                                    linkend="TSS"/> to ensure it describes each platform-provided
                                 IPC mechanism, and details for each mechanism how the rendering
                                 process is unable to use it to communicate with non-browser
-                                processes. The evaluator shall also confirm that the TSS describes
-                                how IPC and file system access is enabled (if this capability is
-                                implemented); for instance, through a more privileged browser
-                                process that does not perform web page rendering. The evaluator
-                                shall ensure that these descriptions are present for all platforms
-                                claimed in the ST.<br/> For each additional mechanism listed in the
-                                third bullet of this component by the ST author, the evaluator shall
-                                examine the TSS to ensure 1) the mechanisms are described; 2) the
-                                description of the mechanisms are sufficiently detailed to determine
-                                that it contributes to the principle of least privilege being
-                                implemented in the rendering process; and 3) appropriate supporting
-                                information is provided in the TSS (or pointers to such information
-                                are provided) that provides context for understanding the claimed
-                                least privilege mechanisms. </tss>
+                                processes. The evaluator shall also confirm that the <abbr
+                                    linkend="TSS"/> describes how IPC and file system access is
+                                enabled (if this capability is implemented); for instance, through a
+                                more privileged browser process that does not perform web page
+                                rendering. The evaluator shall ensure that these descriptions are
+                                present for all platforms claimed in the <abbr linkend="ST"/>.<br/>
+                                For each additional mechanism listed in the third bullet of this
+                                component by the <abbr linkend="ST"/> author, the evaluator shall
+                                examine the <abbr linkend="TSS"/> to ensure 1) the mechanisms are
+                                described; 2) the description of the mechanisms are sufficiently
+                                detailed to determine that it contributes to the principle of least
+                                privilege being implemented in the rendering process; and 3)
+                                appropriate supporting information is provided in the <abbr
+                                    linkend="TSS"/> (or pointers to such information are provided)
+                                that provides context for understanding the claimed least privilege
+                                mechanisms. </tss>
                             <guidance> The evaluator shall examine the operational guidance to
                                 determine that it provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
@@ -726,47 +648,16 @@
                                 operational guidance to ensure that the method for enabling and
                                 disabling the mechanisms are provided, and the consequences of such
                                 actions are described. </guidance>
-                          <!-- Issue 25 Remove tests for FDP_SBX, too hard for labs to do  <testlist>The following tests require the developer to provide access to
-                                a test platform that provides the evaluator with debugging and test
-                                tools that are typically not found on consumer platforms. <br/>The
-                                evaluator shall perform the following tests on each platform claimed
-                                in the ST: <tests>
-                                    <test>The evaluator shall use debugging or test facilities to
-                                        introduce code into a rendering process that attempts to
-                                        directly access the platform's file system, and then direct
-                                        execution to it. The evaluator shall ensure that execution
-                                        of this code fails to access the TOE file system.</test>
-                                    <test>For each IPC mechanism described in the TSS, the evaluator
-                                        shall use debugging or test facilities to introduce code
-                                        into a rendering process that attempts to directly
-                                        communicate with another non-TOE process on the platform,
-                                        and then direct execution to it. The evaluator shall ensure
-                                        that this attempt fails.</test>
-                                    <test>For each additional mechanism claimed in the ST, the
-                                        evaluator shall devise a test to show that the mechanism
-                                        functions as described in the TSS. If no such test can be
-                                        crafted, the evaluator shall provide a justification in the
-                                        test report for why the mechanism cannot be tested.</test>
-                                    <test>For each mechanism that can be configured or turned on or
-                                        off, the evaluator shall perform tests to ensure that the
-                                        configuration of the mechanism behaves as specified in the
-                                        operational guidance.</test></tests>
-                            </testlist> -->
                         </aactivity>
                     </f-element>
                 </f-component>
                 <f-component id="FDP_SOP_EXT.1" name="Same Origin Policy">
                     <f-element id="FDP_SOP_EXT.1.1">
-                        <!-- Revised <title>The browser shall ensure that content retrieved from one origin
-                            cannot interact with content retrieved from another origin without
-                            consent from the origin whose content is being retrieved.</title> -->
                         <title>The browser shall only permit scripts contained in one web page to
                             access data in a second web page if both pages are from the same
                             origin.</title>
                     </f-element>
                     <f-element id="FDP_SOP_EXT.1.2">
-                        <!-- Revised  <title>The browser shall not allow same origin policy exceptions for
-                            different domains.</title> -->
                         <title>The browser shall enforce the same origin policy for all
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
@@ -774,20 +665,21 @@
                             combination of domain, protocol and port. Two URIs sharing the same
                             domain, protocol and port are considered to have the same origin. </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes its
-                                implementation of a same origin policy and explains how it complies
-                                with RFC 6454. If the <!-- TSF --> browser allows the relaxation of
-                                the same origin policy for subdomains in different windows/tabs, the
-                                TSS shall describe how these exceptions are implemented. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes its implementation of a same origin policy and explains
+                                how it complies with RFC 6454. If the browser allows the relaxation
+                                of the same origin policy for subdomains in different windows/tabs,
+                                the <abbr linkend="TSS"/> shall describe how these exceptions are
+                                implemented. </tss>
                             <tests>The evaluator shall obtain or create scripts that can retrieve
                                 content from designated locations and shall set up a web server with
                                 two or more web pages representing different domains. The evaluator
                                 shall incorporate the scripts into the web pages. The evaluator
                                 shall associate each page with a different protocol and/or port and
-                                shall perform tests 1 and 2.<br/> If the <!-- TSF --> browser
-                                supports relaxation of the same origin policy for subdomains, the
-                                evaluator shall configure the web server with subdomains and shall
-                                perform test 3 and repeat tests 1 and 2.<br/>
+                                shall perform tests 1 and 2.<br/> If the browser supports relaxation
+                                of the same origin policy for subdomains, the evaluator shall
+                                configure the web server with subdomains and shall perform test 3
+                                and repeat tests 1 and 2.<br/>
                                 <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to a different page on the website in each
@@ -810,10 +702,10 @@
                         <note role="application">The set-cookie header functionality is described in
                             RFC 6265 <i>HTTP State Management Mechanism</i>.</note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to verify it describes the
-                                browser's support for the "secure" attribute of the set-cookie
-                                header in accordance with RFC 6265, including the required sending
-                                of cookies containing this attribute over HTTPS. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify it
+                                describes the browser's support for the "secure" attribute of the
+                                set-cookie header in accordance with RFC 6265, including the
+                                required sending of cookies containing this attribute over HTTPS. </tss>
                             <tests>The evaluator shall perform the following tests which may require
                                 the developer to provide access to a test platform that provides the
                                 evaluator with tools that are typically not found on factory
@@ -841,8 +733,8 @@
                                 <selectable>browser statistics</selectable>
                             </selectables> is requested by a website.</title>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes the
-                                <!-- TSF's --> browser's support for tracking information and
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes the browser's support for tracking information and
                                 specifies the tracking information that the browser allows websites
                                 to collect about the browser user. </tss>
                             <guidance>The evaluator shall examine the operational guidance to ensure
@@ -850,7 +742,7 @@
                                 tracking information is requested by a website and the options that
                                 the user has upon receiving the notification. </guidance>
                             <tests>The evaluator shall perform the following tests for each type of
-                                tracking information listed in the TSS: <testlist>
+                                tracking information listed in the <abbr linkend="TSS"/>: <testlist>
                                     <test>The evaluator shall configure a website that requests the
                                         tracking information about the user and shall navigate to
                                         that website. The evaluator shall verify that the user is
@@ -867,53 +759,6 @@
                     </f-element>
                 </f-component>
             </subsection>
-            <!-- REMOVED FIA_X509_EXT.3.1 SINCE CRYPTO VERIFICATION of add-ons is covered by 
-                FPT_AON_EXT.2.1 and verification for updates is covered in the App PP 
-                by FPT_TUD_EXT.1.6.
-            <subsection title="Identification and Authentication (FIA)" id="fia">
-                <f-component id="FIA_X509_EXT.3" name="X509 Certificate Authentication">
-                 
-                    <f-element id="FIA_X509_EXT.3.1">
-                        <title>The browser shall prevent installation of add-on code if the code
-                            signing certificate is deemed invalid.</title>
-                        <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure that it
-                                describes how the browser chooses which certificates to use.<br/> The
-                                evaluator shall examine the TSS to ensure that it describes the behavior
-                                of the browser or browser platform when a connection cannot be
-                                established during the validity check of a certificate used in
-                                establishing a trusted channel. </tss> <guidance>The evaluator shall
-                                    verify that any necessary instructions are contained in the operational
-                                    guidance for configuring the operating environment so that the browser
-                                    can use the certificates.<br/> If the requirement is that the
-                                    administrator is able to specify the default action, then the evaluator
-                                    shall ensure that the operational guidance contains instructions on how
-                                    this configuration action is performed. </guidance><tests>The evaluator
-                            shall perform Test 1 for each function listed in FIA_X509_EXT.2.1 (App
-                            PP) that requires the use of certificates: <testlist>
-                                <test>The evaluator shall demonstrate that using a certificate
-                                    without a valid certification path results in the function
-                                    failing or in the receipt of a user notification (as required by
-                                    elements 3 and 4). The evaluator shall then load into the
-                                    platform's root store any certificates needed to validate the
-                                    certificate to be used in the function, and demonstrate that the
-                                    function succeeds.</test>
-                                <test>The evaluator shall demonstrate that using a valid certificate
-                                    that requires certificate validation checking to be performed in
-                                    at least some part by communicating with a non-browser IT
-                                    entity. The evaluator shall then manipulate the environment so
-                                    that the browser is unable to verify the validity of the
-                                    certificate, and observe that the action selected in
-                                    FIA_X509_EXT.2.2 (App PP) is performed. If the selected action
-                                    is administrator-configurable, then the evaluator shall follow
-                                    the operational guidance to determine that all supported
-                                    administrator-configurable options behave in their documented
-                                    manner.</test>
-                            </testlist></tests>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-            </subsection> -->
             <subsection title="Security Management (FMT)" id="fmt">
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
@@ -983,9 +828,6 @@
                                     <selectable>[assignment: other mobile code types supported by
                                         the browser]</selectable> mobile
                                 code</selectables></management-function>
-                            <!-- This seems redundant <management-function admin="O">Enable/disable user's ability to
-                                acknowledge/accept risks associated with security
-                                warnings</management-function> -->
                             <management-function admin="O">Enable/disable support for
                                 add-ons</management-function>
                             <management-function admin="O">Enable/disable individual
@@ -1003,10 +845,10 @@
                         of the policy is done by the browser itself, or the browser and its platform
                         in coordination with each other.</note>
                     <aactivity>
-                        <tss>The evaluator shall verify that the TSS describes those management
-                            functions which may only be configured by the browser platform
-                            administrator and cannot be over-ridden by the user when set according
-                            to policy. </tss>
+                        <tss>The evaluator shall verify that the <abbr linkend="TSS"/> describes
+                            those management functions which may only be configured by the browser
+                            platform administrator and cannot be over-ridden by the user when set
+                            according to policy. </tss>
                         <guidance>The evaluator shall examine the operational guidance to verify
                             that it includes instructions for a browser platform administrator to
                             configure the functions listed in FMT_MOF.1.1. </guidance>
@@ -1018,7 +860,7 @@
                                     administrator and cannot be over-ridden by the user as defined
                                     in FMT_MOF.1.1. The evaluator shall apply these policies to the
                                     browser, attempt to override each setting as the user, and
-                                    verify that the <!-- TSF --> browser does not permit it.</test>
+                                    verify that the browser does not permit it.</test>
                             </testlist>
                         </tests>
                     </aactivity>
@@ -1026,29 +868,26 @@
             </subsection>
             <subsection title="Protection of the TSF (FPT)" id="fpt">
                 <f-component id="FPT_DNL_EXT.1" name="File Downloads">
-                    <!--renamed from "Launch of Downloaded Executables" -->
                     <f-element id="FPT_DNL_EXT.1.1">
-                        <title>The browser shall prevent downloaded
-                            <!-- Replace executables with content --> content from launching
+                        <title>The browser shall prevent downloaded content from launching
                             automatically.</title>
                     </f-element>
                     <f-element id="FPT_DNL_EXT.1.2">
-                        <title>The browser shall present the user with the option to either
-                            <!-- download or discard the executable --> save or discard downloaded
-                            files.</title>
+                        <title>The browser shall present the user with the option to either save or
+                            discard downloaded files.</title>
                         <note role="application"> This requirement ensures that if the user
                             intentionally (via clicking on a link) or unintentionally initiates the
-                            download of a file, the <!-- TSF --> browser will intervene by, for
-                            example, opening a dialog box that presents the user with the option to
-                            either save the file to the file system or not download the file.<br/>
-                            In this context, an executable is a file containing code for a software
-                            program that is invoked independent of and outside the context of the
-                            browser. It does not include mobile code, scripts, or add-ons.<br/>
+                            download of a file, the browser will intervene by, for example, opening
+                            a dialog box that presents the user with the option to either save the
+                            file to the file system or not download the file.<br/> In this context,
+                            an executable is a file containing code for a software program that is
+                            invoked independent of and outside the context of the browser. It does
+                            not include mobile code, scripts, or add-ons.<br/>
                         </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure that it describes the
-                                behavior of the <!-- TSF  --> browser when a user initiates the
-                                download of a file. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure
+                                that it describes the behavior of the browser when a user initiates
+                                the download of a file. </tss>
                             <guidance>The evaluator shall examine the operational guidance to ensure
                                 it describes the dialog box that appears when a download is
                                 initiated and the implications of the options presented by the
@@ -1077,9 +916,9 @@
                             quality of the reputation service may fall outside of the scope of the
                             evaluation.</note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes the
-                                browser's use of application reputation services in detecting
-                                malicious applications. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes the browser's use of application reputation services in
+                                detecting malicious applications. </tss>
                             <guidance>The evaluator shall examine the operational guidance to ensure
                                 it describes the browser's support for use of an application
                                 reputation service, including which services the browser supports by
@@ -1121,9 +960,9 @@
                             Ultimately, the result should be that the browser blocks the connection
                             to the bad URL. </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it describes the
-                                <!-- TSF's --> browser's use of a URL reputation service in
-                                detecting malicious websites. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                describes the browser's use of a URL reputation service in detecting
+                                malicious websites. </tss>
                             <guidance>The evaluator shall examine the operational guidance to ensure
                                 it describes the browser's support for use of URL reputation
                                 services, including which services the browser supports by default
@@ -1180,16 +1019,17 @@
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
                             </selectables> mobile code without executing it.</title>
-                        <note role="application"> The ST author must specify all mobile code types
-                            for which the browser provides this support. <br/>An authorized signer
-                            may directly sign the code itself, or the code may be delivered over an
-                            authenticated HTTPS connection with an authorized entity. </note>
+                        <note role="application"> The <abbr linkend="ST"/> author must specify all
+                            mobile code types for which the browser provides this support. <br/>An
+                            authorized signer may directly sign the code itself, or the code may be
+                            delivered over an authenticated HTTPS connection with an authorized
+                            entity. </note>
                         <aactivity>
-                            <tss>The evaluator shall examine the TSS to ensure it lists the types of
-                                signed mobile code that the <!-- TSF --> browser supports. The TSS
-                                shall describe how the <!-- TSF --> browser handles unsigned mobile
-                                code, mobile code from an untrusted source, and mobile code from an
-                                unverified source. </tss>
+                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
+                                lists the types of signed mobile code that the browser supports. The
+                                    <abbr linkend="TSS"/> shall describe how the browser handles
+                                unsigned mobile code, mobile code from an untrusted source, and
+                                mobile code from an unverified source. </tss>
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 it provides configuration instructions for each of the supported
                                 mobile code types. The operational guidance shall also describe the
@@ -1197,7 +1037,7 @@
                                 untrusted, or unverified mobile code is encountered and the actions
                                 the user can take. </guidance>
                             <tests>The evaluator shall perform the following test for each mobile
-                                code type specified in the TSS: <testlist>
+                                code type specified in the <abbr linkend="TSS"/>: <testlist>
                                     <test>The evaluator shall construct web pages containing
                                         unsigned, correctly authenticated, and incorrectly
                                         authenticated mobile code and ensure that the browser alerts
@@ -1210,9 +1050,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <!-- TUD to AON -->
                 <f-component id="FPT_AON_EXT.1" name="Support for Only Trusted Add-ons">
-                    <!-- TUD 1.7 to AON 1.1 -->
                     <f-element id="FPT_AON_EXT.1.1">
                         <title>The browser shall include the capability to load <selectables>
                                 <selectable>trusted add-ons</selectable>
@@ -1224,15 +1062,7 @@
                             demonstrating the ability to disable all support for add-ons as
                             specified in <linkref linkend="FMT_MOF_EXT.1"/>. Cryptographic
                             verification (i.e., trust) of add-ons is tested in <linkref
-                                linkend="FPT_AON_EXT.2.1"
-                            /><!-- The browser should support a mechanism that allows
-                            individual add-ons to be added to a whitelist of trusted add-ons which
-                            can be installed into the browser. Add-ons should be uniquely
-                            identifiable down to specific versions so as to allow the list to only
-                            allow specific versions of specific add-ons to be installed. This list
-                            should be immutable to a user if it has been configured by an
-                            administrator. Add-ons which are not present in the whitelist must not
-                            be loaded into the browser. --></note>
+                                linkend="FPT_AON_EXT.2.1"/></note>
                         <aactivity>
                             <tss>The evaluator shall verify that the <abbr linkend="TSS"/> describes
                                 whether the browser is capable of loading trusted add-ons.</tss>
@@ -1248,7 +1078,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <!-- TUD TO AON -->
                 <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Update for Add-ons">
                     <f-element id="FPT_AON_EXT.2.1" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.1"/>
@@ -1297,76 +1126,6 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <!--  <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Updates for Add-ons">
-                    <f-element id="FPT_AON_EXT.2.1" status="sel-based">
-                        <selection-depends req="FPT_AON_EXT.1.7"/>
-                      <title>The browser shall provide the ability to query the current version of
-                            the add-on.</title> 
-                    </f-element>
-                    <f-element id="FPT_AON_EXT.2.2" status="sel-based">
-                        <selection-depends req="FPT_AON_EXT.1.7"/>
-                        <title>The browser shall provide the ability to initiate the downloading of
-                            add-on updates.</title>
-                    </f-element> 
-                    <f-element id="FPT_AON_EXT.2.3" status="sel-based">
-                        <selection-depends req="FPT_AON_EXT.1.7"/>
-                        <title>The browser shall provide a means to verify add-ons using a digital
-                            signature mechanism and <selectables>
-                                <selectable>published hash</selectable>
-                                <selectable>no other functions</selectable>
-                            </selectables> prior to installing the add-on.</title>
-                    </f-element> 
-                        <aactivity>
-                            <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it states
-                                that the browser will reject add-ons from untrusted sources. </tss>
-                            <guidance>The evaluator shall examine the operational guidance to verify that it
-                                includes instructions on how to configure the browser with trusted add-on
-                                sources. </guidance>
-                            <tests>The evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall create or obtain an add-on signed by a trusted source
-                                    and attempt to install it. The evaluator shall verify that the signature on the
-                                    add-on is valid and that the add-on can be installed.</test>
-                                <test>The evaluator shall create or obtain an add-on signed with an invalid
-                                    certificate and attempt to install it. The evaluator shall verify that the
-                                    signed add-on is rejected and cannot be installed.</test>
-                                <test>The evaluator shall create or obtain an add-on signed by a trusted source,
-                                    modify the add-on without re-signing it, and attempt to install it. The
-                                    evaluator shall verify that the signed add-on is rejected and cannot be
-                                    installed.</test>
-                            </testlist>
-                            </tests>
-                        </aactivity>
-                    
-
-                        <aactivity>
-                            
-                            
-                            <tests>The evaluator shall perform the following tests which may require
-                                the developer to provide tools not typically found on consumer
-                                products: <testlist>
-                                    <test>The evaluator shall configure the browser with trusted
-                                        add-on sources. The evaluator shall create or obtain an
-                                        add-on signed by a trusted source and attempt to install it.
-                                        The evaluator shall verify that the signature on the add-on
-                                        is valid and successfully installs.</test>
-                                    <test>The evaluator shall create or obtain an add-on signed by
-                                        an untrusted source and attempt to install it. The evaluator
-                                        shall verify that the signed add-on is rejected
-                                        and cannot be installed.</test>
-                                    <test>The evaluator shall create or obtain an add-on signed with
-                                        an invalid certificate and attempt to install it. The
-                                        evaluator shall verify that
-                                        it cannot be
-                                        installed.</test>
-                                    <test>The evaluator shall create or obtain an add-on signed by a
-                                        trusted source, modify the add-on without re-signing it, and
-                                        attempt to install it. The evaluator shall verify that the
-                                        signed add-on is rejected and cannot be
-                                        installed.</test>
-                                </testlist>
-                            </tests>
-                        </aactivity> 
-                </f-component> -->
             </subsection>
         </section>
     </chapter>
@@ -1381,10 +1140,10 @@
         appendix must be included. The third type (in <appref linkend="objective"/> are components
         that are not required in order to conform to this EP, but will be included in the baseline
         requirements in future versions of this EP, so adoption by vendors is encouraged. Note that
-        the ST author is responsible for ensuring that requirements that may be associated with
-        those in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
-            linkend="objective"/> but are not listed (e.g., FMT-type requirements) are also included
-        in the ST.</appendix>
+        the <abbr linkend="ST"/> author is responsible for ensuring that requirements that may be
+        associated with those in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and
+            <appref linkend="objective"/> but are not listed (e.g., FMT-type requirements) are also
+        included in the ST.</appendix>
     <appendix title="Selection-Based Requirements" id="sel-based">As indicated in the introduction
         to this EP, the baseline requirements (those that must be performed by the browser or its
         underlying platform) are contained in the App PP and in the body of this EP. There are
@@ -1393,10 +1152,10 @@
         included.</appendix>
     <appendix title="Objective Requirements" id="objective"> This Annex includes requirements that
         specify security functionality which also addresses threats. The requirements are not
-        currently mandated in the body of this EP as they describe security functionality not yet
-        widely-available in commercial technology. However, these requirements may be included in
-        the ST such that the browser is still conformant to this EP, and it is expected that they be
-        included as soon as possible.</appendix>
+        currently mandated in the body of this <abbr linkend="EP"/> as they describe security
+        functionality not yet widely-available in commercial technology. However, these requirements
+        may be included in the <abbr linkend="ST"/> such that the browser is still conformant to
+        this EP, and it is expected that they be included as soon as possible.</appendix>
     <appendix id="biblio" title="References">
         <bibliography>
             <entry id="bibCC">
