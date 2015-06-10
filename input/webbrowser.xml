@@ -443,7 +443,6 @@
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification and validation at installation time and update. </description>
-                    <component-refer ref="fia_x509_ext.3.1"/>
                     <!-- Move TUD TO AON <component-refer ref="fpt_tud_ext.2"/> -->
                     <component-refer ref="FPT_AON_EXT.1"/>
                     <component-refer ref="FPT_AON_EXT.2"/>
