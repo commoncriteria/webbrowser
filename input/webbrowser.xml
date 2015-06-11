@@ -763,7 +763,7 @@
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
                         <title>The browser shall be capable of performing the following management
-                            functions, controlled by the user or administrator as shown:</title>
+                            functions, controlled by the user or administrator as shown:
                         <ul>
                             <li>X = Mandatory</li>
                             <li>O = Optional</li></ul>
@@ -834,8 +834,7 @@
                                 add-ons</management-function>
                             <management-function admin="O">Enable/disable HSTS
                                 mode</management-function>
-                        </management-function-set>
-                    </f-element>
+                        </management-function-set></title>
                     <note role="application"> For these management functions, the term
                         "Administrator" refers to the administrator of a non-mobile device or the
                         device owner of a mobile device. The intent of this requirement is to allow
@@ -864,6 +863,7 @@
                             </testlist>
                         </tests>
                     </aactivity>
+                    </f-element>
                 </f-component>
             </subsection>
             <subsection title="Protection of the TSF (FPT)" id="fpt">
