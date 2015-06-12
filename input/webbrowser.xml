@@ -90,8 +90,8 @@
                     </entry>
                     <entry>
                         <term><abbr title="Target of Evaluation">TOE</abbr></term>
-                        <description>The product under evaluation. In this case, application
-                            software and its supporting documentation.</description>
+                        <description>The product under evaluation. In this case, a web browser and
+                            its supporting documentation.</description>
                     </entry>
                     <entry>
                         <term><abbr title="TOE Security Functionality">TSF</abbr></term>
@@ -126,7 +126,7 @@
                         <term>Administrator</term>
                         <description>The Administrator is responsible for management activities,
                             including setting the policy that is applied by the enterprise on the
-                            Browser. This administrator is likely to be acting remotely. If the
+                            browser. This administrator is likely to be acting remotely. If the
                             platform is unmanaged by an enterprise, the user can act as the
                             administrator.</description>
                     </entry>
@@ -181,7 +181,7 @@
                             consent or even notification. Examples of mobile code technologies
                             include Java applets, Adobe ActionScript, and Microsoft Silverlight. <br/>
                             <b>Note:</b> JavaScript is not included in references to mobile code in
-                            this browser EP.</description>
+                            this browser <abbr linkend="EP"/>.</description>
                     </entry>
                     <entry>
                         <term>Plug-in</term>
@@ -216,16 +216,22 @@
                     </entry>
                     <entry>
                         <term>Sensitive Data</term>
-                        <description>Sensitive data may include all user or enterprise data or may
+                        <!-- <description>Sensitive data may include all user or enterprise data or may
                             be specific application data such as emails, messaging, documents,
-                            calendar items, and contacts. Sensitive data must minimally include PII,
+                            calendar items, and contacts. Sensitive data must minimally include personally identifiable information (PII), 
                             credentials, and keys. Sensitive data shall be identified in the
                             application's <abbr linkend="TSS"/> by the <abbr linkend="ST"/>
-                            author.</description>
+                            author.</description> -->
+                        <description> Sensitive data may include all user or enterprise data or may
+                            be specific application data such as data transferred to submit a form
+                            or complete a transaction. Sensitive data must minimally include
+                            personally identifiable information (PII), credentials, and keys.
+                            Sensitive data shall be identified in the application's <abbr
+                                linkend="TSS"/> by the <abbr linkend="ST"/> author.</description>
                     </entry>
                     <entry>
                         <term>Sub-domain</term>
-                        <description>An Internet domain which is part of a primary domain, donated
+                        <description>An Internet domain which is part of a primary domain, denoted
                             by a prefix before the primary domain (e.g.,
                             news.cnn.com).</description>
                     </entry>
@@ -301,9 +307,10 @@
                     determine a web browser's compliance to the SFRs.<br/> This <abbr linkend="EP"/>
                     conforms to Common Criteria <cite linkend="bibCC"/> for Information Technology
                     Security Evaluation, Version 3.1, Revision 4. It is CC Part 2 extended and CC
-                    Part 3 conformant. In order to be conformant to this EP, the <abbr linkend="ST"
-                    /> must include all components in this <abbr linkend="EP"/> and the associated
-                    App PP that are: <ul><li>unconditional (which are always required)</li>
+                    Part 3 conformant. In order to be conformant to this <abbr linkend="EP"/>, the
+                        <abbr linkend="ST"/> must include all components in this <abbr linkend="EP"
+                    /> and the associated App PP that are: <ul><li>unconditional (which are always
+                            required)</li>
                         <li>selection-based (which are required when certain selections are chosen
                             in the unconditional requirements)</li></ul> and may include optional
                     and/or objective components that are desirable but not required for
@@ -381,7 +388,6 @@
                     <component-refer ref="FDP_PST_EXT.1"/>
                 </SO>
                 <SO id="O.PROTECTED_COMMS">
-                    <component-refer ref="FCS_CKM.1"/>
                     <component-refer ref="FCS_STS_EXT.1"/>
                     <component-refer ref="FDP_STR_EXT.1"/>
                     <component-refer ref="FPT_INT_EXT.1"/>
@@ -488,7 +494,7 @@
                             </ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
-                            "Web Storage."<br/>
+                            "Web Storage".<br/>
                         </note>
                         <aactivity>
                             <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
@@ -501,8 +507,7 @@
                                 and shall set up a web server with two or more web pages from
                                 different domains using different protocols and/or ports. The
                                 evaluator shall incorporate the scripts into the web pages and shall
-                                perform the following tests:
-                                <testlist>
+                                perform the following tests: <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to the same web page. The evaluator shall
                                         verify that the script for accessing session storage that is
@@ -603,16 +608,18 @@
                             the rendering process can be corrupted by the HTML or JavaScript it is
                             processing. This component requires the browser to lower the privileges
                             of rendering processes by ensuring that it cannot directly access the
-                            file system of the host, and that it cannot use IPC mechanisms provided
-                            by the host to communicate with non-browser processes on the host.
-                            Typically, if a rendering process needs to access a file or communicate
-                            with a non-browser process, it must request such access through the
-                            browser (which is allowed by the requirement).<br/> In addition to the
-                            two required measures, other measures can be implemented depending on
-                            the browser and the host platform. These may involve such actions as
-                            changing the owner of the rendering process to a low-privileged account
-                            or dropping platform-defined privileges in the rendering process. The ST
-                            author fills in the additional measures implemented by the browser. </note>
+                            file system of the host, and that it cannot use <abbr linkend="IPC"/>
+                            mechanisms provided by the host to communicate with non-browser
+                            processes on the host. Typically, if a rendering process needs to access
+                            a file or communicate with a non-browser process, it must request such
+                            access through the <abbr linkend="TSF"/> (which is allowed by the
+                            requirement).<br/> In addition to the two required measures, other
+                            measures can be implemented depending on the browser and the host
+                            platform. These may involve such actions as changing the owner of the
+                            rendering process to a low-privileged account or dropping
+                            platform-defined privileges in the rendering process. The <abbr
+                                linkend="ST"/> author fills in the additional measures implemented
+                            by the browser. </note>
                         <aactivity>
                             <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
                                 describes how the rendering of HTML and interpretation of JavaScript
@@ -623,24 +630,24 @@
                                 it describes how these processes are prevented from accessing the
                                 platform file system. The evaluator shall check the <abbr
                                     linkend="TSS"/> to ensure it describes each platform-provided
-                                IPC mechanism, and details for each mechanism how the rendering
-                                process is unable to use it to communicate with non-browser
-                                processes. The evaluator shall also confirm that the <abbr
-                                    linkend="TSS"/> describes how IPC and file system access is
-                                enabled (if this capability is implemented); for instance, through a
-                                more privileged browser process that does not perform web page
-                                rendering. The evaluator shall ensure that these descriptions are
-                                present for all platforms claimed in the <abbr linkend="ST"/>.<br/>
-                                For each additional mechanism listed in the third bullet of this
-                                component by the <abbr linkend="ST"/> author, the evaluator shall
-                                examine the <abbr linkend="TSS"/> to ensure 1) the mechanisms are
-                                described; 2) the description of the mechanisms are sufficiently
-                                detailed to determine that it contributes to the principle of least
-                                privilege being implemented in the rendering process; and 3)
-                                appropriate supporting information is provided in the <abbr
-                                    linkend="TSS"/> (or pointers to such information are provided)
-                                that provides context for understanding the claimed least privilege
-                                mechanisms. </tss>
+                                    <abbr linkend="IPC"/> mechanism, and details for each mechanism
+                                how the rendering process is unable to use it to communicate with
+                                non-browser processes. The evaluator shall also confirm that the
+                                    <abbr linkend="TSS"/> describes how <abbr linkend="IPC"/> and
+                                file system access is enabled (if this capability is implemented);
+                                for instance, through a more privileged browser process that does
+                                not perform web page rendering. The evaluator shall ensure that
+                                these descriptions are present for all platforms claimed in the
+                                    <abbr linkend="ST"/>.<br/> For each additional mechanism listed
+                                in the third bullet of this component by the <abbr linkend="ST"/>
+                                author, the evaluator shall examine the <abbr linkend="TSS"/> to
+                                ensure 1) the mechanisms are described; 2) the description of the
+                                mechanisms are sufficiently detailed to determine that it
+                                contributes to the principle of least privilege being implemented in
+                                the rendering process; and 3) appropriate supporting information is
+                                provided in the <abbr linkend="TSS"/> (or pointers to such
+                                information are provided) that provides context for understanding
+                                the claimed least privilege mechanisms. </tss>
                             <guidance> The evaluator shall examine the operational guidance to
                                 determine that it provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
@@ -649,22 +656,23 @@
                                 operational guidance to ensure that the method for enabling and
                                 disabling the mechanisms are provided, and the consequences of such
                                 actions are described. </guidance>
-                            <tests>The following tests require the developer to provide access to
-                                a test platform that provides the evaluator with debugging and test
+                            <tests>The following tests require the developer to provide access to a
+                                test platform that provides the evaluator with debugging and test
                                 tools that are typically not found on consumer platforms. <br/>The
                                 evaluator shall perform the following tests on each platform claimed
-                                in the ST: <testlist>
+                                in the <abbr linkend="ST"/>: <testlist>
                                     <!-- <test>The evaluator shall use debugging or test facilities to
                                         introduce code into a rendering process that attempts to
                                         directly access the platform's file system, and then direct
                                         execution to it. The evaluator shall ensure that execution
                                         of this code fails to access the TOE file system.</test> -->
-                                    <test>For each IPC mechanism described in the TSS, the evaluator
-                                        shall use debugging or test facilities to introduce code
-                                        into a rendering process that attempts to directly
-                                        communicate with another non-TOE process on the platform,
-                                        and then direct execution to it. The evaluator shall ensure
-                                        that this attempt fails.</test>
+                                    <test>For each <abbr linkend="IPC"/> mechanism described in the
+                                            <abbr linkend="TSS"/>, the evaluator shall use debugging
+                                        or test facilities to introduce code into a rendering
+                                        process that attempts to directly communicate with another
+                                        non-browser process on the platform, and then direct
+                                        execution to it. The evaluator shall ensure that this
+                                        attempt fails.</test>
                                     <!-- <test>For each additional mechanism claimed in the ST, the
                                         evaluator shall devise a test to show that the mechanism
                                         functions as described in the TSS. If no such test can be
@@ -688,7 +696,7 @@
                         <title>The browser shall enforce the same origin policy for all
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
-                            6454, "The Web Origin Concept."<br/> Origin is defined as the
+                            6454, "The Web Origin Concept".<br/> Origin is defined as the
                             combination of domain, protocol and port. Two URIs sharing the same
                             domain, protocol and port are considered to have the same origin. </note>
                         <aactivity>
@@ -704,10 +712,10 @@
                                 two or more web pages representing different domains. The evaluator
                                 shall incorporate the scripts into the web pages. The evaluator
                                 shall associate each page with a different protocol and/or port and
-                                shall perform tests 1 and 2.<br/> If the browser supports relaxation
+                                shall perform the following tests: <!--tests 1 and 2.<br/> If the browser supports relaxation
                                 of the same origin policy for subdomains, the evaluator shall
                                 configure the web server with subdomains and shall perform test 3
-                                and repeat tests 1 and 2.<br/>
+                                and repeat tests 1 and 2.-->
                                 <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to a different page on the website in each
@@ -728,7 +736,7 @@
                         <title>The browser shall ensure that cookies containing the <i>secure</i>
                             attribute in the set-cookie header are sent over HTTPS.</title>
                         <note role="application">The set-cookie header functionality is described in
-                            RFC 6265 <i>HTTP State Management Mechanism</i>.</note>
+                            RFC 6265, "HTTP State Management Mechanism".</note>
                         <aactivity>
                             <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify it
                                 describes the browser's support for the "secure" attribute of the
@@ -792,106 +800,111 @@
                 <f-component id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element id="fmt_mof_ext.1.1">
                         <title>The browser shall be capable of performing the following management
-                            functions, controlled by the user or administrator as shown:
-                        <ul>
-                            <li>X = Mandatory</li>
-                            <li>O = Optional</li></ul>
-                        <management-function-set>
-                            <manager>Administrator</manager>
-                            <manager>User</manager>
-                            <management-function user="X">Enable/disable storage of third party
-                                cookies</management-function>
-                            <management-function admin="O">Enable/disable use of OCSP for obtaining
-                                the revocation status of an X.509 certificate</management-function>
-                            <management-function admin="O">Configure inclusion of user-agent
-                                information in HTTP headers</management-function>
-                            <management-function admin="O">Enable/disable ability for websites to
-                                collect tracking information about the user through <selectables>
-                                    <selectable>zombie cookies</selectable>
-                                    <selectable>add-on based tracking (e.g. Flash
-                                        cookies)</selectable>
-                                    <selectable>browsing history</selectable>
-                                    <selectable>[assignment: other tracking
-                                    mechanisms]</selectable></selectables></management-function>
-                            <management-function user="X">Enable/disable deletion of stored browsing
-                                data (cache, web form information)</management-function>
-                            <management-function admin="O">Enable/disable storage of sensitive
-                                information (e.g., auto-fill, auto-complete) in persistent
-                                storage</management-function>
-                            <management-function admin="O">Configure size of cookie
-                                cache</management-function>
-                            <management-function admin="O">Configure size of
-                                cache</management-function>
-                            <management-function admin="O">Enable/disable interaction with Graphic
-                                Processing Units (GPUs)</management-function>
-                            <management-function admin="O">Configure the ability to advance to a web
-                                site with an invalid or unvalidated X.509
-                                certificate</management-function>
-                            <management-function admin="O">Enable/disable establishment of a trusted
-                                channel if the browser cannot establish a connection to determine
-                                the validity of a certificate</management-function>
-                            <management-function admin="O">Configure the use of an application
-                                reputation service to detect malicious applications prior to
-                                download</management-function>
-                            <management-function admin="O">Configure the use of a URL reputation
-                                service to detect sites that contain malware or phishing
-                                content</management-function>
-                            <management-function admin="O">Enable/disable automatic installation of
-                                software updates and patches</management-function>
-                            <management-function admin="O">Enable/disable ability for websites to
-                                register protocol handlers</management-function>
-                            <management-function admin="O">Enable/disable display notification when
-                                unsigned, untrusted or unverified mobile code is
-                                encountered</management-function>
-                            <management-function admin="O">Enable/disable user's ability to select
-                                default actions upon download of a file (e.g., always open, or
-                                always save, a downloaded file)</management-function>
-                            <management-function admin="O">Enable/disable launching of downloaded
-                                files outside the browser</management-function>
-                            <management-function admin="O">Enable/disable
-                                JavaScript</management-function>
-                            <management-function admin="O">Enable/disable
-                                        <selectables><selectable>ActiveX</selectable>
-                                    <selectable>Flash</selectable>
-                                    <selectable>Java</selectable>
-                                    <selectable>[assignment: other mobile code types supported by
-                                        the browser]</selectable> mobile
-                                code</selectables></management-function>
-                            <management-function admin="O">Enable/disable support for
-                                add-ons</management-function>
-                            <management-function admin="O">Enable/disable individual
-                                add-ons</management-function>
-                            <management-function admin="O">Enable/disable HSTS
-                                mode</management-function>
-                        </management-function-set></title>
-                    <note role="application"> For these management functions, the term
-                        "Administrator" refers to the administrator of a non-mobile device or the
-                        device owner of a mobile device. The intent of this requirement is to allow
-                        the user and administrator of the platform to configure the browser with
-                        configuration policies. If the administrator has not set a policy for a
-                        particular function, the user may still perform that function. Enforcement
-                        of the policy is done by the browser itself, or the browser and its platform
-                        in coordination with each other.</note>
-                    <aactivity>
-                        <tss>The evaluator shall verify that the <abbr linkend="TSS"/> describes
-                            those management functions which may only be configured by the browser
-                            platform administrator and cannot be over-ridden by the user when set
-                            according to policy. </tss>
-                        <guidance>The evaluator shall examine the operational guidance to verify
-                            that it includes instructions for a browser platform administrator to
-                            configure the functions listed in FMT_MOF.1.1. </guidance>
-                        <tests> The evaluator shall perform the following tests: <testlist>
-                                <test>The evaluator shall verify that functions perform as intended
-                                    by enabling, disabling, and configuring the functions.</test>
-                                <test>The evaluator shall create policies that collectively include
-                                    all management functions controlled by the browser platform
-                                    administrator and cannot be over-ridden by the user as defined
-                                    in FMT_MOF.1.1. The evaluator shall apply these policies to the
-                                    browser, attempt to override each setting as the user, and
-                                    verify that the browser does not permit it.</test>
-                            </testlist>
-                        </tests>
-                    </aactivity>
+                            functions, controlled by the administrator or user as shown: <ul>
+                                <li>X = Mandatory</li>
+                                <li>O = Optional</li></ul>
+                            <management-function-set>
+                                <manager>Administrator</manager>
+                                <manager>User</manager>
+                                <management-function user="X">Enable/disable storage of third party
+                                    cookies</management-function>
+                                <management-function admin="O">Enable/disable use of OCSP for
+                                    obtaining the revocation status of X.509
+                                    certificates</management-function>
+                                <management-function admin="O">Configure inclusion of user-agent
+                                    information in HTTP headers</management-function>
+                                <management-function admin="O">Enable/disable ability for websites
+                                    to collect tracking information about the user through <selectables>
+                                        <selectable>zombie cookies</selectable>
+                                        <selectable>add-on based tracking (e.g. Flash
+                                            cookies)</selectable>
+                                        <selectable>browsing history</selectable>
+                                        <selectable>[assignment: other tracking
+                                            mechanisms]</selectable></selectables></management-function>
+                                <management-function user="X">Enable/disable deletion of stored
+                                    browsing data (cache, web form
+                                    information)</management-function>
+                                <management-function admin="O">Enable/disable storage of sensitive
+                                    information (e.g., auto-fill, auto-complete) in persistent
+                                    storage</management-function>
+                                <management-function admin="O">Configure size of cookie
+                                    cache</management-function>
+                                <management-function admin="O">Configure size of
+                                    cache</management-function>
+                                <management-function admin="O">Enable/disable interaction with
+                                    Graphic Processing Units (GPUs)</management-function>
+                                <management-function admin="O">Configure the ability to advance to a
+                                    web site with an invalid or unvalidated X.509
+                                    certificate</management-function>
+                                <management-function admin="O">Enable/disable establishment of a
+                                    trusted channel if the browser cannot establish a connection to
+                                    determine the validity of a certificate</management-function>
+                                <management-function admin="O">Configure the use of an application
+                                    reputation service to detect malicious applications prior to
+                                    download</management-function>
+                                <management-function admin="O">Configure the use of a URL reputation
+                                    service to detect sites that contain malware or phishing
+                                    content</management-function>
+                                <management-function admin="O">Enable/disable automatic installation
+                                    of software updates and patches</management-function>
+                                <management-function admin="O">Enable/disable ability for websites
+                                    to register protocol handlers</management-function>
+                                <management-function admin="O">Enable/disable display notification
+                                    when unsigned, untrusted or unverified mobile code is
+                                    encountered</management-function>
+                                <management-function admin="O">Enable/disable user's ability to
+                                    select default actions upon download of a file (e.g., always
+                                    open, or always save, a downloaded file)</management-function>
+                                <management-function admin="O">Enable/disable launching of
+                                    downloaded files outside the browser</management-function>
+                                <management-function admin="O">Enable/disable
+                                    JavaScript</management-function>
+                                <management-function admin="O">Enable/disable
+                                            <selectables><selectable>ActiveX</selectable>
+                                        <selectable>Flash</selectable>
+                                        <selectable>Java</selectable>
+                                        <selectable>[assignment: other mobile code types supported
+                                            by the browser]</selectable> mobile
+                                    code</selectables></management-function>
+                                <management-function admin="O">Enable/disable support for
+                                    add-ons</management-function>
+                                <management-function admin="O">Enable/disable individual
+                                    add-ons</management-function>
+                                <management-function admin="O">Enable/disable HSTS
+                                    mode</management-function>
+                            </management-function-set></title>
+                        <note role="application"> For these management functions, the term
+                            "Administrator" refers to the administrator of a non-mobile device or
+                            the device owner of a mobile device. The intent of this requirement is
+                            to allow the user and administrator of the platform to configure the
+                            browser with configuration policies. If the administrator has not set a
+                            policy for a particular function, the user may still perform that
+                            function. Enforcement of the policy is done by the browser itself, or
+                            the browser and its platform in coordination with each other.<br/>
+                            Disabling OCSP shall only be permitted if CRL was selected in
+                            FIA_X509_EXT.1.1 (<cite linkend="bibAppPP"/>).</note>
+                        <aactivity>
+                            <tss>The evaluator shall verify that the <abbr linkend="TSS"/> describes
+                                those management functions which may only be configured by the
+                                browser platform administrator and cannot be over-ridden by the user
+                                when set according to policy. </tss>
+                            <guidance>The evaluator shall examine the operational guidance to verify
+                                that it includes instructions for a browser platform administrator
+                                to configure the functions listed in FMT_MOF.1.1. </guidance>
+                            <tests> The evaluator shall perform the following tests: <testlist>
+                                    <test>The evaluator shall verify that functions perform as
+                                        intended by enabling, disabling, and configuring the
+                                        functions.</test>
+                                    <test>The evaluator shall create policies that collectively
+                                        include all management functions controlled by the browser
+                                        platform administrator and cannot be over-ridden by the user
+                                        as defined in FMT_MOF.1.1. The evaluator shall apply these
+                                        policies to the browser, attempt to override each setting as
+                                        the user, and verify that the browser does not permit
+                                        it.</test>
+                                </testlist>
+                            </tests>
+                        </aactivity>
                     </f-element>
                 </f-component>
             </subsection>
@@ -1041,7 +1054,7 @@
                     <f-element id="FPT_MCD_EXT.1.2">
                         <title>The browser shall provide the user with the option to discard
                             unsigned, untrusted or unverified <selectables linebreak="yes">
-                                <selectable>Active X</selectable>
+                                <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
                                 <selectable>ActionScript</selectable>
@@ -1073,7 +1086,8 @@
                                         the user when it encounters mobile code that fails to
                                         authenticate and provides the user with the option to
                                         discard the mobile code without executing it, but does
-                                        execute mobile code that properly authenticates.</test>
+                                        execute signed mobile code that properly
+                                        authenticates.</test>
                                 </testlist>
                             </tests>
                         </aactivity>
@@ -1098,11 +1112,14 @@
                             <guidance>The evaluator shall examine the operational guidance to verify
                                 that it includes instructions on loading trusted add-on
                                 sources.</guidance>
-                            <tests>The evaluator shall perform the following test:
+                            <tests>The evaluator shall perform the following tests:
                                         <testlist><test>The evaluator shall create or obtain an
                                         untrusted add-on and attempt to load it. The evaluator shall
-                                        verify that the unsigned add-on is rejected and cannot be
-                                        loaded.</test></testlist>
+                                        verify that the untrusted add-on is rejected and cannot be
+                                        loaded.</test>
+                                    <test>The evaluator shall create or obtain a trusted add-on and
+                                        attempt to load it. The evaluator shall verify that the
+                                        trusted add-on loads. </test></testlist>
                             </tests>
                         </aactivity>
                     </f-element>
@@ -1132,11 +1149,11 @@
                             add-ons.</title>
                         <aactivity>
                             <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify
-                                that it states that the email client will reject add-ons from
-                                untrusted sources. </tss>
+                                that it states that the browser will reject add-ons from untrusted
+                                sources. </tss>
                             <guidance>The evaluator shall examine the operational guidance to verify
-                                that it includes instructions on how to configure the email client
-                                with trusted add-on sources. </guidance>
+                                that it includes instructions on how to configure the browser with
+                                trusted add-on sources. </guidance>
                             <tests>The evaluator shall perform the following tests: <testlist>
                                     <test>The evaluator shall create or obtain an add-on signed by a
                                         trusted source and attempt to install it. The evaluator
@@ -1159,32 +1176,34 @@
         </section>
     </chapter>
     <appendix title="Optional Requirements" id="optional"> The baseline requirements (those that
-        must be performed by the web browser are contained in the main body of this EP.
-        Additionally, there are three other types of requirements specified in <appref
-            linkend="optional"/>, <appref linkend="sel-based"/>, and <appref linkend="objective"/>.
-        The first type (in this Appendix) are requirements that can be included in the <abbr
-            linkend="ST"/>, but are not required in order for a browser to claim conformance to this
-        PP. The second type (in <appref linkend="sel-based"/>) are requirements based on selections
-        in the body of the EP: if certain selections are made, then additional requirements in that
-        appendix must be included. The third type (in <appref linkend="objective"/> are components
-        that are not required in order to conform to this EP, but will be included in the baseline
-        requirements in future versions of this EP, so adoption by vendors is encouraged. Note that
-        the <abbr linkend="ST"/> author is responsible for ensuring that requirements that may be
-        associated with those in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and
+        must be performed by the web browser are contained in the main body of this <abbr
+            linkend="EP"/>. Additionally, there are three other types of requirements specified in
+            <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
+            linkend="objective"/>. The first type (in this Appendix) are requirements that can be
+        included in the <abbr linkend="ST"/>, but are not required in order for a browser to claim
+        conformance to this <abbr linkend="EP"/>. The second type (in <appref linkend="sel-based"/>)
+        are requirements based on selections in the body of the <abbr linkend="EP"/>: if certain
+        selections are made, then additional requirements in that appendix must be included. The
+        third type (in <appref linkend="objective"/>) are components that are not required in order
+        to conform to this <abbr linkend="EP"/>, but will be included in the baseline requirements
+        in future versions of this <abbr linkend="EP"/>, so adoption by vendors is encouraged. Note
+        that the <abbr linkend="ST"/> author is responsible for ensuring that requirements that may
+        be associated with those in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and
             <appref linkend="objective"/> but are not listed (e.g., FMT-type requirements) are also
         included in the ST.</appendix>
     <appendix title="Selection-Based Requirements" id="sel-based">As indicated in the introduction
-        to this EP, the baseline requirements (those that must be performed by the browser or its
-        underlying platform) are contained in the App PP and in the body of this EP. There are
-        additional requirements based on selections from the App PP and/or in the body of the EP: if
-        certain selections are made, then additional requirements below will need to be
-        included.</appendix>
+        to this <abbr linkend="EP"/>, the baseline requirements (those that must be performed by the
+        browser or its underlying platform) are contained in the App PP and in the body of this
+            <abbr linkend="EP"/>. There are additional requirements based on selections from the App
+        PP and/or in the body of the <abbr linkend="EP"/>: if certain selections are made, then
+        additional requirements below will need to be included.</appendix>
     <appendix title="Objective Requirements" id="objective"> This Annex includes requirements that
         specify security functionality which also addresses threats. The requirements are not
         currently mandated in the body of this <abbr linkend="EP"/> as they describe security
         functionality not yet widely-available in commercial technology. However, these requirements
         may be included in the <abbr linkend="ST"/> such that the browser is still conformant to
-        this EP, and it is expected that they be included as soon as possible.</appendix>
+        this <abbr linkend="EP"/>, and it is expected that they be included as soon as
+        possible.</appendix>
     <appendix id="biblio" title="References">
         <bibliography>
             <entry id="bibCC">
@@ -1215,73 +1234,68 @@
     </appendix>
     <appendix title="Acronyms" id="acronyms">
         <acronyms>
-            <entry>
+            <!-- <entry>
                 <term>AES</term>
                 <description>Advanced Encryption Standard</description>
             </entry>
             <entry>
                 <term>CBC</term>
                 <description>Cipher Block Chaining</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>CRL</term>
                 <description>Certificate Revocation List</description>
             </entry>
-            <entry>
+            <!--<entry>
                 <term>CSP</term>
                 <description>Cryptographic Service Provider</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>CSRF</term>
                 <description>Cross Site Request Forgery</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>DHE</term>
                 <description>Diffie-Hellman Key Exchange</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>DN</term>
                 <description>Distinguished Name</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>DSA</term>
                 <description>Digital Signature Algorithm</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>DTLS</term>
                 <description>Datagram Transport Layer Security</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>ECC</term>
                 <description>Elliptic Curve Cryptography</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>ECDSA</term>
                 <description>Elliptic Curve Digital Signature Algorithm</description>
-            </entry>
-            <entry>
-                <term>EP</term>
-                <description>Extended Package</description>
-            </entry>
-            <entry>
-                <term>FFC</term>
-                <description>Finite-Field Cryptography</description>
-            </entry>
-            <entry>
+            </entry> 
+                <entry><term>FFC</term>
+                <description>Finite-Field Cryptography</description></entry> 
+            <entry> 
                 <term>FIPS</term>
                 <description>Federal Information Processing Standards</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>GCM</term>
                 <description>Galois/Counter Mode</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>GPU</term>
                 <description>Graphics Processing Unit</description>
             </entry>
             <entry>
-                <term>HMAC</term>
+                <!--  <term>HMAC</term>
                 <description>Keyed Hash Message Authentication Code</description>
+            </entry> -->
             </entry>
             <entry>
                 <term>HTML</term>
@@ -1305,60 +1319,60 @@
             </entry>
             <entry>
                 <term>IPC</term>
-            <description>Inter-process communication</description>
+                <description>Inter-process communication</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>IV</term>
                 <description>Initialization Vector</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>KAT</term>
                 <description>Known Answer Test</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>KDF</term>
                 <description>Key Derivation Function</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>NIST</term>
                 <description>National Institute of Standards and Technology</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>OCSP</term>
                 <description>Online Certificate Status Protocol</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>OID</term>
                 <description>Object Identifier</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>PDF</term>
                 <description>Portable Document Format</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>rDSA</term>
                 <description>RSA Digital Signature Algorithm</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>RFC</term>
                 <description>Request for Comment (IETF)</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>RGB</term>
                 <description>Random Bit Generator</description>
-            </entry>
+            </entry> 
             <entry>
                 <term>RSA</term>
                 <description>Rivest Shamir Adelman</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>SaaS</term>
                 <description>Software as a Service</description>
             </entry>
-            <entry>
+            <!-- <entry>
                 <term>SHA</term>
                 <description>Secure Hash Algorithm</description>
-            </entry>
+            </entry> -->
             <entry>
                 <term>SSL</term>
                 <description>Secure Sockets Layer</description>
