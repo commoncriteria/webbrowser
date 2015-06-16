@@ -4,7 +4,7 @@
     <PPReference title="PP Reference" id="ID003">
         <ReferenceTable>
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
-            <PPVersion>Draft 1.96</PPVersion>
+            <PPVersion>Version 2.0</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
             <PPPubDate>2015-06-16</PPPubDate>
             <PPCertificationID>unassigned</PPCertificationID>
@@ -23,9 +23,9 @@
             <subject>Release - Protection Profile for Web Browsers</subject>
         </entry>
         <entry>
-            <version>v 1.9</version>
-            <date>2014-12-04</date>
-            <subject>Interim Draft - Update as Extended Package of the Protection Profile for
+            <version>v 2.0</version>
+            <date>2015-06-16</date>
+            <subject>Update as Extended Package of the Protection Profile for
                 Application Software</subject>
         </entry>
     </RevisionHistory>
@@ -608,7 +608,7 @@
                             the rendering process can be corrupted by the HTML or JavaScript it is
                             processing. This component requires the browser to lower the privileges
                             of rendering processes by ensuring that it cannot directly access the
-                            file system of the host, and that it cannot use <abbr linkend="IPC"/>
+                            file system of the host, and that it cannot use IPC 
                             mechanisms provided by the host to communicate with non-browser
                             processes on the host. Typically, if a rendering process needs to access
                             a file or communicate with a non-browser process, it must request such
@@ -630,10 +630,10 @@
                                 it describes how these processes are prevented from accessing the
                                 platform file system. The evaluator shall check the <abbr
                                     linkend="TSS"/> to ensure it describes each platform-provided
-                                    <abbr linkend="IPC"/> mechanism, and details for each mechanism
+                                    IPC mechanism, and details for each mechanism
                                 how the rendering process is unable to use it to communicate with
                                 non-browser processes. The evaluator shall also confirm that the
-                                    <abbr linkend="TSS"/> describes how <abbr linkend="IPC"/> and
+                                    <abbr linkend="TSS"/> describes how IPC and
                                 file system access is enabled (if this capability is implemented);
                                 for instance, through a more privileged browser process that does
                                 not perform web page rendering. The evaluator shall ensure that
@@ -666,7 +666,7 @@
                                         directly access the platform's file system, and then direct
                                         execution to it. The evaluator shall ensure that execution
                                         of this code fails to access the TOE file system.</test> -->
-                                    <test>For each <abbr linkend="IPC"/> mechanism described in the
+                                    <test>For each IPC mechanism described in the
                                             <abbr linkend="TSS"/>, the evaluator shall use debugging
                                         or test facilities to introduce code into a rendering
                                         process that attempts to directly communicate with another
