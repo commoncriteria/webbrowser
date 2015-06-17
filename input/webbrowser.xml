@@ -25,8 +25,8 @@
         <entry>
             <version>v 2.0</version>
             <date>2015-06-16</date>
-            <subject>Update as Extended Package of the Protection Profile for
-                Application Software</subject>
+            <subject>Update as Extended Package of the Protection Profile for Application
+                Software</subject>
         </entry>
     </RevisionHistory>
     <RevisionHistory role="release">
@@ -216,12 +216,6 @@
                     </entry>
                     <entry>
                         <term>Sensitive Data</term>
-                        <!-- <description>Sensitive data may include all user or enterprise data or may
-                            be specific application data such as emails, messaging, documents,
-                            calendar items, and contacts. Sensitive data must minimally include personally identifiable information (PII), 
-                            credentials, and keys. Sensitive data shall be identified in the
-                            application's <abbr linkend="TSS"/> by the <abbr linkend="ST"/>
-                            author.</description> -->
                         <description> Sensitive data may include all user or enterprise data or may
                             be specific application data such as data transferred to submit a form
                             or complete a transaction. Sensitive data must minimally include
@@ -608,18 +602,17 @@
                             the rendering process can be corrupted by the HTML or JavaScript it is
                             processing. This component requires the browser to lower the privileges
                             of rendering processes by ensuring that it cannot directly access the
-                            file system of the host, and that it cannot use IPC 
-                            mechanisms provided by the host to communicate with non-browser
-                            processes on the host. Typically, if a rendering process needs to access
-                            a file or communicate with a non-browser process, it must request such
-                            access through the <abbr linkend="TSF"/> (which is allowed by the
-                            requirement).<br/> In addition to the two required measures, other
-                            measures can be implemented depending on the browser and the host
-                            platform. These may involve such actions as changing the owner of the
-                            rendering process to a low-privileged account or dropping
-                            platform-defined privileges in the rendering process. The <abbr
-                                linkend="ST"/> author fills in the additional measures implemented
-                            by the browser. </note>
+                            file system of the host, and that it cannot use IPC mechanisms provided
+                            by the host to communicate with non-browser processes on the host.
+                            Typically, if a rendering process needs to access a file or communicate
+                            with a non-browser process, it must request such access through the
+                                <abbr linkend="TSF"/> (which is allowed by the requirement).<br/> In
+                            addition to the two required measures, other measures can be implemented
+                            depending on the browser and the host platform. These may involve such
+                            actions as changing the owner of the rendering process to a
+                            low-privileged account or dropping platform-defined privileges in the
+                            rendering process. The <abbr linkend="ST"/> author fills in the
+                            additional measures implemented by the browser. </note>
                         <aactivity>
                             <tss>The evaluator shall examine the <abbr linkend="TSS"/> to ensure it
                                 describes how the rendering of HTML and interpretation of JavaScript
@@ -630,24 +623,24 @@
                                 it describes how these processes are prevented from accessing the
                                 platform file system. The evaluator shall check the <abbr
                                     linkend="TSS"/> to ensure it describes each platform-provided
-                                    IPC mechanism, and details for each mechanism
-                                how the rendering process is unable to use it to communicate with
-                                non-browser processes. The evaluator shall also confirm that the
-                                    <abbr linkend="TSS"/> describes how IPC and
-                                file system access is enabled (if this capability is implemented);
-                                for instance, through a more privileged browser process that does
-                                not perform web page rendering. The evaluator shall ensure that
-                                these descriptions are present for all platforms claimed in the
-                                    <abbr linkend="ST"/>.<br/> For each additional mechanism listed
-                                in the third bullet of this component by the <abbr linkend="ST"/>
-                                author, the evaluator shall examine the <abbr linkend="TSS"/> to
-                                ensure 1) the mechanisms are described; 2) the description of the
-                                mechanisms are sufficiently detailed to determine that it
-                                contributes to the principle of least privilege being implemented in
-                                the rendering process; and 3) appropriate supporting information is
-                                provided in the <abbr linkend="TSS"/> (or pointers to such
-                                information are provided) that provides context for understanding
-                                the claimed least privilege mechanisms. </tss>
+                                IPC mechanism, and details for each mechanism how the rendering
+                                process is unable to use it to communicate with non-browser
+                                processes. The evaluator shall also confirm that the <abbr
+                                    linkend="TSS"/> describes how IPC and file system access is
+                                enabled (if this capability is implemented); for instance, through a
+                                more privileged browser process that does not perform web page
+                                rendering. The evaluator shall ensure that these descriptions are
+                                present for all platforms claimed in the <abbr linkend="ST"/>.<br/>
+                                For each additional mechanism listed in the third bullet of this
+                                component by the <abbr linkend="ST"/> author, the evaluator shall
+                                examine the <abbr linkend="TSS"/> to ensure 1) the mechanisms are
+                                described; 2) the description of the mechanisms are sufficiently
+                                detailed to determine that it contributes to the principle of least
+                                privilege being implemented in the rendering process; and 3)
+                                appropriate supporting information is provided in the <abbr
+                                    linkend="TSS"/> (or pointers to such information are provided)
+                                that provides context for understanding the claimed least privilege
+                                mechanisms. </tss>
                             <guidance> The evaluator shall examine the operational guidance to
                                 determine that it provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
@@ -661,23 +654,13 @@
                                 tools that are typically not found on consumer platforms. <br/>The
                                 evaluator shall perform the following tests on each platform claimed
                                 in the <abbr linkend="ST"/>: <testlist>
-                                    <!-- <test>The evaluator shall use debugging or test facilities to
-                                        introduce code into a rendering process that attempts to
-                                        directly access the platform's file system, and then direct
-                                        execution to it. The evaluator shall ensure that execution
-                                        of this code fails to access the TOE file system.</test> -->
-                                    <test>For each IPC mechanism described in the
-                                            <abbr linkend="TSS"/>, the evaluator shall use debugging
-                                        or test facilities to introduce code into a rendering
-                                        process that attempts to directly communicate with another
+                                    <test>For each IPC mechanism described in the <abbr
+                                            linkend="TSS"/>, the evaluator shall use debugging or
+                                        test facilities to introduce code into a rendering process
+                                        that attempts to directly communicate with another
                                         non-browser process on the platform, and then direct
                                         execution to it. The evaluator shall ensure that this
                                         attempt fails.</test>
-                                    <!-- <test>For each additional mechanism claimed in the ST, the
-                                        evaluator shall devise a test to show that the mechanism
-                                        functions as described in the TSS. If no such test can be
-                                        crafted, the evaluator shall provide a justification in the
-                                        test report for why the mechanism cannot be tested.</test> -->
                                     <test>For each mechanism that can be configured or turned on or
                                         off, the evaluator shall perform tests to ensure that the
                                         configuration of the mechanism behaves as specified in the
@@ -712,11 +695,7 @@
                                 two or more web pages representing different domains. The evaluator
                                 shall incorporate the scripts into the web pages. The evaluator
                                 shall associate each page with a different protocol and/or port and
-                                shall perform the following tests: <!--tests 1 and 2.<br/> If the browser supports relaxation
-                                of the same origin policy for subdomains, the evaluator shall
-                                configure the web server with subdomains and shall perform test 3
-                                and repeat tests 1 and 2.-->
-                                <testlist>
+                                shall perform the following tests: <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to a different page on the website in each
                                         window/tab. The evaluator shall run the scripts and shall
@@ -1234,68 +1213,17 @@
     </appendix>
     <appendix title="Acronyms" id="acronyms">
         <acronyms>
-            <!-- <entry>
-                <term>AES</term>
-                <description>Advanced Encryption Standard</description>
-            </entry>
-            <entry>
-                <term>CBC</term>
-                <description>Cipher Block Chaining</description>
-            </entry> -->
             <entry>
                 <term>CRL</term>
                 <description>Certificate Revocation List</description>
             </entry>
-            <!--<entry>
-                <term>CSP</term>
-                <description>Cryptographic Service Provider</description>
-            </entry> -->
             <entry>
                 <term>CSRF</term>
                 <description>Cross Site Request Forgery</description>
             </entry>
-            <!-- <entry>
-                <term>DHE</term>
-                <description>Diffie-Hellman Key Exchange</description>
-            </entry> 
-            <entry>
-                <term>DN</term>
-                <description>Distinguished Name</description>
-            </entry> 
-            <entry>
-                <term>DSA</term>
-                <description>Digital Signature Algorithm</description>
-            </entry> 
-            <entry>
-                <term>DTLS</term>
-                <description>Datagram Transport Layer Security</description>
-            </entry> 
-            <entry>
-                <term>ECC</term>
-                <description>Elliptic Curve Cryptography</description>
-            </entry> 
-            <entry>
-                <term>ECDSA</term>
-                <description>Elliptic Curve Digital Signature Algorithm</description>
-            </entry> 
-                <entry><term>FFC</term>
-                <description>Finite-Field Cryptography</description></entry> 
-            <entry> 
-                <term>FIPS</term>
-                <description>Federal Information Processing Standards</description>
-            </entry> 
-            <entry>
-                <term>GCM</term>
-                <description>Galois/Counter Mode</description>
-            </entry> -->
             <entry>
                 <term>GPU</term>
                 <description>Graphics Processing Unit</description>
-            </entry>
-            <entry>
-                <!--  <term>HMAC</term>
-                <description>Keyed Hash Message Authentication Code</description>
-            </entry> -->
             </entry>
             <entry>
                 <term>HTML</term>
@@ -1321,58 +1249,22 @@
                 <term>IPC</term>
                 <description>Inter-process communication</description>
             </entry>
-            <!-- <entry>
-                <term>IV</term>
-                <description>Initialization Vector</description>
-            </entry> 
-            <entry>
-                <term>KAT</term>
-                <description>Known Answer Test</description>
-            </entry> 
-            <entry>
-                <term>KDF</term>
-                <description>Key Derivation Function</description>
-            </entry> 
-            <entry>
-                <term>NIST</term>
-                <description>National Institute of Standards and Technology</description>
-            </entry> -->
             <entry>
                 <term>OCSP</term>
                 <description>Online Certificate Status Protocol</description>
             </entry>
-            <!-- <entry>
-                <term>OID</term>
-                <description>Object Identifier</description>
-            </entry> -->
             <entry>
                 <term>PDF</term>
                 <description>Portable Document Format</description>
             </entry>
-            <!-- <entry>
-                <term>rDSA</term>
-                <description>RSA Digital Signature Algorithm</description>
-            </entry> -->
             <entry>
                 <term>RFC</term>
                 <description>Request for Comment (IETF)</description>
             </entry>
-            <!-- <entry>
-                <term>RGB</term>
-                <description>Random Bit Generator</description>
-            </entry> 
-            <entry>
-                <term>RSA</term>
-                <description>Rivest Shamir Adelman</description>
-            </entry> -->
             <entry>
                 <term>SaaS</term>
                 <description>Software as a Service</description>
             </entry>
-            <!-- <entry>
-                <term>SHA</term>
-                <description>Secure Hash Algorithm</description>
-            </entry> -->
             <entry>
                 <term>SSL</term>
                 <description>Secure Sockets Layer</description>
