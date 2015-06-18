@@ -666,7 +666,7 @@
                                         configuration of the mechanism behaves as specified in the
                                         operational guidance.</test></testlist>
                             </tests> -->
-                            <tests>The evaluator shall perform the following tests on each platform
+                            <tests>The evaluator shall perform the following test on each platform
                                 claimed in the <abbr linkend="ST"/>:<testlist><test>The evaluator
                                         shall execute a form of mobile code within an HTML page that
                                         contains instructions to modify or delete a file from the
