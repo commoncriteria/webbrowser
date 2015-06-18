@@ -649,7 +649,7 @@
                                 operational guidance to ensure that the method for enabling and
                                 disabling the mechanisms are provided, and the consequences of such
                                 actions are described. </guidance>
-                            <tests>The following tests require the developer to provide access to a
+                            <!-- <tests>The following tests require the developer to provide access to a
                                 test platform that provides the evaluator with debugging and test
                                 tools that are typically not found on consumer platforms. <br/>The
                                 evaluator shall perform the following tests on each platform claimed
@@ -665,7 +665,13 @@
                                         off, the evaluator shall perform tests to ensure that the
                                         configuration of the mechanism behaves as specified in the
                                         operational guidance.</test></testlist>
-                            </tests>
+                            </tests> -->
+                            <tests>The evaluator shall perform the following tests on each platform
+                                claimed in the <abbr linkend="ST"/>:<testlist><test>The evaluator
+                                        shall execute a form of mobile code within an HTML page that
+                                        contains instructions to modify or delete a file from the
+                                        file system and verify that the file is not modified for
+                                        deleted.</test></testlist></tests>
                         </aactivity>
                     </f-element>
                 </f-component>
