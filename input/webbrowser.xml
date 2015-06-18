@@ -29,17 +29,16 @@
                 Software</subject>
         </entry>
     </RevisionHistory>
-    <RevisionHistory role="release">
+    <RevisionHistory role="final">
+        <entry>
+            <version>v 2.0</version>
+            <date>2015-06-16</date>
+            <subject>Application Software Extended Package for Web Browsers</subject>
+        </entry>
         <entry>
             <version>v 1.0</version>
             <date>2014-03-31</date>
-            <subject>Initial release as Protection Profile for Web Browsers</subject>
-        </entry>
-        <entry>
-            <version>v 2.0</version>
-            <date>2014-12-12</date>
-            <subject>Update as Extended Package of the Protection Profile for Application
-                Software</subject>
+            <subject>Initial release - Protection Profile for Web Browsers</subject>
         </entry>
     </RevisionHistory>
     <chapter title="Introduction" id="int">
