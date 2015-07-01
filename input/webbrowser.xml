@@ -369,22 +369,22 @@
             title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
             <SOs>
                 <SO id="O.INTEGRITY">
-                    <component-refer ref="FPT_DNL_EXT.1"/>
-                    <component-refer ref="FPT_MCD_EXT.1 "/>
+                    <component-refer ref="fpt_dnl_ext.1"/>
+                    <component-refer ref="fpt_mcd_ext.1"/>
                 </SO>
                 <SO id="O.MANAGEMENT">
-                    <component-refer ref="FDP_TRK_EXT.1"/>
-                    <component-refer ref="FMT_MOF_EXT.1"/>
+                    <component-refer ref="fdp_trk_ext.1"/>
+                    <component-refer ref="fmt_mof_ext.1"/>
                 </SO>
                 <SO id="O.PROTECTED_STORAGE">
-                    <component-refer ref="FDP_COO_EXT.1"/>
-                    <component-refer ref="FDP_PST_EXT.1"/>
+                    <component-refer ref="fdp_coo_ext.1"/>
+                    <component-refer ref="fdp_pst_ext.1"/>
                 </SO>
                 <SO id="O.PROTECTED_COMMS">
-                    <component-refer ref="FCS_STS_EXT.1"/>
-                    <component-refer ref="FDP_STR_EXT.1"/>
-                    <component-refer ref="FPT_INT_EXT.1"/>
-                    <component-refer ref="FPT_INT_EXT.2"/>
+                    <component-refer ref="fcs_sts_ext.1"/>
+                    <component-refer ref="fdp_str_ext.1"/>
+                    <component-refer ref="fpt_int_ext.1"/>
+                    <component-refer ref="fpt_int_ext.2"/>
                 </SO>
                 <SO id="O.DOMAIN_ISOLATION">
                     <description> To address the network attack associated with content leakage
@@ -392,15 +392,15 @@
                         originating from different domains (e.g., in a tab or iFrame) is properly
                         isolated. </description>
                     <component-refer ref="fdp_acf_ext.1.1"/>
-                    <component-refer ref="FDP_SBX_EXT.1"/>
+                    <component-refer ref="fdp_sbx_ext.1"/>
                     <component-refer ref="fdp_sop_ext.1"/>
                 </SO>
                 <SO id="O.ADDON_INTEGRITY">
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification and validation at installation time and update. </description>
-                    <component-refer ref="FPT_AON_EXT.1"/>
-                    <component-refer ref="FPT_AON_EXT.2"/>
+                    <component-refer ref="fpt_aon_ext.1"/>
+                    <component-refer ref="fpt_aon_ext.2"/>
                 </SO>
             </SOs>
         </section>
@@ -426,17 +426,17 @@
             Requirements included in this section are derived from Part 2 of the Common Criteria for
             Information Technology Security Evaluation, Version 3.1, Revision 4, with additional
             extended functional components. <subsection title="Cryptographic Support (FCS)" id="fcs">
-                <f-component id="FCS_STS_EXT.1" name="Strict Transport Security">
-                    <f-element id="FCS_STS_EXT.1.1" status="objective">
+                <f-component id="fcs_sts_ext.1" name="Strict Transport Security">
+                    <f-element id="fcs_sts_ext.1.1" status="objective">
                         <title>The browser shall implement HTTP Strict-Transport-Security according
                             to RFC 6797.</title>
                     </f-element>
-                    <f-element id="FCS_STS_EXT.1.2" status="objective">
+                    <f-element id="fcs_sts_ext.1.2" status="objective">
                         <title>The browser shall retain persistent data signaling HSTS enablement
                             for the time span declared by the website in a max-age
                             directive.</title>
                     </f-element>
-                    <f-element id="FCS_STS_EXT.1.3" status="objective">
+                    <f-element id="fcs_sts_ext.1.3" status="objective">
                         <title>The browser shall cache the "freshest" Strict Security policy
                             information.</title>
                         <note role="application"> Freshness refers to the length of time between
@@ -475,8 +475,8 @@
                 </f-component>
             </subsection>
             <subsection title="User Data Protection (FDP)" id="fdp">
-                <f-component id="FDP_ACF_EXT.1" name="Local and Session Storage Separation">
-                    <f-element id="FDP_ACF_EXT.1.1">
+                <f-component id="fdp_acf_ext.1" name="Local and Session Storage Separation">
+                    <f-element id="fdp_acf_ext.1.1">
                         <title>The browser shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol and port:<br/>
                             <ul>
@@ -517,8 +517,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_COO_EXT.1" name="Cookie Blocking">
-                    <f-element id="FDP_COO_EXT.1.1">
+                <f-component id="fdp_coo_ext.1" name="Cookie Blocking">
+                    <f-element id="fdp_coo_ext.1.1">
                         <title>The browser shall provide the capability to block the storage of
                             third party cookies by websites.</title>
                         <aactivity>
@@ -548,8 +548,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_PST_EXT.1" name="Storage of Persistent Information">
-                    <f-element id="FDP_PST_EXT.1.1" status="optional">
+                <f-component id="fdp_pst_ext.1" name="Storage of Persistent Information">
+                    <f-element id="fdp_pst_ext.1.1" status="optional">
                         <title>The browser shall provide the capability to operate without storing
                             persistent data to the file system with the following exceptions:
                                     <selectables><selectable>credential
@@ -579,8 +579,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_SBX_EXT.1" name="Sandboxing of Rendering Processes">
-                    <f-element id="FDP_SBX_EXT.1.1">
+                <f-component id="fdp_sbx_ext.1" name="Sandboxing of Rendering Processes">
+                    <f-element id="fdp_sbx_ext.1.1">
                         <title>The browser shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process can only directly access the area of the
@@ -674,13 +674,13 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_SOP_EXT.1" name="Same Origin Policy">
-                    <f-element id="FDP_SOP_EXT.1.1">
+                <f-component id="fdp_sop_ext.1" name="Same Origin Policy">
+                    <f-element id="fdp_sop_ext.1.1">
                         <title>The browser shall only permit scripts contained in one web page to
                             access data in a second web page if both pages are from the same
                             origin.</title>
                     </f-element>
-                    <f-element id="FDP_SOP_EXT.1.2">
+                    <f-element id="fdp_sop_ext.1.2">
                         <title>The browser shall enforce the same origin policy for all
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
@@ -715,8 +715,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FDP_STR_EXT.1" name="Secure Transmission of Cookie Data">
-                    <f-element id="FDP_STR_EXT.1.1">
+                <f-component id="fdp_str_ext.1" name="Secure Transmission of Cookie Data">
+                    <f-element id="fdp_str_ext.1.1">
                         <title>The browser shall ensure that cookies containing the <i>secure</i>
                             attribute in the set-cookie header are sent over HTTPS.</title>
                         <note role="application">The set-cookie header functionality is described in
@@ -893,12 +893,12 @@
                 </f-component>
             </subsection>
             <subsection title="Protection of the TSF (FPT)" id="fpt">
-                <f-component id="FPT_DNL_EXT.1" name="File Downloads">
-                    <f-element id="FPT_DNL_EXT.1.1">
+                <f-component id="fpt_dnl_ext.1" name="File Downloads">
+                    <f-element id="fpt_dnl_ext.1.1">
                         <title>The browser shall prevent downloaded content from launching
                             automatically.</title>
                     </f-element>
-                    <f-element id="FPT_DNL_EXT.1.2">
+                    <f-element id="fpt_dnl_ext.1.2">
                         <title>The browser shall present the user with the option to either save or
                             discard downloaded files.</title>
                         <note role="application"> This requirement ensures that if the user
@@ -930,9 +930,9 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_INT_EXT.1"
+                <f-component id="fpt_int_ext.1"
                     name="Interactions with Application Reputation Services">
-                    <f-element id="FPT_INT_EXT.1.1" status="objective">
+                    <f-element id="fpt_int_ext.1.1" status="objective">
                         <title>The browser shall utilize an application reputation service to
                             prevent downloading of malicious applications.</title>
                         <note role="application"> An application reputation service is an online
@@ -967,8 +967,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_INT_EXT.2" name="Interactions with URL Reputation Services">
-                    <f-element id="FPT_INT_EXT.2.1" status="objective">
+                <f-component id="fpt_int_ext.2" name="Interactions with URL Reputation Services">
+                    <f-element id="fpt_int_ext.2.1" status="objective">
                         <title>The browser shall utilize a URL reputation service to prevent
                             connections with malicious websites.</title>
                         <note role="application"> A URL reputation service is an online service that
@@ -1022,8 +1022,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_MCD_EXT.1" name="Mobile Code">
-                    <f-element id="FPT_MCD_EXT.1.1">
+                <f-component id="fpt_mcd_ext.1" name="Mobile Code">
+                    <f-element id="fpt_mcd_ext.1.1">
                         <title>The browser shall support the capability to execute signed
                                 <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
@@ -1035,7 +1035,7 @@
                                 <selectable>no</selectable>
                             </selectables>mobile code. </title>
                     </f-element>
-                    <f-element id="FPT_MCD_EXT.1.2">
+                    <f-element id="fpt_mcd_ext.1.2">
                         <title>The browser shall provide the user with the option to discard
                             unsigned, untrusted or unverified <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
@@ -1077,8 +1077,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_AON_EXT.1" name="Support for Only Trusted Add-ons">
-                    <f-element id="FPT_AON_EXT.1.1">
+                <f-component id="fpt_aon_ext.1" name="Support for Only Trusted Add-ons">
+                    <f-element id="fpt_aon_ext.1.1">
                         <title>The browser shall include the capability to load <selectables>
                                 <selectable>trusted add-ons</selectable>
                                 <selectable>no add-ons</selectable>
@@ -1108,8 +1108,8 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component id="FPT_AON_EXT.2" name="Trusted Installation and Update for Add-ons">
-                    <f-element id="FPT_AON_EXT.2.1" status="sel-based">
+                <f-component id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
+                    <f-element id="fpt_aon_ext.2.1" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.1"/>
                         <title>The browser shall <selectables>
                                 <selectable>provide the ability</selectable>
@@ -1120,14 +1120,14 @@
                                 <selectable>no other functions</selectable>
                             </selectables>prior to installation and update. </title>
                     </f-element>
-                    <f-element id="FPT_AON_EXT.2.2" status="sel-based">
+                    <f-element id="fpt_aon_ext.2.2" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.1"/>
                         <title>The browser shall <selectables><selectable>provide the
                                     ability</selectable><selectable>leverage the
                                     platform</selectable></selectables> to query the current version
                             of the add-on.</title>
                     </f-element>
-                    <f-element id="FPT_AON_EXT.2.3" status="sel-based">
+                    <f-element id="fpt_aon_ext.2.3" status="sel-based">
                         <selection-depends req="FPT_AON_EXT.1.1"/>
                         <title>The browser shall prevent the automatic installation of
                             add-ons.</title>
