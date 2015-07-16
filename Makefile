@@ -23,8 +23,8 @@ simplified: $(SIMPLIFIED)
 $(SIMPLIFIED): $(TRANS)/pp2simplified.xsl $(APP_XML)
 	xsltproc --stringparam release final -o $(SIMPLIFIED) $(TRANS)/pp2simplified.xsl $(APP_XML)
 
-schema/application.rnc: schema/application.rng
-	trang -I rng -O rnc  schema/application.rng schema/application.rnc
+transforms/schemas/schema.rnc: transforms/schemas/schema.rng
+	trang -I rng -O rnc  transforms/schemas/schema.rng transforms/schemas/schema.rnc
 
 clean:
 	@for f in a $(TABLE) $(SIMPLIFIED) $(APP_HTML) $(APP_RELEASE_HTML) $(APP_OP_HTML); do \
