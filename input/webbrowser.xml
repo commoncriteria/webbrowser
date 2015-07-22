@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 <PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Web Browsers">
     <PPReference title="PP Reference" id="ID003">
@@ -589,9 +589,13 @@
                                     communication mechanisms with its own browser processes.</li>
                                 <li>The rendering process has reduced privilege with respect to
                                     other browser processes <selectables>
-                                        <selectable>[assignment: through methods by which the
+                                        <selectable>
+					  <assignable>
+					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes]</selectable>
+                                            rendering processes
+					  </assignable>
+					</selectable>
                                         <selectable>in no other ways</selectable>
                                     </selectables></li></ul>
                         </title>
@@ -798,13 +802,16 @@
                                 <management-function admin="O">Configure inclusion of user-agent
                                     information in HTTP headers</management-function>
                                 <management-function admin="O">Enable/disable ability for websites
-                                    to collect tracking information about the user through <selectables>
+                                    to collect tracking information about the user through 
+				    <selectables>
                                         <selectable>zombie cookies</selectable>
                                         <selectable>add-on based tracking (e.g. Flash
                                             cookies)</selectable>
                                         <selectable>browsing history</selectable>
-                                        <selectable>[assignment: other tracking
-                                            mechanisms]</selectable></selectables></management-function>
+                                        <selectable><assignable>other tracking
+                                            mechanisms</assignable>
+				    </selectable></selectables>
+				</management-function>
                                 <management-function user="X">Enable/disable deletion of stored
                                     browsing data (cache, web form
                                     information)</management-function>
@@ -847,9 +854,13 @@
                                             <selectables><selectable>ActiveX</selectable>
                                         <selectable>Flash</selectable>
                                         <selectable>Java</selectable>
-                                        <selectable>[assignment: other mobile code types supported
-                                            by the browser]</selectable> mobile
-                                    code</selectables></management-function>
+                                        <selectable>
+					  <assignable>other mobile code types supported
+                                            by the browser</assignable>
+					</selectable>
+				</selectables>
+				mobile code
+				</management-function>
                                 <management-function admin="O">Enable/disable support for
                                     add-ons</management-function>
                                 <management-function admin="O">Enable/disable individual
