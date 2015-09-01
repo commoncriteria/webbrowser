@@ -7,6 +7,8 @@ Protection Profile for Web Browsers
 ## Links
 [Application Software Extended Package for Web Browsers](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-release.html)
 
+[Help working with Transforms Submodule](https://github.com/commoncriteria/transforms/wiki/Working-with-Transforms-as-a-Submodule)
+
 ## Quickstart
 To clone this project along with its _transforms_ submodule run:
 
