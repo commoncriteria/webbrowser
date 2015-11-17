@@ -7,7 +7,8 @@ Extended Package for Web Browsers
 [Application Software Extended Package for Web Browsers](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-release.html)
 
 ## Release Version
-[Application Software Extended Package for Web Browsers v2.0](https://www.niap-ccevs.org/pp/PP_APP_WEBBROWSER_EP_v2.0/) 6/16/2015
+[Application Software Extended Package for Web Browsers v2.0](https://www.niap-ccevs.org/pp/PP_APP_WEBBROWSER_EP_v2.0/) 6/16/2015<br/>
+Protection Profile for Web Browsers v1.0 3/31/2014
 
 ## Change Log
 6/16/2015 Converted Web Browser PP to an EP of the Application PP
