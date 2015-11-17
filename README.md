@@ -1,13 +1,16 @@
 Web Browser
 ===========
 
-Protection Profile for Web Browsers
+Extended Package for Web Browsers
 
 
-## Links
+## Working Draft
 [Application Software Extended Package for Web Browsers](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-release.html)
 
-[Help working with Transforms Submodule](https://github.com/commoncriteria/transforms/wiki/Working-with-Transforms-as-a-Submodule)
+
+## Release Version
+
+## Change Log
 
 ## Quickstart
 To clone this project along with its _transforms_ submodule run:
@@ -21,3 +24,4 @@ To pull updates from the upstream _transforms_ submodule and commit them run:
  git add transforms
  git commit
 ````
+
