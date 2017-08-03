@@ -1,4 +1,4 @@
-Web Browser
+Web Browser [![Build Status](https://jenkins-criteria.rhcloud.com/buildStatus/icon?job=protection-profiles/webbrowser)](https://jenkins-criteria.rhcloud.com/job/protection-profiles/job/webbrowser/)
 ===========
 
 Extended Package for Web Browsers
