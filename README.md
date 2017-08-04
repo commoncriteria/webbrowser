@@ -4,9 +4,7 @@ Extended Package for Web Browser
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/webbrowser.svg?maxAge=2592000)](https://github.com/commoncriteria/webbrowser/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
-This repository hosts the draft version of the Extended Package for Web Browser based on the 
-[Essential Security Requirements (ESR)](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-esr.html) for this technology class of 
-products. This repository is used to facilitate collaboration and development on the draft document. 
+This repository hosts the draft version of the Extended Package for Web Browser. The repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Profile/Info.cfm?id=378).
 
