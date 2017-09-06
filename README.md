@@ -1,6 +1,6 @@
 Extended Package for Web Browser 
 ===========
-[![Build Status](https://jenkins-criteria.rhcloud.com/buildStatus/icon?job=protection-profiles/webbrowser)](https://jenkins-criteria.rhcloud.com/job/protection-profiles/job/webbrowser/)
+[![Build Status](https://travis-ci.org/commoncriteria/webbrowser.svg?branch=master)](https://travis-ci.org/commoncriteria/webbrowser)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/webbrowser.svg?maxAge=2592000)](https://github.com/commoncriteria/webbrowser/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
