@@ -10,8 +10,8 @@ A list of products that have passed evaluation against this Protection Profile c
 
 ## Draft Version
 
-* [Extended Package for Web Browsers](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-release.html) (html)
-* [Extended Package for Web Browsers](http://common-criteria.rhcloud.com/webbrowser/output/webbrowser-release.pdf) (pdf)
+* [Extended Package for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.html) (html)
+* [Extended Package for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.pdf) (pdf)
 
 ## Release Version
 
