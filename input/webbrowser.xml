@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
-<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Web Browsers">
+<?xml-stylesheet type="text/xsl" href="../transforms/module/module2html.xsl"?>
+<?xml-model href="https://github.com/commoncriteria/transforms/raw/master/schemas/CCModule.rng" 
+    type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+	
+<Module boilerplate="yes" target-products="Web Browsers" xmlns="https://niap-ccevs.org/cc/v1"
+  name="Web Browser" xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+
     <PPReference title="PP Reference" id="ID003">
         <ReferenceTable>
             <PPTitle>Application Software Extended Package for Web Browsers</PPTitle>
@@ -1298,4 +1303,4 @@
             </entry>
         </acronyms>
     </appendix>
-</PP>
+</Module>
