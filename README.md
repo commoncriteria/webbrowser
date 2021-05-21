@@ -1,6 +1,7 @@
 Extended Package for Web Browser 
 ===========
 ![Build](https://github.com/commoncriteria/webbrowser/workflows/Build/badge.svg)
+![Validate](https://github.com/commoncriteria/webbrowser/workflows/Validate/badge.svg)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/webbrowser.svg?maxAge=2592000)](https://github.com/commoncriteria/webbrowser/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
