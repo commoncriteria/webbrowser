@@ -11,35 +11,18 @@
 
     <PPReference>
         <ReferenceTable>
-            <PPVersion>2.0</PPVersion>
+            <PPVersion>1.0</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2015-06-18</PPPubDate>
+            <PPPubDate>2021-06-18</PPPubDate>
             <Keywords>email; email client</Keywords>
         </ReferenceTable>
     </PPReference>
     <RevisionHistory>
         <entry>
-            <version>v 1.0</version>
-            <date>2014-03-31</date>
-            <subject>Release - Protection Profile for Web Browsers</subject>
-        </entry>
-        <entry>
-            <version>v 2.0</version>
-            <date>2015-06-16</date>
-            <subject>Update as Extended Package of the Protection Profile for Application
-                Software</subject>
-        </entry>
-    </RevisionHistory>
-    <RevisionHistory>
-        <entry>
-            <version>v 2.0</version>
-            <date>2015-06-16</date>
-            <subject>Application Software Extended Package for Web Browsers</subject>
-        </entry>
-        <entry>
-            <version>v 1.0</version>
-            <date>2014-03-31</date>
-            <subject>Initial release - Protection Profile for Web Browsers</subject>
+            <version>1.0</version>
+            <date>2021-06-18</date>
+            <subject>Initial release as PP-Module</subject>
+
         </entry>
     </RevisionHistory>
     <sec:Introduction>
