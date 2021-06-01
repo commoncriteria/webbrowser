@@ -1,6 +1,5 @@
-TRANS?=transforms
 # Optionally include some User preferences.
--include User.make
-
-# Include the bulk
+-include  User.make
+TRANS?=transforms
+# Include the Module Makefile
 include $(TRANS)/module/Module.make
