@@ -180,7 +180,7 @@
             Evaluation (TOE) in this PP-Module is any web browser client capable of
             running on any operating system or platform and rendering web content using HTTP and
             HTTPS. <h:p/>This PP-Module describes the extended security functionality of
-            web browsers in terms of <xref to="bibCC"/>. As an extension of the App PP, it is
+            web browsers in terms of <xref g="CC"/>. As an extension of the App PP, it is
             expected that the content of this PP-Module will be appropriately combined
             with the App PP to include selection-based requirements in accordance with the
             selections and/or assignments made, and any optional and/or objective components to
@@ -1195,6 +1195,14 @@
     
     <bibliography>
         <cc-entry/>
+        <entry id="CEM">
+            <tag>CEM</tag>
+            <description>
+               <h:a href="https://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R5.pdf"
+                  >Common Methodogy for Information Technology Security Evaluation, Version 3.1r5</h:a>, 
+                   CCMB-2017-04-004, April 2017
+             </description>
+        </entry>
         <entry id="bibAppPP">
             <tag>App PP</tag>
             <description>
