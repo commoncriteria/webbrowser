@@ -907,7 +907,11 @@
    
                 <f-component cc-id="fpt_mcd_ext.1" name="Mobile Code">
                     <f-element>
-                        <title>The TSF shall support the capability to execute signed
+                        <title>The TSF shall support the capability to execute 
+                            <selectables>
+                                
+                            <selectable>
+                            signed
                                 <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
@@ -915,6 +919,8 @@
                                 <selectable>ActionScript</selectable>
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
+                            </selectables>
+                            </selectable>
                                 <selectable>no</selectable>
                             </selectables> mobile code. </title>
                     </f-element>
