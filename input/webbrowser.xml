@@ -428,7 +428,7 @@
             <sec:man_fdp title="User Data Protection (FDP)">
                 <f-component cc-id="fdp_acf_ext.1" name="Local and Session Storage Separation">
                     <f-element>
-                        <title>The browser shall separate local (permanent) and session (ephemeral)
+                        <title>The TSF shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol, and port:<h:p/>
                             <h:ul>
                                 <h:li>Session storage shall be accessible only from the originating
@@ -470,7 +470,7 @@
                 </f-component>
                 <f-component cc-id="fdp_coo_ext.1" name="Cookie Blocking">
                     <f-element>
-                        <title>The browser shall provide the capability to block the storage of
+                        <title>The TSF shall provide the capability to block the storage of
                             third party cookies by websites.</title>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
@@ -479,7 +479,7 @@
                             <Guidance>The evaluator shall examine the operational guidance to verify
                                 that it provides a description of the configuration option for
                                 blocking of third party cookies. <h:p/></Guidance>
-                            <Tests> The evaluator shall perform the following tests which may
+                            <Tests> The evaluator shall perform the following tests that may
                                 require the developer to provide access to a test platform that
                                 provides the evaluator with tools that are typically not found on
                                 factory products: <testlist>
@@ -502,21 +502,19 @@
  
                 <f-component cc-id="fdp_sbx_ext.1" name="Sandboxing of Rendering Processes">
                     <f-element>
-                        <title>The browser shall ensure that web page rendering is performed in a
+                        <title>The TSF shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <h:ul>
                                 <h:li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</h:li>
                                 <h:li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</h:li>
                                 <h:li>The rendering process has reduced privilege with respect to
-                                    other browser processes <selectables>
+                                    other browser processes<selectables>
                                         <selectable>
 					  <assignable>
 					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes
-					  </assignable>
-					</selectable>
+                                            rendering processes</assignable></selectable>
                                         <selectable>in no other ways</selectable>
                                     </selectables></h:li></h:ul>
                         </title>
@@ -555,13 +553,17 @@
                                 present for all platforms claimed in the ST.<h:p/>
                                 For each additional mechanism listed in the third bullet of this
                                 component by the ST author, the evaluator shall
-                                examine the TSS to ensure 1) the mechanisms are
-                                described; 2) the description of the mechanisms are sufficiently
-                                detailed to determine that it contributes to the principle of least
-                                privilege being implemented in the rendering process; and 3)
-                                appropriate supporting information is provided in the TSS (or pointers to such information are provided)
-                                that provides context for understanding the claimed least privilege
-                                mechanisms. <h:p/></TSS>
+                                examine the TSS to ensure that: 
+                                <h:ul>
+                                    <h:li>the mechanisms are described;</h:li>
+                                    <h:li>the description of the mechanisms are sufficiently
+                                        detailed to determine that it contributes to the principle of least
+                                        privilege being implemented in the rendering process; and</h:li>
+                                    <h:li>appropriate supporting information is provided in the TSS (or pointers to such information are provided)
+                                        that provides context for understanding the claimed least privilege
+                                        mechanisms.</h:li>
+                                </h:ul>
+                                <h:p/></TSS>
                             <Guidance> The evaluator shall examine the operational guidance to
                                 determine that it provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
@@ -591,19 +593,19 @@
                                 claimed in the ST:<testlist><test>The evaluator
                                         shall execute a form of mobile code within an HTML page that
                                         contains instructions to modify or delete a file from the
-                                        file system and verify that the file is not modified for
+                                        file system and verify that the file is not modified or
                                         deleted.</test></testlist></Tests>
                         </aactivity>
                     </f-element>
                 </f-component>
                 <f-component cc-id="fdp_sop_ext.1" name="Same Origin Policy">
                     <f-element>
-                        <title>The browser shall only permit scripts contained in one web page to
+                        <title>The TSF shall only permit scripts contained in one web page to
                             access data in a second web page if both pages are from the same
                             origin.</title>
                     </f-element>
                     <f-element>
-                        <title>The browser shall enforce the same origin policy for all
+                        <title>The TSF shall enforce the same origin policy for all
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
                             6454, "The Web Origin Concept."<h:p/> Origin is defined as the
@@ -639,7 +641,7 @@
                 </f-component>
                 <f-component cc-id="fdp_str_ext.1" name="Secure Transmission of Cookie Data">
                     <f-element>
-                        <title>The browser shall ensure that cookies containing the <h:i>secure</h:i>
+                        <title>The TSF shall ensure that cookies containing the <h:i>secure</h:i>
                             attribute in the set-cookie header are sent over HTTPS.</title>
                         <note role="application">The set-cookie header functionality is described in
                             RFC 6265, "HTTP State Management Mechanism."</note>
@@ -649,7 +651,7 @@
                                 set-cookie header in accordance with RFC 6265, including the
                                 required sending of cookies containing this attribute over HTTPS. <h:p/></TSS>
                             <Guidance>N/A<h:p/></Guidance>
-                            <Tests>The evaluator shall perform the following tests which may require
+                            <Tests>The evaluator shall perform the following tests that may require
                                 the developer to provide access to a test platform that provides the
                                 evaluator with tools that are typically not found on factory
                                 products: <testlist>
@@ -668,7 +670,7 @@
                 </f-component>
                 <f-component cc-id="fdp_trk_ext.1" name="Tracking Information Collection">
                     <f-element>
-                        <title>The browser shall provide notification to the user when tracking
+                        <title>The TSF shall provide notification to the user when tracking
                             information for <selectables linebreak="yes">
                                 <selectable>geolocation</selectable>
                                 <selectable>browser history</selectable>
@@ -707,9 +709,9 @@
             <sec:man_fmt title="Security Management (FMT)">
                 <f-component cc-id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <f-element>
-                        <title>The browser shall be capable of performing the following management
+                        <title>The TSF shall be capable of performing the following management
                             functions, controlled by the administrator or user as shown: <h:ul>
-                                <h:li>X = Mandatory</h:li>
+                                <h:li>M = Mandatory</h:li>
                                 <h:li>O = Optional</h:li></h:ul>
                             <management-function-set default="O">
                                 <manager cid='a'>Administrator</manager>
@@ -718,7 +720,7 @@
                                 
                                 <management-function><text>Enable/disable storage of third party
                                     cookies</text>
-                                    <M ref="a"/><O ref="u"/>
+                                    <O ref="a"/><M ref="u"/>
                                 </management-function>
                                 
                                 
@@ -736,14 +738,13 @@
                                             cookies)</selectable>
                                         <selectable>browsing history</selectable>
                                         <selectable><assignable>other tracking
-                                            mechanisms</assignable>
-                                        </selectable></selectables></text>
+                                            mechanisms</assignable></selectable></selectables></text>
 				</management-function>
                                 
                                 
                                 <management-function><text>Enable/disable deletion of stored
                                     browsing data (cache, web form
-                                    information)</text><M ref="a"/><O ref="u"/>
+                                    information)</text><O ref="a"/><M ref="u"/>
                                 </management-function>
                                 
                                 
@@ -788,9 +789,7 @@
                                         <selectable>Flash</selectable>
                                         <selectable>Java</selectable>
                                         <selectable>
-					  <assignable>other mobile code types supported
-                                            by the browser</assignable>
-					</selectable>
+					  <assignable>other mobile code types supported by the browser</assignable></selectable>
 				</selectables>
                                     mobile code</text>
 				</management-function>
@@ -809,7 +808,7 @@
                             policy for a particular function, the user may still perform that
                             function. Enforcement of the policy is done by the browser itself, or
                             the browser and its platform in coordination with each other.<h:p/>
-                            Disabling OCSP shall only be permitted if CRL was selected in
+                            Disabling OCSP is only be permitted if "CRL" was selected in
                             FIA_X509_EXT.1.1 (in <xref to="bibAppPP"/>).</note>
                         <aactivity>
                             <TSS>The evaluator shall verify that the TSS describes
@@ -839,7 +838,7 @@
             <sec:man_fpt title="Protection of the TSF (FPT)">
                 <f-component cc-id="fpt_aon_ext.1" name="Support for Only Trusted Add-ons">
                     <f-element>
-                        <title>The browser shall include the capability to load <selectables>
+                        <title>The TSF shall include the capability to load <selectables>
                             <selectable>trusted add-ons</selectable>
                             <selectable>no add-ons</selectable>
                         </selectables>.</title>
@@ -870,11 +869,11 @@
                 
                 <f-component cc-id="fpt_dnl_ext.1" name="File Downloads">
                     <f-element>
-                        <title>The browser shall prevent downloaded content from launching
+                        <title>The TSF shall prevent downloaded content from launching
                             automatically.</title>
                     </f-element>
                     <f-element>
-                        <title>The browser shall present the user with the option to either save or
+                        <title>The TSF shall present the user with the option to either save or
                             discard downloaded files.</title>
                         <note role="application"> This requirement ensures that if the user
                             intentionally (via clicking on a link) or unintentionally initiates the
@@ -908,7 +907,7 @@
    
                 <f-component cc-id="fpt_mcd_ext.1" name="Mobile Code">
                     <f-element>
-                        <title>The browser shall support the capability to execute signed
+                        <title>The TSF shall support the capability to execute signed
                                 <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
@@ -917,10 +916,10 @@
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
                                 <selectable>no</selectable>
-                            </selectables>mobile code. </title>
+                            </selectables> mobile code. </title>
                     </f-element>
                     <f-element>
-                        <title>The browser shall provide the user with the option to discard
+                        <title>The TSF shall provide the user with the option to discard
                             unsigned, untrusted or unverified <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
@@ -950,7 +949,7 @@
                                 code type specified in the TSS: <testlist>
                                     <test>The evaluator shall construct web pages containing
                                         unsigned, correctly authenticated, and incorrectly
-                                        authenticated mobile code and ensure that the browser alerts
+                                        authenticated mobile code. The evaluator shall then ensure that the browser alerts
                                         the user when it encounters mobile code that fails to
                                         authenticate and provides the user with the option to
                                         discard the mobile code without executing it, but does
@@ -971,7 +970,7 @@
                     <f-component cc-id="fdp_pst_ext.1" name="Storage of Persistent Information">
                         <consistency-rationale></consistency-rationale>
                         <f-element>
-                            <title>The browser shall provide the capability to operate without storing
+                            <title>The TSF shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
                                 <selectables><selectable>credential
                                     information</selectable><selectable>administrator provided
@@ -985,7 +984,7 @@
                                     describes how the browser operates without storing persistent user
                                     data to the file systems. <h:p/></TSS>
                                 <Guidance>N/A<h:p/></Guidance>
-                                <Tests> The evaluator shall perform the following test which may require
+                                <Tests> The evaluator shall perform the following test that may require
                                     the developer to provide access to a test platform that provides the
                                     evaluator with tools that are typically not found on factory
                                     products: <testlist>
@@ -1009,25 +1008,25 @@
                             <consistency-rationale></consistency-rationale>
                             <f-element>
                                 <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The browser shall <selectables>
+                                <title>The TSF shall <selectables>
                                     <selectable>provide the ability</selectable>
                                     <selectable>leverage the platform</selectable>
                                 </selectables> to provide a means to cryptographically verify add-ons
                                     using a digital signature mechanism and <selectables>
                                         <selectable>published hash</selectable>
                                         <selectable>no other functions</selectable>
-                                    </selectables>prior to installation and update. </title>
+                                    </selectables> prior to installation and update. </title>
                             </f-element>
                             <f-element>
                                 <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The browser shall <selectables><selectable>provide the
+                                <title>The TSF shall <selectables><selectable>provide the
                                     ability</selectable><selectable>leverage the
                                         platform</selectable></selectables> to query the current version
                                     of the add-on.</title>
                             </f-element>
                             <f-element>
                           <!--       <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The browser shall prevent the automatic installation of
+                                <title>The TSF shall prevent the automatic installation of
                                     add-ons.</title>
                                 <aactivity>
                                     <TSS>The evaluator shall examine the TSS to verify
@@ -1063,16 +1062,16 @@
                             <f-component cc-id="fcs_sts_ext.1" name="Strict Transport Security">
                                 <consistency-rationale></consistency-rationale>
                                 <f-element>
-                                    <title>The browser shall implement HTTP Strict-Transport-Security according
+                                    <title>The TSF shall implement HTTP Strict-Transport-Security according
                                         to RFC 6797.</title>
                                 </f-element>
                                 <f-element>
-                                    <title>The browser shall retain persistent data signaling HSTS enablement
+                                    <title>The TSF shall retain persistent data signaling HSTS enablement
                                         for the time span declared by the website in a max-age
                                         directive.</title>
                                 </f-element>
                                 <f-element>
-                                    <title>The browser shall cache the "freshest" Strict Security policy
+                                    <title>The TSF shall cache the "freshest" Strict Security policy
                                         information.</title>
                                     <note role="application"> Freshness refers to the length of time between
                                         generation by the origin server and the expiration time when the origin
@@ -1080,7 +1079,7 @@
                                         without further validation (RFCs 6797 and 7234). If a browser receives
                                         the HSTS header from a website, all future HTTP sessions between the
                                         browser and the domain or superdomain of that website must occur over
-                                        TLS 1.2 (RFC 5246) or greater by utilizing HTTPS (RFC 2818) negotiating
+                                        TLS 1.2 (RFC 5246) or greater by using HTTPS (RFC 2818) negotiating
                                         the strongest cipher possible. </note>
                                     <aactivity>
                                         <TSS> The evaluator shall examine the TSS to ensure
@@ -1088,7 +1087,7 @@
                                         <Guidance> The evaluator shall examine the operational guidance to
                                             ensure it contains instructions on how to use HSTS. <h:p/></Guidance>
                                         <Tests> The evaluator shall perform the following tests: <testlist>
-                                            <test>The evaluator shall connect to a HSTS-compliant website
+                                            <test>The evaluator shall connect to an HSTS-compliant website
                                                 while running a network protocol analyzer to monitor the
                                                 traffic. The evaluator shall examine the captured network
                                                 traffic and verify that a Strict Transport Security header
@@ -1113,7 +1112,7 @@
                         <f-component cc-id="fpt_int_ext.1" name="Interactions with Application Reputation Services">
                             <consistency-rationale></consistency-rationale>
                             <f-element>
-                                <title>The browser shall utilize an application reputation service to
+                                <title>The TSF shall use an application reputation service to
                                     prevent downloading of malicious applications.</title>
                                 <note role="application"> An application reputation service is an online
                                     service that identifies malicious applications; it is used to detect
@@ -1150,7 +1149,7 @@
                         <f-component cc-id="fpt_int_ext.2" name="Interactions with URL Reputation Services">
                             <consistency-rationale></consistency-rationale>
                             <f-element>
-                                <title>The browser shall utilize a URL reputation service to prevent
+                                <title>The TSF shall use a URL reputation service to prevent
                                     connections with malicious websites.</title>
                                 <note role="application"> A URL reputation service is an online service that
                                     identifies websites with malicious or phishing content applications; it
