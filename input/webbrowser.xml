@@ -30,18 +30,18 @@
             Web browsers are client applications that retrieve
             and render content provided by web servers, primarily using the hypertext transfer
             protocol (HTTP) or HTTP Secure (HTTPS). Browsers have grown in complexity over the
-            years, starting as tools used to display simple, unchanging web pages and becoming
+            years, starting as tools used to display simple, unchanging websites and becoming
             sophisticated execution environments for web content. The use of browsers to administer
             accounts, servers or embedded systems remotely requires them to handle sensitive
-            information securely. Innovations such as tabs, extensions and HTML5 have not only
+            information securely. Innovations such as tabs, extensions, and HTML5 have not only
             increased browser functionality, but also introduced new security concerns. Being the
-            principal method for accessing the Internet, and due to their complexity and the
+            principal method for accessing the internet, and due to their complexity and the
             information that they process, browsers are a natural target for attackers. As a result,
             it is paramount that the security of web browsers be improved to reduce the risk to
             client machines and enterprise networks.
             <h:p/> 
             This PP-Module along with the
-            Protection Profile for Application Software (<xref to="bibAppPP"/>) provide a
+            Protection Profile for Application Software <xref to="bibAppPP"/> provide a
             baseline set of Security Functional Requirements (SFRs) for web browsers running on any
             operating system regardless of the composition of the underlying platform. The
             requirements are intended to improve the security of browsers by encouraging the use of
@@ -115,11 +115,12 @@
                     administrator.</term>
                 <term abbr="CRL" full="Certificate Revocation List"></term>
                 <term abbr="CSRF" full="Cross-Site Request Forgery">A vulnerability where an attacker gets a target user to execute a script with that user's privileges.</term>
-                <term full="Domain">A realm of administrative autonomy, authority or control on the Internet (e.g., cnn.com).</term>
+                <term full="Domain">A realm of administrative autonomy, authority or control on the internet (e.g., cnn.com).</term>
                 <term full="Extension">A bundle of code added to the browser to add specific
                     functionality that the browser does not provide by
                     default.</term>
                 <term abbr="GPU" full="Graphics Processing Unit"></term>
+                <term abbr="HSTS" full="HTTP Strict Transport Security"></term>
                 <term abbr="HTML" full="HyperText Markup Language">A language used by web servers to
                     present content to browsers.</term>
                 <term full="HTML5">A new version of HTML that
@@ -161,10 +162,10 @@
                     or complete a transaction. Sensitive data must minimally include
                     personally identifiable information (PII), credentials, and keys.
                     Sensitive data is expected to be identified in the ST.</term>
-                <term full="Sub-domain">An Internet domain which is part of a primary domain, denoted
+                <term full="Sub-domain">An internet domain which is part of a primary domain, denoted
                     by a prefix before the primary domain (e.g.,
                     news.cnn.com).</term>
-                <term full="Tabs">A mechanism that allows a browser to display content from multiple web sites
+                <term full="Tabs">A mechanism that allows a browser to display content from multiple websites
                     in the same window.</term>
                 <term abbr="TLS" full="Transport Layer Security"></term>
                 <term abbr="W3C" full="World Wide Web Consortium"></term>
@@ -183,7 +184,7 @@
             web browsers in terms of <xref g="CC"/>. As an extension of the App PP, it is
             expected that the content of this PP-Module will be appropriately combined
             with the App PP to include selection-based requirements in accordance with the
-            selections and/or assignments made, and any optional and/or objective components to
+            selections and assignments made, and any optional and objective components to
             include: FCS_CKM.1.1, FCS_CKM.2.1, FCS_COP.1.1(*), FCS_DTLS_EXT.1.*, FCS_HTTPS_EXT.1.*,
             FCS_RBG_EXT.2.*, FCS_TLSC_EXT.1.*, FIA_X509_EXT.1.*, FIA_X509_EXT.2.*. 
             <h:p/>
@@ -193,15 +194,14 @@
             intentionally very broad, as web browsers can be used to perform many tasks. 
             <usecases>
                 <usecase title="Surfing the Web" id="web">
-                    <description> Browsers are used to retrieve, display and render content from the
-                        web, such as web pages, streaming media, images and specialized formats
-                        (e.g., Java, Flash, PDF). They can also be used to write content to web
-                        sites (web 2.0 – e.g., Facebook). Web surfing can be done over the Internet
-                        or within an Intranet.</description>
+                    <description> Browsers are used to retrieve, display, and render content from the
+                        web, such as websites, streaming media, images and specialized formats
+                        (e.g., Java, PDF). They can also be used to write content to websites (web 2.0 – e.g., Facebook). Web surfing can be done over the internet
+                        or within an intranet.</description>
                 </usecase>
                 <usecase title="Remote Administration Client" id="admin">
                     <description> Browsers are used to provide remote administration interfaces for
-                        systems such as servers, network devices and embedded systems, to include
+                        systems such as servers, network devices, and embedded systems, to include
                         supervisory control and data acquisition (SCADA) systems, smart TVs and
                         thermostats. As opposed to surfing the web, where the browser may be
                         interacting with untrusted content, the browser, acting as a Remote
@@ -218,19 +218,15 @@
         </section>
     </sec:Introduction>
     
-    <sec:Conformance_Claims>
+    <sec:Conformance_Claims boilerplate="no">
         <cclaims>
             <cclaim name="Conformance Statement">
                 <description> This PP-Module inherits exact conformance as required from
                     the specified Base-PP and as defined in the CC and
-                    <xref to="CEM"/> addenda for Exact Conformance, Selection-Based SFRs, and Optional
+                    CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
                     SFRs (dated May 2017).<h:p/> 
-                    <!-- 
-          The following PPs and PP-Modules are allowed to
-          be specified in a PP-Configuration with this PP-Module. <h:ul>
-            <h:li>PP-Module for VPN Client, Version 2.2</h:li>
-            <h:li>PP-Module for MDM Agent, Version 1.0</h:li>
-          </h:ul>  -->
+                    No additional PPs or PP-Modules are allowed to
+                    be specified in a PP-Configuration with this PP-Module aside from the Base-PP.
                 </description>
             </cclaim>
             <cclaim name="CC Conformance Claims">
@@ -239,7 +235,7 @@
                 </description>
             </cclaim>
             <cclaim name="Package Claims">
-                <description>There are no package claims for this PP-Module.</description>
+                <description>This PP-Module is TLS Pacakge conformant.</description>
             </cclaim>
         </cclaims>
     </sec:Conformance_Claims>
@@ -254,7 +250,7 @@
             PP-Module describe those addressed by a web browser as the Target of
         Evaluation. 
         <h:p/> 
-        Notably, browsers are particularly at risk from the Network Attack threat
+        Notably, browsers are particularly at risk from the T.NETWORK_ATTACK threat
         identified in the App PP. Attackers can use phishing or another social engineering technique
         to persuade a user to visit a malicious site. Users may also unintentionally visit malicious
         sites in the course of web browsing. Such sites then present malicious content to the user's
@@ -287,9 +283,9 @@
                             <h:li>Insufficient protection of session tokens can lead to session
                                 hijacking, where a token is captured and reused in order to gain the
                                 privileges of the user who initiated the session.</h:li>
-                            <h:li>Cross-site scripting (XSS) and Cross-Site Request Forgery (CSRF)
+                            <h:li>XSS and CSRF
                                 attacks are methods used to compromise user credentials (usually by
-                                stealing the user's session token) to a web site. These attacks are
+                                stealing the user's session token) to a website. These attacks are
                                 more likely a result of server security problems, but some browsers
                                 incorporate technologies that try to detect the attacks.</h:li>
                             <h:li>Inadequate sandboxing of browser windows/tabs or a faulty cross
@@ -317,7 +313,7 @@
         
     </sec:Security_Problem_Description>
     <sec:Security_Objectives>This PP-Module adds SFRs to objectives
-        identified in the Base-PP and describes an additional objective specific to this PP-Module. 
+        identified in the Base-PP and describes additional objectives specific to this PP-Module. 
         <sec:Security_Objectives_for_the_TOE>
             <SOs>
                 <SO name="O.INTEGRITY">
@@ -364,17 +360,25 @@
             </SOs>
         </sec:Security_Objectives_for_the_TOE>
         
-        <section title="Security Objectives for the Operational Environment">
-            Some text concerning security objectives.
-            
-            
-            <SOEs>
-                <SOE name="OE.PLACEHOLDER">
-                    <description>placeholder</description>
-                    <consistency-rationale></consistency-rationale>
-                </SOE>
-            </SOEs> 
+        
+        <section title="Security Objectives for the Operational Environment"
+            id="objectivesEnvironment"><!-- The Operational Environment of the TOE implements technical and procedural measures 
+      to assist the TOE in correctly providing its security functionality (which is defined by the security objectives for the TOE). 
+      The security objectives for the Operational Environment consist of a set of statements describing the goals that the Operational Environment should achieve. 
+      This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means. 
+      The assumptions identified in Section 3 are incorporated as security objectives for the environment. -->
+            <h:p/>
+            No environmental security objectives have been identified that are specific to email clients. However, any
+            environmental security objectives defined in the Base-PP will also apply to the portion of the TOE that implements email client functionality.
+            <!--      <SOEs>
+        <SOE name="OE.PLACEHOLDER">
+          <description>placeholder</description>
+          <consistency-rationale></consistency-rationale>
+        </SOE>
+      </SOEs> -->
         </section>
+        
+        
         <section title="Security Objectives Rationale" id="SOR">
             <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
         </section>
@@ -425,7 +429,7 @@
                 <f-component cc-id="fdp_acf_ext.1" name="Local and Session Storage Separation">
                     <f-element>
                         <title>The browser shall separate local (permanent) and session (ephemeral)
-                            storage based on domain, protocol and port:<h:p/>
+                            storage based on domain, protocol, and port:<h:p/>
                             <h:ul>
                                 <h:li>Session storage shall be accessible only from the originating
                                     window/tab;</h:li>
@@ -434,7 +438,7 @@
                             </h:ul></title>
                         <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
-                            "Web Storage".<h:p/>
+                            "Web Storage."<h:p/>
                         </note>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
@@ -445,7 +449,7 @@
                             <Tests>The evaluator shall obtain or create JavaScript-based scripts
                                 that store and retrieve information from local and session storage
                                 and shall set up a web server with two or more web pages from
-                                different domains using different protocols and/or ports. The
+                                different domains using different protocols and ports. The
                                 evaluator shall incorporate the scripts into the web pages and shall
                                 perform the following tests: <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
@@ -522,7 +526,7 @@
                             the rendering process can be corrupted by the HTML or JavaScript it is
                             processing. This component requires the browser to lower the privileges
                             of rendering processes by ensuring that it cannot directly access the
-                            file system of the host, and that it cannot use IPC mechanisms provided
+                            file system of the host, and that it cannot use inter-process communication (IPC) mechanisms provided
                             by the host to communicate with non-browser processes on the host.
                             Typically, if a rendering process needs to access a file or communicate
                             with a non-browser process, it must request such access through the
@@ -602,8 +606,8 @@
                         <title>The browser shall enforce the same origin policy for all
                             domains.</title>
                         <note role="application"> The Same Origin Policy concept is described in RFC
-                            6454, "The Web Origin Concept".<h:p/> Origin is defined as the
-                            combination of domain, protocol and port. Two URIs sharing the same
+                            6454, "The Web Origin Concept."<h:p/> Origin is defined as the
+                            combination of domain, protocol, and port. Two URIs sharing the same
                             domain, protocol and port are considered to have the same origin. </note>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
@@ -617,8 +621,8 @@
                                 content from designated locations and shall set up a web server with
                                 two or more web pages representing different domains. The evaluator
                                 shall incorporate the scripts into the web pages. The evaluator
-                                shall associate each page with a different protocol and/or port and
-                                shall perform the following tests: <testlist>
+                                shall associate each page with a different protocol or port and
+                                then perform the following tests: <testlist>
                                     <test>The evaluator shall open two or more browser windows/tabs
                                         and navigate to a different page on the website in each
                                         window/tab. The evaluator shall run the scripts and shall
@@ -638,7 +642,7 @@
                         <title>The browser shall ensure that cookies containing the <h:i>secure</h:i>
                             attribute in the set-cookie header are sent over HTTPS.</title>
                         <note role="application">The set-cookie header functionality is described in
-                            RFC 6265, "HTTP State Management Mechanism".</note>
+                            RFC 6265, "HTTP State Management Mechanism."</note>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to verify it
                                 describes the browser's support for the "secure" attribute of the
@@ -710,8 +714,15 @@
                             <management-function-set default="O">
                                 <manager cid='a'>Administrator</manager>
                                 <manager cid='u'>User</manager>
+                                
+                                
                                 <management-function><text>Enable/disable storage of third party
-                                    cookies</text></management-function>
+                                    cookies</text>
+                                    <M ref="a"/><O ref="u"/>
+                                </management-function>
+                                
+                                
+                                
                                 <management-function><text>Enable/disable use of OCSP for
                                     obtaining the revocation status of X.509
                                     certificates</text></management-function>
@@ -728,9 +739,15 @@
                                             mechanisms</assignable>
                                         </selectable></selectables></text>
 				</management-function>
+                                
+                                
                                 <management-function><text>Enable/disable deletion of stored
                                     browsing data (cache, web form
-                                    information)</text></management-function>
+                                    information)</text><M ref="a"/><O ref="u"/>
+                                </management-function>
+                                
+                                
+                                
                                 <management-function><text>Enable/disable storage of sensitive
                                     information (e.g., auto-fill, auto-complete) in persistent
                                     storage</text></management-function>
@@ -741,7 +758,7 @@
                                 <management-function><text>Enable/disable interaction with
                                     Graphic Processing Units (GPUs)</text></management-function>
                                 <management-function><text>Configure the ability to advance to a
-                                    web site with an invalid or unvalidated X.509
+                                    website with an invalid or unvalidated X.509
                                     certificate</text></management-function>
                                 <management-function><text>Enable/disable establishment of a
                                     trusted channel if the browser cannot establish a connection to
@@ -793,7 +810,7 @@
                             function. Enforcement of the policy is done by the browser itself, or
                             the browser and its platform in coordination with each other.<h:p/>
                             Disabling OCSP shall only be permitted if CRL was selected in
-                            FIA_X509_EXT.1.1 (<xref to="bibAppPP"/>).</note>
+                            FIA_X509_EXT.1.1 (in <xref to="bibAppPP"/>).</note>
                         <aactivity>
                             <TSS>The evaluator shall verify that the TSS describes
                                 those management functions which may only be configured by the
@@ -820,6 +837,37 @@
                 </f-component>
             </sec:man_fmt>
             <sec:man_fpt title="Protection of the TSF (FPT)">
+                <f-component cc-id="fpt_aon_ext.1" name="Support for Only Trusted Add-ons">
+                    <f-element>
+                        <title>The browser shall include the capability to load <selectables>
+                            <selectable>trusted add-ons</selectable>
+                            <selectable>no add-ons</selectable>
+                        </selectables>.</title>
+                        <note role="application">FPT_AON_EXT.2 depends upon the
+                            selection made here. If the browser does not include support for
+                            installing only trusted add-ons, this requirement can be met by
+                            demonstrating the ability to disable all support for add-ons as
+                            specified in FMT_MOF_EXT.1. Cryptographic
+                            verification (i.e., trust) of add-ons is tested in FPT_AON_EXT.2.1.</note>
+                        <aactivity>
+                            <TSS>The evaluator shall verify that the TSS describes
+                                whether the browser is capable of loading trusted add-ons.<h:p/></TSS>
+                            <Guidance>The evaluator shall examine the operational guidance to verify
+                                that it includes instructions on loading trusted add-on
+                                sources.<h:p/></Guidance>
+                            <Tests>The evaluator shall perform the following tests:
+                                <testlist><test>The evaluator shall create or obtain an
+                                    untrusted add-on and attempt to load it. The evaluator shall
+                                    verify that the untrusted add-on is rejected and cannot be
+                                    loaded.</test>
+                                    <test>The evaluator shall create or obtain a trusted add-on and
+                                        attempt to load it. The evaluator shall verify that the
+                                        trusted add-on loads. </test></testlist>
+                            </Tests>
+                        </aactivity>
+                    </f-element>
+                </f-component>
+                
                 <f-component cc-id="fpt_dnl_ext.1" name="File Downloads">
                     <f-element>
                         <title>The browser shall prevent downloaded content from launching
@@ -913,36 +961,7 @@
                         </aactivity>
                     </f-element>
                 </f-component>
-                <f-component cc-id="fpt_aon_ext.1" name="Support for Only Trusted Add-ons">
-                    <f-element>
-                        <title>The browser shall include the capability to load <selectables>
-                                <selectable>trusted add-ons</selectable>
-                                <selectable>no add-ons</selectable>
-                            </selectables>.</title>
-                        <note role="application">FPT_AON_EXT.2 depends upon the
-                            selection made here. If the browser does not include support for
-                            installing only trusted add-ons, this requirement can be met by
-                            demonstrating the ability to disable all support for add-ons as
-                            specified in FMT_MOF_EXT.1. Cryptographic
-                            verification (i.e., trust) of add-ons is tested in FPT_AON_EXT.2.1.</note>
-                        <aactivity>
-                            <TSS>The evaluator shall verify that the TSS describes
-                                whether the browser is capable of loading trusted add-ons.<h:p/></TSS>
-                            <Guidance>The evaluator shall examine the operational guidance to verify
-                                that it includes instructions on loading trusted add-on
-                                sources.<h:p/></Guidance>
-                            <Tests>The evaluator shall perform the following tests:
-                                        <testlist><test>The evaluator shall create or obtain an
-                                        untrusted add-on and attempt to load it. The evaluator shall
-                                        verify that the untrusted add-on is rejected and cannot be
-                                        loaded.</test>
-                                    <test>The evaluator shall create or obtain a trusted add-on and
-                                        attempt to load it. The evaluator shall verify that the
-                                        trusted add-on loads. </test></testlist>
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-                </f-component>
+
       
             </sec:man_fpt>
         </man-sfrs>
@@ -1138,7 +1157,7 @@
                                     is used to detect such websites prior to allowing users to access them.
                                     The goal of this requirement is to ensure that the browser is prevented
                                     from establishing connections with known-bad sources of malware on the
-                                    Internet. The specifics of the sequence of actions taken before a block
+                                    internet. The specifics of the sequence of actions taken before a block
                                     decision is made may depend upon the specific implementation of the
                                     browser. For example, some browsers might implement the check for
                                     malicious content by checking against the list of bad URLs provided by
