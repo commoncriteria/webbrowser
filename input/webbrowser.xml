@@ -512,9 +512,21 @@
         <man-sfrs>
 
             <sec:man_fdp title="User Data Protection (FDP)">
+                <ext-comp-def fam-id="FDP_ACF_EXT" title="Cryptographic Key Management">
+                    <fam-behavior>Components in this family define requirements for data access control beyond those which are specified in the Part 2 family FDP_ACF.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_acf_ext.1" name="Local and Session Storage Separation">
                     <consistency-rationale>This SFR defines domain separation of web content when a web browser is simultaneously accessing
                         content from multiple sources. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to enforce data protection mechanisms such that user data is only accessible from its originator.</comp-lev>
+                    <management>No specific management functions are identified.</management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol, and port:<h:p/>
@@ -556,8 +568,23 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                <ext-comp-def fam-id="FDP_COO_EXT" title="Cookie Blocking">
+                    <fam-behavior>Components in this family define requirements for controlling whether or not the TOE stores third-party cookie data.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_coo_ext.1" name="Cookie Blocking">
                     <consistency-rationale>This SFR defines behavior for handling cookies, which are data specific to web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to have a configurable mechanism for blocking the storage of third party cookies.</comp-lev>
+                    <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                        <h:li>Enable/disable storage of third party cookies.</h:li>
+                    </h:ul>
+                    </management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall provide the capability to block the storage of
                             third party cookies by websites.</title>
@@ -589,8 +616,20 @@
                     </f-element>
                 </f-component>
  
+                <ext-comp-def fam-id="FDP_SBX_EXT" title="Sandboxing">
+                    <fam-behavior>Components in this family define requirements for ensuring domain separation through sandboxing
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_sbx_ext.1" name="Sandboxing of Rendering Processes">
                     <consistency-rationale>This SFR defines behavior for rendering of web pages, which is by definition functionality that is associated with web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to implement sandboxing of rendering processes such that least privilege is enforced on the rendering process.</comp-lev>
+                    <management>No specific management functions are identified.</management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall ensure that web page rendering is performed in a
                             process that is restricted in the following manner: <h:ul>
@@ -688,8 +727,20 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                <ext-comp-def fam-id="FDP_SOP_EXT" title="Same Origin Policy">
+                    <fam-behavior>Components in this family define requirements for implementation of the Same Origin Policy concept.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_sop_ext.1" name="Same Origin Policy">
-                    <consistency-rationale>This SFR defines behavior for rendering of web pages, which is by definition functionality that is associated with web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    <consistency-rationale>This SFR defines behavior for script execution on web pages, which is by definition functionality that is associated with web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to implement the Same Origin Policy concept for web content.</comp-lev>
+                    <management>No specific management functions are identified.</management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall only permit scripts contained in one web page to
                             access data in a second web page if both pages are from the same
@@ -730,10 +781,23 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                
+                <ext-comp-def fam-id="FDP_STR_EXT" title="Secure Transmission of Cookie Data">
+                    <fam-behavior>Components in this family define requirements for using HTTPS to transmit sensitive cookie data.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_str_ext.1" name="Secure Transmission of Cookie Data">
                     <consistency-rationale>This SFR defines behavior for handling cookies, which are data specific to web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to use HTTPS to transmit cookie data that has a security-relevant attribute.</comp-lev>
+                    <management>No specific management functions are identified.</management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        <no-link>FCS_HTTPS_EXT.1</no-link> HTTPS Protocol
+                    </dependencies>
+                    
                     <f-element>
-                        <title>The TSF shall ensure that cookies containing the <h:i>secure</h:i>
+                        <title>The TSF shall ensure that cookies containing the 'secure'
                             attribute in the set-cookie header are sent over HTTPS.</title>
                         <note role="application">The set-cookie header functionality is described in
                             RFC 6265, "HTTP State Management Mechanism."</note>
@@ -760,8 +824,24 @@
                         </aactivity>
                     </f-element>
                 </f-component>
+                <ext-comp-def fam-id="FDP_TRK_EXT" title="Tracking Information Collection">
+                    <fam-behavior>Components in this family define requirements for notifying a user when certain data that reflects the usage of the TOE is being tracked.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fdp_trk_ext.1" name="Tracking Information Collection">
                     <consistency-rationale>This SFR defines behavior for handling tracking information that is specific to web browser applications. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to specify the data tracking that results in user notification.</comp-lev>
+                    <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                        <h:li>Enable/disable ability for websites to collect tracking informatio about the user.</h:li>
+                        <h:li>Enable/disable deletion of stored browsing data.</h:li>
+                    </h:ul>
+                    </management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall provide notification to the user when tracking
                             information for <selectables linebreak="yes">
@@ -770,6 +850,11 @@
                                 <selectable>browser preferences</selectable>
                                 <selectable>browser statistics</selectable>
                             </selectables> is requested by a website.</title>
+                        <ext-comp-def-title>
+                            <title>The TSF shall provide notification to the user when tracking
+                                information for <assignable>list of trackable browser data</assignable> 
+                                is requested by a website.</title>
+                        </ext-comp-def-title>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
                                 describes the browser's support for tracking information and
@@ -800,8 +885,20 @@
         
    
             <sec:man_fmt title="Security Management (FMT)">
+                <ext-comp-def fam-id="FMT_MOF_EXT" title="Management of Functions Behavior">
+                    <fam-behavior>Components in this family define requirements for technology-specific management functions that are not enumerated in the Part 2 family FMT_MOF.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fmt_mof_ext.1" name="Management of Functions Behavior">
                     <consistency-rationale>This SFR defines a specific set of management functions for a web browser. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to implement management functions specified in the SFR.</comp-lev>
+                    <management>No specific management functions are identified.</management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall be capable of performing the following management
                             functions, controlled by the administrator or user as shown: <h:ul>
@@ -894,6 +991,11 @@
                                 <management-function><text>Enable/disable HSTS
                                     mode</text></management-function>
                             </management-function-set></title>
+                        <ext-comp-def-title>
+                            <title>
+                                The TSF shall be capable of performing the following management functions, controlled by the user or administrator as shown: <assignable>list of management functions to be performed by role</assignable>.
+                            </title>
+                        </ext-comp-def-title>
                         <note role="application"> For these management functions, the term
                             "Administrator" refers to the administrator of a non-mobile device or
                             the device owner of a mobile device. The intent of this requirement is
@@ -930,8 +1032,23 @@
                 </f-component>
             </sec:man_fmt>
             <sec:man_fpt title="Protection of the TSF (FPT)">
+                <ext-comp-def fam-id="FPT_AON_EXT" title="Add-Ons">
+                    <fam-behavior>Components in this family define requirements for the secure handling of add-ons that can be installed on top of the TOE.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fpt_aon_ext.1" name="Support for Only Trusted Add-ons">
                     <consistency-rationale>This SFR defines what types of plugins a web browser may use. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to either support no add-ons or to only support trusted add-ons.</comp-lev>
+                    <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                        <h:li>Enable/disable support for add-ons.</h:li>
+                    </h:ul>
+                    </management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall include the capability to load <selectables>
                             <selectable id="addons_supported">trusted add-ons</selectable>
@@ -962,8 +1079,25 @@
                     </f-element>
                 </f-component>
                 
+                <ext-comp-def fam-id="FPT_DNL_EXT" title="File Downloads">
+                    <fam-behavior>Components in this family define requirements for controlling whether or not the TOE stores third-party cookie data.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fpt_dnl_ext.1" name="File Downloads">
+                    
                     <consistency-rationale>This SFR defines behavior for handling file data that can be downloaded by a web browser. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to intervene in the case it is prompted to download executable file data.</comp-lev>
+                    <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                        <h:li>Enable/disable user's ability to select default actions upon download of a file (e.g., always open, or always save, a downloaded file).</h:li>
+                        <h:li>Enable/disable launching of downloaded files outside the browser.</h:li>
+                    </h:ul>
+                    </management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall prevent downloaded content from launching
                             automatically.</title>
@@ -1001,8 +1135,24 @@
                     </f-element>
                 </f-component>
    
+                <ext-comp-def fam-id="FDP_MCD_EXT" title="Mobile Code">
+                    <fam-behavior>Components in this family define requirements for execution of mobile code.
+                    </fam-behavior>
+                </ext-comp-def>
                 <f-component cc-id="fpt_mcd_ext.1" name="Mobile Code">
                     <consistency-rationale>This SFR defines behavior for mobile code that is rendered by a web browser. It does not impact the App PP functionality.</consistency-rationale>
+                    
+                    <comp-lev> requires the TSF to identify the mobile code types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious mobile code.</comp-lev>
+                    <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                        <h:li>Enable/disable display notification when unsigned, untrusted or unverified mobile code is encountered.</h:li>
+                        <h:li>Enable/disable support for mobile code.</h:li>
+                    </h:ul>
+                    </management>
+                    <audit>There are no auditable events foreseen.</audit>
+                    <dependencies>
+                        No dependencies.
+                    </dependencies>
+                    
                     <f-element>
                         <title>The TSF shall support the capability to execute 
                             <selectables>
@@ -1018,6 +1168,17 @@
                                         browser</assignable></selectable></selectables></selectable>
                                 <selectable>no</selectable>
                             </selectables> mobile code. </title>
+                        <ext-comp-def-title>
+                            <title>
+                                The TSF shall support the capability to execute 
+                                <selectables>
+                                    
+                                    <selectable>
+                                        signed <assignable>supported mobile code types</assignable>
+                                        </selectable>
+                                    <selectable>no</selectable>
+                                </selectables> mobile code. </title>
+                        </ext-comp-def-title>
                     </f-element>
                     <f-element>
                         <title>The TSF shall <selectables>
@@ -1032,6 +1193,14 @@
                                 <selectable><assignable>other mobile code types supported by the
                                         browser</assignable></selectable>
                             </selectables> mobile code without executing it.</title>
+                        <ext-comp-def-title>
+                            <title>The TSF shall <selectables>
+                                <selectable>automatically discard</selectable>
+                                <selectable>provide the user with the option to discard</selectable>
+                            </selectables> 
+                                unsigned, untrusted or unverified <assignable>supported mobile code types</assignable>
+                                 mobile code without executing it.</title>
+                        </ext-comp-def-title>
                         <note role="application"> The ST author must specify all
                             mobile code types for which the browser provides this support. <h:p/>An
                             authorized signer may directly sign the code itself, or the code may be
@@ -1073,9 +1242,24 @@
         </man-sfrs>
                 
                 <opt-sfrs>
-                 <sec:opt_fdp title="User Data Protection (FDP)">   
+                 <sec:opt_fdp title="User Data Protection (FDP)">
+                     <ext-comp-def fam-id="FDP_PST_EXT" title="Storage of Persistent Information">
+                         <fam-behavior>Components in this family define requirements for the minimum amount of information that may be stored persistently by the TSF while retaining its functionality.
+                         </fam-behavior>
+                     </ext-comp-def>
                     <f-component cc-id="fdp_pst_ext.1" name="Storage of Persistent Information">
                         <consistency-rationale>This SFR defines the persistent information that must be stored for web browser functionality to work as intended. It does not impact functionality described by the Base-PP.</consistency-rationale>
+                        
+                        <comp-lev> requires the TSF to enumerate the minimum set of data that it must store persistently in order to function normally.</comp-lev>
+                        <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                            <h:li>	Enable/disable storage of sensitive information in persistent storage.</h:li>
+                        </h:ul>
+                        </management>
+                        <audit>There are no auditable events foreseen.</audit>
+                        <dependencies>
+                            No dependencies.
+                        </dependencies>
+                        
                         <f-element>
                             <title>The TSF shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
@@ -1084,6 +1268,12 @@
                                         configuration information</selectable><selectable>certificate
                                             revocation information</selectable><selectable>no
                                                 exceptions</selectable></selectables>.</title>
+                            <ext-comp-def-title>
+                                <title>
+                                    The TSF shall be capable of operating without storing persistent
+                                    information to the client platform with the following exceptions: <assignable>data that the TSF must store persistently</assignable>.
+                                </title>
+                            </ext-comp-def-title>
                             <note role="application"> Any data that persists after the browser closes,
                                 including temporary files, is considered to be persistent data. </note>
                             <aactivity>
@@ -1114,6 +1304,15 @@
                         <f-component cc-id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
                             <depends on="addons_supported"></depends>
                             <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not impact functionality described by the Base-PP.</consistency-rationale>
+                            
+                            <comp-lev> requires the TSF to implement a method to verify the integrity of add-ons and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
+                            <management>No specific management functions are identified.</management>
+                            <audit>There are no auditable events foreseen.</audit>
+                            <dependencies>
+                                <no-link>FCS_COP.1</no-link> Cryptographic Operation<h:p/>
+                                <no-link>FPT_AON_EXT.1</no-link> Support for Only Trusted Add-Ons
+                            </dependencies>
+                            
                             <f-element>
                                 <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
                                 <title>The TSF shall <selectables>
@@ -1168,8 +1367,23 @@
                     <obj-sfrs>
                         
                         <sec:obj_fcs title="Cryptographic Support (FCS)">
+                            <ext-comp-def fam-id="FCS_STS_EXT" title="Strict Transport Security">
+                                <fam-behavior>Components in this family define requirements for the implementation of HTTP Strict-Transport-Security.
+                                </fam-behavior>
+                            </ext-comp-def>
                             <f-component cc-id="fcs_sts_ext.1" name="Strict Transport Security">
                                 <consistency-rationale>This SFR defines behavior for implementation of HSTS, which is a communications mechanism specific to web content. It does not impact the App PP functionality.</consistency-rationale>
+                                
+                                <comp-lev> requires the TSF to implement HTTP Strict-Transport-Security.</comp-lev>
+                                <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                                    <h:li>Enable/disable HSTS mode.</h:li>
+                                </h:ul>
+                                </management>
+                                <audit>There are no auditable events foreseen.</audit>
+                                <dependencies>
+                                    <no-link>FCS_HTTPS_EXT.1</no-link> HTTPS Protocol
+                                </dependencies>
+                                
                                 <f-element>
                                     <title>The TSF shall implement HTTP Strict-Transport-Security according
                                         to RFC 6797.</title>
@@ -1218,8 +1432,23 @@
                             </f-component>
                         </sec:obj_fcs>
                         <sec:obj_fpt title="Protection of the TSF (FPT)">
+                            <ext-comp-def fam-id="FPT_INT_EXT" title="Reputation Service Interaction">
+                                <fam-behavior>Components in this family define requirements for the TOE's interaction with reputation services that can provide an assessment of the trustworthiness of data presented to the TSF.
+                                </fam-behavior>
+                            </ext-comp-def>
                         <f-component cc-id="fpt_int_ext.1" name="Interactions with Application Reputation Services">
                             <consistency-rationale>This SFR defines behavior interaction with a reputation service for file data that the TOE can be used to download. It does not impact the App PP functionality.</consistency-rationale>
+                            
+                            <comp-lev> requires the TSF to be able to interact with an application reputation service to assess whether application data is potentially malicious.</comp-lev>
+                            <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                                <h:li>Configure the use of an application reputation service to detect malicious applications prior to download.</h:li>
+                            </h:ul>
+                            </management>
+                            <audit>There are no auditable events foreseen.</audit>
+                            <dependencies>
+                                No dependencies.
+                            </dependencies>
+                            
                             <f-element>
                                 <title>The TSF shall use an application reputation service to
                                     prevent downloading of malicious applications.</title>
@@ -1257,6 +1486,17 @@
                         </f-component>
                         <f-component cc-id="fpt_int_ext.2" name="Interactions with URL Reputation Services">
                             <consistency-rationale>This SFR defines behavior interaction with a reputation service for web content that the TOE can be used to interact with. It does not impact the App PP functionality.</consistency-rationale>
+                            
+                            <comp-lev> requires the TSF to be able to interact with a URL reputation service to assess whether websites are potentially malicious.</comp-lev>
+                            <management>The following actions could be considered for the management functions in FMT: <h:ul>
+                                <h:li>Configure the use of a URL reputation service to detect sites that contain malware or phishing content.</h:li>
+                            </h:ul>
+                            </management>
+                            <audit>There are no auditable events foreseen.</audit>
+                            <dependencies>
+                                No dependencies.
+                            </dependencies>
+                            
                             <f-element>
                                 <title>The TSF shall use a URL reputation service to prevent
                                     connections with malicious websites.</title>
