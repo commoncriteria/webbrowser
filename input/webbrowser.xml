@@ -1135,7 +1135,7 @@
                     </f-element>
                 </f-component>
    
-                <ext-comp-def fam-id="FDP_MCD_EXT" title="Mobile Code">
+                <ext-comp-def fam-id="FPT_MCD_EXT" title="Mobile Code">
                     <fam-behavior>Components in this family define requirements for execution of mobile code.
                     </fam-behavior>
                 </ext-comp-def>
