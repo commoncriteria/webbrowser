@@ -97,6 +97,7 @@
             </subsection>  
         -->
             <tech-terms>
+                <suppress>Distributed TOE</suppress>
                 <term full="Add-on">Capabilities or functionality added to an application. This term includes plug-ins, extensions, and other controls.</term>
                 <term full="Administrator">The Administrator is responsible for management activities,
                     including setting the policy that is applied by the enterprise on the
