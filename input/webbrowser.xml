@@ -411,8 +411,13 @@
                     <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the data in transit protection functionality that is specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_COMMS objective defined in the Base-PP, 
                         specifically in regards to the data in transit that applies to web browser applications.</consistency-rationale>
-                    <addressed-by>FDP_STR_EXT.1, FCS_STS_EXT.1 (objective), FPT_INT_EXT.1 (objective), FPT_INT_EXT.2 (objective)</addressed-by>
+                    <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP), FCS_RBG_EXT.1 (modified from Base-PP), FIA_X509_EXT.1 (from Base-PP), FIA_X509_EXT.2 (from Base-PP), FTP_DIT_EXT.1 (modified from Base-PP), FDP_STR_EXT.1, FCS_STS_EXT.1 (objective), FPT_INT_EXT.1 (objective), FPT_INT_EXT.2 (objective)</addressed-by>
                     <rationale>
+                        FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.<h:p/>
+                        FCS_RBG_EXT.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.<h:p/>
+                        FIA_X509_EXT.1 supports the objective by requiring the TSF to implement or invoke an X.509 certificate validation service.<h:p/>
+                        FIA_X509_EXT.2 supports the objective by defining the TOE's use of X.509 certificates and what behavior the TOE takes when the revocation status of a certificate cannot be determined.<h:p/>
+                        FTP_DIT_EXT.1 supports the objective by specifying the trusted communications channels used by the TOE to protect data in transit.<h:p/>
                         FDP_STR_EXT.1 supports the objective by requiring the use of HTTPS for certain types of data transfer.<h:p/>
                         FCS_STS_EXT.1 supports the objective by optionally requiring the TSF to implement HSTS for secure data transmission.<h:p/>
                         FPT_INT_EXT.2 supports the objective by optionally requiring the TSF to implement a URL reputation service that can block communications with malicious entities.
@@ -495,7 +500,104 @@
             <raw-url>https://raw.githubusercontent.com/commoncriteria/application/master/input/application.xml</raw-url>
             <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442</url>
             
-            <modified-sfrs/>
+            <modified-sfrs>
+                
+                <sec:mod_fcs title="Cryptographic Support (FCS)">
+                    <f-component cc-id="fcs_ckm_ext.1" name="Cryptographic Key Generation Services">
+                        <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
+                        <f-element>
+                            <title>The application shall <selectables linebreak="yes">
+                                
+                                <selectable id="sel_invoke_genkey">invoke platform-provided functionality for asymmetric key generation</selectable>
+                                <selectable id="sel_impl_genkey">implement asymmetric key generation</selectable>
+                            </selectables>.
+                            </title>
+                            <note role="application">This SFR is modified from its Base-PP definition to remove the selection for the TOE not requiring asymmetric key generation.
+                            </note>
+                            <aactivity>
+                                <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed, aside from the fact that the materials for the selections that have been refined out of this SFR are not applicable.<h:p/>
+                                </no-tests>
+                            </aactivity>
+                        </f-element>
+                    </f-component>
+                    
+                    <f-component cc-id="fcs_rbg_ext.1" name="Random Bit Generation Services">
+                        <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
+                        <f-element>
+                            <title> The application shall
+                                <selectables linebreak="yes">
+                                    <selectable>invoke platform-provided DRBG functionality</selectable>
+                                    <selectable id="drbg">implement DRBG functionality</selectable>
+                                </selectables> for its cryptographic operations. </title>
+                            <note role="application">This SFR is modified from its Base-PP definition to remove the selection for the TOE using no DRBG functionality.
+                            </note>
+                            <aactivity>
+                                <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed, aside from the fact that the materials for the selections that have been refined out of this SFR are not applicable.<h:p/>
+                                </no-tests>
+                            </aactivity>
+                        </f-element>
+                    </f-component>
+                    
+                </sec:mod_fcs> 
+                
+                <sec:mod_fia title="Identification and Authentication (FIA)">
+                    <f-component cc-id="fia_x509_ext.1" name="X.509 Certificate Validation">
+                        <consistency-rationale>This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.</consistency-rationale>
+                        <f-element>
+                            <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
+                            </title>
+                            <aactivity>
+                                <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/> 
+                                </no-tests>
+                            </aactivity>
+                        </f-element>
+                    </f-component>
+                    <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+                        <consistency-rationale>This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.</consistency-rationale>
+                        <f-element>
+                            <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
+                            </title>
+                            <aactivity>
+                                <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/> 
+                                </no-tests>
+                            </aactivity>
+                        </f-element>
+                    </f-component>
+                    
+                </sec:mod_fia> 
+                
+                <sec:mod_ftp title="Trusted Path/Channels (FTP)">
+                    <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
+                        <consistency-rationale>This SFR is changed from its definition in the App PP to modify the selection options such that some options are mandated 
+                            if another selection is chosen and some are removed entirely, due to the specific cryptographic needs of web browser applications.</consistency-rationale>
+                        <f-element>
+                            <title>The application shall 
+                                <selectables linebreak="yes">
+                                    <selectable>encrypt all transmitted [<h:i>sensitive data</h:i>] with [<h:i>TLS as defined in the TLS Package, DTLS as defined in the TLS Package</h:i>]</selectable>
+                                    <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [TLS, DTLS]</selectable>	    
+                                </selectables>
+                                between itself and another trusted IT product.
+                            </title>
+                            <note role="application">This SFR is modified from its definition in the App PP to require that the TOE supports TLS and DTLS and that its use of these protocols is only limited to sensitive data. A conformant TOE must support the use of both TLS and HTTPS for  
+                                secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
+                                Either the TOE or its platform is permitted to implement TLS and DTLS. If the TOE implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the TLS package must be claimed at minimum
+                                because a web browser is required to support mutually-authenticated TLS and DTLS.</note>
+                            <aactivity>
+                                <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed, aside from the fact that the materials for the selections that have been refined out of this SFR are not applicable.<h:p/> 
+                                </no-tests>
+                            </aactivity>
+                        </f-element>
+                    </f-component>
+                    
+                </sec:mod_ftp> 
+                
+            </modified-sfrs>
+            
             <additional-sfrs/>
             
             <con-toe>
