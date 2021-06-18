@@ -176,7 +176,7 @@
         protocol (HTTP) or HTTP Secure (HTTPS). Browsers have grown in complexity over the
         years, starting as tools used to display simple, unchanging websites and becoming
         sophisticated execution environments for web content. The use of browsers to administer
-        accounts, servers or embedded systems remotely requires them to handle sensitive
+        accounts, servers, or embedded systems remotely requires them to handle sensitive
         information securely. Innovations such as tabs, extensions, and HTML5 have not only
         increased browser functionality, but also introduced new security concerns. Being the
         principal method for accessing the internet, and due to their complexity and the
@@ -210,14 +210,14 @@
             <usecases>
                 <usecase title="Surfing the Web" id="web">
                     <description> Browsers are used to retrieve, display, and render content from the
-                        web, such as websites, streaming media, images and specialized formats
+                        web, such as websites, streaming media, images, and specialized formats
                         (e.g., Java, PDF). They can also be used to write content to websites (web 2.0 – e.g., Facebook). Web surfing can be done over the internet
                         or within an intranet.</description>
                 </usecase>
                 <usecase title="Remote Administration Client" id="admin">
                     <description> Browsers are used to provide remote administration interfaces for
                         systems such as servers, network devices, and embedded systems, to include
-                        supervisory control and data acquisition (SCADA) systems, smart TVs and
+                        supervisory control and data acquisition (SCADA) systems, smart TVs, and
                         thermostats. As opposed to surfing the web, where the browser may be
                         interacting with untrusted content, the browser, acting as a Remote
                         Administration Client, is connecting to a server that the user
@@ -258,7 +258,7 @@
     <sec:Security_Problem_Description> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
         operational environment, and any organizational security policies that it is expected to
-        enforce. <h:p/> This Extended Package does not repeat the threats, assumptions, and
+        enforce. <h:p/> This PP-Module does not repeat the threats, assumptions, and
         organizational security policies identified in the App PP, though they all apply given the
         conformance and hence dependence of this PP-Module on it. Together the threats,
         assumptions and organizational security policies of the App PP and those defined in this
@@ -282,9 +282,9 @@
                         unauthorized access to other applications or the operating
                         system.</description>
                     <consistency-rationale>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the Base-PP.
-                        A flawed addon, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</consistency-rationale>
+                        A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</consistency-rationale>
                     <objective-refer ref="O.ADDON_INTEGRITY">
-                        <rationale>The threat T.FLAWED_ADDON is countered by O.ADDON_INTEGRITY which ensures that a conformant TOE either does not support add-ons at all (in which case there is no possibility of 
+                        <rationale>The threat T.FLAWED_ADDON is countered by O.ADDON_INTEGRITY, which ensures that a conformant TOE either does not support add-ons at all (in which case there is no possibility of 
                         it executing a flawed add-on) or that it supports only add-ons that can prove their integrity.</rationale>
                     </objective-refer>
                 </threat>
@@ -293,12 +293,16 @@
                 <threat name="T.NETWORK_ATTACK">
                     <description>See App PP, Section 3.1.</description>
                     <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
-                    <objective-refer ref="O.PROTECTED_COMMS">
-                        <rationale>The threat T.NETWORK_ATTACK is countered by O.PROTECTED_COMMS as this provides for integrity of transmitted data.
+                    <objective-refer ref="O.INTEGRITY">
+                        <rationale>The threat T.NETWORK_ATTACK is countered by O.INTEGRITY as this provides for the ability of the TOE to resist unauthorized modification via a network vector.
                         </rationale>
                     </objective-refer>
                     <objective-refer ref="O.MANAGEMENT">
                         <rationale>The threat T.NETWORK_ATTACK is countered by O.MANAGEMENT as this provides for the ability to configure the application to defend against network attack.
+                        </rationale>
+                    </objective-refer>
+                    <objective-refer ref="O.PROTECTED_COMMS">
+                        <rationale>The threat T.NETWORK_ATTACK is countered by O.PROTECTED_COMMS as this provides for integrity of transmitted data.
                         </rationale>
                     </objective-refer>
                 </threat>
@@ -307,13 +311,14 @@
                 <threat name="T.NETWORK_EAVESDROP">
                     <description>See App PP, Section 3.1.</description>
                     <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
-                    <objective-refer ref="O.PROTECTED_COMMS">
-                        <rationale>The threat T.NETWORK_EAVESDROP is countered by O.PROTECTED_COMMS as this provides for confidentiality of transmitted data.
-                        </rationale>
-                    </objective-refer>
+
                     <objective-refer ref="O.MANAGEMENT">
                         <rationale>	
                             The threat T.NETWORK_EAVESDROP is countered by O.MANAGEMENT as this provides for the ability to configure the application to protect the confidentiality of its transmitted data.
+                        </rationale>
+                    </objective-refer>
+                    <objective-refer ref="O.PROTECTED_COMMS">
+                        <rationale>The threat T.NETWORK_EAVESDROP is countered by O.PROTECTED_COMMS as this provides for confidentiality of transmitted data.
                         </rationale>
                     </objective-refer>
                 </threat>
@@ -323,7 +328,7 @@
                     <description>See App PP, Section 3.1.</description>
                     <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
                     <objective-refer ref="O.PROTECTED_STORAGE">
-                        <rationale>The objective O.PROTECTED_STORAGE protects against unauthorized attempts to access physical storage used by the TOE.
+                        <rationale>The threat T.PHYSICAL_ACCESS is countered by O.PROTECTED_STORAGE, which protects against unauthorized attempts to access physical storage used by the TOE.
                         </rationale>
                     </objective-refer>
                 </threat>
@@ -356,7 +361,7 @@
                     </description>
                     <consistency-rationale>This threat extends the security problem definition of the Base-PP by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</consistency-rationale>
                     <objective-refer ref="O.DOMAIN_ISOLATION">
-                        <rationale>The threat T.SAME_ORIGIN_VIOLATION is countered by O.DOMAIN_ISOLATION 
+                        <rationale>The threat T.SAME_ORIGIN_VIOLATION is countered by O.DOMAIN_ISOLATION, 
                             which ensures that a conformant TOE will prevent leakage of content between multiple windows/tabs being rendered by the same application.</rationale>
                     </objective-refer>
                 </threat>
@@ -380,7 +385,7 @@
                     <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the integrity protection mechanisms that are specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.INTEGRITY objective defined in the Base-PP, 
                         specifically in regards to the integrity protection mechanisms that apply to web browsers.</consistency-rationale>
-                    <addressed-by>FPT_DNL_EXT.1, FPT_MCD_EXT.1, FPT_INT_EXT.1 (optional)</addressed-by>
+                    <addressed-by>FPT_DNL_EXT.1, FPT_MCD_EXT.1, FPT_INT_EXT.1 (objective)</addressed-by>
                     <rationale>
                         FDP_DNL_EXT.1 supports the objective by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.<h:p/>
                         FDP_MCD_EXT.1 supports the objective by preventing the automatic execution of mobile code which could otherwise cause integrity violations to the TOE itself or to its platform. <h:p/>
@@ -401,10 +406,11 @@
                     <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the data at rest protection functionality that is specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_STORAGE objective defined in the Base-PP, 
                         specifically in regards to the data at rest that applies to web browser applications.</consistency-rationale>
-                    <addressed-by>FDP_COO_EXT.1, FDP_PST_EXT.1 (optional)</addressed-by>
+                    <addressed-by>FDP_COO_EXT.1, FDP_PST_EXT.1 (optional), FPT_INT_EXT.1 (objective)</addressed-by>
                     <rationale>
                         FDP_COO_EXT.1 supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.<h:p/>
-                        FDP_PST_EXT.1 supports the objective by optionally defining the minimum set of persistent data that the TSF is required to store.
+                        FDP_PST_EXT.1 supports the objective by optionally defining the minimum set of persistent data that the TSF is required to store.<h:p/>
+                        FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.
                     </rationale>
                 </SO>
                 <SO name="O.PROTECTED_COMMS">
@@ -442,7 +448,7 @@
                         includes verification and validation at installation time and update. </description>
                     <consistency-rationale>This objective is an enhancement to the O.INTEGRITY objective defined in the Base-PP. 
                         Where O.INTEGRITY is concerned with the integrity of the TOE application, 
-                        O.ADDON_INTEGRITY is concerned with the integrity of third-party addons that can be loaded into the TOE.</consistency-rationale>
+                        O.ADDON_INTEGRITY is concerned with the integrity of third-party add-ons that can be loaded into the TOE.</consistency-rationale>
                     <addressed-by>FPT_AON_EXT.1, FPT_AON_EXT.2 (selection-based)</addressed-by>
                     <rationale>
                         FPT_AON_EXT.1 supports the objective by specifying whether or not the TSF has the ability to load add-ons.<h:p/>
@@ -572,8 +578,7 @@
                 
                 <sec:mod_ftp title="Trusted Path/Channels (FTP)">
                     <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
-                        <consistency-rationale>This SFR is changed from its definition in the App PP to modify the selection options such that some options are mandated 
-                            if another selection is chosen and some are removed entirely, due to the specific cryptographic needs of web browser applications.</consistency-rationale>
+                        <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols, but permits either the TSF or platform-provided mechanisms for this.</consistency-rationale>
                         <f-element>
                             <title>The application shall 
                                 <selectables linebreak="yes">
@@ -615,7 +620,7 @@
         <man-sfrs>
 
             <sec:man_fdp title="User Data Protection (FDP)">
-                <ext-comp-def fam-id="FDP_ACF_EXT" title="Cryptographic Key Management">
+                <ext-comp-def fam-id="FDP_ACF_EXT" title="Access Control Functions">
                     <fam-behavior>Components in this family define requirements for data access control beyond those which are specified in the Part 2 family FDP_ACF.
                     </fam-behavior>
                 </ext-comp-def>
@@ -678,9 +683,9 @@
                 <f-component cc-id="fdp_coo_ext.1" name="Cookie Blocking">
                     <consistency-rationale>This SFR defines behavior for handling cookies, which are data specific to web browser applications. It does not impact the App PP functionality.</consistency-rationale>
                     
-                    <comp-lev> requires the TSF to have a configurable mechanism for blocking the storage of third party cookies.</comp-lev>
+                    <comp-lev> requires the TSF to have a configurable mechanism for blocking the storage of third-party cookies.</comp-lev>
                     <management>The following actions could be considered for the management functions in FMT: <h:ul>
-                        <h:li>Enable/disable storage of third party cookies.</h:li>
+                        <h:li>Enable/disable storage of third-party cookies.</h:li>
                     </h:ul>
                     </management>
                     <audit>There are no auditable events foreseen.</audit>
@@ -690,28 +695,28 @@
                     
                     <f-element>
                         <title>The TSF shall provide the capability to block the storage of
-                            third party cookies by websites.</title>
+                            third-party cookies by websites.</title>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
-                                describes how the browser blocks third party cookies and when the
+                                describes how the browser blocks third-party cookies and when the
                                 blocking occurs (e.g., automatically, when blocking is enabled). <h:p/></TSS>
                             <Guidance>The evaluator shall examine the operational guidance to verify
                                 that it provides a description of the configuration option for
-                                blocking of third party cookies. <h:p/></Guidance>
+                                blocking of third-party cookies. <h:p/></Guidance>
                             <Tests> The evaluator shall perform the following tests that may
                                 require the developer to provide access to a test platform that
                                 provides the evaluator with tools that are typically not found on
                                 factory products: <testlist>
                                     <test>The evaluator shall clear all cookies and then configure
-                                        the browser so that storage of third party cookies is
+                                        the browser so that storage of third-party cookies is
                                         allowed. The evaluator shall load a web page that stores a
-                                        third party cookie. The evaluator shall navigate to the
+                                        third-party cookie. The evaluator shall navigate to the
                                         location where cookies are stored and shall verify that the
                                         cookie is present.</test>
                                     <test>The evaluator shall clear all cookies and then configure
-                                        the browser so that storage of third party cookies is
+                                        the browser so that storage of third-party cookies is
                                         blocked (i.e. not allowed). The evaluator shall load a web
-                                        page that attempts to store a third party cookie and shall
+                                        page that attempts to store a third-party cookie and shall
                                         verify that the cookie was not stored.</test>
                                 </testlist>
                             </Tests>
@@ -720,7 +725,7 @@
                 </f-component>
  
                 <ext-comp-def fam-id="FDP_SBX_EXT" title="Sandboxing">
-                    <fam-behavior>Components in this family define requirements for ensuring domain separation through sandboxing
+                    <fam-behavior>Components in this family define requirements for ensuring domain separation through sandboxing.
                     </fam-behavior>
                 </ext-comp-def>
                 <f-component cc-id="fdp_sbx_ext.1" name="Sandboxing of Rendering Processes">
@@ -855,7 +860,7 @@
                         <note role="application"> The Same Origin Policy concept is described in RFC
                             6454, "The Web Origin Concept."<h:p/> Origin is defined as the
                             combination of domain, protocol, and port. Two URIs sharing the same
-                            domain, protocol and port are considered to have the same origin. </note>
+                            domain, protocol, and port are considered to have the same origin. </note>
                         <aactivity>
                             <TSS>The evaluator shall examine the TSS to ensure it
                                 describes its implementation of a same origin policy and explains
@@ -936,7 +941,7 @@
                     
                     <comp-lev> requires the TSF to specify the data tracking that results in user notification.</comp-lev>
                     <management>The following actions could be considered for the management functions in FMT: <h:ul>
-                        <h:li>Enable/disable ability for websites to collect tracking informatio about the user.</h:li>
+                        <h:li>Enable/disable ability for websites to collect tracking information about the user.</h:li>
                         <h:li>Enable/disable deletion of stored browsing data.</h:li>
                     </h:ul>
                     </management>
@@ -1012,7 +1017,7 @@
                                 <manager cid='u'>User</manager>
                                 
                                 
-                                <management-function><text>Enable/disable storage of third party
+                                <management-function><text>Enable/disable storage of third-party
                                     cookies</text>
                                     <O ref="a"/><M ref="u"/>
                                 </management-function>
@@ -1069,7 +1074,7 @@
                                 <management-function><text>Enable/disable ability for websites
                                     to register protocol handlers</text></management-function>
                                 <management-function><text>Enable/disable display notification
-                                    when unsigned, untrusted or unverified mobile code is
+                                    when unsigned, untrusted, or unverified mobile code is
                                     encountered</text></management-function>
                                 <management-function><text>Enable/disable user's ability to
                                     select default actions upon download of a file (e.g., always
@@ -1096,7 +1101,7 @@
                             </management-function-set></title>
                         <ext-comp-def-title>
                             <title>
-                                The TSF shall be capable of performing the following management functions, controlled by the user or administrator as shown: <assignable>list of management functions to be performed by role</assignable>.
+                                The TSF shall be capable of performing the following management functions, controlled by the administrator or user as shown: <assignable>list of management functions to be performed by role</assignable>.
                             </title>
                         </ext-comp-def-title>
                         <note role="application"> For these management functions, the term
@@ -1108,7 +1113,7 @@
                             function. Enforcement of the policy is done by the browser itself, or
                             the browser and its platform in coordination with each other.<h:p/>
                             Disabling OCSP is only be permitted if "CRL" was selected in
-                            FIA_X509_EXT.1.1 (in <xref to="bibAppPP"/>).</note>
+                            FIA_X509_EXT.1.1 (in App PP).</note>
                         <aactivity>
                             <TSS>The evaluator shall verify that the TSS describes
                                 those management functions which may only be configured by the
@@ -1183,7 +1188,7 @@
                 </f-component>
                 
                 <ext-comp-def fam-id="FPT_DNL_EXT" title="File Downloads">
-                    <fam-behavior>Components in this family define requirements for controlling whether or not the TOE stores third-party cookie data.
+                    <fam-behavior>Components in this family define requirements for downloaded content.
                     </fam-behavior>
                 </ext-comp-def>
                 <f-component cc-id="fpt_dnl_ext.1" name="File Downloads">
@@ -1247,7 +1252,7 @@
                     
                     <comp-lev> requires the TSF to identify the mobile code types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious mobile code.</comp-lev>
                     <management>The following actions could be considered for the management functions in FMT: <h:ul>
-                        <h:li>Enable/disable display notification when unsigned, untrusted or unverified mobile code is encountered.</h:li>
+                        <h:li>Enable/disable display notification when unsigned, untrusted, or unverified mobile code is encountered.</h:li>
                         <h:li>Enable/disable support for mobile code.</h:li>
                     </h:ul>
                     </management>
@@ -1288,7 +1293,7 @@
                             <selectable>automatically discard</selectable>
                             <selectable>provide the user with the option to discard</selectable>
                         </selectables> 
-                            unsigned, untrusted or unverified <selectables linebreak="yes">
+                            unsigned, untrusted, or unverified <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
                                 <selectable>Flash</selectable>
                                 <selectable>Java</selectable>
@@ -1301,7 +1306,7 @@
                                 <selectable>automatically discard</selectable>
                                 <selectable>provide the user with the option to discard</selectable>
                             </selectables> 
-                                unsigned, untrusted or unverified <assignable>supported mobile code types</assignable>
+                                unsigned, untrusted, or unverified <assignable>supported mobile code types</assignable>
                                  mobile code without executing it.</title>
                         </ext-comp-def-title>
                         <note role="application"> The ST author must specify all
@@ -1331,7 +1336,7 @@
                                         the second web page contains mobile code that is untrusted; 
                                         the third web page contains mobile code that is unverified.  
                                         The evaluator shall then attempt to load the mobile code from each of the three web pages, 
-                                        and observe that either 1) the code is rejected, or 2) the user is prompted to accept or reject the code, depending on the selections made in FPT_MCD_EXT.1.2. 
+                                        and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in FPT_MCD_EXT.1.2. 
                                         If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
                                     </test>
                                 </testlist>
@@ -1351,7 +1356,7 @@
                          </fam-behavior>
                      </ext-comp-def>
                     <f-component cc-id="fdp_pst_ext.1" name="Storage of Persistent Information">
-                        <consistency-rationale>This SFR defines the persistent information that must be stored for web browser functionality to work as intended. It does not impact functionality described by the Base-PP.</consistency-rationale>
+                        <consistency-rationale>This SFR defines the persistent information that must be stored for web browser functionality to work as intended. It does not impact functionality described by the App PP.</consistency-rationale>
                         
                         <comp-lev> requires the TSF to enumerate the minimum set of data that it must store persistently in order to function normally.</comp-lev>
                         <management>The following actions could be considered for the management functions in FMT: <h:ul>
@@ -1373,8 +1378,8 @@
                                                 exceptions</selectable></selectables>.</title>
                             <ext-comp-def-title>
                                 <title>
-                                    The TSF shall be capable of operating without storing persistent
-                                    information to the client platform with the following exceptions: <assignable>data that the TSF must store persistently</assignable>.
+                                    The TSF shall provide the capability to operate without storing
+                                    persistent data to the file system with the following exceptions: <assignable>data that the TSF must store persistently</assignable>.
                                 </title>
                             </ext-comp-def-title>
                             <note role="application"> Any data that persists after the browser closes,
@@ -1406,7 +1411,7 @@
                         <sec:sel_fpt title="Protection of the TSF (FPT)">
                         <f-component cc-id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
                             <depends on="addons_supported"></depends>
-                            <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not impact functionality described by the Base-PP.</consistency-rationale>
+                            <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not impact functionality described by the App PP.</consistency-rationale>
                             
                             <comp-lev> requires the TSF to implement a method to verify the integrity of add-ons and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
                             <management>No specific management functions are identified.</management>
