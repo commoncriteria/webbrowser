@@ -417,7 +417,7 @@
                     <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the data in transit protection functionality that is specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_COMMS objective defined in the Base-PP, 
                         specifically in regards to the data in transit that applies to web browser applications.</consistency-rationale>
-                    <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP), FCS_RBG_EXT.1 (modified from Base-PP), FIA_X509_EXT.1 (from Base-PP), FIA_X509_EXT.2 (from Base-PP), FTP_DIT_EXT.1 (modified from Base-PP), FDP_STR_EXT.1, FCS_STS_EXT.1 (objective), FPT_INT_EXT.1 (objective), FPT_INT_EXT.2 (objective)</addressed-by>
+                    <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP), FCS_RBG_EXT.1 (modified from Base-PP), FIA_X509_EXT.1 (from Base-PP), FIA_X509_EXT.2 (from Base-PP), FTP_DIT_EXT.1 (modified from Base-PP), FDP_STR_EXT.1, FCS_STS_EXT.1 (objective), FPT_INT_EXT.2 (objective)</addressed-by>
                     <rationale>
                         FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.<h:p/>
                         FCS_RBG_EXT.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.<h:p/>
