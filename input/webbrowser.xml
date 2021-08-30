@@ -388,8 +388,8 @@
                         specifically in regards to the integrity protection mechanisms that apply to web browsers.</consistency-rationale>
                     <addressed-by>FPT_DNL_EXT.1, FPT_MCD_EXT.1, FPT_INT_EXT.1 (objective)</addressed-by>
                     <rationale>
-                        FDP_DNL_EXT.1 supports the objective by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.<h:p/>
-                        FDP_MCD_EXT.1 supports the objective by preventing the automatic execution of mobile code which could otherwise cause integrity violations to the TOE itself or to its platform. <h:p/>
+                        FPT_DNL_EXT.1 supports the objective by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.<h:p/>
+                        FPT_MCD_EXT.1 supports the objective by preventing the automatic execution of mobile code which could otherwise cause integrity violations to the TOE itself or to its platform. <h:p/>
                         FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a reputation service to prevent the acquisition of potentially malicious applications.<h:p/>
                     </rationale>
                 </SO>
@@ -1521,11 +1521,12 @@
                                     <note role="application"> Freshness refers to the length of time between
                                         generation by the origin server and the expiration time when the origin
                                         server specifies that a stored response can no longer be used by a cache
-                                        without further validation (RFCs 6797 and 7234). If a browser receives
+                                        without further validation (RFCs 6797 and 7234). <!-- Edited this part out per SME feedback 
+                                            If a browser receives
                                         the HSTS header from a website, all future HTTP sessions between the
                                         browser and the domain or superdomain of that website must occur over
                                         TLS 1.2 (RFC 5246) or greater by using HTTPS (RFC 2818) negotiating
-                                        the strongest cipher possible. </note>
+                                        the strongest cipher possible.  --></note>
                                     <aactivity>
                                         <TSS> The evaluator shall examine the TSS to ensure
                                             that it documents how the browser supports HSTS. <h:p/></TSS>
