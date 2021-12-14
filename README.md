@@ -1,18 +1,18 @@
-Extended Package for Web Browser 
+PP-Module for Web Browser 
 ===========
 ![Build](https://github.com/commoncriteria/webbrowser/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/webbrowser/workflows/Validate/badge.svg)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/webbrowser.svg?maxAge=2592000)](https://github.com/commoncriteria/webbrowser/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
-This repository hosts the draft version of the Extended Package for Web Browser. The repository is used to facilitate collaboration and development on the draft document. 
+This repository hosts the draft version of the PP-Module for Web Browser. The repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Profile/Info.cfm?id=378).
 
 ## Draft Version
 
-* [Extended Package for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.html) (html)
-* [Extended Package for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.pdf) (pdf)
+* [PP-Module for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.html) (html)
+* [PP-Module for Web Browsers](https://commoncriteria.github.io/pp/webbrowser/webbrowser-release.pdf) (pdf)
 
 ## Release Version
 
