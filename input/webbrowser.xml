@@ -6,7 +6,7 @@
 <?xml-model href="https://github.com/commoncriteria/transforms/raw/master/schemas/CCModule.rng" 
 	type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
-<Module boilerplate="yes" target_product="Web Browser" target-products="Web Browsers" name="PP-Module for Web Browsers"
+<Module boilerplate="yes" target-product="Web Browser" name="PP-Module for Web Browsers"
     xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:sec="https://niap-ccevs.org/cc/v1/section"
     xmlns:h="http://www.w3.org/1999/xhtml">
