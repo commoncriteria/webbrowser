@@ -1,9 +1,15 @@
 PP-Module for Web Browser 
 ===========
+![Master Badges](https://img.shields.io/badge/Build-master-black.svg)
 ![Build](https://github.com/commoncriteria/webbrowser/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/webbrowser/workflows/Validate/badge.svg)
-[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/webbrowser.svg?maxAge=2592000)](https://github.com/commoncriteria/webbrowser/issues) 
-![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
+
+![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/webbrowser/gh-pages/build-branch-badge.svg)
+[![Validation](https://raw.githubusercontent.com/commoncriteria/webbrowser/gh-pages/validation.svg)](https://github.com/commoncriteria/webbrowser/blob/gh-pages/ValidationReport.txt)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/webbrowser/gh-pages/warnings.svg)](https://github.com/commoncriteria/webbrowser/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/webbrowser/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/webbrowser/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/webbrowser/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/webbrowser)
+![Transforms Version](https://raw.githubusercontent.com/commoncriteria/webbrowser/gh-pages/transforms.svg)
 
 This repository hosts the draft version of the PP-Module for Web Browser. The repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
