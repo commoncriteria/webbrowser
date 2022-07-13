@@ -37,66 +37,12 @@
             protocol (HTTP) or HTTP Secure (HTTPS). 
             
             This PP-Module is intended for use with the following Base-PP: <h:ul>
-                <h:li>Protection Profile for Application Software, Version 1.3</h:li>
+                <h:li><xref to="app"/></h:li>
             </h:ul>
             <h:p/> This Base-PP is valid because web browsers are a specific type of software application.
             
           
         </sec:Overview>
-        <!-- 
-        <section title="Terms" id="glossary">The following sections provide both Common Criteria and
-            technology terms used in this Extended Package. <subsection
-                title="Common Criteria Terms" id="ccterms">
-                <glossary>
-                    <entry>
-                        <term><abbr title="Common Criteria">CC</abbr></term>
-                        <description>Common Criteria for Information Technology Security
-                            Evaluation.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Extended Package">EP</abbr></term>
-                        <description>An implementation-independent set of security requirements for
-                            a category of products, which extends those in a Protection
-                            Profile.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Protection Profile">PP</abbr></term>
-                        <description>An implementation-independent set of security requirements for
-                            a category of products.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Security Target">ST</abbr></term>
-                        <description>A set of implementation-dependent security requirements for a
-                            specific product.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Target of Evaluation">TOE</abbr></term>
-                        <description>The product under evaluation. In this case, a web browser and
-                            its supporting documentation.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="TOE Security Functionality">TSF</abbr></term>
-                        <description>The security functionality of the product under
-                            evaluation.</description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="TOE Summary Specification">TSS</abbr></term>
-                        <description>A description of how a <abbr linkend="TOE"/> satisfies the SFRs
-                            in a ST. </description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Security Functional Requirement">SFR</abbr></term>
-                        <description>A requirement for security enforcement by the <abbr
-                                linkend="TOE"/>. </description>
-                    </entry>
-                    <entry>
-                        <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
-                        <description>A requirement to assure the security of the <abbr linkend="TOE"
-                            />. </description>
-                    </entry>
-                </glossary>
-            </subsection>  
-        -->
             <tech-terms>
                 <suppress>Distributed TOE</suppress>
                 <term full="Add-on">Capabilities or functionality added to an application. This term includes plug-ins, extensions, and other controls.</term>
@@ -505,8 +451,8 @@
         -->
         
         <base-pp id="app">
-            <raw-url>https://raw.githubusercontent.com/commoncriteria/application/master/input/application.xml</raw-url>
-            <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442</url>
+            <raw-url>https://raw.githubusercontent.com/commoncriteria/application/release-1.4/input/application.xml</raw-url>
+            <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
             
             <modified-sfrs>
                 
@@ -629,7 +575,6 @@
             <con-op-en>
                 This PP-Module does not define any objectives for the TOE's operational environment. 
             </con-op-en>
-            <con-mod ref="QQQQ"></con-mod>
         </base-pp> 
         <man-sfrs>
 
@@ -760,7 +705,7 @@
                                 <h:li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</h:li>
                                 <h:li>The rendering process has reduced privilege with respect to
-                                    other browser processes <selectables>
+                                    other browser processes <selectables onlyone="yes">
                                         <selectable>
 					  <assignable>
 					    other methods by which the
@@ -1172,11 +1117,11 @@
                     </dependencies>
                     
                     <f-element>
-                        <title>The TSF shall include the capability to load <selectables>
+                        <title>The TSF shall include the capability to load <selectables onlyone="yes">
                             <selectable id="addons_supported">trusted add-ons</selectable>
                             <selectable>no add-ons</selectable>
                         </selectables>.</title>
-                        <note role="application">If "trusted add-ons" is selected in FPT_AON_EXT.1.1, the TOE must also claim the selection-based SFR FPT_AON_EXT.2.
+                        <note role="application">If <xref to="addons_supported"/> is selected in FPT_AON_EXT.1.1, the TOE must also claim the selection-based SFR FPT_AON_EXT.2.
                             <h:p/>
                             If the browser does not include support for
                             installing only trusted add-ons, this requirement can be met by
@@ -1277,24 +1222,22 @@
                     
                     <f-element>
                         <title>The TSF shall support the capability to execute 
-                            <selectables>
-                                
+                            <selectables onlyone="yes">
                             <selectable>
-                            signed
-                                <selectables linebreak="yes">
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>ActionScript</selectable>
-                                <selectable><assignable>other mobile code types supported by the
-                                        browser</assignable></selectable></selectables></selectable>
-                                <selectable>no</selectable>
-                            </selectables> mobile code. </title>
+                              signed
+                              <selectables linebreak="yes">
+				<selectable>ActiveX</selectable>
+				<selectable>Flash</selectable>
+				<selectable>Java</selectable>
+				<selectable>ActionScript</selectable>
+				<selectable><assignable>other mobile code types supported by the browser</assignable></selectable>
+			    </selectables></selectable>
+                            <selectable>no</selectable>
+                        </selectables> mobile code.</title>
                         <ext-comp-def-title>
                             <title>
                                 The TSF shall support the capability to execute 
-                                <selectables>
-                                    
+                                <selectables onlyone="yes">
                                     <selectable>
                                         signed <assignable>supported mobile code types</assignable>
                                         </selectable>
@@ -1303,9 +1246,9 @@
                         </ext-comp-def-title>
                     </f-element>
                     <f-element>
-                        <title>The TSF shall <selectables>
+                        <title>The TSF shall <selectables onlyone="yes">
                             <selectable>automatically discard</selectable>
-                            <selectable>provide the user with the option to discard</selectable>
+                            <selectable id="s_user_discard">provide the user with the option to discard</selectable>
                         </selectables> 
                             unsigned, untrusted, or unverified <selectables linebreak="yes">
                                 <selectable>ActiveX</selectable>
@@ -1316,7 +1259,7 @@
                                         browser</assignable></selectable>
                             </selectables> mobile code without executing it.</title>
                         <ext-comp-def-title>
-                            <title>The TSF shall <selectables>
+                            <title>The TSF shall <selectables onlyone="yes">
                                 <selectable>automatically discard</selectable>
                                 <selectable>provide the user with the option to discard</selectable>
                             </selectables> 
@@ -1334,13 +1277,15 @@
                                     TSS shall describe how the browser handles
                                 unsigned mobile code, mobile code from an untrusted source, and
                                 mobile code from an unverified source. <h:p/></TSS>
-                            <Guidance>
-                                If "proivde the user with the option discard" is selected in FPT_MCD_EXT.1.2, the evaluator shall examine the operational guidance to verify
+				<Guidance>
+				  <h:span><depends on="s_user_discard"/>
+                                  <!-- If <xref to="s_user_discard"/> is selected in FPT_MCD_EXT.1.2, -->
+				 The evaluator shall examine the operational guidance to verify
                                 it provides configuration instructions for each of the supported
                                 mobile code types. The operational guidance shall also describe the
                                 alert that the browser displays to the user when unsigned,
                                 untrusted, or unverified mobile code is encountered and the actions
-                                the user can take. <h:p/></Guidance>
+                                the user can take. </h:span></Guidance>
                             <Tests>The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <testlist>
                                     <test>
@@ -1385,11 +1330,11 @@
                         <f-element>
                             <title>The TSF shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
-                                <selectables><selectable>credential
-                                    information</selectable><selectable>administrator provided
-                                        configuration information</selectable><selectable>certificate
-                                            revocation information</selectable><selectable>no
-                                                exceptions</selectable></selectables>.</title>
+                                <selectables>
+				  <selectable>credential information</selectable>
+				  <selectable>administrator provided configuration information</selectable>
+				  <selectable>certificate revocation information</selectable>
+				  <selectable exclusive="yes">no exceptions</selectable></selectables>.</title>
                             <ext-comp-def-title>
                                 <title>
                                     The TSF shall provide the capability to operate without storing
@@ -1441,23 +1386,24 @@
                                     <selectable>provide the ability</selectable>
                                     <selectable>leverage the platform</selectable>
                                 </selectables> to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and <selectables>
+                                    using a digital signature mechanism and <selectables onlyone="yes">
                                         <selectable>published hash</selectable>
                                         <selectable>no other functions</selectable>
                                     </selectables> prior to installation and update. </title>
                             </f-element>
                             <f-element>
                                 <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The TSF shall <selectables><selectable>provide the
-                                    ability</selectable><selectable>leverage the
-                                        platform</selectable></selectables> to query the current version
-                                    of the add-on.</title>
+                                <title>The TSF shall <selectables>
+				<selectable>provide the ability</selectable>
+				<selectable>leverage the platform</selectable>
+				</selectables> to query the current version
+                                of the add-on.</title>
                             </f-element>
                             <f-element>
                           <!--       <selection-depends req="FPT_AON_EXT.1.1"/>  -->
                                 <title>The TSF shall prevent the automatic installation of
                                     add-ons.</title>
-                                <note role="application">This selection-based SFR is claimed when "trusted add-ons" is selected in FPT_AON_EXT.1.1.</note>
+                                <note role="application">This selection-based SFR is claimed when <xref to="addons_supported"/> is selected in FPT_AON_EXT.1.1.</note>
                                 <aactivity>
                                     <TSS>The evaluator shall examine the TSS to verify
                                         that it states that the browser will reject add-ons from untrusted
