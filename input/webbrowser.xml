@@ -613,23 +613,20 @@
                             <Guidance>The evaluator shall examine the operational guidance to verify
                                 that it documents the location on the file system that will be used
                                 for local storage and the location used for session storage. <h:p/></Guidance>
-                            <Tests>The evaluator shall obtain or create JavaScript-based scripts
-                                that store and retrieve information from local and session storage
-                                and shall set up a web server with two or more web pages from
-                                different domains using different protocols and ports. The
-                                evaluator shall incorporate the scripts into the web pages and shall
-                                perform the following tests: <testlist>
-                                    <test>The evaluator shall open two or more browser windows/tabs
-                                        and navigate to the same web page. The evaluator shall
-                                        verify that the script for accessing session storage that is
-                                        running in one window/tab cannot access session storage
-                                        associated with a different window/tab.</test>
-                                    <test>The evaluator shall open windows/tabs and navigate to
-                                        different web pages. The evaluator shall verify that a
-                                        script running in the context of one domain/protocol/port in
-                                        a browser window/tab cannot access information associated
-                                        with a different domain/protocol/port in a different
-                                        window/tab.</test>
+                            <Tests>The evaluator shall obtain or create JavaScript-­based scripts that store and retrieve information from local and session storage. 
+                                The evaluator shall set up a web server with two or more web pages from different domains 
+                                (e.g., test1.example.com and test2.example.com) with at least one of the domains served from multiple ports (e.g., port 80 and port 443). 
+                                The evaluator shall incorporate the scripts into the web pages. The web pages will be opened in a manner that creates a relationship 
+                                allowing for a JavaScript object handle to refer from one window to the the other (e.g., window.parent, window.opener, etc). 
+                                The evaluator shall perform the following tests: <testlist>
+                                    <test>The evaluator shall open both pages ensuring that they are loaded from the same domain using the same port. 
+                                        The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).</test>
+                                    <test>The evaluator shall open both pages ensuring that they are loaded from different domains. 
+                                        The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).</test>
+                                    <test>
+                                        The evaluator shall open both pages ensuring that they are loaded from the same domain using different ports. 
+                                        The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).
+                                    </test>
                                 </testlist>
                             </Tests>
                         </aactivity>
@@ -1644,8 +1641,8 @@
         <entry id="bibAppPP">
             <tag>App PP</tag>
             <description>
-                <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v1.3.pdf"
-                    >Protection Profile for Application Software, Version 1.3</h:a>, March 1, 2019
+                <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v1.4.pdf"
+                    >Protection Profile for Application Software, Version 1.4</h:a>, October 7, 2021
             </description>
         </entry>
     </bibliography>
