@@ -51,6 +51,9 @@ output/webbrowser-sd.html: Sandboxing
 output/webbrowser-sd.html: Silverlight
 output/webbrowser-sd.html: cnn
 output/webbrowser-sd.html: ons
+output/webbrowser-sd.html: sessionStorage
+output/webbrowser-sd.html: test1
+output/webbrowser-sd.html: test2
 output/webbrowser-sd.html: unmanaged
 output/webbrowser.html: 1r5
 output/webbrowser.html: ActionScript
@@ -72,5 +75,8 @@ output/webbrowser.html: iFrame
 output/webbrowser.html: ons
 output/webbrowser.html: recategorized
 output/webbrowser.html: sandboxing
+output/webbrowser.html: sessionStorage
+output/webbrowser.html: test1
+output/webbrowser.html: test2
 output/webbrowser.html: trackable
 output/webbrowser.html: unmanaged
