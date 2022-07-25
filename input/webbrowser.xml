@@ -540,11 +540,10 @@
                     <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
-                            <title>The application shall 
-                                <h:ul>
-                                    <h:li><h:i>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1<h:b>/Client</h:b>, TLS as defined in the TLS Package, DTLS as defined in the TLS Package]</h:i></h:li>
-                                </h:ul>  
-                                
+                            <title>The application shall <selectables>
+                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1<h:b>/Client</h:b>, TLS as defined in the TLS Package, DTLS as defined in the TLS Package]</selectable>
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [TLS, DTLS]</selectable>
+                            </selectables>
                                 between itself and another trusted IT product.
                             </title>
                             <note role="application">This SFR is modified from its definition in the App PP to require that the TOE supports TLS and DTLS and that its use of these protocols is only limited to sensitive data. A conformant TOE must support the use of both TLS and HTTPS for  
