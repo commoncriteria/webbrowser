@@ -541,13 +541,13 @@
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables>
-                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1<h:b>/Client</h:b>, TLS as defined in the TLS Package, DTLS as defined in the TLS Package]</selectable>
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [TLS, DTLS]</selectable>
+                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1<h:b>/Client</h:b>, TLS as a client as defined in the TLS Package, DTLS as a client as defined in the TLS Package]</selectable>
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [HTTPS, TLS, DTLS]</selectable>
                             </selectables>
                                 between itself and another trusted IT product.
                             </title>
-                            <note role="application">This SFR is modified from its definition in the App PP to require that the TOE supports TLS and DTLS and that its use of these protocols is only limited to sensitive data. A conformant TOE must support the use of both TLS and HTTPS for  
-                                secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
+                            <note role="application">This SFR is modified from its definition in the App PP to require that the TOE or its platform supports HTTPS, TLS, and DTLS and that its use of these protocols is only limited to sensitive data. 
+                                A conformant TOE must support the use of HTTPS, TLS, and DTLS for secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
                                 Either the TOE or its platform is permitted to implement TLS and DTLS. If the TOE implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the TLS package must be claimed at minimum
                                 because a web browser is required to support mutually-authenticated TLS and DTLS.</note>
                             <aactivity>
