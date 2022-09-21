@@ -18,6 +18,9 @@ output/webbrowser-release-linkable.html: iFrame
 output/webbrowser-release-linkable.html: ons
 output/webbrowser-release-linkable.html: recategorized
 output/webbrowser-release-linkable.html: sandboxing
+output/webbrowser-release-linkable.html: sessionStorage
+output/webbrowser-release-linkable.html: test1
+output/webbrowser-release-linkable.html: test2
 output/webbrowser-release-linkable.html: trackable
 output/webbrowser-release-linkable.html: unmanaged
 output/webbrowser-release.html: 1r5
