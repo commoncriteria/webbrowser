@@ -451,14 +451,18 @@
         -->
         
         <base-pp id="app">
-            <raw-url>https://raw.githubusercontent.com/commoncriteria/application/release-1.4/input/application.xml</raw-url>
-            <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
+	  <git><url>https://github.com/commoncriteria/application</url>
+	  <branch>release-1.4</branch></git>
+          <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
             
             <modified-sfrs>
                 
                 <sec:mod_fcs title="Cryptographic Support (FCS)">
                     <f-component cc-id="fcs_ckm_ext.1" name="Cryptographic Key Generation Services">
-                        <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
+                      <consistency-rationale>
+			This SFR is changed from its definition in the App PP to remove one of the available selection options because
+			it will never apply in the case where the TOE conforms to this PP-Module.
+		      </consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables linebreak="yes">
                                 
@@ -477,15 +481,15 @@
                     </f-component>
                     
                     <f-component cc-id="fcs_https_ext.1" iteration="Client" name="HTTPS Protocol">
-                        <consistency-rationale>This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.</consistency-rationale>
-                        <f-element>
-                            <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.</title>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR.<h:p/>
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
+                      <consistency-rationale>
+			This SFR is unchanged from its definition in the App PP;
+			the SFR is recategorized from selection-based to mandatory
+			when the TOE conforms to this PP-Module.
+		      </consistency-rationale>
+		      <description>
+			This SFR is selection-based in the App PP.
+			<replace><depends/></replace> because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
+		      </description>
                     </f-component>
                     
                     <f-component cc-id="fcs_rbg_ext.1" name="Random Bit Generation Services">
@@ -510,30 +514,45 @@
                 
                 <sec:mod_fia title="Identification and Authentication (FIA)">
                     <f-component cc-id="fia_x509_ext.1" name="X.509 Certificate Validation">
-                        <consistency-rationale>This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.</consistency-rationale>
-                        <f-element>
-                            <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
-                            </title>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/> 
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
+                      <consistency-rationale>
+			This SFR is unchanged from its definition in the App PP;
+			the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
+		      </consistency-rationale>
+		      <description>
+			This SFR is selection-based in the App PP.
+			<replace><depends/></replace> because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
+		      </description>
+                        <!-- <f-element> -->
+                        <!--     <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1. -->
+                        <!--     </title> -->
+                        <!--     <aactivity> -->
+                        <!--         <no-tests> -->
+                        <!--             There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/>  -->
+                        <!--         </no-tests> -->
+                        <!--     </aactivity> -->
+                        <!-- </f-element> -->
                     </f-component>
                     <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
-                        <consistency-rationale>This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.</consistency-rationale>
-                        <f-element>
-                            <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
-                            </title>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/> 
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
+                      <consistency-rationale>
+			This SFR is unchanged from its definition in the App PP;
+			the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
+		      </consistency-rationale>
+		      <description>
+			This SFR is selection-based in the App PP.
+			<replace><depends/></replace> because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
+		      </description>
+
+
+		      <!-- <f-element> -->
+                      <!--       <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1. -->
+                      <!--       </title> -->
+                      <!--       <aactivity> -->
+                      <!--           <no-tests> -->
+                      <!--               There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/>  -->
+                      <!--           </no-tests> -->
+                      <!--       </aactivity> -->
+                      <!--   </f-element> -->
                     </f-component>
-                    
                 </sec:mod_fia> 
                 
                 <sec:mod_ftp title="Trusted Path/Channels (FTP)">
