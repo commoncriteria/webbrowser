@@ -13,9 +13,9 @@
 
     <PPReference>
         <ReferenceTable>
-            <PPVersion>1.0</PPVersion>
+            <PPVersion>1.1</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2021-06-18</PPPubDate>
+            <PPPubDate>2023-08-25</PPPubDate>
             <Keywords>web browser; browser</Keywords>
         </ReferenceTable>
     </PPReference>
@@ -25,19 +25,24 @@
             <date>2021-06-18</date>
             <subject>Initial release as PP-Module</subject>
         </entry>
+        <entry>
+            <version>1.1</version>
+            <date>2023-08-25</date>
+            <subject>Updates to conform to CC:2022</subject>
+        </entry>
     </RevisionHistory>
     <sec:Introduction>
         <sec:Overview>
             
             <!-- editor's note: Section 1.1 replaced with boilerplate text from other recent modules. Original materials integrated here and also moved down to section 1.3 -->
-            The scope of the Web Browser PP-Module is to describe the security functionality of web browser applications in terms of [CC] 
+            The scope of the PP-Module for Web Browsers, Version 1.1 is to describe the security functionality of web browser applications in terms of [CC] 
             and to define functional and assurance requirements for the product-specific capabilities of web browser applications.
             Web browsers are client applications that retrieve
             and render content provided by web servers, primarily using the hypertext transfer
             protocol (HTTP) or HTTP Secure (HTTPS). 
             
             This PP-Module is intended for use with the following Base-PP: <h:ul>
-                <h:li><xref to="app"/></h:li>
+                <h:li><xref to="BibAppPP"/></h:li>
             </h:ul>
             <h:p/> This Base-PP is valid because web browsers are a specific type of software application.
             
@@ -183,21 +188,33 @@
     <sec:Conformance_Claims boilerplate="no">
         <cclaims>
             <cclaim name="Conformance Statement">
-                <description> This PP-Module inherits exact conformance as required from
-                    the specified Base-PP and as defined in the CC and
-                    CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
-                    SFRs (dated May 2017).<h:p/> 
-                    No additional PPs or PP-Modules are allowed to
-                    be specified in a PP-Configuration with this PP-Module aside from the Base-PP.
+                <description>An ST must claim exact conformance to this PP-Module.
+                    <h:br/><h:br/>
+                    The evaluation methods used for evaluating the TOE are a combination of the workunits defined in <xref to="bibCEM"/> as well as the
+                    Evaluation Activities for ensuring that individual SFRs have sufficient level of supporting evidence in the Security Target and 
+                    guidance documentation and have been sufficiently tested by the laboratory as part of completing ATE_IND.1. Any functional packages 
+                    which this PP-Module claims similarly contain their own Evaluation Activities that are used in this manner.
                 </description>
             </cclaim>
             <cclaim name="CC Conformance Claims">
-                <description>This PP-Module is conformant to Parts 2 (extended) and 3
-                    (extended) of Common Criteria Version 3.1, Release 5 [CC].
+                <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria CC:2022, Revision 1.</description>
+            </cclaim>
+            <cclaim name="PP Claim">
+                <description>This PP-Module does not claim conformance to any other Protection Profile.<h:p/>
+                    No other PPs or PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module beyond its Base-PP. 
                 </description>
             </cclaim>
-            <cclaim name="Package Claims">
-                <description>This PP-Module is TLS Pacakge conformant.</description>
+            <cclaim name="Package Claim">
+                <description><h:ul>
+                    <h:li>This PP-Module is Functional Package for TLS Version 1.1 Conformant.</h:li>
+                    <h:li>This PP-Module is Functional Package for TLS Version 2.0 Conformant.</h:li>
+                    <h:li>This PP-Module conforms to the EAL1 assurance package augmented with ALC_TSU_EXT.1, ASE_OBJ.2, ASE_REQ.2, and ASE_SPD.1.</h:li>
+                </h:ul>
+                    The functional packages to which the PP-Module conforms include SFRs that are not mandatory to claim for the sake of conformance.
+                    An ST that claims one or more of these functional packages may include whatever non-mandatory SFRs are appropriate to claim based on the 
+                    capabilities of the TSF and on any triggers on their inclusion based inherently on the SFR selections made. All security requirements
+                    in these packages are intended to satisfy the O.BROWSER_PROTECTED_COMMS TOE security objective of the Base-PP.
+                </description>
             </cclaim>
         </cclaims>
     </sec:Conformance_Claims>
@@ -238,44 +255,41 @@
                 
                 
                 <threat name="T.NETWORK_ATTACK">
-                    <description>See App PP, Section 3.1.</description>
-                    <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
-                    <objective-refer ref="O.INTEGRITY">
-                        <rationale>The threat T.NETWORK_ATTACK is countered by O.INTEGRITY as this provides for the ability of the TOE to resist unauthorized modification via a network vector.
+                    <from base="AppPP"/>
+                    <objective-refer ref="O.BROWSER_INTEGRITY">
+                        <rationale>The threat T.NETWORK_ATTACK is countered by O.BROWSER_INTEGRITY as this provides for the ability of the TOE to resist unauthorized modification via a network vector.
                         </rationale>
                     </objective-refer>
-                    <objective-refer ref="O.MANAGEMENT">
-                        <rationale>The threat T.NETWORK_ATTACK is countered by O.MANAGEMENT as this provides for the ability to configure the application to defend against network attack.
+                    <objective-refer ref="O.BROWSER_MANAGEMENT">
+                        <rationale>The threat T.NETWORK_ATTACK is countered by O.BROWSER_MANAGEMENT as this provides for the ability to configure the application to defend against network attack.
                         </rationale>
                     </objective-refer>
-                    <objective-refer ref="O.PROTECTED_COMMS">
-                        <rationale>The threat T.NETWORK_ATTACK is countered by O.PROTECTED_COMMS as this provides for integrity of transmitted data.
+                    <objective-refer ref="O.BROWSER_PROTECTED_COMMS">
+                        <rationale>The threat T.NETWORK_ATTACK is countered by O.BROWSER_PROTECTED_COMMS as this provides for integrity of transmitted data.
                         </rationale>
                     </objective-refer>
                 </threat>
                 
                 
                 <threat name="T.NETWORK_EAVESDROP">
-                    <description>See App PP, Section 3.1.</description>
-                    <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
+                    <from base="AppPP"/>
 
-                    <objective-refer ref="O.MANAGEMENT">
+                    <objective-refer ref="O.BROWSER_MANAGEMENT">
                         <rationale>	
-                            The threat T.NETWORK_EAVESDROP is countered by O.MANAGEMENT as this provides for the ability to configure the application to protect the confidentiality of its transmitted data.
+                            The threat T.NETWORK_EAVESDROP is countered by O.BROWSER_MANAGEMENT as this provides for the ability to configure the application to protect the confidentiality of its transmitted data.
                         </rationale>
                     </objective-refer>
-                    <objective-refer ref="O.PROTECTED_COMMS">
-                        <rationale>The threat T.NETWORK_EAVESDROP is countered by O.PROTECTED_COMMS as this provides for confidentiality of transmitted data.
+                    <objective-refer ref="O.BROWSER_PROTECTED_COMMS">
+                        <rationale>The threat T.NETWORK_EAVESDROP is countered by O.BROWSER_PROTECTED_COMMS as this provides for confidentiality of transmitted data.
                         </rationale>
                     </objective-refer>
                 </threat>
                 
                 
                 <threat name="T.PHYSICAL_ACCESS">
-                    <description>See App PP, Section 3.1.</description>
-                    <consistency-rationale>This threat comes directly from the Base-PP.</consistency-rationale>
-                    <objective-refer ref="O.PROTECTED_STORAGE">
-                        <rationale>The threat T.PHYSICAL_ACCESS is countered by O.PROTECTED_STORAGE, which protects against unauthorized attempts to access physical storage used by the TOE.
+                    <from base="AppPP"/>
+                    <objective-refer ref="O.BROWSER_PROTECTED_STORAGE">
+                        <rationale>The threat T.PHYSICAL_ACCESS is countered by O.BROWSER_PROTECTED_STORAGE, which protects against unauthorized attempts to access physical storage used by the TOE.
                         </rationale>
                     </objective-refer>
                 </threat>
@@ -305,6 +319,8 @@
                                 window/tab. Such attacks leverage the ability of browsers to display
                                 content from multiple domains simultaneously.</h:li>
                         </h:ul>
+                        A malicious actor could implement a malicious website or send a maliciously-crafted URL that an unwitting user could open in a vulnerable web browser
+                        that could be used to harvest sensitive data from a legitimate user or otherwise facilitate impersionation of that user. 
                     </description>
                     <consistency-rationale>This threat extends the security problem definition of the Base-PP by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</consistency-rationale>
                     <objective-refer ref="O.DOMAIN_ISOLATION">
@@ -328,8 +344,10 @@
         identified in the Base-PP and describes additional objectives specific to this PP-Module. 
         <sec:Security_Objectives_for_the_TOE>
             <SOs>
-                <SO name="O.INTEGRITY">
-                    <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the integrity protection mechanisms that are specific to web browser applications.</description>
+                <SO name="O.BROWSER_INTEGRITY">
+                    <description>A general version of this objective is defined in the Base-PP. 
+                        This PP-Module defines a version of the objective that is specific to the functionality that protects the integrity of a
+                        web browser application specifically.</description>
                     <consistency-rationale>This objective is an enhancement to the O.INTEGRITY objective defined in the Base-PP, 
                         specifically in regards to the integrity protection mechanisms that apply to web browsers.</consistency-rationale>
                     <addressed-by>FPT_DNL_EXT.1, FPT_MCD_EXT.1, FPT_INT_EXT.1 (objective)</addressed-by>
@@ -339,20 +357,24 @@
                         FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a reputation service to prevent the acquisition of potentially malicious applications.<h:p/>
                     </rationale>
                 </SO>
-                <SO name="O.MANAGEMENT">
-                    <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the management functionality that is specific to web browser applications.</description>
+                <SO name="O.BROWSER_MANAGEMENT">
+                    <description>A general version of this objective is defined in the Base-PP. 
+                        This PP-Module defines a version of the objective that is specific to the functionality that may be managed by a
+                        web browser application specifically.</description>
                     <consistency-rationale>This objective is an enhancement to the O.MANAGEMENT objective defined in the Base-PP, 
-                        specifically in regards to the secure administration of functions that are specific to web browser applications.</consistency-rationale>
+                        specifically in regards to the secure administration of functions that are particular to web browser applications.</consistency-rationale>
                     <addressed-by>FDP_TRK_EXT.1, FMT_MOF_EXT.1</addressed-by>
                     <rationale>
                         FDP_TRK_EXT.1 supports the objective by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.<h:p/>
                         FMT_MOF_EXT.1 supports the objective by defining the management functionality that is specific to web browser applications.
                     </rationale>
                 </SO>
-                <SO name="O.PROTECTED_STORAGE">
-                    <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the data at rest protection functionality that is specific to web browser applications.</description>
+                <SO name="O.BROWSER_PROTECTED_STORAGE">
+                    <description>A general version of this objective is defined in the Base-PP. 
+                    This PP-Module defines a version of the objective that applies to the data at rest protection functionality and considerations that are
+                    specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_STORAGE objective defined in the Base-PP, 
-                        specifically in regards to the data at rest that applies to web browser applications.</consistency-rationale>
+                        specifically in regards to the data at rest protection that applies to web browser applications.</consistency-rationale>
                     <addressed-by>FDP_COO_EXT.1, FDP_PST_EXT.1 (optional), FPT_INT_EXT.1 (objective)</addressed-by>
                     <rationale>
                         FDP_COO_EXT.1 supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.<h:p/>
@@ -360,10 +382,12 @@
                         FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.
                     </rationale>
                 </SO>
-                <SO name="O.PROTECTED_COMMS">
-                    <description>This objective is defined in the Base-PP. This PP-Module maps additional SFRs to it to address the data in transit protection functionality that is specific to web browser applications.</description>
+                <SO name="O.BROWSER_PROTECTED_COMMS">
+                    <description>A general version of this objective is defined in the Base-PP. 
+                        This PP-Module defines a version of the objective that applies to the data in transit protection functionality and considerations that are 
+                        specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_COMMS objective defined in the Base-PP, 
-                        specifically in regards to the data in transit that applies to web browser applications.</consistency-rationale>
+                        specifically in regards to the data in transit protection that applies to web browser applications.</consistency-rationale>
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP), FCS_HTTPS_EXT.1/Client (from Base-PP), FCS_RBG_EXT.1 (modified from Base-PP), FIA_X509_EXT.1 (from Base-PP), FIA_X509_EXT.2 (from Base-PP), FTP_DIT_EXT.1 (modified from Base-PP), FDP_STR_EXT.1, FCS_STS_EXT.1 (objective), FPT_INT_EXT.2 (objective)</addressed-by>
                     <rationale>
                         FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.<h:p/>
@@ -394,8 +418,8 @@
                     <description> To address issues associated with malicious or flawed add-ons,
                         conformant browsers implement mechanisms to ensure their integrity. This
                         includes verification and validation at installation time and update. </description>
-                    <consistency-rationale>This objective is an enhancement to the O.INTEGRITY objective defined in the Base-PP. 
-                        Where O.INTEGRITY is concerned with the integrity of the TOE application, 
+                    <consistency-rationale>This objective is an enhancement to the O.BROWSER_INTEGRITY objective defined in the Base-PP. 
+                        Where O.BROWSER_INTEGRITY is concerned with the integrity of the TOE application, 
                         O.ADDON_INTEGRITY is concerned with the integrity of third-party add-ons that can be loaded into the TOE.</consistency-rationale>
                     <addressed-by>FPT_AON_EXT.1, FPT_AON_EXT.2 (selection-based)</addressed-by>
                     <rationale>
@@ -450,10 +474,12 @@
         </h:ul>
         -->
         
-        <base-pp id="app">
-	  <git><url>https://github.com/commoncriteria/application</url>
-	  <branch>release-1.4</branch></git>
-          <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
+        <base-pp id="AppPP">
+            <git>
+                <url>https://github.com/commoncriteria/application</url>
+                <branch>release-1.4</branch>
+            </git>
+            <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
             
             <modified-sfrs>
                 
@@ -560,7 +586,7 @@
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables>
-                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1<h:b>/Client</h:b>, TLS as a client as defined in the TLS Package, DTLS as a client as defined in the TLS Package]</selectable>
+                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1/Client, TLS as a client as defined in the TLS Package, DTLS as a client as defined in the TLS Package]</selectable>
                                 <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [HTTPS, TLS, DTLS]</selectable>
                             </selectables>
                                 between itself and another trusted IT product.
@@ -586,10 +612,23 @@
             <con-toe>
                 If this PP-Module is used to extend the App PP, the TOE type for the overall TOE is still a software application.
                 The TOE boundary is simply extended to include the web browser functionality that is built into the application so that additional security functionality is claimed within the scope of the TOE.
+                <h:br/><h:br/>
+                The only asset for the TOE is the software executable and sensitive data that comprises the TOE. The entire TOE as defined by the combination of the
+                Base-PP and this PP-Module is a single asset. The only differences to the threat model are that the PP-Module introduces the concept of add-ons, which
+                introduces the threat of an add-on being flawed in some way, and that the PP-Module introduces the concept of a same-origin violation, which
+                occurs through a use case specific to web browser applications.
             </con-toe>
             
             <con-sec-prob/>
-            <con-obj/>
+            <con-obj>
+                Listed below are the security objectives defined in this PP-Module with rationale for their consistency with the App PP. The PP-Module shares the
+                executable application asset with the App PP but defines additional security objectives because the PP-Module defines a specific type of software application
+                with security functionality that is common to the application type.
+                <h:br/><h:br/>
+                Note that the PP-Module is implicitly consistent with any claimed functional packages because the applicable functional packages do not have
+                TOE objecitves of their own; per section 2, any claimed functional package is intended to support the O.PROTECTED_COMMS objective in the
+                App PP.
+            </con-obj>
             <con-op-en>
                 This PP-Module does not define any objectives for the TOE's operational environment. 
             </con-op-en>
@@ -1648,20 +1687,20 @@
     
     <bibliography>
         <cc-entry/>
-        <entry id="CEM">
-            <tag>CEM</tag>
-            <description>
-               <h:a href="https://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R5.pdf"
-                  >Common Methodogy for Information Technology Security Evaluation, Version 3.1r5</h:a>, 
-                   CCMB-2017-04-004, April 2017
-             </description>
-        </entry>
         <entry id="bibAppPP">
             <tag>App PP</tag>
+            <!-- todo: update with proper date -->
             <description>
-                <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v1.4.pdf"
-                    >Protection Profile for Application Software, Version 1.4</h:a>, October 7, 2021
+                <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v2.0.pdf"
+                    >Protection Profile for Application Software, Version 2.0</h:a>, TBD
             </description>
+        </entry>
+        <entry id="bibCEM">
+            <tag>CEM</tag>
+            <description>
+                <h:a href="https://commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">Common
+                    Methodology for Information Technology Security - Evaluation Methodology</h:a>,
+                CCMB-2022-11-006, CEM:2022, Revision 1, November 2022. </description>
         </entry>
     </bibliography>
     
