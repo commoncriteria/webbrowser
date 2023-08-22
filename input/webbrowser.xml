@@ -42,7 +42,7 @@
             protocol (HTTP) or HTTP Secure (HTTPS). 
             
             This PP-Module is intended for use with the following Base-PP: <h:ul>
-                <h:li><xref to="BibAppPP"/></h:li>
+                <h:li>Protection Profile for Application Software, Version 2.0</h:li>
             </h:ul>
             <h:p/> This Base-PP is valid because web browsers are a specific type of software application.
             
@@ -213,7 +213,7 @@
                     The functional packages to which the PP-Module conforms include SFRs that are not mandatory to claim for the sake of conformance.
                     An ST that claims one or more of these functional packages may include whatever non-mandatory SFRs are appropriate to claim based on the 
                     capabilities of the TSF and on any triggers on their inclusion based inherently on the SFR selections made. All security requirements
-                    in these packages are intended to satisfy the O.BROWSER_PROTECTED_COMMS TOE security objective of the Base-PP.
+                    in these packages are intended to satisfy the O.PROTECTED_COMMS TOE security objective of the Base-PP.
                 </description>
             </cclaim>
         </cclaims>
@@ -578,8 +578,11 @@
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables>
-                                <selectable>encrypt all transmitted [sensitive data] with [HTTPS in accordance with FCS_HTTPS_EXT.1/Client, TLS as a client as defined in the TLS Package, DTLS as a client as defined in the TLS Package]</selectable>
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [HTTPS, TLS, DTLS]</selectable>
+                                <selectable>encrypt all transmitted [sensitive data] with 
+                                    [HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [web browsing],
+                                    TLS as a client as defined in the Functional Package for TLS for [web browsing], 
+                                    DTLS as a client as defined in the Functional Package for TLS for [web browsing]]</selectable>
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [HTTPS, TLS, DTLS] for [web browsing]</selectable>
                             </selectables>
                                 between itself and another trusted IT product.
                             </title>
@@ -611,7 +614,17 @@
                 occurs through a use case specific to web browser applications.
             </con-toe>
             
-            <con-sec-prob/>
+            <con-sec-prob>
+                Listed below are the threats, objectives, and OSPs defined in this PP-Module with rationale for their consistency with the App PP.
+                The PP-Module shares the
+                executable application asset with the App PP but defines additional threats because the PP-Module defines a specific type of software application
+                with potential exploits that are common to the application type.
+                <h:br/><h:br/>
+                    Note that the PP-Module is implicitly consistent with any claimed functional packages because the applicable functional packages do not have
+                    security problem definitions of their own; per section 2, any claimed functional package is intended to support the O.PROTECTED_COMMS objective in the
+                    App PP, which helps mitigate the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in that PP. 
+                
+            </con-sec-prob>
             <con-obj>
                 Listed below are the security objectives defined in this PP-Module with rationale for their consistency with the App PP. The PP-Module shares the
                 executable application asset with the App PP but defines additional security objectives because the PP-Module defines a specific type of software application
