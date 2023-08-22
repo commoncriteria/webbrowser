@@ -373,12 +373,11 @@
                     specific to web browser applications.</description>
                     <consistency-rationale>This objective is an enhancement to the O.PROTECTED_STORAGE objective defined in the Base-PP, 
                         specifically in regards to the data at rest protection that applies to web browser applications.</consistency-rationale>
-                    <addressed-by>FDP_COO_EXT.1, FDP_PST_EXT.1 (optional), FPT_INT_EXT.1 (objective)</addressed-by>
-                    <rationale>
-                        FDP_COO_EXT.1 supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.<h:p/>
-                        FDP_PST_EXT.1 supports the objective by optionally defining the minimum set of persistent data that the TSF is required to store.<h:p/>
-                        FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.
-                    </rationale>
+                    
+                        <addressed-by>FDP_COO_EXT.1</addressed-by><rationale>FDP_COO_EXT.1 supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.</rationale>
+                        <addressed-by>FDP_PST_EXT.1 (optional)</addressed-by><rationale>FDP_PST_EXT.1 supports the objective by optionally defining the minimum set of persistent data that the TSF is required to store.</rationale>
+                        <addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</rationale>
+                    
                 </SO>
                 <SO name="O.BROWSER_PROTECTED_COMMS">
                     <description>A general version of this objective is defined in the Base-PP. 
