@@ -733,7 +733,7 @@
                                         cookie is present.</test>
                                     <test>The evaluator shall clear all cookies and then configure
                                         the browser so that storage of third-party cookies is
-                                        blocked (i.e. not allowed). The evaluator shall load a web
+                                        blocked (i.e., not allowed). The evaluator shall load a web
                                         page that attempts to store a third-party cookie and shall
                                         verify that the cookie was not stored.</test>
                                 </testlist>
@@ -1051,7 +1051,7 @@
                                     to collect tracking information about the user through 
 				    <selectables>
                                         <selectable>zombie cookies</selectable>
-                                        <selectable>add-on based tracking (e.g. Flash
+                                        <selectable>add-on based tracking (e.g., Flash
                                             cookies)</selectable>
                                         <selectable>browsing history</selectable>
                                         <selectable><assignable>other tracking
