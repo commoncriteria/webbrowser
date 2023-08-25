@@ -898,7 +898,7 @@
                                         verify that the script that is running in one window or tab
                                         cannot access content that was retrieved in a different
                                         window or tab.</test>
-                                    <test>The evaluator shall verify that the scripts can retrieve
+                                    <test>The evaluator shall verify that the scripts cannot retrieve
                                         content from another window or tab at a different
                                         subdomain.</test>
                                 </testlist>
