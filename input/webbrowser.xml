@@ -415,7 +415,7 @@
                         Where O.BROWSER_INTEGRITY is concerned with the integrity of the TOE application, 
                         O.ADDON_INTEGRITY is concerned with the integrity of third-party add-ons that can be loaded into the TOE.</consistency-rationale>
                     
-                        <addressed-by>FPT_AON_EXT.1</addressed-by><rationale>FPT_AON_EXT.1 supports the objective by specifying whether or not the TSF has the ability to load add-ons.</rationale>
+                        <addressed-by>FPT_AON_EXT.1</addressed-by><rationale>FPT_AON_EXT.1 supports the objective by specifying whether the TSF has the ability to load add-ons.</rationale>
                         <addressed-by>FPT_AON_EXT.2 (selection-based)</addressed-by><rationale>FPT_AON_EXT.2 supports the objective by defining a cryptographic method for the TSF to validate the integrity of add-ons if the TOE supports their use.</rationale>
                     
                 </SO>
@@ -673,7 +673,7 @@
                             <TSS>The evaluator shall ensure that the TSS
                                 describes how the browser separates local and session storage. <h:p/></TSS>
                             <Guidance>The evaluator shall verify that the operational guidance
-                                that it documents the location on the file system that will be used
+                                documents the location on the file system that will be used
                                 for local storage and the location used for session storage. <h:p/></Guidance>
                             <Tests>The evaluator shall obtain or create JavaScript-­based scripts that store and retrieve information from local and session storage. 
                                 The evaluator shall set up a web server with two or more webpages from different domains 
@@ -695,7 +695,7 @@
                     </f-element>
                 </f-component>
                 <ext-comp-def fam-id="FDP_COO_EXT" title="Cookie Blocking">
-                    <fam-behavior>Components in this family define requirements for controlling whether or not the TOE stores third-party cookie data.
+                    <fam-behavior>Components in this family define requirements for controlling whether the TOE stores third-party cookie data.
                     </fam-behavior>
                 </ext-comp-def>
                 <f-component cc-id="fdp_coo_ext.1" name="Cookie Blocking">
@@ -733,8 +733,8 @@
                                         cookie is present.</test>
                                     <test>The evaluator shall clear all cookies and then configure
                                         the browser so that storage of third-party cookies is
-                                        not allowed. The evaluator shall load a web
-                                        page that attempts to store a third-party cookie and shall
+                                        not allowed. The evaluator shall load a webpage
+                                        that attempts to store a third-party cookie and shall
                                         verify that the cookie was not stored.</test>
                                 </testlist>
                             </Tests>
@@ -819,8 +819,8 @@
                                         mechanisms.</h:li>
                                 </h:ul>
                                 <h:p/></TSS>
-                            <Guidance> The evaluator shall examine the operational guidance to
-                                determine that it provides a description of the restrictions
+                            <Guidance> The evaluator shall verify that the operational guidance 
+                                provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
                                 are configurable (for instance, if a user can choose which
                                 mechanisms to "turn on"), the evaluator shall ensure that the method for enabling and
@@ -1094,7 +1094,7 @@
                                     encountered</text></management-function>
                                 <management-function><text>Enable and disable user's ability to
                                     select default actions upon download of a file (e.g., always
-                                    open, or always save, a downloaded file)</text></management-function>
+                                    open or always save a downloaded file)</text></management-function>
                                 <management-function><text>Enable and disable launching of
                                     downloaded files outside the browser</text></management-function>
                                 <management-function><text>Enable and disable
@@ -1240,7 +1240,7 @@
                         </note>
                         <aactivity>
                             <TSS>The evaluator shall ensure that the TSS
-                                that it describes the behavior of the browser when a user initiates
+                                describes the behavior of the browser when a user initiates
                                 the download of a file. <h:p/></TSS>
                             <Guidance>The evaluator shall ensure that the operational guidance
                                 describes the dialog box that appears when a download is
@@ -1533,8 +1533,8 @@
                                     <aactivity>
                                         <TSS> The evaluator shall ensure that the TSS
                                             documents how the browser supports HSTS. <h:p/></TSS>
-                                        <Guidance> The evaluator shall examine the operational guidance to
-                                            ensure it contains instructions on how to use HSTS. <h:p/></Guidance>
+                                        <Guidance> The evaluator shall ensure that the operational guidance 
+                                            contains instructions on how to use HSTS. <h:p/></Guidance>
                                         <Tests> The evaluator shall perform the following tests: <testlist>
                                             <test>The evaluator shall connect to an HSTS-compliant website
                                                 while running a network protocol analyzer to monitor the
