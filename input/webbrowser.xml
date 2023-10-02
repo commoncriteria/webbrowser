@@ -22,13 +22,8 @@
     <RevisionHistory>
         <entry>
             <version>1.0</version>
-            <date>2021-06-18</date>
-            <subject>Initial release as PP-Module</subject>
-        </entry>
-        <entry>
-            <version>1.0</version>
             <date>2023-10-06</date>
-            <subject>Updates to conform to CC:2022</subject>
+            <subject>Initial release as CC:2022 PP-Module</subject>
         </entry>
     </RevisionHistory>
     <sec:Introduction>
