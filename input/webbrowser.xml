@@ -13,9 +13,9 @@
 
     <PPReference>
         <ReferenceTable>
-            <PPVersion>1.1</PPVersion>
+            <PPVersion>1.0</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2023-08-25</PPPubDate>
+            <PPPubDate>2023-10-06</PPPubDate>
             <Keywords>web browser; browser</Keywords>
         </ReferenceTable>
     </PPReference>
@@ -26,8 +26,8 @@
             <subject>Initial release as PP-Module</subject>
         </entry>
         <entry>
-            <version>1.1</version>
-            <date>2023-08-25</date>
+            <version>1.0</version>
+            <date>2023-10-06</date>
             <subject>Updates to conform to CC:2022</subject>
         </entry>
     </RevisionHistory>
@@ -35,7 +35,7 @@
         <sec:Overview>
             
             <!-- editor's note: Section 1.1 replaced with boilerplate text from other recent modules. Original materials integrated here and also moved down to section 1.3 -->
-            The scope of the PP-Module for Web Browsers, Version 1.1 is to describe the security functionality of web browser applications in terms of [CC] 
+            The scope of the PP-Module for Web Browsers, Version 1.0 is to describe the security functionality of web browser applications in terms of [CC] 
             and to define functional and assurance requirements for the product-specific capabilities of web browser applications.
             Web browsers are client applications that retrieve
             and render content provided by web servers, primarily using the hypertext transfer
