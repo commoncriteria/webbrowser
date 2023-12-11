@@ -214,7 +214,7 @@
         </cclaims>
     </sec:Conformance_Claims>
     
-    <sec:Security_Problem_Description> The security problem is described in
+    <sec:Security_Problem_Definition> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
         operational environment, and any organizational security policies that it is expected to
         enforce. <h:p/> This PP-Module does not repeat the threats, assumptions, and
@@ -334,7 +334,7 @@
             <OSPs/>
         </sec:Organizational_Security_Policies>
         
-    </sec:Security_Problem_Description>
+    </sec:Security_Problem_Definition>
     <sec:Security_Objectives>This PP-Module adds SFRs to objectives
         identified in the Base-PP and describes additional objectives specific to this PP-Module. 
         <sec:Security_Objectives_for_the_TOE>
