@@ -192,7 +192,7 @@
                 </description>
             </cclaim>
             <cclaim name="CC Conformance Claims">
-                <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria CC:2022, Revision 1.</description>
+                <description>This PP-Module is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria CC:2022, Revision 1.</description>
             </cclaim>
             <cclaim name="PP Claim">
                 <description>This PP-Module does not claim conformance to any other Protection Profile.<h:p/>
@@ -203,7 +203,7 @@
                 <description><h:ul>
                     <h:li>This PP-Module is Functional Package for TLS Version 1.1 Conformant.</h:li>
                     <h:li>This PP-Module is Functional Package for TLS Version 2.0 Conformant.</h:li>
-                    <h:li>This PP does not conform to any assurance packages.</h:li>
+                    <h:li>This PP-Module does not conform to any assurance packages.</h:li>
                 </h:ul>
                     The functional packages to which the PP-Module conforms include SFRs that are not mandatory to claim for the sake of conformance.
                     An ST that claims one or more of these functional packages may include any non-mandatory SFRs that are appropriate to claim based on the 
