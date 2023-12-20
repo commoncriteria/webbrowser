@@ -26,6 +26,11 @@
             <subject>Initial release as CC:2022 PP-Module</subject>
         </entry>
     </RevisionHistory>
+    
+    <pp-preferences>
+        <using-cc2022/>
+    </pp-preferences>
+    
     <sec:Introduction>
         <sec:Overview>
             
@@ -1692,13 +1697,6 @@
                 <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v2.0.pdf"
                     >Protection Profile for Application Software, Version 2.0</h:a>, TBD
             </description>
-        </entry>
-        <entry id="bibCEM">
-            <tag>CEM</tag>
-            <description>
-                <h:a href="https://commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">Common
-                    Methodology for Information Technology Security - Evaluation Methodology</h:a>,
-                CCMB-2022-11-006, CEM:2022, Revision 1, November 2022. </description>
         </entry>
     </bibliography>
     
