@@ -1,9 +1,11 @@
 output/webbrowser-release-linkable.html: ActionScript
 output/webbrowser-release-linkable.html: ActiveX
 output/webbrowser-release-linkable.html: AppPP
+output/webbrowser-release-linkable.html: CEM
 output/webbrowser-release-linkable.html: DTLSC
 output/webbrowser-release-linkable.html: GPUs
 output/webbrowser-release-linkable.html: HTML5
+output/webbrowser-release-linkable.html: Novemeber
 output/webbrowser-release-linkable.html: Ons
 output/webbrowser-release-linkable.html: SCADA
 output/webbrowser-release-linkable.html: Sandboxing
@@ -28,9 +30,11 @@ output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: ActionScript
 output/webbrowser-release.html: ActiveX
 output/webbrowser-release.html: AppPP
+output/webbrowser-release.html: CEM
 output/webbrowser-release.html: DTLSC
 output/webbrowser-release.html: GPUs
 output/webbrowser-release.html: HTML5
+output/webbrowser-release.html: Novemeber
 output/webbrowser-release.html: Ons
 output/webbrowser-release.html: SCADA
 output/webbrowser-release.html: Sandboxing
@@ -51,6 +55,7 @@ output/webbrowser-release.html: unmanaged
 output/webbrowser-release.html: webpages
 output/webbrowser-sd.html: AGD
 output/webbrowser-sd.html: ActionScript
+output/webbrowser-sd.html: CEM
 output/webbrowser-sd.html: HTML5
 output/webbrowser-sd.html: Sandboxing
 output/webbrowser-sd.html: Silverlight
@@ -68,9 +73,11 @@ output/webbrowser-sd.html: webpages
 output/webbrowser.html: ActionScript
 output/webbrowser.html: ActiveX
 output/webbrowser.html: AppPP
+output/webbrowser.html: CEM
 output/webbrowser.html: DTLSC
 output/webbrowser.html: GPUs
 output/webbrowser.html: HTML5
+output/webbrowser.html: Novemeber
 output/webbrowser.html: Ons
 output/webbrowser.html: SCADA
 output/webbrowser.html: Sandboxing
