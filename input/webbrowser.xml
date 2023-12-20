@@ -1692,10 +1692,10 @@
         <cc-entry/>
         <entry id="bibAppPP">
             <tag>App PP</tag>
-            <!-- todo: update with proper date -->
+            
             <description>
-                <h:a href="https://www.niap-ccevs.org/MMO/PP/PP_APP_v2.0.pdf"
-                    >Protection Profile for Application Software, Version 2.0</h:a>, TBD
+                <!-- todo: update hyperlink when PP published -->
+                <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462">Protection Profile for Application Software, Version 1.5</h:a>, TBD
             </description>
         </entry>
     </bibliography>
