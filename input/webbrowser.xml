@@ -15,14 +15,14 @@
         <ReferenceTable>
             <PPVersion>1.0</PPVersion>
             <PPAuthor>National Information Assurance Partnership</PPAuthor>
-            <PPPubDate>2023-12-11</PPPubDate>
+            <PPPubDate>2024-10-25</PPPubDate>
             <Keywords>web browser; browser</Keywords>
         </ReferenceTable>
     </PPReference>
     <RevisionHistory>
         <entry>
             <version>1.0</version>
-            <date>2023-12-11</date>
+            <date>2024-10-25</date>
             <subject>Initial release as CC:2022 PP-Module</subject>
         </entry>
     </RevisionHistory>
@@ -757,7 +757,10 @@
                     </dependencies>
                     
                     <f-element>
-                        <title>The TSF shall ensure that webpage rendering is performed in a
+                        <title>The TSF shall <selectables onlyone="yes">
+				  <selectable>invoke platform-provided functionality</selectable>
+				  <selectable>implement functionality</selectable>
+				</selectables> to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner: <h:ul>
                                 <h:li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</h:li>
@@ -818,14 +821,20 @@
                                         that provides context for understanding the claimed least privilege
                                         mechanisms.</h:li>
                                 </h:ul>
-                                <h:p/></TSS>
+                                <h:p/>
+				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review the TSS and
+				confirm it describes the mechanism used to invoke the platform-provided functionality.
+			        <h:p/></TSS>
                             <Guidance> The evaluator shall verify that the operational guidance 
                                 provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
                                 are configurable (for instance, if a user can choose which
                                 mechanisms to "turn on"), the evaluator shall ensure that the method for enabling and
                                 disabling the mechanisms are provided in the operational guidance, and the consequences of such
-                                actions are described. <h:p/></Guidance>
+                                actions are described. <h:p/>
+				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review
+				the guidance document and confirm it describes how to configure the application 
+				to properly invoke the platform-provided functionality. <h:p/></Guidance>
                             <!-- <Tests>The following tests require the developer to provide access to a
                                 test platform that provides the evaluator with debugging and test
                                 tools that are typically not found on consumer platforms. <h:p/>The
@@ -843,12 +852,13 @@
                                         configuration of the mechanism behaves as specified in the
                                         operational guidance.</test></testlist>
                             </Tests> -->
-                            <Tests>The evaluator shall perform the following test on each platform
-                                claimed in the ST:<testlist><test>The evaluator
-                                        shall execute a form of mobile code within an HTML page that
-                                        contains instructions to modify or delete a file from the
-                                        file system and verify that the file is not modified or
-                                        deleted.</test></testlist></Tests>
+                            <Tests>Conditional: if "implement functionality" is selected the evaluator shall perform the following test
+				on each platform claimed in the ST:<testlist><test>The evaluator
+                                shall inject shell code into a running browser rendering process. 
+				The shell code will be designed to modify or create a file on the
+				system. The evaluator shall verify that the file was not modified
+				as the browser process sandbox should not have permission to 
+				modify user or system files.</test></testlist></Tests>
                         </aactivity>
                     </f-element>
                 </f-component>
