@@ -24,7 +24,7 @@
             <br>
              Version: 1.0
             <br>
-            2023-12-11
+            2024-10-25
             <br>
             <b>National Information Assurance Partnership</b>
             <br>
@@ -35,7 +35,7 @@
                 <th>Version</th><th>Date</th><th>Comment</th>
             </tr>
             <tr>
-                <td>1.0</td><td>2023-12-11</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td>
+                <td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td>
             </tr>
         </table>
         <h3>
@@ -576,12 +576,12 @@
                     <a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that webpage rendering is performed in a process that is restricted in the following manner: 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_8">implement functionality</span> ] to ensure that webpage rendering is performed in a process that is restricted in the following manner: 
                     <ul>
                         <li>The rendering process can only directly access the area of the file system dedicated to the browser.</li>
                         <li>The rendering process can only directly invoke inter-process communication mechanisms with its own browser processes.</li>
                         <li>
-                            The rendering process has reduced privilege with respect to other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7"> [<b>assignment</b>: <span class="assignable-content"> other methods by which the principle of least privilege is implemented for rendering processes</span>]</span>, <span class="selectable-content" id="_s_8">in no other ways</span> ].
+                            The rendering process has reduced privilege with respect to other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_9"> [<b>assignment</b>: <span class="assignable-content"> other methods by which the principle of least privilege is implemented for rendering processes</span>]</span>, <span class="selectable-content" id="_s_10">in no other ways</span> ].
                         </li>
                     </ul>
                     <div class="appnote">
@@ -640,16 +640,16 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide notification to the user when tracking information for [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_9">geolocation</span>
+                            <span class="selectable-content" id="_s_11">geolocation</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_10">browser history</span>
+                            <span class="selectable-content" id="_s_12">browser history</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_11">browser preferences</span>
+                            <span class="selectable-content" id="_s_13">browser preferences</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_12">browser statistics</span>
+                            <span class="selectable-content" id="_s_14">browser statistics</span>
                         </li>
                     </ul>
                     ] is requested by a website.
@@ -707,7 +707,7 @@
                             </td>
                         </tr>
                         <tr id="_mf_4">
-                            <td>4</td><td style="text-align:left">Enable and disable ability for websites to collect tracking information about the user through [<b>selection</b>: <span class="selectable-content" id="_s_13">zombie cookies</span>, <span class="selectable-content" id="_s_14">add-on based tracking (e.g., Flash cookies)</span>, <span class="selectable-content" id="_s_15">browsing history</span>, <span class="selectable-content" id="_s_16">[<b>assignment</b>: <span class="assignable-content">other tracking mechanisms</span>]</span> ]</td><td>
+                            <td>4</td><td style="text-align:left">Enable and disable ability for websites to collect tracking information about the user through [<b>selection</b>: <span class="selectable-content" id="_s_15">zombie cookies</span>, <span class="selectable-content" id="_s_16">add-on based tracking (e.g., Flash cookies)</span>, <span class="selectable-content" id="_s_17">browsing history</span>, <span class="selectable-content" id="_s_18">[<b>assignment</b>: <span class="assignable-content">other tracking mechanisms</span>]</span> ]</td><td>
                                 <div class="tooltipped">
                                     O<span class="tooltiptext">Optional</span>
                                 </div>
@@ -883,7 +883,7 @@
                             </td>
                         </tr>
                         <tr id="_mf_20">
-                            <td>20</td><td style="text-align:left">Enable and disable [<b>selection</b>: <span class="selectable-content" id="_s_17">ActiveX</span>, <span class="selectable-content" id="_s_18">Flash</span>, <span class="selectable-content" id="_s_19">Java</span>, <span class="selectable-content" id="_s_20"> [<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span> ] mobile code</td><td>
+                            <td>20</td><td style="text-align:left">Enable and disable [<b>selection</b>: <span class="selectable-content" id="_s_19">ActiveX</span>, <span class="selectable-content" id="_s_20">Flash</span>, <span class="selectable-content" id="_s_21">Java</span>, <span class="selectable-content" id="_s_22"> [<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span> ] mobile code</td><td>
                                 <div class="tooltipped">
                                     O<span class="tooltiptext">Optional</span>
                                 </div>
@@ -943,7 +943,7 @@
                     <a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_22">no add-ons</span> ].
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_24">no add-ons</span> ].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">If <a href="#addons_supported">trusted add-ons</a> is selected in <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also claim the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a>. 
                             <p></p>
@@ -988,28 +988,28 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_23"> signed [<b>selection</b>: 
+                            <span class="selectable-content" id="_s_25"> signed [<b>selection</b>: 
                                 <ul>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_24">ActiveX</span>
+                                        <span class="selectable-content" id="_s_26">ActiveX</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_25">Flash</span>
+                                        <span class="selectable-content" id="_s_27">Flash</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_26">Java</span>
+                                        <span class="selectable-content" id="_s_28">Java</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_27">ActionScript</span>
+                                        <span class="selectable-content" id="_s_29">ActionScript</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_28">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
+                                        <span class="selectable-content" id="_s_30">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
                                     </li>
                                 </ul>
                                 ]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_29">no</span>
+                            <span class="selectable-content" id="_s_31">no</span>
                         </li>
                     </ul>
                     ] mobile code.
@@ -1020,22 +1020,22 @@
                     <a href="#FPT_MCD_EXT.1.2" class="abbr">FPT_MCD_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_32">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span> ] unsigned, untrusted, or unverified [<b>selection</b>: 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_34">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span> ] unsigned, untrusted, or unverified [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_34">ActiveX</span>
+                            <span class="selectable-content" id="_s_36">ActiveX</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_35">Flash</span>
+                            <span class="selectable-content" id="_s_37">Flash</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_36">Java</span>
+                            <span class="selectable-content" id="_s_38">Java</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_37">ActionScript</span>
+                            <span class="selectable-content" id="_s_39">ActionScript</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_38">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
+                            <span class="selectable-content" id="_s_40">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
                         </li>
                     </ul>
                     ] mobile code without executing it.
@@ -1310,7 +1310,7 @@
                     <a href="#FDP_PST_EXT.1.1" class="abbr">FDP_PST_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing persistent data to the file system with the following exceptions: [<b>selection</b>: <span class="selectable-content" id="_s_41">credential information</span>, <span class="selectable-content" id="_s_42">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_43">certificate revocation information</span>, <span class="selectable-content" id="_s_44">no exceptions</span> ].
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing persistent data to the file system with the following exceptions: [<b>selection</b>: <span class="selectable-content" id="_s_43">credential information</span>, <span class="selectable-content" id="_s_44">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_45">certificate revocation information</span>, <span class="selectable-content" id="_s_46">no exceptions</span> ].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> Any data that persists after the browser closes, including temporary files, is considered to be persistent data. </span>
                     </div>
@@ -1394,7 +1394,7 @@
                     <a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_45">provide the ability</span>, <span class="selectable-content" id="_s_46">leverage the platform</span> ] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_47">published hash</span>, <span class="selectable-content" id="_s_48">no other functions</span> ] prior to installation and update. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>, <span class="selectable-content" id="_s_48">leverage the platform</span> ] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>, <span class="selectable-content" id="_s_50">no other functions</span> ] prior to installation and update. 
                 </div>
             </div>
             <div class="element">
@@ -1402,7 +1402,7 @@
                     <a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_49">provide the ability</span>, <span class="selectable-content" id="_s_50">leverage the platform</span> ] to query the current version of the add-on.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>, <span class="selectable-content" id="_s_52">leverage the platform</span> ] to query the current version of the add-on.
                 </div>
             </div>
             <div class="element">
@@ -1563,7 +1563,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_22">no add-ons</span> ].
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_24">no add-ons</span> ].
                     </div>
                     <h4>Management: FPT_AON_EXT.2</h4>
                     <p>No specific management functions are identified.</p>
@@ -1582,9 +1582,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_45">provide the ability</span>, <span class="selectable-content" id="_s_46">leverage the platform</span> ] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_47">published hash</span>, <span class="selectable-content" id="_s_48">no other functions</span> ] prior to installation and update. 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>, <span class="selectable-content" id="_s_48">leverage the platform</span> ] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>, <span class="selectable-content" id="_s_50">no other functions</span> ] prior to installation and update. 
                         <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_49">provide the ability</span>, <span class="selectable-content" id="_s_50">leverage the platform</span> ] to query the current version of the add-on.
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>, <span class="selectable-content" id="_s_52">leverage the platform</span> ] to query the current version of the add-on.
                         <h4 id="ext-comp-FPT_AON_EXT.2.3">FPT_AON_EXT.2.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of add-ons.
                     </div>
@@ -1666,9 +1666,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FPT_MCD_EXT.1.1">FPT_MCD_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_30"> signed [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] </span>, <span class="selectable-content" id="_s_31">no</span> ] mobile code. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_32"> signed [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] </span>, <span class="selectable-content" id="_s_33">no</span> ] mobile code. 
                         <h4 id="ext-comp-FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_39">automatically discard</span>, <span class="selectable-content" id="_s_40">provide the user with the option to discard</span> ] unsigned, untrusted, or unverified [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] mobile code without executing it.
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">automatically discard</span>, <span class="selectable-content" id="_s_42">provide the user with the option to discard</span> ] unsigned, untrusted, or unverified [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] mobile code without executing it.
                     </div>
                 </div>
                 <h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.2.4 FPT_INT_EXT Reputation Service Interaction</h3>
@@ -1886,12 +1886,12 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FDP_SBX_EXT.1.1">FDP_SBX_EXT.1.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that webpage rendering is performed in a process that is restricted in the following manner: 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_8">implement functionality</span> ] to ensure that webpage rendering is performed in a process that is restricted in the following manner: 
                         <ul>
                             <li>The rendering process can only directly access the area of the file system dedicated to the browser.</li>
                             <li>The rendering process can only directly invoke inter-process communication mechanisms with its own browser processes.</li>
                             <li>
-                                The rendering process has reduced privilege with respect to other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7"> [<b>assignment</b>: <span class="assignable-content"> other methods by which the principle of least privilege is implemented for rendering processes</span>]</span>, <span class="selectable-content" id="_s_8">in no other ways</span> ].
+                                The rendering process has reduced privilege with respect to other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_9"> [<b>assignment</b>: <span class="assignable-content"> other methods by which the principle of least privilege is implemented for rendering processes</span>]</span>, <span class="selectable-content" id="_s_10">in no other ways</span> ].
                             </li>
                         </ul>
                     </div>

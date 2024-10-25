@@ -274,7 +274,7 @@
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
     PP-Module for Web Browsers<br/>
-      Version: 1.0<br/>2023-12-11<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
+      Version: 1.0<br/>2024-10-25<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
       and application of the standard to areas where no mutual recognition of
@@ -284,7 +284,7 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2023-12-11</td><td>Initial release as CC:2022 PP-Module</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as CC:2022 PP-Module</td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       web browser      
       products.
@@ -553,19 +553,26 @@ The following sections list Common Criteria and technology terms used in this do
                                         that provides context for understanding the claimed least privilege
                                         mechanisms.</li>
                                 </ul>
-                                <p></p></div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the operational guidance 
+                                <p></p>
+				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review the TSS and
+				confirm it describes the mechanism used to invoke the platform-provided functionality.
+			        <p></p></div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the operational guidance 
                                 provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
                                 are configurable (for instance, if a user can choose which
                                 mechanisms to "turn on"), the evaluator shall ensure that the method for enabling and
                                 disabling the mechanisms are provided in the operational guidance, and the consequences of such
-                                actions are described. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following test on each platform
-                                claimed in the ST:<span class="testlist-"><ul><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FDP_SBX_EXT.1:1</a>:
+                                actions are described. <p></p>
+				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review
+				the guidance document and confirm it describes how to configure the application 
+				to properly invoke the platform-provided functionality. <p></p></div><div class="eacategory">Tests</div><div class="ea">Conditional: if "implement functionality" is selected the evaluator shall perform the following test
+				on each platform claimed in the ST:<span class="testlist-"><ul><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FDP_SBX_EXT.1:1</a>:
       The evaluator
-                                        shall execute a form of mobile code within an HTML page that
-                                        contains instructions to modify or delete a file from the
-                                        file system and verify that the file is not modified or
-                                        deleted.</li></ul></span></div></span></div><div class="comp" id=""><h4>FDP_SOP_EXT.1 Same Origin Policy</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_SOP_EXT.1</div>
+                                shall inject shell code into a running browser rendering process. 
+				The shell code will be designed to modify or create a file on the
+				system. The evaluator shall verify that the file was not modified
+				as the browser process sandbox should not have permission to 
+				modify user or system files.</li></ul></span></div></span></div><div class="comp" id=""><h4>FDP_SOP_EXT.1 Same Origin Policy</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_SOP_EXT.1</div>
                             
                             
                             
