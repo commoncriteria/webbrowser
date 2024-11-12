@@ -34,7 +34,7 @@ A list of products that have passed evaluation against this Protection Profile c
 
 === Release Version
 
-* https://www.niap-ccevs.org/Profile/Info.cfm?id=378[Extended Package for Web Browsers v2.0]
+* https://www.niap-ccevs.org/protectionprofiles/378[Extended Package for Web Browsers v2.0]
 
 === Contributing
 
