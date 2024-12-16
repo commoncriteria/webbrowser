@@ -208,6 +208,7 @@
                 <description><h:ul>
                     <h:li>This PP-Module is Functional Package for TLS Version 1.1 Conformant.</h:li>
                     <h:li>This PP-Module is Functional Package for TLS Version 2.0 Conformant.</h:li>
+                    <h:li>This PP-Module is Functional Package for X.509 Version 1.0 Conformant.</h:li>
                     <h:li>This PP-Module does not conform to any assurance packages.</h:li>
                 </h:ul>
                     The functional packages to which the PP-Module conforms include SFRs that are not mandatory to claim for the sake of conformance.
@@ -389,8 +390,6 @@
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.1/Client (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1/Client supports the objective by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
-                    <addressed-by>FIA_X509_EXT.1 (from Base-PP)</addressed-by><rationale>FIA_X509_EXT.1 supports the objective by requiring the TSF to implement or invoke an X.509 certificate validation service.</rationale>
-                    <addressed-by>FIA_X509_EXT.2 (from Base-PP)</addressed-by><rationale>FIA_X509_EXT.2 supports the objective by defining the TOE's use of X.509 certificates and what behavior the TOE takes when the revocation status of a certificate cannot be determined.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 supports the objective by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
                     <addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 supports the objective by requiring the use of HTTPS for certain types of data transfer.</rationale>
                     <addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 supports the objective by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale>
@@ -532,48 +531,8 @@
                     
                 </sec:mod_fcs> 
                 
-                <sec:mod_fia title="Identification and Authentication (FIA)">
-                    <f-component cc-id="fia_x509_ext.1" name="X.509 Certificate Validation">
-                      <consistency-rationale>
-			This SFR is unchanged from its definition in the App PP;
-			the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-		      <description>
-			This SFR is selection-based in the App PP.
-			<replace><depends/></replace> because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
-		      </description>
-                        <!-- <f-element> -->
-                        <!--     <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1. -->
-                        <!--     </title> -->
-                        <!--     <aactivity> -->
-                        <!--         <no-tests> -->
-                        <!--             There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/>  -->
-                        <!--         </no-tests> -->
-                        <!--     </aactivity> -->
-                        <!-- </f-element> -->
-                    </f-component>
-                    <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
-                      <consistency-rationale>
-			This SFR is unchanged from its definition in the App PP;
-			the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-		      <description>
-			This SFR is selection-based in the App PP.
-			<replace><depends/></replace> because of the modifications that this PP-Module makes to FTP_DIT_EXT.1.
-		      </description>
 
-
-		      <!-- <f-element> -->
-                      <!--       <title>This SFR is selection-based in the App PP. When the TOE conforms to this PP-Module, it is mandatory because of the modifications that this PP-Module makes to FTP_DIT_EXT.1. -->
-                      <!--       </title> -->
-                      <!--       <aactivity> -->
-                      <!--           <no-tests> -->
-                      <!--               There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.<h:p/>  -->
-                      <!--           </no-tests> -->
-                      <!--       </aactivity> -->
-                      <!--   </f-element> -->
-                    </f-component>
-                </sec:mod_fia> 
+              
                 
                 <sec:mod_ftp title="Trusted Path/Channels (FTP)">
                     <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
@@ -591,7 +550,7 @@
                             <note role="application">This SFR is modified from its definition in the App PP to require that the TOE or its platform supports HTTPS, TLS, and DTLS, and that its use of these protocols is only limited to sensitive data. 
                                 A conformant TOE must support the use of HTTPS, TLS, and DTLS for secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
                                 Either the TOE or its platform is permitted to implement TLS and DTLS. If the TOE implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the TLS package must be claimed at minimum
-                                because a web browser is required to support mutually-authenticated TLS and DTLS.</note>
+                                because a web browser is required to support mutually-authenticated TLS and DTLS. Dependent claims from the Functional Package for X.509 must be made to support the X.509 validation functionality that is required for these protocols.</note>
                             <aactivity>
                                 <no-tests>
                                     There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed, aside from the fact that the materials for the selections that have been refined out of this SFR are not applicable.<h:p/> 
@@ -1141,7 +1100,7 @@
                             function. Enforcement of the policy is done by the browser itself or
                             the browser and its platform in coordination with each other.<h:p/>
                             Disabling OCSP is only permitted if "CRL" was selected in
-                            FIA_X509_EXT.1.1 (in App PP).</note>
+                            FIA_X509_EXT.1.1 (in X.509 Functional Package).</note>
                         <aactivity>
                             <TSS>The evaluator shall verify that the TSS describes
                                 those management functions that can only be configured by the
