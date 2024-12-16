@@ -640,8 +640,8 @@ function showTarget(id){
       </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
       </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.1.3<span>
-	Consistency of Objectives
-      </span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.1.4<span>
+			Consistency of Objectives
+		</span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.1.4<span>
 	Consistency of Requirements
       </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
     </span></a><a href="#opt_fdp" style="text-indent:20px">A.1.1<span>User Data Protection (FDP)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
@@ -917,9 +917,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
-    This section describes how the assumptions, threats, and organizational 
-    security policies map to the security objectives.
-    <table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#T.FLAWED_ADDON">T.FLAWED_​ADDON</a></td><td><a href="#O.ADDON_INTEGRITY">O.ADDON_​INTEGRITY</a></td><td>The threat <a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a> is countered by <a href="#O.ADDON_INTEGRITY">O.ADDON_INTEGRITY</a>, which ensures that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> either does not support add-ons at all (in which case there is no possibility of 
+		This section describes how the assumptions, threats, and organizational 
+		security policies map to the security objectives.
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#T.FLAWED_ADDON">T.FLAWED_​ADDON</a></td><td><a href="#O.ADDON_INTEGRITY">O.ADDON_​INTEGRITY</a></td><td>The threat <a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a> is countered by <a href="#O.ADDON_INTEGRITY">O.ADDON_INTEGRITY</a>, which ensures that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> either does not support add-ons at all (in which case there is no possibility of 
                         it executing a flawed add-on) or that it supports only add-ons that can prove their integrity.</td></tr><tr class="major-row"><td rowspan="3">T.NETWORK_​ATTACK
 	    (from )
 	</td><td><a href="#O.BROWSER_PROTECTED_COMMS">O.BROWSER_​PROTECTED_​COMMS</a></td><td>The threat T.NETWORK_ATTACK is countered by <a href="#O.BROWSER_PROTECTED_COMMS">O.BROWSER_PROTECTED_COMMS</a> as this provides for the ability of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to resist unauthorized modification via a network vector.
@@ -965,13 +965,15 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
     </h2>
       In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-      web browser
+Application
       as a whole and evaluated against the  App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.2 TOE Security Functional Requirements</a>.
     <h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
-      The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-    
+
+		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and 
+		relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+		
                 
                 <h4 id="mod_fcs" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4>
                     <div class="comp" id="FCS_CKM_EXT.1"><h4>FCS_CKM_EXT.1 Cryptographic Key Generation Services</h4>
@@ -984,16 +986,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a></div>
                                 
                                     There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed, aside from the fact that the materials for the selections that have been refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.<p></p>
-                                
+                                <br/><br/>
                             </div></div></div>
                     
                     <div class="comp" id="FCS_HTTPS_EXT.1/Client"><h4>FCS_HTTPS_EXT.1/Client HTTPS Protocol</h4>
                       
 		      <span class="description">
 			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			
-	When the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
-       because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
+			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
 		      </span>
                     </div>
                     
@@ -1007,7 +1007,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a></div>
                                 
                                     There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed, aside from the fact that the materials for the selections that have been refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.<p></p>
-                                
+                                <br/><br/>
                             </div></div></div>
                     
                  
@@ -1017,9 +1017,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                       
 		      <span class="description">
 			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			
-	When the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
-       because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
+			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
 		      </span>
                         
                         
@@ -1035,9 +1033,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                       
 		      <span class="description">
 			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			
-	When the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
-       because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
+			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
 		      </span>
 
 
@@ -1070,7 +1066,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></div>
                                 
                                     There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed, aside from the fact that the materials for the selections that have been refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.<p></p> 
-                                
+                                <br/><br/>
                             </div></div></div>
                     
                  
@@ -1107,10 +1103,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
-                                describes how the browser separates local and session storage. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                                describes how the browser separates local and session storage. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                 documents the location on the file system that will be used
-                                for local storage and the location used for session storage. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall obtain or create JavaScript-­based scripts that store and retrieve information from local and session storage. 
+                                for local storage and the location used for session storage. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall obtain or create JavaScript-­based scripts that store and retrieve information from local and session storage. 
                                 The evaluator shall set up a web server with two or more webpages from different domains 
                                 (e.g., test1.example.com and test2.example.com) with at least one of the domains served from multiple ports (e.g., port 80 and port 443). 
                                 The evaluator shall incorporate the scripts into the webpages. The webpages will be opened in a manner that creates a relationship 
@@ -1128,7 +1124,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).
                                     </li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
                 
                 <div class="comp" id="FDP_COO_EXT.1"><h4>FDP_COO_EXT.1 Cookie Blocking</h4>
                     
@@ -1144,11 +1140,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes how the browser blocks third-party cookies and when the
-                                blocking occurs (e.g., automatically, when blocking is enabled). <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
+                                blocking occurs (e.g., automatically, when blocking is enabled). <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                 provides a description of the configuration option for
-                                blocking of third-party cookies. <p></p></div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall perform the following tests that may
+                                blocking of third-party cookies. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall perform the following tests that may
                                 require the developer to provide access to a test platform that
                                 provides the evaluator with tools that are typically not found on
                                 factory products: <span class="testlist-"><ul>
@@ -1166,7 +1162,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         that attempts to store a third-party cookie and shall
                                         verify that the cookie was not stored.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
  
                 
                 <div class="comp" id="FDP_SBX_EXT.1"><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4>
@@ -1177,7 +1173,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     
                     
                     
-                    <div class="element"><div class="reqid" id="FDP_SBX_EXT.1.1"><a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_8">implement functionality</span> ] to ensure that webpage rendering is performed in a
+                    <div class="element"><div class="reqid" id="FDP_SBX_EXT.1.1"><a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_8">implement functionality</span>] to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</li>
@@ -1189,7 +1185,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes</span>]</span>,  <span class="selectable-content" id="_s_10">in no other ways</span> ].</li></ul>
+                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_10">in no other ways</span>].</li></ul>
                         <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> Web browsers implement a variety of methods to
@@ -1214,7 +1210,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes how the rendering of <abbr class="dyn-abbr"><a href="#abbr_HTML">HTML</a></abbr> and interpretation of JavaScript
                                 is performed by the browser in terms of the platform processes that
                                 are involved (with "process" being an active entity that executes
@@ -1244,7 +1240,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 <p></p>
 				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and
 				confirm it describes the mechanism used to invoke the platform-provided functionality.
-			        <p></p></div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the operational guidance 
+			        <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall verify that the operational guidance 
                                 provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
                                 are configurable (for instance, if a user can choose which
@@ -1253,14 +1249,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 actions are described. <p></p>
 				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review
 				the guidance document and confirm it describes how to configure the application 
-				to properly invoke the platform-provided functionality. <p></p></div><div class="eacategory">Tests</div><div class="ea">Conditional: if "implement functionality" is selected the evaluator shall perform the following test
+				to properly invoke the platform-provided functionality. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: if "implement functionality" is selected the evaluator shall perform the following test
 				on each platform claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<span class="testlist-"><ul><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FDP_SBX_EXT.1:1</a>:
       The evaluator
                                 shall inject shell code into a running browser rendering process. 
 				The shell code will be designed to modify or create a file on the
 				system. The evaluator shall verify that the file was not modified
 				as the browser process sandbox should not have permission to 
-				modify user or system files.</li></ul></span></div></div></div></div>
+				modify user or system files.</li></ul></span></div></div></div></div></div>
                 
                 <div class="comp" id="FDP_SOP_EXT.1"><h4>FDP_SOP_EXT.1 Same Origin Policy</h4>
                     
@@ -1284,12 +1280,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes its implementation of a same origin policy and explains
                                 how it complies with RFC 6454. If the browser allows the relaxation
                                 of the same origin policy for subdomains in different windows or tabs,
                                 the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> shall describe how these exceptions are
-                                implemented. <p></p></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component.<p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall obtain or create scripts that can retrieve
+                                implemented. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall obtain or create scripts that can retrieve
                                 content from designated locations and shall set up a web server with
                                 two or more webpages representing different domains. The evaluator
                                 shall incorporate the scripts into the webpages. The evaluator
@@ -1307,7 +1303,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         content from another window or tab at a different
                                         subdomain.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
                 
                 
                 <div class="comp" id="FDP_STR_EXT.1"><h4>FDP_STR_EXT.1 Secure Transmission of Cookie Data</h4>
@@ -1327,10 +1323,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes the browser's support for the "secure" attribute of the
                                 set-cookie header in accordance with RFC 6265, including the
-                                required sending of cookies containing this attribute over <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>. <p></p></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component.<p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests that may require
+                                required sending of cookies containing this attribute over <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests that may require
                                 the developer to provide access to a test platform that provides the
                                 evaluator with tools that are typically not found on factory
                                 products: <span class="testlist-"><ul>
@@ -1345,7 +1341,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         website over an insecure channel and verify that no "secure"
                                         cookie is sent.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
                 
                 <div class="comp" id="FDP_TRK_EXT.1"><h4>FDP_TRK_EXT.1 Tracking Information Collection</h4>
                     
@@ -1361,13 +1357,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes the browser's support for tracking information and
                                 specifies the tracking information that the browser allows websites
-                                to collect about the browser user. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance describes
+                                to collect about the browser user. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure that the operational guidance describes
                                 any notifications that the user will receive when
                                 tracking information is requested by a website and the options that
-                                the user has upon receiving the notification. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests for each type of
+                                the user has upon receiving the notification. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests for each type of
                                 tracking information listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FDP_TRK_EXT.1:1</a>:
       The evaluator shall configure a website that requests the
@@ -1382,7 +1378,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         rejected, the browser does not provide the tracking
                                         information.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
             
         
    
@@ -1402,66 +1398,66 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 <li>O = Optional</li></ul>
                             <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td><td>User</td></tr>
 <tr id="_mf_1"><td>1</td><td style="text-align:left">Enable and disable storage of third-party
-                                    cookies</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
+                                    cookies</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
 <tr id="_mf_2"><td>2</td><td style="text-align:left">Enable and disable use of <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> for
                                     obtaining the revocation status of X.509
-                                    certificates</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    certificates</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_3"><td>3</td><td style="text-align:left">Configure inclusion of user-agent
-                                    information in <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> headers</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    information in <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> headers</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_4"><td>4</td><td style="text-align:left">Enable and disable ability for websites
                                     to collect tracking information about the user through 
-				    [<b>selection</b>: <span class="selectable-content" id="_s_15">zombie cookies</span>,  <span class="selectable-content" id="_s_16">add-on based tracking (e.g., Flash
-                                            cookies)</span>,  <span class="selectable-content" id="_s_17">browsing history</span>,  <span class="selectable-content" id="_s_18">[<b>assignment</b>: 
+				    [<b>selection</b>: <span class="selectable-content" id="_s_15">zombie cookies</span>, <span class="selectable-content" id="_s_16">add-on based tracking (e.g., Flash
+                                            cookies)</span>, <span class="selectable-content" id="_s_17">browsing history</span>, <span class="selectable-content" id="_s_18">[<b>assignment</b>: 
      <span class="assignable-content">other tracking
-                                            mechanisms</span>]</span> ]</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                            mechanisms</span>]</span>]</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_5"><td>5</td><td style="text-align:left">Enable and disable deletion of stored
                                     browsing data (cache, web form
-                                    information)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
+                                    information)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
 <tr id="_mf_6"><td>6</td><td style="text-align:left">Enable and disable storage of sensitive
                                     information (e.g., auto-fill, auto-complete) in persistent
-                                    storage</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    storage</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_7"><td>7</td><td style="text-align:left">Configure cookie
-                                    cache size</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
-<tr id="_mf_8"><td>8</td><td style="text-align:left">Configure cache size</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    cache size</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
+<tr id="_mf_8"><td>8</td><td style="text-align:left">Configure cache size</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_9"><td>9</td><td style="text-align:left">Enable and disable interaction with
-                                    Graphic Processing Units (GPUs)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    Graphic Processing Units (GPUs)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_10"><td>10</td><td style="text-align:left">Configure the ability to advance to a
                                     website with an invalid or unvalidated X.509
-                                    certificate</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    certificate</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_11"><td>11</td><td style="text-align:left">Enable and disable establishment of a
                                     trusted channel if the browser cannot establish a connection to
-                                    determine the validity of a certificate</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    determine the validity of a certificate</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_12"><td>12</td><td style="text-align:left">Configure the use of an application
                                     reputation service to detect malicious applications prior to
-                                    download</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    download</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_13"><td>13</td><td style="text-align:left">Configure the use of a URL reputation
                                     service to detect sites that contain malware or phishing
-                                    content</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    content</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_14"><td>14</td><td style="text-align:left">Enable and disable automatic installation
-                                    of software updates and patches</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    of software updates and patches</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_15"><td>15</td><td style="text-align:left">Enable and disable ability for websites
-                                    to register protocol handlers</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    to register protocol handlers</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_16"><td>16</td><td style="text-align:left">Enable and disable display notification
                                     when unsigned, untrusted, or unverified mobile code is
-                                    encountered</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    encountered</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_17"><td>17</td><td style="text-align:left">Enable and disable user's ability to
                                     select default actions upon download of a file (e.g., always
-                                    open or always save a downloaded file)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    open or always save a downloaded file)</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_18"><td>18</td><td style="text-align:left">Enable and disable launching of
-                                    downloaded files outside the browser</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    downloaded files outside the browser</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_19"><td>19</td><td style="text-align:left">Enable and disable
-                                    JavaScript</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    JavaScript</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_20"><td>20</td><td style="text-align:left">Enable and disable
-                                            [<b>selection</b>: <span class="selectable-content" id="_s_19">ActiveX</span>,  <span class="selectable-content" id="_s_20">Flash</span>,  <span class="selectable-content" id="_s_21">Java</span>,  <span class="selectable-content" id="_s_22">
+                                            [<b>selection</b>: <span class="selectable-content" id="_s_19">ActiveX</span>, <span class="selectable-content" id="_s_20">Flash</span>, <span class="selectable-content" id="_s_21">Java</span>, <span class="selectable-content" id="_s_22">
 					  [<b>assignment</b>: 
-     <span class="assignable-content">other mobile code types supported by the browser</span>]</span> ]
-                                    mobile code</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+     <span class="assignable-content">other mobile code types supported by the browser</span>]</span>]
+                                    mobile code</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_21"><td>21</td><td style="text-align:left">Enable and disable support for
-                                    add-ons</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    add-ons</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_22"><td>22</td><td style="text-align:left">Enable and disable individual
-                                    add-ons</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    add-ons</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_23"><td>23</td><td style="text-align:left">Enable and disable <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>
-                                    mode</td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional</span></div></td></tr>
+                                    mode</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 </table><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> For these management functions, the term
@@ -1478,12 +1474,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
                                 those management functions that can only be configured by the
                                 browser platform administrator and cannot be overridden by the user
-                                when set according to policy. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
+                                when set according to policy. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                 includes instructions for a browser platform administrator
-                                to configure the functions listed in FMT_MOF.1.1. <p></p></div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall perform the following tests: <span class="testlist-"><ul>
+                                to configure the functions listed in FMT_MOF.1.1. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall perform the following tests: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FMT_MOF_EXT.1:1</a>:
       The evaluator shall verify that functions perform as
                                         intended by enabling, disabling, and configuring the
@@ -1497,7 +1493,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         the user, and verify that the browser does not permit
                                         it.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
             
             <h3 id="man_fpt" class="indexable" data-level="3">5.2.3 Protection of the TSF (FPT)</h3>
                 
@@ -1509,7 +1505,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     
                     
                     
-                    <div class="element"><div class="reqid" id="FPT_AON_EXT.1.1"><a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>,  <span class="selectable-content" id="_s_24">no add-ons</span> ].<div class="appnote"><span class="note-header">Application
+                    <div class="element"><div class="reqid" id="FPT_AON_EXT.1.1"><a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_24">no add-ons</span>].<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If <a href="#addons_supported">trusted add-ons</a> is selected in <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also claim the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a>.
                             <p></p>
@@ -1521,10 +1517,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
-                                whether the browser is capable of loading trusted add-ons.<p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
+                                whether the browser is capable of loading trusted add-ons.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                 includes instructions on loading trusted add-on
-                                sources.<p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests:
+                                sources.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
                                 <span class="testlist-"><ul><li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FPT_AON_EXT.1:1</a>:
       The evaluator shall create or obtain an
                                     untrusted add-on and attempt to load it. The evaluator shall
@@ -1534,7 +1530,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       The evaluator shall create or obtain a trusted add-on and
                                         attempt to load it. The evaluator shall verify that the
                                         trusted add-on loads. </li></ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
                 
                 
                 <div class="comp" id="FPT_DNL_EXT.1"><h4>FPT_DNL_EXT.1 File Downloads</h4>
@@ -1564,12 +1560,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 describes the behavior of the browser when a user initiates
-                                the download of a file. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance
+                                the download of a file. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure that the operational guidance
                                 describes the dialog box that appears when a download is
                                 initiated and the implications of the options presented by the
-                                dialog box. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following test: <span class="testlist-"><ul>
+                                dialog box. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FPT_DNL_EXT.1:1</a>:
       The evaluator shall navigate to a website that hosts files
                                         for download including executables and shall attempt to
@@ -1578,7 +1574,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         with the option to either download the file to the file
                                         system or to discard the file.</li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
    
                 
                 <div class="comp" id="FPT_MCD_EXT.1"><h4>FPT_MCD_EXT.1 Mobile Code</h4>
@@ -1594,7 +1590,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                               signed
                               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_26">ActiveX</span></li><li style=""><span class="selectable-content" id="_s_27">Flash</span></li><li style=""><span class="selectable-content" id="_s_28">Java</span></li><li style=""><span class="selectable-content" id="_s_29">ActionScript</span></li><li style=""><span class="selectable-content" id="_s_30">[<b>assignment</b>: 
      <span class="assignable-content">other mobile code types supported by the browser</span>]</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_31">no</span></li></ul>] mobile code.</div></div>
-                    <div class="element"><div class="reqid" id="FPT_MCD_EXT.1.2"><a href="#FPT_MCD_EXT.1.2" class="abbr">FPT_MCD_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_34">automatically discard</span>,  <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span> ] 
+                    <div class="element"><div class="reqid" id="FPT_MCD_EXT.1.2"><a href="#FPT_MCD_EXT.1.2" class="abbr">FPT_MCD_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_34">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span>] 
                             unsigned, untrusted, or unverified [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_36">ActiveX</span></li><li style=""><span class="selectable-content" id="_s_37">Flash</span></li><li style=""><span class="selectable-content" id="_s_38">Java</span></li><li style=""><span class="selectable-content" id="_s_39">ActionScript</span></li><li style=""><span class="selectable-content" id="_s_40">[<b>assignment</b>: 
      <span class="assignable-content">other mobile code types supported by the
                                         browser</span>]</span></li></ul>] mobile code without executing it.<div class="appnote"><span class="note-header">Application
@@ -1608,11 +1604,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
 				
                             
-                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                 lists the types of signed mobile code that the browser supports. The
                                     <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> shall describe how the browser handles
                                 unsigned mobile code, mobile code from an untrusted source, and
-                                mobile code from an unverified source. <p></p></div><div class="eacategory">Guidance</div><div class="ea">
+                                mobile code from an unverified source. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
 				  <div class="dependent">The following content should be included if:<ul><li><a href="#s_user_discard">provide the user with the option to discard</a>
              is selected from 
              <a href="#FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</a></li></ul><div class="dependent-content"><span>
@@ -1622,7 +1618,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 mobile code types. The operational guidance shall also describe the
                                 alert that the browser displays to the user when unsigned,
                                 untrusted, or unverified mobile code is encountered and the actions
-                                the user can take. </span></div></div></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following test for each mobile
+                                the user can take. </span></div></div></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
                                 code type specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_MCD_EXT.1:1</a>:
       
@@ -1636,7 +1632,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
                                     </li>
                                 </ul></span>
-                            </div></div></div></div>
+                            </div></div></div></div></div>
 
       
             
@@ -1689,8 +1685,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">3</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a></td><td>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
                         A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</td></tr><tr><td><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</a></td><td>This threat extends the security problem definition of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.1.3 
-	Consistency of Objectives
-      </h3><p>
+			Consistency of Objectives
+		</h3><p>
                 Listed below are the security objectives defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> with rationale for their consistency with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shares the
                 executable application asset with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but defines additional security objectives because the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines a specific type of software application
                 with security functionality that is common to the application type.
@@ -1699,9 +1695,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objecitves of their own; per section 2, any claimed functional package is intended to support the O.PROTECTED_COMMS objective in the
                 App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
             
-	  The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are consistent with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
-      <table><caption><span class="ctr" data-myid="t-con-objs" data-counter-type="ct-Table" id="t-con-objs">Table <span class="counter">4</span></span>: Consistency of Objectives (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#O.BROWSER_INTEGRITY">O.BROWSER_INTEGRITY</a></td><td>This objective is an enhancement to the O.INTEGRITY objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, 
+			The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are consistent with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
+			<table><caption><span class="ctr" data-myid="t-con-objs" data-counter-type="ct-Table" id="t-con-objs">Table <span class="counter">4</span></span>: Consistency of Objectives (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
+				</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#O.BROWSER_INTEGRITY">O.BROWSER_INTEGRITY</a></td><td>This objective is an enhancement to the O.INTEGRITY objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, 
                         specifically in regards to the integrity protection mechanisms that apply to web browsers.</td></tr><tr><td><a href="#O.BROWSER_MANAGEMENT">O.BROWSER_MANAGEMENT</a></td><td>This objective is an enhancement to the O.MANAGEMENT objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, 
                         specifically in regards to the secure administration of functions that are particular to web browser applications.</td></tr><tr><td><a href="#O.BROWSER_PROTECTED_STORAGE">O.BROWSER_PROTECTED_STORAGE</a></td><td>This objective is an enhancement to the O.PROTECTED_STORAGE objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, 
                         specifically in regards to the data-at-rest protection that applies to web browser applications.</td></tr><tr><td><a href="#O.BROWSER_PROTECTED_COMMS">O.BROWSER_PROTECTED_COMMS</a></td><td>This objective is an enhancement to the O.PROTECTED_COMMS objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, 
@@ -1760,7 +1756,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                         
                         <div class="element"><div class="reqid" id="FDP_PST_EXT.1.1"><a href="#FDP_PST_EXT.1.1" class="abbr">FDP_PST_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
-                                [<b>selection</b>: <span class="selectable-content" id="_s_43">credential information</span>,  <span class="selectable-content" id="_s_44">administrator-provided configuration information</span>,  <span class="selectable-content" id="_s_45">certificate revocation information</span>,  <span class="selectable-content" id="_s_46">no exceptions</span> ].<div class="appnote"><span class="note-header">Application
+                                [<b>selection</b>: <span class="selectable-content" id="_s_43">credential information</span>, <span class="selectable-content" id="_s_44">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_45">certificate revocation information</span>, <span class="selectable-content" id="_s_46">no exceptions</span>].<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> Any data that persists after the browser closes,
                                 including temporary files, is considered to be persistent data. </span></div></div></div>
@@ -1768,9 +1764,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 
                                 
                                 
-                            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                     describes how the browser operates without storing persistent user
-                                    data to the file systems. <p></p></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component.<p></p></div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall perform the following test that may require
+                                    data to the file systems. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall perform the following test that may require
                                     the developer to provide access to a test platform that provides the
                                     evaluator with tools that are typically not found on factory
                                     products: <span class="testlist-"><ul>
@@ -1782,7 +1778,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                             have been written to the file system other than the
                                             exceptions identified in <a href="#FDP_PST_EXT.1.1">FDP_PST_EXT.1.1</a>.</li>
                                     </ul></span>
-                                </div></div></div></div>
+                                </div></div></div></div></div>
                  
                 <h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
     </h2>
@@ -1813,9 +1809,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                         
                                         
                                         
-                                    <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"> The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
-                                            documents how the browser supports <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall ensure that the operational guidance 
-                                            contains instructions on how to use <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall perform the following tests: <span class="testlist-"><ul>
+                                    <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea"> The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                                            documents how the browser supports <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall ensure that the operational guidance 
+                                            contains instructions on how to use <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall perform the following tests: <span class="testlist-"><ul>
                                             <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_STS_EXT.1:1</a>:
       The evaluator shall connect to an <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>-compliant website
                                                 while running a network protocol analyzer to monitor the
@@ -1836,7 +1832,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                                 and verify that when the browser reconnects to the website,
                                                 that information is updated by the browser.</li>
                                         </ul></span>
-                                        </div></div></div></div>
+                                        </div></div></div></div></div>
                         
                         <h3 id="obj_fpt" class="indexable" data-level="3">A.2.2 Protection of the TSF (FPT)</h3>
                             
@@ -1861,14 +1857,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                     
                                     
                                     
-                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                         describes the browser's use of application reputation services in
-                                        detecting malicious applications. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance 
+                                        detecting malicious applications. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure that the operational guidance 
                                         describes the browser's support for use of an application
                                         reputation service, including which services the browser supports by
                                         default (if any) and whether additional services can be configured.
                                         The operational guidance shall include steps for how to configure
-                                        the application reputation service. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following test: <span class="testlist-"><ul>
+                                        the application reputation service. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test: <span class="testlist-"><ul>
                                         <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FPT_INT_EXT.1:1</a>:
       The evaluator shall configure the browser to enable the
                                             use of one or more application reputation services per the
@@ -1881,7 +1877,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                             application reputation service or services before initiating the
                                             download.</li>
                                     </ul></span>
-                                    </div></div></div></div>
+                                    </div></div></div></div></div>
                         <div class="comp" id="FPT_INT_EXT.2"><h4>FPT_INT_EXT.2 Interactions with URL Reputation Services</h4>
                             
                             
@@ -1911,14 +1907,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                     
                                     
                                     
-                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                         describes the browser's use of a URL reputation service in detecting
-                                        malicious websites. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance 
+                                        malicious websites. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure that the operational guidance 
                                         describes the browser's support for use of URL reputation
                                         services, including which services the browser supports by default
                                         (if any) and whether additional services can be configured. The
                                         operational guidance shall include steps for how to configure the
-                                        URL reputation service. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
+                                        URL reputation service. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
                                         <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FPT_INT_EXT.2:1</a>:
       The evaluator shall configure the browser to enable the
                                             use of one or more URL reputation services per the
@@ -1943,7 +1939,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                             retrieves an updated list of malicious URLs with the tested
                                             website being on the list.</li>
                                     </ul></span>
-                                    </div></div></div></div>
+                                    </div></div></div></div></div>
                             
                     <h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
@@ -1961,9 +1957,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                             
                             
                             
-                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.1"><a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>,  <span class="selectable-content" id="_s_48">leverage the platform</span> ] to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>,  <span class="selectable-content" id="_s_50">no other functions</span> ] prior to installation and update. </div></div>
-                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.2"><a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>,  <span class="selectable-content" id="_s_52">leverage the platform</span> ] to query the current version
+                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.1"><a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>, <span class="selectable-content" id="_s_48">leverage the platform</span>] to provide a means to cryptographically verify add-ons
+                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>, <span class="selectable-content" id="_s_50">no other functions</span>] prior to installation and update. </div></div>
+                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.2"><a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>, <span class="selectable-content" id="_s_52">leverage the platform</span>] to query the current version
                                 of the add-on.</div></div>
                             <div class="element"><div class="reqid" id="FPT_AON_EXT.2.3"><a href="#FPT_AON_EXT.2.3" class="abbr">FPT_AON_EXT.2.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of
                                     add-ons.<div class="appnote"><span class="note-header">Application
@@ -1973,11 +1969,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                     
                                     
                                     
-                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                                <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                         states that the browser will reject add-ons from untrusted
-                                        sources. <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
+                                        sources. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                         includes instructions on how to configure the browser with
-                                        trusted add-on sources. <p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
+                                        trusted add-on sources. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
                                         <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FPT_AON_EXT.2:1</a>:
       The evaluator shall create or obtain an add-on signed by a
                                             trusted source and attempt to install it. The evaluator
@@ -1994,7 +1990,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                             attempt to install it. The evaluator shall verify that the
                                             signed add-on is rejected and cannot be installed.</li>
                                     </ul></span>
-                                    </div></div></div></div>
+                                    </div></div></div></div></div>
                         
                     <h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
 	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -2029,11 +2025,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     </ul>
                     </p><h4>Audit: FPT_AON_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FPT_AON_EXT.1 Support for Only Trusted Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
                         No dependencies.
-                    </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>,  <span class="selectable-content" id="_s_24">no add-ons</span> ].</div><h4>Management: FPT_AON_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_AON_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+                    </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_24">no add-ons</span>].</div><h4>Management: FPT_AON_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_AON_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
                                 <span class="no-link">FCS_COP.1</span> Cryptographic Operation<p></p>
                                 <span class="no-link">FPT_AON_EXT.1</span> Support for Only Trusted Add-Ons
-                            </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>,  <span class="selectable-content" id="_s_48">leverage the platform</span> ] to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>,  <span class="selectable-content" id="_s_50">no other functions</span> ] prior to installation and update. <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>,  <span class="selectable-content" id="_s_52">leverage the platform</span> ] to query the current version
+                            </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_47">provide the ability</span>, <span class="selectable-content" id="_s_48">leverage the platform</span>] to provide a means to cryptographically verify add-ons
+                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">published hash</span>, <span class="selectable-content" id="_s_50">no other functions</span>] prior to installation and update. <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">provide the ability</span>, <span class="selectable-content" id="_s_52">leverage the platform</span>] to query the current version
                                 of the add-on.<h4 id="ext-comp-FPT_AON_EXT.2.3">FPT_AON_EXT.2.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of
                                     add-ons.</div></div><h3 id="ext-comp-FPT_DNL_EXT" class="indexable" data-level="4">C.2.2.2 FPT_DNL_EXT File Downloads</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for downloaded content.
                     </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_DNL_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a>,
@@ -2060,7 +2056,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_32">
                                         signed [<b>assignment</b>: 
      <span class="assignable-content">supported mobile code types</span>]
-                                        </span>,  <span class="selectable-content" id="_s_33">no</span> ] mobile code. <h4 id="ext-comp-FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">automatically discard</span>,  <span class="selectable-content" id="_s_42">provide the user with the option to discard</span> ] 
+                                        </span>, <span class="selectable-content" id="_s_33">no</span>] mobile code. <h4 id="ext-comp-FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">automatically discard</span>, <span class="selectable-content" id="_s_42">provide the user with the option to discard</span>] 
                                 unsigned, untrusted, or unverified [<b>assignment</b>: 
      <span class="assignable-content">supported mobile code types</span>]
                                  mobile code without executing it.</div></div><h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.2.4 FPT_INT_EXT Reputation Service Interaction</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s interaction with reputation services that can provide an assessment of the trustworthiness of data presented to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
@@ -2118,7 +2114,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              Sandboxing of Rendering Processes,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement sandboxing of rendering processes such that least privilege is enforced on the rendering process.</p><h4>Management: FDP_SBX_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_SBX_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
                         No dependencies.
-                    </td></tr></table><h4 id="ext-comp-FDP_SBX_EXT.1.1">FDP_SBX_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_8">implement functionality</span> ] to ensure that webpage rendering is performed in a
+                    </td></tr></table><h4 id="ext-comp-FDP_SBX_EXT.1.1">FDP_SBX_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_7">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_8">implement functionality</span>] to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</li>
@@ -2130,7 +2126,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes</span>]</span>,  <span class="selectable-content" id="_s_10">in no other ways</span> ].</li></ul>
+                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_10">in no other ways</span>].</li></ul>
                         </div></div><h3 id="ext-comp-FDP_SOP_EXT" class="indexable" data-level="4">C.2.4.4 FDP_SOP_EXT Same Origin Policy</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for implementation of the Same Origin Policy concept.
                     </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_SOP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a>,
              Same Origin Policy,
@@ -2204,7 +2200,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_W3C"><abbr class="dyn-abbr"><a href="#abbr_W3C">W3C</a></abbr></span></td><td><span id="long_abbr_W3C">World Wide Web Consortium</span></td></tr>
 <tr><td><span class="term" id="abbr_XSS"><abbr class="dyn-abbr"><a href="#abbr_XSS">XSS</a></abbr></span></td><td><span id="long_abbr_XSS">Cross-Site Scripting</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibAppPP">[App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">8</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibAppPP">[App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
                 
                 <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462">Protection Profile for Application Software, Version 2.0</a>, TBD
             </span></td></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
