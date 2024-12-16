@@ -17,7 +17,7 @@
     </RevisionHistory>
     
     <release-notes><h:h3>TDs Applied</h:h3></release-notes><pp-preferences>
-        <using-cc2022/>
+        <!-- <using-cc2022/>  -->
     </pp-preferences>
     
     <sec:Introduction>
@@ -139,7 +139,7 @@
         
         
             <section title="TOE Boundary" id="TOEboundary">
-                The physical boundary of the web browser is a software application running on a general-purpose operating system. The TOE boundary may include third-party add-ons, but these are non-interfering with respect to security;
+                The physical boundary of the web browser is a software application running on a desktop or mobile operating system. The TOE boundary may include third-party add-ons, but these are non-interfering with respect to security;
                 add-ons provide features that are outside the TOE's logical boundary but must be implemented in such a manner that their inclusion does not compromise the security of the TSF. 
                  
             </section> 
@@ -454,12 +454,14 @@
         </h:ul>
         -->
         
-        <base-pp id="AppPP">
+        
+        
+        <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
             <git>
                 <url>https://github.com/commoncriteria/application</url>
                 <branch>release-1.4</branch>
             </git>
-            <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
+            <url>https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html</url>
             
             <modified-sfrs>
                 
@@ -1231,7 +1233,7 @@
                             intentionally (via clicking on a link) or unintentionally initiates the
                             download of a file, the browser will intervene by, for example, opening
                             a dialog box that presents the user with the option either to save the
-                            file to the file system download the file.<h:p/> In this context,
+                            file to the file system or not download the file.<h:p/> In this context,
                             an executable is a file containing code for a software program that is
                             invoked independent of and outside the context of the browser. It does
                             not include mobile code, scripts, or add-ons.<h:p/>
@@ -1247,7 +1249,7 @@
                             <Tests>The evaluator shall perform the following test: <testlist>
                                     <test>The evaluator shall navigate to a website that hosts files
                                         for download including executables and shall attempt to
-                                        download and open several of these files. The evaluator
+                                        download and open at least three of these files. The evaluator
                                         shall verify that the browser always presents a dialog box
                                         with the option to either download the file to the file
                                         system or to discard the file.</test>
