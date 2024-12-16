@@ -2,6 +2,7 @@ output/webbrowser-release-linkable.html: ActionScript
 output/webbrowser-release-linkable.html: ActiveX
 output/webbrowser-release-linkable.html: CEM
 output/webbrowser-release-linkable.html: DTLSC
+output/webbrowser-release-linkable.html: FIA
 output/webbrowser-release-linkable.html: GPUs
 output/webbrowser-release-linkable.html: HTML5
 output/webbrowser-release-linkable.html: Ons
@@ -29,6 +30,7 @@ output/webbrowser-release.html: ActionScript
 output/webbrowser-release.html: ActiveX
 output/webbrowser-release.html: CEM
 output/webbrowser-release.html: DTLSC
+output/webbrowser-release.html: FIA
 output/webbrowser-release.html: GPUs
 output/webbrowser-release.html: HTML5
 output/webbrowser-release.html: Ons
@@ -70,6 +72,7 @@ output/webbrowser.html: ActionScript
 output/webbrowser.html: ActiveX
 output/webbrowser.html: CEM
 output/webbrowser.html: DTLSC
+output/webbrowser.html: FIA
 output/webbrowser.html: GPUs
 output/webbrowser.html: HTML5
 output/webbrowser.html: Ons

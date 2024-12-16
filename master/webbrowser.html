@@ -634,7 +634,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
     Protection Profile for Protection Profile for Application Software
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_fia" style="text-indent:30px">5.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
     Protection Profile for Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
@@ -815,6 +815,7 @@ The following sections list Common Criteria and technology terms used in this do
                 </span></dd><dt class="cclaim defined" id="Package Claim">Package Claim</dt><dd><span class="description"><ul>
                     <li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is Functional Package for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Version 1.1 Conformant.</li>
                     <li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is Functional Package for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Version 2.0 Conformant.</li>
+                    <li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is Functional Package for X.509 Version 1.0 Conformant.</li>
                     <li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any assurance packages.</li>
                 </ul>
                     The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> conforms include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory to claim for the sake of conformance.
@@ -1012,44 +1013,10 @@ Application
                     
                  
                 
-                <h4 id="mod_fia" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4>
-                    <div class="comp" id="FIA_X509_EXT.1"><h4>FIA_X509_EXT.1 X.509 Certificate Validation</h4>
-                      
-		      <span class="description">
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
-		      </span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                    <div class="comp" id="FIA_X509_EXT.2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4>
-                      
-		      <span class="description">
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
-		      </span>
 
-
-		      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                    </div>
-                 
+              
                 
-                <h4 id="mod_ftp" class="indexable" data-level="4">5.1.1.3 Trusted Path/Channels (FTP)</h4>
+                <h4 id="mod_ftp" class="indexable" data-level="4">5.1.1.2 Trusted Path/Channels (FTP)</h4>
                     <div class="comp" id="FTP_DIT_EXT.1"><h4>FTP_DIT_EXT.1 Protection of Data in Transit</h4>
                         
                         <div class="element"><div class="reqid" id="FTP_DIT_EXT.1.1"><a href="#FTP_DIT_EXT.1.1" class="abbr">FTP_DIT_EXT.1.1</a></div><div class="reqdesc">The application shall [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_5">encrypt all transmitted [sensitive data] with 
@@ -1062,7 +1029,7 @@ Application
     </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to require that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform supports <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS, and that its use of these protocols is only limited to sensitive data. 
                                 A conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS for secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<p></p>
                                 Either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform is permitted to implement <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1, FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> package must be claimed at minimum
-                                because a web browser is required to support mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS.</span></div></div></div>
+                                because a web browser is required to support mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS. Dependent claims from the Functional Package for X.509 must be made to support the X.509 validation functionality that is required for these protocols.</span></div></div></div>
                     <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></div>
                                 
                                     There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed, aside from the fact that the materials for the selections that have been refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.<p></p> 
@@ -1469,7 +1436,7 @@ Application
                             function. Enforcement of the policy is done by the browser itself or
                             the browser and its platform in coordination with each other.<p></p>
                             Disabling <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> is only permitted if "<abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr>" was selected in
-                            <a href="#FIA_X509_EXT.1">FIA_X509_EXT.1</a>.1 (in App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>).</span></div></div></div>
+                            FIA_X509_EXT.1.1 (in X.509 Functional Package).</span></div></div></div>
                 <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></div>
                             
                             
@@ -1645,11 +1612,9 @@ Application
 <tr class="major-row"><td rowspan="3"><a href="#O.BROWSER_PROTECTED_STORAGE">O.BROWSER_​PROTECTED_​STORAGE</a><br/></td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a> supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.</td></tr>
 <tr><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> (optional)</td><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> supports the objective by optionally defining the minimum set of persistent data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is required to store.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</td></tr>
-<tr class="major-row"><td rowspan="9"><a href="#O.BROWSER_PROTECTED_COMMS">O.BROWSER_​PROTECTED_​COMMS</a><br/></td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> supports the objective by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
+<tr class="major-row"><td rowspan="7"><a href="#O.BROWSER_PROTECTED_COMMS">O.BROWSER_​PROTECTED_​COMMS</a><br/></td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> supports the objective by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
 <tr><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> supports the objective by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
 <tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> supports the objective by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
-<tr><td><a href="#FIA_X509_EXT.1">FIA_X509_EXT.1</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FIA_X509_EXT.1">FIA_X509_EXT.1</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement or invoke an X.509 certificate validation service.</td></tr>
-<tr><td><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> supports the objective by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s use of X.509 certificates and what behavior the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> takes when the revocation status of a certificate cannot be determined.</td></tr>
 <tr><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a> supports the objective by specifying the trusted communications channels used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to protect data in transit.</td></tr>
 <tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a> supports the objective by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> for certain types of data transfer.</td></tr>
 <tr><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td></tr>
@@ -1730,13 +1695,7 @@ Application
 			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
 			the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory
 			when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-		      </td></tr><tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to remove one of the available selection options because it will never apply in the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><td><a href="#FIA_X509_EXT.1">FIA_X509_EXT.1</a></td><td>
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
-			the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-		      </td></tr><tr><td><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a></td><td>
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
-			the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-		      </td></tr><tr><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to mandate the protection of sensitive data using only specified protocols.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
+		      </td></tr><tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to remove one of the available selection options because it will never apply in the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to mandate the protection of sensitive data using only specified protocols.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
 	      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
 	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines domain separation of web content when a web browser is simultaneously accessing
