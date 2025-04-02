@@ -184,7 +184,7 @@
             </usecases>
         </section>
     </sec:Introduction>
-    <!-- 
+    
     <sec:Conformance_Claims boilerplate="no">
         <cclaims>
             <cclaim name="Conformance Statement">
@@ -219,47 +219,7 @@
             </cclaim>
         </cclaims>
     </sec:Conformance_Claims>
-    -->
-    <!-- the following items replaced the last CC -->
-    <section title="Conformance Claims" id="sec-cclaims" >
-            
-
-	<!-- cc-version: cc-2022r1 or cc-31r5   -->
-	<!-- cc-approach: standard or direct-rationale  -->
-	<!-- display: Should this info be displayed in the Conformance -->
-	<!-- Claims section? If no, you have to write a free-form section -->
-	<CClaimsInfo 
-		cc-version="cc-2022r1"         
-		cc-approach="direct-rationale"         
-		display="yes">                 
-        <!-- Conformance for STs: exact, strict, or demonstrable -->
-		<cc-st-conf>exact</cc-st-conf>                  
-
-		<!-- Part 2 & 3 conformance (extended or conformant) -->
-		<cc-pt2-conf>extended</cc-pt2-conf>           
-		<cc-pt3-conf>conformant</cc-pt3-conf>           
-
-		<!-- Claims conformance to these other PPs (none)-->
-		<cc-pp-conf/>              		  
-		
-		<!-- Can be in a configuration with these PPs and Modules -->
-		<cc-pp-config-with/>
-
-		<!-- Package claims -->
-        
-		<cc-pkg-claim>
-        
-        <FP-cc-ref conf="conformant">Functional Package for TLS Version 1.1</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref> 
-
-        </cc-pkg-claim>
-        
-		
-
-	</CClaimsInfo>
-    <!-- End of replacements.-->
-  </section>  
+    
     <sec:Security_Problem_Definition> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
         operational environment, and any organizational security policies that it is expected to
