@@ -1306,7 +1306,14 @@
                                 unsigned mobile code, mobile code from an untrusted source, and
                                 mobile code from an unverified source. <h:p/></TSS>
 				<Guidance>
-				 If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify it provides configuration instructions for each of the supported mobile code types. The operational guidance shall also describes the alert that the browser displays to the user when unsigned, untrusted, or unverified mobile code is encountered and the actions the user can take.</Guidance>
+				  <h:span><depends on="s_user_discard"/>
+                                  <!-- If <xref to="s_user_discard"/> is selected in FPT_MCD_EXT.1.2, -->
+				 The evaluator shall verify that the operational guidance
+                                provides configuration instructions for each of the supported
+                                mobile code types. The operational guidance shall also describe the
+                                alert that the browser displays to the user when unsigned,
+                                untrusted, or unverified mobile code is encountered and the actions
+                                the user can take. </h:span></Guidance>
                             <Tests>The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <testlist>
                                     <test>
