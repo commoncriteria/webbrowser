@@ -222,11 +222,7 @@
     -->
     <!-- the following items replaced the last CC -->
     <section title="Conformance Claims" id="sec-cclaims" >
-            The Protection Profile for Application Software ([AppPP]) defines the baseline Security Functional Requirements
-        (SFRs) and Security Assurance Requirements (SARs) for application software products. This EP serves to extend
-        the App PP baseline with additional SFRs and associated Assurance Activities specific to a web browser.
-        Assurance Activities are the actions that the evaluator performs in order to determine a web browser's compliance
-        to the SFRs.
+            
 
 	<!-- cc-version: cc-2022r1 or cc-31r5   -->
 	<!-- cc-approach: standard or direct-rationale  -->
@@ -236,8 +232,7 @@
 		cc-version="cc-2022r1"         
 		cc-approach="direct-rationale"         
 		display="yes">                 
-
-		<!-- Conformance for STs: exact, strict, or demonstrable -->
+        <!-- Conformance for STs: exact, strict, or demonstrable -->
 		<cc-st-conf>exact</cc-st-conf>                  
 
 		<!-- Part 2 & 3 conformance (extended or conformant) -->
