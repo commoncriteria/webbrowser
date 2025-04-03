@@ -1603,27 +1603,13 @@ Application
                                     <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> shall describe how the browser handles
                                 unsigned mobile code, mobile code from an untrusted source, and
                                 mobile code from an unverified source. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-				  <div class="dependent">The following content should be included if:<ul><li><a href="#s_user_discard">provide the user with the option to discard</a>
-             is selected from 
-             <a href="#FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</a></li></ul><div class="dependent-content"><span>
+				  
                                   
-				 The evaluator shall verify that the operational guidance
-                                provides configuration instructions for each of the supported
-                                mobile code types. The operational guidance shall also describe the
-                                alert that the browser displays to the user when unsigned,
-                                untrusted, or unverified mobile code is encountered and the actions
-                                the user can take. </span></div></div></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
+				 If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify it provides configuration instructions for each of the supported mobile code types. The operational guidance shall also describes the alert that the browser displays to the user when unsigned, untrusted, or unverified mobile code is encountered and the actions the user can take. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
                                 code type specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_MCD_EXT.1:1</a>:
       
-                                        The evaluator shall construct a webpage containing correctly signed mobile code and show that it is accepted and executes. 
-                                        The evaluator shall then construct three webpages containing unacceptable mobile code: 
-                                        the first webpage contains mobile code that is unsigned; 
-                                        the second webpage contains mobile code that is untrusted; 
-                                        the third webpage contains mobile code that is unverified.  
-                                        The evaluator shall then attempt to load the mobile code from each of the three webpages, 
-                                        and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in <a href="#FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</a>. 
-                                        If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
+                                        The evaluator shall construct a webpage containing correctly signed mobile code and show that it is accepted and executes. The evaluator shall then construct three webpages containing unacceptable mobile code: the first webpage contains mobile code that is unsigned; the second webpage contains mobile code that is untrusted; the third webpage contains mobile code that is unverified. The evaluator shall then attempt to load the mobile code from each of the three webpages, and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in <a href="#FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</a>. If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
                                     </li>
                                 </ul></span>
                             </div></div></div></div></div>
