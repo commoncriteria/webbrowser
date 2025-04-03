@@ -1,0 +1,1 @@
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:467:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
