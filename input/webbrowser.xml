@@ -192,7 +192,7 @@
 	<!-- Claims section? If no, you have to write a free-form section -->
 	<CClaimsInfo 
 		cc-version="cc-2022r1"         
-		cc-approach="direct-rationale"         
+		cc-approach="standard"         
 		display="yes">                 
 
 		<!-- Conformance for STs: exact, strict, or demonstrable -->
