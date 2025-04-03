@@ -192,7 +192,7 @@
 	<!-- Claims section? If no, you have to write a free-form section -->
 	<CClaimsInfo 
 		cc-version="cc-2022r1"         
-		cc-approach="standard"         
+		cc-approach="direct-rationale"         
 		display="yes">                 
 
 		<!-- Conformance for STs: exact, strict, or demonstrable -->
@@ -254,10 +254,9 @@
                         system.</description>
                     <consistency-rationale>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the Base-PP.
                         A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</consistency-rationale>
-                    <objective-refer ref="O.ADDON_INTEGRITY">
-                        <rationale>The threat T.FLAWED_ADDON is countered by O.ADDON_INTEGRITY, which ensures that a conformant TOE either does not support add-ons at all (in which case there is no possibility of 
-                        it executing a flawed add-on) or that it supports only add-ons that can prove their integrity.</rationale>
-                    </objective-refer>
+                    
+                    <addressed-by>FPT_AON_EXT.1</addressed-by><rationale>FPT_AON_EXT.1 supports the objective by specifying whether the TSF has the ability to load add-ons.</rationale>
+                        <addressed-by>FPT_AON_EXT.2 (selection-based)</addressed-by><rationale>FPT_AON_EXT.2 supports the objective by defining a cryptographic method for the TSF to validate the integrity of add-ons if the TOE supports their use.</rationale>
                 </threat>
                 
                 
