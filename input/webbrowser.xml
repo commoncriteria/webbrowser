@@ -262,7 +262,7 @@
                 
                 
                 <threat name="T.NETWORK_ATTACK">
-                    <from base="AppPP"/>
+                    <from base="bibAppPP"/>
                     <objective-refer ref="O.BROWSER_PROTECTED_COMMS">
                         <rationale>The threat T.NETWORK_ATTACK is countered by O.BROWSER_PROTECTED_COMMS as this provides for the ability of the TOE to resist unauthorized modification via a network vector.
                         </rationale>
@@ -279,7 +279,7 @@
                 
                 
                 <threat name="T.NETWORK_EAVESDROP">
-                    <from base="AppPP"/>
+                    <from base="bibAppPP"/>
 
                     <objective-refer ref="O.BROWSER_MANAGEMENT">
                         <rationale>	
@@ -294,7 +294,7 @@
                 
                 
                 <threat name="T.PHYSICAL_ACCESS">
-                    <from base="AppPP"/>
+                    <from base="bibAppPP"/>
                     <objective-refer ref="O.BROWSER_PROTECTED_STORAGE">
                         <rationale>The threat T.PHYSICAL_ACCESS is countered by O.BROWSER_PROTECTED_STORAGE, which protects against unauthorized attempts to access physical storage used by the TOE.
                         </rationale>
