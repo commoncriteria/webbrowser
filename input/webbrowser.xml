@@ -395,7 +395,7 @@
                     
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.1/Client (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1/Client supports the objective by defining the TSF's implementation of HTTPS.</rationale>
-                    <addressed-by>FCS_RBG.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
+                    <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 supports the objective by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
                     <addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 supports the objective by requiring the use of HTTPS for certain types of data transfer.</rationale>
                     <addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 supports the objective by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale>
@@ -490,7 +490,7 @@
 		      </consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables linebreak="yes">
-                                
+                                <selectable><h:s>generate no asymmetric cryptographic keys</h:s></selectable>
                                 <selectable id="sel_invoke_genkey">invoke platform-provided functionality for asymmetric key generation</selectable>
                                 <selectable id="sel_impl_genkey">implement asymmetric key generation</selectable>
                             </selectables>.
@@ -517,11 +517,12 @@
 		      </description>
                     </f-component>
                     
-                    <f-component cc-id="fcs_rbg.1" name="Random Bit Generation Services">
+                    <f-component cc-id="fcs_rbg_ext.1" name="Random Bit Generation Services">
                         <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
                         <f-element>
                             <title> The application shall
                                 <selectables linebreak="yes">
+                                    <selectable><h:s>use no DRBG functionality</h:s></selectable>
                                     <selectable>invoke platform-provided DRBG functionality</selectable>
                                     <selectable id="drbg">implement DRBG functionality</selectable>
                                 </selectables> for its cryptographic operations. </title>
