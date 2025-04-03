@@ -1,1 +1,2 @@
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:388:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:326:26: error: element "comment" not allowed here; expected the element end-tag or element "threat"
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:390:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
