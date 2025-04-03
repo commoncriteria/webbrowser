@@ -1,1 +1,1 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:482:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:483:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
