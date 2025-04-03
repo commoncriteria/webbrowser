@@ -174,40 +174,43 @@
         </section>
     </sec:Introduction>
     
-    <sec:Conformance_Claims boilerplate="no">
-        <cclaims>
-            <cclaim name="Conformance Statement">
-                <description>An ST must claim exact conformance to this PP-Module.
-                    <h:br/><h:br/>
-                    The evaluation methods used for evaluating the TOE are a combination of the workunits defined in <xref to="bibCEM"/> as well as the
-                    Evaluation Activities for ensuring that individual SFRs have sufficient supporting evidence in the Security Target and 
-                    guidance documentation and have been sufficiently tested by the laboratory as part of completing ATE_IND.1. Any functional packages 
-                    this PP-Module claims similarly contain their own Evaluation Activities that are used in this same manner.
-                </description>
-            </cclaim>
-            <cclaim name="CC Conformance Claims">
-                <description>This PP-Module is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria CC:2022, Revision 1.</description>
-            </cclaim>
-            <cclaim name="PP Claim">
-                <description>This PP-Module does not claim conformance to any other Protection Profile.<h:p/>
-                    No other PPs or PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module beyond its Base-PP. 
-                </description>
-            </cclaim>
-            <cclaim name="Package Claim">
-                <description><h:ul>
-                    <h:li>This PP-Module is Functional Package for TLS Version 1.1 Conformant.</h:li>
-                    <h:li>This PP-Module is Functional Package for TLS Version 2.0 Conformant.</h:li>
-                    <h:li>This PP-Module is Functional Package for X.509 Version 1.0 Conformant.</h:li>
-                    <h:li>This PP-Module does not conform to any assurance packages.</h:li>
-                </h:ul>
-                    The functional packages to which the PP-Module conforms include SFRs that are not mandatory to claim for the sake of conformance.
-                    An ST that claims one or more of these functional packages may include any non-mandatory SFRs that are appropriate to claim based on the 
-                    capabilities of the TSF and on any triggers for their inclusion based inherently on the SFR selections made. All security requirements
-                    in these packages are intended to satisfy the O.PROTECTED_COMMS TOE security objective of the Base-PP.
-                </description>
-            </cclaim>
-        </cclaims>
-    </sec:Conformance_Claims>
+    <section title="Conformance Claims" id="sec-cclaims">
+	<!-- cc-version: cc-2022r1 or cc-31r5   -->
+	<!-- cc-approach: standard or direct-rationale  -->
+	<!-- display: Should this info be displayed in the Conformance -->
+	<!-- Claims section? If no, you have to write a free-form section -->
+	<CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale" display="yes">                 
+
+		<!-- Conformance for STs: exact, strict, or demonstrable -->
+		<cc-st-conf>exact</cc-st-conf>                  
+
+		<!-- Part 2 & 3 conformance (extended or conformant) -->
+		<cc-pt2-conf>extended</cc-pt2-conf>           
+		<cc-pt3-conf>conformant</cc-pt3-conf>           
+
+		<!-- Claims conformance to these other PPs (none)-->
+		<cc-pp-conf/>              		  
+		
+		<!-- Can be in a configuration with these PPs and Modules -->
+		<cc-pp-config-with/>
+
+		<!-- Package claims -->
+        
+		<cc-pkg-claim>
+        
+        <FP-cc-ref conf="conformant">Functional Package for TLS Version 1.1</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref> 
+
+        </cc-pkg-claim>
+        
+		
+
+	</CClaimsInfo>
+    <!-- End of replacements.-->
+  </section>
+    
+        
     
     <sec:Security_Problem_Definition> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the

@@ -2,7 +2,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[3]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Conformance_Claims[1]""/cclaims[1]""/cclaim[3]""/description[1]"This PP-M"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/sec:Threats[1]"The follo"/threats[1]""/threat[5]""/description[1]"Violating"/h:p[1]""
@@ -57,6 +56,5 @@
 * Warning: fpt_int_ext.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[1]""
 * Warning: fpt_int_ext.2 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[2]""
 * Warning: fdp_pst_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/sec:opt_fdp[1]""/f-component[1]""
- Failed to find a reference to bibCEM.
 * Warning: Since FPT_AON_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
