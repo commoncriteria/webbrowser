@@ -14,7 +14,6 @@ output/webbrowser-release-linkable.html: URIs
 output/webbrowser-release-linkable.html: cnn
 output/webbrowser-release-linkable.html: enablement
 output/webbrowser-release-linkable.html: geolocation
-output/webbrowser-release-linkable.html: iFrame
 output/webbrowser-release-linkable.html: ons
 output/webbrowser-release-linkable.html: recategorized
 output/webbrowser-release-linkable.html: sandboxing
@@ -39,7 +38,6 @@ output/webbrowser-release.html: URIs
 output/webbrowser-release.html: cnn
 output/webbrowser-release.html: enablement
 output/webbrowser-release.html: geolocation
-output/webbrowser-release.html: iFrame
 output/webbrowser-release.html: ons
 output/webbrowser-release.html: recategorized
 output/webbrowser-release.html: sandboxing
@@ -78,7 +76,6 @@ output/webbrowser.html: URIs
 output/webbrowser.html: cnn
 output/webbrowser.html: enablement
 output/webbrowser.html: geolocation
-output/webbrowser.html: iFrame
 output/webbrowser.html: ons
 output/webbrowser.html: recategorized
 output/webbrowser.html: sandboxing
