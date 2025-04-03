@@ -445,7 +445,10 @@
       </SOEs> -->
         </section>
         
- 
+        
+        <section title="Security Objectives Rationale" id="SOR">
+            <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
+        </section>
     </sec:Security_Objectives>
     <sec:Security_Requirements>
         <!-- 
