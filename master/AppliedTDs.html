@@ -629,13 +629,13 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/><a href="#Comment-4-">Comment: Comment-4-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Web Browsers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Web Browsers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 1.0<br/>2024-10-25<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td></tr>
 </table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
-    Protection Profile for Protection Profile for Application Software
+    Protection Profile for Application Software
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
-    Protection Profile for Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
+    Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
@@ -854,7 +854,7 @@ The following sections list Common Criteria and technology terms used in this do
         sites in the course of web browsing. Such sites then present malicious content to the user's
         browser to exploit it and perform installation of malware, often with no indication to the
         user. 
-        <span style="" class="comment " id="Comment-1-"> for <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a>, and <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>- we're having issues with the base tag to app-pp</span>
+       
         <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>The following threats are specific to web
             browsers, and represent an addition to those identified in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<dl><dt class="threat defined" id="T.FLAWED_ADDON">T.FLAWED_ADDON</dt><dd><span class="description"> Web browser functionality can be extended through the integration
                         of third-party utilities and tools. Malicious or vulnerable add-ons could
@@ -953,7 +953,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
        </li>
      </ul>
    <h2 id="secreq-bpp-app" class="indexable" data-level="2">5.1 
-    Protection Profile for Protection Profile for Application Software
+    Protection Profile for Application Software
        Security Functional Requirements Direction
     </h2>
       In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
@@ -1354,7 +1354,7 @@ Application
 <tr><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a></td><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a> supports the objective by ensuring that rendering of content is isolated to its origin point.</td></tr>
 <tr><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a></td><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a> supports the objective by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-app" class="indexable" data-level="2">6.1 
-    Protection Profile for Protection Profile for Application Software</h2><h3 id="contoe-bpp-app" class="indexable" data-level="3">6.1.1 
+    Protection Profile for Application Software</h2><h3 id="contoe-bpp-app" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>
                 If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a software application.
@@ -1744,7 +1744,7 @@ Application
 </table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">6</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibAppPP">[App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
                 
                 <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462">Protection Profile for Application Software, Version 2.0</a>, TBD
-                <span style="" class="comment " id="Comment-4-">URL/Date needs to be updated once the APP-PP-2.0 is released.</span>
+                <span style="" class="comment " id="Comment-3-">URL/Date needs to be updated once the APP-PP-2.0 is released.</span>
             </span></td></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
