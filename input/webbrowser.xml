@@ -242,7 +242,7 @@
         sites in the course of web browsing. Such sites then present malicious content to the user's
         browser to exploit it and perform installation of malware, often with no indication to the
         user. 
-        <comment> for T.NETWORK_ATTACK, T.NETWORK_EAVESDROP, and T.PHYSICAL_ACCESS- we're having issues with the base tag to app-pp</comment>
+       
         <sec:Threats>The following threats are specific to web
             browsers, and represent an addition to those identified in the App PP.<threats>
                 <threat name="T.FLAWED_ADDON">
@@ -395,7 +395,7 @@
         
         
         
-        <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
+        <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
             <git>
                 <url>https://github.com/commoncriteria/application</url>
                 <branch>release-1.4</branch>
