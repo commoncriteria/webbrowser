@@ -179,7 +179,7 @@
 	<!-- cc-approach: standard or direct-rationale  -->
 	<!-- display: Should this info be displayed in the Conformance -->
 	<!-- Claims section? If no, you have to write a free-form section -->
-	<CClaimsInfo cc-version="cc-2022r1" cc-approach="standard" display="yes">                 
+	<CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale" display="yes">                 
 
 		<!-- Conformance for STs: exact, strict, or demonstrable -->
 		<cc-st-conf>exact</cc-st-conf>                  
