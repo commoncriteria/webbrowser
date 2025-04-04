@@ -200,7 +200,7 @@
 
 		<!-- Part 2 & 3 conformance (extended or conformant) -->
 		<cc-pt2-conf>extended</cc-pt2-conf>           
-		<cc-pt3-conf>conformant</cc-pt3-conf>           
+		<cc-pt3-conf>extended</cc-pt3-conf>           
 
 		<!-- Claims conformance to these other PPs (none)-->
 		<cc-pp-conf/>              		  
