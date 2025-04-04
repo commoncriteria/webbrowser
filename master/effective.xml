@@ -248,7 +248,7 @@
                 
                 
                 <threat name="T.NETWORK_ATTACK">
-                    <from base="AppPP"/>
+                    <from base="bpp-app"/>
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 supports the objective by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.1/Client (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1/Client supports the objective by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 supports the objective by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
@@ -267,7 +267,7 @@
                 
                 
                 <threat name="T.NETWORK_EAVESDROP">
-                    <from base="AppPP"/>
+                    <from base="bpp-app"/>
 
                     <addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 supports the objective by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale>
                         <addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 supports the objective by defining the management functionality that is specific to web browser applications.</rationale>
@@ -283,7 +283,7 @@
                 
                 
                 <threat name="T.PHYSICAL_ACCESS">
-                    <from base="AppPP"/>
+                    <from base="bpp-app"/>
                     <addressed-by>FDP_COO_EXT.1</addressed-by><rationale>FDP_COO_EXT.1 supports the objective by defining a mechanism to prevent untrusted data from being loaded into protected storage.</rationale>
                     <addressed-by>FDP_PST_EXT.1 (optional)</addressed-by><rationale>FDP_PST_EXT.1 supports the objective by optionally defining the minimum set of persistent data that the TSF is required to store.</rationale>
                     <addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 supports the objective by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</rationale>
