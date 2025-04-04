@@ -197,10 +197,6 @@
 		<!-- Package claims -->
         
 		<cc-pkg-claim>
-        
-        <FP-cc-ref conf="conformant">Functional Package for TLS Version 1.1</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref> 
 
         </cc-pkg-claim>
         
