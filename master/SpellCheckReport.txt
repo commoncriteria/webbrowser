@@ -20,6 +20,7 @@ output/webbrowser-release-linkable.html: sandboxing
 output/webbrowser-release-linkable.html: sessionStorage
 output/webbrowser-release-linkable.html: test1
 output/webbrowser-release-linkable.html: test2
+output/webbrowser-release-linkable.html: trasnmit
 output/webbrowser-release-linkable.html: unmanaged
 output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: ActionScript
@@ -41,6 +42,7 @@ output/webbrowser-release.html: geolocation
 output/webbrowser-release.html: ons
 output/webbrowser-release.html: recategorized
 output/webbrowser-release.html: sandboxing
+output/webbrowser-release.html: trasnmit
 output/webbrowser-release.html: unmanaged
 output/webbrowser-release.html: webpages
 output/webbrowser-sd.html: AGD
@@ -82,5 +84,6 @@ output/webbrowser.html: sandboxing
 output/webbrowser.html: sessionStorage
 output/webbrowser.html: test1
 output/webbrowser.html: test2
+output/webbrowser.html: trasnmit
 output/webbrowser.html: unmanaged
 output/webbrowser.html: webpages

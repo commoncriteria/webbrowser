@@ -453,11 +453,22 @@
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
                             <title>The application shall <selectables linebreak="yes">
-                                <selectable>encrypt all transmitted [sensitive data] with 
-                                    [HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [web browsing],
-                                    TLS as a client as defined in the Functional Package for TLS for [web browsing], 
-                                    DTLS as a client as defined in the Functional Package for TLS for [web browsing]]</selectable>
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with [HTTPS, TLS, DTLS] for [web browsing]</selectable>
+                                <selectable><h:s>not trasnmit any <selectables choose-one-of="yes">
+                                        <selectable>data</selectable>
+                                        <selectable>sensitive data</selectable>
+                                </selectables></h:s></selectable>
+                                <selectable>encrypt all transmitted [<h:b>sensitive data</h:b>] with 
+                                    [HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<h:b>web browsing</h:b>],
+                                    TLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>], 
+                                    DTLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>]]</selectable>
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with <selectables><selectable>HTTPS</selectable><selectable>TLS</selectable><selectable>DTLS</selectable></selectables> for [<h:b>web browsing</h:b>].</selectable>
+                                <selectable><h:s>invoke platform-provided functionality to encrypt all transmitted data with <selectables>
+                                    <selectable>HTTPS</selectable>
+                                    <selectable>TLS</selectable>
+                                    <selectable>DTLS</selectable>
+                                    <selectable>SSH</selectable>
+                                    <selectable>IPsec</selectable>
+                                </selectables> for <assignable>function(s)</assignable> using certificates as defined in the Functional Package for X.509</h:s></selectable>
                             </selectables>
                                 between itself and another trusted IT product.
                             </title>
@@ -1296,7 +1307,75 @@
                  </sec:opt_fdp>
                 </opt-sfrs>
                     
-<obj-sfrs>
+
+
+                    <sel-sfrs>
+                        <sec:sel_fpt title="Protection of the TSF (FPT)">
+                        <f-component cc-id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
+                            <depends on="addons_supported"/>
+                            <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not impact functionality described by the App PP.</consistency-rationale>
+                            
+                            <comp-lev> requires the TSF to implement a method to verify the integrity of add-ons and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
+                            <management>No specific management functions are identified.</management>
+                            <audit>There are no auditable events foreseen.</audit>
+                            <dependencies>
+                                <no-link>FCS_COP.1</no-link> Cryptographic Operation<h:p/>
+                                <no-link>FPT_AON_EXT.1</no-link> Support for Only Trusted Add-Ons
+                            </dependencies>
+                            
+                            <f-element>
+                                <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
+                                <title>The TSF shall <selectables>
+                                    <selectable>provide the ability</selectable>
+                                    <selectable>leverage the platform</selectable>
+                                </selectables> to provide a means to cryptographically verify add-ons
+                                    using a digital signature mechanism and <selectables onlyone="yes">
+                                        <selectable>published hash</selectable>
+                                        <selectable>no other functions</selectable>
+                                    </selectables> prior to installation and update. </title>
+                            </f-element>
+                            <f-element>
+                                <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
+                                <title>The TSF shall <selectables>
+				<selectable>provide the ability</selectable>
+				<selectable>leverage the platform</selectable>
+				</selectables> to query the current version
+                                of the add-on.</title>
+                            </f-element>
+                            <f-element>
+                          <!--       <selection-depends req="FPT_AON_EXT.1.1"/>  -->
+                                <title>The TSF shall prevent the automatic installation of
+                                    add-ons.</title>
+                                <note role="application">This selection-based SFR is claimed when <xref to="addons_supported"/> is selected in FPT_AON_EXT.1.1.</note>
+                                <aactivity>
+                                    <TSS>The evaluator shall verify that the TSS
+                                        states that the browser will reject add-ons from untrusted
+                                        sources. <h:p/></TSS>
+                                    <Guidance>The evaluator shall verify that the operational guidance
+                                        includes instructions on how to configure the browser with
+                                        trusted add-on sources. <h:p/></Guidance>
+                                    <Tests>The evaluator shall perform the following tests: <testlist>
+                                        <test>The evaluator shall create or obtain an add-on signed by a
+                                            trusted source and attempt to install it. The evaluator
+                                            shall verify that the signature on the add-on is valid and
+                                            that the add-on can be installed.</test>
+                                        <test>The evaluator shall create or obtain an add-on signed with
+                                            an invalid certificate and attempt to install it. The
+                                            evaluator shall verify that the signed add-on is rejected
+                                            and cannot be installed.</test>
+                                        <test>The evaluator shall create or obtain an add-on signed by a
+                                            trusted source, modify the add-on without re-signing it, and
+                                            attempt to install it. The evaluator shall verify that the
+                                            signed add-on is rejected and cannot be installed.</test>
+                                    </testlist>
+                                    </Tests>
+                                </aactivity>
+                            </f-element>
+                        </f-component>
+                        </sec:sel_fpt>
+                    </sel-sfrs>
+                    
+                <obj-sfrs>
                         
                         <sec:obj_fcs title="Cryptographic Support (FCS)">
                             <ext-comp-def fam-id="FCS_STS_EXT" title="Strict Transport Security">
@@ -1487,75 +1566,7 @@
                             </sec:obj_fpt>
                     </obj-sfrs>
                     
-<impl-dep-sfrs/>
-
-                    <sel-sfrs>
-                        <sec:sel_fpt title="Protection of the TSF (FPT)">
-                        <f-component cc-id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
-                            <depends on="addons_supported"/>
-                            <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not impact functionality described by the App PP.</consistency-rationale>
-                            
-                            <comp-lev> requires the TSF to implement a method to verify the integrity of add-ons and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
-                            <management>No specific management functions are identified.</management>
-                            <audit>There are no auditable events foreseen.</audit>
-                            <dependencies>
-                                <no-link>FCS_COP.1</no-link> Cryptographic Operation<h:p/>
-                                <no-link>FPT_AON_EXT.1</no-link> Support for Only Trusted Add-Ons
-                            </dependencies>
-                            
-                            <f-element>
-                                <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The TSF shall <selectables>
-                                    <selectable>provide the ability</selectable>
-                                    <selectable>leverage the platform</selectable>
-                                </selectables> to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and <selectables onlyone="yes">
-                                        <selectable>published hash</selectable>
-                                        <selectable>no other functions</selectable>
-                                    </selectables> prior to installation and update. </title>
-                            </f-element>
-                            <f-element>
-                                <!-- <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The TSF shall <selectables>
-				<selectable>provide the ability</selectable>
-				<selectable>leverage the platform</selectable>
-				</selectables> to query the current version
-                                of the add-on.</title>
-                            </f-element>
-                            <f-element>
-                          <!--       <selection-depends req="FPT_AON_EXT.1.1"/>  -->
-                                <title>The TSF shall prevent the automatic installation of
-                                    add-ons.</title>
-                                <note role="application">This selection-based SFR is claimed when <xref to="addons_supported"/> is selected in FPT_AON_EXT.1.1.</note>
-                                <aactivity>
-                                    <TSS>The evaluator shall verify that the TSS
-                                        states that the browser will reject add-ons from untrusted
-                                        sources. <h:p/></TSS>
-                                    <Guidance>The evaluator shall verify that the operational guidance
-                                        includes instructions on how to configure the browser with
-                                        trusted add-on sources. <h:p/></Guidance>
-                                    <Tests>The evaluator shall perform the following tests: <testlist>
-                                        <test>The evaluator shall create or obtain an add-on signed by a
-                                            trusted source and attempt to install it. The evaluator
-                                            shall verify that the signature on the add-on is valid and
-                                            that the add-on can be installed.</test>
-                                        <test>The evaluator shall create or obtain an add-on signed with
-                                            an invalid certificate and attempt to install it. The
-                                            evaluator shall verify that the signed add-on is rejected
-                                            and cannot be installed.</test>
-                                        <test>The evaluator shall create or obtain an add-on signed by a
-                                            trusted source, modify the add-on without re-signing it, and
-                                            attempt to install it. The evaluator shall verify that the
-                                            signed add-on is rejected and cannot be installed.</test>
-                                    </testlist>
-                                    </Tests>
-                                </aactivity>
-                            </f-element>
-                        </f-component>
-                        </sec:sel_fpt>
-                    </sel-sfrs>
-                    
-                    
+<impl-dep-sfrs/>    
                 
     </sec:Security_Requirements>
    

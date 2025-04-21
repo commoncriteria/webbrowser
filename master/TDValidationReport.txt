@@ -1,3 +1,1 @@
 /home/runner/work/webbrowser/webbrowser/output/effective.xml:386:26: error: element "comment" not allowed here; expected the element end-tag
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:1299:11: error: element "obj-sfrs" not allowed yet; missing required element "sel-sfrs"
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:1492:31: error: element "sel-sfrs" not allowed here; expected the element end-tag

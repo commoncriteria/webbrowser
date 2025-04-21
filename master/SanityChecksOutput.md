@@ -1,3 +1,9 @@
+* Error: Found a "selectables" element that is buried under stricken text:
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[1]""/h:s[1]"not trasn"/selectables[1]""
+* Error: Found a "selectables" element that is buried under stricken text:
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/selectables[1]""
+* Error: Found a "assignable" element that is buried under stricken text:
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/assignable[1]"function("
 * Warning: This document still has at least one comment.
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Overview[1]""/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[1]""
@@ -44,15 +50,15 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fpt[1]""/f-component[3]""/f-element[2]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/sec:opt_fdp[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/sec:opt_fdp[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]"There are"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/dependencies[1]""/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fcs[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fcs[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[2]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[2]""/f-element[1]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/dependencies[1]""/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/sec:sel_fpt[1]""/f-component[1]""/f-element[3]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
 * Warning: fcs_sts_ext.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fcs[1]""/f-component[1]""
 * Warning: fpt_int_ext.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[1]""
 * Warning: fpt_int_ext.2 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/sec:obj_fpt[1]""/f-component[2]""
