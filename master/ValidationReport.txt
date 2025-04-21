@@ -1,3 +1,4 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:18:44: error: character content of element "PPPubDate" invalid; must be an ISO date
 /home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:336:26: error: element "comment" not allowed here; expected the element end-tag or element "threat"
 /home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:400:22: error: element "comment" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:1310:11: error: element "obj-sfrs" not allowed yet; missing required element "sel-sfrs"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:1503:31: error: element "sel-sfrs" not allowed here; expected the element end-tag

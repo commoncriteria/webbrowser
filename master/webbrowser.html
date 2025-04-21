@@ -630,7 +630,7 @@ function showTarget(id){
 
           }
     </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Web Browsers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
-      Version: 1.0<br/>2025-4-1<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td></tr>
+      Version: 1.0<br/>2025-04-01<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td></tr>
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
@@ -983,8 +983,8 @@ Application
                     <div class="comp" id="FCS_HTTPS_EXT.1/Client"><h4>FCS_HTTPS_EXT.1/Client HTTPS Protocol</h4>
                       
 		      <span class="description">
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-			 because of the modifications that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory
+			when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, and the modification that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
 		      </span>
                     </div>
                     
@@ -1745,22 +1745,22 @@ Application
                                     <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea"> The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
                                             documents how the browser supports <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall ensure that the operational guidance 
                                             contains instructions on how to use <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall perform the following tests: <span class="testlist-"><ul>
-                                            <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_STS_EXT.1:1</a>:
+                                            <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FCS_STS_EXT.1:1</a>:
       The evaluator shall connect to an <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>-compliant website
                                                 while running a network protocol analyzer to monitor the
                                                 traffic. The evaluator shall examine the captured network
                                                 traffic and verify that a Strict Transport Security header
                                                 is received and that there is a directive for the max-age of
                                                 the <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> relationship.</li>
-                                            <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FCS_STS_EXT.1:2</a>:
+                                            <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FCS_STS_EXT.1:2</a>:
       The evaluator shall reconnect to the <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> website again
                                                 over <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> and shall verify that the session is redirected to
                                                 <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</li>
-                                            <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FCS_STS_EXT.1:3</a>:
+                                            <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FCS_STS_EXT.1:3</a>:
       The evaluator shall reconnect to the <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> website after
                                                 the max-age has expired, and verify that the website and
                                                 browser reestablish an <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> relationship.</li>
-                                            <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FCS_STS_EXT.1:4</a>:
+                                            <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_STS_EXT.1:4</a>:
       The evaluator shall update the website's <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> information,
                                                 and verify that when the browser reconnects to the website,
                                                 that information is updated by the browser.</li>
@@ -1798,7 +1798,7 @@ Application
                                         default (if any) and whether additional services can be configured.
                                         The operational guidance shall include steps for how to configure
                                         the application reputation service. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test: <span class="testlist-"><ul>
-                                        <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FPT_INT_EXT.1:1</a>:
+                                        <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FPT_INT_EXT.1:1</a>:
       The evaluator shall configure the browser to enable the
                                             use of one or more application reputation services per the
                                             operational guidance. The evaluator shall initiate a
@@ -1848,7 +1848,7 @@ Application
                                         (if any) and whether additional services can be configured. The
                                         operational guidance shall include steps for how to configure the
                                         URL reputation service. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
-                                        <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FPT_INT_EXT.2:1</a>:
+                                        <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FPT_INT_EXT.2:1</a>:
       The evaluator shall configure the browser to enable the
                                             use of one or more URL reputation services per the
                                             operational guidance. The evaluator shall initiate a
@@ -1857,7 +1857,7 @@ Application
                                             evaluator shall inspect the captured network traffic and
                                             shall verify that the browser initiates a connection to the
                                             configured URL reputation service or services.</li>
-                                        <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FPT_INT_EXT.2:2</a>:
+                                        <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FPT_INT_EXT.2:2</a>:
       The evaluator shall configure the browser to enable the
                                             use of one or more URL reputation services per the
                                             operational guidance. The evaluator shall initiate a
@@ -1907,17 +1907,17 @@ Application
                                         sources. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the operational guidance
                                         includes instructions on how to configure the browser with
                                         trusted add-on sources. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
-                                        <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FPT_AON_EXT.2:1</a>:
+                                        <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FPT_AON_EXT.2:1</a>:
       The evaluator shall create or obtain an add-on signed by a
                                             trusted source and attempt to install it. The evaluator
                                             shall verify that the signature on the add-on is valid and
                                             that the add-on can be installed.</li>
-                                        <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FPT_AON_EXT.2:2</a>:
+                                        <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FPT_AON_EXT.2:2</a>:
       The evaluator shall create or obtain an add-on signed with
                                             an invalid certificate and attempt to install it. The
                                             evaluator shall verify that the signed add-on is rejected
                                             and cannot be installed.</li>
-                                        <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FPT_AON_EXT.2:3</a>:
+                                        <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FPT_AON_EXT.2:3</a>:
       The evaluator shall create or obtain an add-on signed by a
                                             trusted source, modify the add-on without re-signing it, and
                                             attempt to install it. The evaluator shall verify that the
