@@ -476,7 +476,8 @@
                                     [HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<h:b>web browsing</h:b>],
                                     TLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>], 
                                     DTLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>]]</selectable>
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with <selectables><selectable>HTTPS</selectable><selectable>TLS</selectable><selectable>DTLS</selectable></selectables> for [<h:b>web browsing</h:b>].</selectable>
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with <selectables><selectable>HTTPS</selectable><selectable>TLS</selectable><selectable>DTLS</selectable><selectable><h:s>SSH</h:s></selectable><selectable><h:s>IPsec</h:s></selectable>
+                                    <selectable>IPsec</selectable></selectables> for [<h:b>web browsing</h:b>].</selectable>
                                 <selectable><h:s>invoke platform-provided functionality to encrypt all transmitted data with <selectables>
                                     <selectable>HTTPS</selectable>
                                     <selectable>TLS</selectable>
