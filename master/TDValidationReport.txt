@@ -1,5 +1,3 @@
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:382:45: error: text not allowed here; expected data
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:382:45: error: element "comment" not allowed here; expected data
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:382:121: error: element "branch" incomplete; expected data
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:1295:11: error: element "obj-sfrs" not allowed yet; missing required element "sel-sfrs"
-/home/runner/work/webbrowser/webbrowser/output/effective.xml:1488:31: error: element "sel-sfrs" not allowed here; expected the element end-tag
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:379:26: error: element "comment" not allowed here; expected the element end-tag
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:1292:11: error: element "obj-sfrs" not allowed yet; missing required element "sel-sfrs"
+/home/runner/work/webbrowser/webbrowser/output/effective.xml:1485:31: error: element "sel-sfrs" not allowed here; expected the element end-tag
