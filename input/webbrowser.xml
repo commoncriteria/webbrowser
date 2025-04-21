@@ -398,9 +398,9 @@
             <git>
                 <url>https://github.com/commoncriteria/application</url>
                 <branch>release-1.4</branch>
-                <comment>Possible Update needed for the URL to point to APP-PP-2.0</comment>
+                
             </git>
-            <url>https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html</url>
+            <url>https://commoncriteria.github.io/application/master/application-release.html</url>
             
             <modified-sfrs>
                 
