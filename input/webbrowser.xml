@@ -333,7 +333,7 @@
                         <addressed-by>FDP_SBX_EXT.1</addressed-by><rationale>FDP_SBX_EXT.1 mitigates the threat by ensuring that rendering of content is isolated to its origin point.</rationale>
                         <addressed-by>FDP_SOP_EXT.1</addressed-by><rationale>FDP_SOP_EXT.1 mitigates the threat by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</rationale>
                 </threat>
-                <comment>Please double check the addressed-by sfrs. Most of these were based on what was present in this XML source code. And may need to be updated to show that it can counter the "threat" not "support the objective"</comment>
+     
             </threats>
         </sec:Threats>
         <sec:Assumptions>
@@ -394,10 +394,10 @@
         <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
             <git>
                 <url>https://github.com/commoncriteria/application</url>
-                <branch>release-1.4</branch>
+                <branch>release-1.4<comment>Possible Update needed for the URL to point to APP-PP-2.0</comment></branch>
             </git>
             <url>https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html</url>
-            <comment>Possible Update needed for the URL to point to APP-PP-2.0</comment>
+            
             <modified-sfrs>
                 
                 <sec:mod_fcs title="Cryptographic Support (FCS)">
