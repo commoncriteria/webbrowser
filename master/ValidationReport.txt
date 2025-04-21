@@ -1,1 +1,0 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:401:26: error: element "comment" not allowed here; expected the element end-tag
