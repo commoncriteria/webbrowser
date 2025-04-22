@@ -1,6 +1,8 @@
 * Error: Found a "selectables" element that is buried under stricken text:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[1]""/h:s[1]"not trasn"/selectables[1]""
 * Error: Found a "selectables" element that is buried under stricken text:
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[2]"encrypt a"/selectables[1]""/selectable[3]""/h:s[1]"TLS as a "/selectables[1]""
+* Error: Found a "selectables" element that is buried under stricken text:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/selectables[1]""
 * Error: Found a "assignable" element that is buried under stricken text:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/assignable[1]"function("

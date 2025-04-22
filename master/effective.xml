@@ -452,25 +452,49 @@
                     <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
-                            <title>The application shall <selectables linebreak="yes">
-                                <selectable><h:s>not trasnmit any <selectables choose-one-of="yes">
-                                        <selectable>data</selectable>
-                                        <selectable>sensitive data</selectable>
-                                </selectables></h:s></selectable>
-                                <selectable>encrypt all transmitted [<h:b>sensitive data</h:b>] with 
-                                    [HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<h:b>web browsing</h:b>],
-                                    TLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>], 
-                                    DTLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>]]</selectable>
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with <selectables><selectable>HTTPS</selectable><selectable>TLS</selectable><selectable>DTLS</selectable><selectable><h:s>SSH</h:s></selectable><selectable><h:s>IPsec</h:s></selectable>
-                                    <selectable>IPsec</selectable></selectables> for [<h:b>web browsing</h:b>].</selectable>
-                                <selectable><h:s>invoke platform-provided functionality to encrypt all transmitted data with <selectables>
-                                    <selectable>HTTPS</selectable>
-                                    <selectable>TLS</selectable>
-                                    <selectable>DTLS</selectable>
-                                    <selectable>SSH</selectable>
-                                    <selectable>IPsec</selectable>
-                                </selectables> for <assignable>function(s)</assignable> using certificates as defined in the Functional Package for X.509</h:s></selectable>
-                            </selectables>
+                            <title>The application shall 
+                                <selectables linebreak="yes">
+                                    <selectable><h:s>not trasnmit any 
+                                        <selectables choose-one-of="yes">
+                                            <selectable>data</selectable>
+                                            <selectable>sensitive data</selectable>
+                                        </selectables></h:s>
+                                    </selectable>
+                                    <selectable>encrypt all transmitted [<h:b>sensitive data</h:b>] with
+                                        <selectables linebreak="yes">
+                                            <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<h:b>web browsing</h:b>]</selectable>
+                                            <selectable><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
+                                            <selectable><h:s>TLS as a server as defined in Functional Package for Transport Layer Security (TLS), version 2.1 and also supports functionality for 
+                                                <selectables>
+                                                    <selectable>mutual authentication</selectable>
+                                                    <selectable>none</selectable>
+                                                </selectables></h:s>
+                                            </selectable>
+                                            <selectable>TLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b></selectable>
+                                            <selectable>DTLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>]</selectable>
+                                        </selectables>
+                                    </selectable>
+                    
+                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with
+                                    <selectables>
+                                        <selectable>HTTPS</selectable>
+                                        <selectable>TLS</selectable>
+                                        <selectable>DTLS</selectable>
+                                        <selectable><h:s>SSH</h:s></selectable>
+                                        <selectable><h:s>IPsec</h:s></selectable>
+                                    </selectables> for [<h:b>web browsing</h:b>].
+                                </selectable>
+                                <selectable>
+                                    <h:s>invoke platform-provided functionality to encrypt all transmitted data with 
+                                        <selectables>
+                                        <selectable>HTTPS</selectable>
+                                        <selectable>TLS</selectable>
+                                        <selectable>DTLS</selectable>
+                                        <selectable>SSH</selectable>
+                                        <selectable>IPsec</selectable>
+                                    </selectables> for <assignable>function(s)</assignable> using certificates as defined in the Functional Package for X.509 </h:s>
+                                </selectable>
+                                </selectables>
                                 between itself and another trusted IT product.
                             </title>
                             <note role="application">This SFR is modified from its definition in the App PP to require that the TOE or its platform supports HTTPS, TLS, and DTLS, and that its use of these protocols is only limited to sensitive data. 
