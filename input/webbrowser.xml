@@ -76,11 +76,6 @@
                 <term abbr="IPC" full="Inter-Process Communication"></term>
                 <term full="JavaScript">A scripting language commonly integrated into webpages to
                     generate dynamic, interactive content</term>
-                <term full="Mobile Code">Software transmitted from a remote system for execution within
-                    a limited execution environment on the local system. Typically, there is
-                    no persistent installation and execution begins without the user's
-                    consent or even notification. Examples of mobile code technologies
-                    include Java applets, Adobe ActionScript, and Microsoft Silverlight. Note that references to mobile code do not refer to JavaScript.</term>
                 <term abbr="OCSP" full="Online Certificate Status Protocol"></term>
                 <term abbr="PDF" full="Portable Document Format"></term>
                 <term full="Plug-in">A browser add-on to handle specific types of web
@@ -268,7 +263,7 @@
                     <addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale>
                     <addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 mitigates the threat by defining the management functionality that is specific to web browser applications.</rationale>
                     <addressed-by>FPT_DNL_EXT.1</addressed-by><rationale>FPT_DNL_EXT.1 mitigates the threat by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale>
-                    <addressed-by>FPT_MCD_EXT.1</addressed-by><rationale>FPT_MCD_EXT.1 mitigates the threat by preventing the automatic execution of mobile code which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale>
+                    <addressed-by>FPT_ADD_EXT.1</addressed-by><rationale>FPT_ADD_EXT.1 mitigates the threat by preventing the automatic execution of add-ons which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale>
                     
                     <addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 mitigates the threat by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale>
                     <addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a reputation service to prevent the acquisition of potentially malicious applications.</rationale>
@@ -1026,7 +1021,7 @@
                                 <management-function><text>Enable and disable ability for websites
                                     to register protocol handlers</text></management-function>
                                 <management-function><text>Enable and disable display notification
-                                    when unsigned, untrusted, or unverified mobile code is
+                                    when unsigned, untrusted, or unverified add-on is
                                     encountered</text></management-function>
                                 <management-function><text>Enable and disable user's ability to
                                     select default actions upon download of a file (e.g., always
@@ -1036,13 +1031,8 @@
                                 <management-function><text>Enable and disable
                                     JavaScript</text></management-function>
                                 <management-function><text>Enable and disable
-                                            <selectables><selectable>ActiveX</selectable>
-                                        <selectable>Flash</selectable>
-                                        <selectable>Java</selectable>
-                                        <selectable>
-					  <assignable>other mobile code types supported by the browser</assignable></selectable>
-				</selectables>
-                                    mobile code</text>
+					                <assignable>add-on types supported by the browser</assignable>
+                                    web-based code executed in add-ons</text>
 				</management-function>
                                 <management-function><text>Enable and disable support for
                                     add-ons</text></management-function>
@@ -1195,17 +1185,17 @@
                     </f-element>
                 </f-component>
    
-                <ext-comp-def fam-id="FPT_MCD_EXT" title="Mobile Code">
-                    <fam-behavior>Components in this family define requirements for execution of mobile code.
+                <ext-comp-def fam-id="FPT_ADD_EXT" title="Add-ons">
+                    <fam-behavior>Components in this family define requirements for execution of add-ons.
                     </fam-behavior>
                 </ext-comp-def>
-                <f-component cc-id="fpt_mcd_ext.1" name="Mobile Code">
-                    <consistency-rationale>This SFR defines behavior for mobile code that is rendered by a web browser. It does not impact the App PP functionality.</consistency-rationale>
+                <f-component cc-id="fpt_add_ext.1" name="Add-ons">
+                    <consistency-rationale>This SFR defines behavior for add-ons that are rendered by a web browser. It does not impact the App PP functionality.</consistency-rationale>
                     
-                    <comp-lev> requires the TSF to identify the mobile code types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious mobile code.</comp-lev>
+                    <comp-lev> requires the TSF to identify the add-on types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious add-ons.</comp-lev>
                     <management>The following actions could be considered for the management functions in FMT: <h:ul>
-                        <h:li>Enable and disable display notification when unsigned, untrusted, or unverified mobile code is encountered.</h:li>
-                        <h:li>Enable and disable support for mobile code.</h:li>
+                        <h:li>Enable and disable display notification when unsigned, untrusted, or unverified add-ons are encountered.</h:li>
+                        <h:li>Enable and disable support for add-ons.</h:li>
                     </h:ul>
                     </management>
                     <audit>There are no auditable events foreseen.</audit>
@@ -1217,25 +1207,18 @@
                         <title>The TSF shall support the capability to execute 
                             <selectables onlyone="yes">
                             <selectable>
-                              signed
-                              <selectables linebreak="yes">
-				<selectable>ActiveX</selectable>
-				<selectable>Flash</selectable>
-				<selectable>Java</selectable>
-				<selectable>ActionScript</selectable>
-				<selectable><assignable>other mobile code types supported by the browser</assignable></selectable>
-			    </selectables></selectable>
+                              signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable></selectable>
                             <selectable>no</selectable>
-                        </selectables> mobile code.</title>
+                        </selectables> web-based code executed in add-ons.</title>
                         <ext-comp-def-title>
                             <title>
                                 The TSF shall support the capability to execute 
                                 <selectables onlyone="yes">
                                     <selectable>
-                                        signed <assignable>supported mobile code types</assignable>
+                                        signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable>
                                         </selectable>
                                     <selectable>no</selectable>
-                                </selectables> mobile code. </title>
+                                </selectables> add-ons. </title>
                         </ext-comp-def-title>
                     </f-element>
                     <f-element>
@@ -1243,14 +1226,8 @@
                             <selectable>automatically discard</selectable>
                             <selectable id="s_user_discard">provide the user with the option to discard</selectable>
                         </selectables> 
-                            unsigned, untrusted, or unverified <selectables linebreak="yes">
-                                <selectable>ActiveX</selectable>
-                                <selectable>Flash</selectable>
-                                <selectable>Java</selectable>
-                                <selectable>ActionScript</selectable>
-                                <selectable><assignable>other mobile code types supported by the
-                                        browser</assignable></selectable>
-                            </selectables> mobile code without executing it.</title>
+                            unsigned, untrusted, or unverified <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable>
+                            web-based code executed in add-ons without executing the code.</title>
                         <ext-comp-def-title>
                             <title>The TSF shall <selectables onlyone="yes">
                                 <selectable>automatically discard</selectable>
