@@ -47,7 +47,7 @@
         </h3>
         <h2>Contents</h2>
         <div class="toc" id="toc">
-            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span> Protection Profile for Application Software Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span> Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#opt_fdp" style="text-indent:20px">A.1.1<span>User Data Protection (FDP)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#obj_fcs" style="text-indent:20px">A.2.1<span>Cryptographic Support (FCS)</span></a><a href="#obj_fpt" style="text-indent:20px">A.2.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#sel_fpt" style="text-indent:10px">B.1<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_STS_EXT" style="text-indent:30px">C.2.1.1<span>FCS_STS_EXT Strict Transport Security</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.2<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_AON_EXT" style="text-indent:30px">C.2.2.1<span>FPT_AON_EXT Add-Ons</span></a><a href="#ext-comp-FPT_DNL_EXT" style="text-indent:30px">C.2.2.2<span>FPT_DNL_EXT File Downloads</span></a><a href="#ext-comp-FPT_MCD_EXT" style="text-indent:30px">C.2.2.3<span>FPT_MCD_EXT Mobile Code</span></a><a href="#ext-comp-FPT_INT_EXT" style="text-indent:30px">C.2.2.4<span>FPT_INT_EXT Reputation Service Interaction</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.3<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_MOF_EXT" style="text-indent:30px">C.2.3.1<span>FMT_MOF_EXT Management of Functions Behavior</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.4<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_ACF_EXT" style="text-indent:30px">C.2.4.1<span>FDP_ACF_EXT Access Control Functions</span></a><a href="#ext-comp-FDP_COO_EXT" style="text-indent:30px">C.2.4.2<span>FDP_COO_EXT Cookie Blocking</span></a><a href="#ext-comp-FDP_SBX_EXT" style="text-indent:30px">C.2.4.3<span>FDP_SBX_EXT Sandboxing</span></a><a href="#ext-comp-FDP_SOP_EXT" style="text-indent:30px">C.2.4.4<span>FDP_SOP_EXT Same Origin Policy</span></a><a href="#ext-comp-FDP_STR_EXT" style="text-indent:30px">C.2.4.5<span>FDP_STR_EXT Secure Transmission of Cookie Data</span></a><a href="#ext-comp-FDP_TRK_EXT" style="text-indent:30px">C.2.4.6<span>FDP_TRK_EXT Tracking Information Collection</span></a><a href="#ext-comp-FDP_PST_EXT" style="text-indent:30px">C.2.4.7<span>FDP_PST_EXT Storage of Persistent Information</span></a><a href="#EAR" style="text-indent:0px">Appendix D - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a>
+            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span> Protection Profile for Application Software Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span> Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#opt_fdp" style="text-indent:20px">A.1.1<span>User Data Protection (FDP)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#obj_fcs" style="text-indent:20px">A.2.1<span>Cryptographic Support (FCS)</span></a><a href="#obj_fpt" style="text-indent:20px">A.2.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#sel_fpt" style="text-indent:10px">B.1<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_STS_EXT" style="text-indent:30px">C.2.1.1<span>FCS_STS_EXT Strict Transport Security</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.2<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_AON_EXT" style="text-indent:30px">C.2.2.1<span>FPT_AON_EXT Add-Ons</span></a><a href="#ext-comp-FPT_DNL_EXT" style="text-indent:30px">C.2.2.2<span>FPT_DNL_EXT File Downloads</span></a><a href="#ext-comp-FPT_ADD_EXT" style="text-indent:30px">C.2.2.3<span>FPT_ADD_EXT Add-ons</span></a><a href="#ext-comp-FPT_INT_EXT" style="text-indent:30px">C.2.2.4<span>FPT_INT_EXT Reputation Service Interaction</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.3<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_MOF_EXT" style="text-indent:30px">C.2.3.1<span>FMT_MOF_EXT Management of Functions Behavior</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.4<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_ACF_EXT" style="text-indent:30px">C.2.4.1<span>FDP_ACF_EXT Access Control Functions</span></a><a href="#ext-comp-FDP_COO_EXT" style="text-indent:30px">C.2.4.2<span>FDP_COO_EXT Cookie Blocking</span></a><a href="#ext-comp-FDP_SBX_EXT" style="text-indent:30px">C.2.4.3<span>FDP_SBX_EXT Sandboxing</span></a><a href="#ext-comp-FDP_SOP_EXT" style="text-indent:30px">C.2.4.4<span>FDP_SOP_EXT Same Origin Policy</span></a><a href="#ext-comp-FDP_STR_EXT" style="text-indent:30px">C.2.4.5<span>FDP_STR_EXT Secure Transmission of Cookie Data</span></a><a href="#ext-comp-FDP_TRK_EXT" style="text-indent:30px">C.2.4.6<span>FDP_TRK_EXT Tracking Information Collection</span></a><a href="#ext-comp-FDP_PST_EXT" style="text-indent:30px">C.2.4.7<span>FDP_PST_EXT Storage of Persistent Information</span></a><a href="#EAR" style="text-indent:0px">Appendix D - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a>
         </div>
         <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
         <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -209,11 +209,6 @@
                     <td>
                         <div id="JavaScript">JavaScript</div>
                     </td><td>A scripting language commonly integrated into webpages to generate dynamic, interactive content</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="Mobile_Code">Mobile Code</div>
-                    </td><td>Software transmitted from a remote system for execution within a limited execution environment on the local system. Typically, there is no persistent installation and execution begins without the user's consent or even notification. Examples of mobile code technologies include Java applets, Adobe ActionScript, and Microsoft Silverlight. Note that references to mobile code do not refer to JavaScript.</td>
                 </tr>
                 <tr>
                     <td>
@@ -819,7 +814,7 @@
                             </td>
                         </tr>
                         <tr id="_mf_16">
-                            <td>16</td><td style="text-align:left">Enable and disable display notification when unsigned, untrusted, or unverified mobile code is encountered</td><td>
+                            <td>16</td><td style="text-align:left">Enable and disable display notification when unsigned, untrusted, or unverified add-on is encountered</td><td>
                                 <div class="tooltipped">
                                     O<span class="tooltiptext">Optional/Conditional</span>
                                 </div>
@@ -863,7 +858,7 @@
                             </td>
                         </tr>
                         <tr id="_mf_20">
-                            <td>20</td><td style="text-align:left">Enable and disable [<b>selection</b>: <span class="selectable-content" id="_s_42">ActiveX</span>, <span class="selectable-content" id="_s_43">Flash</span>, <span class="selectable-content" id="_s_44">Java</span>, <span class="selectable-content" id="_s_45"> [<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>] mobile code</td><td>
+                            <td>20</td><td style="text-align:left">Enable and disable [<b>assignment</b>: <span class="assignable-content">add-on types supported by the browser</span>] web-based code executed in add-ons</td><td>
                                 <div class="tooltipped">
                                     O<span class="tooltiptext">Optional/Conditional</span>
                                 </div>
@@ -923,7 +918,7 @@
                     <a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_47">no add-ons</span>].
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_43">no add-ons</span>].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">If <a href="#addons_supported">trusted add-ons</a> is selected in <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also claim the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a>. 
                             <p></p>
@@ -958,67 +953,22 @@
                 </div>
             </div>
         </div>
-        <div class="comp" id="FPT_MCD_EXT.1">
-            <h4>FPT_MCD_EXT.1 Mobile Code</h4>
+        <div class="comp" id="FPT_ADD_EXT.1">
+            <h4>FPT_ADD_EXT.1 Add-ons</h4>
             <div class="element">
-                <div class="reqid" id="FPT_MCD_EXT.1.1">
-                    <a href="#FPT_MCD_EXT.1.1" class="abbr">FPT_MCD_EXT.1.1</a>
+                <div class="reqid" id="FPT_ADD_EXT.1.1">
+                    <a href="#FPT_ADD_EXT.1.1" class="abbr">FPT_ADD_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: 
-                    <ul>
-                        <li style="">
-                            <span class="selectable-content" id="_s_48"> signed [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_49">ActiveX</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_50">Flash</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_51">Java</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_52">ActionScript</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_53">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
-                                    </li>
-                                </ul>
-                                ]</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_54">no</span>
-                        </li>
-                    </ul>
-                    ] mobile code.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_44"> signed [<b>assignment</b>: <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_45">no</span>] web-based code executed in add-ons.
                 </div>
             </div>
             <div class="element">
-                <div class="reqid" id="FPT_MCD_EXT.1.2">
-                    <a href="#FPT_MCD_EXT.1.2" class="abbr">FPT_MCD_EXT.1.2</a>
+                <div class="reqid" id="FPT_ADD_EXT.1.2">
+                    <a href="#FPT_ADD_EXT.1.2" class="abbr">FPT_ADD_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_57">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span>] unsigned, untrusted, or unverified [<b>selection</b>: 
-                    <ul>
-                        <li style="">
-                            <span class="selectable-content" id="_s_59">ActiveX</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_60">Flash</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_61">Java</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_62">ActionScript</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_63">[<b>assignment</b>: <span class="assignable-content">other mobile code types supported by the browser</span>]</span>
-                        </li>
-                    </ul>
-                    ] mobile code without executing it.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_48">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span>] unsigned, untrusted, or unverified [<b>assignment</b>: <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>] web-based code executed in add-ons without executing the code.
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must specify all mobile code types for which the browser provides this support. 
                             <p></p>
@@ -1069,7 +1019,7 @@
                     <td><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a></td><td><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a> mitigates the threat by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself or to its platform.</td>
                 </tr>
                 <tr>
-                    <td><a href="#FPT_MCD_EXT.1">FPT_MCD_EXT.1</a></td><td><a href="#FPT_MCD_EXT.1">FPT_MCD_EXT.1</a> mitigates the threat by preventing the automatic execution of mobile code which could otherwise cause integrity violations to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself or to its platform.</td>
+                    <td><a href="#FPT_ADD_EXT.1">FPT_ADD_EXT.1</a></td><td><a href="#FPT_ADD_EXT.1">FPT_ADD_EXT.1</a> mitigates the threat by preventing the automatic execution of add-ons which could otherwise cause integrity violations to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself or to its platform.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td>
@@ -1218,7 +1168,7 @@
                 <td><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling file data that can be downloaded by a web browser. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td>
             </tr>
             <tr>
-                <td><a href="#FPT_MCD_EXT.1">FPT_MCD_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for mobile code that is rendered by a web browser. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td>
+                <td><a href="#FPT_ADD_EXT.1">FPT_ADD_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for add-ons that are rendered by a web browser. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td>
             </tr>
             <tr>
                 <th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -1261,7 +1211,7 @@
                     <a href="#FDP_PST_EXT.1.1" class="abbr">FDP_PST_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing persistent data to the file system with the following exceptions: [<b>selection</b>: <span class="selectable-content" id="_s_66">credential information</span>, <span class="selectable-content" id="_s_67">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_68">certificate revocation information</span>, <span class="selectable-content" id="_s_69">no exceptions</span>].
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing persistent data to the file system with the following exceptions: [<b>selection</b>: <span class="selectable-content" id="_s_52">credential information</span>, <span class="selectable-content" id="_s_53">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_54">certificate revocation information</span>, <span class="selectable-content" id="_s_55">no exceptions</span>].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> Any data that persists after the browser closes, including temporary files, is considered to be persistent data. </span>
                     </div>
@@ -1345,7 +1295,7 @@
                     <a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_70">provide the ability</span>, <span class="selectable-content" id="_s_71">leverage the platform</span>] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_72">published hash</span>, <span class="selectable-content" id="_s_73">no other functions</span>] prior to installation and update. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_56">provide the ability</span>, <span class="selectable-content" id="_s_57">leverage the platform</span>] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_58">published hash</span>, <span class="selectable-content" id="_s_59">no other functions</span>] prior to installation and update. 
                 </div>
             </div>
             <div class="element">
@@ -1353,7 +1303,7 @@
                     <a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_74">provide the ability</span>, <span class="selectable-content" id="_s_75">leverage the platform</span>] to query the current version of the add-on.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_60">provide the ability</span>, <span class="selectable-content" id="_s_61">leverage the platform</span>] to query the current version of the add-on.
                 </div>
             </div>
             <div class="element">
@@ -1385,13 +1335,13 @@
                 </td>
             </tr>
             <tr data-sortkey="Protection of the TSF (FPT)">
-                <td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_AON_EXT Add-Ons
+                <td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_ADD_EXT Add-ons
+                    <br>
+                    FPT_AON_EXT Add-Ons
                     <br>
                     FPT_DNL_EXT File Downloads
                     <br>
                     FPT_INT_EXT Reputation Service Interaction
-                    <br>
-                    FPT_MCD_EXT Mobile Code
                     <br>
                 </td>
             </tr>
@@ -1514,7 +1464,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_47">no add-ons</span>].
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_43">no add-ons</span>].
                     </div>
                     <h4>Management: FPT_AON_EXT.2</h4>
                     <p>No specific management functions are identified.</p>
@@ -1533,9 +1483,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_70">provide the ability</span>, <span class="selectable-content" id="_s_71">leverage the platform</span>] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_72">published hash</span>, <span class="selectable-content" id="_s_73">no other functions</span>] prior to installation and update. 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_56">provide the ability</span>, <span class="selectable-content" id="_s_57">leverage the platform</span>] to provide a means to cryptographically verify add-ons using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_58">published hash</span>, <span class="selectable-content" id="_s_59">no other functions</span>] prior to installation and update. 
                         <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_74">provide the ability</span>, <span class="selectable-content" id="_s_75">leverage the platform</span>] to query the current version of the add-on.
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_60">provide the ability</span>, <span class="selectable-content" id="_s_61">leverage the platform</span>] to query the current version of the add-on.
                         <h4 id="ext-comp-FPT_AON_EXT.2.3">FPT_AON_EXT.2.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of add-ons.
                     </div>
@@ -1581,32 +1531,32 @@
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall present the user with the option to either save or discard downloaded files.
                     </div>
                 </div>
-                <h3 id="ext-comp-FPT_MCD_EXT" class="indexable" data-level="4">C.2.2.3 FPT_MCD_EXT Mobile Code</h3>
+                <h3 id="ext-comp-FPT_ADD_EXT" class="indexable" data-level="4">C.2.2.3 FPT_ADD_EXT Add-ons</h3>
                 <div style="margin-left: 1em;">
                     <h4>Family Behavior</h4>
-                    <div>Components in this family define requirements for execution of mobile code. </div>
+                    <div>Components in this family define requirements for execution of add-ons. </div>
                     <h4>Component Leveling</h4>
                     <svg style="max-height: 30px;">
-                        <text x="4" fill="black" font-size="15" y="24">FPT_MCD_EXT</text>
+                        <text x="4" fill="black" font-size="15" y="24">FPT_ADD_EXT</text>
                         <rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect>
                         <text x="234" fill="black" font-size="15" y="24">1</text>
                         <rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect>
                         <line x1="152" y1="17" x2="231" y2="17" stroke="black"></line>
                     </svg>
                     <p>
-                        <a href="#FPT_MCD_EXT.1">FPT_MCD_EXT.1</a>, Mobile Code, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to identify the mobile code types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious mobile code.
+                        <a href="#FPT_ADD_EXT.1">FPT_ADD_EXT.1</a>, Add-ons, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to identify the add-on types it supports and to ensure that a mechanism exists to prevent the automatic execution of potentially malicious add-ons.
                     </p>
-                    <h4>Management: FPT_MCD_EXT.1</h4>
+                    <h4>Management: FPT_ADD_EXT.1</h4>
                     <p>
                         The following actions could be considered for the management functions in FMT: 
                         <ul>
-                            <li>Enable and disable display notification when unsigned, untrusted, or unverified mobile code is encountered.</li>
-                            <li>Enable and disable support for mobile code.</li>
+                            <li>Enable and disable display notification when unsigned, untrusted, or unverified add-ons are encountered.</li>
+                            <li>Enable and disable support for add-ons.</li>
                         </ul>
                     </p>
-                    <h4>Audit: FPT_MCD_EXT.1</h4>
+                    <h4>Audit: FPT_ADD_EXT.1</h4>
                     <p>There are no auditable events foreseen.</p>
-                    <h4>FPT_MCD_EXT.1 Mobile Code</h4>
+                    <h4>FPT_ADD_EXT.1 Add-ons</h4>
                     <div style="margin-left: 1em;">
                         <table class="ecd_heir_dep" style="width: 100%">
                             <tr>
@@ -1616,10 +1566,10 @@
                                 <td>Dependencies to:</td><td> No dependencies. </td>
                             </tr>
                         </table>
-                        <h4 id="ext-comp-FPT_MCD_EXT.1.1">FPT_MCD_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_55"> signed [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] </span>, <span class="selectable-content" id="_s_56">no</span>] mobile code. 
-                        <h4 id="ext-comp-FPT_MCD_EXT.1.2">FPT_MCD_EXT.1.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_64">automatically discard</span>, <span class="selectable-content" id="_s_65">provide the user with the option to discard</span>] unsigned, untrusted, or unverified [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] mobile code without executing it.
+                        <h4 id="ext-comp-FPT_ADD_EXT.1.1">FPT_ADD_EXT.1.1</h4>
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_46"> signed [<b>assignment</b>: <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>] </span>, <span class="selectable-content" id="_s_47">no</span>] add-ons. 
+                        <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_50">automatically discard</span>, <span class="selectable-content" id="_s_51">provide the user with the option to discard</span>] unsigned, untrusted, or unverified [<b>assignment</b>: <span class="assignable-content">supported mobile code types</span>] mobile code without executing it.
                     </div>
                 </div>
                 <h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.2.4 FPT_INT_EXT Reputation Service Interaction</h3>

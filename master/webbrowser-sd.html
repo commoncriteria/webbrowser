@@ -380,11 +380,6 @@ The following sections list Common Criteria and technology terms used in this do
                     runs over an encrypted channel (SSL/TLS).</td></tr>
 <tr><td><div id="JavaScript">JavaScript</div></td><td>A scripting language commonly integrated into webpages to
                     generate dynamic, interactive content</td></tr>
-<tr><td><div id="Mobile_Code">Mobile Code</div></td><td>Software transmitted from a remote system for execution within
-                    a limited execution environment on the local system. Typically, there is
-                    no persistent installation and execution begins without the user's
-                    consent or even notification. Examples of mobile code technologies
-                    include Java applets, Adobe ActionScript, and Microsoft Silverlight. Note that references to mobile code do not refer to JavaScript.</td></tr>
 <tr><td><div id="Plug-in">Plug-in</div></td><td>A browser add-on to handle specific types of web
                     content.</td></tr>
 <tr><td><div id="Pop-up">Pop-up</div></td><td>A piece of web code that causes a browser to open a window
@@ -697,7 +692,7 @@ The following sections list Common Criteria and technology terms used in this do
                                         with the option to either download the file to the file
                                         system or to discard the file.</li>
                                 </ul></span>
-                            </div></div></span></div><div class="comp" id=""><h4>FPT_MCD_EXT.1 Mobile Code</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_MCD_EXT.1</div>
+                            </div></div></span></div><div class="comp" id=""><h4>FPT_ADD_EXT.1 Add-ons</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_ADD_EXT.1</div>
                             
 				
                             
@@ -710,7 +705,7 @@ The following sections list Common Criteria and technology terms used in this do
                                   
 				 If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify it provides configuration instructions for each of the supported mobile code types. The operational guidance shall also describes the alert that the browser displays to the user when unsigned, untrusted, or unverified mobile code is encountered and the actions the user can take. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <span class="testlist-"><ul>
-                                    <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_MCD_EXT.1:1</a>:
+                                    <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_ADD_EXT.1:1</a>:
       
                                         The evaluator shall construct a webpage containing correctly signed mobile code and show that it is accepted and executes. The evaluator shall then construct three webpages containing unacceptable mobile code: the first webpage contains mobile code that is unsigned; the second webpage contains mobile code that is untrusted; the third webpage contains mobile code that is unverified. The evaluator shall then attempt to load the mobile code from each of the three webpages, and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
                                     </li>
