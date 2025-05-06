@@ -1162,7 +1162,7 @@
                             file to the file system or not download the file.<h:p/> In this context,
                             an executable is a file containing code for a software program that is
                             invoked independent of and outside the context of the browser. It does
-                            not include mobile code, scripts, or add-ons.<h:p/>
+                            not include scripts or add-ons.<h:p/>
                         </note>
                         <aactivity>
                             <TSS>The evaluator shall ensure that the TSS
@@ -1233,28 +1233,36 @@
                                 <selectable>automatically discard</selectable>
                                 <selectable>provide the user with the option to discard</selectable>
                             </selectables> 
-                                unsigned, untrusted, or unverified <assignable>supported mobile code types</assignable>
-                                 mobile code without executing it.</title>
+                                unsigned, untrusted, or unverified <assignable>supported add-ons (i.e., plug-ins and extensions)</assignable>
+                                 web-based code executed in add-ons without executing it.</title>
                         </ext-comp-def-title>
                         <note role="application"> The ST author must specify all
-                            mobile code types for which the browser provides this support. <h:p/>An
+                            add-on types for which the browser provides this support. <h:p/>An
                             authorized signer may directly sign the code itself, or the code may be
                             delivered over an authenticated HTTPS connection with an authorized
                             entity. </note>
                         <aactivity>
                             <TSS>The evaluator shall ensure that the TSS
-                                lists the types of signed mobile code that the browser supports. The
-                                    TSS shall describe how the browser handles
-                                unsigned mobile code, mobile code from an untrusted source, and
-                                mobile code from an unverified source. <h:p/></TSS>
-				<Guidance>
-				  <depends on="s_user_discard"/>
-                                  <!-- If <xref to="s_user_discard"/> is selected in FPT_MCD_EXT.1.2, -->
-				 If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify it provides configuration instructions for each of the supported mobile code types. The operational guidance shall also describes the alert that the browser displays to the user when unsigned, untrusted, or unverified mobile code is encountered and the actions the user can take. </Guidance>
+                                lists the types of signed add-ons that the browser supports. The
+                                TSS shall describe how the browser handles
+                                unsigned add-ons, add-ons from an untrusted source, and
+                                add-ons from an unverified source. <h:p/></TSS>
+                            <Guidance>
+                            <depends on="s_user_discard"/>
+                                <!-- If <xref to="s_user_discard"/> is selected in FPT_MCD_EXT.1.2, -->
+                                If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify 
+                                it provides configuration instructions for each of the supported add-on types. The operational guidance shall also describes 
+                                the alert that the browser displays to the user when unsigned, untrusted, or unverified add-ons are encountered and the actions the user can take. </Guidance>
                             <Tests>The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <testlist>
                                     <test>
-                                        The evaluator shall construct a webpage containing correctly signed mobile code and show that it is accepted and executes. The evaluator shall then construct three webpages containing unacceptable mobile code: the first webpage contains mobile code that is unsigned; the second webpage contains mobile code that is untrusted; the third webpage contains mobile code that is unverified. The evaluator shall then attempt to load the mobile code from each of the three webpages, and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
+                                        The evaluator shall construct a webpage containing a correctly signed add-on and show that it is accepted and executes. 
+                                        The evaluator shall then construct three webpages containing unacceptable add-ons: the first webpage contains an
+                                        add-on that is unsigned; the second webpage contains an add-on that is untrusted; the third webpage contains 
+                                        an add-on that is unverified. The evaluator shall then attempt to load the add-ons from each of the three webpages, 
+                                        and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the 
+                                        selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the code, the evaluator shall verify 
+                                        that the code is not executed after being rejected.
                                     </test>
                                 </testlist>
                             </Tests>
