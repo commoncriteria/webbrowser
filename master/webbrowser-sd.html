@@ -694,20 +694,28 @@ The following sections list Common Criteria and technology terms used in this do
                                 </ul></span>
                             </div></div></span></div><div class="comp" id=""><h4>FPT_ADD_EXT.1 Add-ons</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_ADD_EXT.1</div>
                             
-				
+                            
                             
                         <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall ensure that the TSS
-                                lists the types of signed mobile code that the browser supports. The
-                                    TSS shall describe how the browser handles
-                                unsigned mobile code, mobile code from an untrusted source, and
-                                mobile code from an unverified source. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-				  
-                                  
-				 If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify it provides configuration instructions for each of the supported mobile code types. The operational guidance shall also describes the alert that the browser displays to the user when unsigned, untrusted, or unverified mobile code is encountered and the actions the user can take. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
+                                lists the types of signed add-ons that the browser supports. The
+                                TSS shall describe how the browser handles
+                                unsigned add-ons, add-ons from an untrusted source, and
+                                add-ons from an unverified source. <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                            
+                                
+                                If "provide the user with the option to discard" is selected, the evaluator shall examine the operational guidance to verify 
+                                it provides configuration instructions for each of the supported add-on types. The operational guidance shall also describes 
+                                the alert that the browser displays to the user when unsigned, untrusted, or unverified add-ons are encountered and the actions the user can take. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_ADD_EXT.1:1</a>:
       
-                                        The evaluator shall construct a webpage containing correctly signed mobile code and show that it is accepted and executes. The evaluator shall then construct three webpages containing unacceptable mobile code: the first webpage contains mobile code that is unsigned; the second webpage contains mobile code that is untrusted; the third webpage contains mobile code that is unverified. The evaluator shall then attempt to load the mobile code from each of the three webpages, and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the code, the evaluator shall verify that the code is not executed after being rejected.
+                                        The evaluator shall construct a webpage containing a correctly signed add-on and show that it is accepted and executes. 
+                                        The evaluator shall then construct three webpages containing unacceptable add-ons: the first webpage contains an
+                                        add-on that is unsigned; the second webpage contains an add-on that is untrusted; the third webpage contains 
+                                        an add-on that is unverified. The evaluator shall then attempt to load the add-ons from each of the three webpages, 
+                                        and observe either that the code is rejected or that the user is prompted to accept or reject the code, depending on the 
+                                        selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the code, the evaluator shall verify 
+                                        that the code is not executed after being rejected.
                                     </li>
                                 </ul></span>
                             </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="opt_fdp">2.3.1 User Data Protection (FDP)</h2><div class="comp" id=""><h4>FDP_PST_EXT.1 Storage of Persistent Information</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_PST_EXT.1</div>
