@@ -26,7 +26,25 @@
             <subject>Initial release as CC:2022 PP-Module</subject>
         </entry>
     </RevisionHistory>
-    
+    <include-pkg id="pkg-ssh">
+        <git>
+          <url>https://github.com/commoncriteria/ssh</url>
+          <branch>release-2.0</branch>
+        </git>
+          <url>https://www.niap-ccevs.org/protectionprofiles/515</url>
+        <depends on-sel="sel_all_ssh"/>
+      </include-pkg>
+      
+      <include-pkg id="pkg-tls">
+        <git>
+          <url>https://github.com/commoncriteria/tls</url>
+          <branch>release-2.1</branch>
+        </git>
+        <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439</url>
+        <depends on-sel="sel_all_tlsc"/>
+        <depends on-sel="sel_all_dtlsc"/>
+                
+      </include-pkg>
     <pp-preferences>
         <!-- <using-cc2022/>  -->
     </pp-preferences>
@@ -464,48 +482,55 @@
                         <f-element>
                             <title>The application shall 
                                 <selectables linebreak="yes">
-                                    <selectable><h:s>not trasnmit any 
-                                        <selectables choose-one-of="yes">
+                                    <selectable exclusive="yes">not transmit any 
+                                        <selectables onlyone="yes">
                                             <selectable>data</selectable>
+                                            <selectable>sensitive data</selectable></selectables>
+                                    </selectable>
+                                    <selectable>encrypt all transmitted 
+                                        <selectables onlyone="yes">
                                             <selectable>sensitive data</selectable>
-                                        </selectables></h:s>
-                                    </selectable>
-                                    <selectable>encrypt all transmitted [<h:b>sensitive data</h:b>] with
-                                        <selectables linebreak='yes'>
-                                            <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<h:b>web browsing</h:b>]</selectable>
-                                            <selectable><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
-                                            <selectable><h:s>TLS as a server as defined in Functional Package for Transport Layer Security (TLS), version 2.1 and also supports functionality for 
-                                                <selectables>
-                                                    <selectable>mutual authentication</selectable>
-                                                    <selectable>none</selectable>
-                                                </selectables></h:s>
-                                            </selectable>
-                                            <selectable>TLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b></selectable>
-                                            <selectable>DTLS as a client as defined in the Functional Package for TLS for [<h:b>web browsing</h:b>]</selectable>
-                                        </selectables>
-                                    </selectable>
-                    
-                                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with
-                                    <selectables>
-                                        <selectable>HTTPS</selectable>
-                                        <selectable>TLS</selectable>
-                                        <selectable>DTLS</selectable>
-                                        <selectable><h:s>SSH</h:s></selectable>
-                                        <selectable><h:s>IPsec</h:s></selectable>
-                                    </selectables> for [<h:b>web browsing</h:b>].
-                                </selectable>
-                                <selectable>
-                                    <h:s>invoke platform-provided functionality to encrypt all transmitted data with 
+                                            <selectable>data</selectable></selectables> with
                                         <selectables>
-                                        <selectable>HTTPS</selectable>
-                                        <selectable>TLS</selectable>
-                                        <selectable>DTLS</selectable>
-                                        <selectable>SSH</selectable>
-                                        <selectable>IPsec</selectable>
-                                    </selectables> for <assignable>function(s)</assignable> using certificates as defined in the Functional Package for X.509 </h:s>
-                                </selectable>
-                                </selectables>
-                                between itself and another trusted IT product.
+                                            <selectable >HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b>/Client for web browsing</h:b></selectable>
+                                            <selectable ><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
+                                    <!--		<selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable> -->
+                                            <selectable ><h:s>TLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
+                                                <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></h:s></selectable>
+                                            <selectable id="sel_all_tlsc">TLS as a client as defined in <xref to="pkg-tls"/></selectable>
+                                            <selectable><h:s>DTLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
+                                                <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></h:s></selectable>
+                                            <selectable id="sel_all_dtlsc">DTLS as a client as defined in <xref to="pkg-tls"/> </selectable>
+                                            <selectable><h:s>SSH as defined in the <xref to="pkg-ssh"/></h:s></selectable>
+                                            <selectable><h:s>IPsec as defined in the 
+                                                VPN Client PP-Module, version 2.6</h:s></selectable></selectables>
+                                        for [<h:b>web browsing</h:b>]
+                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
+                                            Functional Package for X.509</h:a>
+                                    </selectable>
+                                    <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with
+                                        <selectables>
+                                            <selectable>HTTPS</selectable>
+                                            <selectable>TLS</selectable>
+                                            <selectable>DTLS</selectable>
+                                            <selectable><h:s>SSH</h:s></selectable>
+                                            <selectable><h:s>IPsec</h:s></selectable>
+                                        </selectables> for [<h:b>web browsing</h:b>] 
+                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
+                                            Functional Package for X.509</h:a>
+                                    </selectable>	    	      
+                                    <selectable><h:s>invoke platform-provided functionality to encrypt all transmitted data with
+                                        <selectables>
+                                            <selectable>HTTPS</selectable>
+                                            <selectable>TLS</selectable>
+                                            <selectable>DTLS</selectable>
+                                            <selectable>SSH</selectable> 
+                                            <selectable>IPsec</selectable>
+                                        </selectables> for <assignable>function(s)</assignable>
+                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
+                                            Functional Package for X.509</h:a>
+                                        </h:s></selectable>
+                                </selectables> between itself and another trusted IT product.
                             </title>
                             <note role="application">This SFR is modified from its definition in the App PP to require that the TOE or its platform supports HTTPS, TLS, and DTLS, and that its use of these protocols is only limited to sensitive data. 
                                 A conformant TOE must support the use of HTTPS, TLS, and DTLS for secure web browsing but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
