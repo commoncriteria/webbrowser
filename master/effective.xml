@@ -467,15 +467,14 @@
                         <f-element>
                             <title>The application shall 
                                 <selectables linebreak="yes">
-                                    <selectable exclusive="yes">not transmit any 
+                                    <selectable><h:s>not transmit any 
                                         <selectables onlyone="yes">
                                             <selectable>data</selectable>
                                             <selectable>sensitive data</selectable></selectables>
-                                    </selectable>
+                                        </h:s></selectable>
                                     <selectable>encrypt all transmitted 
-                                        <selectables onlyone="yes">
-                                            <selectable>sensitive data</selectable>
-                                            <selectable>data</selectable></selectables> with
+                                       [<h:b>sensitive data</h:b>]
+                                            with
                                         <selectables>
                                             <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b>/Client for web browsing</h:b></selectable>
                                             <selectable><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
