@@ -491,7 +491,7 @@
                                        [<h:b>sensitive data</h:b>]
                                             with
                                         <selectables>
-                                            <selectable >HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b>/Client for web browsing</h:b></selectable>
+                                            <selectable >HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b> for web browsing</h:b></selectable>
                                             <selectable ><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
                                     <!--		<selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable> -->
                                             <selectable ><h:s>TLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
