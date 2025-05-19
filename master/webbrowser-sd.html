@@ -709,13 +709,7 @@ The following sections list Common Criteria and technology terms used in this do
                                 code type specified in the TSS: <span class="testlist-"><ul>
                                     <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FPT_ADD_EXT.1:1</a>:
       
-                                        The evaluator shall construct a webpage containing a correctly signed add-on and show that it is accepted and executes. 
-                                        The evaluator shall then construct three webpages containing unacceptable add-ons: the first webpage contains an
-                                        add-on that is unsigned; the second webpage contains an add-on that is untrusted; the third webpage contains 
-                                        an add-on that is unverified. The evaluator shall then attempt to load the add-ons from each of the three webpages, 
-                                        and observe either that the add-on is rejected or that the user is prompted to accept or reject the add-on, depending on the 
-                                        selections made in FPT_ADD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify 
-                                        that the add-on is not executed after being rejected.
+                                        The evaluator shall construct or obtain a correctly signed add-on and show that it is accepted and executes. The evaluator shall then construct or obtain three unacceptable add-ons: the first add-on is unsigned; the second add-on has an untrusted signature (e.g., creating the signature by using an unexpectd key or by manual modification of a legitimate signature); the third add-on has a trusted signature but has its contents modified (e.g., by using a hex editor). The evaluator shall then attempt to load these add-ons and observe that either they are rejected, or that the user is prompted to accept or reject them, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify that the add-on is not executed after being rejected.
                                     </li>
                                 </ul></span>
                             </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="opt_fdp">2.3.1 User Data Protection (FDP)</h2><div class="comp" id=""><h4>FDP_PST_EXT.1 Storage of Persistent Information</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_PST_EXT.1</div>
