@@ -219,7 +219,7 @@
 		<cc-pp-conf/>              		  
 		
 		<!-- Can be in a configuration with these PPs and Modules -->
-		<cc-pp-config-with/>
+		<cc-pp-config-with><PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref></cc-pp-config-with>
 
 		<!-- Package claims -->
         
