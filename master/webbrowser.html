@@ -676,6 +676,12 @@ The following sections list Common Criteria and technology terms used in this do
       accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations.
     </td></tr>
 <tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation.</td></tr>
+<tr><td><div id="Direct_Rationale">Direct Rationale</div></td><td>
+		A type of Protection Profile, PP-Module, or Security Target in which the security
+		problem definition (SPD) elements are mapped directly to the SFRs and possibly to the 
+		security objectives for the operational environment. There are no security objectives
+		for the TOE.
+	</td></tr>
 <tr><td><div id="Extended_Package">Extended Package (EP)</div></td><td>A deprecated document form for collecting SFRs that implement a particular protocol, technology,
 	    or functionality. See Functional Packages.</td></tr>
 <tr><td><div id="Functional_Package">Functional Package (FP)</div></td><td>A document that collects SFRs for a particular protocol, technology,
@@ -857,15 +863,15 @@ The following sections list Common Criteria and technology terms used in this do
                         platform's file system, or privilege escalation that enables
                         unauthorized access to other applications or the operating
                         system.</span></dd><dt class="threat defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK
-	    (from App PP)
+		(from App PP)
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP
-	    (from App PP)
+		(from App PP)
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS
-	    (from App PP)
+		(from App PP)
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</dt><dd><span class="description"> Violating the same-origin policy is a specialized type of network
@@ -1607,7 +1613,7 @@ Application
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">1</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#T.FLAWED_ADDON">T.FLAWED_​ADDON</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a> mitigates the threat by specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has the ability to load add-ons.</td></tr>
 <tr><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> (selection-based)</td><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> mitigates the threat by defining a cryptographic method for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate the integrity of add-ons if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports their use.</td></tr>
 <tr class="major-row"><td rowspan="12"><a href="#T.NETWORK_ATTACK">T.NETWORK_​ATTACK</a>
-	    (from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 	</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
 <tr><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
 <tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
@@ -1621,7 +1627,7 @@ Application
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a reputation service to prevent the acquisition of potentially malicious applications.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="9"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_​EAVESDROP</a>
-	    (from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 	</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a> mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
 <tr><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a> mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
 <tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a> mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
@@ -1632,7 +1638,7 @@ Application
 <tr><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="3"><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_​ACCESS</a>
-	    (from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 	</td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a> mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</td></tr>
 <tr><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> (optional)</td><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> mitigates the threat by optionally defining the minimum set of persistent data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is required to store.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</td></tr>
