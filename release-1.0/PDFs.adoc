@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/webbrowser/release-1.0/webbrowser-release.html.pdf[webbrowser-release.html.pdf]
+* https://commoncriteria.github.io/webbrowser/release-1.0/webbrowser-sd.html.pdf[webbrowser-sd.html.pdf]
+* https://commoncriteria.github.io/webbrowser/release-1.0/webbrowser.html.pdf[webbrowser.html.pdf]
+* https://commoncriteria.github.io/webbrowser/release-1.0/webbrowser-release-linkable.html.pdf[webbrowser-release-linkable.html.pdf]
