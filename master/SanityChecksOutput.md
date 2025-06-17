@@ -8,7 +8,6 @@
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/selectables[1]""
 * Error: Found a "assignable" element that is buried under stricken text:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/assignable[1]"function("
-* Warning: This document still has at least one comment.
 * Error: Detected dangling id-reference to sel_all_ssh from attribute
         on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Overview[1]""/h:p[1]""
