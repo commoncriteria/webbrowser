@@ -411,7 +411,7 @@
                 <branch>release-2.0</branch>
                 
             </git>
-            <url>https://commoncriteria.github.io/application/master/application-release.html</url>
+            <url>https://www.niap-ccevs.org/static_html/protection-profile/516/PP_APP_v2.0.html</url>
             
             <modified-sfrs>
                 
@@ -1678,10 +1678,8 @@
             <tag>App PP</tag>
             
             <description>
-                <!-- todo: update hyperlink when PP published -->
-                <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462">Protection Profile for
-					Application Software, Version 2.0</h:a>, TBD
-                <comment>URL/Date needs to be updated once the APP-PP-2.0 is released.</comment>
+                <h:a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for
+					Application Software, Version 2.0</h:a>, PP_APP_v2.0.
             </description>
         </entry>
     </bibliography>
