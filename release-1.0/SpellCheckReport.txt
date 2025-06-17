@@ -8,7 +8,6 @@ output/webbrowser-release-linkable.html: Ons
 output/webbrowser-release-linkable.html: SCADA
 output/webbrowser-release-linkable.html: SPD
 output/webbrowser-release-linkable.html: Sandboxing
-output/webbrowser-release-linkable.html: TBD
 output/webbrowser-release-linkable.html: URIs
 output/webbrowser-release-linkable.html: cnn
 output/webbrowser-release-linkable.html: enablement
@@ -21,6 +20,7 @@ output/webbrowser-release-linkable.html: test1
 output/webbrowser-release-linkable.html: test2
 output/webbrowser-release-linkable.html: unexpectd
 output/webbrowser-release-linkable.html: unmanaged
+output/webbrowser-release-linkable.html: v2
 output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: CEM
 output/webbrowser-release.html: DTLSC
@@ -31,7 +31,6 @@ output/webbrowser-release.html: Ons
 output/webbrowser-release.html: SCADA
 output/webbrowser-release.html: SPD
 output/webbrowser-release.html: Sandboxing
-output/webbrowser-release.html: TBD
 output/webbrowser-release.html: URIs
 output/webbrowser-release.html: cnn
 output/webbrowser-release.html: enablement
@@ -40,6 +39,7 @@ output/webbrowser-release.html: ons
 output/webbrowser-release.html: recategorized
 output/webbrowser-release.html: sandboxing
 output/webbrowser-release.html: unmanaged
+output/webbrowser-release.html: v2
 output/webbrowser-release.html: webpages
 output/webbrowser-sd.html: AGD
 output/webbrowser-sd.html: CEM
@@ -47,7 +47,6 @@ output/webbrowser-sd.html: HTML5
 output/webbrowser-sd.html: MCD
 output/webbrowser-sd.html: SPD
 output/webbrowser-sd.html: Sandboxing
-output/webbrowser-sd.html: TBD
 output/webbrowser-sd.html: cnn
 output/webbrowser-sd.html: evaluator’s
 output/webbrowser-sd.html: fail’
@@ -58,6 +57,7 @@ output/webbrowser-sd.html: test1
 output/webbrowser-sd.html: test2
 output/webbrowser-sd.html: unexpectd
 output/webbrowser-sd.html: unmanaged
+output/webbrowser-sd.html: v2
 output/webbrowser-sd.html: webpages
 output/webbrowser.html: CEM
 output/webbrowser.html: DTLSC
@@ -69,7 +69,6 @@ output/webbrowser.html: Ons
 output/webbrowser.html: SCADA
 output/webbrowser.html: SPD
 output/webbrowser.html: Sandboxing
-output/webbrowser.html: TBD
 output/webbrowser.html: URIs
 output/webbrowser.html: cnn
 output/webbrowser.html: enablement
@@ -82,4 +81,5 @@ output/webbrowser.html: test1
 output/webbrowser.html: test2
 output/webbrowser.html: unexpectd
 output/webbrowser.html: unmanaged
+output/webbrowser.html: v2
 output/webbrowser.html: webpages
