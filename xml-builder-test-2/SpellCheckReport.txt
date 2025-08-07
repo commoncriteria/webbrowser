@@ -1,11 +1,11 @@
 output/webbrowser-release-linkable.html: CEM
-output/webbrowser-release-linkable.html: DTLSC
 output/webbrowser-release-linkable.html: FIA
 output/webbrowser-release-linkable.html: GPUs
 output/webbrowser-release-linkable.html: HTML5
 output/webbrowser-release-linkable.html: MCD
 output/webbrowser-release-linkable.html: Ons
 output/webbrowser-release-linkable.html: SCADA
+output/webbrowser-release-linkable.html: SOEs
 output/webbrowser-release-linkable.html: SPD
 output/webbrowser-release-linkable.html: Sandboxing
 output/webbrowser-release-linkable.html: URIs
@@ -13,7 +13,6 @@ output/webbrowser-release-linkable.html: cnn
 output/webbrowser-release-linkable.html: enablement
 output/webbrowser-release-linkable.html: geolocation
 output/webbrowser-release-linkable.html: ons
-output/webbrowser-release-linkable.html: recategorized
 output/webbrowser-release-linkable.html: sandboxing
 output/webbrowser-release-linkable.html: sessionStorage
 output/webbrowser-release-linkable.html: test1
@@ -22,12 +21,12 @@ output/webbrowser-release-linkable.html: unexpectd
 output/webbrowser-release-linkable.html: unmanaged
 output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: CEM
-output/webbrowser-release.html: DTLSC
 output/webbrowser-release.html: FIA
 output/webbrowser-release.html: GPUs
 output/webbrowser-release.html: HTML5
 output/webbrowser-release.html: Ons
 output/webbrowser-release.html: SCADA
+output/webbrowser-release.html: SOEs
 output/webbrowser-release.html: SPD
 output/webbrowser-release.html: Sandboxing
 output/webbrowser-release.html: URIs
@@ -35,7 +34,6 @@ output/webbrowser-release.html: cnn
 output/webbrowser-release.html: enablement
 output/webbrowser-release.html: geolocation
 output/webbrowser-release.html: ons
-output/webbrowser-release.html: recategorized
 output/webbrowser-release.html: sandboxing
 output/webbrowser-release.html: unmanaged
 output/webbrowser-release.html: webpages
@@ -57,13 +55,13 @@ output/webbrowser-sd.html: unexpectd
 output/webbrowser-sd.html: unmanaged
 output/webbrowser-sd.html: webpages
 output/webbrowser.html: CEM
-output/webbrowser.html: DTLSC
 output/webbrowser.html: FIA
 output/webbrowser.html: GPUs
 output/webbrowser.html: HTML5
 output/webbrowser.html: MCD
 output/webbrowser.html: Ons
 output/webbrowser.html: SCADA
+output/webbrowser.html: SOEs
 output/webbrowser.html: SPD
 output/webbrowser.html: Sandboxing
 output/webbrowser.html: URIs
@@ -71,7 +69,6 @@ output/webbrowser.html: cnn
 output/webbrowser.html: enablement
 output/webbrowser.html: geolocation
 output/webbrowser.html: ons
-output/webbrowser.html: recategorized
 output/webbrowser.html: sandboxing
 output/webbrowser.html: sessionStorage
 output/webbrowser.html: test1
