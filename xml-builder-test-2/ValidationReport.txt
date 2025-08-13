@@ -1,1 +1,0 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:232:14: error: element "SOEs" incomplete; missing required element "SOE"

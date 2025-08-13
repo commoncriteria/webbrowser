@@ -5,7 +5,6 @@ output/webbrowser-release-linkable.html: HTML5
 output/webbrowser-release-linkable.html: MCD
 output/webbrowser-release-linkable.html: Ons
 output/webbrowser-release-linkable.html: SCADA
-output/webbrowser-release-linkable.html: SOEs
 output/webbrowser-release-linkable.html: SPD
 output/webbrowser-release-linkable.html: Sandboxing
 output/webbrowser-release-linkable.html: URIs
@@ -26,7 +25,6 @@ output/webbrowser-release.html: GPUs
 output/webbrowser-release.html: HTML5
 output/webbrowser-release.html: Ons
 output/webbrowser-release.html: SCADA
-output/webbrowser-release.html: SOEs
 output/webbrowser-release.html: SPD
 output/webbrowser-release.html: Sandboxing
 output/webbrowser-release.html: URIs
@@ -61,7 +59,6 @@ output/webbrowser.html: HTML5
 output/webbrowser.html: MCD
 output/webbrowser.html: Ons
 output/webbrowser.html: SCADA
-output/webbrowser.html: SOEs
 output/webbrowser.html: SPD
 output/webbrowser.html: Sandboxing
 output/webbrowser.html: URIs
