@@ -180,7 +180,7 @@
     </sec:Use_Cases>
   </sec:Introduction>
   <section title="Conformance Claims" id="sec-cclaims">
-    <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale" display="yes">
+    <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
       <cc-st-conf>exact</cc-st-conf>
       <cc-pt2-conf>extended</cc-pt2-conf>
       <cc-pt3-conf>extended</cc-pt3-conf>
@@ -188,7 +188,8 @@
       <cc-pp-config-with>
         <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
       </cc-pp-config-with>
-      <cc-pkg-claim/>
+      <cc-pkg-claim>
+      </cc-pkg-claim>
     </CClaimsInfo>
   </section>
   <!-- 3.0 Security Problem Definition-->
