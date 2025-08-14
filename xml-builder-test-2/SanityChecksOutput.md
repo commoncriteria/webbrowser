@@ -16,6 +16,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/sec:Threats[1]"The follo"/threats[1]""/threat[5]""/description[1]"Violating"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]""/section[1]"No enviro"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/title[1]"The TSF s"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/note[1]"The separ"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[3]""/f-element[1]""/note[1]"Web brows"/h:p[1]""
