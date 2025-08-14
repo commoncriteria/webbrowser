@@ -188,7 +188,8 @@
       <cc-pp-config-with>
         <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
       </cc-pp-config-with>
-      <cc-pkg-claim/>
+      <cc-pkg-claim>
+      </cc-pkg-claim>
     </CClaimsInfo>
   </section>
   <!-- 3.0 Security Problem Definition-->
