@@ -1,0 +1,6 @@
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:182:29: error: element "sec:Conformance_Claims" incomplete; missing required element "CClaimsInfo"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:224:56: error: value of attribute "title" is invalid; must be equal to "Security Requirements"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:225:72: error: element "CClaimsInfo" not allowed here; expected text, element "_", "assignable", "base-pp", "choice", "comment", "ctr", "depends", "endnote", "equation", "figure", "implements", "no-link", "provides", "refinement", "replace", "requires", "rule", "selectables", "snip", "testlist" or "xref" or an element from another namespace
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:235:13: error: element "section" incomplete; missing required element "base-pp"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:236:60: error: element "sec:Security_Requirements" not allowed here; expected element "appendix" or "bibliography"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:236:60: error: found attribute "title", but no attributes allowed here
