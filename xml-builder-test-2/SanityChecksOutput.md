@@ -28,8 +28,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[3]""/f-component[2]""/f-element[1]""/note[1]"If"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[3]""/f-component[3]""/f-element[2]""/note[1]"This requ"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[1]""/f-component[1]""/dependencies[1]"Cryptogra"/h:p[1]""
-* Warning: Detected 1 Conformance Claims sections in this PP. There should be exactly 1 "Conformance Claims" section.
-      
 * Warning: Since FDP_SBX_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FPT_AON_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
