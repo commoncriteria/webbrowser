@@ -245,7 +245,7 @@
       <sec-func-req-dir/>
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
-        <section title="Cryptographic Support (FCS)" id="">
+        <section title="Cryptographic Support (FCS)" id="fcs">
           <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
           <base-sfr-spec cc-id="fcs_ckm_ext.1" id="fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
             <consistency-rationale>
