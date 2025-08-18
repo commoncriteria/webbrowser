@@ -244,7 +244,35 @@
       <url>https://github.com/commoncriteria/application</url>
       <sec-func-req-dir/>
       <!-- 5.1.1 Modified SFRs -->
-      <modified-sfrs/>
+      <modified-sfrs>
+        <section title="Cryptographic Support (FCS)" id="">
+          <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
+          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
+            <consistency-rationale>
+			This SFR is changed from its definition in the App PP to remove one of the available selection options because
+			it will never apply in the case where the TOE conforms to this PP-Module.
+		      </consistency-rationale>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']">
+                <f-element id="fel-asym-key-gen">
+                  <title>The application shall  <selectables linebreak="yes"><selectable id="fcs_ckm_ext.1.1_1" ><h:s>generate no asymmetric cryptographic keys</h:s></selectable><selectable id="sel_invoke_genkey" >invoke platform-provided functionality for asymmetric key generation</selectable><selectable id="sel_impl_genkey" >implement asymmetric key generation</selectable></selectables>.
+                            </title>
+                  <note role="application">This SFR is modified from its Base-PP definition to remove the 
+							selection for the TOE not requiring asymmetric key generation.
+                            </note>
+                  <aactivity level="component">
+                    <no-tests>
+                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is
+									claimed, aside from the fact that the materials for the selections that have been
+									refined out of this SFR are not applicable.
+                                </no-tests>
+                  </aactivity>
+                </f-element>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+        </section>
+      </modified-sfrs>
       <!-- 5.1.2 Additional SFRs -->
       <additional-sfrs/>
       <con-toe>If this PP-Module is used to extend the App PP, the TOE type for the overall TOE is still a software 
