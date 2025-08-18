@@ -4,10 +4,12 @@
         on-sel/Module[1]""/include-pkg[2]""/depends[1]""/on-sel[1]""
 * Error: Detected dangling id-reference to sel_all_dtlsc from attribute
         on-sel/Module[1]""/include-pkg[2]""/depends[2]""/on-sel[1]""
+* Error: Detected multiple elements with an id of 'fcs'.
 * Error: Detected multiple elements with an id of 'fdp'.
 * Error: Detected multiple elements with an id of 'fpt'.
 * Error: Detected multiple elements with an id of 'fdp'.
 * Error: Detected multiple elements with an id of 'fpt'.
+* Error: Detected multiple elements with an id of 'fcs'.
 * Error: Detected multiple elements with an id of 'fpt'.
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Overview[1]"The scope"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[1]""
