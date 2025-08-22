@@ -271,7 +271,8 @@
                 <threat name="T.NETWORK_ATTACK">
                     <from base="bpp-app"/>
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.1/Client (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1/Client mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.1 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.2 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
 
@@ -293,7 +294,8 @@
                     <from base="bpp-app"/>
 
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.1/Client (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1/Client mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.1 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.2 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
 
@@ -415,72 +417,119 @@
             
             <modified-sfrs>
                 
-                <sec:mod_fcs title="Cryptographic Support (FCS)">
-                    <f-component cc-id="fcs_ckm_ext.1" name="Cryptographic Key Generation Services">
-                      <consistency-rationale>
-			This SFR is changed from its definition in the App PP to remove one of the available selection options because
-			it will never apply in the case where the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-                        <f-element>
-                            <title>The application shall <selectables linebreak="yes">
-                                <selectable><h:s>generate no asymmetric cryptographic keys</h:s></selectable>
-                                <selectable id="sel_invoke_genkey">invoke platform-provided functionality for asymmetric key generation</selectable>
-                                <selectable id="sel_impl_genkey">implement asymmetric key generation</selectable>
-                            </selectables>.
-                            </title>
-                            <note role="application">This SFR is modified from its Base-PP definition to remove the 
-							selection for the TOE not requiring asymmetric key generation.
-                            </note>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is
-									claimed, aside from the fact that the materials for the selections that have been
-									refined out of this SFR are not applicable.
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
-                    </f-component>
+                <section title="Cryptographic Support (FCS)" id="mod_fcs">
+              
+                    <base-sfr-spec cc-id="fcs_ckm_ext.1" title="Cryptographic Key Generation Services" id="modsfr-fcs-ckm-ext-1">
+                        <consistency-rationale>
+                            This SFR is changed from its definition in the App PP to remove one of the available selection options because
+                            it will never apply in the case where the TOE conforms to this PP-Module.
+                        </consistency-rationale>
+                        <description>
+                            <h:p>
+                            This SFR is functionally identical to what is defined in the App PP except that the selection to "generate no asymmetric keys" is eliminated because all conformant web browser TOEs must either perform their own key generation or invoke platform functionality to perform this.
+                            </h:p>
+                            The text of this requirement is replaced with: <h:br/><h:br/>
+                           
+                            The application shall [<h:b>selection:</h:b>
+                            <h:ul>
+                                <h:li><h:i>invoke platform-provided functionality for asymmetric key generation</h:i></h:li>
+                                <h:li>implement asymmetric key generation</h:li>
+                            </h:ul>
+                            ].
+                        </description>
+                    <delete>
+                        <xpath-specified xpath="*//cc:selectable[@id='fcs_ckm_ext.1.1_1']//cc:selectable"></xpath-specified>
+                    </delete>
+                        
+                    </base-sfr-spec>
                     
-                    <f-component cc-id="fcs_https_ext.1" iteration="Client" name="HTTPS Protocol">
-                      <consistency-rationale>
-			This SFR is unchanged from its definition in the App PP;
-			the SFR is recategorized from selection-based to mandatory
-			when the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-		      <description>
-                This SFR is recategorized from selection-based to mandatory
-			when the TOE conforms to this PP-Module, and the modification that this PP-Module makes to FTP_DIT_EXT.1.
-		      </description>
-                    </f-component>
+                    <base-sfr-spec cc-id="fcs_https_ext.1" title="HTTPS Protocol" id="modsfr-fcs-https-ext-1">
+                        <consistency-rationale>
+                            This SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module. It is also modified to require a specific selection to be made based on the intended functionality of the TOE.
+                        </consistency-rationale>
+                        <description>
+                            <h:p>
+                                This SFR is recategorized from selection-based to mandatory
+                                when the TOE conforms to this PP-Module, and it is modified to 1imit the TOE's usage of HTTPS to be as a client.</h:p>
+                            
+                                The text of FCS_HTTPS_EXT.1.1 s replaced with: <h:br/><h:br/>
+                            
+                            The application shall implement the HTTPS protocol as a [<h:i>client</h:i>] that complies with RFC 2818.
+                            
+                        </description>
+                        <set-status status="mandatory"/>
+                        <delete>
+                            <xpath-specified xpath="*//cc:selectable[@id='https_server_noauth']//cc:selectable"></xpath-specified>
+                        </delete>
+                        <delete>
+                            <xpath-specified xpath="*//cc:selectable[@id='https_server_auth']//cc:selectable"></xpath-specified>
+                        </delete>
+                     </base-sfr-spec>
                     
-                    <f-component cc-id="fcs_rbg_ext.1" name="Random Bit Generation Services">
-                        <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
-                        <f-element>
-                            <title> The application shall
-                                <selectables linebreak="yes">
-                                    <selectable><h:s>use no DRBG functionality</h:s></selectable>
-                                    <selectable>invoke platform-provided DRBG functionality</selectable>
-                                    <selectable id="drbg">implement DRBG functionality</selectable>
-                                </selectables> for its cryptographic operations. </title>
-                            <note role="application">This SFR is modified from its Base-PP definition to remove the
-							selection for the TOE using no DRBG functionality.
-                            </note>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed,
-									aside from the fact that the materials for the selections that have been 
-									refined out of this SFR are not applicable.
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
-                    </f-component>
+                    <base-sfr-spec cc-id="fcs_https_ext.2" title="HTTPS Support for Authentication" id="modsfr-fcs-https-ext-2">
+                        <consistency-rationale>
+                            This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
+                        </consistency-rationale>
+                        <description>
+                            This SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module because any conformant TOE must implement HTTPS as a client, which mandates support for handling of X.509 certificates in HTTPS.<h:br/><h:br/>
+                            There is no change to the text of this requirement.
+                        </description>
+                        <set-status status="mandatory"/>
+                    </base-sfr-spec>
+                
+                
+                    <base-sfr-spec cc-id="fcs_rbg_ext.1" title="Random Bit Generation Services" id="modsfr-fcs-rbg-ext-1">
+                        <consistency-rationale>This SFR is modified to prohibit the selection for using no DRBG functionality based on the intended behavior of the TOE.</consistency-rationale>
+                        <description>
+                            <h:p>
+                                This SFR is functionally identical to what is defined in the App PP except that the selection to "usge no DRBG functionality" is eliminated because all conformant web browser TOEs must either perform their own deterministic random bit generation or invoke platform functionality to perform this.
+                            </h:p>
+                            The text of this requirement is replaced with: <h:br/><h:br/>
+                            
+                            The application shall [<h:b>selection:</h:b>
+                            <h:ul>
+                                <h:li><h:i>invoke platform-provided DRBG functionality</h:i></h:li>
+                                <h:li>implement DRBG functionality</h:li>
+                            </h:ul>
+                            ] for its cryptographic operations.
+                        </description>
+                        <delete>
+                            <xpath-specified xpath="*//cc:selectable[@id='id=fcs_rbg_ext.1.1_1']//cc:selectable"></xpath-specified>
+                        </delete>
+                        
+                    </base-sfr-spec>
+                
                     
-                </sec:mod_fcs> 
+                    
+                </section> 
                 
 
               
                 
-                <sec:mod_ftp title="Trusted Path/Channels (FTP)">
+                <section id="mod_ftp" title="Trusted Path/Channels (FTP)">
+                    
+                    <base-sfr-spec cc-id="ftp_dit_ext.1" title="Protection of Data in Transit" id="modsfr-fcs-rbg-ext-1">
+                        <consistency-rationale>This SFR is modified from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
+                        <description>
+                            <h:p>
+                                This SFR is functionally identical to what is defined in the App PP except that the selection to "usge no DRBG functionality" is eliminated because all conformant web browser TOEs must either perform their own deterministic random bit generation or invoke platform functionality to perform this.
+                            </h:p>
+                            The text of this requirement is replaced with: <h:br/><h:br/>
+                            
+                            The application shall [<h:b>selection:</h:b>
+                            <h:ul>
+                                <h:li><h:i>invoke platform-provided DRBG functionality</h:i></h:li>
+                                <h:li>implement DRBG functionality</h:li>
+                            </h:ul>
+                            ] for its cryptographic operations.
+                        </description>
+                        <delete>
+                            <xpath-specified xpath="*//cc:selectable[@id='id=fcs_rbg_ext.1.1_1']//cc:selectable"></xpath-specified>
+                        </delete>
+                        
+                    </base-sfr-spec>
+                    
+                    
                     <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
                         <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
                         <f-element>
@@ -495,8 +544,8 @@
                                        [<h:b>sensitive data</h:b>]
                                             with
                                         <selectables>
-                                            <selectable >HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b> for web browsing</h:b></selectable>
-                                            <selectable ><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
+                                            <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b> for web browsing</h:b></selectable>
+                                            <selectable><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
                                     <!--		<selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable> -->
                                             <selectable ><h:s>TLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
                                                 <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></h:s></selectable>
@@ -506,7 +555,7 @@
                                             <selectable id="sel_all_dtlsc">DTLS as a client as defined in <xref to="pkg-tls"/> </selectable>
                                             <selectable><h:s>SSH as defined in the <xref to="pkg-ssh"/></h:s></selectable>
                                             <selectable><h:s>IPsec as defined in the 
-                                                VPN Client PP-Module, version 2.6</h:s></selectable></selectables>
+                                                VPN Client PP-Module, version 3.0</h:s></selectable></selectables>
                                         for [<h:b>web browsing</h:b>]
                                         using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
                                             Functional Package for X.509</h:a>
@@ -558,7 +607,7 @@
                         </f-element>
                     </f-component>
                     
-                </sec:mod_ftp> 
+                </section> 
                 
             </modified-sfrs>
             
