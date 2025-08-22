@@ -526,7 +526,7 @@
                                 X.509 validation functionality that is required for these protocols.</h:p>
                             The text of this requirement is replaced with: <h:br/><h:br/>
                             
-                            title>The application shall [<h:b>selection:</h:b>
+                            The application shall [<h:b>selection:</h:b>
                             <h:i>
                                 <h:ul>
                                     <h:li>encrypt all transmitted 
