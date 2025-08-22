@@ -1,0 +1,1 @@
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:533:93: error: element "f-component" not allowed here; expected the element end-tag or element "base-sfr-spec"

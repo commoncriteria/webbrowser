@@ -1,15 +1,17 @@
 * Error: Found a "selectables" element that is buried under stricken text:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[1]""/h:s[1]"not trans"/selectables[1]""
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[1]""/h:s[1]"not trans"/selectables[1]""
 * Error: Found a "selectables" element that is buried under stricken text:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[2]"encrypt a"/selectables[1]""/selectable[3]""/h:s[1]"TLS as a "/selectables[1]""
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[2]"encrypt a"/selectables[1]""/selectable[3]""/h:s[1]"TLS as a "/selectables[1]""
 * Error: Found a "selectables" element that is buried under stricken text:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[2]"encrypt a"/selectables[1]""/selectable[5]""/h:s[1]"DTLS as a"/selectables[1]""
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[2]"encrypt a"/selectables[1]""/selectable[5]""/h:s[1]"DTLS as a"/selectables[1]""
 * Error: Found a "selectables" element that is buried under stricken text:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/selectables[1]""
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/selectables[1]""
 * Error: Found a "assignable" element that is buried under stricken text:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/assignable[1]"function("
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/title[1]"The appli"/selectables[1]""/selectable[4]""/h:s[1]"invoke pl"/assignable[1]"function("
 * Error: Detected dangling id-reference to sel_all_ssh from attribute
         on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
+* Error: Detected multiple elements with an id of 'modsfr-fcs-rbg-ext-1'.
+* Error: Detected multiple elements with an id of 'modsfr-fcs-rbg-ext-1'.
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/sec:Overview[1]""/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Introduction[1]""/section[1]"The Targe"/h:p[2]""
@@ -18,7 +20,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/sec:Threats[1]"The follo"/threats[1]""/threat[5]""/description[1]"Violating"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]"This PP-M"/section[1]""/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/sec:mod_ftp[1]""/f-component[1]""/f-element[1]""/note[1]"This SFR "/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/note[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-toe[1]"If this P"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fdp[1]""/f-component[1]""/f-element[1]""/title[1]"The TSF s"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/sec:man_fdp[1]""/f-component[1]""/f-element[1]""/note[1]"The separ"/h:p[1]""
