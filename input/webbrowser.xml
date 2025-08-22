@@ -271,8 +271,8 @@
                 <threat name="T.NETWORK_ATTACK">
                     <from base="bpp-app"/>
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.1 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.2 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.2 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
 
@@ -294,8 +294,8 @@
                     <from base="bpp-app"/>
 
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.1 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
-                    <addressed-by>FCS_HTTPS_EXT.2 (from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
+                    <addressed-by>FCS_HTTPS_EXT.2 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_RBG_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_RBG_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a DRBG for secure key generation.</rationale>
                     <addressed-by>FTP_DIT_EXT.1 (modified from Base-PP)</addressed-by><rationale>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the TOE to protect data in transit.</rationale>
 
@@ -482,7 +482,7 @@
                         <consistency-rationale>This SFR is modified to prohibit the selection for using no DRBG functionality based on the intended behavior of the TOE.</consistency-rationale>
                         <description>
                             <h:p>
-                                This SFR is functionally identical to what is defined in the App PP except that the selection to "usge no DRBG functionality" is eliminated because all conformant web browser TOEs must either perform their own deterministic random bit generation or invoke platform functionality to perform this.
+                                This SFR is functionally identical to what is defined in the App PP except that the selection to "use no DRBG functionality" is eliminated because all conformant web browser TOEs must either perform their own deterministic random bit generation or invoke platform functionality to perform this.
                             </h:p>
                             The text of this requirement is replaced with: <h:br/><h:br/>
                             
@@ -1344,7 +1344,7 @@
                             <Tests>The evaluator shall perform the following test for each mobile
                                 code type specified in the TSS: <testlist>
                                     <test>
-                                        The evaluator shall construct or obtain a correctly signed add-on and show that it is accepted and executes. The evaluator shall then construct or obtain three unacceptable add-ons: the first add-on is unsigned; the second add-on has an untrusted signature (e.g., creating the signature by using an unexpectd key or by manual modification of a legitimate signature); the third add-on has a trusted signature but has its contents modified (e.g., by using a hex editor). The evaluator shall then attempt to load these add-ons and observe that either they are rejected, or that the user is prompted to accept or reject them, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify that the add-on is not executed after being rejected.
+                                        The evaluator shall construct or obtain a correctly signed add-on and show that it is accepted and executes. The evaluator shall then construct or obtain three unacceptable add-ons: the first add-on is unsigned; the second add-on has an untrusted signature (e.g., creating the signature by using an unexpected key or by manual modification of a legitimate signature); the third add-on has a trusted signature but has its contents modified (e.g., by using a hex editor). The evaluator shall then attempt to load these add-ons and observe that either they are rejected, or that the user is prompted to accept or reject them, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify that the add-on is not executed after being rejected.
                                     </test>
                                 </testlist>
                             </Tests>
