@@ -1,5 +1,6 @@
 output/webbrowser-release-linkable.html: 1imit
 output/webbrowser-release-linkable.html: CEM
+output/webbrowser-release-linkable.html: DTLSC
 output/webbrowser-release-linkable.html: FIA
 output/webbrowser-release-linkable.html: GPUs
 output/webbrowser-release-linkable.html: HTML5
@@ -24,6 +25,7 @@ output/webbrowser-release-linkable.html: usge
 output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: 1imit
 output/webbrowser-release.html: CEM
+output/webbrowser-release.html: DTLSC
 output/webbrowser-release.html: FIA
 output/webbrowser-release.html: GPUs
 output/webbrowser-release.html: HTML5
@@ -60,6 +62,7 @@ output/webbrowser-sd.html: unmanaged
 output/webbrowser-sd.html: webpages
 output/webbrowser.html: 1imit
 output/webbrowser.html: CEM
+output/webbrowser.html: DTLSC
 output/webbrowser.html: FIA
 output/webbrowser.html: GPUs
 output/webbrowser.html: HTML5

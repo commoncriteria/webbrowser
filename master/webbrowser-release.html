@@ -981,7 +981,7 @@ Application
                                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory
                                 when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, and it is modified to 1imit the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s usage of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> to be as a client.</p>
                             
-                                The text of FCS_HTTPS_EXT.1.1 s replaced with: <br/><br/>
+                                The text of FCS_HTTPS_EXT.1.1 is replaced with: <br/><br/>
                             
                             The application shall implement the <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> protocol as a [<i>client</i>] that complies with RFC 2818.
                             
@@ -997,21 +997,44 @@ Application
                             The application shall [<b>selection:</b>
                             <ul>
                                 <li><i>invoke platform-provided DRBG functionality</i></li>
-                                <li>implement DRBG functionality</li>
+                                <li><i>implement DRBG functionality</i></li>
                             </ul>
                             ] for its cryptographic operations.
                         </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4><span class="description">
                             <p>
-                                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that the selection to "usge no DRBG functionality" is eliminated because all conformant web browser <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must either perform their own deterministic random bit generation or invoke platform functionality to perform this.
-                            </p>
+                                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to require 
+                                that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform supports <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS, and that its use of these
+                                protocols is only limited to sensitive data. 
+                                A conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS for secure web browsing 
+                                but is permitted to interact with non-sensitive content over an untrusted channel.</p>
+                                <p>
+                                Either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform is permitted to implement <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> 
+                                implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1,
+                                FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> package must be claimed at minimum
+                                because a web browser is required to support mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS.
+                                Dependent claims from the Functional Package for X.509 must be made to support the
+                                X.509 validation functionality that is required for these protocols.</p>
                             The text of this requirement is replaced with: <br/><br/>
                             
-                            The application shall [<b>selection:</b>
-                            <ul>
-                                <li><i>invoke platform-provided DRBG functionality</i></li>
-                                <li>implement DRBG functionality</li>
-                            </ul>
-                            ] for its cryptographic operations.
+                            title&gt;The application shall [<b>selection:</b>
+                            <i>
+                                <ul>
+                                    <li>encrypt all transmitted 
+                                        [sensitive data]
+                                        with [<ul>
+                                            <li><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as a client in accordance with FCS_HTTPS_EXT.1</li>
+                                            <li><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as a client as defined in Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version 2.1</li>
+                                            <li>DTLS as a client as defined in Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version 2.1</li>
+                                        </ul>] for [web browsing]
+                                        using certificates as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">
+                                            Functional Package for X.509</a>
+                                    </li>
+                                    <li>invoke platform-provided functionality to encrypt all transmitted 
+                                        sensitive data with [<abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, DTLS] for [web browsing] 
+                                        using certificates as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">
+                                            Functional Package for X.509</a></li>
+                                </ul>
+                            </i>] between itself and another trusted IT product.
                         </span></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
@@ -1063,19 +1086,19 @@ Application
                     
                     
                     
-                    <div class="element"><div class="reqid" id="FDP_SBX_EXT.1.1"><a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_29">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_30">implement functionality</span>] to ensure that webpage rendering is performed in a
+                    <div class="element"><div class="reqid" id="FDP_SBX_EXT.1.1"><a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_3">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_4">implement functionality</span>] to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</li>
                                 <li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</li>
                                 <li>The rendering process has reduced privilege with respect to
-                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31">
+                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">
 					  [<b>assignment</b>: 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_32">in no other ways</span>].</li></ul>
+                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_6">in no other ways</span>].</li></ul>
                         <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> Web browsers implement a variety of methods to
@@ -1146,7 +1169,7 @@ Application
                     
                     
                     <div class="element"><div class="reqid" id="FDP_TRK_EXT.1.1"><a href="#FDP_TRK_EXT.1.1" class="abbr">FDP_TRK_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide notification to the user when tracking
-                            information for [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_33">geolocation</span></li><li style=""><span class="selectable-content" id="_s_34">browser history</span></li><li style=""><span class="selectable-content" id="_s_35">browser preferences</span></li><li style=""><span class="selectable-content" id="_s_36">browser statistics</span></li></ul>] is requested by a website.</div></div>
+                            information for [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_7">geolocation</span></li><li style=""><span class="selectable-content" id="_s_8">browser history</span></li><li style=""><span class="selectable-content" id="_s_9">browser preferences</span></li><li style=""><span class="selectable-content" id="_s_10">browser statistics</span></li></ul>] is requested by a website.</div></div>
                 </div>
             
         
@@ -1175,8 +1198,8 @@ Application
                                     information in <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> headers</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_4"><td>4</td><td style="text-align:left">Enable and disable ability for websites
                                     to collect tracking information about the user through 
-				    [<b>selection</b>: <span class="selectable-content" id="_s_37">zombie cookies</span>, <span class="selectable-content" id="_s_38">add-on based tracking (e.g., Flash
-                                            cookies)</span>, <span class="selectable-content" id="_s_39">browsing history</span>, <span class="selectable-content" id="_s_40">[<b>assignment</b>: 
+				    [<b>selection</b>: <span class="selectable-content" id="_s_11">zombie cookies</span>, <span class="selectable-content" id="_s_12">add-on based tracking (e.g., Flash
+                                            cookies)</span>, <span class="selectable-content" id="_s_13">browsing history</span>, <span class="selectable-content" id="_s_14">[<b>assignment</b>: 
      <span class="assignable-content">other tracking
                                             mechanisms</span>]</span>]</td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td><td><div class="tooltipped">O<span class="tooltiptext">Optional/Conditional</span></div></td></tr>
 <tr id="_mf_5"><td>5</td><td style="text-align:left">Enable and disable deletion of stored
@@ -1251,7 +1274,7 @@ Application
                     
                     
                     
-                    <div class="element"><div class="reqid" id="FPT_AON_EXT.1.1"><a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_42">no add-ons</span>].<div class="appnote"><span class="note-header">Application
+                    <div class="element"><div class="reqid" id="FPT_AON_EXT.1.1"><a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_16">no add-ons</span>].<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If <a href="#addons_supported">trusted add-ons</a> is selected in <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also claim the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a>.
                             <p></p>
@@ -1297,10 +1320,10 @@ Application
                     
                     
                     <div class="element"><div class="reqid" id="FPT_ADD_EXT.1.1"><a href="#FPT_ADD_EXT.1.1" class="abbr">FPT_ADD_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute 
-                            [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_43">
+                            [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_17">
                               signed [<b>assignment</b>: 
-     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_44">no</span>] web-based code executed in add-ons.</div></div>
-                    <div class="element"><div class="reqid" id="FPT_ADD_EXT.1.2"><a href="#FPT_ADD_EXT.1.2" class="abbr">FPT_ADD_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_47">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span>] 
+     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_18">no</span>] web-based code executed in add-ons.</div></div>
+                    <div class="element"><div class="reqid" id="FPT_ADD_EXT.1.2"><a href="#FPT_ADD_EXT.1.2" class="abbr">FPT_ADD_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_21">automatically discard</span>, <span class="selectable-content" id="s_user_discard">provide the user with the option to discard</span>] 
                             unsigned, untrusted, or unverified [<b>assignment</b>: 
      <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]
                             web-based code executed in add-ons without executing the code.<div class="appnote"><span class="note-header">Application
@@ -1399,11 +1422,6 @@ Application
       This is considered to be consistent because the functionality provided by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
       
-          The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also identifies a number of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-          App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-          that are used entirely to provide functionality for
-	  web browsers.
-        
           The rationale for why this does not conflict with the claims
       defined by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
@@ -1452,7 +1470,7 @@ Application
                         
                         <div class="element"><div class="reqid" id="FDP_PST_EXT.1.1"><a href="#FDP_PST_EXT.1.1" class="abbr">FDP_PST_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
-                                [<b>selection</b>: <span class="selectable-content" id="_s_51">credential information</span>, <span class="selectable-content" id="_s_52">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_53">certificate revocation information</span>, <span class="selectable-content" id="_s_54">no exceptions</span>].<div class="appnote"><span class="note-header">Application
+                                [<b>selection</b>: <span class="selectable-content" id="_s_25">credential information</span>, <span class="selectable-content" id="_s_26">administrator-provided configuration information</span>, <span class="selectable-content" id="_s_27">certificate revocation information</span>, <span class="selectable-content" id="_s_28">no exceptions</span>].<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> Any data that persists after the browser closes,
                                 including temporary files, is considered to be persistent data. </span></div></div></div>
@@ -1548,9 +1566,9 @@ Application
                             
                             
                             
-                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.1"><a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_55">provide the ability</span>, <span class="selectable-content" id="_s_56">leverage the platform</span>] to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_57">published hash</span>, <span class="selectable-content" id="_s_58">no other functions</span>] prior to installation and update. </div></div>
-                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.2"><a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_59">provide the ability</span>, <span class="selectable-content" id="_s_60">leverage the platform</span>] to query the current version
+                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.1"><a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_29">provide the ability</span>, <span class="selectable-content" id="_s_30">leverage the platform</span>] to provide a means to cryptographically verify add-ons
+                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31">published hash</span>, <span class="selectable-content" id="_s_32">no other functions</span>] prior to installation and update. </div></div>
+                            <div class="element"><div class="reqid" id="FPT_AON_EXT.2.2"><a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_33">provide the ability</span>, <span class="selectable-content" id="_s_34">leverage the platform</span>] to query the current version
                                 of the add-on.</div></div>
                             <div class="element"><div class="reqid" id="FPT_AON_EXT.2.3"><a href="#FPT_AON_EXT.2.3" class="abbr">FPT_AON_EXT.2.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of
                                     add-ons.<div class="appnote"><span class="note-header">Application
@@ -1591,11 +1609,11 @@ Application
 							and ensure that untrusted or unknown add-ons are not loaded for use.</p><h4>Management: FPT_AON_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
                         <li>Enable and disable support for add-ons.</li>
                     </ul>
-                    </p><h4>Audit: FPT_AON_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FPT_AON_EXT.1 Support for Only Trusted Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_42">no add-ons</span>].</div><h4>Management: FPT_AON_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FPT_AON_EXT.2</h4><p>There are no audit events foreseen.</p><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+                    </p><h4>Audit: FPT_AON_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FPT_AON_EXT.1 Support for Only Trusted Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="_s_16">no add-ons</span>].</div><h4>Management: FPT_AON_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FPT_AON_EXT.2</h4><p>There are no audit events foreseen.</p><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
                                 <span class="no-link">FCS_COP.1</span> Cryptographic Operation<p></p>
                                 <span class="no-link">FPT_AON_EXT.1</span> Support for Only Trusted Add-Ons
-                            </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_55">provide the ability</span>, <span class="selectable-content" id="_s_56">leverage the platform</span>] to provide a means to cryptographically verify add-ons
-                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_57">published hash</span>, <span class="selectable-content" id="_s_58">no other functions</span>] prior to installation and update. <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_59">provide the ability</span>, <span class="selectable-content" id="_s_60">leverage the platform</span>] to query the current version
+                            </td></tr></table><h4 id="ext-comp-FPT_AON_EXT.2.1">FPT_AON_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_29">provide the ability</span>, <span class="selectable-content" id="_s_30">leverage the platform</span>] to provide a means to cryptographically verify add-ons
+                                    using a digital signature mechanism and [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31">published hash</span>, <span class="selectable-content" id="_s_32">no other functions</span>] prior to installation and update. <h4 id="ext-comp-FPT_AON_EXT.2.2">FPT_AON_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_33">provide the ability</span>, <span class="selectable-content" id="_s_34">leverage the platform</span>] to query the current version
                                 of the add-on.<h4 id="ext-comp-FPT_AON_EXT.2.3">FPT_AON_EXT.2.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent the automatic installation of
                                     add-ons.</div></div><h3 id="ext-comp-FPT_DNL_EXT" class="indexable" data-level="4">C.2.2.2 FPT_DNL_EXT File Downloads</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for downloaded content.
                     </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_DNL_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a>,
@@ -1616,10 +1634,10 @@ Application
                     </ul>
                     </p><h4>Audit: FPT_ADD_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FPT_ADD_EXT.1 Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FPT_ADD_EXT.1.1">FPT_ADD_EXT.1.1</h4>
                                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute 
-                                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_45">
+                                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_19">
                                         signed [<b>assignment</b>: 
      <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]
-                                        </span>, <span class="selectable-content" id="_s_46">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">automatically discard</span>, <span class="selectable-content" id="_s_50">provide the user with the option to discard</span>] 
+                                        </span>, <span class="selectable-content" id="_s_20">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_23">automatically discard</span>, <span class="selectable-content" id="_s_24">provide the user with the option to discard</span>] 
                                 unsigned, untrusted, or unverified [<b>assignment</b>: 
      <span class="assignable-content">supported add-ons (i.e., plug-ins and extensions)</span>]
                                  web-based code executed in add-ons without executing it.</div></div><h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.2.4 FPT_INT_EXT Reputation Service Interaction</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s interaction
@@ -1674,19 +1692,19 @@ Application
                     </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_SBX_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a>,
              Sandboxing of Rendering Processes,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement sandboxing of rendering processes such that least 
-						privilege is enforced on the rendering process.</p><h4>Management: FDP_SBX_EXT.1</h4><p>There are no management functions foreseen.</p><h4>Audit: FDP_SBX_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FDP_SBX_EXT.1.1">FDP_SBX_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_29">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_30">implement functionality</span>] to ensure that webpage rendering is performed in a
+						privilege is enforced on the rendering process.</p><h4>Management: FDP_SBX_EXT.1</h4><p>There are no management functions foreseen.</p><h4>Audit: FDP_SBX_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FDP_SBX_EXT.1.1">FDP_SBX_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_3">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_4">implement functionality</span>] to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner: <ul>
                                 <li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</li>
                                 <li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</li>
                                 <li>The rendering process has reduced privilege with respect to
-                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31">
+                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">
 					  [<b>assignment</b>: 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
-                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_32">in no other ways</span>].</li></ul>
+                                            rendering processes</span>]</span>, <span class="selectable-content" id="_s_6">in no other ways</span>].</li></ul>
                         </div></div><h3 id="ext-comp-FDP_SOP_EXT" class="indexable" data-level="4">C.2.4.4 FDP_SOP_EXT Same Origin Policy</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for implementation of the Same Origin Policy concept.
                     </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_SOP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a>,
              Same Origin Policy,
