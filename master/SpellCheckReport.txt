@@ -1,4 +1,3 @@
-output/webbrowser-release-linkable.html: 1imit
 output/webbrowser-release-linkable.html: CEM
 output/webbrowser-release-linkable.html: DTLSC
 output/webbrowser-release-linkable.html: FIA
@@ -21,7 +20,6 @@ output/webbrowser-release-linkable.html: test1
 output/webbrowser-release-linkable.html: test2
 output/webbrowser-release-linkable.html: unmanaged
 output/webbrowser-release-linkable.html: webpages
-output/webbrowser-release.html: 1imit
 output/webbrowser-release.html: CEM
 output/webbrowser-release.html: DTLSC
 output/webbrowser-release.html: FIA
@@ -56,7 +54,6 @@ output/webbrowser-sd.html: test1
 output/webbrowser-sd.html: test2
 output/webbrowser-sd.html: unmanaged
 output/webbrowser-sd.html: webpages
-output/webbrowser.html: 1imit
 output/webbrowser.html: CEM
 output/webbrowser.html: DTLSC
 output/webbrowser.html: FIA
