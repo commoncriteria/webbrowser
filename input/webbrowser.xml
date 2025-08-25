@@ -450,7 +450,7 @@
                         <description>
                             <h:p>
                                 This SFR is recategorized from selection-based to mandatory
-                                when the TOE conforms to this PP-Module, and it is modified to 1imit the TOE's usage of HTTPS to be as a client.</h:p>
+                                when the TOE conforms to this PP-Module, and it is modified to limit the TOE's usage of HTTPS to be as a client.</h:p>
                             
                                 The text of FCS_HTTPS_EXT.1.1 is replaced with: <h:br/><h:br/>
                             
