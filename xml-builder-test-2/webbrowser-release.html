@@ -910,7 +910,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
     </h2><h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description">Text version of the requirement needs to be placed here</span></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
         
@@ -926,6 +926,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FDP_ACF_EXT.1"><h4>FDP_ACF_EXT.1 Local and Session Storage Separation</h4>
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_ACF_EXT.1.1"><a href="#FDP_ACF_EXT.1.1" class="abbr">FDP_ACF_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol, and port:<p></p><ul><li>Session storage shall be accessible only from the originating
                                     window or tab;</li> <li>Local storage shall only be accessible from windows or tabs running
@@ -940,6 +941,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_COO_EXT.1.1"><a href="#FDP_COO_EXT.1.1" class="abbr">FDP_COO_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to block the storage of
                             third-party cookies by websites.</div></div>
         </div>
@@ -947,6 +949,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FDP_SBX_EXT.1"><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4>
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_SBX_EXT.1.1"><a href="#FDP_SBX_EXT.1.1" class="abbr">FDP_SBX_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fdp_sbx_ext.1.1_1">invoke platform-provided functionality</span>, <span class="selectable-content" id="fdp_sbx_ext.1.1_2">implement functionality</span>]  to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner:  The rendering process has reduced privilege with respect to other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fdp_sbx_ext.1.1_4">[<b>assignment</b>: 
      <span class="assignable-content">other methods by which the principle of least privilege is implemented for rendering processes</span>]</span>, <span class="selectable-content" id="fdp_sbx_ext.1.1_5">in no other ways</span>] <ul><li>The rendering process can only directly access the area of the
@@ -976,6 +979,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FDP_SOP_EXT.1"><h4>FDP_SOP_EXT.1 Same Origin Policy</h4>
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_SOP_EXT.1.1"><a href="#FDP_SOP_EXT.1.1" class="abbr">FDP_SOP_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall only permit scripts contained in one webpage to
                             access data in a second webpage if both pages are from the same
                             origin.</div></div>
@@ -992,6 +996,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_STR_EXT.1.1"><a href="#FDP_STR_EXT.1.1" class="abbr">FDP_STR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that cookies containing the 'secure'
                             attribute in the set-cookie header are sent over <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.<div class="appnote"><span class="note-header">Application
       Note:
@@ -1003,6 +1008,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_TRK_EXT.1.1"><a href="#FDP_TRK_EXT.1.1" class="abbr">FDP_TRK_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide notification to the user when tracking
                             information for  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fdp_trk_ext.1.1_1">geolocation</span></li><li style=""><span class="selectable-content" id="fdp_trk_ext.1.1_2">browser history</span></li><li style=""><span class="selectable-content" id="fdp_trk_ext.1.1_3">browser preferences</span></li><li style=""><span class="selectable-content" id="fdp_trk_ext.1.1_4">browser statistics</span></li></ul>]  is requested by a website.</div></div>
         </div>
@@ -1014,6 +1020,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FMT_MOF_EXT.1"><h4>FMT_MOF_EXT.1 Management of Functions Behavior</h4>
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FMT_MOF_EXT.1.1"><a href="#FMT_MOF_EXT.1.1" class="abbr">FMT_MOF_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management
                             functions, controlled by the administrator or user as shown: <ul><li>M = Mandatory</li> <li>O = Optional</li></ul>
 			<br/><br/>
@@ -1070,6 +1077,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_ADD_EXT.1.1"><a href="#FPT_ADD_EXT.1.1" class="abbr">FPT_ADD_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute 
                              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fpt_add_ext.1.1_1">signed [<b>assignment</b>: 
      <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>] </span>, <span class="selectable-content" id="fpt_add_ext.1.1_3">no</span>]  web-based code executed in add-ons.</div></div>
@@ -1089,6 +1097,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_AON_EXT.1.1"><a href="#FPT_AON_EXT.1.1" class="abbr">FPT_AON_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall include the capability to load  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="addons_supported">trusted add-ons</span>, <span class="selectable-content" id="fpt_aon_ext.1.1_1">no add-ons</span>].<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If <a href="#addons_supported">trusted add-ons</a> is selected in <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also claim the selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a>.
@@ -1103,6 +1112,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_DNL_EXT.1.1"><a href="#FPT_DNL_EXT.1.1" class="abbr">FPT_DNL_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall prevent downloaded content from launching
                             automatically.</div></div>
           <div class="element"><div class="reqid" id="FPT_DNL_EXT.1.2"><a href="#FPT_DNL_EXT.1.2" class="abbr">FPT_DNL_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall present the user with the option to either save or
@@ -1232,6 +1242,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FDP_PST_EXT.1.1"><a href="#FDP_PST_EXT.1.1" class="abbr">FDP_PST_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
                                  [<b>selection</b>: <span class="selectable-content" id="fdp_pst_ext.1.1_1">credential information</span>, <span class="selectable-content" id="fdp_pst_ext.1.1_2">administrator-provided configuration information</span>, <span class="selectable-content" id="fdp_pst_ext.1.1_3">certificate revocation information</span>, <span class="selectable-content" id="fdp_pst_ext.1.1_4">no exceptions</span>].<div class="appnote"><span class="note-header">Application
@@ -1252,6 +1263,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FCS_STS_EXT.1.1"><a href="#FCS_STS_EXT.1.1" class="abbr">FCS_STS_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> Strict-Transport-Security according
                                         to RFC 6797.</div></div>
           <div class="element"><div class="reqid" id="FCS_STS_EXT.1.2"><a href="#FCS_STS_EXT.1.2" class="abbr">FCS_STS_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall retain persistent data signaling <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> enablement
@@ -1275,6 +1287,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_INT_EXT.1.1"><a href="#FPT_INT_EXT.1.1" class="abbr">FPT_INT_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use an application reputation service to
                                     prevent downloading of malicious applications.<div class="appnote"><span class="note-header">Application
       Note:
@@ -1291,6 +1304,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_INT_EXT.2.1"><a href="#FPT_INT_EXT.2.1" class="abbr">FPT_INT_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use a URL reputation service to prevent
                                     connections with malicious websites.<div class="appnote"><span class="note-header">Application
       Note:
@@ -1324,6 +1338,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
+          <span class="description"></span>
           <div class="element"><div class="reqid" id="FPT_AON_EXT.2.1"><a href="#FPT_AON_EXT.2.1" class="abbr">FPT_AON_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="fpt_aon_ext.2.1_1">provide the ability</span>, <span class="selectable-content" id="fpt_aon_ext.2.1_2">leverage the platform</span>]  to provide a means to cryptographically verify add-ons
                                     using a digital signature mechanism and  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fpt_aon_ext.2.1_3">published hash</span>, <span class="selectable-content" id="fpt_aon_ext.2.1_4">no other functions</span>]  prior to installation and update. </div></div>
           <div class="element"><div class="reqid" id="FPT_AON_EXT.2.2"><a href="#FPT_AON_EXT.2.2" class="abbr">FPT_AON_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="fpt_aon_ext.2.2_1">provide the ability</span>, <span class="selectable-content" id="fpt_aon_ext.2.2_2">leverage the platform</span>]  to query the current version
