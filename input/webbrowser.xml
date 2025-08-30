@@ -252,6 +252,7 @@
 			This SFR is changed from its definition in the App PP to remove one of the available selection options because
 			it will never apply in the case where the TOE conforms to this PP-Module.
 		      </consistency-rationale>
+            <description>Text version of the requirement needs to be placed here</description>
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']">
                 <f-element id="fel-asym-key-gen">
@@ -338,6 +339,7 @@
           <consistency-rationale>This SFR defines domain separation of web content when a web browser is simultaneously accessing
                         content from multiple sources. It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to enforce data protection mechanisms such that user data is only accessible from its originator.</comp-lev>
+          <description/>
           <f-element id="fdp_acf_ext-1-1">
             <title>The TSF shall separate local (permanent) and session (ephemeral)
                             storage based on domain, protocol, and port:<h:p/><h:ul><h:li>Session storage shall be accessible only from the originating
@@ -381,6 +383,7 @@
           <comp-lev> requires the TSF to have a configurable mechanism for blocking the storage of 
 						third-party cookies.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable storage of third-party cookies.</h:li></h:ul></management>
+          <description/>
           <f-element id="fdp_coo_ext-1-1">
             <title>The TSF shall provide the capability to block the storage of
                             third-party cookies by websites.</title>
@@ -417,6 +420,7 @@
 						functionality.</consistency-rationale>
           <comp-lev> requires the TSF to implement sandboxing of rendering processes such that least 
 						privilege is enforced on the rendering process.</comp-lev>
+          <description/>
           <f-element id="fdp_sbx_ext-1-1">
             <title>The TSF shall  <selectables onlyone="yes"><selectable id="fdp_sbx_ext.1.1_1" >invoke platform-provided functionality</selectable><selectable id="fdp_sbx_ext.1.1_2" >implement functionality</selectable></selectables>  to ensure that webpage rendering is performed in a
                             process that is restricted in the following manner:  The rendering process has reduced privilege with respect to other browser processes <selectables onlyone="yes"><selectable id="fdp_sbx_ext.1.1_4" ><assignable>other methods by which the principle of least privilege is implemented for rendering processes</assignable></selectable><selectable id="fdp_sbx_ext.1.1_5" >in no other ways</selectable></selectables> <h:ul><h:li>The rendering process can only directly access the area of the
@@ -496,6 +500,7 @@
 						definition functionality that is associated with web browser applications. It does not impact 
 						the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to implement the Same Origin Policy concept for web content.</comp-lev>
+          <description/>
           <f-element id="fdp_sop_ext-1-1">
             <title>The TSF shall only permit scripts contained in one webpage to
                             access data in a second webpage if both pages are from the same
@@ -541,6 +546,7 @@
 						attribute.</comp-lev>
           <dependencies><no-link>FCS_HTTPS_EXT.1 </no-link>  HTTPS Protocol
                     </dependencies>
+          <description/>
           <f-element id="fdp_str_ext-1-1">
             <title>The TSF shall ensure that cookies containing the 'secure'
                             attribute in the set-cookie header are sent over HTTPS.</title>
@@ -574,6 +580,7 @@
 						specific to web browser applications. It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to specify the data tracking that results in user notification.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable ability for websites to collect tracking information about the user.</h:li> <h:li>Enable and disable deletion of stored browsing data.</h:li></h:ul></management>
+          <description/>
           <f-element id="fdp_trk_ext-1-1">
             <title>The TSF shall provide notification to the user when tracking
                             information for  <selectables linebreak="yes"><selectable id="fdp_trk_ext.1.1_1" >geolocation</selectable><selectable id="fdp_trk_ext.1.1_2" >browser history</selectable><selectable id="fdp_trk_ext.1.1_3" >browser preferences</selectable><selectable id="fdp_trk_ext.1.1_4" >browser statistics</selectable></selectables>  is requested by a website.</title>
@@ -616,6 +623,7 @@
           <consistency-rationale>This SFR defines a specific set of management functions for a web browser.
 						It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to implement management functions specified in the SFR.</comp-lev>
+          <description/>
           <f-element id="fmt_mof_ext-1-1">
             <title>The TSF shall be capable of performing the following management
                             functions, controlled by the administrator or user as shown: <h:ul><h:li>M = Mandatory</h:li> <h:li>O = Optional</h:li></h:ul>
@@ -979,6 +987,7 @@
           <comp-lev> requires the TSF to identify the add-on types it supports and to ensure that a mechanism 
 						exists to prevent the automatic execution of potentially malicious add-ons.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable display notification when unsigned, untrusted, or unverified add-ons are encountered.</h:li> <h:li>Enable and disable support for add-ons.</h:li></h:ul></management>
+          <description/>
           <f-element id="fpt_add_ext-1-1">
             <title>The TSF shall support the capability to execute 
                              <selectables onlyone="yes"><selectable id="fpt_add_ext.1.1_1">signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable> </selectable><selectable id="fpt_add_ext.1.1_3" >no</selectable></selectables>  web-based code executed in add-ons.</title>
@@ -1024,6 +1033,7 @@
 						impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to either support no add-ons or to only support trusted add-ons.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable support for add-ons.</h:li></h:ul></management>
+          <description/>
           <f-element id="fpt_aon_ext-1-1">
             <title>The TSF shall include the capability to load  <selectables onlyone="yes"><selectable id="addons_supported" >trusted add-ons</selectable><selectable id="fpt_aon_ext.1.1_1" >no add-ons</selectable></selectables>.</title>
             <note role="application">If <xref to="addons_supported"/> is selected in FPT_AON_EXT.1.1, the TOE must also claim the selection-based SFR FPT_AON_EXT.2.
@@ -1059,6 +1069,7 @@
 						a web browser. It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to intervene in the case it is prompted to download executable file data.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable user's ability to select default actions upon download of a file (e.g., always open or always save a downloaded file).</h:li> <h:li>Enable and disable launching of downloaded files outside the browser.</h:li></h:ul></management>
+          <description/>
           <f-element id="fpt_dnl_ext-1-1">
             <title>The TSF shall prevent downloaded content from launching
                             automatically.</title>
@@ -1116,6 +1127,7 @@
           <comp-lev> requires the TSF to enumerate the minimum set of data that it must store
 						persistently in order to function normally.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable persistent storage of sensitive information.</h:li></h:ul></management>
+          <description/>
           <f-element id="fdp_pst_ext-1-1">
             <title>The TSF shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
@@ -1156,6 +1168,7 @@
 							and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
           <dependencies><no-link>FCS_COP.1 </no-link>  Cryptographic Operation<h:p/><no-link>FPT_AON_EXT.1 </no-link>  Support for Only Trusted Add-Ons
                             </dependencies>
+          <description/>
           <f-element id="fpt_aon_ext-2-1">
             <title>The TSF shall  <selectables><selectable id="fpt_aon_ext.2.1_1" >provide the ability</selectable><selectable id="fpt_aon_ext.2.1_2" >leverage the platform</selectable></selectables>  to provide a means to cryptographically verify add-ons
                                     using a digital signature mechanism and  <selectables onlyone="yes"><selectable id="fpt_aon_ext.2.1_3" >published hash</selectable><selectable id="fpt_aon_ext.2.1_4" >no other functions</selectable></selectables>  prior to installation and update. </title>
@@ -1213,6 +1226,7 @@
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable HSTS mode.</h:li></h:ul></management>
           <dependencies><no-link>FCS_HTTPS_EXT.1 </no-link>  HTTPS Protocol
                                 </dependencies>
+          <description/>
           <f-element id="fcs_sts_ext-1-1">
             <title>The TSF shall implement HTTP Strict-Transport-Security according
                                         to RFC 6797.</title>
@@ -1273,6 +1287,7 @@
           <comp-lev> requires the TSF to be able to interact with an application reputation 
 							service to assess whether application data is potentially malicious.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Configure the use of an application reputation service to detect malicious applications prior to download.</h:li></h:ul></management>
+          <description/>
           <f-element id="fpt_int_ext-1-1">
             <title>The TSF shall use an application reputation service to
                                     prevent downloading of malicious applications.</title>
@@ -1321,6 +1336,7 @@
           <comp-lev> requires the TSF to be able to interact with a URL reputation service to 
 							assess whether websites are potentially malicious.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Configure the use of a URL reputation service to detect sites that contain malware or phishing content.</h:li></h:ul></management>
+          <description/>
           <f-element id="fpt_int_ext-2-1">
             <title>The TSF shall use a URL reputation service to prevent
                                     connections with malicious websites.</title>
