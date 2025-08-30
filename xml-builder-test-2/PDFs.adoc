@@ -1,4 +1,4 @@
 * https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser-sd.html.pdf[webbrowser-sd.html.pdf]
-* https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser-release.html.pdf[webbrowser-release.html.pdf]
-* https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser.html.pdf[webbrowser.html.pdf]
 * https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser-release-linkable.html.pdf[webbrowser-release-linkable.html.pdf]
+* https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser.html.pdf[webbrowser.html.pdf]
+* https://commoncriteria.github.io/webbrowser/xml-builder-test-2/webbrowser-release.html.pdf[webbrowser-release.html.pdf]
