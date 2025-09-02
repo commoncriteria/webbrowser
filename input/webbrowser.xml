@@ -193,45 +193,79 @@
   </section>
   <!-- 3.0 Security Problem Definition-->
   <sec:Security_Problem_Definition >
-     The security problem is described in
-        terms of the threats that the web browser is expected to address, assumptions about the
-        operational environment, and any organizational security policies that it is expected to
-        enforce. <h:p/> This PP-Module does not repeat the threats, assumptions, and
-        organizational security policies identified in the App PP, though they all apply given the
-        conformance and hence dependence of this PP-Module on it. Together, the threats,
-        assumptions and organizational security policies of the App PP and those defined in this
-            PP-Module describe those addressed by a web browser as the Target of
-        Evaluation. 
-        <h:p/> 
-        Notably, browsers are particularly at risk from the T.NETWORK_ATTACK threat
-        identified in the App PP. Attackers can use phishing or another social engineering technique
-        to persuade a user to visit a malicious site. Users may also unintentionally visit malicious
-        sites in the course of web browsing. Such sites then present malicious content to the user's
-        browser to exploit it and perform installation of malware, often with no indication to the
-        user. 
-       
-        
+    
+    The security problem is described in terms
+    of the threats that the TOE is expected to address, assumptions about the
+    operational environment, and any organizational security policies that the TOE
+    is expected to enforce.
+    
+
     <!-- 3.1 Threats -->
-    <sec:Threats>The following threats are specific to web
-            browsers, and represent an addition to those identified in the App PP.<threats><threat name="T.FLAWED_ADDON"><description> Web browser functionality can be extended through the integration                        of third-party utilities and tools. Malicious or vulnerable add-ons could                        result in attacks against the system. Such attacks can allow unauthorized                        access to sensitive information in the browser, unauthorized access to the                        platform's file system, or privilege escalation that enables                        unauthorized access to other applications or the operating                        system.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FPT_AON_EXT.1</addressed-by><rationale>FPT_AON_EXT.1 mitigates the threat by specifying whether the TSF has the ability to load add-ons.</rationale><addressed-by>FPT_AON_EXT.2 (selection-based)</addressed-by><rationale>FPT_AON_EXT.2 mitigates the threat by defining a cryptographic method for the TSF to validate the integrity of add-ons if the TOE supports their use.</rationale></threat><threat name="T.NETWORK_ATTACK"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 mitigates the threat by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale><addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 mitigates the threat by requiring the use of HTTPS for certain types of data transfer.</rationale><addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale><addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 mitigates the threat by defining the management functionality that is specific to web browser applications.</rationale><addressed-by>FPT_ADD_EXT.1</addressed-by><rationale>FPT_ADD_EXT.1 mitigates the threat by preventing the automatic execution of add-ons which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale><addressed-by>FPT_DNL_EXT.1</addressed-by><rationale>FPT_DNL_EXT.1 mitigates the threat by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale><addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a reputation service to prevent the acquisition of potentially malicious applications.</rationale><addressed-by>FPT_INT_EXT.2 (objective)</addressed-by><rationale>FPT_INT_EXT.2 mitigates the threat by optionally requiring the TSF to implement a URL reputation service that can block communications with malicious entities.</rationale></threat><threat name="T.NETWORK_EAVESDROP"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 mitigates the threat by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale><addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 mitigates the threat by requiring the use of HTTPS for certain types of data transfer.</rationale><addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale><addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 mitigates the threat by defining the management functionality that is specific to web browser applications.</rationale><addressed-by>FPT_INT_EXT.2 (objective)</addressed-by><rationale>FPT_INT_EXT.2 mitigates the threat by optionally requiring the TSF to implement a URL reputation service that can block communications with malicious entities.</rationale></threat><threat name="T.PHYSICAL_ACCESS"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FDP_COO_EXT.1</addressed-by><rationale>FDP_COO_EXT.1 mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</rationale><addressed-by>FDP_PST_EXT.1 (optional)</addressed-by><rationale>FDP_PST_EXT.1 mitigates the threat by optionally defining the minimum set of persistent data that the TSF is required to store.</rationale><addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</rationale></threat><threat name="T.SAME_ORIGIN_VIOLATION"><description> Violating the same-origin policy is a specialized type of network                        attack (covered generally as T.NETWORK_ATTACK in the App PP), which involves                        web content violating access control policies enforced by a web browser to                        separate the content of different web domains. It is specifically identified                        as a threat to web browsers, since they implement the access control                        policies that are violated in these attacks. <h:p/>                         Attacks which involve                        same origin violations include: <h:ul><h:li>Insufficient protection of session tokens can lead to session                                hijacking, where a token is captured and reused to gain the                                privileges of the user who initiated the session.</h:li> <h:li>XSS and CSRF                                attacks are methods used to compromise user credentials (usually by                                stealing the user's session token) to a website. These attacks are                                more likely a result of server security problems, but some browsers                                incorporate technologies that try to detect the attacks.</h:li> <h:li>Inadequate sandboxing of browser windows and tabs or a faulty cross                                domain communications model can lead to leakage of content from one                                domain in one window or tab to a different domain in a different                                window or tab. Such attacks leverage the ability of browsers to display                                content from multiple domains simultaneously.</h:li></h:ul>                        A malicious actor could implement a malicious website or send a maliciously-crafted URL that an unsuspecting user could open in a vulnerable web browser,                        which could then be used to harvest sensitive data from a legitimate user or otherwise facilitate impersonation of that user.                     </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FDP_ACF_EXT.1</addressed-by><rationale>FDP_ACF_EXT.1 mitigates the threat by isolating local and session storage to its origin point.</rationale><addressed-by>FDP_SBX_EXT.1</addressed-by><rationale>FDP_SBX_EXT.1 mitigates the threat by ensuring that rendering of content is isolated to its origin point.</rationale><addressed-by>FDP_SOP_EXT.1</addressed-by><rationale>FDP_SOP_EXT.1 mitigates the threat by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</rationale></threat></threats></sec:Threats>
+    <sec:Threats>
+      <threats>
+        <threat name="T.QQQQ">
+          <!-- Repeatable -->
+          <description>QQQQ</description>
+          <objective-refer ref="O.QQQQ">
+            <!-- Repeatable -->
+            <rationale>QQQQ</rationale>
+          </objective-refer>
+        </threat>
+      </threats>
+    </sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
-      <assumptions/>
+      <assumptions>
+        <assumption name="A.QQQQ">
+          <!-- Repeatable -->
+          <description>QQQQ</description>
+          <objective-refer ref="OE.QQQQ">
+            <!-- Repeatable -->
+            <rationale>QQQQ</rationale>
+          </objective-refer>
+        </assumption>
+      </assumptions>
     </sec:Assumptions>
     <!-- 3.3 Organizational Security Policies -->
     <sec:Organizational_Security_Policies>
       <OSPs/>
+      <!--     <OSP id="P.QQQQ"> 
+        <description>QQQQ</description>
+        <objective-refer ref="O.QQQQ">
+            <rationale>QQQQ</rationale>
+        </objective-refer>
+    </OSP>
+    </OSPs> -->
     </sec:Organizational_Security_Policies>
   </sec:Security_Problem_Definition>
   <!-- 4.0 Security Objectives -->
   <sec:Security_Objectives >
     <!-- 4.1 Security Objectives for the TOE -->
+    <sec:Security_Objectives_for_the_TOE>
+      <SOs>
+        <SO name="O.QQQQ">
+          <!-- Repeatable -->
+          <description>QQQQ</description>
+          <addressed-by>QQQQ.#/QQQQ</addressed-by>
+          <rationale>QQQQ</rationale>
+          <!-- Repeatable -->
+        </SO>
+      </SOs>
+    </sec:Security_Objectives_for_the_TOE>
     <!-- 4.2 Security Objctives for the Operational Environment -->
-    <section title="Security Objectives for the Operational Environment" id="objectivesEnvironment"><h:p/>
-            No environmental security objectives have been identified that are specific to web browsers. However, any
-            environmental security objectives defined in the Base-PP will also apply to the portion of the TOE that implements web browser functionality.
-            </section>
+    <sec:Security_Objectives_for_the_Operational_Environment>
+      
+    QQQQ
+    
+      <SOEs>
+        <SOE name="OE.QQQQ">
+          <!-- Repeatable -->
+          <description>QQQQ</description>
+        </SOE>
+      </SOEs>
+    </sec:Security_Objectives_for_the_Operational_Environment>
     <!-- 4.3 Security Objectives Rationale -->
+    <sec:Security_Objectives_Rationale/>
   </sec:Security_Objectives>
   <!-- 5.0 Security Requirements -->
   <sec:Security_Requirements title="Security Requirements">
@@ -261,7 +295,7 @@
                   <note role="application">This SFR is modified from its Base-PP definition to remove the 
 							selection for the TOE not requiring asymmetric key generation.
                             </note>
-                  <aactivity level="component">
+                  <aactivity level="element">
                     <no-tests>
                                     There is no change to the Base-PP EAs for this SFR when this PP-Module is
 									claimed, aside from the fact that the materials for the selections that have been
@@ -284,7 +318,7 @@
                   <note role="application">This SFR is modified from its Base-PP definition to remove the
 							selection for the TOE using no DRBG functionality.
                             </note>
-                  <aactivity level="component">
+                  <aactivity level="element">
                     <no-tests>
                                     There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed,
 									aside from the fact that the materials for the selections that have been 
@@ -318,7 +352,7 @@
                                 because a web browser is required to support mutually-authenticated TLS and DTLS.
 								Dependent claims from the Functional Package for X.509 must be made to support the
 								X.509 validation functionality that is required for these protocols.</note>
-                  <aactivity level="component">
+                  <aactivity level="element">
                     <no-tests>
                                     There is no change to the Base-PP EAs for this SFR when this PP-Module is 
 									claimed, aside from the fact that the materials for the selections that have
@@ -333,46 +367,55 @@
       </modified-sfrs>
       <!-- 5.1.2 Additional SFRs -->
       <additional-sfrs/>
-      <con-toe>If this PP-Module is used to extend the App PP, the TOE type for the overall TOE is still a software 
+      <con-toe>
+                If this PP-Module is used to extend the App PP, the TOE type for the overall TOE is still a software 
 				application.
                 The TOE boundary is simply extended to include the web browser functionality that is built into the
 				application so that additional security functionality is claimed within the scope of the TOE.
-                
+                <h:p/>
                 The only asset for the TOE is the software executable and sensitive data that comprises the TOE. The 
 				entire TOE as defined by the combination of the
                 Base-PP and this PP-Module is a single asset. The only differences to the threat model are that the
 				PP-Module introduces the concept of add-ons, which
                 introduces the threat of an add-on being flawed in some way, and that the PP-Module introduces the 
 				concept of a same-origin violation, which
-                occurs through a use case specific to web browser applications.</con-toe>
-      <con-sec-prob>Listed below are the threats, objectives, and OSPs defined in this PP-Module with rationale for their 
+                occurs through a use case specific to web browser applications.
+            </con-toe>
+      <con-sec-prob>
+                Listed below are the threats, objectives, and OSPs defined in this PP-Module with rationale for their 
 				consistency with the App PP.
                 The PP-Module shares the
                 executable application asset with the App PP but defines additional threats because the PP-Module
 				defines a specific type of software application
                 with potential exploits that are common to the application type.
-                
+                <h:br/><h:br/>
                     Note that the PP-Module is implicitly consistent with any claimed functional packages because
 					the applicable functional packages do not have
                     security problem definitions of their own; per section 2, any claimed functional package is
 					intended to support the O.PROTECTED_COMMS objective in the
-                    App PP, which helps mitigate the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in that PP.</con-sec-prob>
-      <con-obj>Listed below are the security objectives defined in this PP-Module with rationale for their 
+                    App PP, which helps mitigate the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in that PP. 
+                
+            </con-sec-prob>
+      <con-obj>
+                Listed below are the security objectives defined in this PP-Module with rationale for their 
 				consistency with the App PP. The PP-Module shares the
                 executable application asset with the App PP but defines additional security objectives because
 				the PP-Module defines a specific type of software application
                 with security functionality that is common to the application type.
-                
+                <h:br/><h:br/>
                 Note that the PP-Module is implicitly consistent with any claimed functional packages because the 
 				applicable functional packages do not have
                 TOE objectives of their own; per section 2, any claimed functional package is intended to support
-				the O.PROTECTED_COMMS objective in the App PP.</con-obj>
-      <con-op-en>This PP-Module does not define any objectives for the TOE's operational environment.</con-op-en>
+				the O.PROTECTED_COMMS objective in the App PP.
+            </con-obj>
+      <con-op-en>
+                This PP-Module does not define any objectives for the TOE's operational environment. 
+            </con-op-en>
     </base-pp>
     <!-- 5.2 TOE Security Functional Requirements -->
     <man-sfrs>
       <!-- 5.2.1 User Data Protection (FDP) -->
-      <section title="User Data Protection (FDP)" id="fdp">
+      <section title="User Data Protection (FDP)" id="fdp-mandatory">
         <ext-comp-def title="Access Control Functions" fam-id="FDP_ACF_EXT">
           <fam-behavior>Components in this family define requirements for data access control beyond those which are specified in the Part 2 family FDP_ACF.</fam-behavior>
         </ext-comp-def>
@@ -404,7 +447,7 @@
             <note role="application"> The separation of local and session storage is
                             described in World Wide Web Consortium (W3C) Proposed Recommendation:
                             "Web Storage."<h:p/></note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes how the browser separates local and session storage.</TSS>
               <Guidance>The evaluator shall verify that the operational guidance
@@ -413,20 +456,9 @@
               <Tests>
                 The evaluator shall obtain or create JavaScript-­based scripts that store and retrieve information from local and session storage. The evaluator shall set up a web server with two or more webpages from different domains (e.g., test1.example.com and test2.example.com) with at least one of the domains served from multiple ports (e.g., port 80 and port 443). The evaluator shall incorporate the scripts into the webpages. The webpages will be opened in a manner that creates a relationship allowing for a JavaScript object handle to refer from one window to the other (e.g., window.parent, window.opener, etc). The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall open both pages ensuring that they are loaded from the
-										same domain using the same port. 
-                                        The evaluator shall verify that the script is unable to access session storage
-										through a window relationship handle (e.g., window.opener.sessionStorage).</test>
-                  <test>The evaluator shall open both pages ensuring that they are loaded from different
-									domains. 
-                                        The evaluator shall verify that the script is unable to access session storage
-										through a window relationship handle (e.g., window.opener.sessionStorage).</test>
-                  <test>
-                                        The evaluator shall open both pages ensuring that they are loaded from the
-										same domain using different ports. 
-                                        The evaluator shall verify that the script is unable to access session storage
-										through a window relationship handle (e.g., window.opener.sessionStorage).
-                                    </test>
+                  <test>The evaluator shall open both pages ensuring that they are loaded from the same domain using the same port. The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).</test>
+                  <test>The evaluator shall open both pages ensuring that they are loaded from different domains. The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).</test>
+                  <test>The evaluator shall open both pages ensuring that they are loaded from the same domain using different ports. The evaluator shall verify that the script is unable to access session storage through a window relationship handle (e.g., window.opener.sessionStorage).</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -442,7 +474,7 @@
           <f-element id="fdp_coo_ext-1-1">
             <title>The TSF shall provide the capability to block the storage of
                             third-party cookies by websites.</title>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes how the browser blocks third-party cookies and when the
                                 blocking occurs (e.g., automatically, when blocking is enabled).</TSS>
@@ -452,17 +484,8 @@
               <Tests>
                 The evaluator shall perform the following tests that may require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products:
                 <testlist>
-                  <test>The evaluator shall clear all cookies and then configure
-                                        the browser so that storage of third-party cookies is
-                                        allowed. The evaluator shall load a webpage that stores a
-                                        third-party cookie. The evaluator shall navigate to the
-                                        location where cookies are stored and shall verify that the
-                                        cookie is present.</test>
-                  <test>The evaluator shall clear all cookies and then configure
-                                        the browser so that storage of third-party cookies is
-                                        not allowed. The evaluator shall load a webpage
-                                        that attempts to store a third-party cookie and shall
-                                        verify that the cookie was not stored.</test>
+                  <test>The evaluator shall clear all cookies and then configure the browser so that storage of third-party cookies is allowed. The evaluator shall load a webpage that stores a third-party cookie. The evaluator shall navigate to the location where cookies are stored and shall verify that the cookie is present.</test>
+                  <test>The evaluator shall clear all cookies and then configure the browser so that storage of third-party cookies is not allowed. The evaluator shall load a webpage that attempts to store a third-party cookie and shall verify that the cookie was not stored.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -477,9 +500,10 @@
 						privilege is enforced on the rendering process.</comp-lev>
           <f-element id="fdp_sbx_ext-1-1">
             <title>The TSF shall  <selectables onlyone="yes"><selectable id="fdp_sbx_ext.1.1_1" >invoke platform-provided functionality</selectable><selectable id="fdp_sbx_ext.1.1_2" >implement functionality</selectable></selectables>  to ensure that webpage rendering is performed in a
-                            process that is restricted in the following manner:  The rendering process has reduced privilege with respect to other browser processes <selectables onlyone="yes"><selectable id="fdp_sbx_ext.1.1_4" ><assignable>other methods by which the principle of least privilege is implemented for rendering processes</assignable></selectable><selectable id="fdp_sbx_ext.1.1_5" >in no other ways</selectable></selectables> <h:ul><h:li>The rendering process can only directly access the area of the
+                            process that is restricted in the following manner: <h:ul><h:li>The rendering process can only directly access the area of the
                                     file system dedicated to the browser.</h:li> <h:li>The rendering process can only directly invoke inter-process
-                                    communication mechanisms with its own browser processes.</h:li> <h:li>.</h:li></h:ul></title>
+                                    communication mechanisms with its own browser processes.</h:li> <h:li>The rendering process has reduced privilege with respect to
+                                    other browser processes  <selectables onlyone="yes"><selectable id="fdp_sbx_ext.1.1_4" ><assignable>other methods by which the principle of least privilege is implemented for rendering processes</assignable></selectable><selectable id="fdp_sbx_ext.1.1_5" >in no other ways</selectable></selectables>.</h:li></h:ul></title>
             <note role="application"> Web browsers implement a variety of methods to
                             ensure that the process that renders HTML and interprets JavaScript
                             operates in a constrained environment in order to reduce the risk that
@@ -498,7 +522,7 @@
                             low-privileged account or dropping platform-defined privileges in the
                             rendering process. The ST author fills in the
                             additional measures implemented by the browser. </note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes how the rendering of HTML and interpretation of JavaScript
                                 is performed by the browser in terms of the platform processes that
@@ -537,12 +561,7 @@
               <Tests>
                 Conditional: if "implement functionality" is selected the evaluator shall perform the following test on each platform claimed in the ST:
                 <testlist>
-                  <test>The evaluator
-                                shall inject shell code into a running browser rendering process. 
-				The shell code will be designed to modify or create a file on the
-				system. The evaluator shall verify that the file was not modified
-				as the browser process sandbox should not have permission to 
-				modify user or system files.</test>
+                  <test>The evaluator shall inject shell code into a running browser rendering process. The shell code will be designed to modify or create a file on the system. The evaluator shall verify that the file was not modified as the browser process sandbox should not have permission to modify user or system files.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -558,7 +577,7 @@
             <title>The TSF shall only permit scripts contained in one webpage to
                             access data in a second webpage if both pages are from the same
                             origin.</title>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes its implementation of a same origin policy and explains
                                 how it complies with RFC 6454. If the browser allows the relaxation
@@ -569,15 +588,8 @@
               <Tests>
                 The evaluator shall obtain or create scripts that can retrieve content from designated locations and shall set up a web server with two or more webpages representing different domains. The evaluator shall incorporate the scripts into the webpages. The evaluator shall associate each page with a different protocol or port and then perform the following tests:
                 <testlist>
-                  <test>The evaluator shall open two or more browser windows or tabs
-                                        and navigate to a different page on the website in each
-                                        window or tab. The evaluator shall run the scripts and shall
-                                        verify that the script that is running in one window or tab
-                                        cannot access content that was retrieved in a different
-                                        window or tab.</test>
-                  <test>The evaluator shall verify that the scripts cannot retrieve
-                                        content from another window or tab at a different
-                                        subdomain.</test>
+                  <test>The evaluator shall open two or more browser windows or tabs and navigate to a different page on the website in each window or tab. The evaluator shall run the scripts and shall verify that the script that is running in one window or tab cannot access content that was retrieved in a different window or tab.</test>
+                  <test>The evaluator shall verify that the scripts cannot retrieve content from another window or tab at a different subdomain.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -597,14 +609,14 @@
 						web browser applications. It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to use HTTPS to transmit cookie data that has a security-relevant
 						attribute.</comp-lev>
-          <dependencies><no-link>FCS_HTTPS_EXT.1 </no-link>  HTTPS Protocol
+          <dependencies><no-link>FCS_HTTPS_EXT.1</no-link> HTTPS Protocol
                     </dependencies>
           <f-element id="fdp_str_ext-1-1">
             <title>The TSF shall ensure that cookies containing the 'secure'
                             attribute in the set-cookie header are sent over HTTPS.</title>
             <note role="application">The set-cookie header functionality is described in
                             RFC 6265, "HTTP State Management Mechanism."</note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS
                                 describes the browser's support for the "secure" attribute of the
                                 set-cookie header in accordance with RFC 6265, including the
@@ -613,14 +625,8 @@
               <Tests>
                 The evaluator shall perform the following tests that may require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products:
                 <testlist>
-                  <test>The evaluator shall connect the browser to a
-                                        cookie-enabled test website implementing HTTPS and have the
-                                        website present the browser with a "secure" cookie. The
-                                        evaluator shall examine the browser's cookie cache and
-                                        verify that it contains the secure cookie.</test>
-                  <test>The evaluator shall reconnect to the cookie-enabled
-                                        website over an insecure channel and verify that no "secure"
-                                        cookie is sent.</test>
+                  <test>The evaluator shall connect the browser to a cookie-enabled test website implementing HTTPS and have the website present the browser with a "secure" cookie. The evaluator shall examine the browser's cookie cache and verify that it contains the secure cookie.</test>
+                  <test>The evaluator shall reconnect to the cookie-enabled website over an insecure channel and verify that no "secure" cookie is sent.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -635,8 +641,10 @@
           <f-element id="fdp_trk_ext-1-1">
             <title>The TSF shall provide notification to the user when tracking
                             information for  <selectables linebreak="yes"><selectable id="fdp_trk_ext.1.1_1" >geolocation</selectable><selectable id="fdp_trk_ext.1.1_2" >browser history</selectable><selectable id="fdp_trk_ext.1.1_3" >browser preferences</selectable><selectable id="fdp_trk_ext.1.1_4" >browser statistics</selectable></selectables>  is requested by a website.</title>
-            <ext-comp-def-title><title>The TSF shall provide notification to the user when tracking information for <assignable>list of trackable browser data </assignable> is requested by a website. </title> </ext-comp-def-title>
-            <aactivity level="component">
+            <ext-comp-def-title><title>The TSF shall provide notification to the user when tracking
+                                information for <assignable>list of trackable browser data</assignable> 
+                                is requested by a website.</title></ext-comp-def-title>
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes the browser's support for tracking information and
                                 specifies the tracking information that the browser allows websites
@@ -648,16 +656,8 @@
               <Tests>
                 The evaluator shall perform the following tests for each type of tracking information listed in the TSS:
                 <testlist>
-                  <test>The evaluator shall configure a website that requests the
-                                        tracking information about the user and shall navigate to
-                                        that website. The evaluator shall verify that the user is
-                                        notified about the request for tracking information and
-                                        that, upon consent, the web browser retrieves the tracking
-                                        information.</test>
-                  <test>The evaluator shall verify that the user is notified about
-                                        the request for tracking information and that, when
-                                        rejected, the browser does not provide the tracking
-                                        information.</test>
+                  <test>The evaluator shall configure a website that requests the tracking information about the user and shall navigate to that website. The evaluator shall verify that the user is notified about the request for tracking information and that, upon consent, the web browser retrieves the tracking information.</test>
+                  <test>The evaluator shall verify that the user is notified about the request for tracking information and that, when rejected, the browser does not provide the tracking information.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -665,7 +665,7 @@
         </f-component>
       </section>
       <!-- 5.2.2 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="fmt">
+      <section title="Security Management (FMT)" id="fmt-mandatory">
         <ext-comp-def title="Management of Functions Behavior" fam-id="FMT_MOF_EXT">
           <fam-behavior>Components in this family define requirements for technology-specific management functions that are not enumerated in the Part 2 family FMT_MOF.</fam-behavior>
         </ext-comp-def>
@@ -980,8 +980,10 @@
 				</aactivity>
 			
 				</management-function>
-			</management-function-set></title>
-            <ext-comp-def-title><title>The TSF shall be capable of performing the following management functions, controlled by the administrator or user as shown: <assignable>list of management functions to be performed by role </assignable> . </title> </ext-comp-def-title>
+			</management-function-set>].</title>
+            <ext-comp-def-title><title>
+                                The TSF shall be capable of performing the following management functions, controlled by the administrator or user as shown: <assignable>list of management functions to be performed by role</assignable>.
+                            </title></ext-comp-def-title>
             <note role="application"> For these management functions, the term
                             "Administrator" refers to the administrator of a non-mobile device or
                             the device owner of a mobile device. The intent of this requirement is
@@ -992,7 +994,7 @@
                             the browser and its platform in coordination with each other.<h:p/>
                             Disabling OCSP is only permitted if "CRL" was selected in
                             FIA_X509_EXT.1.1 (in X.509 Functional Package).</note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS describes
                                 those management functions that can only be configured by the
                                 browser platform administrator and cannot be overridden by the user
@@ -1003,16 +1005,8 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall verify that functions perform as
-                                        intended by enabling, disabling, and configuring the
-                                        functions.</test>
-                  <test>The evaluator shall create policies that collectively
-                                        include all management functions controlled by the browser
-                                        platform administrator and cannot be overridden by the user
-                                        as defined in FMT_MOF.1.1. The evaluator shall apply these
-                                        policies to the browser, attempt to override each setting as
-                                        the user, and verify that the browser does not permit
-                                        it.</test>
+                  <test>The evaluator shall verify that functions perform as intended by enabling, disabling, and configuring the functions.</test>
+                  <test>The evaluator shall create policies that collectively include all management functions controlled by the browser platform administrator and cannot be overridden by the user as defined in FMT_MOF.1.1. The evaluator shall apply these policies to the browser, attempt to override each setting as the user, and verify that the browser does not permit it.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1020,7 +1014,7 @@
         </f-component>
       </section>
       <!-- 5.2.3 Protection of the TSF (FPT) -->
-      <section title="Protection of the TSF (FPT)" id="fpt">
+      <section title="Protection of the TSF (FPT)" id="fpt-mandatory">
         <ext-comp-def title="Add-Ons" fam-id="FPT_AON_EXT">
           <fam-behavior>Components in this family define requirements for the secure handling of add-ons that can be installed on top of the TOE.</fam-behavior>
         </ext-comp-def>
@@ -1040,8 +1034,11 @@
           <f-element id="fpt_add_ext-1-1">
             <title>The TSF shall support the capability to execute 
                              <selectables onlyone="yes"><selectable id="fpt_add_ext.1.1_1">signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable> </selectable><selectable id="fpt_add_ext.1.1_3" >no</selectable></selectables>  web-based code executed in add-ons.</title>
-            <ext-comp-def-title><title>The TSF shall support the capability to execute <selectables onlyone="yes"><selectable>signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser </assignable> </selectable> <selectable>no </selectable> </selectables> add-ons. </title> </ext-comp-def-title>
-            <aactivity level="component">
+            <ext-comp-def-title><title>
+                                The TSF shall support the capability to execute 
+                                <selectables onlyone="yes"><selectable>
+                                        signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable></selectable><selectable>no</selectable></selectables> add-ons. </title></ext-comp-def-title>
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 lists the types of signed add-ons that the browser supports. The
                                 TSS shall describe how the browser handles
@@ -1057,9 +1054,7 @@
               <Tests>
                 The evaluator shall perform the following test for each mobile code type specified in the TSS:
                 <testlist>
-                  <test>
-                                        The evaluator shall construct or obtain a correctly signed add-on and show that it is accepted and executes. The evaluator shall then construct or obtain three unacceptable add-ons: the first add-on is unsigned; the second add-on has an untrusted signature (e.g., creating the signature by using an unexpectd key or by manual modification of a legitimate signature); the third add-on has a trusted signature but has its contents modified (e.g., by using a hex editor). The evaluator shall then attempt to load these add-ons and observe that either they are rejected, or that the user is prompted to accept or reject them, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify that the add-on is not executed after being rejected.
-                                    </test>
+                  <test>The evaluator shall construct or obtain a correctly signed add-on and show that it is accepted and executes. The evaluator shall then construct or obtain three unacceptable add-ons: the first add-on is unsigned; the second add-on has an untrusted signature (e.g., creating the signature by using an unexpectd key or by manual modification of a legitimate signature); the third add-on has a trusted signature but has its contents modified (e.g., by using a hex editor). The evaluator shall then attempt to load these add-ons and observe that either they are rejected, or that the user is prompted to accept or reject them, depending on the selections made in FPT_MCD_EXT.1.2. If the user has the ability to accept or reject the add-on, the evaluator shall verify that the add-on is not executed after being rejected.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1068,7 +1063,9 @@
             <title>The TSF shall  <selectables onlyone="yes"><selectable id="fpt_add_ext.1.2_1" >automatically discard</selectable><selectable id="s_user_discard" >provide the user with the option to discard</selectable></selectables>  
                             unsigned, untrusted, or unverified  <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable> 
                             web-based code executed in add-ons without executing the code.</title>
-            <ext-comp-def-title><title>The TSF shall <selectables onlyone="yes"><selectable>automatically discard </selectable> <selectable>provide the user with the option to discard </selectable> </selectables> unsigned, untrusted, or unverified <assignable>supported add-ons (i.e., plug-ins and extensions) </assignable> web-based code executed in add-ons without executing it. </title> </ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall <selectables onlyone="yes"><selectable>automatically discard</selectable><selectable>provide the user with the option to discard</selectable></selectables> 
+                                unsigned, untrusted, or unverified <assignable>supported add-ons (i.e., plug-ins and extensions)</assignable>
+                                 web-based code executed in add-ons without executing it.</title></ext-comp-def-title>
             <note role="application"> The ST author must specify all
                             add-on types for which the browser provides this support. <h:p/>An
                             authorized signer may directly sign the code itself, or the code may be
@@ -1090,7 +1087,7 @@
                             installing only trusted add-ons, this requirement can be met by
                             demonstrating the ability to disable all support for add-ons as
                             specified in FMT_MOF_EXT.1.</note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS describes
                                 whether the browser is capable of loading trusted add-ons.</TSS>
               <Guidance>The evaluator shall verify that the operational guidance
@@ -1099,13 +1096,8 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall create or obtain an
-                                    untrusted add-on and attempt to load it. The evaluator shall
-                                    verify that the untrusted add-on is rejected and cannot be
-                                    loaded.</test>
-                  <test>The evaluator shall create or obtain a trusted add-on and
-                                        attempt to load it. The evaluator shall verify that the
-                                        trusted add-on loads. </test>
+                  <test>The evaluator shall create or obtain an untrusted add-on and attempt to load it. The evaluator shall verify that the untrusted add-on is rejected and cannot be loaded.</test>
+                  <test>The evaluator shall create or obtain a trusted add-on and attempt to load it. The evaluator shall verify that the trusted add-on loads.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1120,7 +1112,7 @@
           <f-element id="fpt_dnl_ext-1-1">
             <title>The TSF shall prevent downloaded content from launching
                             automatically.</title>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                 describes the behavior of the browser when a user initiates
                                 the download of a file.</TSS>
@@ -1131,12 +1123,7 @@
               <Tests>
                 The evaluator shall perform the following test:
                 <testlist>
-                  <test>The evaluator shall navigate to a website that hosts files
-                                        for download including executables and shall attempt to
-                                        download and open at least three of these files. The evaluator
-                                        shall verify that the browser always presents a dialog box
-                                        with the option to either download the file to the file
-                                        system or to discard the file.</test>
+                  <test>The evaluator shall navigate to a website that hosts files for download including executables and shall attempt to download and open at least three of these files. The evaluator shall verify that the browser always presents a dialog box with the option to either download the file to the file system or to discard the file.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1159,7 +1146,7 @@
     </man-sfrs>
     <opt-sfrs>
       <!-- 5.2.4 User Data Protection (FDP) -->
-      <section title="User Data Protection (FDP)" id="fdp">
+      <section title="User Data Protection (FDP)" id="fdp-optional">
         <ext-comp-def title="Storage of Persistent Information" fam-id="FDP_PST_EXT">
           <fam-behavior>Components in this family define requirements for the minimum amount of information that may be stored persistently by the TSF while retaining its functionality.</fam-behavior>
         </ext-comp-def>
@@ -1178,10 +1165,13 @@
             <title>The TSF shall provide the capability to operate without storing
                                 persistent data to the file system with the following exceptions:
                                  <selectables><selectable id="fdp_pst_ext.1.1_1" >credential information</selectable><selectable id="fdp_pst_ext.1.1_2" >administrator-provided configuration information</selectable><selectable id="fdp_pst_ext.1.1_3" >certificate revocation information</selectable><selectable id="fdp_pst_ext.1.1_4" exclusive="yes">no exceptions</selectable></selectables>.</title>
-            <ext-comp-def-title><title>The TSF shall provide the capability to operate without storing persistent data to the file system with the following exceptions: <assignable>data that the TSF must store persistently </assignable> . </title> </ext-comp-def-title>
+            <ext-comp-def-title><title>
+                                    The TSF shall provide the capability to operate without storing
+                                    persistent data to the file system with the following exceptions: <assignable>data that the TSF must store persistently</assignable>.
+                                </title></ext-comp-def-title>
             <note role="application"> Any data that persists after the browser closes,
                                 including temporary files, is considered to be persistent data. </note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS
                                     describes how the browser operates without storing persistent user
                                     data to the file systems.</TSS>
@@ -1189,12 +1179,7 @@
               <Tests>
                 The evaluator shall perform the following test that may require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products:
                 <testlist>
-                  <test>The evaluator shall operate the browser for as much time as is needed
-                                            to ensure that a wide variety of browser functionality
-                                            has been exercised. The evaluator shall then examine the
-                                            browser and the underlying platform to ensure that no files
-                                            have been written to the file system other than the
-                                            exceptions identified in FDP_PST_EXT.1.1.</test>
+                  <test>The evaluator shall operate the browser for as much time as is needed to ensure that a wide variety of browser functionality has been exercised. The evaluator shall then examine the browser and the underlying platform to ensure that no files have been written to the file system other than the exceptions identified in FDP_PST_EXT.1.1.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1204,7 +1189,7 @@
     </opt-sfrs>
     <sel-sfrs>
       <!-- 5.2.5 Protection of the TSF (FPT) -->
-      <section title="Protection of the TSF (FPT)" id="fpt">
+      <section title="Protection of the TSF (FPT)" id="fpt-selectionBased">
         <!-- FPT_AON_EXT.2 Trusted Installation and Update for Add-ons -->
         <f-component cc-id="fpt_aon_ext.2" id="fpt-aon-ext-2" name="Trusted Installation and Update for Add-ons">
           <depends on-sel="addons_supported"/>
@@ -1212,12 +1197,12 @@
 							impact functionality described by the App PP.</consistency-rationale>
           <comp-lev> requires the TSF to implement a method to verify the integrity of add-ons
 							and ensure that untrusted or unknown add-ons are not loaded for use.</comp-lev>
-          <dependencies><no-link>FCS_COP.1 </no-link>  Cryptographic Operation<h:p/><no-link>FPT_AON_EXT.1 </no-link>  Support for Only Trusted Add-Ons
+          <dependencies><no-link>FCS_COP.1</no-link> Cryptographic Operation<h:p/> <no-link>FPT_AON_EXT.1</no-link> Support for Only Trusted Add-Ons
                             </dependencies>
           <f-element id="fpt_aon_ext-2-1">
             <title>The TSF shall  <selectables><selectable id="fpt_aon_ext.2.1_1" >provide the ability</selectable><selectable id="fpt_aon_ext.2.1_2" >leverage the platform</selectable></selectables>  to provide a means to cryptographically verify add-ons
                                     using a digital signature mechanism and  <selectables onlyone="yes"><selectable id="fpt_aon_ext.2.1_3" >published hash</selectable><selectable id="fpt_aon_ext.2.1_4" >no other functions</selectable></selectables>  prior to installation and update. </title>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS
                                         states that the browser will reject add-ons from untrusted
                                         sources.</TSS>
@@ -1227,18 +1212,9 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall create or obtain an add-on signed by a
-                                            trusted source and attempt to install it. The evaluator
-                                            shall verify that the signature on the add-on is valid and
-                                            that the add-on can be installed.</test>
-                  <test>The evaluator shall create or obtain an add-on signed with
-                                            an invalid certificate and attempt to install it. The
-                                            evaluator shall verify that the signed add-on is rejected
-                                            and cannot be installed.</test>
-                  <test>The evaluator shall create or obtain an add-on signed by a
-                                            trusted source, modify the add-on without re-signing it, and
-                                            attempt to install it. The evaluator shall verify that the
-                                            signed add-on is rejected and cannot be installed.</test>
+                  <test>The evaluator shall create or obtain an add-on signed by a trusted source and attempt to install it. The evaluator shall verify that the signature on the add-on is valid and that the add-on can be installed.</test>
+                  <test>The evaluator shall create or obtain an add-on signed with an invalid certificate and attempt to install it. The evaluator shall verify that the signed add-on is rejected and cannot be installed.</test>
+                  <test>The evaluator shall create or obtain an add-on signed by a trusted source, modify the add-on without re-signing it, and attempt to install it. The evaluator shall verify that the signed add-on is rejected and cannot be installed.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1257,7 +1233,7 @@
     </sel-sfrs>
     <obj-sfrs>
       <!-- 5.2.6 Cryptographic Support (FCS) -->
-      <section title="Cryptographic Support (FCS)" id="fcs">
+      <section title="Cryptographic Support (FCS)" id="fcs-objective">
         <ext-comp-def title="Strict Transport Security" fam-id="FCS_STS_EXT">
           <fam-behavior>Components in this family define requirements for the implementation of HTTP Strict-Transport-Security.</fam-behavior>
         </ext-comp-def>
@@ -1269,12 +1245,12 @@
           <consistency-rationale>This SFR defines behavior for implementation of HSTS, which is a communications mechanism specific to web content. It does not impact the App PP functionality.</consistency-rationale>
           <comp-lev> requires the TSF to implement HTTP Strict-Transport-Security.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable HSTS mode.</h:li></h:ul></management>
-          <dependencies><no-link>FCS_HTTPS_EXT.1 </no-link>  HTTPS Protocol
+          <dependencies><no-link>FCS_HTTPS_EXT.1</no-link> HTTPS Protocol
                                 </dependencies>
           <f-element id="fcs_sts_ext-1-1">
             <title>The TSF shall implement HTTP Strict-Transport-Security according
                                         to RFC 6797.</title>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                             documents how the browser supports HSTS.</TSS>
               <Guidance> The evaluator shall ensure that the operational guidance 
@@ -1282,21 +1258,10 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall connect to an HSTS-compliant website
-                                                while running a network protocol analyzer to monitor the
-                                                traffic. The evaluator shall examine the captured network
-                                                traffic and verify that a Strict Transport Security header
-                                                is received and that there is a directive for the max-age of
-                                                the HSTS relationship.</test>
-                  <test>The evaluator shall reconnect to the HSTS website again
-                                                over HTTP and shall verify that the session is redirected to
-                                                HTTPS.</test>
-                  <test>The evaluator shall reconnect to the HSTS website after
-                                                the max-age has expired, and verify that the website and
-                                                browser reestablish an HSTS relationship.</test>
-                  <test>The evaluator shall update the website's HSTS information,
-                                                and verify that when the browser reconnects to the website,
-                                                that information is updated by the browser.</test>
+                  <test>The evaluator shall connect to an HSTS-compliant website while running a network protocol analyzer to monitor the traffic. The evaluator shall examine the captured network traffic and verify that a Strict Transport Security header is received and that there is a directive for the max-age of the HSTS relationship.</test>
+                  <test>The evaluator shall reconnect to the HSTS website again over HTTP and shall verify that the session is redirected to HTTPS.</test>
+                  <test>The evaluator shall reconnect to the HSTS website after the max-age has expired, and verify that the website and browser reestablish an HSTS relationship.</test>
+                  <test>The evaluator shall update the website's HSTS information, and verify that when the browser reconnects to the website, that information is updated by the browser.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1317,7 +1282,7 @@
         </f-component>
       </section>
       <!-- 5.2.7 Protection of the TSF (FPT) -->
-      <section title="Protection of the TSF (FPT)" id="fpt">
+      <section title="Protection of the TSF (FPT)" id="fpt-objective">
         <ext-comp-def title="Reputation Service Interaction" fam-id="FPT_INT_EXT">
           <fam-behavior>Components in this family define requirements for the TOE's interaction with reputation services that can provide an assessment of the trustworthiness of data presented to the TSF.</fam-behavior>
         </ext-comp-def>
@@ -1340,7 +1305,7 @@
                                     would require configuration of the trusted service to be used. The
                                     quality of the reputation service may fall outside the scope of the
                                     evaluation.</note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                         describes the browser's use of application reputation services in
                                         detecting malicious applications.</TSS>
@@ -1353,16 +1318,7 @@
               <Tests>
                 The evaluator shall perform the following test:
                 <testlist>
-                  <test>The evaluator shall configure the browser to enable the
-                                            use of one or more application reputation services per the
-                                            operational guidance. The evaluator shall initiate a
-                                            connection with a website that attempts to download an
-                                            application to the browser while sniffing the network
-                                            traffic using a network protocol analyzer. The evaluator
-                                            shall inspect the captured network traffic and shall verify
-                                            that the browser initiates a connection to the configured
-                                            application reputation service or services before initiating the
-                                            download.</test>
+                  <test>The evaluator shall configure the browser to enable the use of one or more application reputation services per the operational guidance. The evaluator shall initiate a connection with a website that attempts to download an application to the browser while sniffing the network traffic using a network protocol analyzer. The evaluator shall inspect the captured network traffic and shall verify that the browser initiates a connection to the configured application reputation service or services before initiating the download.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1396,7 +1352,7 @@
                                     from the URL reputation service or services until the browser is terminated.
                                     Ultimately, the result should be that the browser blocks the connection
                                     to the bad URL. </note>
-            <aactivity level="component">
+            <aactivity level="element">
               <TSS>The evaluator shall ensure that the TSS
                                         describes the browser's use of a URL reputation service in detecting
                                         malicious websites.</TSS>
@@ -1409,27 +1365,8 @@
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall configure the browser to enable the
-                                            use of one or more URL reputation services per the
-                                            operational guidance. The evaluator shall initiate a
-                                            connection with a known-good website while sniffing the
-                                            network traffic using a network protocol analyzer. The
-                                            evaluator shall inspect the captured network traffic and
-                                            shall verify that the browser initiates a connection to the
-                                            configured URL reputation service or services.</test>
-                  <test>The evaluator shall configure the browser to enable the
-                                            use of one or more URL reputation services per the
-                                            operational guidance. The evaluator shall initiate a
-                                            connection with a known-malicious website that is identified
-                                            by one or more of the URL reputation services while sniffing
-                                            the network traffic using a network protocol analyzer. The
-                                            evaluator shall verify that a warning appears alerting that
-                                            the website is known to be malicious and the browser is not
-                                            allowed to connect. The evaluator shall inspect the captured
-                                            network traffic and shall verify that the browser initiates
-                                            a connection to the configured URL reputation service or services and
-                                            retrieves an updated list of malicious URLs with the tested
-                                            website being on the list.</test>
+                  <test>The evaluator shall configure the browser to enable the use of one or more URL reputation services per the operational guidance. The evaluator shall initiate a connection with a known-good website while sniffing the network traffic using a network protocol analyzer. The evaluator shall inspect the captured network traffic and shall verify that the browser initiates a connection to the configured URL reputation service or services.</test>
+                  <test>The evaluator shall configure the browser to enable the use of one or more URL reputation services per the operational guidance. The evaluator shall initiate a connection with a known-malicious website that is identified by one or more of the URL reputation services while sniffing the network traffic using a network protocol analyzer. The evaluator shall verify that a warning appears alerting that the website is known to be malicious and the browser is not allowed to connect. The evaluator shall inspect the captured network traffic and shall verify that the browser initiates a connection to the configured URL reputation service or services and retrieves an updated list of malicious URLs with the tested website being on the list.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -1439,7 +1376,10 @@
     </obj-sfrs>
     <impl-dep-sfrs/>
   </sec:Security_Requirements>
-  <appendix title="Entropy Documentation and Assessment" id="EAR">The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP. </appendix>
+  <appendix title="Entropy Documentation and Assessment" id="EAR">
+        The TOE does not require any additional supplementary information to describe its entropy sources beyond the
+		requirements outlined in the Base-PP.  
+    </appendix>
   <bibliography>
     <cc-entry/>
     <entry id="bibAppPP">
