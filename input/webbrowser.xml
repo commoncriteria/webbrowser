@@ -998,7 +998,7 @@
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Enable and disable display notification when unsigned, untrusted, or unverified add-ons are encountered.</h:li> <h:li>Enable and disable support for add-ons.</h:li></h:ul></management>
           <f-element id="fpt_add_ext-1-1">
             <title>The TSF shall support the capability to execute 
-                             <selectables onlyone="yes"><selectable id="fpt_add_ext.1.1_1">signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable> </selectable><selectable id="fpt_add_ext.1.1_3" >no</selectable></selectables>  web-based code executed in add-ons.</title>
+                             <selectables onlyone="yes"><selectable id="fpt_add_ext.1.1_1">signed <assignable>add-ons (i.e. plug-ins and extensions) supported by the browser</assignable></selectable><selectable id="fpt_add_ext.1.1_3" >no</selectable></selectables>  web-based code executed in add-ons.</title>
             <ext-comp-def-title><title>
                                 The TSF shall support the capability to execute 
                                 <selectables onlyone="yes"><selectable>
