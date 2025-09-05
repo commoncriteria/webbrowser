@@ -36,7 +36,7 @@
   </include-pkg>
   <pp-preferences><!--   <using-cc2022/>    --></pp-preferences>
   <sec:Introduction >
-    <sec:Overview>
+    <sec:Overview title="Overview">
             The scope of the PP-Module for Web Browsers, Version 1.0 is to describe the security functionality of web browser applications in terms of [CC] 
             and to define functional and assurance requirements for the product-specific capabilities of web browser applications.
             Web browsers are client applications that retrieve
@@ -193,79 +193,49 @@
   </section>
   <!-- 3.0 Security Problem Definition-->
   <sec:Security_Problem_Definition >
-    
-    The security problem is described in terms
-    of the threats that the TOE is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the TOE
-    is expected to enforce.
-    
-
+     The security problem is described in
+        terms of the threats that the web browser is expected to address, assumptions about the
+        operational environment, and any organizational security policies that it is expected to
+        enforce. <h:p/> This PP-Module does not repeat the threats, assumptions, and
+        organizational security policies identified in the App PP, though they all apply given the
+        conformance and hence dependence of this PP-Module on it. Together, the threats,
+        assumptions and organizational security policies of the App PP and those defined in this
+            PP-Module describe those addressed by a web browser as the Target of
+        Evaluation. 
+        <h:p/> 
+        Notably, browsers are particularly at risk from the T.NETWORK_ATTACK threat
+        identified in the App PP. Attackers can use phishing or another social engineering technique
+        to persuade a user to visit a malicious site. Users may also unintentionally visit malicious
+        sites in the course of web browsing. Such sites then present malicious content to the user's
+        browser to exploit it and perform installation of malware, often with no indication to the
+        user. 
+       
+        
     <!-- 3.1 Threats -->
-    <sec:Threats>
-      <threats>
-        <threat name="T.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <objective-refer ref="O.QQQQ">
-            <!-- Repeatable -->
-            <rationale>QQQQ</rationale>
-          </objective-refer>
-        </threat>
-      </threats>
-    </sec:Threats>
+    <sec:Threats>The following threats are specific to web
+            browsers, and represent an addition to those identified in the App PP.<threats><threat name="T.FLAWED_ADDON"><description> Web browser functionality can be extended through the integration                        of third-party utilities and tools. Malicious or vulnerable add-ons could                        result in attacks against the system. Such attacks can allow unauthorized                        access to sensitive information in the browser, unauthorized access to the                        platform's file system, or privilege escalation that enables                        unauthorized access to other applications or the operating                        system.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FPT_AON_EXT.1</addressed-by><rationale>FPT_AON_EXT.1 mitigates the threat by specifying whether the TSF has the ability to load add-ons.</rationale><addressed-by>FPT_AON_EXT.2 (selection-based)</addressed-by><rationale>FPT_AON_EXT.2 mitigates the threat by defining a cryptographic method for the TSF to validate the integrity of add-ons if the TOE supports their use.</rationale></threat><threat name="T.NETWORK_ATTACK"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 mitigates the threat by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale><addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 mitigates the threat by requiring the use of HTTPS for certain types of data transfer.</rationale><addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale><addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 mitigates the threat by defining the management functionality that is specific to web browser applications.</rationale><addressed-by>FPT_ADD_EXT.1</addressed-by><rationale>FPT_ADD_EXT.1 mitigates the threat by preventing the automatic execution of add-ons which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale><addressed-by>FPT_DNL_EXT.1</addressed-by><rationale>FPT_DNL_EXT.1 mitigates the threat by preventing the automatic execution of downloaded files which could otherwise cause integrity violations to the TOE itself or to its platform.</rationale><addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a reputation service to prevent the acquisition of potentially malicious applications.</rationale><addressed-by>FPT_INT_EXT.2 (objective)</addressed-by><rationale>FPT_INT_EXT.2 mitigates the threat by optionally requiring the TSF to implement a URL reputation service that can block communications with malicious entities.</rationale></threat><threat name="T.NETWORK_EAVESDROP"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_STS_EXT.1 (objective)</addressed-by><rationale>FCS_STS_EXT.1 mitigates the threat by optionally requiring the TSF to implement HSTS for secure data transmission.</rationale><addressed-by>FDP_STR_EXT.1</addressed-by><rationale>FDP_STR_EXT.1 mitigates the threat by requiring the use of HTTPS for certain types of data transfer.</rationale><addressed-by>FDP_TRK_EXT.1</addressed-by><rationale>FDP_TRK_EXT.1 mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</rationale><addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>FMT_MOF_EXT.1 mitigates the threat by defining the management functionality that is specific to web browser applications.</rationale><addressed-by>FPT_INT_EXT.2 (objective)</addressed-by><rationale>FPT_INT_EXT.2 mitigates the threat by optionally requiring the TSF to implement a URL reputation service that can block communications with malicious entities.</rationale></threat><threat name="T.PHYSICAL_ACCESS"><from base="bpp-app"/><!-- New mapping to build updated threat mapping table. --><addressed-by>FDP_COO_EXT.1</addressed-by><rationale>FDP_COO_EXT.1 mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</rationale><addressed-by>FDP_PST_EXT.1 (optional)</addressed-by><rationale>FDP_PST_EXT.1 mitigates the threat by optionally defining the minimum set of persistent data that the TSF is required to store.</rationale><addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</rationale></threat><threat name="T.SAME_ORIGIN_VIOLATION"><description> Violating the same-origin policy is a specialized type of network                        attack (covered generally as T.NETWORK_ATTACK in the App PP), which involves                        web content violating access control policies enforced by a web browser to                        separate the content of different web domains. It is specifically identified                        as a threat to web browsers, since they implement the access control                        policies that are violated in these attacks. <h:p/>                         Attacks which involve                        same origin violations include: <h:ul><h:li>Insufficient protection of session tokens can lead to session                                hijacking, where a token is captured and reused to gain the                                privileges of the user who initiated the session.</h:li> <h:li>XSS and CSRF                                attacks are methods used to compromise user credentials (usually by                                stealing the user's session token) to a website. These attacks are                                more likely a result of server security problems, but some browsers                                incorporate technologies that try to detect the attacks.</h:li> <h:li>Inadequate sandboxing of browser windows and tabs or a faulty cross                                domain communications model can lead to leakage of content from one                                domain in one window or tab to a different domain in a different                                window or tab. Such attacks leverage the ability of browsers to display                                content from multiple domains simultaneously.</h:li></h:ul>                        A malicious actor could implement a malicious website or send a maliciously-crafted URL that an unsuspecting user could open in a vulnerable web browser,                        which could then be used to harvest sensitive data from a legitimate user or otherwise facilitate impersonation of that user.                     </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FDP_ACF_EXT.1</addressed-by><rationale>FDP_ACF_EXT.1 mitigates the threat by isolating local and session storage to its origin point.</rationale><addressed-by>FDP_SBX_EXT.1</addressed-by><rationale>FDP_SBX_EXT.1 mitigates the threat by ensuring that rendering of content is isolated to its origin point.</rationale><addressed-by>FDP_SOP_EXT.1</addressed-by><rationale>FDP_SOP_EXT.1 mitigates the threat by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</rationale></threat></threats></sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
-      <assumptions>
-        <assumption name="A.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <objective-refer ref="OE.QQQQ">
-            <!-- Repeatable -->
-            <rationale>QQQQ</rationale>
-          </objective-refer>
-        </assumption>
-      </assumptions>
+      <assumptions/>
     </sec:Assumptions>
     <!-- 3.3 Organizational Security Policies -->
     <sec:Organizational_Security_Policies>
       <OSPs/>
-      <!--     <OSP id="P.QQQQ"> 
-        <description>QQQQ</description>
-        <objective-refer ref="O.QQQQ">
-            <rationale>QQQQ</rationale>
-        </objective-refer>
-    </OSP>
-    </OSPs> -->
     </sec:Organizational_Security_Policies>
   </sec:Security_Problem_Definition>
   <!-- 4.0 Security Objectives -->
   <sec:Security_Objectives >
+    This PP-Module adds SFRs to objectives
+        identified in the Base-PP and describes additional objectives specific to this PP-Module. 
+          
+        
     <!-- 4.1 Security Objectives for the TOE -->
-    <sec:Security_Objectives_for_the_TOE>
-      <SOs>
-        <SO name="O.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-          <addressed-by>QQQQ.#/QQQQ</addressed-by>
-          <rationale>QQQQ</rationale>
-          <!-- Repeatable -->
-        </SO>
-      </SOs>
-    </sec:Security_Objectives_for_the_TOE>
     <!-- 4.2 Security Objctives for the Operational Environment -->
-    <sec:Security_Objectives_for_the_Operational_Environment>
-      
-    QQQQ
-    
-      <SOEs>
-        <SOE name="OE.QQQQ">
-          <!-- Repeatable -->
-          <description>QQQQ</description>
-        </SOE>
-      </SOEs>
-    </sec:Security_Objectives_for_the_Operational_Environment>
+    <section title="Security Objectives for the Operational Environment" id="objectivesEnvironment"><h:p/>
+            No environmental security objectives have been identified that are specific to web browsers. However, any
+            environmental security objectives defined in the Base-PP will also apply to the portion of the TOE that implements web browser functionality.
+            </section>
     <!-- 4.3 Security Objectives Rationale -->
-    <sec:Security_Objectives_Rationale/>
   </sec:Security_Objectives>
   <!-- 5.0 Security Requirements -->
   <sec:Security_Requirements title="Security Requirements">
@@ -676,12 +646,7 @@
           <comp-lev> requires the TSF to implement management functions specified in the SFR.</comp-lev>
           <f-element id="fmt_mof_ext-1-1">
             <title>The TSF shall be capable of performing the following management
-                            functions, controlled by the administrator or user as shown: <h:ul><h:li>M = Mandatory</h:li> <h:li>O = Optional</h:li></h:ul>
-			<h:br/><h:br/>
-			<h:b><ctr id="undefined" ctr-type="Table">: Management Functions</ctr></h:b>
-			<h:br/><h:br/>
-			Status Markers:<h:br/> O - Indicates that this function is optional for this role<h:br/>M - Indicates that this function is mandatory for this role.<h:br/><h:br/>
-		<management-function-set default="O"><manager cid="A">Administrator</manager><manager cid="U">User</manager>
+                            functions, controlled by the administrator or user as shown: <h:ul><h:li>M = Mandatory</h:li> <h:li>O = Optional</h:li></h:ul>Status Markers:<h:br/> O - Indicates that this function is optional for this role<h:br/>M - Indicates that this function is mandatory for this role.<h:br/><h:br/><management-function-set default="O"><manager cid="A">Administrator</manager><manager cid="U">User</manager>
 				<management-function id="mf-1">
 					<text>Enable and disable storage of third-party cookies</text>
 					<O ref="A"/><M ref="U"/>
