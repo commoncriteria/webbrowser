@@ -478,7 +478,8 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul></span>
               </div>
             </span></div><div class="comp" id="FDP-SBX-EXT-1"><h4>FDP_SBX_EXT.1 Sandboxing of Rendering Processes</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_SBX_EXT.1.1</div>
-              <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that the TSS
+              <div class="eacategory">TSS</div><div class="ea">
+                The evaluator shall ensure that the TSS
                                 describes how the rendering of HTML and interpretation of JavaScript
                                 is performed by the browser in terms of the platform processes that
                                 are involved (with "process" being an active entity that executes
@@ -492,27 +493,37 @@ The following sections list Common Criteria and technology terms used in this do
                                 enabled (if this capability is implemented); for instance, through a
                                 more privileged browser process that does not perform webpage
                                 rendering. The evaluator shall ensure that these descriptions are
-                                present for all platforms claimed in the ST.<p></p>
-                                For each additional mechanism listed in the third bullet of this
+                                present for all platforms claimed in the ST.
+                <p></p>
+                For each additional mechanism listed in the third bullet of this
                                 component by the ST author, the evaluator shall
-                                ensure that the TSS: 
-                                <ul><li>describes the mechanisms;</li> <li>has sufficient detail for the description of the mechanisms 
+                                ensure that the TSS:
+                <ul>
+                  <li>describes the mechanisms;</li>
+                  <li>has sufficient detail for the description of the mechanisms 
                                         to determine that it contributes to the principle of least
-                                        privilege being implemented in the rendering process; and</li> <li>has appropriate supporting information (or points to where such information exists)
+                                        privilege being implemented in the rendering process; and</li>
+                  <li>has appropriate supporting information (or points to where such information exists)
                                         that provides context for understanding the claimed least privilege
-                                        mechanisms.</li></ul> <p></p>
-				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review the TSS and
-				confirm it describes the mechanism used to invoke the platform-provided functionality.</div>
-              <div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the operational guidance 
+                                        mechanisms.</li>
+                </ul>
+                <p></p>
+                Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review the TSS and
+				confirm it describes the mechanism used to invoke the platform-provided functionality.
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">
+                The evaluator shall verify that the operational guidance 
                                 provides a description of the restrictions
                                 available on rendering processes. Additionally, if such mechanisms
                                 are configurable (for instance, if a user can choose which
                                 mechanisms to "turn on"), the evaluator shall ensure that the method for enabling and
                                 disabling the mechanisms are provided in the operational guidance, and the consequences of such
-                                actions are described. <p></p>
-				Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review
+                                actions are described.
+                <p></p>
+                Conditional: if "invoke platform-provided functionality" is selected the evaluator shall review
 				the guidance document and confirm it describes how to configure the application 
-				to properly invoke the platform-provided functionality. </div>
+				to properly invoke the platform-provided functionality.
+              </div>
               <div class="eacategory">Tests</div><div class="ea">
                 Conditional: if "implement functionality" is selected the evaluator shall perform the following test on each platform claimed in the ST:
                 <span class="testlist-"><ul>
@@ -560,7 +571,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance describes
                                 any notifications that the user will receive when
                                 tracking information is requested by a website and the options that
-                                the user has upon receiving the notification. </div>
+                                the user has upon receiving the notification.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests for each type of tracking information listed in the TSS:
                 <span class="testlist-"><ul>
@@ -571,128 +582,105 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul></span>
               </div>
             </span></div><h2 class="indexable" data-level="2" id="fmt-mandatory">2.2.2 Security Management (FMT)</h2><div class="comp" id="FMT-MOF-EXT-1"><h4>FMT_MOF_EXT.1 Management of Functions Behavior</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_MOF_EXT.1</div>
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				<div class="element-activity-header">FMT_MOF_EXT.1.1</div>
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                  <div class="element-activity-header">FMT_MOF_EXT.1.1</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify that the TSS describes
                                 those management functions that can only be configured by the
                                 browser platform administrator and cannot be overridden by the user
                                 when set according to policy.</div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance
                                 includes instructions for a browser platform administrator
-                                to configure the functions listed in FMT_MOF.1.1. </div>
+                                to configure the functions listed in FMT_MOF.1.1.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
@@ -705,202 +693,178 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="management_function_activities">
 	    The following EAs correspond to specific management functions.
 	    <div class="management_function_ea"><b>Function <span href="#mf-1">1</span></b><br/>
-					
-					<div class="eacategory">TSS</div>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-2">2</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-2">2</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-3">3</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-3">3</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-4">4</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-4">4</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-5">5</span></b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-5">5</span></b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-6">6</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-6">6</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-7">7</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-7">7</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-8">8</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-8">8</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-9">9</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-9">9</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-10">10</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-10">10</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-11">11</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-11">11</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-12">12</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-12">12</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-13">13</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-13">13</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-14">14</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-14">14</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-15">15</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-15">15</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-16">16</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-16">16</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-17">17</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-17">17</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-18">18</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-18">18</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-19">19</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-19">19</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-20">20</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-20">20</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-21">21</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-21">21</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-22">22</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-22">22</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <span href="#mf-23">23</span> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory">TSS</div>
+                  <br/></div><div class="management_function_ea"><b>Function <span href="#mf-23">23</span> [CONDITIONAL] </b><br/>
+                    <div class="eacategory">TSS</div>
 			There are no additional TSS evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
+                    <div class="eacategory">Guidance</div>
 			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
+                    <div class="eacategory">Tests</div>
 			There are no test activities for this management function.<br/><br/>
-				<br/></div></div></span></div><h2 class="indexable" data-level="2" id="fpt-mandatory">2.2.3 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-ADD-EXT-1"><h4>FPT_ADD_EXT.1 Add-ons</h4><span class="activity_pane_body"><div class="element-activity-header">FPT_ADD_EXT.1.1</div>
+                  <br/></div></div></span></div><h2 class="indexable" data-level="2" id="fpt-mandatory">2.2.3 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-ADD-EXT-1"><h4>FPT_ADD_EXT.1 Add-ons</h4><span class="activity_pane_body"><div class="element-activity-header">FPT_ADD_EXT.1.1</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that the TSS
                                 lists the types of signed add-ons that the browser supports. The
                                 TSS shall describe how the browser handles
                                 unsigned add-ons, add-ons from an untrusted source, and
                                 add-ons from an unverified source.</div>
-              <div class="eacategory">Guidance</div><div class="ea">
-                                If "provide the user with the option to discard" is selected, the evaluator shall examine 
+              <div class="eacategory">Guidance</div><div class="ea">If "provide the user with the option to discard" is selected, the evaluator shall examine 
 								the operational guidance to verify 
                                 it provides configuration instructions for each of the supported add-on types. The
 								operational guidance shall also describes 
                                 the alert that the browser displays to the user when unsigned, untrusted, or unverified 
-								add-ons are encountered and the actions the user can take. </div>
+								add-ons are encountered and the actions the user can take.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following test for each mobile code type specified in the TSS:
                 <span class="testlist-"><ul>
@@ -930,7 +894,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance
                                 describes the dialog box that appears when a download is
                                 initiated and the implications of the options presented by the
-                                dialog box. </div>
+                                dialog box.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following test:
                 <span class="testlist-"><ul>
@@ -972,8 +936,8 @@ The following sections list Common Criteria and technology terms used in this do
             </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="fcs-objective">2.5.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-STS-EXT-1"><h4>FCS_STS_EXT.1 Strict Transport Security</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_STS_EXT.1.1</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that the TSS
                                             documents how the browser supports HSTS.</div>
-              <div class="eacategory">Guidance</div><div class="ea"> The evaluator shall ensure that the operational guidance 
-                                            contains instructions on how to use HSTS. </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the operational guidance 
+                                            contains instructions on how to use HSTS.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
@@ -1013,7 +977,7 @@ The following sections list Common Criteria and technology terms used in this do
                                         services, including which services the browser supports by default
                                         (if any) and whether additional services can be configured. The
                                         operational guidance shall include steps for how to configure the
-                                        URL reputation service. </div>
+                                        URL reputation service.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
@@ -1044,6 +1008,8 @@ guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appen
               April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
                 3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
               April 2017.</li></ul></td></tr>
-    <tr><td><span id="bibAppPP"></span>[App PP]</td><td><a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a></td></tr>
+    <tr><td><span id="bibAppPP"></span>[App PP]</td><td>
+        <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a>
+      </td></tr>
 
   </table></body></html>
