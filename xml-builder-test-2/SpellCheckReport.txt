@@ -16,7 +16,6 @@ output/webbrowser-release-linkable.html: sandboxing
 output/webbrowser-release-linkable.html: sessionStorage
 output/webbrowser-release-linkable.html: test1
 output/webbrowser-release-linkable.html: test2
-output/webbrowser-release-linkable.html: unexpectd
 output/webbrowser-release-linkable.html: unmanaged
 output/webbrowser-release-linkable.html: webpages
 output/webbrowser-release.html: CEM
@@ -49,7 +48,6 @@ output/webbrowser-sd.html: pass’
 output/webbrowser-sd.html: sessionStorage
 output/webbrowser-sd.html: test1
 output/webbrowser-sd.html: test2
-output/webbrowser-sd.html: unexpectd
 output/webbrowser-sd.html: unmanaged
 output/webbrowser-sd.html: webpages
 output/webbrowser.html: CEM
@@ -70,6 +68,5 @@ output/webbrowser.html: sandboxing
 output/webbrowser.html: sessionStorage
 output/webbrowser.html: test1
 output/webbrowser.html: test2
-output/webbrowser.html: unexpectd
 output/webbrowser.html: unmanaged
 output/webbrowser.html: webpages

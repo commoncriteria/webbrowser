@@ -25,8 +25,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Problem_Definition[1]"The secur"/sec:Threats[1]"The follo"/threats[1]""/threat[5]""/description[1]"Violating"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]"This PP-M"/section[1]""/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-toe[1]"If this P"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Objectives[1]"This PP-M"/section[1]"No enviro"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/title[1]"The TSF s"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[1]""/f-element[1]""/note[1]"The separ"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[1]""/f-component[3]""/f-element[1]""/note[1]"Web brows"/h:p[1]""
@@ -38,7 +37,8 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[3]""/f-component[1]""/f-element[2]""/note[1]"The ST au"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[3]""/f-component[2]""/f-element[1]""/note[1]"If"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[3]""/f-component[3]""/f-element[2]""/note[1]"This requ"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[1]""/f-component[1]""/dependencies[1]""/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[1]""/f-component[1]""/dependencies[1]"Cryptogra"/h:p[1]""
+ Failed to find a reference to bibAppPP.
 * Warning: Since FDP_SBX_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FPT_AON_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
