@@ -1,1 +1,1 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:243:15: error: element "man-sfrs" not allowed yet; missing required element "base-pp"
+/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:244:19: error: element "base-pp" incomplete; missing required element "url"
