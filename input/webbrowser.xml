@@ -240,7 +240,7 @@
   <!-- 5.0 Security Requirements -->
   <sec:Security_Requirements title="Security Requirements">
     <!-- 5.1 TOE Security Functional Requirements -->
-        <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
+     <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
             <git>
                 <url>https://github.com/commoncriteria/application</url>
                 <branch>release-2.0</branch>
@@ -445,7 +445,6 @@
                 This PP-Module does not define any objectives for the TOE's operational environment. 
             </con-op-en>
         </base-pp> 
-
     <man-sfrs>
       <!-- 5.1.1 User Data Protection (FDP) -->
       <section title="User Data Protection (FDP)" id="fdp-mandatory">
