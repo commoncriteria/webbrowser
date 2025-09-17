@@ -241,211 +241,6 @@
   <!-- 5.0 Security Requirements -->
   <sec:Security_Requirements title="Security Requirements">
     <!-- 5.1 TOE Security Functional Requirements -->
-      <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
-            <git>
-                <url>https://github.com/commoncriteria/application</url>
-                <branch>release-2.0</branch>
-                
-            </git>
-            <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
-            
-            <modified-sfrs>
-                
-                <sec:mod_fcs title="Cryptographic Support (FCS)">
-                    <f-component cc-id="fcs_ckm_ext.1" name="Cryptographic Key Generation Services">
-                      <consistency-rationale>
-			This SFR is changed from its definition in the App PP to remove one of the available selection options because
-			it will never apply in the case where the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-                        <f-element id="fel-asym-key-gen">
-                            <title>The application shall <selectables linebreak="yes">
-                                <selectable><h:s>generate no asymmetric cryptographic keys</h:s></selectable>
-                                <selectable id="sel_invoke_genkey">invoke platform-provided functionality for asymmetric key generation</selectable>
-                                <selectable id="sel_impl_genkey">implement asymmetric key generation</selectable>
-                            </selectables>.
-                            </title>
-                            <note role="application">This SFR is modified from its Base-PP definition to remove the 
-							selection for the TOE not requiring asymmetric key generation.
-                            </note>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is
-									claimed, aside from the fact that the materials for the selections that have been
-									refined out of this SFR are not applicable.
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
-                    </f-component>
-                    
-                    <f-component cc-id="fcs_https_ext.1" iteration="Client" name="HTTPS Protocol">
-                      <consistency-rationale>
-			This SFR is unchanged from its definition in the App PP;
-			the SFR is recategorized from selection-based to mandatory
-			when the TOE conforms to this PP-Module.
-		      </consistency-rationale>
-		      <description>
-                This SFR is recategorized from selection-based to mandatory
-			when the TOE conforms to this PP-Module, and the modification that this PP-Module makes to FTP_DIT_EXT.1.
-		      </description>
-                    </f-component>
-                    
-                    <f-component cc-id="fcs_rbg_ext.1" name="Random Bit Generation Services">
-                        <consistency-rationale>This SFR is changed from its definition in the App PP to remove one of the available selection options because it will never apply in the case where the TOE conforms to this PP-Module.</consistency-rationale>
-                        <f-element id="fel-rbg">
-                            <title> The application shall
-                                <selectables linebreak="yes">
-                                    <selectable><h:s>use no DRBG functionality</h:s></selectable>
-                                    <selectable>invoke platform-provided DRBG functionality</selectable>
-                                    <selectable id="drbg">implement DRBG functionality</selectable>
-                                </selectables> for its cryptographic operations. </title>
-                            <note role="application">This SFR is modified from its Base-PP definition to remove the
-							selection for the TOE using no DRBG functionality.
-                            </note>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed,
-									aside from the fact that the materials for the selections that have been 
-									refined out of this SFR are not applicable.
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
-                    </f-component>
-                    
-                </sec:mod_fcs> 
-                
-
-              
-                
-                <sec:mod_ftp title="Trusted Path/Channels (FTP)">
-                    <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
-                        <consistency-rationale>This SFR is changed from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
-                        <f-element id="fel-transmit">
-                            <title>The application shall 
-                                <selectables linebreak="yes">
-                                    <selectable><h:s>not transmit any 
-                                        <selectables onlyone="yes">
-                                            <selectable>data</selectable>
-                                            <selectable>sensitive data</selectable></selectables>
-                                        </h:s></selectable>
-                                    <selectable>encrypt all transmitted 
-                                       [<h:b>sensitive data</h:b>]
-                                            with
-                                        <selectables>
-                                            <selectable >HTTPS as a client in accordance with FCS_HTTPS_EXT.1<h:b> for web browsing</h:b></selectable>
-                                            <selectable ><h:s>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:s></selectable>
-                                    <!--		<selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable> -->
-                                            <selectable ><h:s>TLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
-                                                <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></h:s></selectable>
-                                            <selectable id="sel_all_tlsc">TLS as a client as defined in <xref to="pkg-tls"/></selectable>
-                                            <selectable><h:s>DTLS as a server as defined in <xref to="pkg-tls"/> and also supports functionality for
-                                                <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></h:s></selectable>
-                                            <selectable id="sel_all_dtlsc">DTLS as a client as defined in <xref to="pkg-tls"/> </selectable>
-                                            <selectable><h:s>SSH as defined in the <xref to="pkg-ssh"/></h:s></selectable>
-                                            <selectable><h:s>IPsec as defined in the 
-                                                VPN Client PP-Module, version 2.6</h:s></selectable></selectables>
-                                        for [<h:b>web browsing</h:b>]
-                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</h:a>
-                                    </selectable>
-                                    <selectable>invoke platform-provided functionality to encrypt all transmitted 
-										sensitive data with
-                                        <selectables>
-                                            <selectable>HTTPS</selectable>
-                                            <selectable>TLS</selectable>
-                                            <selectable>DTLS</selectable>
-                                            <selectable><h:s>SSH</h:s></selectable>
-                                            <selectable><h:s>IPsec</h:s></selectable>
-                                        </selectables> for [<h:b>web browsing</h:b>] 
-                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</h:a>
-                                    </selectable>	    	      
-                                    <selectable><h:s>invoke platform-provided functionality to encrypt all transmitted 
-										data with
-                                        <selectables>
-                                            <selectable>HTTPS</selectable>
-                                            <selectable>TLS</selectable>
-                                            <selectable>DTLS</selectable>
-                                            <selectable>SSH</selectable> 
-                                            <selectable>IPsec</selectable>
-                                        </selectables> for <assignable>function(s)</assignable>
-                                        using certificates as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</h:a>
-                                        </h:s></selectable>
-                                </selectables> between itself and another trusted IT product.
-                            </title>
-                            <note role="application">This SFR is modified from its definition in the App PP to require 
-								that the TOE or its platform supports HTTPS, TLS, and DTLS, and that its use of these
-								protocols is only limited to sensitive data. 
-                                A conformant TOE must support the use of HTTPS, TLS, and DTLS for secure web browsing 
-								but is permitted to interact with non-sensitive content over an untrusted channel.<h:p/>
-                                Either the TOE or its platform is permitted to implement TLS and DTLS. If the TOE 
-								implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1,
-								FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the TLS package must be claimed at minimum
-                                because a web browser is required to support mutually-authenticated TLS and DTLS.
-								Dependent claims from the Functional Package for X.509 must be made to support the
-								X.509 validation functionality that is required for these protocols.</note>
-                            <aactivity>
-                                <no-tests>
-                                    There is no change to the Base-PP EAs for this SFR when this PP-Module is 
-									claimed, aside from the fact that the materials for the selections that have
-									been refined out of this SFR are not applicable.
-                                </no-tests>
-                            </aactivity>
-                        </f-element>
-                    </f-component>
-                    
-                </sec:mod_ftp> 
-                
-            </modified-sfrs>
-            
-            <additional-sfrs/>
-            
-            <con-toe>
-                If this PP-Module is used to extend the App PP, the TOE type for the overall TOE is still a software 
-				application.
-                The TOE boundary is simply extended to include the web browser functionality that is built into the
-				application so that additional security functionality is claimed within the scope of the TOE.
-                <h:p/>
-                The only asset for the TOE is the software executable and sensitive data that comprises the TOE. The 
-				entire TOE as defined by the combination of the
-                Base-PP and this PP-Module is a single asset. The only differences to the threat model are that the
-				PP-Module introduces the concept of add-ons, which
-                introduces the threat of an add-on being flawed in some way, and that the PP-Module introduces the 
-				concept of a same-origin violation, which
-                occurs through a use case specific to web browser applications.
-            </con-toe>
-            
-            <con-sec-prob>
-                Listed below are the threats, objectives, and OSPs defined in this PP-Module with rationale for their 
-				consistency with the App PP.
-                The PP-Module shares the
-                executable application asset with the App PP but defines additional threats because the PP-Module
-				defines a specific type of software application
-                with potential exploits that are common to the application type.
-                <h:br/><h:br/>
-                    Note that the PP-Module is implicitly consistent with any claimed functional packages because
-					the applicable functional packages do not have
-                    security problem definitions of their own; per section 2, any claimed functional package is
-					intended to support the O.PROTECTED_COMMS objective in the
-                    App PP, which helps mitigate the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in that PP. 
-                
-            </con-sec-prob>
-            <con-obj>
-                Listed below are the security objectives defined in this PP-Module with rationale for their 
-				consistency with the App PP. The PP-Module shares the
-                executable application asset with the App PP but defines additional security objectives because
-				the PP-Module defines a specific type of software application
-                with security functionality that is common to the application type.
-                <h:br/><h:br/>
-                Note that the PP-Module is implicitly consistent with any claimed functional packages because the 
-				applicable functional packages do not have
-                TOE objectives of their own; per section 2, any claimed functional package is intended to support
-				the O.PROTECTED_COMMS objective in the App PP.
-            </con-obj>
-            <con-op-en>
-                This PP-Module does not define any objectives for the TOE's operational environment. 
-            </con-op-en>
-        </base-pp> 
     <man-sfrs>
       <!-- 5.1.1 User Data Protection (FDP) -->
       <section title="User Data Protection (FDP)" id="fdp-mandatory">
@@ -710,305 +505,144 @@
           <f-element id="fmt_mof_ext-1-1">
             <title>The TSF shall be capable of performing the following management
                             functions, controlled by the administrator or user as shown: <h:ul><h:li>M = Mandatory</h:li> <h:li>O = Optional</h:li></h:ul>Status Markers:<h:br/> O - Indicates that this function is optional for this role<h:br/>M - Indicates that this function is mandatory for this role.<h:br/><h:br/><management-function-set default="O"><manager cid="A">Administrator</manager><manager cid="U">User</manager>
-				<management-function id="mf-1">
-					<text>Enable and disable storage of third-party cookies</text>
-					<O ref="A"/><M ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-2">
-					<text>Enable and disable use of OCSP for obtaining the revocation status of X.509 certificates</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-3">
-					<text>Configure inclusion of user-agent information in HTTP headers</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-4">
-					<text>Enable and disable ability for websites to collect tracking information about the user through <selectables><selectable id="fmt_mof_ext.1.1_1" >zombie cookies</selectable><selectable id="fmt_mof_ext.1.1_2" >add-on based tracking (e.g., Flash cookies)</selectable><selectable id="fmt_mof_ext.1.1_3" >browsing history</selectable><selectable id="fmt_mof_ext.1.1_5" ><assignable>other tracking mechanisms</assignable></selectable></selectables> </text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-5">
-					<text>Enable and disable deletion of stored browsing data (cache, web form information)</text>
-					<O ref="A"/><M ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-6">
-					<text>Enable and disable storage of sensitive information (e.g., auto-fill, auto-complete) in persistent storage</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-7">
-					<text>Configure cookie cache size</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-8">
-					<text>Configure cache size</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-9">
-					<text>Enable and disable interaction with Graphic Processing Units (GPUs)</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-10">
-					<text>Configure the ability to advance to a website with an invalid or unvalidated X.509 certificate</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-11">
-					<text>Enable and disable establishment of a trusted channel if the browser cannot establish a connection to determine the validity of a certificate</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-12">
-					<text>Configure the use of an application reputation service to detect malicious applications prior to download</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-13">
-					<text>Configure the use of a URL reputation service to detect sites that contain malware or phishing content</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-14">
-					<text>Enable and disable automatic installation of software updates and patches</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-15">
-					<text>Enable and disable ability for websites to register protocol handlers</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-16">
-					<text>Enable and disable display notification when unsigned, untrusted, or unverified add-on is encountered</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-17">
-					<text>Enable and disable user's ability to select default actions upon download of a file (e.g., always open or always save a downloaded file)</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-18">
-					<text>Enable and disable launching of downloaded files outside the browser</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-19">
-					<text>Enable and disable JavaScript</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-20">
-					<text>Enable and disable <assignable>add-on types supported by the browser</assignable> web-based code executed in add-ons</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-21">
-					<text>Enable and disable support for add-ons</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-22">
-					<text>Enable and disable individual add-ons</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			
-				<management-function id="mf-23">
-					<text>Enable and disable HSTS mode</text>
-					<O ref="A"/><O ref="U"/>
-					
-				<aactivity>
-					
-					<TSS></TSS>
-					<Guidance></Guidance>
-					<Tests></Tests>
-				</aactivity>
-			
-				</management-function>
-			</management-function-set>].</title>
+          <management-function id="mf-1">
+          <text>Enable and disable storage of third-party cookies</text>
+          <O ref="A"/><M ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-2">
+          <text>Enable and disable use of OCSP for obtaining the revocation status of X.509 certificates</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-3">
+          <text>Configure inclusion of user-agent information in HTTP headers</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-4">
+          <text>Enable and disable ability for websites to collect tracking information about the user through <selectables><selectable id="fmt_mof_ext.1.1_1" >zombie cookies</selectable><selectable id="fmt_mof_ext.1.1_2" >add-on based tracking (e.g., Flash cookies)</selectable><selectable id="fmt_mof_ext.1.1_3" >browsing history</selectable><selectable id="fmt_mof_ext.1.1_5" ><assignable>other tracking mechanisms</assignable></selectable></selectables> </text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-5">
+          <text>Enable and disable deletion of stored browsing data (cache, web form information)</text>
+          <O ref="A"/><M ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-6">
+          <text>Enable and disable storage of sensitive information (e.g., auto-fill, auto-complete) in persistent storage</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-7">
+          <text>Configure cookie cache size</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-8">
+          <text>Configure cache size</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-9">
+          <text>Enable and disable interaction with Graphic Processing Units (GPUs)</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-10">
+          <text>Configure the ability to advance to a website with an invalid or unvalidated X.509 certificate</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-11">
+          <text>Enable and disable establishment of a trusted channel if the browser cannot establish a connection to determine the validity of a certificate</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-12">
+          <text>Configure the use of an application reputation service to detect malicious applications prior to download</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-13">
+          <text>Configure the use of a URL reputation service to detect sites that contain malware or phishing content</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-14">
+          <text>Enable and disable automatic installation of software updates and patches</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-15">
+          <text>Enable and disable ability for websites to register protocol handlers</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-16">
+          <text>Enable and disable display notification when unsigned, untrusted, or unverified add-on is encountered</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-17">
+          <text>Enable and disable user's ability to select default actions upon download of a file (e.g., always open or always save a downloaded file)</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-18">
+          <text>Enable and disable launching of downloaded files outside the browser</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-19">
+          <text>Enable and disable JavaScript</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-20">
+          <text>Enable and disable <assignable>add-on types supported by the browser</assignable> web-based code executed in add-ons</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-21">
+          <text>Enable and disable support for add-ons</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-22">
+          <text>Enable and disable individual add-ons</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        
+          <management-function id="mf-23">
+          <text>Enable and disable HSTS mode</text>
+          <O ref="A"/><O ref="U"/>
+          
+          </management-function>
+        </management-function-set>].</title>
             <ext-comp-def-title><title>
                                 The TSF shall be capable of performing the following management functions, controlled by the administrator or user as shown: <assignable>list of management functions to be performed by role</assignable>.
                             </title></ext-comp-def-title>
