@@ -631,19 +631,7 @@ function showTarget(id){
           }
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Web Browsers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 1.0<br/>2025-06-16<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
-    Protection Profile for Application Software
-       Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#mod_fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#mod_ftp" style="text-indent:30px">5.1.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#fdp-mandatory" style="text-indent:20px">5.2.1<span>User Data Protection (FDP)</span></a><a href="#fmt-mandatory" style="text-indent:20px">5.2.2<span>Security Management (FMT)</span></a><a href="#fpt-mandatory" style="text-indent:20px">5.2.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
-    Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
-	Consistency of TOE Type
-      </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
-	Consistency of Security Problem Definition
-      </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.1.3<span>
-			Consistency of OE Objectives
-		</span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.1.4<span>
-	Consistency of Requirements
-      </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#man-sfrs" style="text-indent:10px">5.1<span>TOE Security Functional Requirements</span></a><a href="#fdp-mandatory" style="text-indent:20px">5.1.1<span>User Data Protection (FDP)</span></a><a href="#fmt-mandatory" style="text-indent:20px">5.1.2<span>Security Management (FMT)</span></a><a href="#fpt-mandatory" style="text-indent:20px">5.1.3<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.2<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
     </span></a><a href="#fdp-optional" style="text-indent:20px">A.1.1<span>User Data Protection (FDP)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
     </span></a><a href="#fcs-objective" style="text-indent:20px">A.2.1<span>Cryptographic Support (FCS)</span></a><a href="#fpt-objective" style="text-indent:20px">A.2.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
     </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
@@ -844,15 +832,15 @@ The following sections list Common Criteria and technology terms used in this do
     
     <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>The following threats are specific to web
             browsers, and represent an addition to those identified in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<dl><dt class="threat defined" id="T.FLAWED_ADDON">T.FLAWED_ADDON</dt><dd><span class="description"> Web browser functionality can be extended through the integration                        of third-party utilities and tools. Malicious or vulnerable add-ons could                        result in attacks against the system. Such attacks can allow unauthorized                        access to sensitive information in the browser, unauthorized access to the                        platform's file system, or privilege escalation that enables                        unauthorized access to other applications or the operating                        system.</span></dd><dt class="threat defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</dt><dd><span class="description"> Violating the same-origin policy is a specialized type of network                        attack (covered generally as <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), which involves                        web content violating access control policies enforced by a web browser to                        separate the content of different web domains. It is specifically identified                        as a threat to web browsers, since they implement the access control                        policies that are violated in these attacks. <p></p>                         Attacks which involve                        same origin violations include: <ul><li>Insufficient protection of session tokens can lead to session                                hijacking, where a token is captured and reused to gain the                                privileges of the user who initiated the session.</li> <li><abbr class="dyn-abbr"><a href="#abbr_XSS">XSS</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_CSRF">CSRF</a></abbr>                                attacks are methods used to compromise user credentials (usually by                                stealing the user's session token) to a website. These attacks are                                more likely a result of server security problems, but some browsers                                incorporate technologies that try to detect the attacks.</li> <li>Inadequate sandboxing of browser windows and tabs or a faulty cross                                domain communications model can lead to leakage of content from one                                domain in one window or tab to a different domain in a different                                window or tab. Such attacks leverage the ability of browsers to display                                content from multiple domains simultaneously.</li></ul>                        A malicious actor could implement a malicious website or send a maliciously-crafted URL that an unsuspecting user could open in a vulnerable web browser,                        which could then be used to harvest sensitive data from a legitimate user or otherwise facilitate impersonation of that user.                     </span></dd></dl>
@@ -900,135 +888,12 @@ The following sections list Common Criteria and technology terms used in this do
             suggesting the purpose of the operation, e.g. "/EXAMPLE1."
        </li>
      </ul>
-   <h2 id="secreq-bpp-app" class="indexable" data-level="2">5.1 
-    Protection Profile for Application Software
-       Security Functional Requirements Direction
-    </h2>
-      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
-      the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-Application
-      as a whole and evaluated against the  App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-      The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
-      defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.2 TOE Security Functional Requirements</a>.
-    <h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
-
-		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and 
-		relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-		
-                
-                <h4 id="mod_fcs" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4>
-                    <div class="comp" id="FCS_CKM_EXT.1"><h4>FCS_CKM_EXT.1 Cryptographic Key Generation Services</h4>
-                      
-                        <div class="element"><div class="reqid" id="FCS_CKM_EXT.1.1"><a href="#FCS_CKM_EXT.1.1" class="abbr">FCS_CKM_EXT.1.1</a></div><div class="reqdesc">The application shall [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_1"><s>generate no asymmetric cryptographic keys</s></span></li><li style=""><span class="selectable-content" id="sel_invoke_genkey">invoke platform-provided functionality for asymmetric key generation</span></li><li style=""><span class="selectable-content" id="sel_impl_genkey">implement asymmetric key generation</span></li></ul>].
-                            <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> definition to remove the 
-							selection for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> not requiring asymmetric key generation.
-                            </span></div></div></div>
-                    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a></div>
-                                
-                                    There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is
-									claimed, aside from the fact that the materials for the selections that have been
-									refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.
-                                <br/><br/>
-                            </div></div></div>
-                    
-                    <div class="comp" id="FCS_HTTPS_EXT.1/Client"><h4>FCS_HTTPS_EXT.1/Client HTTPS Protocol</h4>
-                      
-		      <span class="description">
-                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory
-			when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, and the modification that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> makes to <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a>.
-		      </span>
-                    </div>
-                    
-                    <div class="comp" id="FCS_RBG_EXT.1"><h4>FCS_RBG_EXT.1 Random Bit Generation Services</h4>
-                        
-                        <div class="element"><div class="reqid" id="FCS_RBG_EXT.1.1"><a href="#FCS_RBG_EXT.1.1" class="abbr">FCS_RBG_EXT.1.1</a></div><div class="reqdesc"> The application shall
-                                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_4"><s>use no DRBG functionality</s></span></li><li style=""><span class="selectable-content" id="_s_5">invoke platform-provided DRBG functionality</span></li><li style=""><span class="selectable-content" id="drbg">implement DRBG functionality</span></li></ul>] for its cryptographic operations. <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> definition to remove the
-							selection for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> using no DRBG functionality.
-                            </span></div></div></div>
-                    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a></div>
-                                
-                                    There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed,
-									aside from the fact that the materials for the selections that have been 
-									refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.
-                                <br/><br/>
-                            </div></div></div>
-                    
-                 
-                
-
-              
-                
-                <h4 id="mod_ftp" class="indexable" data-level="4">5.1.1.2 Trusted Path/Channels (FTP)</h4>
-                    <div class="comp" id="FTP_DIT_EXT.1"><h4>FTP_DIT_EXT.1 Protection of Data in Transit</h4>
-                        
-                        <div class="element"><div class="reqid" id="FTP_DIT_EXT.1.1"><a href="#FTP_DIT_EXT.1.1" class="abbr">FTP_DIT_EXT.1.1</a></div><div class="reqdesc">The application shall 
-                                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_7"><s>not transmit any 
-                                        [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_8">data</span>, <span class="selectable-content" id="_s_9">sensitive data</span>]
-                                        </s></span></li><li style=""><span class="selectable-content" id="_s_10">encrypt all transmitted 
-                                       [<b>sensitive data</b>]
-                                            with
-                                        [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_11"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as a client in accordance with FCS_HTTPS_EXT.1<b> for web browsing</b></span></li><li style=""><span class="selectable-content" id="_s_12"><s><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as a server in accordance with FCS_HTTPS_EXT.1</s></span></li><li style=""><span class="selectable-content" id="_s_13"><s><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as a server as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> and also supports functionality for
-                                                [<b>selection</b>: <span class="selectable-content" id="_s_14">mutual authentication</span>, <span class="selectable-content" id="_s_15">none</span>]</s></span></li><li style=""><span class="selectable-content" id="sel_all_tlsc"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as a client as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a></span></li><li style=""><span class="selectable-content" id="_s_17"><s>DTLS as a server as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> and also supports functionality for
-                                                [<b>selection</b>: <span class="selectable-content" id="_s_18">mutual authentication</span>, <span class="selectable-content" id="_s_19">none</span>]</s></span></li><li style=""><span class="selectable-content" id="sel_all_dtlsc">DTLS as a client as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> </span></li><li style=""><span class="selectable-content" id="_s_21"><s>SSH as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
-        2.0</a></s></span></li><li style=""><span class="selectable-content" id="_s_22"><s>IPsec as defined in the 
-                                                VPN Client <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, version 2.6</s></span></li></ul>]
-                                        for [<b>web browsing</b>]
-                                        using certificates as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</a>
-                                    </span></li><li style=""><span class="selectable-content" id="_s_23">invoke platform-provided functionality to encrypt all transmitted 
-										sensitive data with
-                                        [<b>selection</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>, <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="_s_26">DTLS</span>, <span class="selectable-content" id="_s_27"><s>SSH</s></span>, <span class="selectable-content" id="_s_28"><s>IPsec</s></span>] for [<b>web browsing</b>] 
-                                        using certificates as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</a>
-                                    </span></li><li style=""><span class="selectable-content" id="_s_29"><s>invoke platform-provided functionality to encrypt all transmitted 
-										data with
-                                        [<b>selection</b>: <span class="selectable-content" id="_s_30"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>, <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="_s_32">DTLS</span>, <span class="selectable-content" id="_s_33">SSH</span>, <span class="selectable-content" id="_s_34">IPsec</span>] for [<b>assignment</b>: 
-     <span class="assignable-content">function(s)</span>]
-                                        using certificates as defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">
-                                            Functional Package for X.509</a>
-                                        </s></span></li></ul>] between itself and another trusted IT product.
-                            <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to require 
-								that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform supports <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS, and that its use of these
-								protocols is only limited to sensitive data. 
-                                A conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS for secure web browsing 
-								but is permitted to interact with non-sensitive content over an untrusted channel.<p></p>
-                                Either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform is permitted to implement <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> 
-								implements these protocols, FCS_DTLSC_EXT.1, FCS_DTLSC_EXT.2, FCS_TLS_EXT.1,
-								FCS_TLSC_EXT.1, and FCS_TLSC_EXT.2 from the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> package must be claimed at minimum
-                                because a web browser is required to support mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and DTLS.
-								Dependent claims from the Functional Package for X.509 must be made to support the
-								X.509 validation functionality that is required for these protocols.</span></div></div></div>
-                    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></div>
-                                
-                                    There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
-									claimed, aside from the fact that the materials for the selections that have
-									been refined out of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> are not applicable.
-                                <br/><br/>
-                            </div></div></div>
-                    
-                 
-                
-            <h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
+   <h2 id="man-sfrs" class="indexable" data-level="2">5.1 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
         
       
-      <h3 id="fdp-mandatory" class="indexable" data-level="3">5.2.1 User Data Protection (FDP)</h3>
+      <h3 id="fdp-mandatory" class="indexable" data-level="3">5.1.1 User Data Protection (FDP)</h3>
         
         
         
@@ -1248,7 +1113,7 @@ Application
             </div></div></div>
       
       
-      <h3 id="fmt-mandatory" class="indexable" data-level="3">5.2.2 Security Management (FMT)</h3>
+      <h3 id="fmt-mandatory" class="indexable" data-level="3">5.1.2 Security Management (FMT)</h3>
         
         
         <div class="comp" id="FMT_MOF_EXT.1"><h4>FMT_MOF_EXT.1 Management of Functions Behavior</h4>
@@ -1293,122 +1158,7 @@ Application
                             the browser and its platform in coordination with each other.<p></p>
                             Disabling <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> is only permitted if "<abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr>" was selected in
                             FIA_X509_EXT.1.1 (in X.509 Functional Package).</span></div></div></div>
-        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></div>
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				
-					
-					
-					
-					
-				<div class="element-activity-header"><a href="#FMT_MOF_EXT.1.1">FMT_MOF_EXT.1.1</a></div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FMT_MOF_EXT.1.1">FMT_MOF_EXT.1.1</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
                                 those management functions that can only be configured by the
                                 browser platform administrator and cannot be overridden by the user
@@ -1425,196 +1175,10 @@ Application
       The evaluator shall create policies that collectively include all management functions controlled by the browser platform administrator and cannot be overridden by the user as defined in FMT_MOF.1.1. The evaluator shall apply these policies to the browser, attempt to override each setting as the user, and verify that the browser does not permit it.</li>
                 </ul></span>
               </div>
-            <div class="management_function_activities">
-	    The following EAs correspond to specific management functions.
-	    <div class="management_function_ea"><b>Function <a href="#mf-1">1</a></b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-2">2</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-3">3</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-4">4</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-5">5</a></b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-6">6</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-7">7</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-8">8</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-9">9</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-10">10</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-11">11</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-12">12</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-13">13</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-14">14</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-15">15</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-16">16</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-17">17</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-18">18</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-19">19</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-20">20</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-21">21</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-22">22</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div><div class="management_function_ea"><b>Function <a href="#mf-23">23</a> [CONDITIONAL] </b><br/>
-					
-					<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div>
-			There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Guidance</div>
-			There are no additional Guidance evaluation activities for this management function.<br/><br/>
-					<div class="eacategory">Tests</div>
-			There are no test activities for this management function.<br/><br/>
-				<br/></div></div></div></div></div>
+            </div></div></div>
       
       
-      <h3 id="fpt-mandatory" class="indexable" data-level="3">5.2.3 Protection of the TSF (FPT)</h3>
+      <h3 id="fpt-mandatory" class="indexable" data-level="3">5.1.3 Protection of the TSF (FPT)</h3>
         
         
         
@@ -1722,11 +1286,11 @@ Application
               </div>
             </div></div></div>
       
-    <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+    <h2 id="obj-req-map" class="indexable" data-level="2">5.2 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">1</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#T.FLAWED_ADDON">T.FLAWED_​ADDON</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a> mitigates the threat by specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has the ability to load add-ons.</td></tr>
 <tr><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> (selection-based)</td><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> mitigates the threat by defining a cryptographic method for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate the integrity of add-ons if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports their use.</td></tr>
 <tr class="major-row"><td rowspan="8"><a href="#T.NETWORK_ATTACK">T.NETWORK_​ATTACK</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from )
 	</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td></tr>
 <tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a> mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> for certain types of data transfer.</td></tr>
 <tr><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a></td><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a> mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</td></tr>
@@ -1736,107 +1300,21 @@ Application
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a reputation service to prevent the acquisition of potentially malicious applications.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="5"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_​EAVESDROP</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from )
 	</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td></tr>
 <tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a> mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> for certain types of data transfer.</td></tr>
 <tr><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a></td><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a> mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</td></tr>
 <tr><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></td><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a> mitigates the threat by defining the management functionality that is specific to web browser applications.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="3"><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_​ACCESS</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from )
 	</td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a> mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</td></tr>
 <tr><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> (optional)</td><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> mitigates the threat by optionally defining the minimum set of persistent data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is required to store.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</td></tr>
 <tr class="major-row"><td rowspan="3"><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_​ORIGIN_​VIOLATION</a></td><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a></td><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a> mitigates the threat by isolating local and session storage to its origin point.</td></tr>
 <tr><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a></td><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a> mitigates the threat by ensuring that rendering of content is isolated to its origin point.</td></tr>
 <tr><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a></td><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a> mitigates the threat by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-app" class="indexable" data-level="2">6.1 
-    Protection Profile for Application Software</h2><h3 id="contoe-bpp-app" class="indexable" data-level="3">6.1.1 
-	Consistency of TOE Type
-      </h3>
-                If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a software 
-				application.
-                The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the web browser functionality that is built into the
-				application so that additional security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-                <p></p>
-                The only asset for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is the software executable and sensitive data that comprises the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The 
-				entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as defined by the combination of the
-                <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is a single asset. The only differences to the threat model are that the
-				<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> introduces the concept of add-ons, which
-                introduces the threat of an add-on being flawed in some way, and that the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> introduces the 
-				concept of a same-origin violation, which
-                occurs through a use case specific to web browser applications.
-            <h3 id="consecprob-bpp-app" class="indexable" data-level="3">6.1.2 
-	Consistency of Security Problem Definition
-      </h3>
-                Listed below are the threats, objectives, and OSPs defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> with rationale for their 
-				consistency with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-                The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shares the
-                executable application asset with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but defines additional threats because the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
-				defines a specific type of software application
-                with potential exploits that are common to the application type.
-                <br/><br/>
-                    Note that the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is implicitly consistent with any claimed functional packages because
-					the applicable functional packages do not have
-                    security problem definitions of their own; per section 2, any claimed functional package is
-					intended to support the O.PROTECTED_COMMS objective in the
-                    App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which helps mitigate the <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> and <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> threats in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. 
-                
-            <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">2</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a></td><td>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-                        A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</td></tr><tr><td><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</a></td><td>This threat extends the security problem definition of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.1.3 
-			Consistency of OE Objectives
-		</h3><p>
-                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s operational environment. 
-            </p><h3 id="conreq-bpp-app" class="indexable" data-level="3">6.1.4 
-	Consistency of Requirements
-      </h3>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-      web browser functionality.
-      This is considered to be consistent because the functionality provided by the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
-      
-          The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also identifies a number of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-          App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-          that are used entirely to provide functionality for
-	  web browsers.
-        
-          The rationale for why this does not conflict with the claims
-      defined by the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
-      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">3</span></span>: Consistency of Requirements (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a></td><td>
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to remove one of the available selection options because
-			it will never apply in the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-		      </td></tr><tr><td><a href="#FCS_HTTPS_EXT.1/Client">FCS_HTTPS_EXT.1/Client</a></td><td>
-			This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is unchanged from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
-			the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is recategorized from selection-based to mandatory
-			when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-		      </td></tr><tr><td><a href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to remove one of the available selection options because it will never apply in the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to mandate the protection of sensitive data using only specified protocols.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
-	      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
-	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines domain separation of web content when a web browser is simultaneously accessing
-                        content from multiple sources. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling cookies, which are data specific
-					to web browser applications. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for rendering of webpages, which is by definition 
-						functionality that is associated with web browser applications. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> 
-						functionality.</td></tr><tr><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for script execution on webpages, which is by
-						definition functionality that is associated with web browser applications. It does not impact 
-						the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling cookies, which are data specific to 
-						web browser applications. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling tracking information that is 
-						specific to web browser applications. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines a specific set of management functions for a web browser.
-						It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FPT_ADD_EXT.1">FPT_ADD_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for add-ons that are rendered by a web browser.
-						It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines what types of add-ons a web browser may use. It does not
-						impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FPT_DNL_EXT.1">FPT_DNL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling file data that can be downloaded by 
-						a web browser. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the persistent information that must be stored for 
-						web browser functionality to work as intended. It does not impact functionality described by
-						the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for implementation of <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr>, which is a communications mechanism specific to web content. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior interaction with a reputation service for 
-							file data that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be used to download. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior interaction with a reputation service for
-							web content that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be used to interact with. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-							functionality.</td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements.
-	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines how web browsers verify add-ons. It does not 
-							impact functionality described by the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
     </h2>
       
       <h3 id="fdp-optional" class="indexable" data-level="3">A.1.1 User Data Protection (FDP)</h3>
@@ -2041,7 +1519,7 @@ Application
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">4</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_STS_EXT Strict Transport Security<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_ADD_EXT Add-ons<br/>FPT_AON_EXT Add-Ons<br/>FPT_DNL_EXT File Downloads<br/>FPT_INT_EXT Reputation Service Interaction<br/></td></tr><tr data-sortkey="Security Management (FMT)"><td>Security Management (FMT)</td><td>FMT_MOF_EXT Management of Functions Behavior<br/></td></tr><tr data-sortkey="User Data Protection (FDP)"><td>User Data Protection (FDP)</td><td>FDP_ACF_EXT Access Control Functions<br/>FDP_COO_EXT Cookie Blocking<br/>FDP_PST_EXT Storage of Persistent Information<br/>FDP_SBX_EXT Sandboxing<br/>FDP_SOP_EXT Same Origin Policy<br/>FDP_STR_EXT Secure Transmission of Cookie Data<br/>FDP_TRK_EXT Tracking Information Collection<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">2</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_STS_EXT Strict Transport Security<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_ADD_EXT Add-ons<br/>FPT_AON_EXT Add-Ons<br/>FPT_DNL_EXT File Downloads<br/>FPT_INT_EXT Reputation Service Interaction<br/></td></tr><tr data-sortkey="Security Management (FMT)"><td>Security Management (FMT)</td><td>FMT_MOF_EXT Management of Functions Behavior<br/></td></tr><tr data-sortkey="User Data Protection (FDP)"><td>User Data Protection (FDP)</td><td>FDP_ACF_EXT Access Control Functions<br/>FDP_COO_EXT Cookie Blocking<br/>FDP_PST_EXT Storage of Persistent Information<br/>FDP_SBX_EXT Sandboxing<br/>FDP_SOP_EXT Same Origin Policy<br/>FDP_STR_EXT Secure Transmission of Cookie Data<br/>FDP_TRK_EXT Tracking Information Collection<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_STS_EXT" class="indexable" data-level="4">C.2.1.1 FCS_STS_EXT Strict Transport Security</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> Strict-Transport-Security.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_STS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a>,
              Strict Transport Security,
@@ -2070,9 +1548,9 @@ Application
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to identify the add-on types it supports and to ensure that a mechanism 
 						exists to prevent the automatic execution of potentially malicious add-ons.</p><h4>Management: FPT_ADD_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul><li>Enable and disable display notification when unsigned, untrusted, or unverified add-ons are encountered.</li> <li>Enable and disable support for add-ons.</li></ul></p><h4>Audit: FPT_ADD_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FPT_ADD_EXT.1 Add-ons</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FPT_ADD_EXT.1.1">FPT_ADD_EXT.1.1</h4>
                                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute 
-                                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_49">
+                                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_15">
                                         signed [<b>assignment</b>: 
-     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_50">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_53">automatically discard</span>, <span class="selectable-content" id="_s_54">provide the user with the option to discard</span>] 
+     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_16">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_19">automatically discard</span>, <span class="selectable-content" id="_s_20">provide the user with the option to discard</span>] 
                                 unsigned, untrusted, or unverified [<b>assignment</b>: 
      <span class="assignable-content">supported add-ons (i.e., plug-ins and extensions)</span>]
                                  web-based code executed in add-ons without executing it.</div></div><h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.2.4 FPT_INT_EXT Reputation Service Interaction</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s interaction with reputation services that can provide an assessment of the trustworthiness of data presented to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FPT_INT_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a>,
@@ -2131,7 +1609,7 @@ Application
                                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the capability to operate without storing
                                     persistent data to the file system with the following exceptions: [<b>assignment</b>: 
      <span class="assignable-content">data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must store persistently</span>].
-                                </div></div></span></span><h1 id="acronyms" class="indexable" data-level="A">Appendix D -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">5</span></span>: Acronyms
+                                </div></div></span></span><h1 id="acronyms" class="indexable" data-level="A">Appendix D -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">3</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
 <tr><td><span class="term" id="abbr_CEM"><abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr></span></td><td><span id="long_abbr_CEM">Common Evaluation Methodology</span></td></tr>
@@ -2164,7 +1642,7 @@ Application
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_W3C"><abbr class="dyn-abbr"><a href="#abbr_W3C">W3C</a></abbr></span></td><td><span id="long_abbr_W3C">World Wide Web Consortium</span></td></tr>
 <tr><td><span class="term" id="abbr_XSS"><abbr class="dyn-abbr"><a href="#abbr_XSS">XSS</a></abbr></span></td><td><span id="long_abbr_XSS">Cross-Site Scripting</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix E -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">6</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix E -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">4</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
