@@ -445,7 +445,8 @@
                     
                     <base-sfr-spec cc-id="fcs_https_ext.1" title="HTTPS Protocol" id="modsfr-fcs-https-ext-1">
                         <consistency-rationale>
-                            This SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module. It is also modified to require a specific selection to be made based on the intended functionality of the TOE.
+                            This SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module. It is also modified to require the selection
+                            for client functionality to be made based on the intended behavior of the TOE.
                         </consistency-rationale>
                         <description>
                             <h:p>
@@ -468,7 +469,8 @@
                     
                     <base-sfr-spec cc-id="fcs_https_ext.2" title="HTTPS Support for Authentication" id="modsfr-fcs-https-ext-2">
                         <consistency-rationale>
-                            This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module.
+                            This SFR is unchanged from its definition in the App PP; the SFR is recategorized from selection-based to mandatory when the TOE conforms to this
+                            PP-Module.
                         </consistency-rationale>
                         <description>
                             This SFR is recategorized from selection-based to mandatory when the TOE conforms to this PP-Module because any conformant TOE must implement HTTPS as a client, which mandates support for handling of X.509 certificates in HTTPS.<h:br/><h:br/>
