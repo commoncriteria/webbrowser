@@ -417,7 +417,7 @@
             
             <modified-sfrs>
                 
-                <section title="Cryptographic Support (FCS)" id="mod_fcs">
+                <section title="Class FCS: Cryptographic Support" id="mod_fcs">
               
                     <base-sfr-spec cc-id="fcs_ckm_ext.1" title="Cryptographic Key Generation Services" id="modsfr-fcs-ckm-ext-1">
                         <consistency-rationale>
@@ -508,7 +508,7 @@
 
               
                 
-                <section id="mod_ftp" title="Trusted Path/Channels (FTP)">
+                <section id="mod_ftp" title="Class FTP: Trusted Path/Channels">
                     
                     <base-sfr-spec cc-id="ftp_dit_ext.1" title="Protection of Data in Transit" id="modsfr-fcs-rbg-ext-1">
                         <consistency-rationale>This SFR is modified from its definition in the App PP to mandate the protection of sensitive data using only specified protocols.</consistency-rationale>
@@ -631,7 +631,7 @@
         </base-pp> 
         <man-sfrs>
 
-            <sec:man_fdp title="User Data Protection (FDP)">
+            <sec:man_fdp title="Class FDP: User Data Protection">
                 <ext-comp-def fam-id="FDP_ACF_EXT" title="Access Control Functions">
                     <fam-behavior>Components in this family define requirements for data access control beyond those which are specified in the Part 2 family FDP_ACF.
                     </fam-behavior>
@@ -1027,7 +1027,7 @@
             </sec:man_fdp>
         
    
-            <sec:man_fmt title="Security Management (FMT)">
+            <sec:man_fmt title="Class FMT: Security Management">
                 <ext-comp-def fam-id="FMT_MOF_EXT" title="Management of Functions Behavior">
                     <fam-behavior>Components in this family define requirements for technology-specific management
 						functions that are not enumerated in the Part 2 family FMT_MOF.
@@ -1169,7 +1169,7 @@
                 </f-component>
             </sec:man_fmt>
 			
-            <sec:man_fpt title="Protection of the TSF (FPT)">
+            <sec:man_fpt title="Class FPT: Protection of the TSF">
                 <ext-comp-def fam-id="FPT_AON_EXT" title="Add-Ons">
                     <fam-behavior>Components in this family define requirements for the secure handling of add-ons 
 						that can be installed on top of the TOE.
@@ -1359,7 +1359,7 @@
         </man-sfrs>
                 
                 <opt-sfrs>
-                 <sec:opt_fdp title="User Data Protection (FDP)">
+                    <sec:opt_fdp title="Class FDP: User Data Protection">
                      <ext-comp-def fam-id="FDP_PST_EXT" title="Storage of Persistent Information">
                          <fam-behavior>Components in this family define requirements for the minimum amount of
 						 information that may be stored persistently by the TSF while retaining its functionality.
@@ -1421,7 +1421,7 @@
 
 
                     <sel-sfrs>
-                        <sec:sel_fpt title="Protection of the TSF (FPT)">
+                        <sec:sel_fpt title="Class FPT: Protection of the TSF">
                         <f-component cc-id="fpt_aon_ext.2" name="Trusted Installation and Update for Add-ons">
                             <depends on="addons_supported"></depends>
                             <consistency-rationale>This SFR defines how web browsers verify add-ons. It does not 
@@ -1490,7 +1490,7 @@
                     
                 <obj-sfrs>
                         
-                        <sec:obj_fcs title="Cryptographic Support (FCS)">
+                    <sec:obj_fcs title="Class FCS: Cryptographic Support">
                             <ext-comp-def fam-id="FCS_STS_EXT" title="Strict Transport Security">
                                 <fam-behavior>Components in this family define requirements for the implementation of HTTP Strict-Transport-Security.
                                 </fam-behavior>
@@ -1556,7 +1556,7 @@
                                 </f-element>
                             </f-component>
                         </sec:obj_fcs>
-                        <sec:obj_fpt title="Protection of the TSF (FPT)">
+                    <sec:obj_fpt title="Class FPT: Protection of the TSF">
                             <ext-comp-def fam-id="FPT_INT_EXT" title="Reputation Service Interaction">
                                 <fam-behavior>Components in this family define requirements for the TOE's interaction
 								with reputation services that can provide an assessment of the trustworthiness of data 
