@@ -634,7 +634,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Class FTP: Trusted Path/Channels</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>Class FDP: User Data Protection</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Class FMT: Security Management</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Class FPT: Protection of the TSF</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#modsfr-mod_fcs" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#modsfr-mod_ftp" style="text-indent:30px">5.1.1.2<span>Class FTP: Trusted Path/Channels</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>Class FDP: User Data Protection</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Class FMT: Security Management</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Class FPT: Protection of the TSF</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
     Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
@@ -949,7 +949,7 @@ Application
     <h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description">
+		<h4 id="modsfr-mod_fcs" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description">
                             <p>
                             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that the selection to "generate no asymmetric keys" is eliminated because all conformant web browser <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> must either perform their own key generation or invoke platform functionality to perform this.
                             </p>
@@ -985,7 +985,7 @@ Application
                                 <li><i>implement DRBG functionality</i></li>
                             </ul>
                             ] for its cryptographic operations.
-                        </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Class FTP: Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4><span class="description">
+                        </span></div><h4 id="modsfr-mod_ftp" class="indexable" data-level="4">5.1.1.2 Class FTP: Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4><span class="description">
                             <p>
                                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to require 
                                 that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform supports <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, and DTLS, and that its use of these
@@ -1078,8 +1078,7 @@ Application
                                 <li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</li>
                                 <li>The rendering process has reduced privilege with respect to
-                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">
-					  [<b>assignment</b>: 
+                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">[<b>assignment</b>: 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
@@ -1542,9 +1541,7 @@ Application
        Implementation-dependent       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</p><h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
     </h1>
                         <h2 id="sel_fpt" class="indexable" data-level="2">B.1 Class FPT: Protection of the TSF</h2>
-                        <div class="comp" id="FPT_AON_EXT.2"><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a>.
-           </i></b></div>
+                        <div class="comp" id="FPT_AON_EXT.2"><h4>FPT_AON_EXT.2 Trusted Installation and Update for Add-ons</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FPT_AON_EXT.1.1">FPT_AON_EXT.1.1</a></i></b></li></ul></div>
                             
                             
                             
@@ -1617,8 +1614,7 @@ Application
                                 <li>The rendering process can only directly invoke inter-process
                                     communication mechanisms with its own browser processes.</li>
                                 <li>The rendering process has reduced privilege with respect to
-                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">
-					  [<b>assignment</b>: 
+                                    other browser processes [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_5">[<b>assignment</b>: 
      <span class="assignable-content">
 					    other methods by which the
                                             principle of least privilege is implemented for
@@ -1706,8 +1702,7 @@ Application
                                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the capability to execute 
                                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_19">
                                         signed [<b>assignment</b>: 
-     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]
-                                        </span>, <span class="selectable-content" id="_s_20">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_23">automatically discard</span>, <span class="selectable-content" id="_s_24">provide the user with the option to discard</span>] 
+     <span class="assignable-content">add-ons (i.e. plug-ins and extensions) supported by the browser</span>]</span>, <span class="selectable-content" id="_s_20">no</span>] add-ons. <h4 id="ext-comp-FPT_ADD_EXT.1.2">FPT_ADD_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_23">automatically discard</span>, <span class="selectable-content" id="_s_24">provide the user with the option to discard</span>] 
                                 unsigned, untrusted, or unverified [<b>assignment</b>: 
      <span class="assignable-content">supported add-ons (i.e., plug-ins and extensions)</span>]
                                  web-based code executed in add-ons without executing it.</div></div><h3 id="ext-comp-FPT_INT_EXT" class="indexable" data-level="4">C.2.4.4 FPT_INT_EXT Reputation Service Interaction</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s interaction
