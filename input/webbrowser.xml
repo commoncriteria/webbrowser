@@ -281,7 +281,7 @@
                 
                 
                 <threat name="T.NETWORK_ATTACK">
-                    <from base="bpp-app"/>
+                    <from base="application"/>
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.2 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.2 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
@@ -303,7 +303,7 @@
                 
                 
                 <threat name="T.NETWORK_EAVESDROP">
-                    <from base="bpp-app"/>
+                    <from base="application"/>
 
                     <addressed-by>FCS_CKM_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_CKM_EXT.1 mitigates the threat by requiring that the TSF provide or invoke a cryptographic function for asymmetric key generation.</rationale>
                     <addressed-by>FCS_HTTPS_EXT.1 (modified from Base-PP)</addressed-by><rationale>FCS_HTTPS_EXT.1 mitigates the threat by defining the TSF's implementation of HTTPS.</rationale>
@@ -321,7 +321,7 @@
                 
                 
                 <threat name="T.PHYSICAL_ACCESS">
-                    <from base="bpp-app"/>
+                    <from base="application"/>
                     <addressed-by>FDP_COO_EXT.1</addressed-by><rationale>FDP_COO_EXT.1 mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</rationale>
                     <addressed-by>FDP_PST_EXT.1 (optional)</addressed-by><rationale>FDP_PST_EXT.1 mitigates the threat by optionally defining the minimum set of persistent data that the TSF is required to store.</rationale>
                     <addressed-by>FPT_INT_EXT.1 (objective)</addressed-by><rationale>FPT_INT_EXT.1 mitigates the threat by optionally requiring the TSF to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</rationale>
@@ -419,13 +419,7 @@
         
         
         
-        <base-pp id="bpp-app" name="Application Software" product="Application" short="App" version="2.0">
-            <git>
-                <url>https://github.com/commoncriteria/application</url>
-                <branch>release-2.0</branch>
-                
-            </git>
-            <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
+        <base-pp ref="application">
             
             <modified-sfrs>
                 
