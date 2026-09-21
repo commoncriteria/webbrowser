@@ -1,8 +1,0 @@
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: attribute "id" not allowed here; expected attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: attribute "name" not allowed here; expected attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: attribute "product" not allowed here; expected attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: attribute "short" not allowed here; expected attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: attribute "version" not allowed here; expected attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:422:107: error: element "base-pp" missing required attribute "ref"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:423:18: error: element "git" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"
-/home/runner/work/webbrowser/webbrowser/input/webbrowser.xml:428:18: error: element "url" not allowed here; expected element "app-unmod-sfrs", "cPP", "modified-sfrs" or "sec-func-req-dir"

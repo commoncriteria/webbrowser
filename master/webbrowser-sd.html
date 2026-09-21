@@ -291,7 +291,7 @@
       web browsers
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
-      </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-" style="text-indent:10px">2.1<span></span></a><a href="#qq-sfrs--Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
+      </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-application" style="text-indent:10px">2.1<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-application-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
         </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#man_fdp" style="text-indent:20px">2.2.1<span>Class FDP: User Data Protection</span></a><a href="#man_fmt" style="text-indent:20px">2.2.2<span>Class FMT: Security Management</span></a><a href="#man_fpt" style="text-indent:20px">2.2.3<span>Class FPT: Protection of the TSF</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#opt_fdp" style="text-indent:20px">2.3.1<span>Class FDP: User Data Protection</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#sel_fpt" style="text-indent:20px">2.4.1<span>Class FPT: Protection of the TSF</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#obj_fcs" style="text-indent:20px">2.5.1<span>Class FCS: Cryptographic Support</span></a><a href="#obj_fpt" style="text-indent:20px">2.5.2<span>Class FPT: Protection of the TSF</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the PP-Module for Web Browsers is
     to describe the security functionality of 
     web browsers
@@ -434,13 +434,13 @@ The following sections list Common Criteria and technology terms used in this do
     In this case, the evaluator must ensure the developer’s tests are executing both 
     in the manner declared by the developer and as mandated by the EA. 
     The CEM workunits that are associated with the EAs specified in this section 
-    are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.</p><h2 class="indexable" data-level="1" id="aa-">2.1</h2>
+    are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.</p><h2 class="indexable" data-level="1" id="aa-application">2.1 Protection Profile for Application Software</h2>
       The EAs defined in this section are only applicable in cases where the TOE claims conformance
-      to a PP-Configuration that includes the .
-     <h3 class="indexable" data-level="2" id="qq-sfrs--Modified">2.1.1 Modified SFRs
+      to a PP-Configuration that includes the App.
+     <h3 class="indexable" data-level="2" id="qq-sfrs-application-Modified">2.1.1 Modified SFRs
         </h3>
 	  The PP-Module does not modify any requirements when the 
-	   is the base.
+	  App is the base.
 	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="man_fdp">2.2.1 Class FDP: User Data Protection</h2><div class="comp" id=""><h4>FDP_ACF_EXT.1 Local and Session Storage Separation</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_ACF_EXT.1</div>
                             
                             
@@ -773,10 +773,10 @@ The following sections list Common Criteria and technology terms used in this do
                                             website being on the list.</li></ul></span>
                                     </div></div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.6 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
-	base  to which it must claim conformance.
+	base App to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
 	inherently evaluated against this base PP as well. 
-	The  
+	The App 
         includes a number of Evaluation Activities associated with both SFRs and SARs.
 	Additionally, the PP-Module includes a number of SFR-based Evaluation Activities 
 	that similarly refine the SARs of the base PPs.
