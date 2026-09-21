@@ -631,13 +631,11 @@ function showTarget(id){
           }
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Web Browsers</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 1.0<br/>2025-06-16<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2024-10-25</td><td>Initial release as <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.1<span>
-    Protection Profile for Application Software
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-" style="text-indent:10px">5.1<span>
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#modsfr-mod_fcs" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#modsfr-mod_ftp" style="text-indent:30px">5.1.1.2<span>Class FTP: Trusted Path/Channels</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>Class FDP: User Data Protection</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Class FMT: Security Management</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Class FPT: Protection of the TSF</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.1<span>
-    Protection Profile for Application Software</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.1.1<span>
+    </span></a><a href="#modsfr-" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#modsfr-mod_fcs" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#modsfr-mod_ftp" style="text-indent:30px">5.1.1.2<span>Class FTP: Trusted Path/Channels</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#man_fdp" style="text-indent:20px">5.2.1<span>Class FDP: User Data Protection</span></a><a href="#man_fmt" style="text-indent:20px">5.2.2<span>Class FMT: Security Management</span></a><a href="#man_fpt" style="text-indent:20px">5.2.3<span>Class FPT: Protection of the TSF</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-" style="text-indent:10px">6.1<span></span></a><a href="#contoe-" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
-      </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.1.2<span>
+      </span></a><a href="#consecprob-" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
       </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.1.3<span>
 			Consistency of OE Objectives
@@ -657,17 +655,17 @@ function showTarget(id){
             and render content provided by web servers, primarily using the hypertext transfer
             protocol (<abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr>) or <abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr> Secure (<abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>). 
             
-            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>: <ul>
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following Base-PP: <ul>
                 <li>Protection Profile for Application Software, Version 2.0</li>
             </ul>
-            <p></p> This <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is valid because web browsers are a specific type of software application.
+            <p></p> This Base-PP is valid because web browsers are a specific type of software application.
             
           
         
             <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
 The following sections list Common Criteria and technology terms used in this document.
     <h3 id="cc-terms" class="indexable" data-level="3">1.2.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a>.</td></tr>
-<tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration.</td></tr>
+<tr><td><div id="Base_Protection_Profile">Base Protection Profile (base PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration.</td></tr>
 <tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
     international technical communities and approved by multiple schemes.</td></tr>
 <tr><td><div id="Common_Criteria">Common Criteria (CC)</div></td><td>Common Criteria for Information Technology Security Evaluation (International Standard ISO/IEC 15408).</td></tr>
@@ -688,8 +686,8 @@ The following sections list Common Criteria and technology terms used in this do
 	    or functionality.</td></tr>
 <tr><td><div id="Operational_Environment">Operational Environment (OE)</div></td><td>Hardware and software that are outside the TOE boundary that support the TOE functionality and security policy.</td></tr>
 <tr><td><div id="Protection_Profile">Protection Profile (PP)</div></td><td>An implementation-independent set of security requirements for a category of products.</td></tr>
-<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module.</td></tr>
-<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more Base-PPs.</td></tr>
+<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one base PP and at least one PP-Module.</td></tr>
+<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more base PPs.</td></tr>
 <tr><td><div id="Security_Assurance_Requirement">Security Assurance Requirement (SAR)</div></td><td>A requirement to assure the security of the TOE.</td></tr>
 <tr><td><div id="Security_Functional_Requirement">Security Functional Requirement (SFR)</div></td><td>A requirement for security enforcement by the TOE.</td></tr>
 <tr><td><div id="Security_Target">Security Target (ST)</div></td><td>A set of implementation-dependent security requirements for a specific product.</td></tr>
@@ -827,8 +825,22 @@ The following sections list Common Criteria and technology terms used in this do
 					any Protection Profile.
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
-					<ul><li>Protection Profile for Application Software, Version 2.0</li></ul></dd><dt>Package Claim</dt><p></p><dd>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is not conformant to any 
-						Functional or Assurance Packages.</dd></dl>
+					<ul><li><a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software
+        Version 
+        2.0</a>.</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					<a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
+        2.0</a> conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					<a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a> conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
+						assurance packages.</li></ul></dd><p></p><dd>
+		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
+		to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional 
+		packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the 
+		capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> 
+		selections made. 
+	</dd></dl>
     
   <h1 class="indexable" data-level="1" id="Security_Problem_Definition">3 Security Problem Definition</h1> The security problem is described in
         terms of the threats that the web browser is expected to address, assumptions about the
@@ -855,15 +867,15 @@ The following sections list Common Criteria and technology terms used in this do
                         platform's file system, or privilege escalation that enables
                         unauthorized access to other applications or the operating
                         system.</span></dd><dt class="threat defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS
-		(from App PP)
+		(from )
 	</dt><dd>
 						This threat from the above Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> also applies to the functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 					</dd><dt class="threat defined" id="T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</dt><dd><span class="description"> Violating the same-origin policy is a specialized type of network
@@ -892,22 +904,22 @@ The following sections list Common Criteria and technology terms used in this do
                         which could then be used to harvest sensitive data from a legitimate user or otherwise facilitate impersonation of that user. 
                     </span></dd></dl>
         
-        <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Assumptions beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
+        <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Assumptions beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_base PP">base PP</a></abbr>(s).</p>
             
         
         
         
-        <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
+        <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_base PP">base PP</a></abbr>(s).</p>
             
         
         
     <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to objectives
-        identified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and describes additional objectives specific to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        identified in the Base-PP and describes additional objectives specific to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
           
-        <h2 class="indexable" data-level="2" id="objectivesEnvironment">4.1 Security Objectives for the Operational Environment</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Security Objectives for the Operational Environment beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
+        <h2 class="indexable" data-level="2" id="objectivesEnvironment">4.1 Security Objectives for the Operational Environment</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Security Objectives for the Operational Environment beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_base PP">base PP</a></abbr>(s).</p>
             <p></p>
             No environmental security objectives have been identified that are specific to web browsers. However, any
-            environmental security objectives defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> will also apply to the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that implements web browser functionality.
+            environmental security objectives defined in the Base-PP will also apply to the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that implements web browser functionality.
             
         
         
@@ -936,18 +948,17 @@ The following sections list Common Criteria and technology terms used in this do
             suggesting the purpose of the operation, e.g. "/EXAMPLE1."
        </li>
      </ul>
-   <h2 id="secreq-bpp-app" class="indexable" data-level="2">5.1 
-    Protection Profile for Application Software
+   <h2 id="secreq-" class="indexable" data-level="2">5.1 
        Security Functional Requirements Direction
     </h2>
-      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
+      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the ,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-Application
-      as a whole and evaluated against the  App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      web browser
+      as a whole and evaluated against the  .
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
-      defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.2 TOE Security Functional Requirements</a>.
-    <h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
-		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+      defined in the  in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.2 TOE Security Functional Requirements</a>.
+    <h3 id="modsfr-" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
+		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the  and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
 		<h4 id="modsfr-mod_fcs" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description">
                             <p>
@@ -1325,12 +1336,12 @@ Application
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">1</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#T.FLAWED_ADDON">T.FLAWED_​ADDON</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a></td><td><a href="#FPT_AON_EXT.1">FPT_AON_EXT.1</a> mitigates the threat by specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has the ability to load add-ons.</td></tr>
 <tr><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> (selection-based)</td><td><a href="#FPT_AON_EXT.2">FPT_AON_EXT.2</a> mitigates the threat by defining a cryptographic method for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate the integrity of add-ons if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports their use.</td></tr>
 <tr class="major-row"><td rowspan="13"><a href="#T.NETWORK_ATTACK">T.NETWORK_​ATTACK</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
-	</td><td>FCS_CKM_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_CKM_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
-<tr><td>FCS_HTTPS_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_HTTPS_EXT.1 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
-<tr><td>FCS_HTTPS_EXT.2 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_HTTPS_EXT.2 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
-<tr><td>FCS_RBG_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_RBG_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
-<tr><td>FTP_DIT_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to protect data in transit.</td></tr>
+		(from )
+	</td><td>FCS_CKM_EXT.1 (modified from Base-PP)</td><td>FCS_CKM_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
+<tr><td>FCS_HTTPS_EXT.1 (modified from Base-PP)</td><td>FCS_HTTPS_EXT.1 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
+<tr><td>FCS_HTTPS_EXT.2 (modified from Base-PP)</td><td>FCS_HTTPS_EXT.2 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
+<tr><td>FCS_RBG_EXT.1 (modified from Base-PP)</td><td>FCS_RBG_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
+<tr><td>FTP_DIT_EXT.1 (modified from Base-PP)</td><td>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to protect data in transit.</td></tr>
 <tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a> mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> for certain types of data transfer.</td></tr>
 <tr><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a></td><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a> mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</td></tr>
 <tr><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></td><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a> mitigates the threat by defining the management functionality that is specific to web browser applications.</td></tr>
@@ -1340,27 +1351,26 @@ Application
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a reputation service to prevent the acquisition of potentially malicious applications.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_​EAVESDROP</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
-	</td><td>FCS_CKM_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_CKM_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
-<tr><td>FCS_HTTPS_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_HTTPS_EXT.1 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
-<tr><td>FCS_HTTPS_EXT.2 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_HTTPS_EXT.2 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
-<tr><td>FCS_RBG_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FCS_RBG_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
-<tr><td>FTP_DIT_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to protect data in transit.</td></tr>
+		(from )
+	</td><td>FCS_CKM_EXT.1 (modified from Base-PP)</td><td>FCS_CKM_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a cryptographic function for asymmetric key generation.</td></tr>
+<tr><td>FCS_HTTPS_EXT.1 (modified from Base-PP)</td><td>FCS_HTTPS_EXT.1 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
+<tr><td>FCS_HTTPS_EXT.2 (modified from Base-PP)</td><td>FCS_HTTPS_EXT.2 mitigates the threat by defining the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s implementation of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>.</td></tr>
+<tr><td>FCS_RBG_EXT.1 (modified from Base-PP)</td><td>FCS_RBG_EXT.1 mitigates the threat by requiring that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provide or invoke a DRBG for secure key generation.</td></tr>
+<tr><td>FTP_DIT_EXT.1 (modified from Base-PP)</td><td>FTP_DIT_EXT.1 mitigates the threat by specifying the trusted communications channels used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to protect data in transit.</td></tr>
 <tr><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a></td><td><a href="#FDP_STR_EXT.1">FDP_STR_EXT.1</a> mitigates the threat by requiring the use of <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> for certain types of data transfer.</td></tr>
 <tr><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a></td><td><a href="#FDP_TRK_EXT.1">FDP_TRK_EXT.1</a> mitigates the threat by notifying the user when various data is being tracked to allow for control of the disclosure of configuration information.</td></tr>
 <tr><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a></td><td><a href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a> mitigates the threat by defining the management functionality that is specific to web browser applications.</td></tr>
 <tr><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> (objective)</td><td><a href="#FCS_STS_EXT.1">FCS_STS_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement <abbr class="dyn-abbr"><a href="#abbr_HSTS">HSTS</a></abbr> for secure data transmission.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> (objective)</td><td><a href="#FPT_INT_EXT.2">FPT_INT_EXT.2</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a URL reputation service that can block communications with malicious entities.</td></tr>
 <tr class="major-row"><td rowspan="3"><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_​ACCESS</a>
-		(from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+		(from )
 	</td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a> mitigates the threat by defining a mechanism to prevent untrusted data from being loaded into protected storage.</td></tr>
 <tr><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> (optional)</td><td><a href="#FDP_PST_EXT.1">FDP_PST_EXT.1</a> mitigates the threat by optionally defining the minimum set of persistent data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is required to store.</td></tr>
 <tr><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> (objective)</td><td><a href="#FPT_INT_EXT.1">FPT_INT_EXT.1</a> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to protect against downloading known malicious applications that may adversely affect data stored at rest.</td></tr>
 <tr class="major-row"><td rowspan="3"><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_​ORIGIN_​VIOLATION</a></td><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a></td><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a> mitigates the threat by isolating local and session storage to its origin point.</td></tr>
 <tr><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a></td><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a> mitigates the threat by ensuring that rendering of content is isolated to its origin point.</td></tr>
 <tr><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a></td><td><a href="#FDP_SOP_EXT.1">FDP_SOP_EXT.1</a> mitigates the threat by enforcing the concept of a same origin policy to prevent web content with different origins from interacting with one another.</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-app" class="indexable" data-level="2">6.1 
-    Protection Profile for Application Software</h2><h3 id="contoe-bpp-app" class="indexable" data-level="3">6.1.1 
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-" class="indexable" data-level="2">6.1</h2><h3 id="contoe-" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>
                 If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a software 
@@ -1370,12 +1380,12 @@ Application
                 <p></p>
                 The only asset for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is the software executable and sensitive data that comprises the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The 
 				entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as defined by the combination of the
-                <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is a single asset. The only differences to the threat model are that the
+                Base-PP and this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is a single asset. The only differences to the threat model are that the
 				<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> introduces the concept of add-ons, which
                 introduces the threat of an add-on being flawed in some way, and that the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> introduces the 
 				concept of a same-origin violation, which
                 occurs through a use case specific to web browser applications.
-            <h3 id="consecprob-bpp-app" class="indexable" data-level="3">6.1.2 
+            <h3 id="consecprob-" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
       </h3>
                 Listed below are the threats, objectives, and OSPs defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> with rationale for their 
@@ -1391,9 +1401,9 @@ Application
 					intended to support the O.PROTECTED_COMMS objective in the
                     App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which helps mitigate the <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> and <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> threats in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. 
                 
-            <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">2</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a></td><td>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-                        A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</td></tr><tr><td><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</a></td><td>This threat extends the security problem definition of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.1.3 
+            <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">2</span></span>: Consistency of Security Problem Definition ( base)
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.FLAWED_ADDON">T.FLAWED_ADDON</a></td><td>The threat of a user installing a flawed add-on is consistent with the T.LOCAL_ATTACK threat from the Base-PP.
+                        A flawed add-on, whether crafted deliberately or unintentionally, could cause the product to operate in a manner where it or its platform can be compromised.</td></tr><tr><td><a href="#T.SAME_ORIGIN_VIOLATION">T.SAME_ORIGIN_VIOLATION</a></td><td>This threat extends the security problem definition of the Base-PP by defining a potential vulnerability that specifically applies to the content that is handled by web browsers.</td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.1.3 
 			Consistency of OE Objectives
 		</h3><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s operational environment. 
@@ -1401,15 +1411,15 @@ Application
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
+       that are needed to support
       web browser functionality.
       This is considered to be consistent because the functionality provided by the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
+       is being used for its intended purpose.
       
           The rationale for why this does not conflict with the claims
       defined by the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
-      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">3</span></span>: Consistency of Requirements (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
+       are as follows:
+      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">3</span></span>: Consistency of Requirements ( base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM_EXT.1</td><td>
                             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to remove one of the available selection options because
                             it will never apply in the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -1421,7 +1431,7 @@ Application
                             <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
                         </td></tr><tr><td>FCS_RBG_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified to prohibit the selection for using no DRBG functionality based on the intended behavior of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr><td>FTP_DIT_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to mandate the protection of sensitive data using only specified protocols.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
-	      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
+	       is the base.
 	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines domain separation of web content when a web browser is simultaneously accessing
                         content from multiple sources. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_COO_EXT.1">FDP_COO_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for handling cookies, which are data specific
 					to web browser applications. It does not impact the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality.</td></tr><tr><td><a href="#FDP_SBX_EXT.1">FDP_SBX_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines behavior for rendering of webpages, which is by definition 
@@ -1724,9 +1734,9 @@ Application
                             </p><h4>Audit: FPT_INT_EXT.2</h4><p>There are no audit events foreseen.</p><h4>FPT_INT_EXT.2 Interactions with URL Reputation Services</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td></td></tr></table><h4 id="ext-comp-FPT_INT_EXT.2.1">FPT_INT_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use a URL reputation service to prevent
                                     connections with malicious websites.</div></div></span></span><h1 id="EAR" class="indexable" data-level="A">Appendix D -  Entropy Documentation and Assessment</h1>
         The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not require any additional supplementary information to describe its entropy sources beyond the
-		requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.  
+		requirements outlined in the Base-PP.  
     <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">5</span></span>: Acronyms
-		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
+		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_base PP" data-plural="base PPs"><abbr class="dyn-abbr"><a href="#abbr_base PP">base PP</a></abbr></span></td><td><span id="long_abbr_base PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
 <tr><td><span class="term" id="abbr_CEM"><abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr></span></td><td><span id="long_abbr_CEM">Common Evaluation Methodology</span></td></tr>
 <tr><td><span class="term" id="abbr_cPP" data-plural="cPPs"><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr></span></td><td><span id="long_abbr_cPP">Collaborative Protection Profile</span></td></tr>
@@ -1772,4 +1782,7 @@ Application
           </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
-          </ul></span></td></tr></table></body></html>
+          </ul></span></td></tr><tr><td><span id="bibERRv12">[ERR]</span></td><td><span class="description"><a href="https://www.commoncriteriaportal.org/files/ccfiles/CCMB-2025-001-v1_2-Errata_Interpretation_CC_CEM_2022.pdf">
+              Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), Version 1.2</a>, 
+			  CCMB-2025-02-001, 15 October 2025.
+        </span></td></tr></table></body></html>
